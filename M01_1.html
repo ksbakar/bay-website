@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Degrees of Beliefs and Evidence – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>1&nbsp; Belief-O-Meter: Navigating Evidence – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M01_1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Degrees of Beliefs and Evidence</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M01_1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Belief-O-Meter: Navigating Evidence</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -170,13 +170,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M01_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Degrees of Beliefs and Evidence</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Belief-O-Meter: Navigating Evidence</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M01_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Inference</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Belief-O-Meter: Bayesian Inference</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,13 +218,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Designing Clinical Trials</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Bayesian Sample Size Calculation</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Bayesian Adaptive Design</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Bayesian Adaptions for Sample Size Calculations</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -261,23 +261,27 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1.1</span> Learning Objectives</a></li>
-  <li><a href="#learning-activities" id="toc-learning-activities" class="nav-link" data-scroll-target="#learning-activities"><span class="header-section-number">1.2</span> Learning Activities</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">1.3</span> Learning Outcomes</a></li>
-  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background"><span class="header-section-number">1.4</span> Background</a></li>
-  <li><a href="#bayesian-philosophy" id="toc-bayesian-philosophy" class="nav-link" data-scroll-target="#bayesian-philosophy"><span class="header-section-number">1.5</span> Bayesian Philosophy</a></li>
-  <li><a href="#the-maze" id="toc-the-maze" class="nav-link" data-scroll-target="#the-maze"><span class="header-section-number">1.6</span> The Maze</a></li>
-  <li><a href="#concepts-classical-vs.-bayesian" id="toc-concepts-classical-vs.-bayesian" class="nav-link" data-scroll-target="#concepts-classical-vs.-bayesian"><span class="header-section-number">1.7</span> Concepts: Classical vs.&nbsp;Bayesian</a></li>
-  <li><a href="#dual-factor-probabilities" id="toc-dual-factor-probabilities" class="nav-link" data-scroll-target="#dual-factor-probabilities"><span class="header-section-number">1.8</span> Dual-Factor Probabilities</a></li>
-  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem"><span class="header-section-number">1.9</span> Bayes’ Theorem</a></li>
-  <li><a href="#problems-use-another-example" id="toc-problems-use-another-example" class="nav-link" data-scroll-target="#problems-use-another-example"><span class="header-section-number">1.10</span> Problems – use another example</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">1.11</span> Exercises</a>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link active" data-scroll-target="#learning-outcomes"><span class="header-section-number">1.1</span> Learning Outcomes</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background"><span class="header-section-number">1.2</span> Background</a></li>
+  <li><a href="#bayesian-philosophy" id="toc-bayesian-philosophy" class="nav-link" data-scroll-target="#bayesian-philosophy"><span class="header-section-number">1.3</span> Bayesian Philosophy</a></li>
+  <li><a href="#the-maze-logical-framework" id="toc-the-maze-logical-framework" class="nav-link" data-scroll-target="#the-maze-logical-framework"><span class="header-section-number">1.4</span> The Maze: Logical Framework</a></li>
+  <li><a href="#concepts-classical-vs.-bayesian" id="toc-concepts-classical-vs.-bayesian" class="nav-link" data-scroll-target="#concepts-classical-vs.-bayesian"><span class="header-section-number">1.5</span> Concepts: Classical vs.&nbsp;Bayesian</a>
   <ul class="collapse">
-  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1"><span class="header-section-number">1.11.1</span> Question 1:</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">1.5.1</span> Example:</a></li>
   </ul></li>
-  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">1.12</span> Live tutorial and discussion</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">1.13</span> Summary</a></li>
-  <li><a href="#preparation-for-week-2" id="toc-preparation-for-week-2" class="nav-link" data-scroll-target="#preparation-for-week-2"><span class="header-section-number">1.14</span> Preparation for Week 2</a></li>
+  <li><a href="#dual-factor-probabilities" id="toc-dual-factor-probabilities" class="nav-link" data-scroll-target="#dual-factor-probabilities"><span class="header-section-number">1.6</span> Dual-Factor Probabilities</a></li>
+  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem"><span class="header-section-number">1.7</span> Bayes’ Theorem</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">1.7.1</span> Example</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">1.8</span> Summary</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">1.9</span> Live tutorial and discussion</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">1.10</span> Tutorial Exercises</a>
+  <ul class="collapse">
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1"><span class="header-section-number">1.10.1</span> Question 1:</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2"><span class="header-section-number">1.10.2</span> Question 2:</a></li>
+  </ul></li>
+  <li><a href="#preparation-for-week-2" id="toc-preparation-for-week-2" class="nav-link" data-scroll-target="#preparation-for-week-2"><span class="header-section-number">1.11</span> Preparation for Week 2</a></li>
   </ul>
 </nav>
     </div>
@@ -286,7 +290,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Degrees of Beliefs and Evidence</strong></span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Belief-O-Meter: Navigating Evidence</strong></span></h1>
 </div>
 
 
@@ -305,52 +309,12 @@ window.Quarto = {
 
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<section id="learning-objectives" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.1</span> Learning Objectives</h2>
-<p>By the end of this week you should be able to:</p>
-<ol type="1">
-<li><p>Understand Bayesian philosophy.</p></li>
-<li><p>Describe the motivation of doing Bayesian analysis.</p></li>
-<li><p>Understand the difference between Bayesian and classical statistical methods.</p></li>
-<li><p>Interpret a real-life problem in Bayesian context.</p></li>
-</ol>
+<section id="learning-outcomes" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">1.1</span> Learning Outcomes</h2>
+<p>LO1, LO5</p>
 </section>
-<section id="learning-activities" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="learning-activities"><span class="header-section-number">1.2</span> Learning Activities</h2>
-<p>This week’s learning activity include:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Learning Activity</th>
-<th>Learning Objectives</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Video</td>
-<td>1,3</td>
-</tr>
-<tr class="even">
-<td>Readings</td>
-<td>2,3,4</td>
-</tr>
-<tr class="odd">
-<td>Exercises</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>Live tutorial/discussion</td>
-<td>1,2,3,4</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="learning-outcomes" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">1.3</span> Learning Outcomes</h2>
-<p>LO1, LO2</p>
-</section>
-<section id="background" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="background"><span class="header-section-number">1.4</span> Background</h2>
+<section id="background" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="background"><span class="header-section-number">1.2</span> Background</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -361,15 +325,16 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Thomas Bayes, who is remembered through the term “Bayesian,” passed away in 1761 without having the chance to formally present or publish his groundbreaking findings. Two years after his death, it was Richard Price who, in 1763, introduced Bayes’ extraordinary work to the Royal Statistical Society. Bayes had been carefully constructing a probabilistic framework to tackle inverse problems. Concurrently, Richard Price (1723–1791) and Pierre-Simon Laplace (1749–1827) played crucial roles in advancing and applying this transformative idea to practical real-world scenarios.</p>
-<p>To fully understand the Bayesian framework, it is essential to become familiar with several key terms commonly used in Bayesian discussions, such as Bayesian inference, prior, posterior, and Bayesian modeling. Throughout this course, we will gradually explore these fundamental concepts. Before deeply examining these important terms, it is beneficial to consider the Bayesian philosophy.</p>
+<p>Thomas Bayes, who is remembered through the term “Bayesian,” passed away in 1761 without having the chance to formally present or publish his groundbreaking findings. Two years after his death, it was Richard Price who, in 1763, introduced Bayes’ extraordinary work to the Royal Statistical Society. Bayes had been developing a probabilistic framework to tackle inverse problems. Later, Richard Price (1723–1791) and Pierre-Simon Laplace (1749–1827) played crucial roles in advancing and applying this transformative idea to practical real-world scenarios.</p>
+<p>To fully understand the Bayesian framework, it is essential to become familiar with several key terms commonly used in Bayesian discussions, such as Bayesian inference, prior, posterior, and Bayesian modeling. Throughout this course, we will gradually explore and learn these fundamental concepts.</p>
+<p>Before that, let’s start understanding the Bayesian philosophy.</p>
 </section>
-<section id="bayesian-philosophy" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="bayesian-philosophy"><span class="header-section-number">1.5</span> Bayesian Philosophy</h2>
+<section id="bayesian-philosophy" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="bayesian-philosophy"><span class="header-section-number">1.3</span> Bayesian Philosophy</h2>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<p>Bayesian philosophy revolves around the notion of degrees of belief to elucidate scientific reasoning. This concept is emphasized here for frequent reference throughout the discourse. But what do “degrees of belief” entail? They can be interpreted in terms of probability. For example, this notion could pertain to the scientific understanding of the probability of developing chronic kidney disease. Consequently, “degrees of belief” signify the fluctuation in the probability of having chronic kidney disease as understanding of the disease evolves. How does this understanding progress? It progresses through the acquisition of new data or information.</p>
-<p>Let’s explain a bit more:</p>
+<p>Bayesian philosophy evolves around the notion of degrees of belief to elucidate scientific reasoning. But what do “degrees of belief” entail? In simple terms, Bayesian philosophy is the idea that probability reflects our beliefs about an event, which can change as we gather more evidence. Instead of seeing probability as a fixed, objective truth (like in traditional frequentist statistics), Bayesian philosophy views probability as something subjective that evolves as we get new data or insights.</p>
+<p>Let’s explain a bit more using examples:</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -380,29 +345,32 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Diabetes acts as a risk factor for chronic ailments such as chronic kidney disease (CKD) and is also a persistent condition by itself. In a hypothetical scenario, an individual believes their blood sugar levels are well-regulated and confirms this belief using a home testing kit from a pharmacy, which indicates that the levels are indeed satisfactory. The question emerges: How reliable is this assumption for the individual? Quantitatively assessing this involves assigning odds. In the frequentist interpretation, which considers probability as a long-run frequency requiring numerous data points, this question lacks pertinence. This is where classical or frequentist views encounter constraints. Conversely, the Bayesian interpretation conceptualizes probability as a subjective measure of belief that adjusts based on existing knowledge and evidence. This approach, encapsulated in the concept that “evidence changes probabilities,” acknowledges that collective evidence influences beliefs. Bayesian inference, which provides a departure from classical thought, will be examined in the forthcoming lecture.</p>
-<p><span class="citation" data-cites="gelman2013philosophy">Gelman and Shalizi (<a href="#ref-gelman2013philosophy" role="doc-biblioref">2013</a>)</span></p>
+<p>Suppose a medical practitioner is treating a patient who might have a particular illness, like diabetes. Initially, based on the patient’s age, family history, and some initial symptoms, the doctor might believe there’s a 20% chance the patient has diabetes. This belief is a prior probability.</p>
+<p>Now, the medical practitioner orders a blood test to check the patient’s blood sugar levels. When the results come back, they show elevated sugar levels, which increase the likelihood of diabetes. The medical practitioner updates their belief based on this new evidence, which is called the posterior probability.</p>
+<p>So, Bayesian philosophy evolves starting with an initial belief (prior), and then updating that belief as new data (like test results) comes in. In short, it’s a flexible way of thinking where beliefs are adjusted as information is acquired.</p>
+<p><span class="citation" data-cites="gelman2013philosophy">Gelman and Shalizi (<a href="references.html#ref-gelman2013philosophy" role="doc-biblioref">2013</a>)</span></p>
 </section>
-<section id="the-maze" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="the-maze"><span class="header-section-number">1.6</span> The Maze</h2>
+<section id="the-maze-logical-framework" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="the-maze-logical-framework"><span class="header-section-number">1.4</span> The Maze: Logical Framework</h2>
 <!--
 ref: McElreath page 20, sec 2.1
 -->
-<p>Bayesian analysis is a logical framework that helps update our beliefs based on new information. It allows us to reason about uncertainty by combining what we already know with evidence we gather to refine our understanding.</p>
-<p>A helpful analogy is navigating a maze with an incomplete map. Each step provides new clues, and with every clue, your understanding of the maze improves. By continuously updating your knowledge with new information, you eventually find the exit. This is how Bayesian analysis works—it continuously updates our understanding as more evidence comes in.</p>
-<p>To see this in practice, consider a doctor diagnosing a patient’s illness. Initially, the doctor forms a hypothesis based on the patient’s symptoms and medical history. For instance, they might think there’s a 60% chance of a respiratory infection, a 20% chance of asthma, and a 20% chance of another condition. This initial estimate represents the prior belief. The doctor then orders a chest X-ray, which reveals signs typically associated with respiratory infections. This new evidence increases the likelihood of that diagnosis compared to the alternatives. By combining the initial belief with the X-ray results, the doctor updates the probabilities, now thinking there’s an 80% chance of a respiratory infection, 10% for asthma, and 10% for something else. Additional tests, such as blood work or lung function tests, provide further evidence, allowing the doctor to refine the probabilities until they are confident in the diagnosis.</p>
-<p>This iterative process is what makes Bayesian analysis so powerful. It doesn’t discard initial beliefs but continuously refines them in light of new evidence. Whether used in medicine, machine learning, or everyday decisions, Bayesian methods ensure that our conclusions are informed, logical, and adaptable as more information becomes available.</p>
+<p>Bayesian analysis is a logical framework that helps update our beliefs based on continuous new information. A helpful analogy is navigating a maze with an incomplete map. Each step provides new clues, and with every clue, your understanding of the maze improves. By continuously updating your knowledge with new information, you eventually find the exit. This is how Bayesian analysis works — it continuously updates our understanding as more evidence comes in.</p>
+<p>To see this in practice, consider a similar type of example that explained earlier, where a medical practitioner diagnosing a patient’s illness.</p>
+<p>At the beginning, the medical practitioner forms a hypothesis based on the patient’s symptoms and medical and family history. For instance, they might think there’s a 60% chance of a respiratory infection, a 20% chance of asthma, and a 20% chance of another condition. This initial estimate represents the prior belief. The medical practitioner then orders a chest X-ray, which reveals signs typically associated with respiratory infections. This new evidence increases the likelihood of that diagnosis compared to the alternatives. By combining the initial belief with the X-ray results, the medical practitioner updates the probabilities, now thinking there’s an 80% chance of a respiratory infection, 10% for asthma, and 10% for something else. Additional tests, such as blood work or lung function tests, provide further evidence, allowing the medical practitioner to refine the probabilities until they are confident in the diagnosis.</p>
+<p>This iterative process is what makes Bayesian analysis so powerful. It doesn’t discard initial beliefs but continuously refines them in light of new evidences. Whether used in medicine, public health, or epidemiology, Bayesian methods ensure that our conclusions are informed, logical, and adaptable as more information becomes available.</p>
 </section>
-<section id="concepts-classical-vs.-bayesian" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="concepts-classical-vs.-bayesian"><span class="header-section-number">1.7</span> Concepts: Classical vs.&nbsp;Bayesian</h2>
+<section id="concepts-classical-vs.-bayesian" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="concepts-classical-vs.-bayesian"><span class="header-section-number">1.5</span> Concepts: Classical vs.&nbsp;Bayesian</h2>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<p><span class="citation" data-cites="mcelreath2020statistical">McElreath (<a href="#ref-mcelreath2020statistical" role="doc-biblioref">2020</a>)</span></p>
+<p>Throughout this course, we will provide relative comparisons of frequentists and Bayesian statistical methods, using examples. Let us now explain some key conceptual aspects of these two approaches.</p>
+<p><span class="citation" data-cites="mcelreath2020statistical">McElreath (<a href="references.html#ref-mcelreath2020statistical" role="doc-biblioref">2020</a>)</span></p>
 <p><strong>History:</strong></p>
 <!--
 history: - ref: McElreath page 13, see the BOX
 -->
-<p>The development of Bayesian statistical inference dates back to the late 18th century, preceding many contemporary methodologies. Its application continued into the 19th century. However, after World War I, statisticians like Sir Ronald Fisher, who opposed Bayesian concepts, reduced its prominence. Fisher’s 1925 statistical handbook made only scant mention of Bayesian analysis, then referred to as “inverse probability,” thus diminishing its influence in mainstream statistics. Throughout the latter half of the 20th century, Bayesian analysis gradually regained acceptance. The advent of novel computational technologies in the 1990s significantly increased the application of Bayesian methods.</p>
+<p>The development of Bayesian statistical inference dates back to the late 18th century, preceding many contemporary methodologies. Its application continued into the 19th century. However, after World War I, statisticians like Sir Ronald Fisher, who disagreed with Bayesian concepts, diminished its implimentations. Fisher’s 1925 statistical handbook mentioned of Bayesian analysis, then referred to as “inverse probability,” thus diminishing its influence in mainstream statistics. Throughout the latter half of the 20th century, Bayesian analysis gradually regained acceptance. In particular, for the advencement of novel computational technologies in the 1990s, which significantly increased the application of Bayesian methods.</p>
 <p><strong>Data and Parameter:</strong></p>
 <!--
 data or parameter? - ref: McElreath page 35, BOX
@@ -412,7 +380,7 @@ data or parameter? - ref: McElreath page 35, BOX
 <!--
 sample size and reliable inference - ref: McElreath page 31, see the BOX
 -->
-<p>There exists a notion that a specific number of observations is necessary for reliable statistical estimates. For example, at least 30 observations are typically required for a Gaussian distribution. This notion is rooted in traditional statistical inference, where methods are validated for large sample sizes, a concept known as asymptotic behavior, which introduces uncertainty with smaller samples.</p>
+<p>There exists a notion that a specific number of observations is necessary for reliable statistical estimates. For example, at least 30 observations are typically required for a Gaussian distribution. This notion is rooted in traditional statistical inference, where methods are validated for large sample sizes, a concept known as asymptotic behavior.</p>
 <p>Conversely, Bayesian estimates remain valid regardless of sample size. While larger samples are advantageous, Bayesian methods provide meaningful results even with limited data. However, they necessitate a careful selection of the “prior,” which significantly influences the final inference. An improperly chosen prior can skew conclusions. Understanding the world demands thoughtful consideration, without resorting to shortcuts.</p>
 <p><strong>Role of Data:</strong></p>
 <!--
@@ -433,20 +401,40 @@ Critics of Bayesian inference often highlight the subjective nature of priors. P
 more - ref: McElreath page 36, BOX
 sampling distributions - ref: McElreath page 63, BOX
 -->
+<section id="example" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="example"><span class="header-section-number">1.5.1</span> Example:</h3>
+<p>To demonstrate where the Bayesian method is clearly more advantageous than the Frequentist method, let’s consider a scenario with limited data. The Bayesian approach can make use of prior knowledge, whereas the Frequentist method relies purely on the data at hand. In situations with small sample sizes or limited data, the Bayesian method can give more insightful results.</p>
+<p>Imagine a scenario where we have a small sample size from a clinical trial and we want to test whether a new drug is effective in treating a rare disease. We have only 5 patients, and the treatment shows that 3 out of 5 patients recovered. The issue here is that the data is very sparse, so relying on a Frequentist approach may lead to an unreliable conclusion because of the small sample size. The p-value might not be informative because small sample sizes lead to high variability. Whereas, Bayesian approach combines the sparse data with prior knowledge, offering more stable and informed results (even we use a non-informative prior).</p>
+<!--
+check R - code 
+-->
+<p>For Frequentist, the proportion test (i.e., using chi-square test) will provide a p-value indicating if the recovery rates are significantly different between the two groups. For this example, we get p-value =0.52. Whereas, the Bayesian approach will provide the posterior distributions for the treatment and placebo recovery rates. Additionally, you will get the probability that the treatment recovery rate is higher than the placebo recovery rate based on the posterior samples.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="fig_M01_freq_bayes.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Key Takeaway: Bayesian Method can incorporate prior knowledge (such as known rates from similar treatments or diseases), improving estimates even with small sample sizes. Instead of a single p-value, Bayesian analysis gives a full posterior distribution, providing a richer interpretation of the uncertainty in the treatment’s effectiveness. Finally, Bayesian approach is less affected by small sample sizes, as it uses prior distributions and provides more stable estimates.</p>
+<p>We will discuss more on the distributional aspect in our next lecture. Before that we explain the Bayesian theorem using probabilities.</p>
 </section>
-<section id="dual-factor-probabilities" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="dual-factor-probabilities"><span class="header-section-number">1.8</span> Dual-Factor Probabilities</h2>
+</section>
+<section id="dual-factor-probabilities" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="dual-factor-probabilities"><span class="header-section-number">1.6</span> Dual-Factor Probabilities</h2>
 <!--
 ref: kruschke, page 101; sec 5.1.2
 -->
-<p><span class="citation" data-cites="kruschke2014doing">Kruschke (<a href="#ref-kruschke2014doing" role="doc-biblioref">2014</a>)</span></p>
+<p><span class="citation" data-cites="kruschke2014doing">Kruschke (<a href="references.html#ref-kruschke2014doing" role="doc-biblioref">2014</a>)</span></p>
 <p>Bayesians do not imagine repetitions of an experiment in order to define and specify a probability. A probability is merely taken as a measure of certainty in a particular belief. Before digging into Bayesian theorem, let’s understand some key concepts. For example, there are many situations in which we are interested in the conjunction of two outcomes. As a specific example for developing these ideas, consider a situation where the probabilities of various combinations of people’s eye color and hair color. The data come from a particular convenience sample (Snee, 1974), and are not meant to be representative of any larger population.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig_M01_eyecolor.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Dual-Factor (Snee, 1974); <span class="citation" data-cites="kruschke2014doing">Kruschke (<a href="#ref-kruschke2014doing" role="doc-biblioref">2014</a>)</span></figcaption>
+<figcaption>Dual-Factor (Snee, 1974); <span class="citation" data-cites="kruschke2014doing">Kruschke (<a href="references.html#ref-kruschke2014doing" role="doc-biblioref">2014</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -455,68 +443,74 @@ ref: kruschke, page 101; sec 5.1.2
 <p>We may be interested in the probabilities of the eye colors overall, collapsed across hair colors. These probabilities are indicated in the right margin of the table, and they are therefore called marginal probabilities. They are computed simply by summing the joint probabilities in each row, to produce the row sums. For example, the marginal probability of green eyes, irrespective of hair color, is 0.11. The joint values indicated in the table do not all sum exactly to the displayed marginal values because of rounding error from the original data.</p>
 <p>We often want to know the probability of one outcome, given that we know another outcome is true. For example, suppose I sample a person at random from the population. Suppose I tell you that this person has blue eyes. Conditional on that information, what is the probability that the person has blond hair (or any other particular hair color)? It is intuitively clear how to compute the answer: We see from the blue-eye row of Table 4.1 that the total (i.e., marginal) amount of blue-eyed people is 0.36, and that 0.16 of the population has blue eyes and blond hair. Therefore, of the 0.36 with blue eyes, the fraction 0.16/0.36 has blond hair. In other words, of the blue-eyed people, 45% have blond hair.We also note that of the blue-eyed people, 0.03/0.36 = 8% have black hair.</p>
 </section>
-<section id="bayes-theorem" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="bayes-theorem"><span class="header-section-number">1.9</span> Bayes’ Theorem</h2>
-<p>Let’s now go back to the example related to diabetes and CKD. Where, I guessed that my blood sugar levels were in control, and now I am interested in testing my guess with a test kit that I bought from a chemist. After testing, I found out that my sugar levels are actually on the right track! Thus, we have two events:</p>
+<section id="bayes-theorem" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="bayes-theorem"><span class="header-section-number">1.7</span> Bayes’ Theorem</h2>
+<p>Let’s now go back to the example related to diabetes, where, a medical practitioner hypothise based on patient’s background history that the patient has a chance of having diabetes.</p>
+<p>Thus, we have two events:</p>
 <ol type="1">
-<li>The hypothesis that my guess (&lt; limit) is correct <span class="math inline">\((G=[+])\)</span>.</li>
-<li>The evidence: Low-level of sugar reading from the test, i.e., &lt; limit <span class="math inline">\((E)\)</span>.</li>
+<li>The hypothesis that medical practitioner’s guess is correct <span class="math inline">\((G=[+])\)</span>.</li>
+<li>The evidence: Blood test showing elevated sugar levels <span class="math inline">\((E)\)</span>.</li>
 </ol>
-<p>Now, given this experimental evidence, how sure am I that my guess about the blood sugar level is accurate?</p>
+<p>Now, given this experimental evidence, how sure are the medical practitioner that their guess about the blood sugar level is accurate?</p>
 <p><span class="math display">\[
 Pr(\text{Guess is correct} | \text{Evidence}) = \text{ ?}
 \]</span></p>
 <p>Hence, the Bayes theorem states:</p>
 <p><span class="math display">\[
 Pr(\text{G=[+]}|\text{E}) = \frac{Pr(\text{G=[+]})\times Pr(\text{E}|\text{G=[+]})}{Pr(\text{G=[+]})\times Pr(\text{E}|\text{G=[+]})+Pr(\text{G=[-]})\times Pr(\text{E}|\text{G=[-]})}
-\]</span> where, <span class="math inline">\(Pr(\text{G=[+]})\)</span> and <span class="math inline">\(Pr(\text{G=[-]})\)</span> are the probabilities of my guess is correct and incorrect respectively, thus we write <span class="math inline">\(Pr(\text{G=[-]}) = 1-Pr(\text{G=[+]})\)</span> or vise versa.</p>
-<p>We clearly see that the degree of belief probability after including the evidence is equal to the probability of guess before incorporating the evidence and probability of the evidence with my guess.</p>
+\]</span></p>
+<p>where, <span class="math inline">\(Pr(\text{G=[+]})\)</span> and <span class="math inline">\(Pr(\text{G=[-]})\)</span> are the probabilities of the medical practitioner’s guess is correct and incorrect respectively, thus we write <span class="math inline">\(Pr(\text{G=[-]}) = 1-Pr(\text{G=[+]})\)</span> or vise versa.</p>
+<p>We clearly see that the degree of belief probability after including the evidence is equal to the probability of guess before incorporating the evidence and probability of the evidence with the medical practitioner’s guess.</p>
+<section id="example-1" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">1.7.1</span> Example</h3>
+<p>To explain the above example we write, <span class="math inline">\(Pr(\text{G=[+]})=0.2\)</span>, as the medical practitioner gussed that there is a 20% chance the patient has diabetes. The complement, the probability that the patient does not have diabetes, is <span class="math inline">\(Pr(\text{G=[-]})=0.8\)</span>.</p>
+<p>Now, let us define the test’s accuracy:</p>
+<ul>
+<li><p>Sensitivity (True Positive Rate or Hit Rate): <span class="math inline">\(Pr(\text{E}|\text{G=[+]})=0.85\)</span>, i.e., 85% of diabetics test positive.</p></li>
+<li><p>Specificity (True Negative Rate): <span class="math inline">\(Pr(\text{E=[-]}|\text{G=[-]})=0.90\)</span>, i.e., 90% of non-diabetics test negative.</p></li>
+<li><p>False Positive Rate (False Alarm): <span class="math inline">\(Pr(\text{E}|\text{G=[-]})=1-Pr(\text{E=[-]}|\text{G=[-]})=1-0.9=0.10\)</span>, i.e., 10% of non-diabetics test positive.</p></li>
+</ul>
+<p>The question is: Given that the test result is positive, how sure is the medical practitioner that the patient truly has diabetes?</p>
+<p>This is expressed as the posterior probability , which we compute using Bayes’ theorem:</p>
+<p><span class="math display">\[
+Pr(\text{G=[+]}|\text{E}) = \frac{(0.85\times 0.2)}{(0.85\times 0.2) + (0.1\times 0.8)} = 0.68
+\]</span></p>
+<p>After observing a positive blood sugar test, the probability that the patient has diabetes increases from 20% to 68%. This means the medical practitioner is now 68% confident in their updated belief that the patient has diabetes.</p>
 </section>
-<section id="problems-use-another-example" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="problems-use-another-example"><span class="header-section-number">1.10</span> Problems – use another example</h2>
 </section>
-<section id="exercises" class="level2" data-number="1.11">
-<h2 data-number="1.11" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.11</span> Exercises</h2>
+<section id="summary" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.8</span> Summary</h2>
+<p>The key concept of this week’s lecture is that Bayesian ways of thinking are inherently more suited to solving real-life problems compared to frequentist/classical approaches, as they allow for the inclusion of prior information in decision-making, providing a clear advantage in calculating inverse probability.</p>
+</section>
+<section id="live-tutorial-and-discussion" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">1.9</span> Live tutorial and discussion</h2>
+<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
+</section>
+<section id="tutorial-exercises" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">1.10</span> Tutorial Exercises</h2>
 <p>Solutions will be provided later after the tutorial.</p>
-<section id="question-1" class="level3" data-number="1.11.1">
-<h3 data-number="1.11.1" class="anchored" data-anchor-id="question-1"><span class="header-section-number">1.11.1</span> Question 1:</h3>
+<section id="question-1" class="level3" data-number="1.10.1">
+<h3 data-number="1.10.1" class="anchored" data-anchor-id="question-1"><span class="header-section-number">1.10.1</span> Question 1:</h3>
 <!--
 ref: krushke page 103
 ref: sahu page 73, sec 4.3
 -->
-<p>Consider a rare disease that is thought to occur in 0.1% of the population. This can be our prior belief that a person selected at random has the disease. Using a particular blood test a physician observes that out of the patients with disease, 99% of the time the test result is positive. This is also known as the hit rate. Suppose 5% of the time when the disease is absent but the test falsely indicates that the disease is present, i.e., the false alarm or false positive rate is 5%.</p>
-<p>Consider, we sample a person at random from the population, administer</p>
-<p>Also assume that 1% of the population without the disease have the same symptom. A randomly chosen person from the population is blood tested and is shown to have the symptom. What is the conditional probability that the person has the disease?</p>
-<p>Here we have the probability of the event that a randomly chosen person has the disease, i.e., <span class="math inline">\(Pr(D)=0.001\)</span>, since 0.1% of the population has the disease and 0.999% will not have the disease, i.e., <span class="math inline">\((1-Pr(D))=Pr(D')=0.999\)</span>.</p>
-<p>We also know that 99% possess symptom, i.e., the probability of the event that a randomly chosen person has the symptom given disease <span class="math inline">\(Pr(S|D)=0.99\)</span>, and the probability of symptom without disease is <span class="math inline">\(Pr(S|D')=0.01\)</span>. Now to get the probability of disease given symptom we can write: <span class="math display">\[
-Pr(\text{disease}|\text{symptom})=Pr(D|S)
-\]</span></p>
-<p><span class="math display">\[
-Pr(D|S) = \frac{Pr(S|D)\times Pr(D)}{Pr(S|D)\times Pr(D) + Pr(S|D')\times Pr(D')}
-\]</span></p>
-<p><span class="math display">\[
-Pr(D|S) = \frac{0.99\times 0.001}{0.99\times 0.001 + 0.01\times 0.999} = 0.09
-\]</span></p>
-<p>which is 9% since the disease is rare (i.e., 0.1% occurrence) and a large portion of the population might have symptom but not the disease.</p>
-<p>A blood test for the person with symptom might provide a further insight, this will be a new evidence. Hence if we are interested to get the posterior probability of having the disease, the prior probability 0.1% would get revised to 9%. Thus we write: <span class="math display">\[
-Pr(\text{disease}|\text{positive})=\frac{0.99\times 0.09}{0.99\times 0.09 + 0.01\times 0.91} = 0.908
-\]</span> This probability is much higher since it combines the evidence from two events, i.e., symptoms and tests. This illustrates an aspect of the Bayesian world view: the prior probability gets continually updated in the light of new evidence.</p>
+<p>Consider a rare disease that is thought to occur in 0.1% of the population. This can be our prior belief that a person selected at random has the disease. Using a particular blood test a physician observes that out of the patients with disease, 99% of the time the test result is positive. Suppose 5% of the time when the disease is absent but the test falsely indicates that the disease is present. Also assume that 1% of the population without the disease have the same symptom. A randomly chosen person from the population is blood tested and is shown to have the symptom. What is the conditional probability that the person has the disease?</p>
+</section>
+<section id="question-2" class="level3" data-number="1.10.2">
+<h3 data-number="1.10.2" class="anchored" data-anchor-id="question-2"><span class="header-section-number">1.10.2</span> Question 2:</h3>
+<p>A medical professional responsible for managing a patient’s medication regimen observes that the patient administers Medication A and Medication B for 30% of the total treatment period each, while Medication C is utilised for 40% of the overall duration. The incidence of side effects is dependent on the specific type of medication being used. In particular, when the patient is using Medication A, they experience side effects during 10% of the time. Furthermore, the probability of experiencing side effects is 3% when taking Medication B, and it is 7% when the patient is on Medication C.</p>
+<p>Given this information:</p>
+<p>(a) The medical professional conducts a thorough evaluation of the patient and finds the presence of side effects that require attention. Given that the side effects associated with medications A and C are notably more than those related to medication B, how does the medical professional identify the probability that the patient has taken medication C? (i.e., what is the probability that the patient took Medication C if experienced side effects?)</p>
+<p>(b) In the scenario where the patient did not report or experience any side effects, what is the probability that the patient actually took Medication B? (i.e., what is the probability that the patient took Medication B if experienced no side effects?)</p>
 </section>
 </section>
-<section id="live-tutorial-and-discussion" class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">1.12</span> Live tutorial and discussion</h2>
-<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
-</section>
-<section id="summary" class="level2" data-number="1.13">
-<h2 data-number="1.13" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.13</span> Summary</h2>
-<p>The key concepts of this week’s lecture are: Bayesian ways of thinking to solve real-life problems are much inherent compared to the frequentist/classical ways.</p>
-</section>
-<section id="preparation-for-week-2" class="level2" data-number="1.14">
-<h2 data-number="1.14" class="anchored" data-anchor-id="preparation-for-week-2"><span class="header-section-number">1.14</span> Preparation for Week 2</h2>
+<section id="preparation-for-week-2" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="preparation-for-week-2"><span class="header-section-number">1.11</span> Preparation for Week 2</h2>
 <p>In week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-gelman2013philosophy" class="csl-entry" role="listitem">
 Gelman, Andrew, and Cosma Rohilla Shalizi. 2013. <span>“Philosophy and the Practice of Bayesian Statistics.”</span> <em>British Journal of Mathematical and Statistical Psychology</em> 66 (1): 8–38.
 </div>
@@ -954,8 +948,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./M01_2.html" class="pagination-link" aria-label="**Bayesian Inference**">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Inference</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M01_2.html" class="pagination-link" aria-label="**Belief-O-Meter: Bayesian Inference**">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Belief-O-Meter: Bayesian Inference</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
