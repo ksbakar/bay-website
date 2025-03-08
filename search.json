@@ -1,0 +1,1903 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bayesian Statistical Methods in Medicine & Health",
+    "section": "",
+    "text": "Preface\nThe application of Bayesian methods in medicine and health sciences has become increasingly vital as we strive to enhance our understanding of improve diagnostic accuracy, and personalise treatment plans. This course is designed to introduce students with a background in medicine and health sciences to the principles and practices of Bayesian statistics, providing a practical framework for applying these methods in their respective fields.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Bayesian methods offer a unique approach to statistical analysis by incorporating prior knowledge and continuously updating the probability of a hypothesis as new evidence becomes available. This dynamic approach is particularly suited to the medical and health sciences, where new data is constantly emerging, and decisions often need to be made in the face of uncertainty.\nThe aim of this course is to explain Bayesian statistics and demonstrate its practical applications in medicine and health sciences. We will start with the foundational concepts, gradually building up to more advanced topics, ensuring a comprehensive understanding that is both accessible and relevant to medical professionals, researchers, and students. Each chapter includes real-world examples, case studies, and practical exercises to reinforce the concepts discussed and illustrate their application in clinical and research settings.\nThroughout the course, we will explore the following key areas:\n\nDegrees of Beliefs, Evidence and Inference: Understanding the basics of Bayesian philosophy and how it differs from traditional frequentist approaches. Learning how to update beliefs in light of new data using Bayes’ theorem. Exploring directed acyclic graph (DAG) in the Bayesian modelling context, with graphical representations of the probabilistic relationships between variables and parameters.\nPrior Distribution, Bayesian Tools and Computation: Exploring the role of prior information and how it influences posterior conclusions. An introduction to computational techniques for approximating complex posterior distributions.\nBayesian Regression: Applying Bayesian methods to regression analysis in clinical and health research. Extending Bayesian linear model into generalised linear model (GLM) setting (e.g., logistic and Poisson regressions), and explanation with DAG. Explore key tactics on the choice for hyper-parameters of prior distributions.\nModels for Clustered Data: Understanding and implementing hierarchical models for complex data structures common in health sciences. Extension of the Bayesian linear mixed models (LMM) into Bayesian generalised linear mixed models (GLMM) with binomial and Poisson distributions.\nBayesian Clinical Trials: Designing and analysing clinical trials using Bayesian methods to make more informed decisions. Discussion of adaptation in clinical trials and relevant sample size calculations using Bayesian methods\nMore Bayesian topics: Bayesian model choice (e.g., Bayes factor, deviance information criterion (DIC), Watanabe-Akaike information criterion (WAIC) and leave-one-out (LOO) cross-validation). Bayesian shrinkage, missing data analysis and measurement errors.\n\nThe field of medicine and health sciences is inherently multidisciplinary, and so too is this course. It is crafted to bridge the gap between statistical theory and medical practice, enabeling healthcare professionals to make more informed, data-driven decisions. Whether you are a student eager to learn about Bayesian statistics, or a biostatistician or clinician or a health professional looking to enhance your research skills, or a researcher aiming to apply Bayesian methods to your work, this course provides the tools and knowledge you need to succeed.\nWe hope that by the end of this journey, you will not only appreciate the power and flexibility of Bayesian methods but also feel confident in applying these techniques to improve patient outcomes and advance medical research.\nWelcome to the world of Bayesian methods in medicine and health sciences. Let’s begin.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Gelman, Andrew, John B Carlin, Hal S Stern, David B Dunson, Aki Vehtari,\nand Donald B Rubin. 2013. Bayesian Data Analysis (3rd Edition).\nChapman; Hall/CRC.\n\n\nGelman, Andrew, and Cosma Rohilla Shalizi. 2013. “Philosophy and\nthe Practice of Bayesian Statistics.” British Journal of\nMathematical and Statistical Psychology 66 (1): 8–38.\n\n\nKruschke, J. 2014. Doing Bayesian Data Analysis: A Tutorial with r,\nJAGS, and Stan. Academic Press.\n\n\nMcElreath, Richard. 2020. Statistical Rethinking: A Bayesian Course\nwith Examples in r and Stan (2nd Edition). Chapman; Hall/CRC.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "M012.html",
+    "href": "M012.html",
+    "title": "2  Bayesian Inference",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "M011.html#learning-objectives",
+    "href": "M011.html#learning-objectives",
+    "title": "1  Degrees of Beliefs and Evidence (Week 1)",
+    "section": "1.1 Learning Objectives",
+    "text": "1.1 Learning Objectives\nThis is a book created from markdown and executable code."
+  },
+  {
+    "objectID": "M011.html#learning-activities",
+    "href": "M011.html#learning-activities",
+    "title": "1  Degrees of Beliefs and Evidence (Week 1)",
+    "section": "1.2 Learning Activities",
+    "text": "1.2 Learning Activities\nSee Knuth (1984) for additional discussion of literate programming."
+  },
+  {
+    "objectID": "M011.html#preparation-for-week-2",
+    "href": "M011.html#preparation-for-week-2",
+    "title": "1  Degrees of Beliefs and Evidence (Week 1)",
+    "section": "1.3 Preparation for Week 2",
+    "text": "1.3 Preparation for Week 2\nasdfa"
+  },
+  {
+    "objectID": "M011.html#introduction",
+    "href": "M011.html#introduction",
+    "title": "1  Degrees of Beliefs and Evidence (Week 1)",
+    "section": "1.4 Introduction",
+    "text": "1.4 Introduction\nasdafs\nVedio\n…\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "M011.html#exercises",
+    "href": "M011.html#exercises",
+    "title": "1  Degrees of Beliefs and Evidence (Week 1)",
+    "section": "1.5 Exercises",
+    "text": "1.5 Exercises\nsdfads"
+  },
+  {
+    "objectID": "M011.html#live-tutorial-and-discussion",
+    "href": "M011.html#live-tutorial-and-discussion",
+    "title": "1  Degrees of Beliefs and Evidence (Week 1)",
+    "section": "1.6 Live tutorial and discussion",
+    "text": "1.6 Live tutorial and discussion\nasdfa"
+  },
+  {
+    "objectID": "M011.html#summary",
+    "href": "M011.html#summary",
+    "title": "1  Degrees of Beliefs and Evidence (Week 1)",
+    "section": "1.7 Summary",
+    "text": "1.7 Summary"
+  },
+  {
+    "objectID": "M011.html#section",
+    "href": "M011.html#section",
+    "title": "1  Degrees of Beliefs and Evidence (Week 1)",
+    "section": "1.8 ",
+    "text": "1.8 \n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "M01_1.html#learning-objectives",
+    "href": "M01_1.html#learning-objectives",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "",
+    "text": "Understand Bayesian philosophy.\nDescribe the motivation of doing Bayesian analysis.\nUnderstand the difference between Bayesian and classical statistical methods.\nInterpret a real-life problem in Bayesian context.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#learning-activities",
+    "href": "M01_1.html#learning-activities",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.2 Learning Activities",
+    "text": "2.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#preparation-for-week-2",
+    "href": "M01_1.html#preparation-for-week-2",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.12 Preparation for Week 2",
+    "text": "2.12 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.\n\n\n\n\nGelman, Andrew, and Cosma Rohilla Shalizi. 2013. “Philosophy and the Practice of Bayesian Statistics.” British Journal of Mathematical and Statistical Psychology 66 (1): 8–38.\n\n\nKruschke, J. 2014. Doing Bayesian Data Analysis: A Tutorial with r, JAGS, and Stan. Academic Press.\n\n\nMcElreath, Richard. 2020. Statistical Rethinking: A Bayesian Course with Examples in r and Stan (2nd Edition). Chapman; Hall/CRC.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#introduction",
+    "href": "M01_1.html#introduction",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.3 Introduction",
+    "text": "2.3 Introduction\n\n\n\n\n\nThomas Bayes (The IMS Bulletin, 1988, vol-17(3), pp.276-278)\n\n\n\n\n\n\nThomas Bayes, who is remembered through the term “Bayesian,” passed away in 1761 without having the chance to formally present or publish his groundbreaking findings. Two years after his death, it was Richard Price who, in 1763, introduced Bayes’ extraordinary work to the Royal Statistical Society. Bayes had been carefully constructing a probabilistic framework to tackle inverse problems. Concurrently, Richard Price (1723–1791) and Pierre-Simon Laplace (1749–1827) played crucial roles in advancing and applying this transformative idea to practical real-world scenarios.\nTo fully understand the Bayesian framework, it is essential to become familiar with several key terms commonly used in Bayesian discussions, such as Bayesian inference, prior, posterior, and Bayesian modeling. Throughout this course, we will gradually explore these fundamental concepts. Before deeply examining these important terms, it is beneficial to consider the Bayesian philosophy.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#exercises",
+    "href": "M01_1.html#exercises",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.9 Exercises",
+    "text": "2.9 Exercises\nSolutions will be provided later after the tutorial.\n\n2.9.1 Question 1:\n\nConsider a rare disease that is thought to occur in 0.1% of the population. This can be our prior belief that a person selected at random has the disease. Using a particular blood test a physician observes that out of the patients with disease, 99% of the time the test result is positive. This is also known as the hit rate. Suppose 5% of the time when the disease is absent but the test falsely indicates that the disease is present, i.e., the false alarm or false positive rate is 5%.\nConsider, we sample a person at random from the population, administer\nAlso assume that 1% of the population without the disease have the same symptom. A randomly chosen person from the population is blood tested and is shown to have the symptom. What is the conditional probability that the person has the disease?\nHere we have the probability of the event that a randomly chosen person has the disease, i.e., \\(Pr(D)=0.001\\), since 0.1% of the population has the disease and 0.999% will not have the disease, i.e., \\((1-Pr(D))=Pr(D')=0.999\\).\nWe also know that 99% possess symptom, i.e., the probability of the event that a randomly chosen person has the symptom given disease \\(Pr(S|D)=0.99\\), and the probability of symptom without disease is \\(Pr(S|D')=0.01\\). Now to get the probability of disease given symptom we can write: \\[\nPr(\\text{disease}|\\text{symptom})=Pr(D|S)\n\\]\n\\[\nPr(D|S) = \\frac{Pr(S|D)\\times Pr(D)}{Pr(S|D)\\times Pr(D) + Pr(S|D')\\times Pr(D')}\n\\]\n\\[\nPr(D|S) = \\frac{0.99\\times 0.001}{0.99\\times 0.001 + 0.01\\times 0.999} = 0.09\n\\]\nwhich is 9% since the disease is rare (i.e., 0.1% occurrence) and a large portion of the population might have symptom but not the disease.\nA blood test for the person with symptom might provide a further insight, this will be a new evidence. Hence if we are interested to get the posterior probability of having the disease, the prior probability 0.1% would get revised to 9%. Thus we write: \\[\nPr(\\text{disease}|\\text{positive})=\\frac{0.99\\times 0.09}{0.99\\times 0.09 + 0.01\\times 0.91} = 0.908\n\\] This probability is much higher since it combines the evidence from two events, i.e., symptoms and tests. This illustrates an aspect of the Bayesian world view: the prior probability gets continually updated in the light of new evidence.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#live-tutorial-and-discussion",
+    "href": "M01_1.html#live-tutorial-and-discussion",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.10 Live tutorial and discussion",
+    "text": "2.10 Live tutorial and discussion\nThe final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#summary",
+    "href": "M01_1.html#summary",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.11 Summary",
+    "text": "2.11 Summary\nThe key concepts of this week’s lecture are: Bayesian ways of thinking to solve real-life problems are much inherent compared to the frequentist/classical ways.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#section",
+    "href": "M01_1.html#section",
+    "title": "1  Degrees of Beliefs and Evidence (Week 1)",
+    "section": "1.7 ",
+    "text": "1.7"
+  },
+  {
+    "objectID": "M01_2.html#section",
+    "href": "M01_2.html#section",
+    "title": "2  Bayesian Inference",
+    "section": "2.15 ",
+    "text": "2.15 \n\n\n\n\nKruschke, J. 2014. Doing Bayesian Data Analysis: A Tutorial with r, JAGS, and Stan. Academic Press.\n\n\nMcElreath, Richard. 2020. Statistical Rethinking: A Bayesian Course with Examples in r and Stan (2nd Edition). Chapman; Hall/CRC.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#learning-objectives",
+    "href": "M01_2.html#learning-objectives",
+    "title": "2  Bayesian Inference",
+    "section": "",
+    "text": "Describe Bayesian inference using probability distributions.\nUnderstand Bayesian learning.\nDifferentiate between DAG using Bayesian model and causal DAG.\nFormulate examples.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#learning-activities",
+    "href": "M01_2.html#learning-activities",
+    "title": "2  Bayesian Inference",
+    "section": "2.2 Learning Activities",
+    "text": "2.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#preparation-for-week-3",
+    "href": "M01_2.html#preparation-for-week-3",
+    "title": "2  Bayesian Inference",
+    "section": "2.14 Preparation for Week 3",
+    "text": "2.14 Preparation for Week 3\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#introduction",
+    "href": "M01_2.html#introduction",
+    "title": "2  Bayesian Inference",
+    "section": "2.4 Introduction",
+    "text": "2.4 Introduction\n\nAssessing a drug’s impact on a patient’s condition is inherently complex due to the difficulty of isolating individual system elements for examination. The outcomes result from a complex system of interacting components. In clinical trials, variables such as diet and metabolic variability, which are largely uncontrollable, influence the results. Statistical inference offers a systematic framework to evaluate unpredictable outcomes through data analysis. Probability models are utilized because our incomplete knowledge precludes certain prediction of outcomes. When assessing a drug’s effectiveness, one might believe that it benefits 50% of patients with a given condition, yet identifying the precise 50% is hindered by our limited understanding of the disease or underlying biology. Statistical inference serves to test this hypothesis using trial data. In Bayesian inference, the data is directly observed and the parameters are treated as random like a probabilistic variable.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#exercises",
+    "href": "M01_2.html#exercises",
+    "title": "2  Bayesian Inference",
+    "section": "2.11 Exercises",
+    "text": "2.11 Exercises\nsdfads\nhow to choose an appropriate likelihood? ref -Lambert, page 71, sec: 4.6, 4.8\nexplain conjugacy - lambert, use normal dist with known mu\nnormal model with known variance\n\n2.11.1 Poisson Model\n\n\n\n2.11.2 Exponential Model",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#live-tutorial-and-discussion",
+    "href": "M01_2.html#live-tutorial-and-discussion",
+    "title": "2  Bayesian Inference",
+    "section": "2.12 Live tutorial and discussion",
+    "text": "2.12 Live tutorial and discussion\nasdfa\nTalk about 95% interval: ref: McElreath page 56, BOX",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#summary",
+    "href": "M01_2.html#summary",
+    "title": "2  Bayesian Inference",
+    "section": "2.13 Summary",
+    "text": "2.13 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#learning-objectives",
+    "href": "M02_1.html#learning-objectives",
+    "title": "3  Prior and Posterior Distributions",
+    "section": "",
+    "text": "Understand the importance of prior distributions.\nCalculate posterior using Bayesian exact inference.\nDistinguse between different types of Prior distributions\nFormulate examples.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#learning-activities",
+    "href": "M02_1.html#learning-activities",
+    "title": "3  Prior and Posterior Distributions",
+    "section": "3.2 Learning Activities",
+    "text": "3.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#introduction",
+    "href": "M02_1.html#introduction",
+    "title": "3  Prior and Posterior Distributions",
+    "section": "3.4 Introduction",
+    "text": "3.4 Introduction\nIn Bayesian statistics, integrating prior distributions is fundamental for incorporating existing knowledge about parameters ahead of data analysis. This approach leverages historical data and domain expertise, playing a vital role in informed decision-making. Priors mitigate overfitting by discouraging unlikely parameter values, which is particularly beneficial when dealing with sparse or noisy data. They are essential for quantifying uncertainty, thereby offering deeper insights into the variability of parameters. In cases of limited or incomplete data, priors are crucial for generating stable estimates. They enhance model-building flexibility by accommodating various parameter types and clarifying the distinction between prior knowledge and new data. For example, when evaluating the probability of rare events, a well-informed prior, such as a Beta distribution, helps avoid unrealistic predictions, even with small sample sizes. Once the prior distribution is defined, it merges with the likelihood function of the observed data to yield the posterior distribution. This posterior represents the updated understanding of parameters after data consideration. Utilizing prior knowledge aids the data analysis process, leading to more precise parameter estimates, especially in scenarios with sparse or noisy data. Overfitting is mitigated through restrictions on plausible parameter values, refining parameter estimates with insight from prior distributions. Furthermore, the posterior distribution offers a comprehensive view of parameter uncertainty, providing clearer insights into their variability. Incorporating priors in limited data situations is essential as they stabilize estimates and bolster result robustness. This flexibility enables analysts to accommodate diverse parameter types while distinctly separating prior beliefs from data-informed updates. For instance, in estimating rare event probabilities, a well-chosen prior, like a Beta distribution, ensures realistic posterior probabilities even with small sample sizes.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#exercises",
+    "href": "M02_1.html#exercises",
+    "title": "4  Prior and Posterior Distributions",
+    "section": "4.12 Exercises",
+    "text": "4.12 Exercises\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#live-tutorial-and-discussion",
+    "href": "M02_1.html#live-tutorial-and-discussion",
+    "title": "4  Prior and Posterior Distributions",
+    "section": "4.13 Live tutorial and discussion",
+    "text": "4.13 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#summary",
+    "href": "M02_1.html#summary",
+    "title": "4  Prior and Posterior Distributions",
+    "section": "4.14 Summary",
+    "text": "4.14 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#section",
+    "href": "M02_1.html#section",
+    "title": "3  Directed Acyclic Graph (DAG) (Week 3)",
+    "section": "3.7 ",
+    "text": "3.7"
+  },
+  {
+    "objectID": "M02_1.html#preparation-for-week-2",
+    "href": "M02_1.html#preparation-for-week-2",
+    "title": "4  Directed Acyclic Graph (DAG)",
+    "section": "4.12 Preparation for Week 2",
+    "text": "4.12 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course."
+  },
+  {
+    "objectID": "M02_2.html#learning-objectives",
+    "href": "M02_2.html#learning-objectives",
+    "title": "4  Tools and Generative Models",
+    "section": "",
+    "text": "Create generative models\nUnderstand traceable and untraceable solutions\nExplain the convergence of MCMC.\nConduct prior predictive check.\nConduct posterior predictive check.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#learning-activities",
+    "href": "M02_2.html#learning-activities",
+    "title": "4  Tools and Generative Models",
+    "section": "4.2 Learning Activities",
+    "text": "4.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#introduction",
+    "href": "M02_2.html#introduction",
+    "title": "4  Tools and Generative Models",
+    "section": "4.4 Introduction",
+    "text": "4.4 Introduction\nasdafs\nWrite equations without marginal likelihood and introduce the proportional sign …",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#exercises",
+    "href": "M02_2.html#exercises",
+    "title": "4  Tools and Generative Models",
+    "section": "4.9 Exercises",
+    "text": "4.9 Exercises\nhttps://m-clark.github.io/easy-bayes/shinystan.html\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#live-tutorial-and-discussion",
+    "href": "M02_2.html#live-tutorial-and-discussion",
+    "title": "4  Tools and Generative Models",
+    "section": "4.10 Live tutorial and discussion",
+    "text": "4.10 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#summary",
+    "href": "M02_2.html#summary",
+    "title": "4  Tools and Generative Models",
+    "section": "4.11 Summary",
+    "text": "4.11 Summary\nasddf",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#section",
+    "href": "M02_2.html#section",
+    "title": "4  Tools and Generative Models (Week 4)",
+    "section": "4.7 ",
+    "text": "4.7"
+  },
+  {
+    "objectID": "M02_2.html#preparation-for-week-2",
+    "href": "M02_2.html#preparation-for-week-2",
+    "title": "4  Tools and Generative Models",
+    "section": "4.12 Preparation for Week 2",
+    "text": "4.12 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.\n\n\n\n\nBernardo, JM, MJ Bayarri, JO Berger, AP Dawid, D Heckerman, AFM Smith, and M West. 2007. “Generative or Discriminative? Getting the Best of Both Worlds.” Bayesian Statistics 8 (3): 3–24.\n\n\nGelman, Andrew, John B Carlin, Hal S Stern, David B Dunson, Aki Vehtari, and Donald B Rubin. 2013. Bayesian Data Analysis (3rd Edition). Chapman; Hall/CRC.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#learning-objectives",
+    "href": "M03_1.html#learning-objectives",
+    "title": "5  Bayesian Regressions - I",
+    "section": "",
+    "text": "Understand Bayesian model and causality\nExplain the terms Estimand, Estimator & Estimate\nUnderstand the difference between Bayesian and classical Regression.\nInterpret a real-life problem in Bayesian context.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#learning-activities",
+    "href": "M03_1.html#learning-activities",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.2 Learning Activities",
+    "text": "5.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#introduction",
+    "href": "M03_1.html#introduction",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.3 Introduction",
+    "text": "5.3 Introduction\nasdafs\n\nIn this lecture, we shall explore the application of Bayesian inference methodologies to linear regression models. We will begin by examining the utilization of Bayesian statistics within the context of simple linear regression models and subsequently expand these insights to encompass multiple linear regression models. Through this exploration, we will find that employing the non-informative prior results in posterior means, posterior standard deviations, and credible intervals for the coefficients that are consistent with those derived from frequentist ordinary least squares (OLS) linear regression models.\nWe will start with how to develop a Bayesian model based on causality, or unknown causality with understanding of estimand, estimator and estimate. We wil also explore how DAG can help us to build the model.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#exercises",
+    "href": "M03_1.html#exercises",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.9 Exercises",
+    "text": "5.9 Exercises\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#live-tutorial-and-discussion",
+    "href": "M03_1.html#live-tutorial-and-discussion",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.10 Live tutorial and discussion",
+    "text": "5.10 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#summary",
+    "href": "M03_1.html#summary",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.11 Summary",
+    "text": "5.11 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#section",
+    "href": "M03_1.html#section",
+    "title": "5  Bayesian Regressions - Part 1 (Week 5)",
+    "section": "5.7 ",
+    "text": "5.7"
+  },
+  {
+    "objectID": "M03_1.html#preparation-for-week-2",
+    "href": "M03_1.html#preparation-for-week-2",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.12 Preparation for Week 2",
+    "text": "5.12 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#learning-objectives",
+    "href": "M03_2.html#learning-objectives",
+    "title": "7  Bayesian Regressions - II",
+    "section": "",
+    "text": "Understand the Bayesian GLM\nUnderstand the difference between Bayesian and classical GLM.\nFormulate problems and solutions using Bayesian GLM.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#learning-activities",
+    "href": "M03_2.html#learning-activities",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.2 Learning Activities",
+    "text": "7.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#introduction",
+    "href": "M03_2.html#introduction",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.3 Introduction",
+    "text": "7.3 Introduction\nasdafs",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#exercises",
+    "href": "M03_2.html#exercises",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.6 Exercises",
+    "text": "7.6 Exercises\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#live-tutorial-and-discussion",
+    "href": "M03_2.html#live-tutorial-and-discussion",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.7 Live tutorial and discussion",
+    "text": "7.7 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#summary",
+    "href": "M03_2.html#summary",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.8 Summary",
+    "text": "7.8 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#section",
+    "href": "M03_2.html#section",
+    "title": "6  Bayesian Regressions - Part 2 (Week 6)",
+    "section": "6.7 ",
+    "text": "6.7"
+  },
+  {
+    "objectID": "M03_2.html#preparation-for-week-2",
+    "href": "M03_2.html#preparation-for-week-2",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.9 Preparation for Week 2",
+    "text": "7.9 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#learning-objectives",
+    "href": "M04_1.html#learning-objectives",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "",
+    "text": "Explain clusterd data.\nDescribe hierarchical or multilevel Models.\nFit Bayesian linear mixed models.\nInterpret a real-life problem in Bayesian context.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#learning-activities",
+    "href": "M04_1.html#learning-activities",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "8.2 Learning Activities",
+    "text": "8.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#introduction",
+    "href": "M04_1.html#introduction",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "8.3 Introduction",
+    "text": "8.3 Introduction\nasdafs\nhttps://m-clark.github.io/mixed-models-with-R/bayesian.html\nMultilevel structure : https://bookdown.org/marklhc/notes_bookdown/hierarchical-multilevel-models.html\nhttps://m-clark.github.io/easy-bayes/rstanarm-mixed-model.html",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#exercises",
+    "href": "M04_1.html#exercises",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "8.7 Exercises",
+    "text": "8.7 Exercises\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#live-tutorial-and-discussion",
+    "href": "M04_1.html#live-tutorial-and-discussion",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "8.8 Live tutorial and discussion",
+    "text": "8.8 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#summary",
+    "href": "M04_1.html#summary",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "8.9 Summary",
+    "text": "8.9 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#section",
+    "href": "M04_1.html#section",
+    "title": "7  Clustered Data Modelling - Part 1 (Week 7)",
+    "section": "7.7 ",
+    "text": "7.7"
+  },
+  {
+    "objectID": "M04_1.html#preparation-for-week-2",
+    "href": "M04_1.html#preparation-for-week-2",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "8.10 Preparation for Week 2",
+    "text": "8.10 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#learning-objectives",
+    "href": "M04_2.html#learning-objectives",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "",
+    "text": "Construct multilevel models for binary outcome.\nUnderstand the difference between Bayesian and classical methods.\nInterpret a real-life problem in Bayesian context.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#learning-activities",
+    "href": "M04_2.html#learning-activities",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "9.2 Learning Activities",
+    "text": "9.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#introduction",
+    "href": "M04_2.html#introduction",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "9.3 Introduction",
+    "text": "9.3 Introduction\nasdafs\nMarginal effects:\nref: https://joshuawiley.com/brmsmargins/articles/fixed-effects-marginaleffects.html\nref: https://cran.r-project.org/web/packages/brmsmargins/vignettes/mixed-effects-marginaleffects.html",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#exercises",
+    "href": "M04_2.html#exercises",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "9.6 Exercises",
+    "text": "9.6 Exercises\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#live-tutorial-and-discussion",
+    "href": "M04_2.html#live-tutorial-and-discussion",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "9.7 Live tutorial and discussion",
+    "text": "9.7 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#summary",
+    "href": "M04_2.html#summary",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "9.8 Summary",
+    "text": "9.8 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#section",
+    "href": "M04_2.html#section",
+    "title": "8  Clustered Data Modelling - Part 2 (Week 8)",
+    "section": "8.7 ",
+    "text": "8.7"
+  },
+  {
+    "objectID": "M04_2.html#preparation-for-week-2",
+    "href": "M04_2.html#preparation-for-week-2",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "9.9 Preparation for Week 2",
+    "text": "9.9 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#bayesian-philosophy",
+    "href": "M01_1.html#bayesian-philosophy",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.4 Bayesian Philosophy",
+    "text": "2.4 Bayesian Philosophy\n\n\nBayesian philosophy revolves around the notion of degrees of belief to elucidate scientific reasoning. This concept is emphasized here for frequent reference throughout the discourse. But what do “degrees of belief” entail? They can be interpreted in terms of probability. For example, this notion could pertain to the scientific understanding of the probability of developing chronic kidney disease. Consequently, “degrees of belief” signify the fluctuation in the probability of having chronic kidney disease as understanding of the disease evolves. How does this understanding progress? It progresses through the acquisition of new data or information.\nLet’s explain a bit more:\n\n\n\n\n\nBayesian World (Philosophy)\n\n\n\n\nDiabetes acts as a risk factor for chronic ailments such as chronic kidney disease (CKD) and is also a persistent condition by itself. In a hypothetical scenario, an individual believes their blood sugar levels are well-regulated and confirms this belief using a home testing kit from a pharmacy, which indicates that the levels are indeed satisfactory. The question emerges: How reliable is this assumption for the individual? Quantitatively assessing this involves assigning odds. In the frequentist interpretation, which considers probability as a long-run frequency requiring numerous data points, this question lacks pertinence. This is where classical or frequentist views encounter constraints. Conversely, the Bayesian interpretation conceptualizes probability as a subjective measure of belief that adjusts based on existing knowledge and evidence. This approach, encapsulated in the concept that “evidence changes probabilities,” acknowledges that collective evidence influences beliefs. Bayesian inference, which provides a departure from classical thought, will be examined in the forthcoming lecture.\nGelman and Shalizi (2013)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#classical-vs.-bayesian",
+    "href": "M01_1.html#classical-vs.-bayesian",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.5 Classical vs. Bayesian",
+    "text": "2.5 Classical vs. Bayesian\n\n\nMcElreath (2020)\nHistory:\nThe development of Bayesian statistical inference dates back to the late 18th century, preceding many contemporary methodologies. Its application continued into the 19th century. However, after World War I, statisticians like Sir Ronald Fisher, who opposed Bayesian concepts, reduced its prominence. Fisher’s 1925 statistical handbook made only scant mention of Bayesian analysis, then referred to as “inverse probability,” thus diminishing its influence in mainstream statistics. Throughout the latter half of the 20th century, Bayesian analysis gradually regained acceptance. The advent of novel computational technologies in the 1990s significantly increased the application of Bayesian methods.\n\nData and Parameter:\nData represents known elements, whereas parameters are unknown quantities inferred from data. Within the Bayesian framework, this distinction becomes less clear; a variable may be either observed or unobserved, yet it is governed by the same distribution function. Consequently, an assumption can serve as a “likelihood” or a “prior” depending on the context, without altering the model. This connection between certainty (data) and uncertainty (parameters) facilitates the management of measurement errors and missing data in modeling.\n\nReliable Inference:\nThere exists a notion that a specific number of observations is necessary for reliable statistical estimates. For example, at least 30 observations are typically required for a Gaussian distribution. This notion is rooted in traditional statistical inference, where methods are validated for large sample sizes, a concept known as asymptotic behavior, which introduces uncertainty with smaller samples.\nConversely, Bayesian estimates remain valid regardless of sample size. While larger samples are advantageous, Bayesian methods provide meaningful results even with limited data. However, they necessitate a careful selection of the “prior,” which significantly influences the final inference. An improperly chosen prior can skew conclusions. Understanding the world demands thoughtful consideration, without resorting to shortcuts.\n\nRole of Data:\nThe distinctions between Bayesian and non-Bayesian methodologies are notable, yet these differences can sometimes overshadow their underlying commonalities. In many Bayesian and non-Bayesian models, the most critical assumptions typically concern the likelihood functions and their connections with the parameters. These assumptions guide the inferences drawn from each dataset. As the sample size grows, the significance of the likelihood increases. This shared emphasis on likelihood clarifies why Bayesian and non-Bayesian inferences frequently yield similar results.\n\nFurthermore, a common misunderstanding regarding Bayesian data analysis and inference is the belief that they are exclusively defined by Bayes’ theorem. Any inferential method employing probability theory incorporates Bayes’ theorem. Numerous examples labeled as “Bayesian” often lack distinctive attributes and instead rely on observed data frequencies, resembling non-Bayesian methods. The distinctiveness of Bayesian techniques lies in their application of Bayes’ theorem to measure the uncertainty associated with theoretical constructs not directly observable, such as parameters and models. Both methodologies can produce robust inferences, although they are grounded in different principles and entail unique trade-offs.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#bayes-theorem",
+    "href": "M01_1.html#bayes-theorem",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.8 Bayes’ Theorem",
+    "text": "2.8 Bayes’ Theorem\nLet’s now go back to the example related to diabetes and CKD. Where, I guessed that my blood sugar levels were in control, and now I am interested in testing my guess with a test kit that I bought from a chemist. After testing, I found out that my sugar levels are actually on the right track! Thus, we have two events:\n\nThe hypothesis that my guess (&lt; limit) is correct \\((G=[+])\\).\nThe evidence: Low-level of sugar reading from the test, i.e., &lt; limit \\((E)\\).\n\nNow, given this experimental evidence, how sure am I that my guess about the blood sugar level is accurate?\n\\[\nPr(\\text{Guess is correct} | \\text{Evidence}) = \\text{ ?}\n\\]\nHence, the Bayes theorem states:\n\\[\nPr(\\text{G=[+]}|\\text{E}) = \\frac{Pr(\\text{G=[+]})\\times Pr(\\text{E}|\\text{G=[+]})}{Pr(\\text{G=[+]})\\times Pr(\\text{E}|\\text{G=[+]})+Pr(\\text{G=[-]})\\times Pr(\\text{E}|\\text{G=[-]})}\n\\] where, \\(Pr(\\text{G=[+]})\\) and \\(Pr(\\text{G=[-]})\\) are the probabilities of my guess is correct and incorrect respectively, thus we write \\(Pr(\\text{G=[-]}) = 1-Pr(\\text{G=[+]})\\) or vise versa.\nWe clearly see that the degree of belief probability after including the evidence is equal to the probability of guess before incorporating the evidence and probability of the evidence with my guess.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#the-maze",
+    "href": "M01_1.html#the-maze",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.5 The Maze",
+    "text": "2.5 The Maze\n\nBayesian analysis is a logical framework that helps update our beliefs based on new information. It allows us to reason about uncertainty by combining what we already know with evidence we gather to refine our understanding.\nA helpful analogy is navigating a maze with an incomplete map. Each step provides new clues, and with every clue, your understanding of the maze improves. By continuously updating your knowledge with new information, you eventually find the exit. This is how Bayesian analysis works—it continuously updates our understanding as more evidence comes in.\nTo see this in practice, consider a doctor diagnosing a patient’s illness. Initially, the doctor forms a hypothesis based on the patient’s symptoms and medical history. For instance, they might think there’s a 60% chance of a respiratory infection, a 20% chance of asthma, and a 20% chance of another condition. This initial estimate represents the prior belief. The doctor then orders a chest X-ray, which reveals signs typically associated with respiratory infections. This new evidence increases the likelihood of that diagnosis compared to the alternatives. By combining the initial belief with the X-ray results, the doctor updates the probabilities, now thinking there’s an 80% chance of a respiratory infection, 10% for asthma, and 10% for something else. Additional tests, such as blood work or lung function tests, provide further evidence, allowing the doctor to refine the probabilities until they are confident in the diagnosis.\nThis iterative process is what makes Bayesian analysis so powerful. It doesn’t discard initial beliefs but continuously refines them in light of new evidence. Whether used in medicine, machine learning, or everyday decisions, Bayesian methods ensure that our conclusions are informed, logical, and adaptable as more information becomes available.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#dual-factor-frequency-bayes-rule",
+    "href": "M01_1.html#dual-factor-frequency-bayes-rule",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.6 Dual-Factor Frequency (Bayes’ Rule)",
+    "text": "2.6 Dual-Factor Frequency (Bayes’ Rule)\n\nKruschke (2014)"
+  },
+  {
+    "objectID": "M01_2.html#bayesian-inference",
+    "href": "M01_2.html#bayesian-inference",
+    "title": "3  Bayesian Inference",
+    "section": "3.4 Bayesian Inference",
+    "text": "3.4 Bayesian Inference\n\nWe have explained Bayes’ rule in our previous lecture, now we will see how Bayes rule can be structured for model development using parameter and data. A model of data specifies the probability distribution of particular data given the model’s structure and parameter values. Let us denote \\(\\theta\\) as the parameter and \\(D\\) as data. Hence, we write a model using the data likelihood \\(p(D|\\theta)\\) and prior distribution of the model parameter \\(\\theta\\):\n\\[\\begin{align}\np(D|\\theta) \\times p(\\theta)\n\\end{align}\\]\nHence, Bayes rule can be used to understand the parameter values, given the data,, i.e., \\[\\begin{align}\np(\\theta|D)\n\\end{align}\\]\nThus, using the Dual-Factor table explained in previous lecture, we can write\n\n\n\n\n\nData-Parameter; Kruschke (2014)\n\n\n\n\nEach cell of the table holds the joint probability density of the specific combination of parameter value \\(\\theta\\) and data value \\(D\\), denoted \\(p(D, \\theta)\\), and which we know can be algebraically re-expressed as \\(p(D|\\theta)\\times p(\\theta)\\). Thus, we write the Bayes rule for data and parameter model as:\n\\[\\begin{align}\np(\\theta|D) &= \\frac{p(D|\\theta)\\times p(\\theta)}{p(D)};\n\\end{align}\\] where, \\[\\begin{align}\np(D) &= \\sum_{\\theta^*} p(D|\\theta^*) p(\\theta^*); \\quad \\text{ if discrete}; \\\\\np(D) &= \\int p(D|\\theta^*) p(\\theta^*) \\text{d}\\theta^*; \\quad \\text{ if continuous};\n\\end{align}\\]\nHere, \\(p(\\theta)\\) is the prior information about \\(\\theta\\) without observing data; \\(p(D|\\theta)\\) is the likelihood, i.e., data could be generated with model parameter \\(\\theta\\); and \\(p(D)\\) is the marginal likelihood obtained from data by averaging across all possible parameters.\nThe posterior distribution of \\(\\theta\\) is:\n\\[\\begin{align}\np(\\theta|D) = \\text{ Credibility of }\\theta\\text{ based on data and evidence}\n\\end{align}\\]\nThe posterior probability distribution \\(p(\\theta|D)\\) is the main goal of Bayesian inference. The posterior distribution summarises our uncertainty over the value of a parameter. If the distribution is narrower, then this indicates that we have greater confidence in our estimates of the parameter’s value. More narrow posterior distributions can be obtained by collecting more data.\nWe will explore more with examples on obtaining posterior distributions of the model parameter \\(\\theta\\) for different models, e.g., binomial distribution.\n\n3.4.1 Binomial Model\n\nWe can write Binomial model with parameters \\(\\theta\\) and \\(n\\) trials as \\[\\begin{align}\np(y|\\theta) = \\begin{pmatrix}n\\\\y \\end{pmatrix} \\theta^y (1-\\theta)^{n-y}\n\\end{align}\\] If we consider a Beta prior distribution for \\(\\theta\\) with hyper-parameters \\(a\\) and \\(b\\), the write the distribution as: \\[\\begin{align}\np(\\theta) = \\frac{\\theta^{a-1}(1-\\theta)^{b-1}}{B(a,b)}\n\\end{align}\\] where, \\(B(a,b)=\\frac{\\Gamma(a)\\Gamma(b)}{\\Gamma(a+b)}\\) is the beta function. Thus, using Bayes theorem we write \\[\\begin{align}\np(\\theta|y) = \\frac{\\begin{pmatrix}n\\\\y \\end{pmatrix} \\theta^y (1-\\theta)^{n-y}\\times \\theta^{a-1}(1-\\theta)^{b-1}}{p(y)\\times B(a,b)}\n\\end{align}\\] With some simple calculations, we can write the marginal likelihood as: \\[\\begin{align}\np(y) = \\begin{pmatrix}n\\\\y \\end{pmatrix}\\frac{B(y+a,n-y+b)}{B(a,b)}\n\\end{align}\\] Hence, we get the analytical form of the posterior distribution of \\(\\theta\\) as: \\[\\begin{align}\np(\\theta|y) = \\frac{\\theta^{y+a-1}(1-\\theta)^{n-y+b-1}}{B(y+a,n-y+b)}\n\\end{align}\\] which follows a Beta distribution with parameters \\((a+y)\\) and \\((b+n-y)\\).\n\n\n3.4.2 Odds\nWe can also think the question in terms of odds, such as what odds should I give for my guess? To define odds we can write\n\\[\n\\text{Odds of an event} = \\frac{Pr(\\text{event})}{1-Pr(\\text{event})}\n\\] Thus, to reflect the CKD example using Bayes theorem we write:\n\\[\n\\text{Odds}(\\text{G=[+]}|\\text{E}) = \\text{Odds}(\\text{G}) \\times \\frac{Pr(\\text{E}|\\text{G=[+]})}{Pr(\\text{E}|\\text{G=[-]})}\n\\] where\n\\[\n\\text{Odds}(\\text{G}) = \\frac{Pr(\\text{G=[+]})}{Pr(\\text{G=[-]})}\n\\]\nand \\(\\frac{Pr(\\text{E}|\\text{G=[+]})}{Pr(\\text{E}|\\text{G=[-]})}\\) is the ratio of evidence under my guess \\(\\text{G}\\).\nThis reflects \\[\n\\text{updated odds} = \\text{initial odds}\\times \\text{relative explanatory power}\n\\] In the end we are always going back to the term evidence changes the outcome, which could be probability or odds or any other outcome of interest.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#bayesian-updating",
+    "href": "M01_2.html#bayesian-updating",
+    "title": "2  Bayesian Inference",
+    "section": "2.8 Bayesian Updating",
+    "text": "2.8 Bayesian Updating\n\n\n\nSuppose we observe some data \\(D_1\\) and update our posterior belief \\(p(\\theta|D_1)\\) based on prior \\(p(\\theta)\\). Now, if we observe some more data, say \\(D_2\\), then can update our belief from \\(p(\\theta|D_1)\\) to \\(p(\\theta|D_1,D_2)\\). We can explain the Bayesian updating using a step-by-step process.\nFor example, we want to know the more about the severe side effects of an antibacterial drug. Here, we are considering the variable as either the drug has side effect or not. Initially, we might not know anything about the drug, in this case we do not have a prior information. Now we start to observe or collect data and can see the following patterns of the probabilities related to side effects.\n\n\n\n\n\nBayesian Learning, McElreath (2020)\n\n\n\n\nThis Bayesian learning process for \\(\\theta\\) is very intuitive, where we can write \\[\\begin{align}\np(\\theta|D_1,D_2) = \\frac{p(D_1,D_2|\\theta)\\times p(\\theta)}{\\sum_{\\theta^*}p(D_1,D_2|\\theta^*)\\times p(\\theta^*)}\n\\end{align}\\] If we consider \\(D_1\\) and \\(D_2\\) are independent, then \\[\\begin{align}\np(D_1,D_2|\\theta)=p(D_1|\\theta)p(D_2|\\theta)\n\\end{align}\\] This leads to a very simple formation of considering \\[\\begin{align}\np(\\theta|D_2,D_1) = \\frac{p(D_2|\\theta)\\times p(\\theta|D_1)}{\\sum_{\\theta^*}p(D_2,D_1|\\theta^*)\\times p(\\theta^*)}\n\\end{align}\\] This implies, under the independence condition, the order of Bayesian updating has no effect on the final posterior.\nGoing back to Figure above: we will get same final result (i.e., posterior probability of side effect) for considering all six observations.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#prior-distribution",
+    "href": "M01_2.html#prior-distribution",
+    "title": "3  Bayesian Inference",
+    "section": "3.6 Prior Distribution",
+    "text": "3.6 Prior Distribution\nasdf\nconjugacy explain with binomial, poisson distribution exampels. ??\nwhy conjugacy is useful - ref: lambert, page 202, sec:9.3 (beta-bino) and 9.4 (gamma-poiss) and 9.5 (normal-known sigma)\nnon-conjugacy ref:???"
+  },
+  {
+    "objectID": "M01_2.html#more-insights-into-prior-distribution",
+    "href": "M01_2.html#more-insights-into-prior-distribution",
+    "title": "3  Bayesian Inference",
+    "section": "3.8 More Insights into Prior Distribution",
+    "text": "3.8 More Insights into Prior Distribution\n\n\n3.8.1 Informative Prior Distribution\n\n\n\n3.8.2 Non-informative Prior Distribution\n\n\n\n3.8.3 Weakly Informative Prior Distribution\n\n\n\n3.8.4 Eliciting Prior Distribution\n\n\n\n3.8.5 Prior Sensitivity",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#exercises-1",
+    "href": "M01_1.html#exercises-1",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.10 Exercises",
+    "text": "2.10 Exercises\nsdfads\nref: sahu page 73, sec 4.3"
+  },
+  {
+    "objectID": "M02_1.html#dag",
+    "href": "M02_1.html#dag",
+    "title": "4  Directed Acyclic Graph (DAG)",
+    "section": "4.4 DAG",
+    "text": "4.4 DAG\n\nThe directed acyclic graph (DAG) is a graphical representation that illustrates the relationships and dependencies between different variables in a model. In a DAG, nodes represent variables, and directed edges indicate dependency relationships, pointing from one node to another. The acyclic nature ensures that there are no closed loops, maintaining a clear directionality of influence from parent nodes to child nodes.\nIn the context of Bayesian modeling, DAGs are crucial as they visually encode the conditional dependencies between variables and model parameters, which enables a structured and intuitive approach to understand uncertainty and dependencies from the model.\nUsing the Binomial model example, we can write a DAG for the Bayesian model as:\n\n\n\n\n\n graph LR\n      A[\"$$x^2$$\"] --&gt;|\"$$\\sqrt{x+3}$$\"| B(\"$$\\frac{1}{2}$$\")\n      A --&gt;|\"$$\\overbrace{a+b+c}^{\\text{note}}$$\"| C(\"$$\\pi r^2$$\")\n      B --&gt; D(\"$$x = \\begin{cases} a &\\text{if } b \\\\ c &\\text{if } d \\end{cases}$$\")\n      C --&gt; E(\"$$x(t)=c_1\\begin{bmatrix}-\\cos{t}+\\sin{t}\\\\ 2\\cos{t} \\end{bmatrix}e^{2t}$$\")",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Directed Acyclic Graph (DAG)**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#estimand-estimator-estimateestimation",
+    "href": "M02_1.html#estimand-estimator-estimateestimation",
+    "title": "4  Directed Acyclic Graph (DAG)",
+    "section": "4.6 Estimand, Estimator & Estimate/Estimation",
+    "text": "4.6 Estimand, Estimator & Estimate/Estimation\nasdf\nref: https://bookdown.org/paul/applied-causal-analysis/estimator.html",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Directed Acyclic Graph (DAG)**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#bayesian-dag",
+    "href": "M02_1.html#bayesian-dag",
+    "title": "4  Directed Acyclic Graph (DAG)",
+    "section": "4.6 Bayesian DAG",
+    "text": "4.6 Bayesian DAG\nasdf - graphical representations of the probabilistic relationships between variables and parameters"
+  },
+  {
+    "objectID": "M02_1.html#bayesian-causal-inference",
+    "href": "M02_1.html#bayesian-causal-inference",
+    "title": "4  Prior and Posterior Distributions",
+    "section": "4.11 Bayesian Causal Inference",
+    "text": "4.11 Bayesian Causal Inference\nref: https://onlinelibrary.wiley.com/doi/10.1002/sim.8761\nref: https://bookdown.org/paul/applied-causal-analysis/\nref: paper: https://royalsocietypublishing.org/doi/10.1098/rsta.2022.0153\n…\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#learning-objectives",
+    "href": "M05_1.html#learning-objectives",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "",
+    "text": "Understand Bayesian philosophy.\nDescribe the motivation of doing Bayesian analysis.\nUnderstand the difference between Bayesian and classical statistical methods.\nInterpret a real-life problem in Bayesian context.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#learning-activities",
+    "href": "M05_1.html#learning-activities",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "9.2 Learning Activities",
+    "text": "9.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#introduction",
+    "href": "M05_1.html#introduction",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "9.3 Introduction",
+    "text": "9.3 Introduction\nasdafs\nref shinyapp: https://ibl.mdanderson.org/shinyapps/BayesESS/\nref: power-priors: https://journal.r-project.org/articles/RJ-2023-016/",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#exercises",
+    "href": "M05_1.html#exercises",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "9.7 Exercises",
+    "text": "9.7 Exercises\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#live-tutorial-and-discussion",
+    "href": "M05_1.html#live-tutorial-and-discussion",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "9.8 Live tutorial and discussion",
+    "text": "9.8 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#summary",
+    "href": "M05_1.html#summary",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "9.9 Summary",
+    "text": "9.9 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#preparation-for-week-2",
+    "href": "M05_1.html#preparation-for-week-2",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "9.10 Preparation for Week 2",
+    "text": "9.10 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#learning-objectives",
+    "href": "M05_2.html#learning-objectives",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "",
+    "text": "Understand Bayesian philosophy.\nDescribe the motivation of doing Bayesian analysis.\nUnderstand the difference between Bayesian and classical statistical methods.\nInterpret a real-life problem in Bayesian context.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#learning-activities",
+    "href": "M05_2.html#learning-activities",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.2 Learning Activities",
+    "text": "10.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#introduction",
+    "href": "M05_2.html#introduction",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.3 Introduction",
+    "text": "10.3 Introduction\nasdafs",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#exercises",
+    "href": "M05_2.html#exercises",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.8 Exercises",
+    "text": "10.8 Exercises\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#live-tutorial-and-discussion",
+    "href": "M05_2.html#live-tutorial-and-discussion",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.9 Live tutorial and discussion",
+    "text": "10.9 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#summary",
+    "href": "M05_2.html#summary",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.10 Summary",
+    "text": "10.10 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#preparation-for-week-2",
+    "href": "M05_2.html#preparation-for-week-2",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.11 Preparation for Week 2",
+    "text": "10.11 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#learning-objectives",
+    "href": "M06_1.html#learning-objectives",
+    "title": "11  Bayesian Model Choice",
+    "section": "",
+    "text": "Understand Bayesian philosophy.\nDescribe the motivation of doing Bayesian analysis.\nUnderstand the difference between Bayesian and classical statistical methods.\nInterpret a real-life problem in Bayesian context.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#learning-activities",
+    "href": "M06_1.html#learning-activities",
+    "title": "11  Bayesian Model Choice",
+    "section": "11.2 Learning Activities",
+    "text": "11.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#introduction",
+    "href": "M06_1.html#introduction",
+    "title": "11  Bayesian Model Choice",
+    "section": "11.3 Introduction",
+    "text": "11.3 Introduction\nasdafs\nVedio",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#exercises",
+    "href": "M06_1.html#exercises",
+    "title": "11  Bayesian Model Choice",
+    "section": "11.7 Exercises",
+    "text": "11.7 Exercises\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#live-tutorial-and-discussion",
+    "href": "M06_1.html#live-tutorial-and-discussion",
+    "title": "11  Bayesian Model Choice",
+    "section": "11.8 Live tutorial and discussion",
+    "text": "11.8 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#summary",
+    "href": "M06_1.html#summary",
+    "title": "11  Bayesian Model Choice",
+    "section": "11.9 Summary",
+    "text": "11.9 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#preparation-for-week-2",
+    "href": "M06_1.html#preparation-for-week-2",
+    "title": "11  Bayesian Model Choice",
+    "section": "11.10 Preparation for Week 2",
+    "text": "11.10 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#learning-objectives",
+    "href": "M06_2.html#learning-objectives",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "",
+    "text": "Understand Bayesian philosophy.\nDescribe the motivation of doing Bayesian analysis.\nUnderstand the difference between Bayesian and classical statistical methods.\nInterpret a real-life problem in Bayesian context.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#learning-activities",
+    "href": "M06_2.html#learning-activities",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "13.2 Learning Activities",
+    "text": "13.2 Learning Activities\nThis week’s learning activity include:\n\n\n\nLearning Activity\nLearning Objectives\n\n\n\n\nVideo\n1,3\n\n\nReadings\n2,3,4\n\n\nExercises\n4\n\n\nLive tutorial/discussion\n1,2,3,4",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#introduction",
+    "href": "M06_2.html#introduction",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "13.3 Introduction",
+    "text": "13.3 Introduction\nasdafs",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#exercises",
+    "href": "M06_2.html#exercises",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "13.7 Exercises",
+    "text": "13.7 Exercises\nsdfads",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#live-tutorial-and-discussion",
+    "href": "M06_2.html#live-tutorial-and-discussion",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "13.8 Live tutorial and discussion",
+    "text": "13.8 Live tutorial and discussion\nasdfa",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#summary",
+    "href": "M06_2.html#summary",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "13.9 Summary",
+    "text": "13.9 Summary\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#preparation-for-week-2",
+    "href": "M06_2.html#preparation-for-week-2",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "13.10 Preparation for Week 2",
+    "text": "13.10 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#dual-factor-frequency",
+    "href": "M01_1.html#dual-factor-frequency",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.6 Dual-Factor Frequency",
+    "text": "2.6 Dual-Factor Frequency\n\nKruschke (2014)\nTo understand Bayes’ Theorem, lets start with a simple case of probability based on a two-way table."
+  },
+  {
+    "objectID": "M02_1.html#bayesian-dag-models",
+    "href": "M02_1.html#bayesian-dag-models",
+    "title": "4  Prior and Posterior Distributions",
+    "section": "4.10 Bayesian DAG & Models",
+    "text": "4.10 Bayesian DAG & Models\nasdf - graphical representations of the probabilistic relationships between variables and parameters",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#correlation-vs-causation",
+    "href": "M02_1.html#correlation-vs-causation",
+    "title": "4  Prior and Posterior Distributions",
+    "section": "4.9 Correlation vs Causation",
+    "text": "4.9 Correlation vs Causation",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#generative-models",
+    "href": "M02_2.html#generative-models",
+    "title": "4  Tools and Generative Models",
+    "section": "4.5 Generative Models",
+    "text": "4.5 Generative Models\n\n\nA generative model is designed to generate new data points by capturing the intricate probability distributions of existing datasets. By learning these distributions, the model can produce data that reflects the characteristics of original datasets, simulating realistic examples. A generative model can also be used to understand how a set of observed data could have arisen from a set of underlying causes, which we will discuss more later in this course.\nIn Bayesian modeling, generative models are particularly useful as they provide a framework for estimating the likelihood of data under different hypotheses. This capability enhances Bayesian inference processes, allowing for more effective prior and posterior distribution updates. The flexibility of generative models in simulating various scenarios can also improve the robustness and accuracy of Bayesian models, ultimately refining the decision-making and predictive capabilities inherent in Bayesian analysis.\nNote that, in this course, we use “generative model” broadly to consider the origins of a particular dataset. However, this term also has a more specific definition, especially as it contrasts with “discriminative models”, for details see Bernardo et al. (2007).\n\nLet’s explain this using the example we discussed earlier related to the vaccine efficacy rate,where we collected data from \\(n=10\\) individuals and the vaccine was effective for 8 individuals. Recall that we also consider a prior probabilty for the effectiveness, which was \\(0.7\\). Given this information we now recreate the data.\n\nData generation:\n\nIn a generative modelling context, we simulate data for these 10 individuals by considering success probability \\(\\theta = 0.8\\).\n\n\nCode\n# Parameters for the Binomial model\nn &lt;- 10     # Number of individuals\ntheta &lt;- 0.8    # Probability of success\nsize &lt;- 1  # Number of experiments/replications\n\n# Generate data from the Binomial distribution\nset.seed(123)  # For reproducibility\ndata &lt;- rbinom(size, n, theta)\n\n# Number of success\npaste(\"Number of success: \",data,\" out of \",n, \"individuals\")\n\n\n[1] \"Number of success:  9  out of  10 individuals\"\n\n\nWe can see that our simulation using one replication yields probability 0.9, whereas actual data shows \\(\\theta = 0.8\\). Hence, to reflect actual data we need to simulate data for multiple replications, which yields an average value for \\(\\theta = 0.8\\).\n\n\nCode\n# Load necessary library\noptions(warn=-1)\nif (!requireNamespace(\"ggplot2\", quietly = TRUE)) \n  install.packages(\"ggplot2\")\nlibrary(ggplot2)\n\n# Parameters for the Binomial model\nn &lt;- 10     # Number of individuals\ntheta &lt;- 0.8    # Probability of success\nsize &lt;- 1000  # Number of experiments/replications\n\n# Generate data from the Binomial distribution\nset.seed(123)  # For reproducibility\ndata &lt;- rbinom(size, n, theta)\n\n# Display the first few results\nprint(\"First 10 simulated outcomes:\")\n\n\n[1] \"First 10 simulated outcomes:\"\n\n\nCode\nprint(head(data, 10))\n\n\n [1]  9  7  8  6  6 10  8  6  8  8\n\n\nCode\n# Quantiles\nprint(quantile(data,prob=c(0.025,0.5,0.975)))\n\n\n 2.5%   50% 97.5% \n    5     8    10 \n\n\nCode\nprint(quantile(data))\n\n\n  0%  25%  50%  75% 100% \n   3    7    8    9   10 \n\n\nCode\n# Plot a histogram of the data\ndf &lt;- data.frame(Successes = data)\nggplot(df, aes(x = Successes)) +\n  geom_histogram(\n    breaks = seq(-0.5, n + 0.5, by = 1),\n    fill = \"skyblue\",\n    color = \"black\",\n    boundary = -0.5\n  ) +\n  scale_x_continuous(\n    breaks = 0:n,\n    name = \"Number of successes\"\n  ) +\n  labs(\n    title = paste(\"Histogram of Simulated Binomial Data (n =\", n, \", θ =\", theta, \")\"),\n    y = \"Frequency\",\n    x = \"Number of successes\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nNow, for instance we … check Mc",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#traceable-and-untraceable-solutions",
+    "href": "M02_2.html#traceable-and-untraceable-solutions",
+    "title": "4  Tools and Generative Models",
+    "section": "4.6 Traceable and Untraceable Solutions",
+    "text": "4.6 Traceable and Untraceable Solutions\nA traceable solution manifests when the posterior distribution can be explicitly determined in a closed-form mathematical expression, facilitating straightforward analysis. This situation arises particularly when the prior distribution and the likelihood function are chosen such that the posterior distribution remains within a recognized family of probability distributions.\nFor example, when a conjugate prior is used, the posterior has a known or a same functional form as the prior. This helps to derive posterior parameters easily with simple calculations. This also helps to derive the posterior using exact solutions without relying on numerical or approximation methods. For a Bernoulli model, we have already discussed earlier in Lecture 2, which reflects: \\[\\begin{align}\n\\text{Distribution: } & y \\sim \\text{Ber}(\\theta);\\\\\n\\text{Likelihood: } & Y = \\sum^n y \\sim \\text{Binomial}(n,\\theta);\\\\\n\\text{Prior: } & \\theta \\sim \\text{Beta}(a,b);\\\\\n\\text{Posterior: } & \\theta|Y \\sim \\text{Beta}(a+\\sum^n y,b+n-\\sum^n y);\\\\\n\\end{align}\\]\nAn untraceable solution emerges in situations where the posterior distribution cannot be expressed in a closed-form expression. This phenomenon occurs when the likelihood function and the prior distribution are incompatible, resulting in the emergence of complex integrals within Bayes’ theorem that are analytically intractable.\nFor example, use of non-conjugate priors. Often complex likelihood functions, such as those involving hierarchical models, mixture models, or high-dimensional data also yields a posterior form of distribution with untraceable solutions, even if we consider conjugate priors for the model parameters. For a non-Gaussian likelihood, use of a uniform prior also yields untraceable solution.\n\n\n\n\n\n\n\n\n\n\nTraceable Solutions\nUntraceable Solutions\n\n\n\n\nPosterior\nClosed-form expression\nRequires approximation or sampling\n\n\nPrior-Likelihood Relation\nOften relies on conjugacy\nNo conjugacy needed\n\n\nComputation\nExact and straightforward\nComputationally intensive\n\n\nFlexibility\nLimited (conjugate priors only)\nHigh (any prior-likelihood combination)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#mcmc-convergence-diagnostics",
+    "href": "M02_2.html#mcmc-convergence-diagnostics",
+    "title": "4  Tools and Generative Models",
+    "section": "4.7 MCMC convergence diagnostics",
+    "text": "4.7 MCMC convergence diagnostics\n\n\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#prior-and-posterior-predictive-checks",
+    "href": "M02_2.html#prior-and-posterior-predictive-checks",
+    "title": "4  Tools and Generative Models",
+    "section": "4.8 Prior and Posterior Predictive Checks",
+    "text": "4.8 Prior and Posterior Predictive Checks\n\n\nasdf\nhttps://statswithr.github.io/book/inference-and-decision-making-with-multiple-parameters.html#sec:NG-predictive",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#model-development",
+    "href": "M03_1.html#model-development",
+    "title": "6  Bayesian Regressions - Part 1",
+    "section": "6.4 Model Development",
+    "text": "6.4 Model Development\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayesian Regressions - Part 1**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#prior-sensitivity",
+    "href": "M03_1.html#prior-sensitivity",
+    "title": "6  Bayesian Regressions - I",
+    "section": "6.7 Prior Sensitivity",
+    "text": "6.7 Prior Sensitivity\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#comparison-with-classical-approach",
+    "href": "M03_1.html#comparison-with-classical-approach",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.7 Comparison with Classical Approach",
+    "text": "5.7 Comparison with Classical Approach\n\n\nasdf\nuse rstan, rstanarm or brms",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#model-development",
+    "href": "M03_2.html#model-development",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.4 Model Development",
+    "text": "7.4 Model Development\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#prior-sensitivity",
+    "href": "M03_2.html#prior-sensitivity",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.5 Prior Sensitivity",
+    "text": "7.5 Prior Sensitivity\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#comparison-with-classical-approach",
+    "href": "M03_2.html#comparison-with-classical-approach",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.6 Comparison with Classical Approach",
+    "text": "7.6 Comparison with Classical Approach\nasdf\nVedio\n…\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#clustered-data-multilevel-modles",
+    "href": "M04_1.html#clustered-data-multilevel-modles",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "8.4 Clustered Data & Multilevel Modles",
+    "text": "8.4 Clustered Data & Multilevel Modles\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#varying-intercept-model",
+    "href": "M04_1.html#varying-intercept-model",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "8.5 Varying Intercept Model",
+    "text": "8.5 Varying Intercept Model\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#varying-slope-model",
+    "href": "M04_1.html#varying-slope-model",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "8.6 Varying Slope Model",
+    "text": "8.6 Varying Slope Model\nasdf\nVedio\n…\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#conditional-and-marginal-models",
+    "href": "M04_2.html#conditional-and-marginal-models",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "9.4 Conditional and Marginal Models",
+    "text": "9.4 Conditional and Marginal Models\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#comparison-with-classical-approach",
+    "href": "M04_2.html#comparison-with-classical-approach",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "9.5 Comparison with Classical Approach",
+    "text": "9.5 Comparison with Classical Approach\nasdf\nVedio\n…\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#bayesian-perspective-of-rct",
+    "href": "M05_1.html#bayesian-perspective-of-rct",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "9.4 Bayesian Perspective of RCT",
+    "text": "9.4 Bayesian Perspective of RCT\n\n\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#bayesian-decision-rules-for-rct",
+    "href": "M05_1.html#bayesian-decision-rules-for-rct",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "9.5 Bayesian Decision Rules for RCT",
+    "text": "9.5 Bayesian Decision Rules for RCT\n\n\nBayesian Decision Rule: ref: Berry book, sec 2.5.2, page 66",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#comparison-with-classical-approach",
+    "href": "M05_1.html#comparison-with-classical-approach",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "9.6 Comparison with Classical Approach",
+    "text": "9.6 Comparison with Classical Approach\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#adaptivity-in-rct",
+    "href": "M05_2.html#adaptivity-in-rct",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.4 Adaptivity in RCT",
+    "text": "10.4 Adaptivity in RCT\n\n\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#bayesian-predictive-probability",
+    "href": "M05_2.html#bayesian-predictive-probability",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.5 Bayesian Predictive Probability:",
+    "text": "10.5 Bayesian Predictive Probability:\nref: Berry book, sec: 2.5.1 page 64",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#stopping-rules-for-adaptation",
+    "href": "M05_2.html#stopping-rules-for-adaptation",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.6 Stopping Rules for Adaptation",
+    "text": "10.6 Stopping Rules for Adaptation\n\n\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#prior-influence",
+    "href": "M05_2.html#prior-influence",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "10.7 Prior Influence",
+    "text": "10.7 Prior Influence\n\n\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#criterion-based",
+    "href": "M06_1.html#criterion-based",
+    "title": "12  Bayesian Model Choice",
+    "section": "12.4 Criterion-Based",
+    "text": "12.4 Criterion-Based\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#shrinkage-based",
+    "href": "M06_1.html#shrinkage-based",
+    "title": "12  Bayesian Model Choice",
+    "section": "12.5 Shrinkage-Based",
+    "text": "12.5 Shrinkage-Based\nasdf\nref: lambert page 225, sec: 10.5 (AIC, DIC, WAIC, LOO-CV)\n…\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#missing-data",
+    "href": "M06_2.html#missing-data",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "13.4 Missing Data",
+    "text": "13.4 Missing Data\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#measurement-errors",
+    "href": "M06_2.html#measurement-errors",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "13.5 Measurement Errors",
+    "text": "13.5 Measurement Errors\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#approximate-bayesian-computation",
+    "href": "M06_2.html#approximate-bayesian-computation",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "13.6 Approximate Bayesian Computation",
+    "text": "13.6 Approximate Bayesian Computation\nasdf\nVedio\n…\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#dual-factor-probabilities",
+    "href": "M01_1.html#dual-factor-probabilities",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.7 Dual-Factor Probabilities",
+    "text": "2.7 Dual-Factor Probabilities\n\nKruschke (2014)\nBayesians do not imagine repetitions of an experiment in order to define and specify a probability. A probability is merely taken as a measure of certainty in a particular belief. Before digging into Bayesian theorem, let’s understand some key concepts. For example, there are many situations in which we are interested in the conjunction of two outcomes. As a specific example for developing these ideas, consider a situation where the probabilities of various combinations of people’s eye color and hair color. The data come from a particular convenience sample (Snee, 1974), and are not meant to be representative of any larger population.\n\n\n\n\n\nDual-Factor (Snee, 1974); Kruschke (2014)\n\n\n\n\nThe above Table considers four possible eye colors, listed in its rows, and four possible hair colors, listed across its columns. In each of its main cells, the table indicates the joint probability of particular combinations of eye color and hair color. For example, the top-left cell indicates that the joint probability of brown eyes and black hair is 0.11 (i.e., 11%). Notice that not all combinations of eye color and hair color are equally likely. For example, the joint probability of blue eyes and black hair is only 0.03 (i.e., 3%).\nWe may be interested in the probabilities of the eye colors overall, collapsed across hair colors. These probabilities are indicated in the right margin of the table, and they are therefore called marginal probabilities. They are computed simply by summing the joint probabilities in each row, to produce the row sums. For example, the marginal probability of green eyes, irrespective of hair color, is 0.11. The joint values indicated in the table do not all sum exactly to the displayed marginal values because of rounding error from the original data.\nWe often want to know the probability of one outcome, given that we know another outcome is true. For example, suppose I sample a person at random from the population. Suppose I tell you that this person has blue eyes. Conditional on that information, what is the probability that the person has blond hair (or any other particular hair color)? It is intuitively clear how to compute the answer: We see from the blue-eye row of Table 4.1 that the total (i.e., marginal) amount of blue-eyed people is 0.36, and that 0.16 of the population has blue eyes and blond hair. Therefore, of the 0.36 with blue eyes, the fraction 0.16/0.36 has blond hair. In other words, of the blue-eyed people, 45% have blond hair.We also note that of the blue-eyed people, 0.03/0.36 = 8% have black hair.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#exact-inference",
+    "href": "M01_2.html#exact-inference",
+    "title": "3  Bayesian Inference",
+    "section": "3.7 Exact Inference",
+    "text": "3.7 Exact Inference\n\nThe solutions for posterior distribution explained in the previous section are based on exact inference using closed form of the posterior distribution. The exact inference in Bayesian modeling refers to the precise calculation of posteriors. It involves the direct calculation of the posterior distribution by applying Bayes’ theorem considering the given conjugate prior distribution and data likelihood. For instance, in the previous example, the conjugate nature of the Beta prior ensures that the posterior distribution remains a Beta distribution, which provides analytical tractability.\nThe method is computationally feasible only when the models involved are simple or when they allow for analytical solutions. Bayesian exact inference can be challenging with complex models. Furthermore, if we opt to use a non-conjugate prior, the posterior distribution cannot be easily simplified into a common distribution form and derivation of marginal likelihood will be challenging. In this case, to obtain the posterior distribution we need numerical methods or approximations, as analytical solutions are no longer straightforward or feasible. This complexity of the calculations requires the use of advanced computational techniques such as Markov chain Monte Carlo (MCMC) techniques. We will discuss more on the solutions for these types of situations in Module 2, Lecture 4.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#prior-and-posterior-distributions",
+    "href": "M01_2.html#prior-and-posterior-distributions",
+    "title": "3  Bayesian Inference",
+    "section": "3.6 Prior and Posterior Distributions",
+    "text": "3.6 Prior and Posterior Distributions\nGelman et al. (2013)\n\n\\[\\begin{align}\n\\text{initial belief} \\xrightarrow[]{\\text{Bayes rule + data}} \\text{new belief}\n\\end{align}\\]\nFirst we will provide some examples on how prior distributions can be useful in real-world applications, especially considering health and medical data. We have already know that the prior distribution enables researchers to integrate previous knowledge or expert opinions into their statistical models, thereby improving the precision of their decisions. For example, we might be interested in tailoring treatments and interventions based on prior knowledge, enhancing their personalization and efficacy for individual patients. For instance, if historical data indicates a 70% effectiveness rate for a certain drug in patients with similar profiles, a prior distribution (informative) can incorporate this information to predict the likelihood of success in a new patient. The synthesizing of prior knowledge with current data yields more reliable conclusions. For example, if new data shows a 80% effectiveness rate, Bayesian method leads to a refined probability of treatment success, say 75%. Use of prior information is also beneficial when historical data is sparse or in the early stages of research on new treatments. In such scenarios, the prior distribution could start with a neutral assumption (non-informative), such as a 50% effectiveness rate, and adjust as more information becomes available.\nNow we will explore some situations for estimating posterior distributions using priors, in the context of statistical models, where we want to estimate only a single parameter of the model. We will explain these models where the posterior distribution has a closed form of distribution based on data and prior distributions. Fortunately, there are models where for a particular choice of prior results in a posterior that has the same type of distribution as the prior. The property that posterior distribution has the same functional form as the prior distribution is called conjugacy. Priors that have this feature are called conjugate priors. This closed form offers easy probability calculations, simplifying updates with new data and contrasting with methods needing numerical approximations for precise inference, which we will explain more later in this lecture.\n\n3.6.1 Binomial Model\n\nWe can write Binomial model with parameters \\(\\theta\\) and \\(n\\) trials as \\[\\begin{align}\np(y|\\theta) = \\begin{pmatrix}n\\\\y \\end{pmatrix} \\theta^y (1-\\theta)^{n-y}\n\\end{align}\\] If we consider a Beta prior distribution for \\(\\theta\\) with hyper-parameters \\(a\\) and \\(b\\), the write the distribution as: \\[\\begin{align}\np(\\theta) = \\frac{\\theta^{a-1}(1-\\theta)^{b-1}}{B(a,b)}\n\\end{align}\\] where, \\(B(a,b)=\\frac{\\Gamma(a)\\Gamma(b)}{\\Gamma(a+b)}\\) is the beta function. Thus, using Bayes theorem we write \\[\\begin{align}\np(\\theta|y) = \\frac{\\begin{pmatrix}n\\\\y \\end{pmatrix} \\theta^y (1-\\theta)^{n-y}\\times \\theta^{a-1}(1-\\theta)^{b-1}}{p(y)\\times B(a,b)}\n\\end{align}\\] With some simple calculations, we can write the marginal likelihood as: \\[\\begin{align}\np(y) = \\begin{pmatrix}n\\\\y \\end{pmatrix}\\frac{B(y+a,n-y+b)}{B(a,b)}\n\\end{align}\\] Hence, we get the analytical form of the posterior distribution of \\(\\theta\\) as: \\[\\begin{align}\np(\\theta|y) = \\frac{\\theta^{y+a-1}(1-\\theta)^{n-y+b-1}}{B(y+a,n-y+b)}\n\\end{align}\\] which follows a Beta distribution with parameters \\((a+y)\\) and \\((b+n-y)\\).\nTo explore this with example, let us consider the example we explained earlier on the effectiveness rate of a certain drug in patients with similar profiles. Here, we write the prior distribution of 70% effectiveness, i.e., \\(p(\\theta)=0.7\\). To reflect this probability into Beta prior distribution hyper-parameters \\(a\\) and \\(b\\), we can consider \\(a=7\\) and \\(b=3\\). This is derived from the mean of the Beta distribution, i.e., \\(\\frac{a}{a+b}=0.7\\). Note that there are also other combinations of \\(a\\) and \\(b\\) values that can also lead to the probability 0.7.\nNow, if new data shows a 80% effectiveness rate, where we collect data from \\(n=10\\) individuals. Then we can write the posterior distribution of \\(\\theta\\), i.e., \\(p(\\theta|y)\\) as: \\[\\begin{align}\n\\text{Beta}(a+y,b+n-y) &= \\text{Beta}(7+8,3+10-8) \\\\\n&= \\text{Beta}(15,5)\n\\end{align}\\] This yields a mean \\(\\frac{15}{15+5}=0.75\\). Thus, based on the mean of the Beta distribution, we can say analytically, Bayesian method leads to a 75% refined probability of treatment success.\nexplain with R code …",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#preparation-for-week-4",
+    "href": "M02_1.html#preparation-for-week-4",
+    "title": "4  Prior and Posterior Distributions",
+    "section": "4.15 Preparation for Week 4",
+    "text": "4.15 Preparation for Week 4\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.\n\n\n\n\nGelman, Andrew, John B Carlin, Hal S Stern, David B Dunson, Aki Vehtari, and Donald B Rubin. 2013. Bayesian Data Analysis (3rd Edition). Chapman; Hall/CRC.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#causality-and-bayesian-model",
+    "href": "M02_1.html#causality-and-bayesian-model",
+    "title": "4  Prior and Posterior Distributions",
+    "section": "4.7 Causality and Bayesian Model",
+    "text": "4.7 Causality and Bayesian Model\n\nCausal inference requires the establishment of a causal model that is separate from a Bayesian model, given that observational data alone do not suffice. This is widely accepted across different philosophical perspectives. Nonetheless, interpretations differ considerably. The most conservative viewpoint treats “causation” as an unprovable notion. A slightly less conservative approach posits that causation can be inferred only under stringent conditions involving randomization and experimental control. However, many scientific investigations cannot be feasibly examined through experimental study. Other cases might be feasible but raise ethical concerns. In disciplines like health and medicine, the dominant approach involves incorporating various “control” variables into a statistical model, observing changes in estimates, and then developing a causal narrative. This concept is based on the assumption that only omitted variables can lead to incorrect conclusions about causation. However, variables that are included can also lead to confusion. When constructing a causal model that appears to make accurate predictions might still mislead us about causation. If such a model is used to design an intervention, it is likely to result in inaccurate outcomes.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html",
+    "href": "M02_1.html",
+    "title": "3  Prior and Posterior Distributions",
+    "section": "",
+    "text": "3.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html",
+    "href": "M01_1.html",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "",
+    "text": "2.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html",
+    "href": "M01_2.html",
+    "title": "2  Bayesian Inference",
+    "section": "",
+    "text": "2.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html",
+    "href": "M02_2.html",
+    "title": "4  Tools and Generative Models",
+    "section": "",
+    "text": "4.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#dag",
+    "href": "M01_2.html#dag",
+    "title": "2  Bayesian Inference",
+    "section": "2.10 DAG",
+    "text": "2.10 DAG\nrevise this …\n\nThe directed acyclic graph (DAG) is a graphical representation that illustrates the relationships and dependencies between different variables in a model. In a DAG, nodes represent variables, and directed edges indicate dependency relationships, pointing from one node to another. The acyclic nature ensures that there are no closed loops, maintaining a clear directionality of influence from parent nodes to child nodes.\nIn the context of Bayesian modeling, DAGs are crucial as they visually encode the conditional dependencies between variables and model parameters, which enables a structured and intuitive approach to understand uncertainty and dependencies from the model.\nUsing the Binomial model example, we can write a DAG for the Bayesian model as:\n\n\n\n\n\n graph LR\n      A(\"$$\\theta$$\") --&gt; Y[\"$$y$$\"]\n      B(\"$$n$$\") --&gt; Y\n      C(\"$$a$$\") --&gt; A\n      D(\"$$b$$\") --&gt; A",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#causality-and-bayesian-model",
+    "href": "M01_2.html#causality-and-bayesian-model",
+    "title": "3  Bayesian Inference",
+    "section": "3.8 Causality and Bayesian Model",
+    "text": "3.8 Causality and Bayesian Model\n\nCausal inference requires the establishment of a causal model that is separate from a Bayesian model, given that observational data alone do not suffice. This is widely accepted across different philosophical perspectives. Nonetheless, interpretations differ considerably. The most conservative viewpoint treats “causation” as an unprovable notion. A slightly less conservative approach posits that causation can be inferred only under stringent conditions involving randomization and experimental control. However, many scientific investigations cannot be feasibly examined through experimental study. Other cases might be feasible but raise ethical concerns. In disciplines like health and medicine, the dominant approach involves incorporating various “control” variables into a statistical model, observing changes in estimates, and then developing a causal narrative. This concept is based on the assumption that only omitted variables can lead to incorrect conclusions about causation. However, variables that are included can also lead to confusion. When constructing a causal model that appears to make accurate predictions might still mislead us about causation. If such a model is used to design an intervention, it is likely to result in inaccurate outcomes.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#estimand-estimator-estimate",
+    "href": "M01_2.html#estimand-estimator-estimate",
+    "title": "3  Bayesian Inference",
+    "section": "3.9 Estimand, Estimator & Estimate",
+    "text": "3.9 Estimand, Estimator & Estimate\nasdf\nref: https://bookdown.org/paul/applied-causal-analysis/estimator.html\nThe estimand is the quantity of interest whose true value you want to know.\nAn estimator is a method for estimating the estimand.\nAn estimate is a numerical estimate of the estimand that results from the use of a particular estimator.\nFor example, suppose we are interested in the mean height of all male adults in the United States. Our estimand is “the mean height of all male adults in the United States”. A foolproof way to find this mean exactly would be to measure the height of each and every male adult in the United States and compute the mean. But that sounds too hard, so instead we decide to estimate the mean height by taking a random sample of male adults in the United States and measuring the height of each individual. Suppose we take a random sample of 100 adult men in the United States and measure their heights. Using this data, we now have to choose an estimator that will provide us with an estimate of our estimand.\nThe most obvious thing to do would be to compute the sample average of the heights. That is, “the sample average” is an estimator that provides an estimate of our estimand. Suppose the sample average is 70 inches. Then 70 inches is the estimate of our estimand provided by the “sample average” estimator.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#correlation-vs-causation",
+    "href": "M01_2.html#correlation-vs-causation",
+    "title": "3  Bayesian Inference",
+    "section": "3.10 Correlation vs Causation",
+    "text": "3.10 Correlation vs Causation",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#bayesian-dag-models",
+    "href": "M01_2.html#bayesian-dag-models",
+    "title": "3  Bayesian Inference",
+    "section": "3.11 Bayesian DAG & Models",
+    "text": "3.11 Bayesian DAG & Models\nasdf - graphical representations of the probabilistic relationships between variables and parameters",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#bayesian-causal-inference",
+    "href": "M01_2.html#bayesian-causal-inference",
+    "title": "3  Bayesian Inference",
+    "section": "3.12 Bayesian Causal Inference",
+    "text": "3.12 Bayesian Causal Inference\nref: https://onlinelibrary.wiley.com/doi/10.1002/sim.8761\nref: https://bookdown.org/paul/applied-causal-analysis/\nref: paper: https://royalsocietypublishing.org/doi/10.1098/rsta.2022.0153",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#prior-and-posterior-distributions",
+    "href": "M02_1.html#prior-and-posterior-distributions",
+    "title": "4  Directed Acyclic Graph (DAG)",
+    "section": "4.4 Prior and Posterior Distributions",
+    "text": "4.4 Prior and Posterior Distributions\nGelman et al. (2013)\n\n\\[\\begin{align}\n\\text{initial belief} \\xrightarrow[]{\\text{Bayes rule + data}} \\text{new belief}\n\\end{align}\\]\nFirst we will provide some examples on how prior distributions can be useful in real-world applications, especially considering health and medical data. We have already know that the prior distribution enables researchers to integrate previous knowledge or expert opinions into their statistical models, thereby improving the precision of their decisions. For example, we might be interested in tailoring treatments and interventions based on prior knowledge, enhancing their personalization and efficacy for individual patients. For instance, if historical data indicates a 70% effectiveness rate for a certain drug in patients with similar profiles, a prior distribution (informative) can incorporate this information to predict the likelihood of success in a new patient. The synthesizing of prior knowledge with current data yields more reliable conclusions. For example, if new data shows a 80% effectiveness rate, Bayesian method leads to a refined probability of treatment success, say 75%. Use of prior information is also beneficial when historical data is sparse or in the early stages of research on new treatments. In such scenarios, the prior distribution could start with a neutral assumption (non-informative), such as a 50% effectiveness rate, and adjust as more information becomes available.\nNow we will explore some situations for estimating posterior distributions using priors, in the context of statistical models, where we want to estimate only a single parameter of the model. We will explain these models where the posterior distribution has a closed form of distribution based on data and prior distributions. Fortunately, there are models where for a particular choice of prior results in a posterior that has the same type of distribution as the prior. The property that posterior distribution has the same functional form as the prior distribution is called conjugacy. Priors that have this feature are called conjugate priors. This closed form offers easy probability calculations, simplifying updates with new data and contrasting with methods needing numerical approximations for precise inference, which we will explain more later in this lecture.\n\n4.4.1 Binomial Model\n\n…\nTo explore this with example, let us consider the example we explained earlier on the effectiveness rate of a certain drug in patients with similar profiles. Here, we write the prior distribution of 70% effectiveness, i.e., \\(p(\\theta)=0.7\\). To reflect this probability into Beta prior distribution hyper-parameters \\(a\\) and \\(b\\), we can consider \\(a=7\\) and \\(b=3\\). This is derived from the mean of the Beta distribution, i.e., \\(\\frac{a}{a+b}=0.7\\). Note that there are also other combinations of \\(a\\) and \\(b\\) values that can also lead to the probability 0.7.\nNow, if new data shows a 80% effectiveness rate, where we collect data from \\(n=10\\) individuals. Then we can write the posterior distribution of \\(\\theta\\), i.e., \\(p(\\theta|y)\\) as: \\[\\begin{align}\n\\text{Beta}(a+y,b+n-y) &= \\text{Beta}(7+8,3+10-8) \\\\\n&= \\text{Beta}(15,5)\n\\end{align}\\] This yields a mean \\(\\frac{15}{15+5}=0.75\\). Thus, based on the mean of the Beta distribution, we can say analytically, Bayesian method leads to a 75% refined probability of treatment success.\nexplain with R code …",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Directed Acyclic Graph (DAG)**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#exact-inference",
+    "href": "M02_1.html#exact-inference",
+    "title": "3  Prior and Posterior Distributions",
+    "section": "3.6 Exact Inference",
+    "text": "3.6 Exact Inference\n\n\n\nThe solutions for posterior distribution explained in the previous section are based on exact inference using closed form of the posterior distribution. The exact inference in Bayesian modeling refers to the precise calculation of posteriors. It involves the direct calculation of the posterior distribution by applying Bayes’ theorem considering the given conjugate prior distribution and data likelihood. For instance, in the previous example, the conjugate nature of the Beta prior ensures that the posterior distribution remains a Beta distribution, which provides analytical tractability.\nThe method is computationally feasible only when the models involved are simple or when they allow for analytical solutions. Bayesian exact inference can be challenging with complex models. Furthermore, if we opt to use a non-conjugate prior, the posterior distribution cannot be easily simplified into a common distribution form and derivation of marginal likelihood will be challenging. In this case, to obtain the posterior distribution we need numerical methods or approximations, as analytical solutions are no longer straightforward or feasible. This complexity of the calculations requires the use of advanced computational techniques such as Markov chain Monte Carlo (MCMC) techniques. We will discuss more on the solutions for these types of situations in Module 2, Lecture 4.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#more-insights-into-prior-distribution",
+    "href": "M02_1.html#more-insights-into-prior-distribution",
+    "title": "3  Prior and Posterior Distributions",
+    "section": "3.7 More Insights into Prior Distribution",
+    "text": "3.7 More Insights into Prior Distribution\n\n\n\nUnderstanding the appropriate selection of prior distributions in modeling is crucial. Prior distributions can be categorized as informative, non-informative, weakly informative, or based on expert judgment. This section explores into these various types of prior distributions, examining their applicability and relevance.\n\n3.7.1 Informative Prior Distribution\n\nAn informative prior is a type of prior distribution that is based on information that provides significant idea about the parameters being estimated. Since informative priors reflect more certainty, they tend to be more concentrated around a certain value. The informative prior has a strong impact on the posterior distribution, especially when the data is limited or noisy. In cases with substantial data, the posterior may still be mostly driven by the observed data, but the prior will still play a role in shaping the final outcome.\nOur previous example on the efficacy rate of a certain vaccine in patients with similar profiles is an example of having an informative prior. Now, let’s consider that the efficacy rate of the vaccine range from 70% to 90%. Now in a pilot study we observe 16 successes out of 20 trials, i.e., the efficacy rate is still 80%. Hence, we can easily get the posterior distribution of the efficacy rate from \\(\\text{Beta}(24, 6)\\) distribution, if we consider the prior average success rate of 80%, which can be calculated from the range 70% to 90%. Numerically, we can plot the prior and posterior distributions using R code as:\n\n\nCode\n# Load necessary library\noptions(warn=-1)\nif (!requireNamespace(\"ggplot2\", quietly = TRUE)) \n  install.packages(\"ggplot2\")\nlibrary(ggplot2)\n\n# Set prior parameters (Beta distribution)\na_prior &lt;- 8\nb_prior &lt;- 2\n\n# Observed data (from pilot study)\nn &lt;- 20  # Number of trials\nk &lt;- 16  # Number of successes\n\n# Update posterior parameters\na_post &lt;- a_prior + k\nb_post &lt;- b_prior + (n - k)\n\n# Generate prior and posterior distributions\npr_values &lt;- seq(0, 1, length.out = 1000)  # Range of prob values\nprior &lt;- dbeta(pr_values, a_prior, b_prior)  # Prior distribution\nposterior &lt;- dbeta(pr_values, a_post, b_post)  # Posterior distribution\n\n# Plot the prior and posterior distributions\ndata &lt;- data.frame(\n  p = rep(pr_values, 2),\n  density = c(prior, posterior),\n  Distribution = rep(c(\"Prior\", \"Posterior\"), each = length(pr_values))\n)\n\nggplot(data, aes(x = p, y = density, color = Distribution)) +\n  geom_line(size = 1.2) +\n  labs(\n    title = \"Beta-Binomial Model: Prior vs Posterior Distributions\",\n    x = \"Efficacy Rate\",\n    y = \"Density\",\n    color = \"Distribution\"\n  ) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"Prior\" = \"blue\", \"Posterior\" = \"red\"))\n\n\n\n\n\n\n\n\n\nThe informative prior in this example allows you to start with a reasonable expectation (from historical data) and update it with observed results. This is especially useful when the sample size is small or the observed data alone might not be robust enough to guide decision-making.\n\n\n\n3.7.2 Non-informative Prior Distribution\n\nA non-informative prior (also known as an uninformative prior or objective prior) is a type of prior distribution used in Bayesian statistics that is intended to have minimal influence on the posterior distribution. It reflects a lack of specific prior knowledge about the parameter of interest, allowing the data to drive the inference as much as possible.\nNon-informative priors are often used when the goal is to let the observed data dominate the analysis or when objective inference is desired.\nNon-informative priors are useful in cases where objectivity is critical or where prior knowledge is genuinely unavailable, but they may not always be appropriate when prior information exists.\nNon-informative priors often reflect a high degree of uncertainty about the parameter’s value.\nBefore going into details, let’s explain some prior distribution concepts:\nImproper Priors: Priors that do not integrate to 1 and therefore are not valid probability distributions but can still be useful for inference if they lead to proper posterior distributions. For instance, \\(p(\\theta) \\propto 1/\\theta\\) for scale parameters.\nFlat Priors: Priors that are constant over the range of the parameter (often used for parameters with bounded support).\nNow, we will discuss some common approaches to defining non-informative priors:\n\nUniform Priors:\n\nUniform priors assign equal probability across all possible values of a parameter, assuming no preference for any particular value (e.g., (p() $), where for a probability parameter \\(\\theta\\) in a Bernoulli model, a uniform prior on \\(\\text{Unif}[0, 1]\\) implies no prior belief about the likelihood of success. From the plot below we cannot visualize the likelihood function (scaled), as the posterior distribution and likelihood functions are same.\n\n\nCode\n# Load necessary library\noptions(warn=-1)\nif (!requireNamespace(\"ggplot2\", quietly = TRUE)) \n  install.packages(\"ggplot2\")\nlibrary(ggplot2)\n\n# Simulate data: Bernoulli trials (e.g., 1 = success, 0 = failure)\nset.seed(123)  # For reproducibility\nn &lt;- 100       # Number of trials\ntrue_theta &lt;- 0.8  # True probability of success\ndata &lt;- rbinom(n, size = 1, prob = true_theta)  # Simulate n trials\nsuccesses &lt;- sum(data)  # Count successes\nfailures &lt;- n - successes\n\n# Uniform prior: P(theta) ∝ 1 on [0, 1]\n# The uniform prior is equivalent to Beta(1, 1).\n\n# Posterior distribution:\n# Given prior Beta(a, b) and likelihood from Binomial(n, theta),\n# Posterior is Beta(a + successes, b + failures)\na_prior &lt;- 1  # Prior shape parameter (a)\nb_prior &lt;- 1   # Prior shape parameter (b)\n\na_post &lt;- a_prior + successes\nb_post &lt;- b_prior + failures\n\n# Compute likelihood (not normalized)\ntheta_vals &lt;- seq(0, 1, length.out = 1000)\nlikelihood &lt;- dbinom(successes, size = n, prob = theta_vals)\n\n# Plot the prior and posterior distributions\ntheta_vals &lt;- seq(0, 1, length.out = 1000)\nprior_density &lt;- dbeta(theta_vals, a_prior, b_prior)\nposterior_density &lt;- dbeta(theta_vals, a_post, b_post)\n\n# Scale likelihood for comparison (to make it visually compatible)\nlikelihood_scaled &lt;- likelihood / max(likelihood) * max(posterior_density)\n\n# Combine data for plotting\nplot_data &lt;- data.frame(\n  theta = rep(theta_vals, 3),\n  density = c(prior_density, posterior_density, likelihood_scaled),\n  type = rep(c(\"Prior (Uniform)\", \"Posterior\", \"Likelihood (Scaled)\"), each = length(theta_vals))\n)\n\n# Create the plot\nggplot(plot_data, aes(x = theta, y = density, color = type)) +\n  geom_line(size = 1) +\n  labs(\n    title = \"Prior, Likelihood, and Posterior Distributions\",\n    x = expression(theta),\n    y = \"Density\",\n    color = \"Distribution\"\n  ) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"green\",\"red\",\"blue\"))\n\n\n\n\n\n\n\n\n\n\nJeffreys Priors:\n\nA non-informative prior derived based on the Fisher information matrix, ensuring invariance under reparameterization. The prior is proportional to the square root of the determinant of the Fisher information: \\(p(\\theta) \\propto \\sqrt{I(\\theta)}\\), where \\(I(\\theta)\\) is the Fisher information.\nBinomial distribution\n\n\nCode\n# Load necessary library\nlibrary(ggplot2)\n\n# Step 1: Define the Jeffreys prior for the binomial model\njeffreys_prior &lt;- function(theta) {\n  return(1 / sqrt(theta * (1 - theta)))  # Jeffreys prior\n}\n\n# Step 2: Define the likelihood for the binomial model\nlikelihood &lt;- function(theta, k, n) {\n  return(choose(n, k) * theta^k * (1 - theta)^(n - k))  # Binomial likelihood\n}\n\n# Step 3: Simulate data\nn &lt;- 10  # Number of trials\nk &lt;- 7   # Observed successes\n\n# Step 4: Compute the posterior distribution\n# Posterior ∝ Likelihood × Prior\ntheta_vals &lt;- seq(0.01, 0.99, length.out = 1000)  # Avoid 0 and 1 for numerical stability\nprior_density &lt;- jeffreys_prior(theta_vals)\nlikelihood_density &lt;- likelihood(theta_vals, k, n)\nposterior_density &lt;- likelihood_density * prior_density\nposterior_density &lt;- posterior_density / sum(posterior_density)  # Normalize posterior\n\n# Combine data for plotting\nplot_data &lt;- data.frame(\n  theta = rep(theta_vals, 3),\n  density = c(prior_density, likelihood_density, posterior_density),\n  type = rep(c(\"Prior (Jeffreys)\", \"Likelihood\", \"Posterior\"), each = length(theta_vals))\n)\n\n# Step 5: Plot the distributions\nggplot(plot_data, aes(x = theta, y = density, color = type)) +\n  geom_line(size = 1) +\n  labs(\n    title = \"Jeffreys Prior, Likelihood, and Posterior for Binomial Model\",\n    x = expression(theta),\n    y = \"Density\",\n    color = \"Distribution\"\n  ) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"green\", \"red\", \"blue\"))\n\n\n\n\n\n\n\n\n\nNormal Distribution\n(explain this with practical example …) Let’s consider a normal distribution with known variance \\(\\sigma^2\\). We write the Fisher information for the mean parameter \\(\\mu\\) as \\(I(\\mu) =\\frac{n}{\\sigma^2}\\), where \\(n\\) is the sample size. Hence, we write the Jeffreys prior for \\(\\mu\\) as the proportional to the square root of the Fisher information, i.e., \\[\\begin{align}\np(\\mu) \\propto \\sqrt{I(\\mu)}\n\\end{align}\\] Thus, the prior is uniform over the parameter space. Thus, we write the posterior for \\(\\mu\\) follows normal distribution with mean \\(\\bar{y}\\) (sample mean) and variance \\(\\sigma^2/n\\). Following this we draw the density plots using R code as follows:\n\n\nCode\n# Load necessary library\noptions(warn=-1)\nif (!requireNamespace(\"ggplot2\", quietly = TRUE)) \n  install.packages(\"ggplot2\")\nlibrary(ggplot2)\n\n# Load necessary library\nlibrary(ggplot2)\n\n# Step 1: Simulate data from a normal distribution\nset.seed(123)  # For reproducibility\nn &lt;- 100        # Number of observations\ntrue_mu &lt;- 5    # True mean\nsigma &lt;- 2      # Known standard deviation\ndata &lt;- rnorm(n, mean = true_mu, sd = sigma)  # Simulate data\n\n# Step 2: Define Fisher information for the mean (mu)\n# Fisher information for the mean is: I(mu) = n / sigma^2\nfisher_info &lt;- n / sigma^2\n\n# Step 3: Derive the Jeffreys prior\n# Jeffreys prior is proportional to sqrt(I(mu)). For the mean of a normal distribution, it's constant.\njeffreys_prior &lt;- function(mu) {\n  return(rep(1, length(mu)))  # Uniform prior over the parameter space\n}\n\n# Step 4: Compute the posterior distribution\n# For a uniform prior, the posterior for mu is a normal distribution: N(mean = x̄, sd = σ/sqrt(n))\nsample_mean &lt;- mean(data)\nposterior_mean &lt;- sample_mean\nposterior_sd &lt;- sigma / sqrt(n)\n\n# Step 5: Define the likelihood\n# Likelihood for mu given data (not normalized)\nlikelihood &lt;- function(mu) {\n  return(dnorm(mu, mean = sample_mean, sd = sigma / sqrt(n)))\n}\n\n# Generate a grid of mu values\nmu_vals &lt;- seq(true_mu - 3 * sigma, true_mu + 3 * sigma, length.out = 1000)\n\n# Compute densities for prior, likelihood, and posterior\nprior_density &lt;- jeffreys_prior(mu_vals)\nlikelihood_density &lt;- likelihood(mu_vals)\nposterior_density &lt;- dnorm(mu_vals, mean = posterior_mean, sd = posterior_sd)\n\n# Normalize densities for comparison in the plot\nlikelihood_density &lt;- likelihood_density / max(likelihood_density) * max(posterior_density)\n\n# Combine data for plotting\nplot_data &lt;- data.frame(\n  mu = rep(mu_vals, 3),\n  density = c(prior_density, likelihood_density, posterior_density),\n  type = rep(c(\"Prior (Jeffreys)\", \"Likelihood (Scaled)\", \"Posterior\"), each = length(mu_vals))\n)\n\n# Step 6: Plot the distributions\nggplot(plot_data, aes(x = mu, y = density, color = type)) +\n  geom_line(size = 1) +\n  labs(\n    title = \"Prior, Likelihood, and Posterior Distributions\",\n    x = expression(mu),\n    y = \"Density\",\n    color = \"Distribution\"\n  ) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"green\", \"red\", \"blue\"))\n\n\n\n\n\n\n\n\n\nDespite being called “non-informative,” their choice can still involve subjective decisions. Some priors, like uniform priors, may appear non-informative in one parameterization but informative in another (e.g., uniform in \\(\\theta\\) vs. \\(\\log(\\theta)\\)). Improper priors can lead to issues in interpretation and sometimes require careful mathematical justification.\n\n\n3.7.3 Weakly Informative Prior Distribution\n\nA weakly informative prior distribution in Bayesian statistics is characterized as proper, yet it is designed to provide information that is intentionally less robust than the actual prior knowledge available. This type of prior serves as a compromise between a non-informative prior, which imposes minimal assumptions about the parameter, and a strongly informative prior, which incorporates extensive prior knowledge. By occupying this middle ground, weakly informative priors offer constrained but meaningful insights into the parameters of interest, allowing for natural constraints inherent in the problem.\nLet’s explain this with the example of efficacy rate of the vaccine. Now assume that the success rate of the vaccine is about 50%, and we can consider the prior distribution as \\(\\text{Beta}(2,2)\\). This symmetric pattern favours the efficacy rate around 0.5 but also allows a wide range of plausible values. This prior avoids extreme values (near 0 or 1) unless strongly supported by the data. Now, suppose 30 trials out of \\(n = 50\\) shows success. Hence, we get the posterior distribution as \\(\\text{Beta}(32,22)\\). Below you can see the density plots of the distributions.\n\n\nCode\n# Load necessary library\noptions(warn=-1)\nif (!requireNamespace(\"ggplot2\", quietly = TRUE)) \n  install.packages(\"ggplot2\")\nlibrary(ggplot2)\n\n# Parameters for the prior (Beta distribution)\na_prior &lt;- 2\nb_prior &lt;- 2\n\n# Data: number of trials (n) and successes (y)\nn &lt;- 50\ny &lt;- 30\n\n# Update the posterior parameters\na_post &lt;- a_prior + y\nb_post &lt;- b_prior + (n - y)\n\n# Sequence of p values for plotting\np &lt;- seq(0, 1, length.out = 1000)\n\n# Compute the prior, likelihood, and posterior\nprior &lt;- dbeta(p, a_prior, b_prior)\nlikelihood &lt;- dbinom(y, n, p) * 100  # Scaled for visualization\nposterior &lt;- dbeta(p, a_post, b_post)\n\n# Create a data frame for plotting\nplot_data &lt;- data.frame(\n  p = p,\n  Likelihood = likelihood,\n  Posterior = posterior,\n  Prior = prior\n)\n\n# Reshape the data for ggplot2\ndata_long &lt;- reshape2::melt(plot_data, id = \"p\", variable.name = \"Distribution\", value.name = \"Density\")\n\n# Plot the distributions\nggplot(data_long, aes(x = p, y = Density, color = Distribution)) +\n  geom_line(size = 1) +\n  labs(\n    title = \"Prior (weakly informative), Likelihood, and Posterior Distributions\",\n    x = expression(theta),\n    y = \"Density\",\n    color = \"Distribution\"\n  ) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"green\", \"red\", \"blue\"))\n\n\n\n\n\n\n\n\n\nWeakly informative priors are common in modern Bayesian modeling, where it balances interpretability, robustness, and computational efficiency. We will explain more about the weakly informative prior when we will learn about Bayesian regression models.\n\n\n3.7.4 Eliciting Prior Distribution\n\n\n\n3.7.5 Mixtures of Prior Distributions\nref: https://statswithr.github.io/book/inference-and-decision-making-with-multiple-parameters.html#sec:NG-Cauchy\n\n\n3.7.6 Prior Sensitivity\n\n\n\n\n  \n      \n         2  **Bayesian Inference**\n                \n  \n  \n      \n        4  **Tools and Generative Models**",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#bayesian-language",
+    "href": "M01_2.html#bayesian-language",
+    "title": "2  Bayesian Inference",
+    "section": "2.9 Bayesian Language",
+    "text": "2.9 Bayesian Language\n\nWe will learn a common language for illustrating and denoting the Bayesian models. This will help us to develop and write complex Bayesian models in a simpler way that we will learn later in this course.\nLet’s explain this with the Bernoulli model with parameter \\(\\theta\\). Hence we can write this in the following form: \\[\\begin{align}\ny \\sim \\text{Bernoulli}(\\theta)\n\\end{align}\\] Now, considering prior conjugacy, we assume that \\(\\theta\\) follows a Beta distribution with shape parameters \\(a\\) and \\(b\\) and hence we can write \\[\\begin{align}\n\\theta \\sim \\text{Beta}(a,b)\n\\end{align}\\] Thus, with one trial the posterior distribution of \\(\\theta\\) can be written as: \\[\\begin{align}\n\\theta|y \\sim \\text{Beta}(a+y,b+1-y); \\quad y \\in (0,1)\n\\end{align}\\] Now with \\(n&gt;1\\) number of trials the posterior distribution of \\(\\theta\\) can be written as: \\[\\begin{align}\n\\theta|\\sum^n y \\sim \\text{Beta}(a+\\sum^n y,b+n-\\sum^n y)\n\\end{align}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#background",
+    "href": "M01_1.html#background",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.3 Background",
+    "text": "2.3 Background\n\n\n\n\n\nThomas Bayes (The IMS Bulletin, 1988, vol-17(3), pp.276-278)\n\n\n\n\nThomas Bayes, who is remembered through the term “Bayesian,” passed away in 1761 without having the chance to formally present or publish his groundbreaking findings. Two years after his death, it was Richard Price who, in 1763, introduced Bayes’ extraordinary work to the Royal Statistical Society. Bayes had been carefully constructing a probabilistic framework to tackle inverse problems. Concurrently, Richard Price (1723–1791) and Pierre-Simon Laplace (1749–1827) played crucial roles in advancing and applying this transformative idea to practical real-world scenarios.\nTo fully understand the Bayesian framework, it is essential to become familiar with several key terms commonly used in Bayesian discussions, such as Bayesian inference, prior, posterior, and Bayesian modeling. Throughout this course, we will gradually explore these fundamental concepts. Before deeply examining these important terms, it is beneficial to consider the Bayesian philosophy.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_1.html#concepts-classical-vs.-bayesian",
+    "href": "M01_1.html#concepts-classical-vs.-bayesian",
+    "title": "2  Degrees of Beliefs and Evidence",
+    "section": "2.6 Concepts: Classical vs. Bayesian",
+    "text": "2.6 Concepts: Classical vs. Bayesian\n\n\nMcElreath (2020)\nHistory:\n\nThe development of Bayesian statistical inference dates back to the late 18th century, preceding many contemporary methodologies. Its application continued into the 19th century. However, after World War I, statisticians like Sir Ronald Fisher, who opposed Bayesian concepts, reduced its prominence. Fisher’s 1925 statistical handbook made only scant mention of Bayesian analysis, then referred to as “inverse probability,” thus diminishing its influence in mainstream statistics. Throughout the latter half of the 20th century, Bayesian analysis gradually regained acceptance. The advent of novel computational technologies in the 1990s significantly increased the application of Bayesian methods.\nData and Parameter:\n\nData represents known elements, whereas parameters are unknown quantities inferred from data. Within the Bayesian framework, this distinction becomes less clear; a variable may be either observed or unobserved, yet it is governed by the same distribution function. Consequently, an assumption can serve as a “likelihood” or a “prior” depending on the context, without altering the model. This connection between certainty (data) and uncertainty (parameters) facilitates the management of measurement errors and missing data in modeling.\nReliable Inference:\n\nThere exists a notion that a specific number of observations is necessary for reliable statistical estimates. For example, at least 30 observations are typically required for a Gaussian distribution. This notion is rooted in traditional statistical inference, where methods are validated for large sample sizes, a concept known as asymptotic behavior, which introduces uncertainty with smaller samples.\nConversely, Bayesian estimates remain valid regardless of sample size. While larger samples are advantageous, Bayesian methods provide meaningful results even with limited data. However, they necessitate a careful selection of the “prior,” which significantly influences the final inference. An improperly chosen prior can skew conclusions. Understanding the world demands thoughtful consideration, without resorting to shortcuts.\nRole of Data:\n\nThe distinctions between Bayesian and non-Bayesian methodologies are notable, yet these differences can sometimes overshadow their underlying commonalities. In many Bayesian and non-Bayesian models, the most critical assumptions typically concern the likelihood functions and their connections with the parameters. These assumptions guide the inferences drawn from each dataset. As the sample size grows, the significance of the likelihood increases. This shared emphasis on likelihood clarifies why Bayesian and non-Bayesian inferences frequently yield similar results.\nFurthermore, a common misunderstanding regarding Bayesian data analysis and inference is the belief that they are exclusively defined by Bayes’ theorem. Any inferential method employing probability theory incorporates Bayes’ theorem. Numerous examples labeled as “Bayesian” often lack distinctive attributes and instead rely on observed data frequencies, resembling non-Bayesian methods. The distinctiveness of Bayesian techniques lies in their application of Bayes’ theorem to measure the uncertainty associated with theoretical constructs not directly observable, such as parameters and models. Both methodologies can produce robust inferences, although they are grounded in different principles and entail unique trade-offs.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Degrees of Beliefs and Evidence**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#bayesian-models",
+    "href": "M01_2.html#bayesian-models",
+    "title": "2  Bayesian Inference",
+    "section": "2.5 Bayesian Models",
+    "text": "2.5 Bayesian Models\n\n\n\nWe have explained Bayes’ rule in our previous lecture, now we will see how Bayes rule can be structured for model development using parameter and data. A model of data specifies the probability distribution of particular data given the model’s structure and parameter values. Let us denote \\(\\theta\\) as the parameter and \\(D\\) as data. Hence, we write a model using the data likelihood \\(p(D|\\theta)\\) and prior distribution of the model parameter \\(\\theta\\):\n\\[\\begin{align}\np(D|\\theta) \\times p(\\theta)\n\\end{align}\\]\nHence, Bayes rule can be used to understand the parameter values, given the data,, i.e., \\[\\begin{align}\np(\\theta|D)\n\\end{align}\\]\nThus, using the Dual-Factor table explained in previous lecture, we can write\n\n\n\n\n\nData-Parameter; Kruschke (2014)\n\n\n\n\nEach cell of the table holds the joint probability density of the specific combination of parameter value \\(\\theta\\) and data value \\(D\\), denoted \\(p(D, \\theta)\\), and which we know can be algebraically re-expressed as \\(p(D|\\theta)\\times p(\\theta)\\). Thus, we write the Bayes rule for data and parameter model as:\n\\[\\begin{align}\np(\\theta|D) &= \\frac{p(D|\\theta)\\times p(\\theta)}{p(D)};\n\\end{align}\\] where, \\[\\begin{align}\np(D) &= \\sum_{\\theta^*} p(D|\\theta^*) p(\\theta^*); \\quad \\text{ if discrete}; \\\\\np(D) &= \\int p(D|\\theta^*) p(\\theta^*) \\text{d}\\theta^*; \\quad \\text{ if continuous};\n\\end{align}\\]\nHere, \\(p(\\theta)\\) is the prior information about \\(\\theta\\) without observing data; \\(p(D|\\theta)\\) is the likelihood, i.e., data could be generated with model parameter \\(\\theta\\); and \\(p(D)\\) is the marginal likelihood obtained from data by averaging across all possible parameters.\nThe posterior distribution of \\(\\theta\\) is:\n\\[\\begin{align}\np(\\theta|D) = \\text{ Credibility of }\\theta\\text{ based on data and evidence}\n\\end{align}\\]\nThe posterior probability distribution \\(p(\\theta|D)\\) is the main goal of Bayesian inference. The posterior distribution summarises our uncertainty over the value of a parameter. If the distribution is narrower, then this indicates that we have greater confidence in our estimates of the parameter’s value. More narrow posterior distributions can be obtained by collecting more data.\nWe will explore more with examples on obtaining posterior distributions of the model parameter \\(\\theta\\) for different models, e.g., binomial distribution.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#binomial-model",
+    "href": "M01_2.html#binomial-model",
+    "title": "3  Bayesian Inference",
+    "section": "3.5 Binomial Model",
+    "text": "3.5 Binomial Model\n\nWe can write Binomial model with parameters \\(\\theta\\) and \\(n\\) trials as \\[\\begin{align}\np(y|\\theta) = \\begin{pmatrix}n\\\\y \\end{pmatrix} \\theta^y (1-\\theta)^{n-y}\n\\end{align}\\] If we consider a Beta prior distribution for \\(\\theta\\) with hyper-parameters \\(a\\) and \\(b\\), the write the distribution as: \\[\\begin{align}\np(\\theta) = \\frac{\\theta^{a-1}(1-\\theta)^{b-1}}{B(a,b)}\n\\end{align}\\] where, \\(B(a,b)=\\frac{\\Gamma(a)\\Gamma(b)}{\\Gamma(a+b)}\\) is the beta function. Thus, using Bayes theorem we write \\[\\begin{align}\np(\\theta|y) = \\frac{\\begin{pmatrix}n\\\\y \\end{pmatrix} \\theta^y (1-\\theta)^{n-y}\\times \\theta^{a-1}(1-\\theta)^{b-1}}{p(y)\\times B(a,b)}\n\\end{align}\\] With some simple calculations, we can write the marginal likelihood as: \\[\\begin{align}\np(y) = \\begin{pmatrix}n\\\\y \\end{pmatrix}\\frac{B(y+a,n-y+b)}{B(a,b)}\n\\end{align}\\] Hence, we get the analytical form of the posterior distribution of \\(\\theta\\) as: \\[\\begin{align}\np(\\theta|y) = \\frac{\\theta^{y+a-1}(1-\\theta)^{n-y+b-1}}{B(y+a,n-y+b)}\n\\end{align}\\] which follows a Beta distribution with parameters \\((a+y)\\) and \\((b+n-y)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#bayesian-odds",
+    "href": "M01_2.html#bayesian-odds",
+    "title": "2  Bayesian Inference",
+    "section": "2.7 Bayesian Odds",
+    "text": "2.7 Bayesian Odds\nWe can also think the question in terms of odds, such as what odds should I give for my guess? To define odds we can write\n\\[\n\\text{Odds of an event} = \\frac{Pr(\\text{event})}{1-Pr(\\text{event})}\n\\] Thus, to reflect the CKD example using Bayes theorem we write:\n\\[\n\\text{Odds}(\\text{G=[+]}|\\text{E}) = \\text{Odds}(\\text{G}) \\times \\frac{Pr(\\text{E}|\\text{G=[+]})}{Pr(\\text{E}|\\text{G=[-]})}\n\\] where\n\\[\n\\text{Odds}(\\text{G}) = \\frac{Pr(\\text{G=[+]})}{Pr(\\text{G=[-]})}\n\\]\nand \\(\\frac{Pr(\\text{E}|\\text{G=[+]})}{Pr(\\text{E}|\\text{G=[-]})}\\) is the ratio of evidence under my guess \\(\\text{G}\\).\nThis reflects \\[\n\\text{updated odds} = \\text{initial odds}\\times \\text{relative explanatory power}\n\\] In the end we are always going back to the term evidence changes the outcome, which could be probability or odds or any other outcome of interest.\nProvide an example for this ….",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#prior-distributions",
+    "href": "M02_1.html#prior-distributions",
+    "title": "3  Prior and Posterior Distributions",
+    "section": "3.5 Prior Distributions",
+    "text": "3.5 Prior Distributions\n\n\n\nGelman et al. (2013)\n\\[\\begin{align}\n\\text{initial belief} \\xrightarrow[]{\\text{Bayes rule + data}} \\text{new belief}\n\\end{align}\\]\nFirst we will provide some examples on how prior distributions can be useful in real-world applications, especially considering health and medical data. We have already know that the prior distribution enables researchers to integrate previous knowledge or expert opinions into their statistical models, thereby improving the precision of their decisions. For example, we might be interested in tailoring treatments and interventions based on prior knowledge, enhancing their personalization and efficacy for individual patients. For instance, if historical data indicates a 70% effectiveness rate for a certain drug in patients with similar profiles, a prior distribution (informative) can incorporate this information to predict the likelihood of success in a new patient. The synthesizing of prior knowledge with current data yields more reliable conclusions. For example, if new data shows a 80% effectiveness rate, Bayesian method leads to a refined probability of treatment success, say 75%. Use of prior information is also beneficial when historical data is sparse or in the early stages of research on new treatments. In such scenarios, the prior distribution could start with a neutral assumption (non-informative), such as a 50% effectiveness rate, and adjust as more information becomes available.\nNow we will explore some situations for estimating posterior distributions using priors, in the context of statistical models, where we want to estimate only a single parameter of the model. We will explain these models where the posterior distribution has a closed form of distribution based on data and prior distributions. Fortunately, there are models where for a particular choice of prior results in a posterior that has the same type of distribution as the prior. The property that posterior distribution has the same functional form as the prior distribution is called conjugacy. Priors that have this feature are called conjugate priors. This closed form offers easy probability calculations, simplifying updates with new data and contrasting with methods needing numerical approximations for precise inference, which we will explain more later in this lecture.\n\n3.5.1 Bernoulli Model\n\n…\nTo explore this with example, let us consider the example we explained earlier on the efficacy rate of a certain vaccine in patients with similar profiles. Here, we write the prior distribution of 70% effectiveness, i.e., \\(p(\\theta)=0.7\\). To reflect this probability into Beta prior distribution hyper-parameters \\(a\\) and \\(b\\), we can consider \\(a=7\\) and \\(b=3\\). This is derived from the mean of the Beta distribution, i.e., \\(\\frac{a}{a+b}=0.7\\). Note that there are also other combinations of \\(a\\) and \\(b\\) values that can also lead to the probability 0.7.\nNow, if new data shows a 80% efficacy rate, where we collect data from \\(n=10\\) individuals. Then we can write the posterior distribution of \\(\\theta\\), i.e., \\(p(\\theta|y)\\) as: \\[\\begin{align}\n\\text{Beta}(a+y,b+n-y) &= \\text{Beta}(7+8,3+10-8) \\\\\n&= \\text{Beta}(15,5)\n\\end{align}\\] This yields a mean \\(\\frac{15}{15+5}=0.75\\). Thus, based on the mean of the Beta distribution, we can say analytically, Bayesian method leads to a 75% refined probability of treatment success.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#estimand-estimator-estimate",
+    "href": "M02_1.html#estimand-estimator-estimate",
+    "title": "4  Prior and Posterior Distributions",
+    "section": "4.8 Estimand, Estimator & Estimate",
+    "text": "4.8 Estimand, Estimator & Estimate\nasdf\nref: https://bookdown.org/paul/applied-causal-analysis/estimator.html\nThe estimand is the quantity of interest whose true value you want to know.\nAn estimator is a method for estimating the estimand.\nAn estimate is a numerical estimate of the estimand that results from the use of a particular estimator.\nFor example, suppose we are interested in the mean height of all male adults in the United States. Our estimand is “the mean height of all male adults in the United States”. A foolproof way to find this mean exactly would be to measure the height of each and every male adult in the United States and compute the mean. But that sounds too hard, so instead we decide to estimate the mean height by taking a random sample of male adults in the United States and measuring the height of each individual. Suppose we take a random sample of 100 adult men in the United States and measure their heights. Using this data, we now have to choose an estimator that will provide us with an estimate of our estimand.\nThe most obvious thing to do would be to compute the sample average of the heights. That is, “the sample average” is an estimator that provides an estimate of our estimand. Suppose the sample average is 70 inches. Then 70 inches is the estimate of our estimand provided by the “sample average” estimator.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html",
+    "href": "M03_1.html",
+    "title": "5  Bayesian Regressions - I",
+    "section": "",
+    "text": "5.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#causality-and-bayesian-model",
+    "href": "M03_1.html#causality-and-bayesian-model",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.4 Causality and Bayesian Model",
+    "text": "5.4 Causality and Bayesian Model\n\n\n\nCausal inference requires the establishment of a causal model that is separate from a Bayesian model, given that observational data alone do not suffice. This is widely accepted across different philosophical perspectives. Nonetheless, interpretations differ considerably. The most conservative viewpoint treats “causation” as an unprovable notion. A slightly less conservative approach posits that causation can be inferred only under stringent conditions involving randomization and experimental control. However, many scientific investigations cannot be feasibly examined through experimental study. Other cases might be feasible but raise ethical concerns. In disciplines like health and medicine, the dominant approach involves incorporating various “control” variables into a statistical model, observing changes in estimates, and then developing a causal narrative. This concept is based on the assumption that only omitted variables can lead to incorrect conclusions about causation. However, variables that are included can also lead to confusion. When constructing a causal model that appears to make accurate predictions might still mislead us about causation. If such a model is used to design an intervention, it is likely to result in inaccurate outcomes.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#estimand-estimator-estimate",
+    "href": "M03_1.html#estimand-estimator-estimate",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.5 Estimand, Estimator & Estimate",
+    "text": "5.5 Estimand, Estimator & Estimate\n\nThe estimand is the quantity of interest whose true value you want to know.\nAn estimator is a method for estimating the estimand.\nAn estimate is a numerical estimate of the estimand that results from the use of a particular estimator.\n\n5.5.1 Bayesian Context\nSuppose we are interested in the mean vaccine efficacy for a respiratory-related disease among children in Australia. Our estimand is “the mean vaccine efficacy for the respiratory-related disease among all children in Australia”, Now we take a random sample of 10,000 children in Australia and measure the vaccine’s efficacy in preventing the respiratory-related disease in each child. Using this data, we now have to choose an estimator that will provide us with an estimate of our estimand. The most obvious thing to do would be to compute the sample average of the vaccine efficacies. That is, “the sample average” is an estimator that provides an estimate of our estimand. Suppose the sample average indicates a vaccine efficacy of 85%. Then 85% is the estimate of our estimand provided by the “sample average” estimator.\nThe key link to Bayesian thinking is the use of prior information, the combination of prior beliefs with observed data, and the resulting posterior distribution that provides a more comprehensive understanding of the estimand and its uncertainty. In the context of this Bayesian example the estimand is the true, but unknown, mean vaccine efficacy for the respiratory-related disease among all children in Australia. This is the quantity we are ultimately interested in estimating. The estimator is the posterior distribution of the vaccine efficacy. This distribution is derived by combining the prior information with the likelihood of the observed data using Bayes’ theorem. A specific summary statistic of the posterior distribution, such as the posterior mean or posterior median, can also serve as an estimator. The estimate is the specific value or summary of the posterior distribution. For example, if the posterior mean vaccine efficacy is 85%, then 85% is the estimate of the estimand provided by the posterior mean estimator.\n\n\n5.5.2 Regression Context\nNow, let us explain this example in the context of regression problem. Suppose we are interested in understanding how vaccine efficacy for a respiratory-related disease among children in Australia is influenced by certain predictors, such as age, pre-existing health conditions, and socioeconomic status. In this case, our estimand is the set of true regression coefficients that describe the relationship between these predictors and vaccine efficacy.\nA foolproof way to determine these coefficients would be to measure vaccine efficacy and collect all relevant predictor data (e.g., age, health conditions, and socioeconomic status) for every child in Australia and then fit a regression model to the entire population data. However, this is infeasible. Instead, we decide to estimate the regression coefficients using a sample of children.\nHence, we take a random sample of 10,000 children in Australia and collect data on their vaccine efficacy and the relevant predictors. Using this data, we fit a regression model (e.g., a linear regression model) to estimate the relationship between the predictors and vaccine efficacy.\nIn the Bayesian framework, we approach this problem by starting with a prior distribution for each regression coefficient, reflecting our prior beliefs about the relationships. For instance, based on previous studies, we might believe that younger children have slightly lower vaccine efficacy and encode this belief into the prior.\nThe sample data provides the likelihood, representing the probability of observing the data given different values of the regression coefficients. By applying Bayes’ theorem, we combine the prior with the likelihood to produce a posterior distribution for each regression coefficient. The posterior distributions represent our updated beliefs about the coefficients after observing the data.\nFor example, if the posterior mean for the age coefficient is -0.5, it suggests that, on average, each additional year of age is associated with a 0.5% decrease in vaccine efficacy. If the posterior mean for the socioeconomic status coefficient is 2.0, it suggests that higher socioeconomic status is associated with a 2% increase in vaccine efficacy.\nHere, estimand is the true regression coefficients that describe the relationships between the predictors and vaccine efficacy. Estimator is the posterior distributions of the regression coefficients. These distributions summarize the uncertainty about the coefficients. And estimate is the specific value derived from the posterior distributions, such as the posterior mean, median, or mode for each coefficient.\nThis Bayesian approach allows us not only to estimate the coefficients but also to quantify our uncertainty about them, providing a more comprehensive understanding of the predictors’ influence on vaccine efficacy.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#model-development-using-dag",
+    "href": "M03_1.html#model-development-using-dag",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.6 Model Development using DAG",
+    "text": "5.6 Model Development using DAG\n\n\nA Directed Acyclic Graph (DAG) can be a helpful tool for conceptualizing and developing regression models. It helps to visually represent causal relationships among variables and ensures proper adjustment for confounding factors.\nYou want to model the relationship between Bone Mineral Density (BMD) and Age, considering other potential factors like Sex, Physical Activity, Dietary Calcium Intake, and Body Mass Index (BMI).\n\n\n\n\n\n graph TD\n    A(\"Age\") --&gt; B(\"BMD\")\n    A --&gt; P(\"Physical Activity\") --&gt; B\n    A --&gt; M(\"BMI\") --&gt; B\n    S(\"Sex\") --&gt; B\n    S --&gt; M --&gt; B\n    D(\"Dietary Calcium Intake\") --&gt; M",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html",
+    "href": "M03_2.html",
+    "title": "7  Bayesian Regressions - II",
+    "section": "",
+    "text": "7.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#model-diagnostics",
+    "href": "M03_1.html#model-diagnostics",
+    "title": "5  Bayesian Regressions - I",
+    "section": "5.8 Model Diagnostics",
+    "text": "5.8 Model Diagnostics\nhttps://m-clark.github.io/easy-bayes/shinystan.html\nshinystan for model diag.\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayesian Regressions - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#logistic-regression",
+    "href": "M03_2.html#logistic-regression",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.4 Logistic Regression",
+    "text": "7.4 Logistic Regression\n\n\nasdf",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#poisson-regression",
+    "href": "M03_2.html#poisson-regression",
+    "title": "7  Bayesian Regressions - II",
+    "section": "7.5 Poisson Regression",
+    "text": "7.5 Poisson Regression\n\n\nVedio\n…\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Bayesian Regressions - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html",
+    "href": "M04_1.html",
+    "title": "8  Clustered Data Modelling - I",
+    "section": "",
+    "text": "8.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clustered Data Modelling - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html",
+    "href": "M04_2.html",
+    "title": "9  Clustered Data Modelling - II",
+    "section": "",
+    "text": "9.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Clustered Data Modelling - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html",
+    "href": "M05_1.html",
+    "title": "9  Bayesian Sample Size Calculation",
+    "section": "",
+    "text": "9.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Bayesian Sample Size Calculation**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html",
+    "href": "M05_2.html",
+    "title": "10  Bayesian Adaptions for Sample Size Calculations",
+    "section": "",
+    "text": "10.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Bayesian Adaptions for Sample Size Calculations**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html",
+    "href": "M06_1.html",
+    "title": "11  Bayesian Model Choice",
+    "section": "",
+    "text": "11.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html",
+    "href": "M06_2.html",
+    "title": "13  Further Topics on Bayesian Analysis",
+    "section": "",
+    "text": "13.1 Learning Objectives\nBy the end of this week you should be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>**Further Topics on Bayesian Analysis**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#model-with-binary-variable",
+    "href": "M01_2.html#model-with-binary-variable",
+    "title": "2  Bayesian Inference",
+    "section": "2.6 Model with Binary Variable",
+    "text": "2.6 Model with Binary Variable\n\nSuppose we have a Bernoulli variable \\(y\\), i.e., can take values either 0 or 1. With parameter \\(\\theta\\) and for \\(n&gt;1\\) number of trials the Bernoulli distribution yields a Binomial distribution. Considering \\(Y=sum^n y\\) as the number of successes in \\(n\\) trials, we can write: \\[\\begin{align}\np(Y|\\theta) = \\begin{pmatrix}n\\\\Y \\end{pmatrix} \\theta^Y (1-\\theta)^{n-Y}\n\\end{align}\\] This also represents the likelihood of the Bernoulli variable \\(y\\).\nNow, if we consider a Beta prior distribution for \\(\\theta\\) with hyper-parameters \\(a\\) and \\(b\\), then we can write the prior distribution as: \\[\\begin{align}\np(\\theta) = \\frac{\\theta^{a-1}(1-\\theta)^{b-1}}{B(a,b)}\n\\end{align}\\] where, \\(B(a,b)=\\frac{\\Gamma(a)\\Gamma(b)}{\\Gamma(a+b)}\\) is the beta function. Thus, using Bayes theorem we write \\[\\begin{align}\np(\\theta|y) = \\frac{\\begin{pmatrix}n\\\\Y \\end{pmatrix} \\theta^Y (1-\\theta)^{n-Y}\\times \\theta^{a-1}(1-\\theta)^{b-1}}{p(Y)\\times B(a,b)}\n\\end{align}\\] With some simple calculations, we can write the marginal likelihood as: \\[\\begin{align}\np(Y) = \\begin{pmatrix}n\\\\Y \\end{pmatrix}\\frac{B(Y+a,n-Y+b)}{B(a,b)}\n\\end{align}\\] Hence, we get the analytical form of the posterior distribution of \\(\\theta\\) as: \\[\\begin{align}\np(\\theta|Y) = \\frac{\\theta^{Y+a-1}(1-\\theta)^{n-Y+b-1}}{B(Y+a,n-Y+b)}\n\\end{align}\\] which follows a Beta distribution with parameters \\((a+Y)\\) and \\((b+n-Y)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M01_2.html#learning-outcomes",
+    "href": "M01_2.html#learning-outcomes",
+    "title": "2  Bayesian Inference",
+    "section": "2.3 Learning Outcomes",
+    "text": "2.3 Learning Outcomes\nLO1, LO2, LO3, LO4",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>**Bayesian Inference**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#learning-outcomes",
+    "href": "M02_2.html#learning-outcomes",
+    "title": "4  Tools and Generative Models",
+    "section": "4.3 Learning Outcomes",
+    "text": "4.3 Learning Outcomes",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#solving-untraceability",
+    "href": "M02_2.html#solving-untraceability",
+    "title": "4  Tools and Generative Models",
+    "section": "4.7 Solving Untraceability",
+    "text": "4.7 Solving Untraceability\nDifferent types of algorithms have been developed to tackle untraceable solutions. Such as numerical integration, Markov chain Monte Carlo (MCMC), variational inference, Laplace approximation etc. In this couse, we will learn how to use and impliment these algorithms to solve real-life problems. We refer Gelman et al. (2013) Chapter (..) for details on this for those interested to explore more.\n\n4.7.1 MCMC algorithms\nref: https://www.statlect.com/fundamentals-of-statistics/Markov-Chain-Monte-Carlo\nIn this course, we will focus on learning Markov chain Monte Carlo (MCMC) algorithms, which is a sampling based approach to approximate the posterior distribution when direct sampling is difficult or computationally impractical.\nA Markov chain is a stochastic process where the next state depends only on the current state, not on the sequence of states that preceded it. This property is called the Markov property. The transition between states is defined by a transition probability matrix or kernel. Monte Carlo methods involve random sampling to estimate numerical quantities, such as integrals, expectations, or probabilities. MCMC combines this with Markov chains to generate samples.\nSome common MCMC algorithms include Metropolis-Hastings (MH) algorithm, Gibbs sampling, Hamiltonian Monte Carlo (HMC) etc. MH is a general MCMC method that generates candidate samples from a proposal distribution. A candidate is accepted or rejected based on an acceptance probability, ensuring the chain converges to the target distribution. Whereas, Gibbs sampling is a special case of the Metropolis-Hastings algorithm. Updates one variable at a time by sampling from its conditional distribution while keeping other variables fixed. The Hamiltonian Monte Carlo (HMC) algorithm uses gradient information from the target distribution to propose new samples, making it more efficient for high-dimensional problems.\nHere’s a summary table comparing the Metropolis-Hastings (MH) algorithm, Gibbs Sampling, and Hamiltonian Monte Carlo (HMC), focusing on when each method is most useful:\n\n\n\n\n\n\n\n\n\n\nMetropolis-Hastings (MH)\nGibbs Sampling\nHamiltonian Monte Carlo (HMC)\n\n\n\n\nApplicability\nGeneral-purpose; works for most distributions, even when structure is unknown.\nRequires easily derived and sampled conditional distributions.\nRequires gradients of the target distribution.\n\n\nFlexibility\nHighly flexible; can handle multimodal or complex distributions.\nLimited to cases where conditional distributions exist.\nBest for smooth, high-dimensional, continuous distributions.\n\n\nEfficiency\nMay require many iterations due to rejection.\nEfficient for models with structured dependencies.\nHighly efficient in high dimensions.\n\n\nParameter Tuning\nRequires tuning of the proposal distribution (e.g., step size).\nNo tuning required.\nRequires tuning of step size and number of leapfrog steps.\n\n\nCorrelated Variables\nCan handle correlated variables with appropriate proposal design.\nMay struggle with high correlation due to sequential updates.\nHandles correlation effectively with gradient-based proposals.\n\n\nModel Type\nSuitable for any distribution, discrete or continuous.\nBest for structured models (e.g., hierarchical Bayesian).\nOnly for continuous, differentiable distributions.\n\n\nComplexity of Implementation\nRelatively simple to implement.\nSimple if conditional distributions are available.\nMore complex due to gradient computations.\n\n\nComputation Cost Per Step\nLow to moderate, depending on the proposal.\nLow per iteration.\nHigh due to gradient and Hamiltonian computations.\n\n\n\n\n\n4.7.2 MCMC convergence diagnostics\n\n\nIf all chains exhibit good mixing and overlap significantly, convergence is likely achieved. For example: A poorly mixed trace might stay in one region for too long or exhibit a trend. Each chain fluctuates randomly, indicating that it explores the target distribution.\nAutocorrelation should decay quickly (close to 0 at larger lags), indicating less dependence between consecutive samples. Slow decay indicates that the chain is not exploring efficiently.\nGelman-Rubin Diagnostic \\(\\hat{R}\\) near 1 indicates convergence. Gelman-Rubin Plot will show how \\(\\hat{R}\\) decreases over iterations. A flat line near 1 confirms that all chains have reached the stationary distribution.\n\n4.7.2.1 MH algorithm\nWe want to sample from a standard normal distribution \\(N(0,1)\\) using the Metropolis-Hastings algorithm, starting from an arbitrary initial point. This allows us to observe how the MCMC chain gradually converges to the target distribution. We write the target density \\(y\\sim N(0,1)\\) as: \\[\\begin{align}\np(y) &= \\frac{1}{\\sqrt{2\\pi}}\\exp\\left(-\\frac{y^2}{2}\\right)\n\\end{align}\\]\n\n\nCode\n# Load required package\nif (!requireNamespace(\"coda\", quietly = TRUE)) install.packages(\"coda\")\nlibrary(coda)\n\n# Metropolis-Hastings function\nmetropolis_hastings &lt;- function(target_density, proposal_sd, n_iter, initial_value) {\n  chain &lt;- numeric(n_iter)\n  chain[1] &lt;- initial_value\n  \n  for (i in 2:n_iter) {\n    proposal &lt;- rnorm(1, mean = chain[i - 1], sd = proposal_sd)\n    acceptance_prob &lt;- min(1, target_density(proposal) / target_density(chain[i - 1]))\n    if (runif(1) &lt; acceptance_prob) {\n      chain[i] &lt;- proposal\n    } else {\n      chain[i] &lt;- chain[i - 1]\n    }\n  }\n  \n  return(chain)\n}\n\n# Define the target density (Standard Normal)\ntarget_density &lt;- function(x) dnorm(x, mean = 0, sd = 1)\n\n# Run multiple chains\nset.seed(123)\nn_iter &lt;- 10000\nn_chains &lt;- 3\nchains &lt;- list(\n  chain1 = metropolis_hastings(target_density, proposal_sd = 1, n_iter, initial_value = 10),\n  chain2 = metropolis_hastings(target_density, proposal_sd = 1, n_iter, initial_value = -10),\n  chain3 = metropolis_hastings(target_density, proposal_sd = 1, n_iter, initial_value = 5)\n)\n\n# Convert chains to mcmc.list (for coda package)\nmcmc_chains &lt;- mcmc.list(\n  mcmc(chains$chain1),\n  mcmc(chains$chain2),\n  mcmc(chains$chain3)\n)\n\n# 1. Trace Plots\npar(mfrow = c(1, 3))  # 1 row, 3 columns for each chain\nfor (i in 1:n_chains) {\n  plot(mcmc_chains[[i]], type = \"l\", col = \"blue\", \n       main = paste(\"Trace Plot: Chain\", i), \n       xlab = \"Iteration\", ylab = \"Value\")\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\n# 2. Autocorrelation Plots\npar(mfrow = c(1, 3))  # Reset to 1 row, 3 columns for autocorrelation plots\nfor (i in 1:n_chains) {\n  autocorr.plot(mcmc_chains[[i]], main = paste(\"Autocorrelation: Chain\", i), lag.max = 50)\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\n# 3. Gelman-Rubin Diagnostic\ngelman_diag &lt;- gelman.diag(mcmc_chains)\nprint(gelman_diag)\n\n\nPotential scale reduction factors:\n\n     Point est. Upper C.I.\n[1,]          1          1\n\n\nCode\n# 4. Gelman-Rubin Plot\ngelman.plot(mcmc_chains)\n\n\n\n\n\n\n\n\n\n\n\n4.7.2.2 Gibbs sampling\nLet’s use Gibbs Sampling to sample from a bivariate normal distribution where the marginal distributions of each variable are normal, but the two variables are correlated. We’ll then assess the convergence using trace plots, autocorrelation plots, and the Gelman-Rubin diagnostic.\nThe joint density is the bivariate normal distribution: \\[\\begin{align}\np(x,y) &= \\frac{1}{2\\pi\\sqrt{1-\\rho^2}}\\exp\\left(-\\frac{1}{2(1-\\rho^2)}\\left(x^2-2\\rho x y +y^2 \\right) \\right)\n\\end{align}\\] where \\(\\rho\\) is the correlation between \\(x\\) and \\(y\\)\n\n\nCode\n# Load required library\nif (!requireNamespace(\"coda\", quietly = TRUE)) install.packages(\"coda\")\nlibrary(coda)\n\n# Gibbs Sampling Function\ngibbs_sampling &lt;- function(n_iter, rho, initial_values) {\n  x &lt;- numeric(n_iter)\n  y &lt;- numeric(n_iter)\n  \n  # Set initial values\n  x[1] &lt;- initial_values[1]\n  y[1] &lt;- initial_values[2]\n  \n  # Gibbs sampling iterations\n  for (i in 2:n_iter) {\n    # Sample x given y\n    x[i] &lt;- rnorm(1, mean = rho * y[i - 1], sd = sqrt(1 - rho^2))\n    # Sample y given x\n    y[i] &lt;- rnorm(1, mean = rho * x[i], sd = sqrt(1 - rho^2))\n  }\n  \n  return(data.frame(x = x, y = y))\n}\n\n# Parameters\nset.seed(123)         # For reproducibility\nn_iter &lt;- 10000       # Number of iterations\nrho &lt;- 0.8            # Correlation between x and y\ninitial_values &lt;- c(0, 0)  # Initial values for x and y\n\n# Run three independent Gibbs sampling chains\nchain1 &lt;- gibbs_sampling(n_iter, rho, c(0, 0))\nchain2 &lt;- gibbs_sampling(n_iter, rho, c(10, 10))\nchain3 &lt;- gibbs_sampling(n_iter, rho, c(-10, -10))\n\n# Convert chains to mcmc.list (for coda package)\nmcmc_chains &lt;- mcmc.list(\n  mcmc(as.matrix(chain1)),\n  mcmc(as.matrix(chain2)),\n  mcmc(as.matrix(chain3))\n)\n\n# 1. Trace Plots\npar(mfrow = c(2, 3))  # 2 rows, 3 columns for x and y of each chain\nfor (i in 1:3) {\n  plot(mcmc_chains[[i]][, \"x\"], type = \"l\", col = \"blue\",\n       main = paste(\"Trace Plot: Chain\", i, \"(x)\"), \n       xlab = \"Iteration\", ylab = \"Value\")\n  plot(mcmc_chains[[i]][, \"y\"], type = \"l\", col = \"red\",\n       main = paste(\"Trace Plot: Chain\", i, \"(y)\"), \n       xlab = \"Iteration\", ylab = \"Value\")\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\n# 2. Autocorrelation Plots\npar(mfrow = c(2, 3))  # Reset to 2 rows, 3 columns for autocorrelation plots\nfor (i in 1:3) {\n  autocorr.plot(mcmc_chains[[i]][, \"x\"], main = paste(\"Autocorrelation: Chain\", i, \"(x)\"))\n  autocorr.plot(mcmc_chains[[i]][, \"y\"], main = paste(\"Autocorrelation: Chain\", i, \"(y)\"))\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\n# 3. Gelman-Rubin Diagnostic\ngelman_diag &lt;- gelman.diag(mcmc_chains)\nprint(gelman_diag)\n\n\nPotential scale reduction factors:\n\n  Point est. Upper C.I.\nx          1          1\ny          1          1\n\nMultivariate psrf\n\n1\n\n\nCode\n# 4. Gelman-Rubin Plot\ngelman.plot(mcmc_chains)\n\n\n\n\n\n\n\n\n\n\n\n4.7.2.3 HMC\nHamiltonian Monte Carlo (HMC) is a powerful MCMC algorithm that uses information about the gradient of the log-probability density to efficiently sample from complex distributions. Below, we provide an example of implementing HMC using R with the rstan package, which includes a highly optimized implementation of HMC.\nref: https://mc-stan.org/bayesplot/articles/visual-mcmc-diagnostics.html\n\n\nCode\n# Load required packages\nlibrary(rstan)\n\n\nLoading required package: StanHeaders\n\n\n\nrstan version 2.32.6 (Stan version 2.32.2)\n\n\nFor execution on a local, multicore CPU with excess RAM we recommend calling\noptions(mc.cores = parallel::detectCores()).\nTo avoid recompilation of unchanged Stan programs, we recommend calling\nrstan_options(auto_write = TRUE)\nFor within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,\nchange `threads_per_chain` option:\nrstan_options(threads_per_chain = 1)\n\n\nDo not specify '-march=native' in 'LOCAL_CPPFLAGS' or a Makevars file\n\n\n\nAttaching package: 'rstan'\n\n\nThe following object is masked from 'package:coda':\n\n    traceplot\n\n\nCode\nlibrary(bayesplot)\n\n\nThis is bayesplot version 1.11.1\n\n\n- Online documentation and vignettes at mc-stan.org/bayesplot\n\n\n- bayesplot theme set to bayesplot::theme_default()\n\n\n   * Does _not_ affect other ggplot2 plots\n\n\n   * See ?bayesplot_theme_set for details on theme setting\n\n\nCode\n# Generate synthetic data\nset.seed(42)\ntrue_mu &lt;- 5.0\ntrue_sigma &lt;- 2.0\nn_samples &lt;- 100\ny &lt;- rnorm(n_samples, mean = true_mu, sd = true_sigma)\n\n# Plot the data\nhist(y, breaks = 20, col = \"lightblue\", main = \"Observed Data\", xlab = \"y\")\n\n\n\n\n\n\n\n\n\nCode\n# Stan model code\nstan_code &lt;- \"\ndata {\n  int&lt;lower=0&gt; N;        // Number of observations\n  vector[N] y;           // Observed data\n}\nparameters {\n  real mu;               // Mean\n  real&lt;lower=0&gt; sigma;   // Standard deviation\n}\nmodel {\n  mu ~ normal(0, 10);    // Prior for mu\n  sigma ~ normal(0, 10); // Prior for sigma\n  y ~ normal(mu, sigma); // Likelihood\n}\n\"\n\n# Prepare data for Stan\nstan_data &lt;- list(\n  N = length(y),\n  y = y\n)\n\n# Fit the model using Stan\nfit &lt;- stan(\n  model_code = stan_code,\n  data = stan_data,\n  iter = 2000,      # Total number of iterations (1000 warmup + 1000 sampling)\n  warmup = 1000,    # Warm-up iterations\n  chains = 3,       # Number of Markov chains\n  seed = 42         # For reproducibility\n)\n\n\n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).\nChain 1: \nChain 1: Gradient evaluation took 4e-05 seconds\nChain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.4 seconds.\nChain 1: Adjust your expectations accordingly!\nChain 1: \nChain 1: \nChain 1: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 1: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 1: \nChain 1:  Elapsed Time: 0.044 seconds (Warm-up)\nChain 1:                0.038 seconds (Sampling)\nChain 1:                0.082 seconds (Total)\nChain 1: \n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).\nChain 2: \nChain 2: Gradient evaluation took 1e-05 seconds\nChain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.\nChain 2: Adjust your expectations accordingly!\nChain 2: \nChain 2: \nChain 2: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 2: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 2: \nChain 2:  Elapsed Time: 0.044 seconds (Warm-up)\nChain 2:                0.038 seconds (Sampling)\nChain 2:                0.082 seconds (Total)\nChain 2: \n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).\nChain 3: \nChain 3: Gradient evaluation took 7e-06 seconds\nChain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.\nChain 3: Adjust your expectations accordingly!\nChain 3: \nChain 3: \nChain 3: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 3: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 3: \nChain 3:  Elapsed Time: 0.039 seconds (Warm-up)\nChain 3:                0.037 seconds (Sampling)\nChain 3:                0.076 seconds (Total)\nChain 3: \n\n\nCode\n# Summarize the posterior distributions\nprint(fit, pars = c(\"mu\", \"sigma\"))\n\n\nInference for Stan model: anon_model.\n3 chains, each with iter=2000; warmup=1000; thin=1; \npost-warmup draws per chain=1000, total post-warmup draws=3000.\n\n      mean se_mean   sd 2.5%  25%  50%  75% 97.5% n_eff Rhat\nmu    5.07       0 0.21 4.64 4.93 5.07 5.21  5.49  2863    1\nsigma 2.11       0 0.15 1.83 2.00 2.10 2.21  2.43  2560    1\n\nSamples were drawn using NUTS(diag_e) at Wed Jan 29 08:07:08 2025.\nFor each parameter, n_eff is a crude measure of effective sample size,\nand Rhat is the potential scale reduction factor on split chains (at \nconvergence, Rhat=1).\n\n\nCode\n# MCMC plots\nlibrary(bayesplot)\nmcmc_trace(fit, pars = c(\"mu\", \"sigma\"))\n\n\n\n\n\n\n\n\n\nCode\nmcmc_areas(fit, pars = c(\"mu\", \"sigma\"))\n\n\n\n\n\n\n\n\n\nCode\nmcmc_acf_bar(fit, pars = c(\"mu\", \"sigma\"))\n\n\n\n\n\n\n\n\n\nCode\n# Convert chains to mcmc.list (for coda package)\nlibrary(coda)\nposterior_samples &lt;- as.array(fit)\nmcmc_chains &lt;- mcmc.list(\n  mcmc(as.matrix(posterior_samples[,1,])),\n  mcmc(as.matrix(posterior_samples[,2,])),\n  mcmc(as.matrix(posterior_samples[,3,]))\n)\n\ngelman_diag &lt;- gelman.diag(mcmc_chains)\nprint(gelman_diag)\n\n\nPotential scale reduction factors:\n\n      Point est. Upper C.I.\nmu          1.01       1.02\nsigma       1.00       1.00\nlp__        1.01       1.02\n\nMultivariate psrf\n\n1.01\n\n\nCode\n# Gelman-Rubin Plot\ngelman.plot(mcmc_chains)\n\n\n\n\n\n\n\n\n\nCode\n# R hat\nrhats &lt;- rhat(fit)\nrhats\n\n\n      mu    sigma     lp__ \n1.000407 0.999803 1.001008 \n\n\nCode\nmcmc_rhat(rhats) + yaxis_text(hjust = 1)\n\n\n\n\n\n\n\n\n\nCode\n# Effective sample size\nratios_cp &lt;- neff_ratio(fit)\nprint(ratios_cp)\n\n\n       mu     sigma      lp__ \n0.9542813 0.8532551 0.5125224 \n\n\nCode\nmcmc_neff(ratios_cp, size = 2) + yaxis_text(hjust = 1)\n\n\n\n\n\n\n\n\n\nCode\n# use shinystan\nlibrary(shinystan)\n\n\nLoading required package: shiny\n\n\n\nThis is shinystan version 2.6.0\n\n\nCode\nlaunch_shinystan(fit)\n\n\n\nLaunching ShinyStan interface... for large models this  may take some time.\n\n\n\nListening on http://127.0.0.1:3192\n\n\nWarning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.\nℹ Please use the `linewidth` argument instead.\n\n\nWarning: `includeHTML()` was provided a `path` that appears to be a complete HTML document.\n✖ Path: html/neff.html\nℹ Use `tags$iframe()` to include an HTML document. You can either ensure `path` is accessible in your app or document (see e.g. `shiny::addResourcePath()`) and pass the relative path to the `src` argument. Or you can read the contents of `path` and pass the contents to `srcdoc`.\n\n\nWarning: `includeHTML()` was provided a `path` that appears to be a complete HTML document.\n✖ Path: html/mcse.html\nℹ Use `tags$iframe()` to include an HTML document. You can either ensure `path` is accessible in your app or document (see e.g. `shiny::addResourcePath()`) and pass the relative path to the `src` argument. Or you can read the contents of `path` and pass the contents to `srcdoc`.\n\n\nWarning: `includeHTML()` was provided a `path` that appears to be a complete HTML document.\n✖ Path: html/rhat.html\nℹ Use `tags$iframe()` to include an HTML document. You can either ensure `path` is accessible in your app or document (see e.g. `shiny::addResourcePath()`) and pass the relative path to the `src` argument. Or you can read the contents of `path` and pass the contents to `srcdoc`.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Tools and Generative Models**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_1.html#learning-outcomes",
+    "href": "M02_1.html#learning-outcomes",
+    "title": "3  Prior and Posterior Distributions",
+    "section": "3.3 Learning Outcomes",
+    "text": "3.3 Learning Outcomes",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Prior and Posterior Distributions**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#criterion-and-shrinkage-based",
+    "href": "M06_1.html#criterion-and-shrinkage-based",
+    "title": "11  Bayesian Model Choice",
+    "section": "11.4 Criterion and Shrinkage Based",
+    "text": "11.4 Criterion and Shrinkage Based\nasdf ref - lambert page 225, sec: 10.5 (AIC, DIC, WAIC, LOO-CV)\nasdf ref - … spike-slab priors (mixture-priors), Bayesian lasso",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#hypothesis-testing-with-bf",
+    "href": "M06_1.html#hypothesis-testing-with-bf",
+    "title": "11  Bayesian Model Choice",
+    "section": "11.5 Hypothesis Testing with BF",
+    "text": "11.5 Hypothesis Testing with BF\nref: https://statswithr.github.io/book/hypothesis-testing-with-normal-populations.html",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#bayesian-model-averaging",
+    "href": "M06_1.html#bayesian-model-averaging",
+    "title": "11  Bayesian Model Choice",
+    "section": "11.6 Bayesian Model Averaging",
+    "text": "11.6 Bayesian Model Averaging\nref: https://statswithr.github.io/book/bayesian-model-choice.html#bayesian-model-averaging\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Bayesian Model Choice**</span>"
+    ]
+  }
+]
