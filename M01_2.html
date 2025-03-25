@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Bayesian Inference – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>2&nbsp; Bayesian Dreams: Inference – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -88,9 +122,16 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -133,7 +174,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M01_2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Inference</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M01_2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Dreams: Inference</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -173,73 +214,73 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M01_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Degrees of Beliefs and Evidence</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Bayesian Dreams: Navigating Evidence</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M01_2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Inference</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Dreams: Inference</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M02_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><strong>Prior and Posterior Distributions</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><strong>Chaotics: Prior and Posterior</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M02_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><strong>Tools and Generative Models</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><strong>Chaotics: Generative Models and Tools</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayesian Regressions - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayesian Regressions - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Clustered Data Modelling - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Let Bayes Handle It!</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Clustered Data Modelling - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Bayesian Sample Size Calculation</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Bayesian Secrets to the Right Sample</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Bayesian Adaptions for Sample Size Calculations</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Bayesian Model Choice</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder! Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Further Topics on Bayesian Analysis</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder! Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -264,25 +305,22 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">2.1</span> Learning Objectives</a></li>
-  <li><a href="#learning-activities" id="toc-learning-activities" class="nav-link" data-scroll-target="#learning-activities"><span class="header-section-number">2.2</span> Learning Activities</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">2.3</span> Learning Outcomes</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2.4</span> Introduction</a></li>
-  <li><a href="#bayesian-models" id="toc-bayesian-models" class="nav-link" data-scroll-target="#bayesian-models"><span class="header-section-number">2.5</span> Bayesian Models</a></li>
-  <li><a href="#model-with-binary-variable" id="toc-model-with-binary-variable" class="nav-link" data-scroll-target="#model-with-binary-variable"><span class="header-section-number">2.6</span> Model with Binary Variable</a></li>
-  <li><a href="#bayesian-odds" id="toc-bayesian-odds" class="nav-link" data-scroll-target="#bayesian-odds"><span class="header-section-number">2.7</span> Bayesian Odds</a></li>
-  <li><a href="#bayesian-updating" id="toc-bayesian-updating" class="nav-link" data-scroll-target="#bayesian-updating"><span class="header-section-number">2.8</span> Bayesian Updating</a></li>
-  <li><a href="#bayesian-language" id="toc-bayesian-language" class="nav-link" data-scroll-target="#bayesian-language"><span class="header-section-number">2.9</span> Bayesian Language</a></li>
-  <li><a href="#dag" id="toc-dag" class="nav-link" data-scroll-target="#dag"><span class="header-section-number">2.10</span> DAG</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.11</span> Exercises</a>
+  <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">2.1</span> Learnings</a></li>
+  <li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link" data-scroll-target="#bayesian-inference"><span class="header-section-number">2.2</span> Bayesian Inference</a></li>
+  <li><a href="#bayesian-models" id="toc-bayesian-models" class="nav-link" data-scroll-target="#bayesian-models"><span class="header-section-number">2.3</span> Bayesian Models</a></li>
+  <li><a href="#model-with-binary-variable" id="toc-model-with-binary-variable" class="nav-link" data-scroll-target="#model-with-binary-variable"><span class="header-section-number">2.4</span> Model with Binary Variable</a></li>
+  <li><a href="#bayesian-odds" id="toc-bayesian-odds" class="nav-link" data-scroll-target="#bayesian-odds"><span class="header-section-number">2.5</span> Bayesian Odds</a></li>
+  <li><a href="#bayesian-language" id="toc-bayesian-language" class="nav-link" data-scroll-target="#bayesian-language"><span class="header-section-number">2.6</span> Bayesian Language</a></li>
+  <li><a href="#directed-acyclic-graph-dag" id="toc-directed-acyclic-graph-dag" class="nav-link" data-scroll-target="#directed-acyclic-graph-dag"><span class="header-section-number">2.7</span> Directed Acyclic Graph (DAG)</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.8</span> Examples:</a>
   <ul class="collapse">
-  <li><a href="#poisson-model" id="toc-poisson-model" class="nav-link" data-scroll-target="#poisson-model"><span class="header-section-number">2.11.1</span> Poisson Model</a></li>
-  <li><a href="#exponential-model" id="toc-exponential-model" class="nav-link" data-scroll-target="#exponential-model"><span class="header-section-number">2.11.2</span> Exponential Model</a></li>
+  <li><a href="#decision-making" id="toc-decision-making" class="nav-link" data-scroll-target="#decision-making"><span class="header-section-number">2.8.1</span> Decision Making:</a></li>
+  <li><a href="#bayesian-updating" id="toc-bayesian-updating" class="nav-link" data-scroll-target="#bayesian-updating"><span class="header-section-number">2.8.2</span> Bayesian Updating</a></li>
   </ul></li>
-  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">2.12</span> Live tutorial and discussion</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.13</span> Summary</a></li>
-  <li><a href="#preparation-for-week-3" id="toc-preparation-for-week-3" class="nav-link" data-scroll-target="#preparation-for-week-3"><span class="header-section-number">2.14</span> Preparation for Week 3</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">2.15</span> </a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.9</span> Summary</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">2.10</span> Live tutorial and discussion</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">2.11</span> Tutorial Exercises</a></li>
+  <li><a href="#preparation-for-week-3" id="toc-preparation-for-week-3" class="nav-link" data-scroll-target="#preparation-for-week-3"><span class="header-section-number">2.12</span> Preparation for Week 3</a></li>
   </ul>
 </nav>
     </div>
@@ -291,7 +329,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Inference</strong></span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Dreams: Inference</strong></span></h1>
 </div>
 
 
@@ -308,66 +346,44 @@ window.Quarto = {
 </header>
 
 
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/C0MaCDPNQQU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<section id="learning-objectives" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2.1</span> Learning Objectives</h2>
+<section id="learnings" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="learnings"><span class="header-section-number">2.1</span> Learnings</h2>
+<ul>
+<li><strong>Outcomes</strong></li>
+</ul>
+<p>– LO1: Explain the difference between Bayesian and frequentist concepts of statistical inference.</p>
+<p>– LO2: Demonstrate how to specify and fit simple Bayesian models with appropriate attention to the role of the prior distribution and the data model.</p>
+<p>– LO5: Engage in specifying, checking and interpreting Bayesian statistical analyses in practical problems using effective communication with health and medical investigators.</p>
+<ul>
+<li><strong>Objectives</strong></li>
+</ul>
 <p>By the end of this week you should be able to:</p>
-<ol type="1">
-<li><p>Describe Bayesian inference using probability distributions.</p></li>
-<li><p>Understand Bayesian learning.</p></li>
-<li><p>Differentiate between DAG using Bayesian model and causal DAG.</p></li>
-<li><p>Formulate examples.</p></li>
-</ol>
+<p>– Describe Bayesian inference using probability distributions.</p>
+<p>– Understand Bayesian learning.</p>
+<p>– Draw DAG for Bayesian models.</p>
+<p>– Formulate examples.</p>
 </section>
-<section id="learning-activities" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="learning-activities"><span class="header-section-number">2.2</span> Learning Activities</h2>
-<p>This week’s learning activity include:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Learning Activity</th>
-<th>Learning Objectives</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Video</td>
-<td>1,3</td>
-</tr>
-<tr class="even">
-<td>Readings</td>
-<td>2,3,4</td>
-</tr>
-<tr class="odd">
-<td>Exercises</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>Live tutorial/discussion</td>
-<td>1,2,3,4</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="learning-outcomes" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">2.3</span> Learning Outcomes</h2>
-<p>LO1, LO2, LO3, LO4</p>
-</section>
-<section id="introduction" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.4</span> Introduction</h2>
+<section id="bayesian-inference" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="bayesian-inference"><span class="header-section-number">2.2</span> Bayesian Inference</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/SrnrQgwR1Hk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 <!--
 explain the purpose of statistical inference: ref - Lambert, page 17, sec:2.4
 
 more ref: http://www.stats.org.uk/
 
 -->
-<p>Assessing a drug’s impact on a patient’s condition is inherently complex due to the difficulty of isolating individual system elements for examination. The outcomes result from a complex system of interacting components. In clinical trials, variables such as diet and metabolic variability, which are largely uncontrollable, influence the results. Statistical inference offers a systematic framework to evaluate unpredictable outcomes through data analysis. Probability models are utilized because our incomplete knowledge precludes certain prediction of outcomes. When assessing a drug’s effectiveness, one might believe that it benefits 50% of patients with a given condition, yet identifying the precise 50% is hindered by our limited understanding of the disease or underlying biology. Statistical inference serves to test this hypothesis using trial data. In Bayesian inference, the data is directly observed and the parameters are treated as random like a probabilistic variable.</p>
+<p>Bayesian inference is a method of statistical inference that updates the probability of a hypothesis <span class="math inline">\((H)\)</span> as more evidence or data <span class="math inline">\((D)\)</span> becomes available. It is based on Bayes’ theorem that we describe in our last lecture, where prior beliefs are updated with data. Following out previous lecture, if we denote <span class="math inline">\(Pr(H)\)</span> as the probability of initial belief about <span class="math inline">\(H\)</span> before seeing data, we can write the updated belief about <span class="math inline">\(H\)</span> given the data <span class="math inline">\(D\)</span> as:</p>
+<p><span class="math display">\[
+Pr(H|D) = \frac{Pr(D|H)\times Pr(H)}{Pr(D)}
+\]</span></p>
+<p>where, <span class="math inline">\(Pr(D)\)</span> is the probability of the data under all possible hypotheses.</p>
+<p>In today’s lecture we will learn to the development of Bayesian model using probability distributions that incorporates Bayes throrem.</p>
 </section>
-<section id="bayesian-models" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="bayesian-models"><span class="header-section-number">2.5</span> Bayesian Models</h2>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<section id="bayesian-models" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="bayesian-models"><span class="header-section-number">2.3</span> Bayesian Models</h2>
 <!--
 asdf: explain bayesian inference using probability distributions ... this is a transition from probability to prob dist (i.e, parameter). ref: kruschke, page 105; sec 5.2 (Table 5.5)
 
@@ -375,14 +391,20 @@ Explain how one parameter dist (ber) with example ref: kruschke, page 109-111;
 
 Estimand, Estimator &
 
--->
-<p>We have explained Bayes’ rule in our previous lecture, now we will see how Bayes rule can be structured for model development using parameter and data. A model of data specifies the probability distribution of particular data given the model’s structure and parameter values. Let us denote <span class="math inline">\(\theta\)</span> as the parameter and <span class="math inline">\(D\)</span> as data. Hence, we write a model using the data likelihood <span class="math inline">\(p(D|\theta)\)</span> and prior distribution of the model parameter <span class="math inline">\(\theta\)</span>:</p>
-<p><span class="math display">\[\begin{align}
+\begin{align}
 p(D|\theta) \times p(\theta)
-\end{align}\]</span></p>
-<p>Hence, Bayes rule can be used to understand the parameter values, given the data,, i.e., <span class="math display">\[\begin{align}
+\end{align}
+
+-->
+<p>We have explained Bayes’ rule in our previous lecture, now we will see how Bayes rule can be structured for model development using parameter and data. In a Bayesian model, a parameter is a quantity that we assume is uncertain and assign a probability distribution to it. Unlike in frequentist statistics, where parameters are fixed but unknown, Bayesian statistics treats parameters as random variables with their own probability distributions.</p>
+<p>Let us denote <span class="math inline">\(\theta\)</span> as the parameter and <span class="math inline">\(D\)</span> as data. Hence, we write a model using the data likelihood <span class="math inline">\(p(D|\theta)\)</span>, and prior distribution <span class="math inline">\(p(\theta)\)</span> of the model parameter <span class="math inline">\(\theta\)</span> (note that we have changed the notation from <span class="math inline">\(Pr(.)\)</span> to <span class="math inline">\(p(.)\)</span>, where <span class="math inline">\(Pr(.)\)</span> refers to probability and <span class="math inline">\(p(.)\)</span> refers to probability distribution):</p>
+<p><span class="math display">\[
+p(D|\theta) \times p(\theta)
+\]</span></p>
+<p>Hence, Bayes rule can be used to understand the parameter values, given the data,, i.e.,</p>
+<p><span class="math display">\[
 p(\theta|D)
-\end{align}\]</span></p>
+\]</span></p>
 <p>Thus, using the Dual-Factor table explained in previous lecture, we can write</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -394,61 +416,370 @@ p(\theta|D)
 </div>
 </div>
 </div>
-<p>Each cell of the table holds the joint probability density of the specific combination of parameter value <span class="math inline">\(\theta\)</span> and data value <span class="math inline">\(D\)</span>, denoted <span class="math inline">\(p(D, \theta)\)</span>, and which we know can be algebraically re-expressed as <span class="math inline">\(p(D|\theta)\times p(\theta)\)</span>. Thus, we write the Bayes rule for data and parameter model as:</p>
+<p>Where, each cell of the table holds the joint probability density of the specific combination of parameter value <span class="math inline">\(\theta\)</span> and data value <span class="math inline">\(D\)</span>, denoted <span class="math inline">\(p(D, \theta)\)</span>, and which we know can be algebraically re-expressed as <span class="math inline">\(p(D|\theta)\times p(\theta)\)</span>.</p>
+<p>Thus, we write the Bayes rule for data and parameter model as:</p>
+<p><span class="math display">\[
+p(\theta|D) = \frac{p(D|\theta)\times p(\theta)}{p(D)};
+\]</span></p>
+<p>where,</p>
 <p><span class="math display">\[\begin{align}
-p(\theta|D) &amp;= \frac{p(D|\theta)\times p(\theta)}{p(D)};
-\end{align}\]</span> where, <span class="math display">\[\begin{align}
 p(D) &amp;= \sum_{\theta^*} p(D|\theta^*) p(\theta^*); \quad \text{ if discrete}; \\
 p(D) &amp;= \int p(D|\theta^*) p(\theta^*) \text{d}\theta^*; \quad \text{ if continuous};
 \end{align}\]</span></p>
 <p>Here, <span class="math inline">\(p(\theta)\)</span> is the prior information about <span class="math inline">\(\theta\)</span> without observing data; <span class="math inline">\(p(D|\theta)\)</span> is the likelihood, i.e., data could be generated with model parameter <span class="math inline">\(\theta\)</span>; and <span class="math inline">\(p(D)\)</span> is the marginal likelihood obtained from data by averaging across all possible parameters.</p>
 <p>The posterior distribution of <span class="math inline">\(\theta\)</span> is:</p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[
 p(\theta|D) = \text{ Credibility of }\theta\text{ based on data and evidence}
-\end{align}\]</span></p>
-<p>The posterior probability distribution <span class="math inline">\(p(\theta|D)\)</span> is the main goal of Bayesian inference. The posterior distribution summarises our uncertainty over the value of a parameter. If the distribution is narrower, then this indicates that we have greater confidence in our estimates of the parameter’s value. More narrow posterior distributions can be obtained by collecting more data.</p>
-<p>We will explore more with examples on obtaining posterior distributions of the model parameter <span class="math inline">\(\theta\)</span> for different models, e.g., binomial distribution.</p>
+\]</span></p>
+<p>The posterior probability distribution <span class="math inline">\(p(\theta|D)\)</span> is the main goal of Bayesian inference. The posterior distribution summarises our uncertainty over the value of a parameter. If the distribution is narrower, then this indicates that we have greater confidence in our estimates of the parameter’s value, and this can be obtained by collecting more data.</p>
+<p>We will now explore with examples on obtaining posterior distributions of the model parameter <span class="math inline">\(\theta\)</span> for different data distributions (i.e., models), e.g., binomial, normal and poisson distributions.</p>
 </section>
-<section id="model-with-binary-variable" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="model-with-binary-variable"><span class="header-section-number">2.6</span> Model with Binary Variable</h2>
+<section id="model-with-binary-variable" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="model-with-binary-variable"><span class="header-section-number">2.4</span> Model with Binary Variable</h2>
 <!--
 gelman sec 2.1, page 29
 -->
-<p>Suppose we have a Bernoulli variable <span class="math inline">\(y\)</span>, i.e., can take values either 0 or 1. With parameter <span class="math inline">\(\theta\)</span> and for <span class="math inline">\(n&gt;1\)</span> number of trials the Bernoulli distribution yields a Binomial distribution. Considering <span class="math inline">\(Y=sum^n y\)</span> as the number of successes in <span class="math inline">\(n\)</span> trials, we can write: <span class="math display">\[\begin{align}
-p(Y|\theta) = \begin{pmatrix}n\\Y \end{pmatrix} \theta^Y (1-\theta)^{n-Y}
-\end{align}\]</span> This also represents the likelihood of the Bernoulli variable <span class="math inline">\(y\)</span>.</p>
-<p>Now, if we consider a Beta prior distribution for <span class="math inline">\(\theta\)</span> with hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, then we can write the prior distribution as: <span class="math display">\[\begin{align}
+<p>Suppose we have a binary observation i.e., can take values either 0 or 1, which follows Bernoulli distribution with parameter <span class="math inline">\(\theta\)</span>. We already know that for <span class="math inline">\(n&gt;1\)</span> number of trials the Bernoulli distribution yields a Binomial distribution. Considering <span class="math inline">\(Y\)</span> as the random variable of number of successes in <span class="math inline">\(n\)</span> trials for the Binomial distribution, we can write:</p>
+<p><span class="math display">\[
+p(Y=y|\theta) = \begin{pmatrix}n\\y \end{pmatrix} \theta^y (1-\theta)^{n-y}
+\]</span></p>
+<p>This also represents the likelihood of a Bernoulli variable.</p>
+<p>Now, if we consider a Beta prior distribution for <span class="math inline">\(\theta\)</span> with hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (i.e., shape parameters of Beta distribution), then we can write the probability density function of the prior distribution as:</p>
+<p><span class="math display">\[
 p(\theta) = \frac{\theta^{a-1}(1-\theta)^{b-1}}{B(a,b)}
-\end{align}\]</span> where, <span class="math inline">\(B(a,b)=\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}\)</span> is the beta function. Thus, using Bayes theorem we write <span class="math display">\[\begin{align}
-p(\theta|y) = \frac{\begin{pmatrix}n\\Y \end{pmatrix} \theta^Y (1-\theta)^{n-Y}\times \theta^{a-1}(1-\theta)^{b-1}}{p(Y)\times B(a,b)}
-\end{align}\]</span> With some simple calculations, we can write the marginal likelihood as: <span class="math display">\[\begin{align}
-p(Y) = \begin{pmatrix}n\\Y \end{pmatrix}\frac{B(Y+a,n-Y+b)}{B(a,b)}
-\end{align}\]</span> Hence, we get the analytical form of the posterior distribution of <span class="math inline">\(\theta\)</span> as: <span class="math display">\[\begin{align}
-p(\theta|Y) = \frac{\theta^{Y+a-1}(1-\theta)^{n-Y+b-1}}{B(Y+a,n-Y+b)}
-\end{align}\]</span> which follows a Beta distribution with parameters <span class="math inline">\((a+Y)\)</span> and <span class="math inline">\((b+n-Y)\)</span>.</p>
+\]</span></p>
+<p>where, <span class="math inline">\(B(a,b)=\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}\)</span> is the beta function. Thus, using Bayes theorem we write</p>
+<p><span class="math display">\[
+p(\theta|y) = \frac{\begin{pmatrix}n\\y \end{pmatrix} \theta^y (1-\theta)^{n-y}\times \theta^{a-1}(1-\theta)^{b-1}}{p(y)\times B(a,b)}
+\]</span></p>
+<p>With some simple calculations, we can write the marginal likelihood as:</p>
+<p><span class="math display">\[
+p(y) = \begin{pmatrix}n\\y \end{pmatrix}\frac{B(y+a,n-y+b)}{B(a,b)}
+\]</span></p>
+<p>Hence, we get the analytical form of the posterior distribution of <span class="math inline">\(\theta\)</span> as:</p>
+<p><span class="math display">\[
+p(\theta|y) = \frac{\theta^{y+a-1}(1-\theta)^{n-y+b-1}}{B(y+a,n-y+b)}
+\]</span></p>
+<p>which follows a Beta distribution with parameters <span class="math inline">\((a+y)\)</span> and <span class="math inline">\((b+n-y)\)</span>.</p>
+<p><strong>Example:</strong></p>
+<p>Let us explain this with the type-2 diabetes example we discussed earlier. Now, the medical practitioner is trying to estimate the probability that a patient has type-2 diabetes <span class="math inline">\(\theta\)</span> based on both prior knowledge and a new diagnostic test result.</p>
+<p>Before any test, the medical practitioner relies on existing medical data. Suppose past research suggests that for a certain risk group the probability of having type-2 diabetes is 0.5. We represent this belief using a <span class="math inline">\(Beta(a=2,b=2)\)</span>. This prior suggests that while any probability is possible, <span class="math inline">\(\theta\)</span> is likely to be around 0.5, with room for updating.</p>
+<p>Now, we assume the test result corresponds to 7 positive cases out of 10 tests, meaning, <span class="math inline">\(n=10\)</span> and <span class="math inline">\(y=7\)</span>.</p>
+<p>Hence, we get the posterior distribution of medical practitioner’s new belief about the probability of the patient having the disease as: <span class="math inline">\(Beta(2+7,2+3)=Beta(9,5)\)</span>.</p>
+<p>We can see from the density plots, the posterior shifts toward higher probabilities of type-2 diabetes, meaning the medical practitioner is now more confident that the patient may have type-2 diabetes.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a_prior <span class="ot">&lt;-</span> <span class="dv">2</span>   </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>b_prior <span class="ot">&lt;-</span> <span class="dv">2</span>   </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span>        </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">7</span>         </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>a_post <span class="ot">&lt;-</span> a_prior <span class="sc">+</span> y</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>b_post <span class="ot">&lt;-</span> b_prior <span class="sc">+</span> (n <span class="sc">-</span> y)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>prior_density <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(theta, a_prior, b_prior)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>likelihood <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(y, <span class="at">size =</span> n, <span class="at">prob =</span> theta)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>posterior_density <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(theta, a_post, b_post)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">theta =</span> <span class="fu">rep</span>(theta, <span class="dv">3</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">density =</span> <span class="fu">c</span>(prior_density, likelihood, posterior_density),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">Distribution =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Prior"</span>, <span class="st">"Likelihood"</span>, <span class="st">"Posterior"</span>), <span class="at">each =</span> <span class="fu">length</span>(theta))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> theta, <span class="at">y =</span> density, <span class="at">color =</span> Distribution)) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Prior, Likelihood, and Posterior Distributions"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="fu">expression</span>(theta),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Density"</span>) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"green"</span>,<span class="st">"red"</span>,<span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M01_2_files/figure-html/bino-first-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="bayesian-odds" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="bayesian-odds"><span class="header-section-number">2.7</span> Bayesian Odds</h2>
+<section id="bayesian-odds" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="bayesian-odds"><span class="header-section-number">2.5</span> Bayesian Odds</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 <p>We can also think the question in terms of odds, such as what odds should I give for my guess? To define odds we can write</p>
 <p><span class="math display">\[
 \text{Odds of an event} = \frac{Pr(\text{event})}{1-Pr(\text{event})}
-\]</span> Thus, to reflect the CKD example using Bayes theorem we write:</p>
+\]</span></p>
+<p>Let’s revisit the medical practitioner example from our first lecture to clarify this concept. Imagine the practitioner assessing a patient for diabetes. Initially, they have a prior belief about the patient’s likelihood of having the condition. After conducting a blood test that reveals elevated sugar levels, this new evidence increases the probability of diabetes. The practitioner then updates their belief accordingly, refining their assessment based on the test results. We wanted to know, given this experimental evidence, how sure are the medical practitioner that their guess about the diabetes is accurate?</p>
+<p>Thus, to reflect the medical practitioner example by Bayesian odds, we write:</p>
 <p><span class="math display">\[
-\text{Odds}(\text{G=[+]}|\text{E}) = \text{Odds}(\text{G}) \times \frac{Pr(\text{E}|\text{G=[+]})}{Pr(\text{E}|\text{G=[-]})}
-\]</span> where</p>
+\text{Odds}(\text{G=[+]}|\text{E=[+]}) = \text{Odds}(\text{G}) \times \frac{Pr(\text{E=[+]}|\text{G=[+]})}{Pr(\text{E=[+]}|\text{G=[-]})}
+\]</span></p>
+<p>where, <span class="math inline">\(\text{Odds}(\text{G=[+]}|\text{E=[+]})\)</span> is the odds of the guess is correct given the evidence, and <span class="math inline">\(\text{Odds}(\text{G})\)</span> is the odds of the guess that we define:</p>
 <p><span class="math display">\[
 \text{Odds}(\text{G}) = \frac{Pr(\text{G=[+]})}{Pr(\text{G=[-]})}
 \]</span></p>
-<p>and <span class="math inline">\(\frac{Pr(\text{E}|\text{G=[+]})}{Pr(\text{E}|\text{G=[-]})}\)</span> is the ratio of evidence under my guess <span class="math inline">\(\text{G}\)</span>.</p>
-<p>This reflects <span class="math display">\[
-\text{updated odds} = \text{initial odds}\times \text{relative explanatory power}
-\]</span> In the end we are always going back to the term evidence changes the outcome, which could be probability or odds or any other outcome of interest.</p>
-<p>Provide an example for this ….</p>
+<p>and <span class="math inline">\(\frac{Pr(\text{E=[+]}|\text{G=[+]})}{Pr(\text{E=[+]}|\text{G=[-]})}\)</span> is the ratio of evidence under the guess <span class="math inline">\(\text{G}\)</span>.</p>
+<p>This reflects</p>
+<p><span class="math display">\[
+\text{posterior or updated odds} = \text{prior or initial odds}\times \text{relative explanatory power}
+\]</span></p>
+<p>This explains that evidence (i.e., data/information) always changes the outcome, which could be probability, probability distributions or odds or any other outcome of interest.</p>
+<p><strong>Example</strong></p>
+<p>Let us explain this again with the type-2 diabetes example, where based on the patient’s age, family history, and some initial symptoms, the medical practitioner guessed that there’s a 20% chance the patient has diabetes. This belief is a prior probability. The odds form of this probability is:</p>
+<p><span class="math display">\[
+\text{Odds}(\text{G}) = \frac{0.2}{0.8} = 0.25
+\]</span></p>
+<p>So, the prior odds of the patient having diabetes are 1:4 (one in four) guessed by the medical practitioner.</p>
+<p>The blood test result shows elevated sugar levels. To assess how much this result affects our belief, we use the ratio of evidence under the guess <span class="math inline">\(\text{G}\)</span> (also known as the likelihood ratio).</p>
+<p>Suppose the medical practitioner has historically observed from boold test that 85% of diabetic patients have elevated sugar levels, while only 10% of non-diabetic patients do (e.g., due to other factors). Hence, we write</p>
+<p><span class="math display">\[
+\frac{Pr(\text{E=[+]}|\text{G=[+]})}{Pr(\text{E=[+]}|\text{G=[-]})} = \frac{0.85}{0.10} = 8.5
+\]</span></p>
+<p>This means the test result (elevated sugar) is 8.5 times more likely in someone with diabetes than in someone without it.</p>
+<p>Now, the posterior odds</p>
+<p><span class="math display">\[
+\text{Odds}(\text{G=[+]}|\text{E=[+]}) = 0.25 \times 8.5 = 2.125
+\]</span></p>
+<p>So, the updated odds is 2.125:1, i.e., the patient is 2.125 times more likely to have diabetes than non-diabetic individuals after considering the test result.</p>
+<p>Using the well known relationship between odds and probability, we can also get back the posterior probability from the posterior odds as:</p>
+<p><span class="math display">\[
+Pr(\text{G=[+]}|\text{E=[+]}) = \frac{\text{Odds}(\text{G=[+]}|\text{E=[+]})}{1+\text{Odds}(\text{G=[+]}|\text{E=[+]})} = \frac{2.125}{1+2.125} = 0.68
+\]</span></p>
+<p>In summary we write, before the test, the medical practitioner believed there was a 20% chance of diabetes. After seeing the elevated blood sugar result, the probability increased to 68% (compare the example in lecture 1), because the test result is 8.5 times more likely in diabetic than non-diabetic individuals. The practitioner may now recommend further tests (e.g., an HbA1c test) before confirming the diagnosis.</p>
 </section>
-<section id="bayesian-updating" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="bayesian-updating"><span class="header-section-number">2.8</span> Bayesian Updating</h2>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<section id="bayesian-language" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="bayesian-language"><span class="header-section-number">2.6</span> Bayesian Language</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
+<!--
+ref: McElreath page 77, a language for describing bayesian models
+-->
+<p>We will learn a common language for illustrating and denoting the Bayesian models. This will help us to develop and write complex Bayesian models in a simpler way that we will learn later in this course.</p>
+<p>Let’s explain this using a Bernoulli model with parameter <span class="math inline">\(\theta\)</span>. We write the probability distribution in the following form: <span class="math display">\[\begin{align}
+y \sim \text{Bernoulli}(\theta)
+\end{align}\]</span> This refers to <span class="math inline">\(y\)</span> follows Bernoulli distribution with parameter <span class="math inline">\(\theta\)</span>. We write the likelihood function in the following form (which is also in the form of Binomial distribution):</p>
+<p><span class="math display">\[
+p(y|\theta) \propto   \theta^y (1-\theta)^{n-y}
+\]</span></p>
+<p>Note that we replaced “=” with “<span class="math inline">\(\propto\)</span>” as the term <span class="math inline">\(\begin{pmatrix}n\\y \end{pmatrix}\)</span> is a constant, which does not depend on the parameter <span class="math inline">\(\theta\)</span>. Now, considering prior conjugacy, we assume that <span class="math inline">\(\theta\)</span> follows a Beta distribution with shape parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> and we write <span class="math inline">\(\theta \sim \text{Beta}(a,b)\)</span> and define</p>
+<p><span class="math display">\[
+p(\theta) \propto \theta^{a-1}(1-\theta)^{b-1}
+\]</span></p>
+<p>Thus, the posterior distribution of <span class="math inline">\(\theta\)</span> can be written as <span class="math inline">\(\theta|y \sim \text{Beta}(a+y,b+n-y)\)</span> and defined as:</p>
+<p><span class="math display">\[
+p(\theta|y) \propto \theta^y (1-\theta)^{n-y}\theta^{a-1}(1-\theta)^{b-1} =\theta^{y+a-1} (1-\theta)^{n-y+b-1}
+\]</span></p>
+<p><span class="math display">\[
+p(\theta|y) \propto \theta^{y+a-1} (1-\theta)^{n-y+b-1}
+\]</span></p>
+<p>We have again included the “<span class="math inline">\(\propto\)</span>” term, as we will learn in our next two lectures that the marginal distribution of the data, i.e., <span class="math inline">\(p(y)\)</span> does not depend on the model parameter and can therefore be omitted when obtaining the posterior distribution.</p>
+</section>
+<section id="directed-acyclic-graph-dag" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="directed-acyclic-graph-dag"><span class="header-section-number">2.7</span> Directed Acyclic Graph (DAG)</h2>
+<!--
+ref: paper: https://doi.org/10.1016/j.jclinepi.2021.08.001
+-->
+<p>The directed acyclic graph (DAG) is a graphical representation that illustrates the relationships and dependencies between different variables and parameters in a model. In a DAG, nodes represent variables/parameters, and directed edges indicate dependency relationships, pointing from one node to another. The acyclic nature ensures that there are no closed loops, maintaining a clear directionality of influence from parent nodes to child nodes.</p>
+<ul>
+<li><strong>Bayesian models:</strong></li>
+</ul>
+<p>In the context of Bayesian modelling, DAGs are crucial as they visually provides the conditional dependencies between variables and model parameters, which enables a structured and intuitive approach to understand uncertainty and dependencies from the model.</p>
+<p>Using the model with binary observations, we write a DAG as:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grViz</span>(<span class="st">"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="st">digraph flowchart {</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">  graph [layout = dot, rankdir = LR]</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">  node [shape = rectangle, style = filled, color = white]</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">  subgraph cluster_0 {</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">    label = 'Hyper-parameter'</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">    color = lightblue</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">    node [color=lightblue]</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">    a [label='a']</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">    b [label='b']</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="st">  subgraph cluster_1 {</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="st">    label = 'Parameter'</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="st">    color = lightgray</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="st">    node [color=lightgray]</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="st">    theta [label='θ']</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="st">  subgraph cluster_2 {</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="st">    label = 'Outcome'</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="st">    color = lightsteelblue</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="st">    node [color=lightsteelblue]</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="st">    y [label='y']</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="st">  edge[arrowhead=normal]</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="st">  a -&gt; theta</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="st">  b -&gt; theta</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="st">  theta -&gt; y</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-594b9bf8325bfa539dda" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-594b9bf8325bfa539dda">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Outcome\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>This is a simple graphical model, where <span class="math inline">\(y\)</span> depends on <span class="math inline">\(\theta\)</span>, with <span class="math inline">\(\theta\)</span> being a logical function of hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+</section>
+<section id="examples" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="examples"><span class="header-section-number">2.8</span> Examples:</h2>
+<section id="decision-making" class="level3" data-number="2.8.1">
+<h3 data-number="2.8.1" class="anchored" data-anchor-id="decision-making"><span class="header-section-number">2.8.1</span> Decision Making:</h3>
+<!--
+
+ref: https://statswithr.github.io/book/the-basics-of-bayesian-statistics.html#frequentist-vs.-bayesian-inference
+
+-->
+<p>First, we will explore how Bayesian method can provide more insights compared to the frequentist approach for decision making with same information.</p>
+<p>Let us assume that we have a population of patients, and in this population, the prevalence of a certain disease is either 10% or 20%. As a researcher you need to determine whether the true prevalence of the disease is 10% or 20%.</p>
+<p>You are being asked to make a crucial decision, and if you make the correct determination, your research funding is renewed.</p>
+<p>Hence, you conduct diagnostic tests on randomly selected patients from the population. Each test costs $200, and you must purchase tests in increments of $1,000 (5 tests at a time). You have a total budget of $4,000, meaning you can test 5, 10, 15, or 20 persons.</p>
+<p>The cost of making an incorrect decision is high, as it could lead to misinformed healthcare policies or ineffective treatment strategies. However, conducting tests is also expensive, so you don’t want to spend more than necessary.</p>
+<p>Suppose you observe one person with the disease in a sample size of 5, two persons in a sample size of 10, three persons in a sample size of 15, and four persons in a sample size of 20.</p>
+<p><strong>Fequentists Method</strong></p>
+<p>Based on the scenario we write the null <span class="math inline">\((H_0)\)</span> and alternative <span class="math inline">\((H_1)\)</span> hypotheses as:</p>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(10\)</span>% prevalence <span class="math inline">\(H_1\)</span>: <span class="math inline">\(&gt;10\)</span>% prevalence</p>
+<p>p-value based on 5 samples:</p>
+<p><span class="math display">\[
+Pr(y\ge 1|n=5,p=0.10)=1-Pr(y= 0|n=5,p=0.10)=1-0.9^{5}\approx 0.41
+\]</span></p>
+<p>Note that the p-value represents the probability of observing the given results - or more extreme ones - assuming the null hypothesis is true.</p>
+<p>Therefore, we fail to reject <span class="math inline">\(H_0\)</span> and conclude that the data do not provide convincing evidence that the prevalence of the disease is greater than 10%. This means that if we had to choose between a disease prevalence of 10% or 20%, even though this hypothesis test does not confirm the null hypothesis, we would likely stick with 10%, since we did not find sufficient evidence to suggest a higher prevalence.</p>
+<p><strong>Bayesian Method</strong></p>
+<p>From Bayesian perspective we can write:</p>
+<p><span class="math inline">\(H_0\)</span>: 10% prevalence <span class="math inline">\(H_1\)</span>: 20% prevalence</p>
+<p>We can also assume that priors related to the hypothesis same and equal, i.e, <span class="math inline">\(Pr(H_0)=Pr(H_1)=0.5\)</span>.</p>
+<p>Considering the scenario with 5 samples, we write the likelihood for <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span> as:</p>
+<p><span class="math display">\[
+Pr(y=1|H_0) = \begin{pmatrix} 5 \\ 1 \end{pmatrix} \times 0.1 \times 0.9^{4} \approx 0.33
+\]</span></p>
+<p><span class="math display">\[
+Pr(y=1|H_1) = \begin{pmatrix} 5 \\ 1 \end{pmatrix} \times 0.2 \times 0.8^{4} \approx 0.41
+\]</span></p>
+<p>We get the posterior probability for <span class="math inline">\(H_0\)</span> as:</p>
+<p><span class="math display">\[
+Pr(H_0|y=1) = \frac{Pr(y=1|H_0)\times Pr(H_0)}{Pr(y=1)}=\frac{0.5\times 0.33}{0.5\times 0.33+0.5\times 0.41} \approx 0.45
+\]</span></p>
+<p>and for <span class="math inline">\(H_1\)</span> as:</p>
+<p><span class="math display">\[
+Pr(H_1|y=1) = 1- 0.45 = 0.55
+\]</span></p>
+<p>The posterior probabilities of <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span> are close to each other. As a result, with equal priors and a low sample size, it is difficult to make a decision with strong confidence based on the observed data. However, <span class="math inline">\(H_1\)</span> has a higher posterior probability than <span class="math inline">\(H_0\)</span>, so if we had to make a decision at this point, we should choose <span class="math inline">\(H_1\)</span>, meaning the disease prevalence is 20%. Note that this decision contradicts the conclusion reached using the frequentist approach.</p>
+<p>We can write this example using a DAG, where we can represent the relationships between the prior probabilities, likelihoods, and posterior probabilities.</p>
+<ul>
+<li><strong>Hypothesis (H₀ and H₁)</strong>: These represent the two possible prevalence values (10% for H₀, 20% for H₁).</li>
+<li><strong>Data (y)</strong>: The observed data (the number of successes in 5 samples, e.g., the presence of disease).</li>
+<li><strong>Likelihoods (Pr(y=1|H₀) and Pr(y=1|H₁))</strong>: The likelihood of observing the data under each hypothesis.</li>
+<li><strong>Prior Probabilities (Pr(H₀) and Pr(H₁))</strong>: The prior belief about the hypotheses (both have a prior probability of 0.5).</li>
+<li><strong>Posterior Probabilities (Pr(H₀|y=1) and Pr(H₁|y=1))</strong>: The updated belief about the hypotheses after observing the data.</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a directed acyclic graph (DAG)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dag <span class="ot">&lt;-</span> <span class="fu">grViz</span>(<span class="st">"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">digraph bayesian_dag {</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">  # Define the nodes</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">  node [shape = rectangle, fontname = 'Helvetica', fontsize = 14]</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">  H0 [label = 'H₀: 10% prevalence', width = 1.5]</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">  H1 [label = 'H₁: 20% prevalence', width = 1.5]</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">  y [label = 'y: Data (Successes in 5 samples)', width = 1.5]</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH0 [label = 'Pr(H₀) = 0.5', width = 1.5]</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH1 [label = 'Pr(H₁) = 0.5', width = 1.5]</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH0 [label = 'Pr(y|H₀) ~ 0.33', width = 1.5]</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH1 [label = 'Pr(y|H₁) ~ 0.41', width = 1.5]</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">  PosteriorH0 [label = 'Pr(H₀|y=1) ~ 0.45', width = 1.5]</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">  PosteriorH1 [label = 'Pr(H₁|y=1) ~ 0.55', width = 1.5]</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">  # Define the edges (relationships)</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH0 -&gt; LikelihoodH0</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH1 -&gt; LikelihoodH1</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="st">  H0 -&gt; LikelihoodH0</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="st">  H1 -&gt; LikelihoodH1</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH0 -&gt; y</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH1 -&gt; y</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="st">  y -&gt; PosteriorH0</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="st">  y -&gt; PosteriorH1</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the DAG</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>dag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a199d28e0ad696bfa60b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a199d28e0ad696bfa60b">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p><strong>Summary</strong></p>
+<p>We can summarise the results for all four seperate sample sizes using frequentist p-value and Bayesian methods, where</p>
+<p><strong>Frequentist</strong>: <span class="math inline">\(Pr(y \text{ or more} \mid 10\% \text{ prevalence})\)</span> = p-value</p>
+<p><strong>Bayesian - 10%</strong>: <span class="math inline">\(Pr(10\% \text{ prevalence} \mid n, y)\)</span></p>
+<p><strong>Bayesian - 20%</strong>: <span class="math inline">\(Pr(20\% \text{ prevalence} \mid n, y)\)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Observed Data</strong></th>
+<th><strong>p-value</strong></th>
+<th><strong>Bayesian-10%</strong></th>
+<th><strong>Bayesian-20%</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>n = 5, y = 1</td>
+<td>0.41</td>
+<td>0.45</td>
+<td>0.55</td>
+</tr>
+<tr class="even">
+<td>n = 10, y = 2</td>
+<td>0.26</td>
+<td>0.39</td>
+<td>0.61</td>
+</tr>
+<tr class="odd">
+<td>n = 15, y = 3</td>
+<td>0.18</td>
+<td>0.34</td>
+<td>0.66</td>
+</tr>
+<tr class="even">
+<td>n = 20, y = 4</td>
+<td>0.13</td>
+<td>0.29</td>
+<td>0.71</td>
+</tr>
+</tbody>
+</table>
+<p>In each of these scenarios, the frequentist approach produces a p-value higher than the significance level say 5%, leading us to fail to reject the null hypothesis for any of the samples. In contrast, the Bayesian method consistently assigns a higher posterior probability to the model where prevalence = 20%. As a result, the conclusions drawn from these two approaches are contradictory.</p>
+<p>However, if we had structured the frequentist approach differently—setting the null hypothesis as <span class="math inline">\(H_0\)</span>: 20% prevalence, and the alternative as <span class="math inline">\(H_1\)</span>: 20% prevalence, we would have reached different conclusions.</p>
+<p>This highlights the frequentist method’s sensitivity to the choice of the null hypothesis. In contrast, the Bayesian approach yields consistent results regardless of the order in which we evaluate the models.</p>
+</section>
+<section id="bayesian-updating" class="level3" data-number="2.8.2">
+<h3 data-number="2.8.2" class="anchored" data-anchor-id="bayesian-updating"><span class="header-section-number">2.8.2</span> Bayesian Updating</h3>
 <!--
 updating example with plots. ref: McElreath page 29, sec 2.2.2
 use McElreath's Fig 2.5, page 30
@@ -468,92 +799,75 @@ It is invariance to data-order ... ref: kruschke, page 107; sec 5.2.1
 </div>
 </div>
 </div>
-<p>This Bayesian learning process for <span class="math inline">\(\theta\)</span> is very intuitive, where we can write <span class="math display">\[\begin{align}
+<p>This figure illustrates how our understanding of the probability of severe side effects from an antibacterial drug evolves as we collect more data. The x-axis represents the probability of side effects, while the y-axis represents the density of this probability distribution. The solid lines in each plot represent our updated belief based on collected data, whereas the dashed lines represent our prior belief before incorporating the new data. As we observe more cases, our confidence in estimating the probability of side effects changes dynamically.</p>
+<p>In the first plot (<strong>n = 1, YES</strong>), we have only one observation, meaning we have very little information to work with. The probability distribution is relatively simple and does not strongly favor any particular probability value. Since the first observed case showed side effects, the probability of severe side effects starts increasing. In contrast, in the second plot (<strong>n = 2, NO</strong>), the second observation indicates no side effects, which alters our belief and introduces more uncertainty. The probability distribution now has a curved shape, reflecting this new piece of evidence.</p>
+<p>As more data points are collected (<strong>n = 3, YES</strong> and <strong>n = 4, YES</strong>), our probability distribution starts forming a clearer peak. This means that we are beginning to refine our estimate of how likely the drug is to cause severe side effects. By <strong>n = 5 (YES)</strong>, the probability distribution has a well-defined peak, indicating that we are gaining confidence in our estimate. However, in <strong>n = 6 (NO)</strong>, the introduction of a new negative observation (no side effects) shifts our belief again. This suggests that the probability of side effects is not as high as previously estimated, and our model adjusts accordingly.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dag <span class="ot">&lt;-</span> <span class="fu">grViz</span>(<span class="st">"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">digraph bayesian_dag {</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">  # Define the nodes</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">  node [shape = rectangle, fontname = 'Helvetica', fontsize = 14]</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">  # Prior node</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">  Prior [label = 'Prior p(θ)', width = 1.5]</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="st">  # Data observations</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">  D1 [label = 'D₁: Observation (YES)', width = 2]</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="st">  Dots [label = '...', width = 0.5]</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="st">  D6 [label = 'D₆: Observation (NO)', width = 2]</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="st">  # Posterior updates</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="st">  Posterior_D1 [label = 'Posterior p(θ|D₁)', width = 2]</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="st">  Posterior_D6 [label = 'Posterior p(θ|D₁, ..., D₆)', width = 2]</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="st">  # Define the edges (relationships)</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="st">  Prior -&gt; D1</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="st">  D1 -&gt; Posterior_D1</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="st">  Posterior_D1 -&gt; Dots</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="st">  Dots -&gt; D6</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="st">  D6 -&gt; Posterior_D6</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="st">  # Layout: top to bottom style</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="st">  rankdir = TB</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>dag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-b00c0ff70ad1cd483dfd" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-b00c0ff70ad1cd483dfd">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p><strong>Invariance to data-order</strong></p>
+<p>This Bayesian learning process for <span class="math inline">\(\theta\)</span> is very intuitive, where we can write</p>
+<p><span class="math display">\[\begin{align}
 p(\theta|D_1,D_2) = \frac{p(D_1,D_2|\theta)\times p(\theta)}{\sum_{\theta^*}p(D_1,D_2|\theta^*)\times p(\theta^*)}
 \end{align}\]</span> If we consider <span class="math inline">\(D_1\)</span> and <span class="math inline">\(D_2\)</span> are independent, then <span class="math display">\[\begin{align}
 p(D_1,D_2|\theta)=p(D_1|\theta)p(D_2|\theta)
 \end{align}\]</span> This leads to a very simple formation of considering <span class="math display">\[\begin{align}
 p(\theta|D_2,D_1) = \frac{p(D_2|\theta)\times p(\theta|D_1)}{\sum_{\theta^*}p(D_2,D_1|\theta^*)\times p(\theta^*)}
-\end{align}\]</span> This implies, under the independence condition, the order of Bayesian updating has no effect on the final posterior.</p>
-<p>Going back to Figure above: we will get same final result (i.e., posterior probability of side effect) for considering all six observations.</p>
-</section>
-<section id="bayesian-language" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="bayesian-language"><span class="header-section-number">2.9</span> Bayesian Language</h2>
-<!--
-ref: McElreath page 77, a language for describing bayesian models
--->
-<p>We will learn a common language for illustrating and denoting the Bayesian models. This will help us to develop and write complex Bayesian models in a simpler way that we will learn later in this course.</p>
-<p>Let’s explain this with the Bernoulli model with parameter <span class="math inline">\(\theta\)</span>. Hence we can write this in the following form: <span class="math display">\[\begin{align}
-y \sim \text{Bernoulli}(\theta)
-\end{align}\]</span> Now, considering prior conjugacy, we assume that <span class="math inline">\(\theta\)</span> follows a Beta distribution with shape parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> and hence we can write <span class="math display">\[\begin{align}
-\theta \sim \text{Beta}(a,b)
-\end{align}\]</span> Thus, with one trial the posterior distribution of <span class="math inline">\(\theta\)</span> can be written as: <span class="math display">\[\begin{align}
-\theta|y \sim \text{Beta}(a+y,b+1-y); \quad y \in (0,1)
-\end{align}\]</span> Now with <span class="math inline">\(n&gt;1\)</span> number of trials the posterior distribution of <span class="math inline">\(\theta\)</span> can be written as: <span class="math display">\[\begin{align}
-\theta|\sum^n y \sim \text{Beta}(a+\sum^n y,b+n-\sum^n y)
 \end{align}\]</span></p>
-</section>
-<section id="dag" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="dag"><span class="header-section-number">2.10</span> DAG</h2>
-<p>revise this …</p>
-<!--
-ref: paper: https://doi.org/10.1016/j.jclinepi.2021.08.001
--->
-<p>The directed acyclic graph (DAG) is a graphical representation that illustrates the relationships and dependencies between different variables in a model. In a DAG, nodes represent variables, and directed edges indicate dependency relationships, pointing from one node to another. The acyclic nature ensures that there are no closed loops, maintaining a clear directionality of influence from parent nodes to child nodes.</p>
-<p>In the context of Bayesian modeling, DAGs are crucial as they visually encode the conditional dependencies between variables and model parameters, which enables a structured and intuitive approach to understand uncertainty and dependencies from the model.</p>
-<p>Using the Binomial model example, we can write a DAG for the Bayesian model as:</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js"> graph LR
-      A("$$\theta$$") --&gt; Y["$$y$$"]
-      B("$$n$$") --&gt; Y
-      C("$$a$$") --&gt; A
-      D("$$b$$") --&gt; A
-
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="exercises" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.11</span> Exercises</h2>
-<p>sdfads</p>
-<p>how to choose an appropriate likelihood? ref -Lambert, page 71, sec: 4.6, 4.8</p>
-<p>explain conjugacy - lambert, use normal dist with known mu</p>
-<p>normal model with known variance</p>
-<section id="poisson-model" class="level3" data-number="2.11.1">
-<h3 data-number="2.11.1" class="anchored" data-anchor-id="poisson-model"><span class="header-section-number">2.11.1</span> Poisson Model</h3>
-<!--
-gelman sec 2.6, page 43
--->
-</section>
-<section id="exponential-model" class="level3" data-number="2.11.2">
-<h3 data-number="2.11.2" class="anchored" data-anchor-id="exponential-model"><span class="header-section-number">2.11.2</span> Exponential Model</h3>
-<!--
-gelman sec 2.6, page 46
--->
+<p>This implies, under the independence condition, the order of Bayesian updating has no effect on the final posterior. Hence, going back to Figure above: we will get same final result (i.e., posterior probability of side effect) for considering all six observations.</p>
 </section>
 </section>
-<section id="live-tutorial-and-discussion" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">2.12</span> Live tutorial and discussion</h2>
-<p>asdfa</p>
-<p>Talk about 95% interval: ref: McElreath page 56, BOX</p>
+<section id="summary" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.9</span> Summary</h2>
+<p>Today’s lecture explored Bayesian inference, focusing on how to derive it analytically, we also learn Bayesian updating, posterior odds and Directed Acyclic Graphs (DAGs).</p>
 </section>
-<section id="summary" class="level2" data-number="2.13">
-<h2 data-number="2.13" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.13</span> Summary</h2>
-<p>asdf</p>
+<section id="live-tutorial-and-discussion" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">2.10</span> Live tutorial and discussion</h2>
+<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
 </section>
-<section id="preparation-for-week-3" class="level2" data-number="2.14">
-<h2 data-number="2.14" class="anchored" data-anchor-id="preparation-for-week-3"><span class="header-section-number">2.14</span> Preparation for Week 3</h2>
-<p>asdfa</p>
+<section id="tutorial-exercises" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">2.11</span> Tutorial Exercises</h2>
+<p>Solutions will be provided later after the tutorial.</p>
 </section>
-<section id="section" class="level2" data-number="2.15">
-<h2 data-number="2.15" class="anchored" data-anchor-id="section"><span class="header-section-number">2.15</span> </h2>
+<section id="preparation-for-week-3" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="preparation-for-week-3"><span class="header-section-number">2.12</span> Preparation for Week 3</h2>
+<p>Next week we will start Module 02 of this unit, where our main focus will be to understand different types of prior distributions and how they influence the posteriors.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -986,13 +1300,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./M01_1.html" class="pagination-link" aria-label="**Degrees of Beliefs and Evidence**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Degrees of Beliefs and Evidence</strong></span></span>
+      <a href="./M01_1.html" class="pagination-link" aria-label="**Bayesian Dreams: Navigating Evidence**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Bayesian Dreams: Navigating Evidence</strong></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./M02_1.html" class="pagination-link" aria-label="**Prior and Posterior Distributions**">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><strong>Prior and Posterior Distributions</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M02_1.html" class="pagination-link" aria-label="**Chaotics: Prior and Posterior**">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><strong>Chaotics: Prior and Posterior</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
