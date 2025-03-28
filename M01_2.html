@@ -250,7 +250,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Let Bayes Handle It!</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -262,7 +262,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Bayesian Secrets to the Right Sample</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -312,7 +312,7 @@ window.Quarto = {
   <li><a href="#bayesian-odds" id="toc-bayesian-odds" class="nav-link" data-scroll-target="#bayesian-odds"><span class="header-section-number">2.5</span> Bayesian Odds</a></li>
   <li><a href="#bayesian-language" id="toc-bayesian-language" class="nav-link" data-scroll-target="#bayesian-language"><span class="header-section-number">2.6</span> Bayesian Language</a></li>
   <li><a href="#directed-acyclic-graph-dag" id="toc-directed-acyclic-graph-dag" class="nav-link" data-scroll-target="#directed-acyclic-graph-dag"><span class="header-section-number">2.7</span> Directed Acyclic Graph (DAG)</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.8</span> Examples:</a>
+  <li><a href="#more-examples" id="toc-more-examples" class="nav-link" data-scroll-target="#more-examples"><span class="header-section-number">2.8</span> More Examples:</a>
   <ul class="collapse">
   <li><a href="#decision-making" id="toc-decision-making" class="nav-link" data-scroll-target="#decision-making"><span class="header-section-number">2.8.1</span> Decision Making:</a></li>
   <li><a href="#bayesian-updating" id="toc-bayesian-updating" class="nav-link" data-scroll-target="#bayesian-updating"><span class="header-section-number">2.8.2</span> Bayesian Updating</a></li>
@@ -505,12 +505,12 @@ p(\theta|y) = \frac{\theta^{y+a-1}(1-\theta)^{n-y+b-1}}{B(y+a,n-y+b)}
 </section>
 <section id="bayesian-odds" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="bayesian-odds"><span class="header-section-number">2.5</span> Bayesian Odds</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/uwIDw1UguNc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<p>We can also think the question in terms of odds, such as what odds should I give for my guess? To define odds we can write</p>
+<p>We can also think of the Bayesian approach in terms of odds, such as what odds should I assign to an event or hypothesis. The simple definition of odds can be written as:</p>
 <p><span class="math display">\[
 \text{Odds of an event} = \frac{Pr(\text{event})}{1-Pr(\text{event})}
-\]</span></p>
+\]</span> which represents the ratio between the occurrence of an event and its non-occurrence.</p>
 <p>Let’s revisit the medical practitioner example from our first lecture to clarify this concept. Imagine the practitioner assessing a patient for diabetes. Initially, they have a prior belief about the patient’s likelihood of having the condition. After conducting a blood test that reveals elevated sugar levels, this new evidence increases the probability of diabetes. The practitioner then updates their belief accordingly, refining their assessment based on the test results. We wanted to know, given this experimental evidence, how sure are the medical practitioner that their guess about the diabetes is accurate?</p>
 <p>Thus, to reflect the medical practitioner example by Bayesian odds, we write:</p>
 <p><span class="math display">\[
@@ -527,7 +527,7 @@ p(\theta|y) = \frac{\theta^{y+a-1}(1-\theta)^{n-y+b-1}}{B(y+a,n-y+b)}
 \]</span></p>
 <p>This explains that evidence (i.e., data/information) always changes the outcome, which could be probability, probability distributions or odds or any other outcome of interest.</p>
 <p><strong>Example</strong></p>
-<p>Let us explain this again with the type-2 diabetes example, where based on the patient’s age, family history, and some initial symptoms, the medical practitioner guessed that there’s a 20% chance the patient has diabetes. This belief is a prior probability. The odds form of this probability is:</p>
+<p>Let us explain this again with the type-2 diabetes example, where based on the patient’s age, family history, and some initial symptoms, the medical practitioner guessed that there’s a 20% chance the patient has diabetes. This belief is a prior probability. The odds from of this probability is:</p>
 <p><span class="math display">\[
 \text{Odds}(\text{G}) = \frac{0.2}{0.8} = 0.25
 \]</span></p>
@@ -551,15 +551,17 @@ Pr(\text{G=[+]}|\text{E=[+]}) = \frac{\text{Odds}(\text{G=[+]}|\text{E=[+]})}{1+
 </section>
 <section id="bayesian-language" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="bayesian-language"><span class="header-section-number">2.6</span> Bayesian Language</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/JKi5FdiksJ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <!--
 ref: McElreath page 77, a language for describing bayesian models
 -->
 <p>We will learn a common language for illustrating and denoting the Bayesian models. This will help us to develop and write complex Bayesian models in a simpler way that we will learn later in this course.</p>
-<p>Let’s explain this using a Bernoulli model with parameter <span class="math inline">\(\theta\)</span>. We write the probability distribution in the following form: <span class="math display">\[\begin{align}
-y \sim \text{Bernoulli}(\theta)
-\end{align}\]</span> This refers to <span class="math inline">\(y\)</span> follows Bernoulli distribution with parameter <span class="math inline">\(\theta\)</span>. We write the likelihood function in the following form (which is also in the form of Binomial distribution):</p>
+<p>Let’s explain this using a Bernoulli model with parameter <span class="math inline">\(\theta\)</span>. Let <span class="math inline">\(x\)</span> be the random variable that follows Bernoulli distribution. If we have <span class="math inline">\(n\)</span> number of independent observations <span class="math inline">\((x_1,\ldots,x_n)'\)</span>, then denoting <span class="math inline">\(y=\sum_i^n x_i\)</span> we write the likelihood function as:</p>
+<p><span class="math display">\[
+\prod_i^n \theta^{x_i} (1-\theta)^{1-x_i} = \theta^{\sum_i^n x_i} (1-\theta)^{\sum_i^n (1-x_i)} = \theta^y (1-\theta)^{n-y}
+\]</span></p>
+<p>which we can write in the form of a Binomial distribution:</p>
 <p><span class="math display">\[
 p(y|\theta) \propto   \theta^y (1-\theta)^{n-y}
 \]</span></p>
@@ -629,14 +631,14 @@ ref: paper: https://doi.org/10.1016/j.jclinepi.2021.08.001
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-594b9bf8325bfa539dda" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-594b9bf8325bfa539dda">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Outcome\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-93eb6c55b577489ee1fc" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-93eb6c55b577489ee1fc">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Outcome\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>This is a simple graphical model, where <span class="math inline">\(y\)</span> depends on <span class="math inline">\(\theta\)</span>, with <span class="math inline">\(\theta\)</span> being a logical function of hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
 </section>
-<section id="examples" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="examples"><span class="header-section-number">2.8</span> Examples:</h2>
+<section id="more-examples" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="more-examples"><span class="header-section-number">2.8</span> More Examples:</h2>
 <section id="decision-making" class="level3" data-number="2.8.1">
 <h3 data-number="2.8.1" class="anchored" data-anchor-id="decision-making"><span class="header-section-number">2.8.1</span> Decision Making:</h3>
 <!--
@@ -644,7 +646,7 @@ ref: paper: https://doi.org/10.1016/j.jclinepi.2021.08.001
 ref: https://statswithr.github.io/book/the-basics-of-bayesian-statistics.html#frequentist-vs.-bayesian-inference
 
 -->
-<p>First, we will explore how Bayesian method can provide more insights compared to the frequentist approach for decision making with same information.</p>
+<p>Here, we will explore how Bayesian method can provide more insights compared to the frequentist approach for decision making with same information.</p>
 <p>Let us assume that we have a population of patients, and in this population, the prevalence of a certain disease is either 10% or 20%. As a researcher you need to determine whether the true prevalence of the disease is 10% or 20%.</p>
 <p>You are being asked to make a crucial decision, and if you make the correct determination, your research funding is renewed.</p>
 <p>Hence, you conduct diagnostic tests on randomly selected patients from the population. Each test costs $200, and you must purchase tests in increments of $1,000 (5 tests at a time). You have a total budget of $4,000, meaning you can test 5, 10, 15, or 20 persons.</p>
@@ -691,82 +693,82 @@ Pr(H_1|y=1) = 1- 0.45 = 0.55
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a directed acyclic graph (DAG)</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dag <span class="ot">&lt;-</span> <span class="fu">grViz</span>(<span class="st">"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">digraph bayesian_dag {</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">  # Define the nodes</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">  node [shape = rectangle, fontname = 'Helvetica', fontsize = 14]</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">  H0 [label = 'H₀: 10% prevalence', width = 1.5]</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">  H1 [label = 'H₁: 20% prevalence', width = 1.5]</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">  y [label = 'y: Data (Successes in 5 samples)', width = 1.5]</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH0 [label = 'Pr(H₀) = 0.5', width = 1.5]</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH1 [label = 'Pr(H₁) = 0.5', width = 1.5]</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH0 [label = 'Pr(y|H₀) ~ 0.33', width = 1.5]</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH1 [label = 'Pr(y|H₁) ~ 0.41', width = 1.5]</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">  PosteriorH0 [label = 'Pr(H₀|y=1) ~ 0.45', width = 1.5]</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">  PosteriorH1 [label = 'Pr(H₁|y=1) ~ 0.55', width = 1.5]</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">  # Define the edges (relationships)</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH0 -&gt; LikelihoodH0</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH1 -&gt; LikelihoodH1</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="st">  H0 -&gt; LikelihoodH0</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="st">  H1 -&gt; LikelihoodH1</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH0 -&gt; y</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH1 -&gt; y</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="st">  y -&gt; PosteriorH0</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="st">  y -&gt; PosteriorH1</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the DAG</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>dag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dag <span class="ot">&lt;-</span> <span class="fu">grViz</span>(<span class="st">"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">digraph bayesian_dag {</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">  # Define the nodes</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">  node [shape = rectangle, fontname = 'Helvetica', fontsize = 14]</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">  H0 [label = 'H₀: 10% prevalence', width = 1.5]</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">  H1 [label = 'H₁: 20% prevalence', width = 1.5]</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">  y [label = 'y: Data (Successes in 5 samples)', width = 1.5]</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH0 [label = 'Pr(H₀) = 0.5', width = 1.5]</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH1 [label = 'Pr(H₁) = 0.5', width = 1.5]</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH0 [label = 'Pr(y|H₀) ~ 0.33', width = 1.5]</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH1 [label = 'Pr(y|H₁) ~ 0.41', width = 1.5]</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">  PosteriorH0 [label = 'Pr(H₀|y=1) ~ 0.45', width = 1.5]</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">  PosteriorH1 [label = 'Pr(H₁|y=1) ~ 0.55', width = 1.5]</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">  # Define the edges (relationships)</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH0 -&gt; LikelihoodH0</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">  PrH1 -&gt; LikelihoodH1</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">  H0 -&gt; LikelihoodH0</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="st">  H1 -&gt; LikelihoodH1</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH0 -&gt; y</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="st">  LikelihoodH1 -&gt; y</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="st">  y -&gt; PosteriorH0</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="st">  y -&gt; PosteriorH1</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>dag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-a199d28e0ad696bfa60b" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-a199d28e0ad696bfa60b">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-62130fd902e1eb03a211" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-62130fd902e1eb03a211">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><strong>Summary</strong></p>
 <p>We can summarise the results for all four seperate sample sizes using frequentist p-value and Bayesian methods, where</p>
-<p><strong>Frequentist</strong>: <span class="math inline">\(Pr(y \text{ or more} \mid 10\% \text{ prevalence})\)</span> = p-value</p>
-<p><strong>Bayesian - 10%</strong>: <span class="math inline">\(Pr(10\% \text{ prevalence} \mid n, y)\)</span></p>
-<p><strong>Bayesian - 20%</strong>: <span class="math inline">\(Pr(20\% \text{ prevalence} \mid n, y)\)</span></p>
+<p><strong>Frequentist</strong>:</p>
+<p><span class="math inline">\(H_0\)</span>: 10% prevalence and <span class="math inline">\(H_1\)</span>: <span class="math inline">\(&gt;10\)</span>% prevalence</p>
+<p><span class="math inline">\(Pr(y \text{ or more} \mid 10\% \text{ prevalence})\)</span> = p-value</p>
+<p><strong>Bayesian</strong></p>
+<p><span class="math inline">\(H_0\)</span>: 10% prevalence and <span class="math inline">\(H_1\)</span>: 20% prevalence</p>
+<p>Posterior for <span class="math inline">\(H_0\)</span>: <span class="math inline">\(Pr(10\% \text{ prevalence} \mid n, y)\)</span></p>
+<p>Posterior for <span class="math inline">\(H_1\)</span>: <span class="math inline">\(Pr(20\% \text{ prevalence} \mid n, y)\)</span></p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 41%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-</colgroup>
 <thead>
 <tr class="header">
-<th><strong>Observed Data</strong></th>
+<th><strong>Data</strong></th>
 <th><strong>p-value</strong></th>
-<th><strong>Bayesian-10%</strong></th>
-<th><strong>Bayesian-20%</strong></th>
+<th><strong>Posterior</strong></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td></td>
+<td><span class="math inline">\(H_0\)</span>: 10% prevalence</td>
+<td><span class="math inline">\(H_0\)</span>: 10% prevalence</td>
+<td><span class="math inline">\(H_1\)</span>: 20% prevalence</td>
+</tr>
+<tr class="even">
 <td>n = 5, y = 1</td>
 <td>0.41</td>
 <td>0.45</td>
 <td>0.55</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>n = 10, y = 2</td>
 <td>0.26</td>
 <td>0.39</td>
 <td>0.61</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>n = 15, y = 3</td>
 <td>0.18</td>
 <td>0.34</td>
 <td>0.66</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>n = 20, y = 4</td>
 <td>0.13</td>
 <td>0.29</td>
@@ -775,7 +777,7 @@ Pr(H_1|y=1) = 1- 0.45 = 0.55
 </tbody>
 </table>
 <p>In each of these scenarios, the frequentist approach produces a p-value higher than the significance level say 5%, leading us to fail to reject the null hypothesis for any of the samples. In contrast, the Bayesian method consistently assigns a higher posterior probability to the model where prevalence = 20%. As a result, the conclusions drawn from these two approaches are contradictory.</p>
-<p>However, if we had structured the frequentist approach differently—setting the null hypothesis as <span class="math inline">\(H_0\)</span>: 20% prevalence, and the alternative as <span class="math inline">\(H_1\)</span>: 20% prevalence, we would have reached different conclusions.</p>
+<p>However, if we had structured the frequentist approach differently—setting the null hypothesis as <span class="math inline">\(H_0\)</span>: 20% prevalence, we would have reached different conclusions.</p>
 <p>This highlights the frequentist method’s sensitivity to the choice of the null hypothesis. In contrast, the Bayesian approach yields consistent results regardless of the order in which we evaluate the models.</p>
 </section>
 <section id="bayesian-updating" class="level3" data-number="2.8.2">
@@ -837,8 +839,8 @@ It is invariance to data-order ... ref: kruschke, page 107; sec 5.2.1
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>dag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-b00c0ff70ad1cd483dfd" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-b00c0ff70ad1cd483dfd">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a99d219104b2672b509e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a99d219104b2672b509e">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><strong>Invariance to data-order</strong></p>
