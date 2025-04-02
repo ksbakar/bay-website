@@ -573,7 +573,7 @@ ref: gelman page 34 - informative; page 51 - noninformative; page 55 - weakly in
 <p>Understanding the appropriate selection of prior distributions in modeling is crucial. Prior distributions can be categorised as informative, non-informative, weakly informative, or based on expert judgment. This section explores into these various types of prior distributions, examining their applicability and relevance.</p>
 <section id="informative-prior-distribution" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="informative-prior-distribution"><span class="header-section-number">3.3.1</span> Informative Prior Distribution</h3>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/bJMifT5TA8I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <!--
 ref: constructing priors - lambert page 98; sec 5.6
@@ -690,9 +690,6 @@ ref: gelman page 34 - informative;
 </div>
 <p>The informative prior in this example allows you to start with a reasonable expectation (from historical data) and update it with observed results. This is especially useful when the sample size is small or the observed data alone might not be robust enough to guide decision-making.</p>
 <!--
-#### Key Insight:
-
-The informative prior in this example allows you to start with a reasonable expectation (from historical data) and update it with observed results. This is especially useful when the sample size is small or the observed data alone might not be robust enough to guide decision-making.
 
 #### Informative Priors in Practice:
 
@@ -700,14 +697,11 @@ The informative prior in this example allows you to start with a reasonable expe
   
 - **Expert Opinion**: In cases where there’s little data but strong expert knowledge, informative priors can be used to reflect the expert's expectations of a parameter's value.
 
-### In Summary:
-An **informative prior** is a distribution that incorporates existing knowledge or beliefs about the parameter being estimated, and it helps guide the analysis in a way that reflects this knowledge. It is particularly useful when the sample size is small, or when previous research or expert opinion is highly reliable.
-
 -->
 </section>
 <section id="non-informative-prior-distribution" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="non-informative-prior-distribution"><span class="header-section-number">3.3.2</span> Non-informative Prior Distribution</h3>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/BM0hjWUAto4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <!--
 ref: constructing priors - lambert page 96; sec 5.6
@@ -723,7 +717,7 @@ ref: gelman page 51 - noninformative;
 <ul>
 <li><strong>Uniform Priors:</strong></li>
 </ul>
-<p>Uniform priors assign equal probability across all possible values of a parameter, assuming no preference for any particular value (e.g., (p() $), where for a probability parameter <span class="math inline">\(\theta\)</span> in a Bernoulli model, a uniform prior on <span class="math inline">\(\text{Unif}[0, 1]\)</span> implies no prior belief about the likelihood of success. From the plot below we cannot visualize the likelihood function (scaled), as the posterior distribution and likelihood functions are same.</p>
+<p>Uniform priors assign equal probability across all possible values of a parameter, assuming no preference for any particular value (e.g., <span class="math inline">\(p(\theta) \propto 1\)</span>, where for a probability parameter <span class="math inline">\(\theta\)</span> in a Bernoulli model, a uniform prior on <span class="math inline">\(\text{Unif}[0, 1]\)</span> implies no prior belief about the likelihood of success. From the plot below we cannot visualize the likelihood function (scaled), as the posterior distribution and likelihood functions are same.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -772,14 +766,15 @@ ref: gelman page 51 - noninformative;
 </div>
 </div>
 <ul>
-<li><strong>Jeffreys Priors:</strong></li>
+<li><strong>Jeffreys’ Priors:</strong></li>
 </ul>
-<p>Jeffreys prior is a non-informative prior derived based on the Fisher information matrix, ensuring invariance under reparameterisation. This prior is proportional to the square root of the determinant of the Fisher information: <span class="math inline">\(p(\theta) \propto \sqrt{I(\theta)}\)</span>, where <span class="math inline">\(I(\theta)\)</span> is the Fisher information.</p>
+<p>Jeffreys’ prior is a non-informative prior derived based on the Fisher information matrix, ensuring invariance under reparameterisation. This prior is proportional to the square root of the determinant of the Fisher information: <span class="math inline">\(p(\theta) \propto \sqrt{|I(\theta)|}\)</span>, where <span class="math inline">\(I(\theta)\)</span> is the Fisher information.</p>
+<p>Jeffreys’ prior is invariant under reparameterisation means that if you change the parameterization of a model (i.e., if you make a transformation of the parameters), the form of the Jeffreys’ prior does not change.</p>
 <p><strong>Binomial distribution</strong></p>
 <p>Let us now explain this using Binomial distribution, where we observe 16 successes out of 20 trials, i.e., the efficacy rate is 80% observed from a pilot survey.</p>
 <p>Now, we write the Fisher information matrix as: <span class="math inline">\(I(\theta)=\frac{n}{\theta(1-\theta)}\)</span>. Hence, we get Jeffreys prior for <span class="math inline">\(\theta\)</span> as:</p>
 <p><span class="math display">\[
-p(\theta) \propto \sqrt{\frac{n}{\theta(1-\theta)}} \propto \frac{1}{\sqrt{\theta(1-\theta)}}
+p(\theta) \propto \sqrt{\left| \frac{n}{\theta(1-\theta)}\right|} \propto \frac{1}{\sqrt{\theta(1-\theta)}}
 \]</span></p>
 <p>where, we can ignore <span class="math inline">\(\sqrt{n}\)</span> using the proportional sign, as it is free from the model parameter <span class="math inline">\(\theta\)</span>. Hence, we can plot the distributions as:</p>
 <div class="cell">
@@ -794,27 +789,28 @@ p(\theta) \propto \sqrt{\frac{n}{\theta(1-\theta)}} \propto \frac{1}{\sqrt{\thet
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span>  </span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">16</span> </span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># avoid 0 and 1 for numerical stability</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>theta_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fl">0.99</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)  </span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>prior_density <span class="ot">&lt;-</span> <span class="fu">jeffreys_prior</span>(theta_vals)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>likelihood_density <span class="ot">&lt;-</span> <span class="fu">likelihood</span>(theta_vals, k, n)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>posterior_density <span class="ot">&lt;-</span> likelihood_density <span class="sc">*</span> prior_density</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>posterior_density <span class="ot">&lt;-</span> posterior_density <span class="sc">/</span> <span class="fu">sum</span>(posterior_density)  </span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">theta =</span> <span class="fu">rep</span>(theta_vals, <span class="dv">3</span>),</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">density =</span> <span class="fu">c</span>(prior_density, likelihood_density, posterior_density),</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Prior (Jeffreys)"</span>, <span class="st">"Likelihood"</span>, <span class="st">"Posterior"</span>), <span class="at">each =</span> <span class="fu">length</span>(theta_vals))</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> theta, <span class="at">y =</span> density, <span class="at">color =</span> type)) <span class="sc">+</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Jeffreys Prior, Likelihood, and Posterior for Binomial Model"</span>,</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(theta),</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Distribution"</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>theta_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fl">0.99</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)  </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>prior_density <span class="ot">&lt;-</span> <span class="fu">jeffreys_prior</span>(theta_vals)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>likelihood_density <span class="ot">&lt;-</span> <span class="fu">likelihood</span>(theta_vals, k, n)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>posterior_density <span class="ot">&lt;-</span> likelihood_density <span class="sc">*</span> prior_density</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>prior_density <span class="ot">&lt;-</span> prior_density <span class="sc">/</span> <span class="fu">sum</span>(prior_density)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>likelihood_density <span class="ot">&lt;-</span> likelihood_density <span class="sc">/</span> <span class="fu">sum</span>(likelihood_density)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>posterior_density <span class="ot">&lt;-</span> posterior_density <span class="sc">/</span> <span class="fu">sum</span>(posterior_density)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">theta =</span> <span class="fu">rep</span>(theta_vals, <span class="dv">3</span>),</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">density =</span> <span class="fu">c</span>(prior_density, likelihood_density, posterior_density),</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Prior (Jeffreys)"</span>, <span class="st">"Likelihood"</span>, <span class="st">"Posterior"</span>), <span class="at">each =</span> <span class="fu">length</span>(theta_vals))</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> theta, <span class="at">y =</span> density, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Jeffreys Prior, Likelihood, and Posterior for Binomial Model"</span>,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(theta),</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Scaled Density"</span>,</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Distribution"</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -827,10 +823,11 @@ p(\theta) \propto \sqrt{\frac{n}{\theta(1-\theta)}} \propto \frac{1}{\sqrt{\thet
 <p><strong>Normal Distribution</strong></p>
 <p>Let’s consider a normal distribution with known variance <span class="math inline">\(\sigma^2\)</span>. We write the Fisher information for the mean parameter <span class="math inline">\(\mu\)</span> as <span class="math inline">\(I(\mu) =\frac{n}{\sigma^2}\)</span>, where <span class="math inline">\(n\)</span> is the sample size. Hence, we write the Jeffreys prior for <span class="math inline">\(\mu\)</span> as the proportional to the square root of the Fisher information, i.e.,</p>
 <p><span class="math display">\[
-p(\mu) \propto \sqrt{I(\mu)}
+p(\mu) \propto \sqrt{|I(\mu)|} = \sqrt{\frac{n}{\sigma^2}}
 \]</span></p>
-<p>For the mean of a normal distribution, it’s constant, i.e., Jeffreys prior is <span class="math inline">\(p(\mu) \propto 1\)</span>. Thus, the prior is uniform over the parameter space. We write the posterior for <span class="math inline">\(\mu\)</span> follows normal distribution with mean <span class="math inline">\(\bar{y}\)</span> (sample mean) and variance <span class="math inline">\(\sigma^2/n\)</span>.</p>
-<p>Now let us explain with an eample. Suppose a new antihypertensive drug is tested in a clinical trial, and researchers measure the reduction in systolic blood pressure (in mmHg) among patients. Where, most patients experience a blood pressure reduction of around 5 mmHg, but there is natural variability, which is about 2 standard deviation. Now considering Jeffreys non-infmative prior, we can get the posterior distribution of the systolic blood pressure.</p>
+<p>Since, <span class="math inline">\(\sigma^2\)</span> is a constant, hence for the mean of a normal distribution, it’s constant, i.e., Jeffreys prior is <span class="math inline">\(p(\mu) \propto 1\)</span>, and <span class="math inline">\(-\infty \le \mu \le \infty\)</span>.</p>
+<p>Thus, the prior is uniform over the parameter space. We write the posterior for <span class="math inline">\(\mu\)</span> follows normal distribution with mean <span class="math inline">\(\bar{y}\)</span> (sample mean) and variance <span class="math inline">\(\sigma^2/n\)</span>.</p>
+<p>Now let us explain with an eample. Suppose a new antihypertensive drug is tested in a clinical trial, and researchers measure the reduction in systolic blood pressure (in mmHg) among patients. Where, most patients experience a blood pressure reduction of around 5 mmHg, but there is natural variability, which is about 2 standard deviation. Now considering Jeffreys non-informative prior, we can get the posterior distribution of the systolic blood pressure.</p>
 <p>Following this we draw the density plots using R code as follows:</p>
 <div class="cell">
 <details class="code-fold">
@@ -871,7 +868,7 @@ p(\mu) \propto \sqrt{I(\mu)}
 <span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> mu, <span class="at">y =</span> density, <span class="at">color =</span> type)) <span class="sc">+</span></span>
 <span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Prior, Likelihood, and Posterior Distributions"</span>,</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Jeffreys Prior, Likelihood, and Posterior for Normal Model"</span>,</span>
 <span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(mu),</span>
 <span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
 <span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Distribution"</span></span>
@@ -887,52 +884,103 @@ p(\mu) \propto \sqrt{I(\mu)}
 </div>
 </div>
 </div>
-<p>Despite being called “non-informative,” their choice can still involve subjective decisions. Some priors, like uniform priors, may appear non-informative in one parameterisation but informative in another (e.g., uniform in <span class="math inline">\(\theta\)</span> vs.&nbsp;<span class="math inline">\(\log(\theta)\)</span>). Improper priors can lead to issues in interpretation and sometimes require careful mathematical justification.</p>
+<p><strong>Further Notes</strong></p>
+<p>Despite being called “non-informative,” their choice can still involve subjective decisions. Some priors, like uniform priors, may appear non-informative in one parameterisation but informative in another (e.g., uniform in <span class="math inline">\(\theta\)</span> vs.&nbsp;<span class="math inline">\(\log(\theta)\)</span>).</p>
+<p>To explain this, consider a the case where we defined a uniform prior for <span class="math inline">\(\theta\)</span>, i.e., <span class="math inline">\(p(\theta) = \text{constant}\)</span>, implies that all values of <span class="math inline">\(\theta\)</span> are equally likely. Now, suppose we reparameterise the problem using a new variable, say logit transformation:</p>
+<p><span class="math display">\[
+\phi = \log \frac{\theta}{1 - \theta}
+\]</span></p>
+<p>If <span class="math inline">\(\theta\)</span> follows a <span class="math inline">\(\text{Unif}[0, 1]\)</span> prior, what does this imply about <span class="math inline">\(\phi\)</span>? Using the change of variables formula for probability densities:</p>
+<p><span class="math display">\[
+p(\phi) = p(\theta) \left| \frac{d\theta}{d\phi} \right|
+\]</span></p>
+<p>Since <span class="math inline">\(\theta = \frac{e^\phi}{1 + e^\phi}\)</span>, its derivative is:</p>
+<p><span class="math display">\[
+\frac{d\theta}{d\phi} = \frac{e^\phi}{(1 + e^\phi)^2}
+\]</span></p>
+<p>Substituting this into the density transformation:</p>
+<p><span class="math display">\[
+p(\phi) \propto \frac{\exp(\phi)}{(1 + \exp(\phi))^2}
+\]</span></p>
+<p>which is the logistic distribution rather than a uniform distribution. This shows that a uniform prior on <span class="math inline">\(\theta\)</span> induces a highly structured prior on <span class="math inline">\(\phi\)</span>, meaning that the prior is no longer flat in the transformed space. We will learning more about this in hierarchical modelling.</p>
+<p>This concept is crucial in Bayesian statistics, as it shows that non-informative priors are not always truly non-informative; their informativeness depends on the chosen parameter space.</p>
 </section>
 <section id="weakly-informative-prior-distribution" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="weakly-informative-prior-distribution"><span class="header-section-number">3.3.3</span> Weakly Informative Prior Distribution</h3>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/jzEnZF0bx3Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <!--
 ref: gelman page 55 - weakly informative
 -->
-<p>A weakly informative prior distribution in Bayesian statistics is characterised as proper, yet it is designed to provide information that is intentionally less robust than the actual prior knowledge available. This type of prior serves as a compromise between a non-informative prior, which imposes minimal assumptions about the parameter, and a strongly informative prior, which incorporates extensive prior knowledge.</p>
-<p>By occupying this middle ground, weakly informative priors offer constrained but meaningful insights into the parameters of interest, allowing for natural constraints inherent in the problem.</p>
-<p>Let’s explain this with the example of efficacy rate of the vaccine. Now assume that the success rate of the vaccine is about 50%, and we can consider the prior distribution as <span class="math inline">\(\text{Beta}(2,2)\)</span>. This symmetric pattern favours the efficacy rate around 0.5 but also allows a wide range of plausible values. This prior avoids extreme values (near 0 or 1) unless strongly supported by the data. Now, suppose 30 trials out of <span class="math inline">\(n = 50\)</span> shows success. Hence, we get the posterior distribution as <span class="math inline">\(\text{Beta}(32,22)\)</span>. Below you can see the density plots of the distributions.</p>
+<p>A weakly informative prior distribution in Bayesian statistics is characterised as proper, yet it is designed to provide information that is intentionally less robust than the actual prior knowledge available.</p>
+<p>Let’s explain this with the example of efficacy rate of the vaccine. If we consider a <span class="math inline">\(\text{Beta}(1,1)\)</span> prior for the parameter <span class="math inline">\(\theta\)</span>, then we have already discussed that the prior is a flat line, which represents a non-informative situation. Now, considering a <span class="math inline">\(\text{Beta}(0.5,0.5)\)</span> prior might lead to a distribution similar to Jefferys’ prior. Whereas, if we consider a <span class="math inline">\(\text{Beta}(2,2)\)</span> prior, then it favours a middle value (0.5) but still flexible. This prior avoids extreme values (near 0 or 1) unless strongly supported by the data. Below, we can plot all these three different priors.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>a_prior <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>b_prior <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>a_post <span class="ot">&lt;-</span> a_prior <span class="sc">+</span> y</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>b_post <span class="ot">&lt;-</span> b_prior <span class="sc">+</span> (n <span class="sc">-</span> y)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>prior <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(p, a_prior, b_prior)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Scaled for visualisation</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>likelihood <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(y, n, p) <span class="sc">*</span> <span class="dv">100</span>  </span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(p, a_post, b_post)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">p =</span> p,</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">Likelihood =</span> likelihood,</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">Posterior =</span> posterior,</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">Prior =</span> prior</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>data_long <span class="ot">&lt;-</span> reshape2<span class="sc">::</span><span class="fu">melt</span>(plot_data, <span class="at">id =</span> <span class="st">"p"</span>, <span class="at">variable.name =</span> <span class="st">"Distribution"</span>, <span class="at">value.name =</span> <span class="st">"Density"</span>)</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long, <span class="fu">aes</span>(<span class="at">x =</span> p, <span class="at">y =</span> Density, <span class="at">color =</span> Distribution)) <span class="sc">+</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Prior (weakly informative), Likelihood, and Posterior Distributions"</span>,</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(theta),</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Distribution"</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>theta_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>beta_1_1 <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(theta_vals, <span class="dv">1</span>, <span class="dv">1</span>)    <span class="co"># Uniform prior</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>beta_0_5_0_5 <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(theta_vals, <span class="fl">0.5</span>, <span class="fl">0.5</span>)  <span class="co"># Jeffreys' prior</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>beta_2_2 <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(theta_vals, <span class="dv">2</span>, <span class="dv">2</span>)    <span class="co"># Weakly informative prior</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">theta =</span> <span class="fu">rep</span>(theta_vals, <span class="dv">3</span>),</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">density =</span> <span class="fu">c</span>(beta_1_1, beta_0_5_0_5, beta_2_2),</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Beta(1,1) - Uniform"</span>, <span class="st">"Beta(0.5,0.5) - Jeffreys"</span>, <span class="st">"Beta(2,2) - Weakly Informative"</span>), <span class="at">each =</span> <span class="fu">length</span>(theta_vals))</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> theta, <span class="at">y =</span> density, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparison of Different Beta Priors"</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="fu">expression</span>(theta), </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Density"</span>, </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Distribution"</span>) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">option =</span> <span class="st">"cvidis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M02_1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now assume that the success rate of the vaccine is about 50%, and we can consider the prior distribution as <span class="math inline">\(\text{Beta}(2,2)\)</span>. This symmetric pattern favours the efficacy rate around 0.5 but also allows a wide range of plausible values. Now, suppose 30 trials out of <span class="math inline">\(n = 50\)</span> shows success. Hence, we get the posterior distribution as <span class="math inline">\(\text{Beta}(32,22)\)</span>. Below you can see the density plots of the distributions.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>a_prior <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>b_prior <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>a_post <span class="ot">&lt;-</span> a_prior <span class="sc">+</span> y</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>b_post <span class="ot">&lt;-</span> b_prior <span class="sc">+</span> (n <span class="sc">-</span> y)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>prior <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(p, a_prior, b_prior)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Scaled for visualisation</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>likelihood <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(y, n, p) <span class="sc">*</span> <span class="dv">100</span>  </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(p, a_post, b_post)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">p =</span> p,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">Likelihood =</span> likelihood,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">Posterior =</span> posterior,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">Prior =</span> prior</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>data_long <span class="ot">&lt;-</span> reshape2<span class="sc">::</span><span class="fu">melt</span>(plot_data, <span class="at">id =</span> <span class="st">"p"</span>, <span class="at">variable.name =</span> <span class="st">"Distribution"</span>, <span class="at">value.name =</span> <span class="st">"Density"</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long, <span class="fu">aes</span>(<span class="at">x =</span> p, <span class="at">y =</span> Density, <span class="at">color =</span> Distribution)) <span class="sc">+</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Prior (weakly informative), Likelihood, and Posterior Distributions"</span>,</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(theta),</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Distribution"</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -942,7 +990,7 @@ ref: gelman page 55 - weakly informative
 </div>
 </div>
 </div>
-<p>Weakly informative priors are common in modern Bayesian modeling, where it balances interpretability, robustness, and computational efficiency. We will explain more about the weakly informative prior when we will learn about Bayesian regression models.</p>
+<p>Weakly informative priors are common in modern Bayesian modeling, where it balances interpretability, robustness, and computational efficiency. Even though weakly informative priors are designed to be robust, they still influence the posterior, especially in small-sample scenarios. What counts as weakly informative is context-dependent. For example, a <span class="math inline">\(\text{Normal}(0,10^2)\)</span> prior on a regression coefficient might be weakly informative in a standard model but too weak in a context where coefficients are typically small. We will explain more about the weakly informative prior when we will learn the Bayesian regression and hierarchical models.</p>
 <!--
 ### Eliciting Prior Distribution
 ref: constructing priors - lambert page 99; sec 5.6
