@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Bayeswatch! Part - I – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>5&nbsp; Bayeswatch! Causal Connections – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M03_1.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - I</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M03_1.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Causal Connections</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -146,13 +146,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text"><strong>Preface</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text"><strong>Introduction</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -182,13 +182,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Causal Connections</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Twits</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,20 +249,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link active" data-scroll-target="#learning-outcomes"><span class="header-section-number">5.1</span> Learning Outcomes</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">5.2</span> Learning Objectives</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">5.3</span> Introduction</a></li>
-  <li><a href="#causality-and-bayesian-model" id="toc-causality-and-bayesian-model" class="nav-link" data-scroll-target="#causality-and-bayesian-model"><span class="header-section-number">5.4</span> Causality and Bayesian Model</a></li>
-  <li><a href="#estimand-estimator-estimate" id="toc-estimand-estimator-estimate" class="nav-link" data-scroll-target="#estimand-estimator-estimate"><span class="header-section-number">5.5</span> Estimand, Estimator &amp; Estimate</a>
+  <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">5.1</span> Learnings</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">5.2</span> Introduction</a></li>
+  <li><a href="#causality-and-bayesian-model" id="toc-causality-and-bayesian-model" class="nav-link" data-scroll-target="#causality-and-bayesian-model"><span class="header-section-number">5.3</span> Causality and Bayesian Model</a></li>
+  <li><a href="#estimand-estimator-estimate---bayesian-context" id="toc-estimand-estimator-estimate---bayesian-context" class="nav-link" data-scroll-target="#estimand-estimator-estimate---bayesian-context"><span class="header-section-number">5.4</span> Estimand, Estimator &amp; Estimate - Bayesian Context</a>
   <ul class="collapse">
-  <li><a href="#bayesian-context" id="toc-bayesian-context" class="nav-link" data-scroll-target="#bayesian-context"><span class="header-section-number">5.5.1</span> Bayesian Context</a></li>
-  <li><a href="#regression-context" id="toc-regression-context" class="nav-link" data-scroll-target="#regression-context"><span class="header-section-number">5.5.2</span> Regression Context</a></li>
+  <li><a href="#modelling-context" id="toc-modelling-context" class="nav-link" data-scroll-target="#modelling-context"><span class="header-section-number">5.4.1</span> Modelling Context</a></li>
   </ul></li>
-  <li><a href="#model-development-using-dag" id="toc-model-development-using-dag" class="nav-link" data-scroll-target="#model-development-using-dag"><span class="header-section-number">5.6</span> Model Development using DAG</a>
-  <ul class="collapse">
-  <li><a href="#confounders-mediators-and-adjustment-variables" id="toc-confounders-mediators-and-adjustment-variables" class="nav-link" data-scroll-target="#confounders-mediators-and-adjustment-variables"><span class="header-section-number">5.6.1</span> Confounders, Mediators and Adjustment Variables:</a></li>
-  </ul></li>
-  <li><a href="#comparison-with-classical-approach" id="toc-comparison-with-classical-approach" class="nav-link" data-scroll-target="#comparison-with-classical-approach"><span class="header-section-number">5.7</span> Comparison with Classical Approach</a></li>
+  <li><a href="#model-development-using-dag" id="toc-model-development-using-dag" class="nav-link" data-scroll-target="#model-development-using-dag"><span class="header-section-number">5.5</span> Model Development using DAG</a></li>
+  <li><a href="#comparison-with-classical-approach" id="toc-comparison-with-classical-approach" class="nav-link" data-scroll-target="#comparison-with-classical-approach"><span class="header-section-number">5.6</span> Comparison with Classical Approach</a></li>
+  <li><a href="#prior-twites" id="toc-prior-twites" class="nav-link" data-scroll-target="#prior-twites"><span class="header-section-number">5.7</span> Prior twites</a></li>
   <li><a href="#model-diagnostics" id="toc-model-diagnostics" class="nav-link" data-scroll-target="#model-diagnostics"><span class="header-section-number">5.8</span> Model Diagnostics</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.9</span> Exercises</a></li>
   <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">5.10</span> Live tutorial and discussion</a></li>
@@ -276,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - I</strong></span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Causal Connections</strong></span></h1>
 </div>
 
 
@@ -296,109 +292,556 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>NOT READY YET</p>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<section id="learning-outcomes" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">5.1</span> Learning Outcomes</h2>
-</section>
-<section id="learning-objectives" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">5.2</span> Learning Objectives</h2>
+<section id="learnings" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="learnings"><span class="header-section-number">5.1</span> Learnings</h2>
+<ul>
+<li><p><strong>Outcomes</strong></p></li>
+<li><p><strong>Objectives</strong></p></li>
+</ul>
 <p>By the end of this week you should be able to:</p>
-<ol type="1">
-<li><p>Understand Bayesian model and causality</p></li>
-<li><p>Explain the terms Estimand, Estimator &amp; Estimate</p></li>
-<li><p>Understand the difference between Bayesian and classical Regression.</p></li>
-<li><p>Interpret a real-life problem in Bayesian context.</p></li>
-</ol>
+<p>– Understand Bayesian model and causality</p>
+<p>– Explain the terms Estimand, Estimator &amp; Estimate</p>
+<p>– Understand the difference between Bayesian and classical Regression.</p>
+<p>– Interpret a real-life problem in Bayesian context.</p>
 </section>
-<section id="introduction" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.3</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.2</span> Introduction</h2>
 <p>asdafs</p>
 <!--
 ref: https://statswithr.github.io/book/introduction-to-bayesian-regression.html
 
 -->
-<p>In this lecture, we shall explore the application of Bayesian inference methodologies to linear regression models. We will begin by examining the utilization of Bayesian statistics within the context of simple linear regression models and subsequently expand these insights to encompass multiple linear regression models. Through this exploration, we will find that employing the non-informative prior results in posterior means, posterior standard deviations, and credible intervals for the coefficients that are consistent with those derived from frequentist ordinary least squares (OLS) linear regression models.</p>
+<p>In this lecture, we shall explore the application of Bayesian inference methodologies using hierarchical models. We will begin by examining the utilisation of Bayesian methods within the context of simple linear regression models and subsequently expand these insights to encompass multiple linear regression. Through this exploration, we will find that employing the non-informative prior results in posterior means, posterior standard deviations, and credible intervals for the coefficients that are consistent with those derived from frequentist ordinary least squares (OLS) linear regression models.</p>
 <p>We will start with how to develop a Bayesian model based on causality, or unknown causality with understanding of estimand, estimator and estimate. We wil also explore how DAG can help us to build the model.</p>
 </section>
-<section id="causality-and-bayesian-model" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="causality-and-bayesian-model"><span class="header-section-number">5.4</span> Causality and Bayesian Model</h2>
+<section id="causality-and-bayesian-model" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="causality-and-bayesian-model"><span class="header-section-number">5.3</span> Causality and Bayesian Model</h2>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <!--
 Causal salad - ref: McElreath page 17, see the BOX
 -->
-<p>Causal inference requires the establishment of a causal model that is separate from a Bayesian model, given that observational data alone do not suffice. This is widely accepted across different philosophical perspectives. Nonetheless, interpretations differ considerably. The most conservative viewpoint treats “causation” as an unprovable notion. A slightly less conservative approach posits that causation can be inferred only under stringent conditions involving randomization and experimental control. However, many scientific investigations cannot be feasibly examined through experimental study. Other cases might be feasible but raise ethical concerns. In disciplines like health and medicine, the dominant approach involves incorporating various “control” variables into a statistical model, observing changes in estimates, and then developing a causal narrative. This concept is based on the assumption that only omitted variables can lead to incorrect conclusions about causation. However, variables that are included can also lead to confusion. When constructing a causal model that appears to make accurate predictions might still mislead us about causation. If such a model is used to design an intervention, it is likely to result in inaccurate outcomes.</p>
+<p>When conducting causal inference, we must develop a causal model that is distinct from a Bayesian model, as observational data alone are insufficient. This principle is widely accepted across philosophical perspectives, though interpretations vary significantly.</p>
+<p>The most cautious view holds that causation is fundamentally unprovable. A slightly less conservative stance suggests that we can infer causation only under strict conditions, such as randomisation and experimental control. However, many scientific questions cannot be addressed experimentally due to feasibility constraints or ethical concerns.</p>
+<p>In fields like health and medicine, we often introduce various control variables into a statistical model, observe changes in estimates, and construct a causal narrative. This approach assumes that only omitted variables can distort causal conclusions, yet even included variables can introduce confusion.</p>
+<p>Even if we construct a causal model that appears to make accurate predictions, it may still misrepresent causation. If we rely on such a model to guide interventions, we risk producing unintended or misleading outcomes.</p>
 </section>
-<section id="estimand-estimator-estimate" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="estimand-estimator-estimate"><span class="header-section-number">5.5</span> Estimand, Estimator &amp; Estimate</h2>
+<section id="estimand-estimator-estimate---bayesian-context" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="estimand-estimator-estimate---bayesian-context"><span class="header-section-number">5.4</span> Estimand, Estimator &amp; Estimate - Bayesian Context</h2>
 <!--
 ref: https://bookdown.org/paul/applied-causal-analysis/estimator.html
 
 -->
-<p>The estimand is the quantity of interest whose true value you want to know.</p>
-<p>An estimator is a method for estimating the estimand.</p>
-<p>An estimate is a numerical estimate of the estimand that results from the use of a particular estimator.</p>
-<section id="bayesian-context" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="bayesian-context"><span class="header-section-number">5.5.1</span> Bayesian Context</h3>
-<p>Suppose we are interested in the mean vaccine efficacy for a respiratory-related disease among children in Australia. Our estimand is “the mean vaccine efficacy for the respiratory-related disease among all children in Australia”, Now we take a random sample of 10,000 children in Australia and measure the vaccine’s efficacy in preventing the respiratory-related disease in each child. Using this data, we now have to choose an estimator that will provide us with an estimate of our estimand. The most obvious thing to do would be to compute the sample average of the vaccine efficacies. That is, “the sample average” is an estimator that provides an estimate of our estimand. Suppose the sample average indicates a vaccine efficacy of 85%. Then 85% is the estimate of our estimand provided by the “sample average” estimator.</p>
-<p>The key link to Bayesian thinking is the use of prior information, the combination of prior beliefs with observed data, and the resulting posterior distribution that provides a more comprehensive understanding of the estimand and its uncertainty. In the context of this Bayesian example the estimand is the true, but unknown, mean vaccine efficacy for the respiratory-related disease among all children in Australia. This is the quantity we are ultimately interested in estimating. The estimator is the posterior distribution of the vaccine efficacy. This distribution is derived by combining the prior information with the likelihood of the observed data using Bayes’ theorem. A specific summary statistic of the posterior distribution, such as the posterior mean or posterior median, can also serve as an estimator. The estimate is the specific value or summary of the posterior distribution. For example, if the posterior mean vaccine efficacy is 85%, then 85% is the estimate of the estimand provided by the posterior mean estimator.</p>
-</section>
-<section id="regression-context" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="regression-context"><span class="header-section-number">5.5.2</span> Regression Context</h3>
-<p>Now, let us explain this example in the context of regression problem. Suppose we are interested in understanding how vaccine efficacy for a respiratory-related disease among children in Australia is influenced by certain predictors, such as age, pre-existing health conditions, and socioeconomic status. In this case, our estimand is the set of true regression coefficients that describe the relationship between these predictors and vaccine efficacy.</p>
-<p>A foolproof way to determine these coefficients would be to measure vaccine efficacy and collect all relevant predictor data (e.g., age, health conditions, and socioeconomic status) for every child in Australia and then fit a regression model to the entire population data. However, this is infeasible. Instead, we decide to estimate the regression coefficients using a sample of children.</p>
-<p>Hence, we take a random sample of 10,000 children in Australia and collect data on their vaccine efficacy and the relevant predictors. Using this data, we fit a regression model (e.g., a linear regression model) to estimate the relationship between the predictors and vaccine efficacy.</p>
-<p>In the Bayesian framework, we approach this problem by starting with a prior distribution for each regression coefficient, reflecting our prior beliefs about the relationships. For instance, based on previous studies, we might believe that younger children have slightly lower vaccine efficacy and encode this belief into the prior.</p>
+<p>When making causal inferences, we commonly use the terms estimand, estimator, and estimate. The estimand is the quantity of interest—the true value we seek to determine. We define an estimator as the method or procedure that we use to estimate the estimand. Finally, an estimate is the numerical result we obtain from applying a specific estimator to data. Now we will discuss how these terms can be used in Bayesian context.</p>
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<p>Suppose, we want to find out the average effectiveness of a vaccine for a respiratory disease among children in Australia. Our estimand is “the true average vaccine effectiveness for this disease among all children in Australia.”</p>
+<p>Since we can’t measure every child, we take a random sample of 10,000 children and record how well the vaccine protects them from the disease. Using this data, we now need to choose an estimator, which is a method to estimate our estimand.</p>
+<p>The simplest approach is to calculate the average vaccine effectiveness in our sample. In this case, the sample average acts as our estimator, providing an estimate of the true vaccine effectiveness. If our sample average shows 85% effectiveness, then 85% is our estimate based on the sample average estimator.</p>
+<p>Now, in a Bayesian framework, the estimand remains the same, which is the true but unknown average vaccine effectiveness among all children in Australia. However, instead of just using the sample average, our estimator in the Bayesian context is the posterior distribution of vaccine effectiveness. And we already know that this distribution is derived by combining prior knowledge with the likelihood of the observed data using Bayes’ theorem.</p>
+<p>To summarise this posterior distribution, we can use a specific value, such as the posterior mean or posterior median, as an estimator. The final estimate is the specific value from this distribution. For example, if the posterior mean suggests 85% effectiveness, then 85% is our estimate based on the posterior mean estimator.</p>
+<section id="modelling-context" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="modelling-context"><span class="header-section-number">5.4.1</span> Modelling Context</h3>
+<p>Now, let us explain this in the context of Bayesian regression problem. Suppose we are interested in understanding how vaccine efficacy for a respiratory-related disease among children in Australia is influenced by certain predictors, such as age, pre-existing health conditions, and socioeconomic status. In this case, our estimand is the set of true regression coefficients that describe the relationship between these predictors and vaccine efficacy.</p>
+<p>A perfect way to determine these coefficients would be to measure vaccine efficacy and collect all relevant predictor data (e.g., age, health conditions, and socioeconomic status) for every child in Australia and then fit a model to the entire population data. However, this is infeasible. Instead, we can estimate the regression coefficients using a sample observation, and we take a random sample of 10,000 children in Australia and collect data on their vaccine efficacy and the relevant predictors. Using this data, we fit a Bayesian model (e.g., a Bayesian linear regression model) to estimate the relationship between the predictors and vaccine efficacy.</p>
+<p>In the Bayesian framework, we approach this problem by starting with a prior distribution for each regression coefficient, reflecting our prior beliefs about the relationships. For example, based on previous studies, we might believe that younger children have slightly lower vaccine efficacy and use this belief into the prior.</p>
 <p>The sample data provides the likelihood, representing the probability of observing the data given different values of the regression coefficients. By applying Bayes’ theorem, we combine the prior with the likelihood to produce a posterior distribution for each regression coefficient. The posterior distributions represent our updated beliefs about the coefficients after observing the data.</p>
 <p>For example, if the posterior mean for the age coefficient is -0.5, it suggests that, on average, each additional year of age is associated with a 0.5% decrease in vaccine efficacy. If the posterior mean for the socioeconomic status coefficient is 2.0, it suggests that higher socioeconomic status is associated with a 2% increase in vaccine efficacy.</p>
 <p>Here, estimand is the true regression coefficients that describe the relationships between the predictors and vaccine efficacy. Estimator is the posterior distributions of the regression coefficients. These distributions summarize the uncertainty about the coefficients. And estimate is the specific value derived from the posterior distributions, such as the posterior mean, median, or mode for each coefficient.</p>
 <p>This Bayesian approach allows us not only to estimate the coefficients but also to quantify our uncertainty about them, providing a more comprehensive understanding of the predictors’ influence on vaccine efficacy.</p>
 </section>
 </section>
-<section id="model-development-using-dag" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="model-development-using-dag"><span class="header-section-number">5.6</span> Model Development using DAG</h2>
+<section id="model-development-using-dag" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="model-development-using-dag"><span class="header-section-number">5.5</span> Model Development using DAG</h2>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<p>A Directed Acyclic Graph (DAG) can be a helpful tool for conceptualizing and developing regression models. It helps to visually represent causal relationships among variables and ensures proper adjustment for confounding factors.</p>
-<p>Now we explain this more with an example related to Bone Mineral Density (BMD). For example, we want to model the relationship between Bone Mineral Density (BMD) and Age, considering other potential factors like Sex and Body Mass Index (BMI).</p>
-<p>As people age, their bone mineral density (BMD) decreases naturally over time. Age also influences physical activity, as older individuals tend to be less active. It affects body weight, or BMI, because aging can lead to changes in weight, which in turn impacts bone density. Physical activity strengthens bones, directly improving BMD. Dietary calcium intake supports bone health and contributes directly to BMD as well. Sex influences both BMD and BMI, with women being more likely to experience a decline in bone density, such as in cases of osteoporosis. Body weight, or BMI, also directly affects BMD, as changes in weight can influence bone strength.</p>
+<p>We have discussed about Directed Acyclic Graph (DAG) in one of our previous lectures. Today we will explain DAG for conceptualising and developing Bayesian regression models. It helps to visually represent causal relationships among variables and ensures proper adjustment for confounding factors.</p>
+<p>Now we explain this more with an example related to Bone Mineral Density (BMD). For example, we want to know, how does body mass index (BMI) impact bone mineral density (BMD)? What role does ‘age’ or ‘sex’ of the patient play in this relationship?</p>
+<p>Let’s focus on the relationship between BMD, BMI, age, and sex. As people age, their BMD naturally decreases over time, and age also influences factors like physical activity, which can impact BMI. Similarly, sex affects both BMI and BMD, with women being more likely to experience a decline in BMD, particularly in conditions like osteoporosis. These factors age and sex may act as confounders, influencing both BMI and BMD.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js"> graph TD
-    A("Age") --&gt; B("BMD")
-    A --&gt; P("Physical Activity") --&gt; B
-    A --&gt; M("BMI") --&gt; B
-    S("Sex") --&gt; B
-    S --&gt; M --&gt; B
-    D("Dietary Calcium Intake") --&gt; M
+<pre class="mermaid mermaid-js"> graph LR
+    M("BMI") --&gt; B("BMD")
+    A("Age") --&gt; M
+    S("Sex") --&gt; M
+    A --&gt; B
+    S --&gt; B
 </pre>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
 </div>
-<p>In this example, the estimand is the specific quantity or effect that you are trying to measure based on the causal relationship outlined in the DAG. In this case, the estimand is the causal effect of age on BMD. For example: the average change in BMD for a one-year increase in age, while accounting for confounders like sex, physical activity, BMI, and dietary calcium intake.</p>
-<p>Here, the estimator is the regression model, a multiple linear regression model that adjusts for confounders (Sex, Physical Activity, BMI, and Dietary Calcium Intake) to isolate the effect of Age on BMD.</p>
-<p>The estimate is the actual numerical value obtained for the causal effect of age on BMD from the data using the chosen estimator, i.e., the estimate is the numerical value (e.g., -0.005) derived from the regression analysis, representing the change in BMD per year of age.</p>
-<section id="confounders-mediators-and-adjustment-variables" class="level3" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="confounders-mediators-and-adjustment-variables"><span class="header-section-number">5.6.1</span> Confounders, Mediators and Adjustment Variables:</h3>
-<p>Identifying Key Variables</p>
-<p>Exposure (Independent Variable): Age (Primary factor influencing BMD)</p>
-<p>Outcome (Dependent Variable): Bone Mineral Density (BMD)</p>
-<p>Confounders (Affect both Age and BMD, creating bias) Sex: Men and women have different bone density patterns and risks of osteoporosis. Dietary Calcium Intake: Affects bone density and may vary across age groups.</p>
-<p>Mediator (Lies on the causal pathway from Age to BMD) Body Mass Index (BMI): Age affects BMI, which in turn influences BMD.</p>
-<p>Adjustment Variables (To control confounding and estimate the direct effect of Age on BMD) Sex Dietary Calcium Intake Physical Activity (since it is influenced by Age and also impacts BMD)</p>
-<p>Confounders are variables that influence both the exposure (Age) and the outcome (BMD). Based on the DAG, Sex, Physical Activity, BMI, and Dietary Calcium Intake are potential confounders.</p>
-<p>Decide on Variables to Adjust For, i.e., adjust for Sex, Physical Activity, and Dietary Calcium Intake to control for their effects. Adjust for BMI, as it is a mediator between Age and BMD.</p>
+<p>In this case, the estimand is the specific causal effect of BMI on BMD, while accounting for the influence of age and sex as confounders. The goal is to isolate the effect of BMI on BMD after adjusting for these other variables.</p>
+<p>The estimator we define here is the Bayesian model, i.e., the multiple linear regression model. This model adjusts for confounders like age and sex, helping us accurately estimate the causal effect of BMI on BMD.</p>
+<p>The estimate is the actual numerical value derived from the data using the chosen estimator. For example, if the estimate is 0.03, this could represent the change in BMD associated with a one-unit increase in BMI, after accounting for the effects of age and sex.</p>
 </section>
-</section>
-<section id="comparison-with-classical-approach" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="comparison-with-classical-approach"><span class="header-section-number">5.7</span> Comparison with Classical Approach</h2>
+<section id="comparison-with-classical-approach" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="comparison-with-classical-approach"><span class="header-section-number">5.6</span> Comparison with Classical Approach</h2>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>asdf</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: Rcpp</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading 'brms' package (version 2.22.0). Useful instructions
+can be found by typing help('brms'). A more detailed introduction
+to the package is available through vignette('brms_overview').</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'brms'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:stats':
+
+    ar</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sex <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>bmi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">25</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="dv">1</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>bmd <span class="ot">&lt;-</span> <span class="fl">1.0</span> <span class="sc">+</span> <span class="fl">0.015</span> <span class="sc">*</span> bmi <span class="sc">-</span> <span class="fl">0.005</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fu">ifelse</span>(sex <span class="sc">==</span> <span class="st">"Female"</span>, <span class="sc">-</span><span class="fl">0.01</span>, <span class="dv">0</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.05</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> <span class="fu">round</span>(bmd, <span class="dv">2</span>),</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMI =</span> bmi,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> age,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">factor</span>(sex)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># model</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>bmd_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> BMD <span class="sc">~</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"b"</span>),   <span class="co"># Slope priors</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),   <span class="co"># Intercept prior</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">student_t</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)  <span class="co"># Approximate Inv-Gamma(2,1)</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Compiling Stan program...
+Start sampling</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 4.9e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.49 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.17 seconds (Warm-up)
+Chain 1:                0.131 seconds (Sampling)
+Chain 1:                0.301 seconds (Total)
+Chain 1: </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bmd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> Family: gaussian 
+  Links: mu = identity; sigma = identity 
+Formula: BMD ~ BMI + Age + Sex 
+   Data: bmd_data (Number of observations: 200) 
+  Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 1000
+
+Regression Coefficients:
+          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept     0.99      0.03     0.93     1.04 1.00     1236      767
+BMI           0.01      0.00     0.01     0.02 1.00     1306      576
+Age          -0.00      0.00    -0.01    -0.00 1.00     1198      787
+SexMale       0.01      0.01     0.00     0.03 1.00      616      518
+
+Further Distributional Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sigma     0.05      0.00     0.05     0.05 1.00      597      558
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bmd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_bayes-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Marginal effects in brms show the predicted effect of each predictor on the response, averaging over the effects of other variables. So you’re essentially asking:</p>
+<p>“What does the relationship between BMI and BMD look like, averaged over all values of Age and Sex?”</p>
+<p>It gives you a partial effect plot — a clean way to visualize how each predictor (like BMI, Age, or Sex) influences the outcome (BMD), based on the posterior distribution.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add raw data overlay</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">conditional_effects</span>(bmd_model, <span class="at">effects =</span> <span class="st">"BMI"</span>), <span class="at">points =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_marginal-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">conditional_effects</span>(bmd_model, <span class="at">effects =</span> <span class="st">"Age"</span>), <span class="at">points =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_marginal-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">conditional_effects</span>(bmd_model, <span class="at">effects =</span> <span class="st">"Sex"</span>), <span class="at">points =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_marginal-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For a continuous variable (e.g.&nbsp;BMI or Age): A smooth line showing how BMD changes as BMI increases</p>
+<p>Wider or narrower ribbons depending on how uncertain the model is</p>
+<p>For a categorical variable (e.g.&nbsp;Sex): A point estimate (mean BMD) for each group</p>
+<p>Error bars showing uncertainty</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>This is bayesplot version 1.11.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>- Online documentation and vignettes at mc-stan.org/bayesplot</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>- bayesplot theme set to bayesplot::theme_default()</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>   * Does _not_ affect other ggplot2 plots</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>   * See ?bayesplot_theme_set for details on theme setting</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'bayesplot'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:brms':
+
+    rhat</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(bmd_model)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Select relevant parameters</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_areas</span>(</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  posterior,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#pars = c("b_Intercept", "b_BMI", "b_Age", "b_SexMale"),</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexMale"</span>),</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.95</span>  <span class="co"># 95% credible intervals</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_visualise-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior intervals using intervals plot</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_intervals</span>(</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  posterior,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_Intercept"</span>, <span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexMale"</span>),</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.95</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `prob_outer` (0.9) is less than `prob` (0.95)
+... Swapping the values of `prob_outer` and `prob`</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_visualise-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good for diagnosing convergence</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  posterior,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_Intercept"</span>, <span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexMale"</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_visualise-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior predictive check</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using 10 posterior draws for ppc type 'dens_overlay' by default.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_pp_check-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model, <span class="at">type =</span> <span class="st">"hist"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using 10 posterior draws for ppc type 'hist' by default.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_pp_check-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model, <span class="at">type =</span> <span class="st">"boxplot"</span>, <span class="at">group =</span> <span class="st">"Sex"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using 10 posterior draws for ppc type 'boxplot' by default.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following arguments were unrecognized and ignored: group</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_pp_check-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model, <span class="at">type =</span> <span class="st">"scatter_avg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using all posterior draws for ppc type 'scatter_avg' by default.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_pp_check-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model, <span class="at">type =</span> <span class="st">"ecdf_overlay"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using 10 posterior draws for ppc type 'ecdf_overlay' by default.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_pp_check-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If the posterior predictive plots match the observed data closely, your model fits well.</p>
+<p>If the posterior predictive data looks too wide/narrow or misses patterns, you might need:</p>
+<p>Better predictors</p>
+<p>A different model family</p>
+<p>Transformation of variables</p>
+</section>
+<section id="prior-twites" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="prior-twites"><span class="header-section-number">5.7</span> Prior twites</h2>
+<p>Similarities between IG and students-t. Let’s explain this with Inverse-Gamma distributions with parameters (2,1), i.e., IG(2,1) and Student-t distributions that approximate the IG with parameters (3,0,1), i.e., Student-t(3, 0, 1), where Degrees of Freedom = 3, location = 0 (centered), and Scale = 1. Note that we’ll use the fact that the Inverse-Gamma distribution is the inverse of a Gamma distribution. This means that we can plot the Gamma distributions with appropriate parameters and then invert the axes to simulate the Inverse-Gamma behavior.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'gridExtra'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    combine</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to plot Inverse-Gamma approximation (using the inverse of Gamma distribution)</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>ig_density <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha, beta, x) {</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">dgamma</span>(<span class="dv">1</span> <span class="sc">/</span> x, <span class="at">shape =</span> alpha, <span class="at">rate =</span> beta) <span class="sc">/</span> (x<span class="sc">^</span><span class="dv">2</span>))  <span class="co"># Inverse-Gamma as 1/Gamma(x)</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Inverse-Gamma(2,1)</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="fl">0.001</span>, <span class="dv">20</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) <span class="fu">ig_density</span>(<span class="dv">2</span>, <span class="dv">1</span>, x), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">x =</span> <span class="fu">expression</span>(sigma), </span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Inverse-Gamma(2, 1)"</span>) <span class="sc">+</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Student-t(3, 0, 1)</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="fl">0.001</span>, <span class="dv">20</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) <span class="fu">dt</span>(x <span class="sc">/</span> <span class="dv">1</span>, <span class="at">df =</span> <span class="dv">3</span>) <span class="sc">/</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">x =</span> <span class="fu">expression</span>(sigma), </span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Student-t(3, 0, 1)"</span>) <span class="sc">+</span></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the plots side by side</span></span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_priors-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Thus if we</p>
+<p>Why do we use Cauchy prior? What are the benefits? Is this weakly informative prior?</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>bmd_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> BMD <span class="sc">~</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"b"</span>),       <span class="co"># Priors for slopes</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)    <span class="co"># Prior for residual SD</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Compiling Stan program...</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Start sampling</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 5.2e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.52 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.244 seconds (Warm-up)
+Chain 1:                0.147 seconds (Sampling)
+Chain 1:                0.391 seconds (Total)
+Chain 1: </code></pre>
+</div>
+</div>
 <p>use rstan, rstanarm or brms</p>
 </section>
 <section id="model-diagnostics" class="level2" data-number="5.8">
@@ -409,7 +852,7 @@ ref: https://bookdown.org/paul/applied-causal-analysis/estimator.html
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
@@ -860,8 +1303,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./M03_2.html" class="pagination-link" aria-label="**Bayeswatch! Part - II**">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - II</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M03_2.html" class="pagination-link" aria-label="**Bayeswatch! Prior Twits**">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Twits</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

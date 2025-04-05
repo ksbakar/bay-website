@@ -374,8 +374,8 @@
     "objectID": "M02_2.html#live-tutorial-and-discussion",
     "href": "M02_2.html#live-tutorial-and-discussion",
     "title": "4  Chaotics: Generative Models and Tools",
-    "section": "4.7 Live tutorial and discussion",
-    "text": "4.7 Live tutorial and discussion\nThe final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!",
+    "section": "4.9 Live tutorial and discussion",
+    "text": "4.9 Live tutorial and discussion\nThe final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
     ]
@@ -384,8 +384,8 @@
     "objectID": "M02_2.html#summary",
     "href": "M02_2.html#summary",
     "title": "4  Chaotics: Generative Models and Tools",
-    "section": "4.6 Summary",
-    "text": "4.6 Summary\nToday’s lecture focused on understanding generative models, and how we can use generative models to answer research questions using Bayesian methods. We learn when to use exact inference and MCMC based optimisations, together their types. Finally we illustrate the prior and posterior predictive checks.",
+    "section": "4.8 Summary",
+    "text": "4.8 Summary\nToday’s lecture focused on understanding generative models, and how we can use generative models to answer research questions using Bayesian methods. We learn when to use exact inference and MCMC based optimisations, together their types. Finally we illustrate the prior and posterior predictive checks.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
     ]
@@ -430,41 +430,41 @@
   {
     "objectID": "M03_1.html#introduction",
     "href": "M03_1.html#introduction",
-    "title": "5  Bayeswatch! Part - I",
-    "section": "5.3 Introduction",
-    "text": "5.3 Introduction\nasdafs\n\nIn this lecture, we shall explore the application of Bayesian inference methodologies to linear regression models. We will begin by examining the utilization of Bayesian statistics within the context of simple linear regression models and subsequently expand these insights to encompass multiple linear regression models. Through this exploration, we will find that employing the non-informative prior results in posterior means, posterior standard deviations, and credible intervals for the coefficients that are consistent with those derived from frequentist ordinary least squares (OLS) linear regression models.\nWe will start with how to develop a Bayesian model based on causality, or unknown causality with understanding of estimand, estimator and estimate. We wil also explore how DAG can help us to build the model.",
+    "title": "5  Bayeswatch! Causal Connections",
+    "section": "5.2 Introduction",
+    "text": "5.2 Introduction\nasdafs\n\nIn this lecture, we shall explore the application of Bayesian inference methodologies using hierarchical models. We will begin by examining the utilisation of Bayesian methods within the context of simple linear regression models and subsequently expand these insights to encompass multiple linear regression. Through this exploration, we will find that employing the non-informative prior results in posterior means, posterior standard deviations, and credible intervals for the coefficients that are consistent with those derived from frequentist ordinary least squares (OLS) linear regression models.\nWe will start with how to develop a Bayesian model based on causality, or unknown causality with understanding of estimand, estimator and estimate. We wil also explore how DAG can help us to build the model.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
     "objectID": "M03_1.html#exercises",
     "href": "M03_1.html#exercises",
-    "title": "5  Bayeswatch! Part - I",
+    "title": "5  Bayeswatch! Causal Connections",
     "section": "5.9 Exercises",
     "text": "5.9 Exercises\nsdfads",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
     "objectID": "M03_1.html#live-tutorial-and-discussion",
     "href": "M03_1.html#live-tutorial-and-discussion",
-    "title": "5  Bayeswatch! Part - I",
+    "title": "5  Bayeswatch! Causal Connections",
     "section": "5.10 Live tutorial and discussion",
     "text": "5.10 Live tutorial and discussion\nasdfa",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
     "objectID": "M03_1.html#summary",
     "href": "M03_1.html#summary",
-    "title": "5  Bayeswatch! Part - I",
+    "title": "5  Bayeswatch! Causal Connections",
     "section": "5.11 Summary",
     "text": "5.11 Summary\nasdf",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
@@ -477,11 +477,11 @@
   {
     "objectID": "M03_1.html#preparation-for-week-2",
     "href": "M03_1.html#preparation-for-week-2",
-    "title": "5  Bayeswatch! Part - I",
+    "title": "5  Bayeswatch! Causal Connections",
     "section": "5.12 Preparation for Week 2",
     "text": "5.12 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
@@ -508,8 +508,8 @@
     "objectID": "M03_2.html#introduction",
     "href": "M03_2.html#introduction",
     "title": "6  Bayeswatch! Part - II",
-    "section": "6.3 Introduction",
-    "text": "6.3 Introduction\nasdafs",
+    "section": "6.2 Introduction",
+    "text": "6.2 Introduction\nasdafs",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayeswatch! Part - II**</span>"
     ]
@@ -518,8 +518,8 @@
     "objectID": "M03_2.html#exercises",
     "href": "M03_2.html#exercises",
     "title": "6  Bayeswatch! Part - II",
-    "section": "6.6 Exercises",
-    "text": "6.6 Exercises\nsdfads",
+    "section": "6.5 Exercises",
+    "text": "6.5 Exercises\nsdfads",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayeswatch! Part - II**</span>"
     ]
@@ -528,8 +528,8 @@
     "objectID": "M03_2.html#live-tutorial-and-discussion",
     "href": "M03_2.html#live-tutorial-and-discussion",
     "title": "6  Bayeswatch! Part - II",
-    "section": "6.7 Live tutorial and discussion",
-    "text": "6.7 Live tutorial and discussion\nasdfa",
+    "section": "6.6 Live tutorial and discussion",
+    "text": "6.6 Live tutorial and discussion\nasdfa",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayeswatch! Part - II**</span>"
     ]
@@ -538,8 +538,8 @@
     "objectID": "M03_2.html#summary",
     "href": "M03_2.html#summary",
     "title": "6  Bayeswatch! Part - II",
-    "section": "6.8 Summary",
-    "text": "6.8 Summary\nasdf",
+    "section": "6.7 Summary",
+    "text": "6.7 Summary\nasdf",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayeswatch! Part - II**</span>"
     ]
@@ -555,8 +555,8 @@
     "objectID": "M03_2.html#preparation-for-week-2",
     "href": "M03_2.html#preparation-for-week-2",
     "title": "6  Bayeswatch! Part - II",
-    "section": "6.9 Preparation for Week 2",
-    "text": "6.9 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "section": "6.8 Preparation for Week 2",
+    "text": "6.8 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayeswatch! Part - II**</span>"
     ]
@@ -585,8 +585,8 @@
     "objectID": "M04_1.html#introduction",
     "href": "M04_1.html#introduction",
     "title": "7  Clusterphobia? Part - I",
-    "section": "7.3 Introduction",
-    "text": "7.3 Introduction\nasdafs\nhttps://m-clark.github.io/mixed-models-with-R/bayesian.html\nMultilevel structure : https://bookdown.org/marklhc/notes_bookdown/hierarchical-multilevel-models.html\nhttps://m-clark.github.io/easy-bayes/rstanarm-mixed-model.html",
+    "section": "7.2 Introduction",
+    "text": "7.2 Introduction\nasdafs\nhttps://m-clark.github.io/mixed-models-with-R/bayesian.html\nMultilevel structure : https://bookdown.org/marklhc/notes_bookdown/hierarchical-multilevel-models.html\nhttps://m-clark.github.io/easy-bayes/rstanarm-mixed-model.html",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
     ]
@@ -595,8 +595,8 @@
     "objectID": "M04_1.html#exercises",
     "href": "M04_1.html#exercises",
     "title": "7  Clusterphobia? Part - I",
-    "section": "7.7 Exercises",
-    "text": "7.7 Exercises\nsdfads",
+    "section": "7.6 Exercises",
+    "text": "7.6 Exercises\nsdfads",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
     ]
@@ -605,8 +605,8 @@
     "objectID": "M04_1.html#live-tutorial-and-discussion",
     "href": "M04_1.html#live-tutorial-and-discussion",
     "title": "7  Clusterphobia? Part - I",
-    "section": "7.8 Live tutorial and discussion",
-    "text": "7.8 Live tutorial and discussion\nasdfa",
+    "section": "7.7 Live tutorial and discussion",
+    "text": "7.7 Live tutorial and discussion\nasdfa",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
     ]
@@ -615,8 +615,8 @@
     "objectID": "M04_1.html#summary",
     "href": "M04_1.html#summary",
     "title": "7  Clusterphobia? Part - I",
-    "section": "7.9 Summary",
-    "text": "7.9 Summary\nasdf",
+    "section": "7.8 Summary",
+    "text": "7.8 Summary\nasdf",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
     ]
@@ -632,8 +632,8 @@
     "objectID": "M04_1.html#preparation-for-week-2",
     "href": "M04_1.html#preparation-for-week-2",
     "title": "7  Clusterphobia? Part - I",
-    "section": "7.10 Preparation for Week 2",
-    "text": "7.10 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "section": "7.9 Preparation for Week 2",
+    "text": "7.9 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
     ]
@@ -662,8 +662,8 @@
     "objectID": "M04_2.html#introduction",
     "href": "M04_2.html#introduction",
     "title": "8  Clusterphobia? Part - II",
-    "section": "8.3 Introduction",
-    "text": "8.3 Introduction\nasdafs\nMarginal effects:\nref: https://joshuawiley.com/brmsmargins/articles/fixed-effects-marginaleffects.html\nref: https://cran.r-project.org/web/packages/brmsmargins/vignettes/mixed-effects-marginaleffects.html",
+    "section": "8.2 Introduction",
+    "text": "8.2 Introduction\nasdafs\nMarginal effects:\nref: https://joshuawiley.com/brmsmargins/articles/fixed-effects-marginaleffects.html\nref: https://cran.r-project.org/web/packages/brmsmargins/vignettes/mixed-effects-marginaleffects.html",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clusterphobia? Part - II**</span>"
     ]
@@ -672,8 +672,8 @@
     "objectID": "M04_2.html#exercises",
     "href": "M04_2.html#exercises",
     "title": "8  Clusterphobia? Part - II",
-    "section": "8.6 Exercises",
-    "text": "8.6 Exercises\nsdfads",
+    "section": "8.5 Exercises",
+    "text": "8.5 Exercises\nsdfads",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clusterphobia? Part - II**</span>"
     ]
@@ -682,8 +682,8 @@
     "objectID": "M04_2.html#live-tutorial-and-discussion",
     "href": "M04_2.html#live-tutorial-and-discussion",
     "title": "8  Clusterphobia? Part - II",
-    "section": "8.7 Live tutorial and discussion",
-    "text": "8.7 Live tutorial and discussion\nasdfa",
+    "section": "8.6 Live tutorial and discussion",
+    "text": "8.6 Live tutorial and discussion\nasdfa",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clusterphobia? Part - II**</span>"
     ]
@@ -692,8 +692,8 @@
     "objectID": "M04_2.html#summary",
     "href": "M04_2.html#summary",
     "title": "8  Clusterphobia? Part - II",
-    "section": "8.8 Summary",
-    "text": "8.8 Summary\nasdf",
+    "section": "8.7 Summary",
+    "text": "8.7 Summary\nasdf",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clusterphobia? Part - II**</span>"
     ]
@@ -709,8 +709,8 @@
     "objectID": "M04_2.html#preparation-for-week-2",
     "href": "M04_2.html#preparation-for-week-2",
     "title": "8  Clusterphobia? Part - II",
-    "section": "8.9 Preparation for Week 2",
-    "text": "8.9 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "section": "8.8 Preparation for Week 2",
+    "text": "8.8 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clusterphobia? Part - II**</span>"
     ]
@@ -867,8 +867,8 @@
     "objectID": "M05_1.html#introduction",
     "href": "M05_1.html#introduction",
     "title": "9  Size Matters! Part - I",
-    "section": "9.3 Introduction",
-    "text": "9.3 Introduction\nasdafs\nref shinyapp: https://ibl.mdanderson.org/shinyapps/BayesESS/\nref: power-priors: https://journal.r-project.org/articles/RJ-2023-016/",
+    "section": "9.2 Introduction",
+    "text": "9.2 Introduction\nasdafs\nref shinyapp: https://ibl.mdanderson.org/shinyapps/BayesESS/\nref: power-priors: https://journal.r-project.org/articles/RJ-2023-016/",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
     ]
@@ -877,8 +877,8 @@
     "objectID": "M05_1.html#exercises",
     "href": "M05_1.html#exercises",
     "title": "9  Size Matters! Part - I",
-    "section": "9.7 Exercises",
-    "text": "9.7 Exercises\nsdfads",
+    "section": "9.6 Exercises",
+    "text": "9.6 Exercises\nsdfads",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
     ]
@@ -887,8 +887,8 @@
     "objectID": "M05_1.html#live-tutorial-and-discussion",
     "href": "M05_1.html#live-tutorial-and-discussion",
     "title": "9  Size Matters! Part - I",
-    "section": "9.8 Live tutorial and discussion",
-    "text": "9.8 Live tutorial and discussion\nasdfa",
+    "section": "9.7 Live tutorial and discussion",
+    "text": "9.7 Live tutorial and discussion\nasdfa",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
     ]
@@ -897,8 +897,8 @@
     "objectID": "M05_1.html#summary",
     "href": "M05_1.html#summary",
     "title": "9  Size Matters! Part - I",
-    "section": "9.9 Summary",
-    "text": "9.9 Summary\nasdf",
+    "section": "9.8 Summary",
+    "text": "9.8 Summary\nasdf",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
     ]
@@ -907,8 +907,8 @@
     "objectID": "M05_1.html#preparation-for-week-2",
     "href": "M05_1.html#preparation-for-week-2",
     "title": "9  Size Matters! Part - I",
-    "section": "9.10 Preparation for Week 2",
-    "text": "9.10 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "section": "9.9 Preparation for Week 2",
+    "text": "9.9 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
     ]
@@ -937,8 +937,8 @@
     "objectID": "M05_2.html#introduction",
     "href": "M05_2.html#introduction",
     "title": "10  Size Matters! Part - II",
-    "section": "10.3 Introduction",
-    "text": "10.3 Introduction\nasdafs",
+    "section": "10.2 Introduction",
+    "text": "10.2 Introduction\nasdafs",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -947,8 +947,8 @@
     "objectID": "M05_2.html#exercises",
     "href": "M05_2.html#exercises",
     "title": "10  Size Matters! Part - II",
-    "section": "10.8 Exercises",
-    "text": "10.8 Exercises\nsdfads",
+    "section": "10.7 Exercises",
+    "text": "10.7 Exercises\nsdfads",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -957,8 +957,8 @@
     "objectID": "M05_2.html#live-tutorial-and-discussion",
     "href": "M05_2.html#live-tutorial-and-discussion",
     "title": "10  Size Matters! Part - II",
-    "section": "10.9 Live tutorial and discussion",
-    "text": "10.9 Live tutorial and discussion\nasdfa",
+    "section": "10.8 Live tutorial and discussion",
+    "text": "10.8 Live tutorial and discussion\nasdfa",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -967,8 +967,8 @@
     "objectID": "M05_2.html#summary",
     "href": "M05_2.html#summary",
     "title": "10  Size Matters! Part - II",
-    "section": "10.10 Summary",
-    "text": "10.10 Summary\nasdf",
+    "section": "10.9 Summary",
+    "text": "10.9 Summary\nasdf",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -977,8 +977,8 @@
     "objectID": "M05_2.html#preparation-for-week-2",
     "href": "M05_2.html#preparation-for-week-2",
     "title": "10  Size Matters! Part - II",
-    "section": "10.11 Preparation for Week 2",
-    "text": "10.11 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "section": "10.10 Preparation for Week 2",
+    "text": "10.10 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -1007,8 +1007,8 @@
     "objectID": "M06_1.html#introduction",
     "href": "M06_1.html#introduction",
     "title": "11  Wander into the Wonder! Part - I",
-    "section": "11.3 Introduction",
-    "text": "11.3 Introduction\nasdafs\nVedio",
+    "section": "11.2 Introduction",
+    "text": "11.2 Introduction\nasdafs\nVedio",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
     ]
@@ -1017,8 +1017,8 @@
     "objectID": "M06_1.html#exercises",
     "href": "M06_1.html#exercises",
     "title": "11  Wander into the Wonder! Part - I",
-    "section": "11.7 Exercises",
-    "text": "11.7 Exercises\nsdfads",
+    "section": "11.6 Exercises",
+    "text": "11.6 Exercises\nsdfads",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
     ]
@@ -1027,8 +1027,8 @@
     "objectID": "M06_1.html#live-tutorial-and-discussion",
     "href": "M06_1.html#live-tutorial-and-discussion",
     "title": "11  Wander into the Wonder! Part - I",
-    "section": "11.8 Live tutorial and discussion",
-    "text": "11.8 Live tutorial and discussion\nasdfa",
+    "section": "11.7 Live tutorial and discussion",
+    "text": "11.7 Live tutorial and discussion\nasdfa",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
     ]
@@ -1037,8 +1037,8 @@
     "objectID": "M06_1.html#summary",
     "href": "M06_1.html#summary",
     "title": "11  Wander into the Wonder! Part - I",
-    "section": "11.9 Summary",
-    "text": "11.9 Summary\nasdf",
+    "section": "11.8 Summary",
+    "text": "11.8 Summary\nasdf",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
     ]
@@ -1047,8 +1047,8 @@
     "objectID": "M06_1.html#preparation-for-week-2",
     "href": "M06_1.html#preparation-for-week-2",
     "title": "11  Wander into the Wonder! Part - I",
-    "section": "11.10 Preparation for Week 2",
-    "text": "11.10 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "section": "11.9 Preparation for Week 2",
+    "text": "11.9 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
     ]
@@ -1087,8 +1087,8 @@
     "objectID": "M06_2.html#exercises",
     "href": "M06_2.html#exercises",
     "title": "12  Wander into the Wonder! Part - II",
-    "section": "12.7 Exercises",
-    "text": "12.7 Exercises\nsdfads",
+    "section": "12.5 Exercises",
+    "text": "12.5 Exercises\nsdfads",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Wander into the Wonder! Part - II**</span>"
     ]
@@ -1097,8 +1097,8 @@
     "objectID": "M06_2.html#live-tutorial-and-discussion",
     "href": "M06_2.html#live-tutorial-and-discussion",
     "title": "12  Wander into the Wonder! Part - II",
-    "section": "12.8 Live tutorial and discussion",
-    "text": "12.8 Live tutorial and discussion\nasdfa",
+    "section": "12.6 Live tutorial and discussion",
+    "text": "12.6 Live tutorial and discussion\nasdfa",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Wander into the Wonder! Part - II**</span>"
     ]
@@ -1107,8 +1107,8 @@
     "objectID": "M06_2.html#summary",
     "href": "M06_2.html#summary",
     "title": "12  Wander into the Wonder! Part - II",
-    "section": "12.9 Summary",
-    "text": "12.9 Summary\nasdf",
+    "section": "12.7 Summary",
+    "text": "12.7 Summary\nasdf",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Wander into the Wonder! Part - II**</span>"
     ]
@@ -1117,8 +1117,8 @@
     "objectID": "M06_2.html#preparation-for-week-2",
     "href": "M06_2.html#preparation-for-week-2",
     "title": "12  Wander into the Wonder! Part - II",
-    "section": "12.10 Preparation for Week 2",
-    "text": "12.10 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
+    "section": "12.8 Preparation for Week 2",
+    "text": "12.8 Preparation for Week 2\nIn week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Wander into the Wonder! Part - II**</span>"
     ]
@@ -1155,7 +1155,7 @@
     "href": "M02_2.html#generative-models",
     "title": "4  Chaotics: Generative Models and Tools",
     "section": "4.2 Generative Models",
-    "text": "4.2 Generative Models\n\n\nA generative model is designed to generate new data points by capturing the intricate probability distributions of existing datasets. By learning these distributions, the model can produce data that reflects the characteristics of original datasets, simulating realistic examples. A generative model can also be used to understand how a set of observed data could have arisen from a set of underlying causes, which we will discuss more later in this course.\nIn Bayesian modeling, generative models are particularly useful as they provide a framework for estimating the likelihood of data under different hypotheses. This capability enhances Bayesian inference processes, allowing for more effective prior and posterior distribution updates. The flexibility of generative models in simulating various scenarios can also improve the robustness and accuracy of Bayesian models, ultimately refining the decision-making and predictive capabilities inherent in Bayesian analysis.\nNote that, in this course, we use “generative model” broadly to consider the origins of a particular dataset. However, this term also has a more specific definition, especially as it contrasts with “discriminative models”, for details see Bernardo et al. (2007).\n\nLet’s explain this using the example we discussed earlier related to the vaccine efficacy rate, where we collected data from \\(n=10\\) individuals and the vaccine was effective for 8 individuals. Recall that we also consider a prior probabilty for the effectiveness, which was \\(0.7\\). Given this information we now recreate the data.\n\nData generation:\n\nIn a generative modelling context, we simulate data for these 10 individuals by considering success probability \\(\\theta = 0.8\\).\n\n\nCode\nn &lt;- 100     # Number of individuals\ntheta &lt;- 0.8    # Probability of success\nsize &lt;- 1  # Number of experiments/replications\nset.seed(123)  \ndata &lt;- rbinom(size, n, theta)\npaste(\"Number of success: \",data,\" out of \",n, \"individuals\")\n\n\n[1] \"Number of success:  82  out of  100 individuals\"\n\n\nWe can see that our simulation using one replication yields probability 0.9, whereas, actual data shows \\(\\theta = 0.82\\). Hence, to reflect actual data we need to simulate data for multiple times, i.e., we need to replicate the process, which yields an average value for \\(\\theta = 0.8\\) and upper and lower 95% credible interval (0.72,0.88). Note that we used credible interval in Bayesian context, unlike in frequentist approach we refer confidence interval.\n\n\nCode\nlibrary(ggplot2)\n\nn &lt;- 100     \ntheta &lt;- 0.8    \nsize &lt;- 1000  \n\nset.seed(123)  \ndata &lt;- rbinom(size, n, theta)\n\nci &lt;- quantile(data, probs = c(0.025, 0.975))\n\ndf &lt;- data.frame(Successes = data)\n\nggplot(df, aes(x = Successes)) +\n  geom_histogram(\n    breaks = seq(-0.5, n + 0.5, by = 1),\n    fill = \"skyblue\",\n    color = \"black\",\n    boundary = -0.5\n  ) +\n  scale_x_continuous(\n    breaks = 0:n,\n    name = \"Number of successes\"\n  ) +\n  labs(\n    title = paste(\"Histogram of Simulated Binomial Data (n =\", n, \", θ =\", theta, \")\"),\n    y = \"Frequency\",\n    x = \"Number of successes\"\n  ) +\n  geom_vline(xintercept = ci[1], linetype = \"dashed\", color = \"red\", size = 1) +\n  geom_vline(xintercept = ci[2], linetype = \"dashed\", color = \"red\", size = 1) +\n  annotate(\"text\", x = ci[1], y = max(table(data)) * 0.9, label = paste0(\"2.5%: \", ci[1]), color = \"red\", angle = 90, vjust = -0.5) +\n  annotate(\"text\", x = ci[2], y = max(table(data)) * 0.9, label = paste0(\"97.5%: \", ci[2]), color = \"red\", angle = 90, vjust = -0.5) +\n  theme_minimal()\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.",
+    "text": "4.2 Generative Models\n\n\nA generative model is designed to generate new data points by capturing the intricate probability distributions of existing datasets. By learning these distributions, the model can produce data that reflects the characteristics of original datasets, simulating realistic examples. A generative model can also be used to understand how a set of observed data could have arisen from a set of underlying causes, which we will discuss more later in this course.\nIn Bayesian modeling, generative models are particularly useful as they provide a framework for estimating the likelihood of data under different hypotheses. This capability enhances Bayesian inference processes, allowing for more effective prior and posterior distribution updates. The flexibility of generative models in simulating various scenarios can also improve the robustness and accuracy of Bayesian models, and refines the decision-making and predictive capabilities.\nNote that, in this course, we use “generative model” broadly to consider the origins of a particular dataset. However, this term also has a more specific definition, especially as it contrasts with “discriminative models”, for details see Bernardo et al. (2007).\n\nExample\nLet’s explain this using the example we discussed earlier related to the vaccine efficacy rate. Let use assume that we collect data from \\(n=100\\) individuals and the vaccine was effective for 80 individuals. Let us also assume the prior probabilty for the effectiveness as \\(0.7\\). Given this information we now recreate the data.\n\nData generation:\n\nIn a generative modelling context, we simulate data for these 100 individuals by considering success probability \\(\\theta = 0.8\\).\n\n\nCode\nn &lt;- 100\ntheta &lt;- 0.8  \nsize &lt;- 1  \nset.seed(1234)  \ndata &lt;- rbinom(size, n, theta)\npaste(\"Number of success: \",data,\" out of \",n, \"individuals\")\n\n\n[1] \"Number of success:  85  out of  100 individuals\"\n\n\nWe can see that our simulation using one replication yields probability 0.85, whereas, actual data shows \\(\\theta = 0.8\\). Hence, to reflect actual data we need to replicate the data simulation for multiple times, which yields an average value for \\(\\theta \\approx 0.8\\) and upper and lower 95% credible interval (0.72,0.88).\n\n\nCode\nlibrary(ggplot2)\n\nn &lt;- 100     \ntheta &lt;- 0.8    \nsize &lt;- 1000  \n\nset.seed(123)  \ndata &lt;- rbinom(size, n, theta)\nci &lt;- quantile(data, probs = c(0.025, 0.975))\ndf &lt;- data.frame(Successes = data)\nggplot(df, aes(x = Successes)) +\n  geom_histogram(\n    breaks = seq(-0.5, n + 0.5, by = 1),\n    fill = \"skyblue\",\n    color = \"black\",\n    boundary = -0.5\n  ) +\n  scale_x_continuous(\n    breaks = NULL,  \n    name = NULL     \n  ) +\n  labs(\n    title = paste(\"Histogram of Simulated Binomial Data (n =\", n, \", θ =\", theta, \")\"),\n    y = \"Frequency\"\n  ) +\n  geom_vline(xintercept = ci[1], linetype = \"dashed\", color = \"red\", size = 1) +\n  geom_vline(xintercept = ci[2], linetype = \"dashed\", color = \"red\", size = 1) +\n  annotate(\"text\", x = ci[1], y = max(table(data)) * 0.9, label = paste0(\"2.5%: \", ci[1]), color = \"red\", angle = 90, vjust = -0.5) +\n  annotate(\"text\", x = ci[2], y = max(table(data)) * 0.9, label = paste0(\"97.5%: \", ci[2]), color = \"red\", angle = 90, vjust = -0.5) +\n  theme_minimal() +\n  theme(\n    axis.text.x = element_blank(),  \n    axis.ticks.x = element_blank()  \n  )",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
     ]
@@ -1184,8 +1184,8 @@
     "objectID": "M02_2.html#prior-and-posterior-predictive-checks",
     "href": "M02_2.html#prior-and-posterior-predictive-checks",
     "title": "4  Chaotics: Generative Models and Tools",
-    "section": "4.5 Prior and Posterior Predictive Checks",
-    "text": "4.5 Prior and Posterior Predictive Checks\n\n\n\n\n4.5.1 Prior Predictive Checks\nPrior predictive checks involve simulating data from the model before observing real data to assess whether the chosen prior distribution is reasonable. Then compare this simulated data with the actual observation, if available. This step helps ensure that our prior assumptions align with plausible real-world outcomes.\nPrior predictive check is important in Bayesian simulations. We can use this to understand the influence of prior on possible outcomes. It can also help us to avoid overly informed prior, which might lead to a strong influence on the posterior distribution. For example, if a prior on disease prevalence suggests 90% probability when we know it’s closer to 5%, then the prior is not reasonable. Thus, for implausible simulated data, we can say that the prior is too vague, too strong, or poorly chosen.\n\nSteps to perform prior predictive check\n\nBefore collecting data, choose a prior for the parameter, say \\(\\theta\\), if we are modeling a Bernoulli process, where assume the prior follows Beta distribution, i.e., \\(\\theta \\sim \\text{Beta}(\\alpha, \\beta)\\).\nFor instance, let’s assume:\n\\[\n\\theta \\sim \\text{Beta}(1, 1) \\quad \\text{(Uniform prior, meaning all values are equally likely).}\n\\]\nNow, we generate or simulate data from the prior distribution, i.e., first sample \\(\\theta\\) from the prior and then generate data \\(y\\) using a defined model.\nFor example, if we are modeling the efficacy rate of a certain vaccine in patients with similar profiles, then\n\nSample \\(\\theta^{sim} \\sim \\text{Beta}(1,1)\\).\nSimulate \\(y^{sim} \\sim \\text{Bernoulli}(\\theta^{sim})\\) for \\(n\\) trials.\n\nThis gives us a distribution of possible datasets before seeing real data.\nIn the next step, we compare the simulated data with what we would expect or any available data. This can be done by plotting histograms or summary statistics of the simulated data. We can then check if the range and spread of simulated values make sense.\nFor example, if we assume a Beta(2, 2) prior, we expect \\(\\theta\\) to be centered around 0.5. Whereas, for Beta(1, 1) (i.e., Uniform prior), simulated values will be more spread out. If we assume Beta(100, 5), then most values will be very high (\\(\\theta\\) close to 1).\nNow, if simulated data looks unrealistic, the prior may need adjusting. This step prevents misleading results and improves Bayesian inference quality.\n\n\nCode\nlibrary(ggplot2)\nlibrary(gridExtra)\nprior_predictive_check &lt;- function(alpha, beta, n_trials = 10, n_sim = 1000) {\n  theta_samples &lt;- rbeta(n_sim, alpha, beta)\n  bernoulli_samples &lt;- rbinom(n_sim, size = n_trials, prob = theta_samples)\n  df &lt;- data.frame(Theta = theta_samples, Successes = bernoulli_samples)\n  p1 &lt;- ggplot(df, aes(x = Theta)) +\n    geom_histogram(bins = 30, fill = \"skyblue\", color = \"black\", alpha = 0.7) +\n    labs(title = paste(\"Prior Distribution: Beta(\", alpha, \",\", beta, \")\"),\n         x = expression(theta), y = \"Frequency\") +\n    theme_minimal()\n  p2 &lt;- ggplot(df, aes(x = Successes)) +\n    geom_bar(fill = \"coral\", color = \"black\", alpha = 0.7) +\n    labs(title = paste(\"Simulated Successes (n =\", n_trials, \")\"),\n         x = \"Number of Successes\", y = \"Frequency\") +\n    theme_minimal()\n  gridExtra::grid.arrange(p1,p2,ncol=2)\n}\n\n# Example 1: Uniform Prior (Beta(1,1)) - No strong belief\n#prior_predictive_check(alpha = 1, beta = 1)\n# Example 2: Informative Prior (Beta(2,2)) - Believes success rate around 50%\n#prior_predictive_check(alpha = 2, beta = 2)\n# Example 3: Strong Prior (Beta(100,5)) - Believes success rate is high\n#prior_predictive_check(alpha = 100, beta = 5)\n# Example 4: Weak Prior (Beta(0.5, 0.5)) - Encourages extreme values (0 or 1)\n#prior_predictive_check(alpha = 0.5, beta = 0.5)\n\n\nLet’s now look at two examples in a health and medical context:\n-Perfect Example: Estimating the probability of a successful treatment for a specific medical condition based on prior knowledge.\nSuppose, a new drug treatment has been tested on patients with a specific medical condition. Previous studies indicate that the drug has a 70% success rate in patients with similar characteristics. We are uncertain about the exact probability of success, but the previous studies give us a reasonable prior belief about the success rate.\nThe Beta(7,3) prior reflects our belief that the treatment has a 70% success rate on average. This prior configuration is centered around 0.7, with a reasonable spread, allowing for some variation while keeping the treatment’s effectiveness as a reasonable estimate.\n\n\nCode\nprior_predictive_check(alpha = 7, beta = 3, n_trials = 10, n_sim = 1000)\n\n\n\n\n\n\n\n\n\nHistogram of \\(\\theta\\) shows most of the values around 0.7, reflecting the prior belief that the drug has a 70% success rate. For the simulated data we can see out of 10 trials, on average, 7 out of 10 patients are expected to succeed, but some variability (e.g., 6, 8 successes) is expected due to the spread of the prior.\n-Imperfect Example: Assuming a unreasonably high success rate for a new treatment without proper evidence.\nNow, assume a new drug for treating a condition has been introduced, but no clinical trials have been conducted yet. Despite this lack of data, the manufacturer assumes an overly optimistic success rate of 90% based on limited anecdotal evidence.\nBeta(90,10) prior assumes a very high success rate (about 90%), which is unrealistic without substantial evidence. This prior leads to a very narrow distribution, with values almost always close to 0.9, indicating extremely high success rates.\n\n\nCode\nprior_predictive_check(alpha = 90, beta = 10, n_trials = 10, n_sim = 1000)\n\n\n\n\n\n\n\n\n\nHere, histogram of \\(\\theta\\) shows that most values are close to 0.9, and similarly, simulations result show an unrealistic scenario for a new drug with little evidence backing the success rate.\n\n\n4.5.2 Posterior Predictive Checks\nA posterior predictive check is a technique used in Bayesian statistics to assess how well a fitted model explains the observed data. It involves generating or simulating new data from the posterior predictive distribution and comparing it to the observed data to check for discrepancies. If the generated data looks similar to the observed data, the model is considered a good fit; if not, the model may be inadequate.\nUse of posterior predictive checks help to detect model misspecification, can provide intuitive, visual validation of the model’s performance.\n\nSteps to perform posterior predictive check\n\nWe first estimate the posterior distribution of the model parameters, say \\(\\theta\\) given the observed data \\(y\\). Then draw samples from the posterior predictive distribution (say \\(p(\\tilde{y}|y)\\), where \\(\\tilde{y}\\) is the predicted data), which represents hypothetical new data (\\(\\tilde{y}\\)) generated by the model.\nHence, use visualisations (e.g., histograms, density plots, scatter plots) or statistical summaries (e.g., mean, variance) to compare the simulated data to the actual observed data.\nIf the simulated data deviates significantly from the observed data, it suggests the model may be misspecified.\nLet’s consider a Bernoulli model, where suppose we have a dataset of \\(n\\) observations. Hence, the posterior predictive distribution for new data \\(\\tilde{y}\\) is:\n\\[\np(\\tilde{y} \\mid y) = \\int p(\\tilde{y} \\mid \\theta) p(\\theta \\mid y) \\, d\\theta\n\\]\nTo check if our model fits well, we generate new (simulated) data \\(\\tilde{y}^{(sim)}\\), and the compare \\(\\tilde{y}^{(sim)}\\) to observed data \\(y\\).\nIf simulated data is similar to observed data, the model is reasonable. Whereas, if there is a mismatch, the model might be misspecified (e.g., wrong prior, incorrect likelihood assumption).\n-Example\nSuppose we want to estimate the probability of a successful treatment for a specific medical condition using Bayesian inference. The model assumes that each patient’s treatment outcome follows a Bernoulli distribution, and we use a Beta prior to express our prior beliefs about the success rate. We then perform a posterior predictive check to assess the model fit by simulating new data and comparing it to observed outcomes.\nAssume that we collected data from 30 patients who underwent treatment, of which 18 patients recovered (successes), while 12 did not recover (failures). Considering a uniform prior for \\(\\theta\\), i.e., \\(\\theta \\sim \\text{Beta}(1,1)\\), we can get the following plots for posterior distribution, and posterior predictive checks.\n\n\nCode\nlibrary(ggplot2)\nlibrary(gridExtra)\n\nposterior_predictive_check &lt;- function(alpha, beta, n_trials, successes, n_sim = 1000) {\n  posterior_alpha &lt;- alpha + successes\n  posterior_beta &lt;- beta + (n_trials - successes)\n  theta_samples &lt;- rbeta(n_sim, posterior_alpha, posterior_beta)\n  bernoulli_samples &lt;- rbinom(n_sim, size = n_trials, prob = theta_samples)\n  df &lt;- data.frame(Theta = theta_samples, Successes = bernoulli_samples)\n  p1 &lt;- ggplot(df, aes(x = Theta)) +\n    geom_density(fill = \"skyblue\", alpha = 0.7) +\n    labs(title = paste(\"Posterior Distribution: Beta(\", posterior_alpha, \",\", posterior_beta, \")\"),\n         x = expression(theta), y = \"Density\") +\n    theme_minimal()\n  p2 &lt;- ggplot(df, aes(x = Successes)) +\n    geom_bar(fill = \"coral\", color = \"black\", alpha = 0.7) +\n    geom_vline(xintercept = successes, color = \"red\", linetype = \"dashed\", size = 1) +\n    labs(title = paste(\"Posterior Predictive Check (n =\", n_trials, \")\"),\n         x = \"Number of Successful Treatments\", y = \"Frequency\") +\n    theme_minimal()\n  gridExtra::grid.arrange(p1, p2, ncol = 2)\n}\n# n=30 patients, y=18 successful treatments, Beta(1,1) prior\nposterior_predictive_check(alpha = 1, beta = 1, n_trials = 30, successes = 18)\n\n\n\n\n\n\n\n\n\nWe can see that the observed number of successful treatments (18) falls within the distribution of simulated outcomes, which implies that the model is consistent with the data.\nOn the other hand, if the observed value significantly deviates, it may indicate model misspecification, requiring adjustments to the prior or likelihood assumptions.",
+    "section": "4.7 Prior and Posterior Predictive Checks",
+    "text": "4.7 Prior and Posterior Predictive Checks\n\n\n\n\n4.7.1 Prior Predictive Checks\nPrior predictive checks involve simulating data from the model before observing real data to assess whether the chosen prior distribution is reasonable. Then we compare this simulated data with the actual observation, if available. This step helps to ensure that our prior assumptions align with the real-world outcomes.\nPrior predictive check is important in Bayesian simulations. We can use this to understand the influence of prior on possible outcomes. It can also help us to avoid overly informed prior, which might lead to a strong influence on the posterior distribution. For example, if a prior on disease prevalence suggests 90% probability when we know it’s closer to 5%, then the prior is not reasonable. Thus, for implausible simulated data, we can say that the prior is too vague, too strong, or poorly chosen.\n\nSteps to perform prior predictive check\n\nBefore collecting data, choose a prior for the parameter, say \\(\\theta\\), if we are modeling a Bernoulli process, where assume the prior follows Beta distribution, i.e., \\(\\theta \\sim \\text{Beta}(\\alpha, \\beta)\\).\nFor instance, let’s assume:\n\\[\n\\theta \\sim \\text{Beta}(1, 1) \\quad \\text{(Uniform prior, meaning all values are equally likely).}\n\\]\nNow, we generate or simulate data from the prior distribution, i.e., first sample \\(\\theta\\) from the prior and then generate data \\(y\\) using a defined model.\nFor example, if we are modeling the efficacy rate of a certain vaccine in patients with similar profiles, then\n\nSample \\(\\theta^{sim} \\sim \\text{Beta}(1,1)\\).\nSimulate \\(y^{sim} \\sim \\text{Bernoulli}(\\theta^{sim})\\) for \\(n\\) trials.\n\nThis gives us a distribution of possible datasets before seeing real data.\nIn the next step, we compare the simulated data with what we would expect or any available data. This can be done by plotting histograms or summary statistics of the simulated data. We can then check if the range and spread of simulated values make sense.\nFor example, if we assume a Beta(2, 2) prior, we expect \\(\\theta\\) to be centered around 0.5. Whereas, for Beta(1, 1) (i.e., Uniform prior), simulated values will be more spread out. If we assume Beta(100, 5), then most values will be very high (\\(\\theta\\) close to 1).\nNow, if simulated data looks unrealistic, the prior may need adjusting. This step prevents misleading results and improves Bayesian inference quality.\n\n\nCode\nlibrary(ggplot2)\nlibrary(gridExtra)\nprior_predictive_check &lt;- function(alpha, beta, n_trials = 10, n_sim = 1000) {\n  theta_samples &lt;- rbeta(n_sim, alpha, beta)\n  bernoulli_samples &lt;- rbinom(n_sim, size = n_trials, prob = theta_samples)\n  df &lt;- data.frame(Theta = theta_samples, Successes = bernoulli_samples)\n  p1 &lt;- ggplot(df, aes(x = Theta)) +\n    geom_histogram(bins = 30, fill = \"skyblue\", color = \"black\", alpha = 0.7) +\n    labs(title = paste(\"Prior Distribution: Beta(\", alpha, \",\", beta, \")\"),\n         x = expression(theta), y = \"Frequency\") +\n    theme_minimal()\n  p2 &lt;- ggplot(df, aes(x = Successes)) +\n    geom_bar(fill = \"coral\", color = \"black\", alpha = 0.7) +\n    labs(title = paste(\"Simulated Successes (n =\", n_trials, \")\"),\n         x = \"Number of Successes\", y = \"Frequency\") +\n    theme_minimal()\n  gridExtra::grid.arrange(p1,p2,ncol=2)\n}\n\n# Example 1: Uniform Prior (Beta(1,1)) - No strong belief\n#prior_predictive_check(alpha = 1, beta = 1)\n# Example 2: Informative Prior (Beta(2,2)) - Believes success rate around 50%\n#prior_predictive_check(alpha = 2, beta = 2)\n# Example 3: Strong Prior (Beta(100,5)) - Believes success rate is high\n#prior_predictive_check(alpha = 100, beta = 5)\n# Example 4: Weak Prior (Beta(0.5, 0.5)) - Encourages extreme values (0 or 1)\n#prior_predictive_check(alpha = 0.5, beta = 0.5)\n\n\nLet’s now look at two examples in a health and medical context:\n-Perfect Example: Estimating the probability of a successful treatment for a specific medical condition based on prior knowledge.\nSuppose, a new drug treatment has been tested on patients with a specific medical condition. Previous studies indicate that the drug has a 70% success rate in patients with similar characteristics. We are uncertain about the exact probability of success, but the previous studies give us a reasonable prior belief about the success rate.\nThe Beta(7,3) prior reflects our belief that the treatment has a 70% success rate on average. This prior configuration is centered around 0.7, with a reasonable spread, allowing for some variation while keeping the treatment’s effectiveness as a reasonable estimate.\n\n\nCode\nprior_predictive_check(alpha = 7, beta = 3, n_trials = 10, n_sim = 1000)\n\n\n\n\n\n\n\n\n\nHistogram of \\(\\theta\\) shows most of the values around 0.7, reflecting the prior belief that the drug has a 70% success rate. For the simulated data we can see out of 10 trials, on average, 7 out of 10 patients are expected to succeed, but some variability (e.g., 6, 8 successes) is expected due to the spread of the prior.\n-Imperfect Example: Assuming a unreasonably high success rate for a new treatment without proper evidence.\nNow, assume a new drug for treating a condition has been introduced, but no clinical trials have been conducted yet. Despite this lack of data, the manufacturer assumes an overly optimistic success rate of 90% based on limited anecdotal evidence.\nBeta(90,10) prior assumes a very high success rate (about 90%), which is unrealistic without substantial evidence. This prior leads to a very narrow distribution, with values almost always close to 0.9, indicating extremely high success rates.\n\n\nCode\nprior_predictive_check(alpha = 90, beta = 10, n_trials = 10, n_sim = 1000)\n\n\n\n\n\n\n\n\n\nHere, histogram of \\(\\theta\\) shows that most values are close to 0.9, and similarly, simulations result show an unrealistic scenario for a new drug with little evidence backing the success rate.\n\n\n4.7.2 Posterior Predictive Checks\nA posterior predictive check is a technique used in Bayesian statistics to assess how well a fitted model explains the observed data. It involves generating or simulating new data from the posterior predictive distribution and comparing it to the observed data to check for discrepancies. If the generated data looks similar to the observed data, the model is considered a good fit; if not, the model may be inadequate.\nUse of posterior predictive checks help to detect model misspecification, can provide intuitive, visual validation of the model’s performance.\n\nSteps to perform posterior predictive check\n\nWe first estimate the posterior distribution of the model parameters, say \\(\\theta\\) given the observed data \\(y\\). Then draw samples from the posterior predictive distribution (say \\(p(\\tilde{y}|y)\\), where \\(\\tilde{y}\\) is the predicted data), which represents hypothetical new data (\\(\\tilde{y}\\)) generated by the model.\nHence, use visualisations (e.g., histograms, density plots, scatter plots) or statistical summaries (e.g., mean, variance) to compare the simulated data to the actual observed data.\nIf the simulated data deviates significantly from the observed data, it suggests the model may be misspecified.\nLet’s consider a Bernoulli model, where suppose we have a dataset of \\(n\\) observations. Hence, the posterior predictive distribution for new data \\(\\tilde{y}\\) is:\n\\[\np(\\tilde{y} \\mid y) = \\int p(\\tilde{y} \\mid \\theta) p(\\theta \\mid y) \\, d\\theta\n\\]\nTo check if our model fits well, we generate new (simulated) data \\(\\tilde{y}^{(sim)}\\), and the compare \\(\\tilde{y}^{(sim)}\\) to observed data \\(y\\).\nIf simulated data is similar to observed data, the model is reasonable. Whereas, if there is a mismatch, the model might be misspecified (e.g., wrong prior, incorrect likelihood assumption).\n-Example\nSuppose we want to estimate the probability of a successful treatment for a specific medical condition using Bayesian inference. The model assumes that each patient’s treatment outcome follows a Bernoulli distribution, and we use a Beta prior to express our prior beliefs about the success rate. We then perform a posterior predictive check to assess the model fit by simulating new data and comparing it to observed outcomes.\nAssume that we collected data from 30 patients who underwent treatment, of which 18 patients recovered (successes), while 12 did not recover (failures). Considering a uniform prior for \\(\\theta\\), i.e., \\(\\theta \\sim \\text{Beta}(1,1)\\), we can get the following plots for posterior distribution, and posterior predictive checks.\n\n\nCode\nlibrary(ggplot2)\nlibrary(gridExtra)\n\nposterior_predictive_check &lt;- function(alpha, beta, n_trials, successes, n_sim = 1000) {\n  posterior_alpha &lt;- alpha + successes\n  posterior_beta &lt;- beta + (n_trials - successes)\n  theta_samples &lt;- rbeta(n_sim, posterior_alpha, posterior_beta)\n  bernoulli_samples &lt;- rbinom(n_sim, size = n_trials, prob = theta_samples)\n  df &lt;- data.frame(Theta = theta_samples, Successes = bernoulli_samples)\n  p1 &lt;- ggplot(df, aes(x = Theta)) +\n    geom_density(fill = \"skyblue\", alpha = 0.7) +\n    labs(title = paste(\"Posterior Distribution: Beta(\", posterior_alpha, \",\", posterior_beta, \")\"),\n         x = expression(theta), y = \"Density\") +\n    theme_minimal()\n  p2 &lt;- ggplot(df, aes(x = Successes)) +\n    geom_bar(fill = \"coral\", color = \"black\", alpha = 0.7) +\n    geom_vline(xintercept = successes, color = \"red\", linetype = \"dashed\", size = 1) +\n    labs(title = paste(\"Posterior Predictive Check (n =\", n_trials, \")\"),\n         x = \"Number of Successful Treatments\", y = \"Frequency\") +\n    theme_minimal()\n  gridExtra::grid.arrange(p1, p2, ncol = 2)\n}\n\n# n=30 patients, y=18 successful treatments, Beta(1,1) prior\nposterior_predictive_check(alpha = 1, beta = 1, n_trials = 30, successes = 18)\n\n\n\n\n\n\n\n\n\nWe can see that the observed number of successful treatments (18) falls within the distribution of simulated outcomes, which implies that the model is consistent with the data.\nOn the other hand, if the observed value significantly deviates, it may indicate model misspecification, requiring adjustments to the prior or likelihood assumptions.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
     ]
@@ -1213,11 +1213,11 @@
   {
     "objectID": "M03_1.html#comparison-with-classical-approach",
     "href": "M03_1.html#comparison-with-classical-approach",
-    "title": "5  Bayeswatch! Part - I",
-    "section": "5.7 Comparison with Classical Approach",
-    "text": "5.7 Comparison with Classical Approach\n\n\nasdf\nuse rstan, rstanarm or brms",
+    "title": "5  Bayeswatch! Causal Connections",
+    "section": "5.6 Comparison with Classical Approach",
+    "text": "5.6 Comparison with Classical Approach\n\n\nasdf\n\n\nCode\nlibrary(brms)\n\n\nLoading required package: Rcpp\n\n\nLoading 'brms' package (version 2.22.0). Useful instructions\ncan be found by typing help('brms'). A more detailed introduction\nto the package is available through vignette('brms_overview').\n\n\n\nAttaching package: 'brms'\n\n\nThe following object is masked from 'package:stats':\n\n    ar\n\n\nCode\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nCode\nset.seed(123)\nn &lt;- 200\nsex &lt;- sample(c(\"Male\", \"Female\"), n, replace = TRUE)\nage &lt;- round(rnorm(n, mean = 50, sd = 10))\nbmi &lt;- round(rnorm(n, mean = 25, sd = 4), 1)\nbmd &lt;- 1.0 + 0.015 * bmi - 0.005 * age + ifelse(sex == \"Female\", -0.01, 0) + rnorm(n, 0, 0.05)\nbmd_data &lt;- tibble(\n  BMD = round(bmd, 2),\n  BMI = bmi,\n  Age = age,\n  Sex = factor(sex)\n)\n# model\nbmd_model &lt;- brm(\n  formula = BMD ~ BMI + Age + Sex,\n  data = bmd_data,\n  family = gaussian(),\n  prior = c(\n    prior(normal(0, 1), class = \"b\"),   # Slope priors\n    prior(normal(0, 1), class = \"Intercept\"),   # Intercept prior\n    prior(student_t(3, 0, 1), class = \"sigma\")  # Approximate Inv-Gamma(2,1)\n  ),\n  iter = 2000,\n  chains = 1,\n  cores = 3,\n  seed = 123\n)\n\n\nCompiling Stan program...\nStart sampling\n\n\n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).\nChain 1: \nChain 1: Gradient evaluation took 4.9e-05 seconds\nChain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.49 seconds.\nChain 1: Adjust your expectations accordingly!\nChain 1: \nChain 1: \nChain 1: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 1: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 1: \nChain 1:  Elapsed Time: 0.17 seconds (Warm-up)\nChain 1:                0.131 seconds (Sampling)\nChain 1:                0.301 seconds (Total)\nChain 1: \n\n\nCode\nsummary(bmd_model)\n\n\n Family: gaussian \n  Links: mu = identity; sigma = identity \nFormula: BMD ~ BMI + Age + Sex \n   Data: bmd_data (Number of observations: 200) \n  Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;\n         total post-warmup draws = 1000\n\nRegression Coefficients:\n          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nIntercept     0.99      0.03     0.93     1.04 1.00     1236      767\nBMI           0.01      0.00     0.01     0.02 1.00     1306      576\nAge          -0.00      0.00    -0.01    -0.00 1.00     1198      787\nSexMale       0.01      0.01     0.00     0.03 1.00      616      518\n\nFurther Distributional Parameters:\n      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nsigma     0.05      0.00     0.05     0.05 1.00      597      558\n\nDraws were sampled using sampling(NUTS). For each parameter, Bulk_ESS\nand Tail_ESS are effective sample size measures, and Rhat is the potential\nscale reduction factor on split chains (at convergence, Rhat = 1).\n\n\nCode\nplot(bmd_model)\n\n\n\n\n\n\n\n\n\nMarginal effects in brms show the predicted effect of each predictor on the response, averaging over the effects of other variables. So you’re essentially asking:\n“What does the relationship between BMI and BMD look like, averaged over all values of Age and Sex?”\nIt gives you a partial effect plot — a clean way to visualize how each predictor (like BMI, Age, or Sex) influences the outcome (BMD), based on the posterior distribution.\n\n\nCode\n# Add raw data overlay\nplot(conditional_effects(bmd_model, effects = \"BMI\"), points = TRUE)\n\n\n\n\n\n\n\n\n\nCode\nplot(conditional_effects(bmd_model, effects = \"Age\"), points = TRUE)\n\n\n\n\n\n\n\n\n\nCode\nplot(conditional_effects(bmd_model, effects = \"Sex\"), points = TRUE)\n\n\n\n\n\n\n\n\n\nFor a continuous variable (e.g. BMI or Age): A smooth line showing how BMD changes as BMI increases\nWider or narrower ribbons depending on how uncertain the model is\nFor a categorical variable (e.g. Sex): A point estimate (mean BMD) for each group\nError bars showing uncertainty\n\n\nCode\nlibrary(bayesplot)\n\n\nThis is bayesplot version 1.11.1\n\n\n- Online documentation and vignettes at mc-stan.org/bayesplot\n\n\n- bayesplot theme set to bayesplot::theme_default()\n\n\n   * Does _not_ affect other ggplot2 plots\n\n\n   * See ?bayesplot_theme_set for details on theme setting\n\n\n\nAttaching package: 'bayesplot'\n\n\nThe following object is masked from 'package:brms':\n\n    rhat\n\n\nCode\nlibrary(brms)\nposterior &lt;- as_draws_df(bmd_model)\n\n# Select relevant parameters\nmcmc_areas(\n  posterior,\n  #pars = c(\"b_Intercept\", \"b_BMI\", \"b_Age\", \"b_SexMale\"),\n  pars = c(\"b_BMI\", \"b_Age\", \"b_SexMale\"),\n  prob = 0.95  # 95% credible intervals\n)\n\n\n\n\n\n\n\n\n\nCode\n# Posterior intervals using intervals plot\nmcmc_intervals(\n  posterior,\n  pars = c(\"b_Intercept\", \"b_BMI\", \"b_Age\", \"b_SexMale\"),\n  prob = 0.95\n)\n\n\nWarning: `prob_outer` (0.9) is less than `prob` (0.95)\n... Swapping the values of `prob_outer` and `prob`\n\n\n\n\n\n\n\n\n\nCode\n# Good for diagnosing convergence\nmcmc_trace(\n  posterior,\n  pars = c(\"b_Intercept\", \"b_BMI\", \"b_Age\", \"b_SexMale\")\n)\n\n\n\n\n\n\n\n\n\n\n\nCode\n# Posterior predictive check\npp_check(bmd_model)\n\n\nUsing 10 posterior draws for ppc type 'dens_overlay' by default.\n\n\n\n\n\n\n\n\n\nCode\npp_check(bmd_model, type = \"hist\")\n\n\nUsing 10 posterior draws for ppc type 'hist' by default.\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\nCode\npp_check(bmd_model, type = \"boxplot\", group = \"Sex\")\n\n\nUsing 10 posterior draws for ppc type 'boxplot' by default.\n\n\nWarning: The following arguments were unrecognized and ignored: group\n\n\n\n\n\n\n\n\n\nCode\npp_check(bmd_model, type = \"scatter_avg\")\n\n\nUsing all posterior draws for ppc type 'scatter_avg' by default.\n\n\n\n\n\n\n\n\n\nCode\npp_check(bmd_model, type = \"ecdf_overlay\")\n\n\nUsing 10 posterior draws for ppc type 'ecdf_overlay' by default.\n\n\n\n\n\n\n\n\n\nIf the posterior predictive plots match the observed data closely, your model fits well.\nIf the posterior predictive data looks too wide/narrow or misses patterns, you might need:\nBetter predictors\nA different model family\nTransformation of variables",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
@@ -1254,8 +1254,8 @@
     "objectID": "M04_1.html#clustered-data-multilevel-modles",
     "href": "M04_1.html#clustered-data-multilevel-modles",
     "title": "7  Clusterphobia? Part - I",
-    "section": "7.4 Clustered Data & Multilevel Modles",
-    "text": "7.4 Clustered Data & Multilevel Modles\nasdf",
+    "section": "7.3 Clustered Data & Multilevel Modles",
+    "text": "7.3 Clustered Data & Multilevel Modles\nasdf",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
     ]
@@ -1264,8 +1264,8 @@
     "objectID": "M04_1.html#varying-intercept-model",
     "href": "M04_1.html#varying-intercept-model",
     "title": "7  Clusterphobia? Part - I",
-    "section": "7.5 Varying Intercept Model",
-    "text": "7.5 Varying Intercept Model\nasdf",
+    "section": "7.4 Varying Intercept Model",
+    "text": "7.4 Varying Intercept Model\nasdf",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
     ]
@@ -1274,8 +1274,8 @@
     "objectID": "M04_1.html#varying-slope-model",
     "href": "M04_1.html#varying-slope-model",
     "title": "7  Clusterphobia? Part - I",
-    "section": "7.6 Varying Slope Model",
-    "text": "7.6 Varying Slope Model\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "section": "7.5 Varying Slope Model",
+    "text": "7.5 Varying Slope Model\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
     ]
@@ -1284,8 +1284,8 @@
     "objectID": "M04_2.html#conditional-and-marginal-models",
     "href": "M04_2.html#conditional-and-marginal-models",
     "title": "8  Clusterphobia? Part - II",
-    "section": "8.4 Conditional and Marginal Models",
-    "text": "8.4 Conditional and Marginal Models\nasdf",
+    "section": "8.3 Conditional and Marginal Models",
+    "text": "8.3 Conditional and Marginal Models\nasdf",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clusterphobia? Part - II**</span>"
     ]
@@ -1294,8 +1294,8 @@
     "objectID": "M04_2.html#comparison-with-classical-approach",
     "href": "M04_2.html#comparison-with-classical-approach",
     "title": "8  Clusterphobia? Part - II",
-    "section": "8.5 Comparison with Classical Approach",
-    "text": "8.5 Comparison with Classical Approach\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "section": "8.4 Comparison with Classical Approach",
+    "text": "8.4 Comparison with Classical Approach\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clusterphobia? Part - II**</span>"
     ]
@@ -1304,8 +1304,8 @@
     "objectID": "M05_1.html#bayesian-perspective-of-rct",
     "href": "M05_1.html#bayesian-perspective-of-rct",
     "title": "9  Size Matters! Part - I",
-    "section": "9.4 Bayesian Perspective of RCT",
-    "text": "9.4 Bayesian Perspective of RCT\n\n\nasdf",
+    "section": "9.3 Bayesian Perspective of RCT",
+    "text": "9.3 Bayesian Perspective of RCT\n\n\nasdf",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
     ]
@@ -1314,8 +1314,8 @@
     "objectID": "M05_1.html#bayesian-decision-rules-for-rct",
     "href": "M05_1.html#bayesian-decision-rules-for-rct",
     "title": "9  Size Matters! Part - I",
-    "section": "9.5 Bayesian Decision Rules for RCT",
-    "text": "9.5 Bayesian Decision Rules for RCT\n\n\nBayesian Decision Rule: ref: Berry book, sec 2.5.2, page 66",
+    "section": "9.4 Bayesian Decision Rules for RCT",
+    "text": "9.4 Bayesian Decision Rules for RCT\n\n\nBayesian Decision Rule: ref: Berry book, sec 2.5.2, page 66",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
     ]
@@ -1324,8 +1324,8 @@
     "objectID": "M05_1.html#comparison-with-classical-approach",
     "href": "M05_1.html#comparison-with-classical-approach",
     "title": "9  Size Matters! Part - I",
-    "section": "9.6 Comparison with Classical Approach",
-    "text": "9.6 Comparison with Classical Approach\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "section": "9.5 Comparison with Classical Approach",
+    "text": "9.5 Comparison with Classical Approach\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
     ]
@@ -1334,8 +1334,8 @@
     "objectID": "M05_2.html#adaptivity-in-rct",
     "href": "M05_2.html#adaptivity-in-rct",
     "title": "10  Size Matters! Part - II",
-    "section": "10.4 Adaptivity in RCT",
-    "text": "10.4 Adaptivity in RCT\n\n\nasdf",
+    "section": "10.3 Adaptivity in RCT",
+    "text": "10.3 Adaptivity in RCT\n\n\nasdf",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -1344,8 +1344,8 @@
     "objectID": "M05_2.html#bayesian-predictive-probability",
     "href": "M05_2.html#bayesian-predictive-probability",
     "title": "10  Size Matters! Part - II",
-    "section": "10.5 Bayesian Predictive Probability:",
-    "text": "10.5 Bayesian Predictive Probability:\nref: Berry book, sec: 2.5.1 page 64",
+    "section": "10.4 Bayesian Predictive Probability:",
+    "text": "10.4 Bayesian Predictive Probability:\nref: Berry book, sec: 2.5.1 page 64",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -1354,8 +1354,8 @@
     "objectID": "M05_2.html#stopping-rules-for-adaptation",
     "href": "M05_2.html#stopping-rules-for-adaptation",
     "title": "10  Size Matters! Part - II",
-    "section": "10.6 Stopping Rules for Adaptation",
-    "text": "10.6 Stopping Rules for Adaptation\n\n\nasdf",
+    "section": "10.5 Stopping Rules for Adaptation",
+    "text": "10.5 Stopping Rules for Adaptation\n\n\nasdf",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -1364,8 +1364,8 @@
     "objectID": "M05_2.html#prior-influence",
     "href": "M05_2.html#prior-influence",
     "title": "10  Size Matters! Part - II",
-    "section": "10.7 Prior Influence",
-    "text": "10.7 Prior Influence\n\n\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "section": "10.6 Prior Influence",
+    "text": "10.6 Prior Influence\n\n\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -1394,8 +1394,8 @@
     "objectID": "M06_2.html#missing-data",
     "href": "M06_2.html#missing-data",
     "title": "12  Wander into the Wonder! Part - II",
-    "section": "12.4 Missing Data",
-    "text": "12.4 Missing Data\nasdf",
+    "section": "12.2 Missing Data",
+    "text": "12.2 Missing Data\nasdf",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Wander into the Wonder! Part - II**</span>"
     ]
@@ -1404,8 +1404,8 @@
     "objectID": "M06_2.html#measurement-errors",
     "href": "M06_2.html#measurement-errors",
     "title": "12  Wander into the Wonder! Part - II",
-    "section": "12.5 Measurement Errors",
-    "text": "12.5 Measurement Errors\nasdf",
+    "section": "12.3 Measurement Errors",
+    "text": "12.3 Measurement Errors\nasdf",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Wander into the Wonder! Part - II**</span>"
     ]
@@ -1414,8 +1414,8 @@
     "objectID": "M06_2.html#approximate-bayesian-computation",
     "href": "M06_2.html#approximate-bayesian-computation",
     "title": "12  Wander into the Wonder! Part - II",
-    "section": "12.6 Approximate Bayesian Computation",
-    "text": "12.6 Approximate Bayesian Computation\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "section": "12.4 Approximate Bayesian Computation",
+    "text": "12.4 Approximate Bayesian Computation\nasdf\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Wander into the Wonder! Part - II**</span>"
     ]
@@ -1455,7 +1455,7 @@
     "href": "M02_1.html#preparation-for-week-4",
     "title": "3  Chaotics: Prior and Posterior",
     "section": "3.7 Preparation for Week 4",
-    "text": "3.7 Preparation for Week 4\nIn week 4 you will be required to .\nNext week we will start Module 02 of this unit, where our main focus will be to understand different types of prior distributions and how they influence the posteriors.\n\n\n\n\nGelman, Andrew, John B Carlin, Hal S Stern, David B Dunson, Aki Vehtari, and Donald B Rubin. 2013. Bayesian Data Analysis (3rd Edition). Chapman; Hall/CRC.\n\n\nLambert, Ben. 2018. A Student’s Guide to Bayesian Statistics. SAGE Publications Ltd.",
+    "text": "3.7 Preparation for Week 4\nIn week 4 you will be required to .\n\n\n\n\nGelman, Andrew, John B Carlin, Hal S Stern, David B Dunson, Aki Vehtari, and Donald B Rubin. 2013. Bayesian Data Analysis (3rd Edition). Chapman; Hall/CRC.\n\n\nLambert, Ben. 2018. A Student’s Guide to Bayesian Statistics. SAGE Publications Ltd.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>**Chaotics: Prior and Posterior**</span>"
     ]
@@ -1505,7 +1505,7 @@
     "href": "M02_2.html",
     "title": "4  Chaotics: Generative Models and Tools",
     "section": "",
-    "text": "4.1 Learnings\nL03:\nL04:\nBy the end of this week you should be able to:\n– Create generative models\n– Understand traceable and untraceable solutions\n– Explain the convergence of MCMC.\n– Conduct prior predictive check.\n– Conduct posterior predictive check.",
+    "text": "4.1 Learnings\nL03: Explain how these generative models can be used for inference, prediction and model criticism.\nL04: Demonstrate proficiency in using statistical software packages (R) to specify and fit models, assess model fit, detect and remediate non-convergence, and compare models.\nBy the end of this week you should be able to:\n– Create generative models\n– Understand traceable and untraceable solutions\n– Explain the convergence of MCMC.\n– Conduct prior predictive check.\n– Conduct posterior predictive check.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
     ]
@@ -1683,21 +1683,21 @@
   {
     "objectID": "M03_1.html",
     "href": "M03_1.html",
-    "title": "5  Bayeswatch! Part - I",
+    "title": "5  Bayeswatch! Causal Connections",
     "section": "",
-    "text": "5.1 Learning Outcomes\nNOT READY YET",
+    "text": "5.1 Learnings\nNOT READY YET\nBy the end of this week you should be able to:\n– Understand Bayesian model and causality\n– Explain the terms Estimand, Estimator & Estimate\n– Understand the difference between Bayesian and classical Regression.\n– Interpret a real-life problem in Bayesian context.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
     "objectID": "M03_1.html#causality-and-bayesian-model",
     "href": "M03_1.html#causality-and-bayesian-model",
-    "title": "5  Bayeswatch! Part - I",
-    "section": "5.4 Causality and Bayesian Model",
-    "text": "5.4 Causality and Bayesian Model\n\n\n\nCausal inference requires the establishment of a causal model that is separate from a Bayesian model, given that observational data alone do not suffice. This is widely accepted across different philosophical perspectives. Nonetheless, interpretations differ considerably. The most conservative viewpoint treats “causation” as an unprovable notion. A slightly less conservative approach posits that causation can be inferred only under stringent conditions involving randomization and experimental control. However, many scientific investigations cannot be feasibly examined through experimental study. Other cases might be feasible but raise ethical concerns. In disciplines like health and medicine, the dominant approach involves incorporating various “control” variables into a statistical model, observing changes in estimates, and then developing a causal narrative. This concept is based on the assumption that only omitted variables can lead to incorrect conclusions about causation. However, variables that are included can also lead to confusion. When constructing a causal model that appears to make accurate predictions might still mislead us about causation. If such a model is used to design an intervention, it is likely to result in inaccurate outcomes.",
+    "title": "5  Bayeswatch! Causal Connections",
+    "section": "5.3 Causality and Bayesian Model",
+    "text": "5.3 Causality and Bayesian Model\n\n\n\nWhen conducting causal inference, we must develop a causal model that is distinct from a Bayesian model, as observational data alone are insufficient. This principle is widely accepted across philosophical perspectives, though interpretations vary significantly.\nThe most cautious view holds that causation is fundamentally unprovable. A slightly less conservative stance suggests that we can infer causation only under strict conditions, such as randomisation and experimental control. However, many scientific questions cannot be addressed experimentally due to feasibility constraints or ethical concerns.\nIn fields like health and medicine, we often introduce various control variables into a statistical model, observe changes in estimates, and construct a causal narrative. This approach assumes that only omitted variables can distort causal conclusions, yet even included variables can introduce confusion.\nEven if we construct a causal model that appears to make accurate predictions, it may still misrepresent causation. If we rely on such a model to guide interventions, we risk producing unintended or misleading outcomes.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
@@ -1713,11 +1713,11 @@
   {
     "objectID": "M03_1.html#model-development-using-dag",
     "href": "M03_1.html#model-development-using-dag",
-    "title": "5  Bayeswatch! Part - I",
-    "section": "5.6 Model Development using DAG",
-    "text": "5.6 Model Development using DAG\n\n\nA Directed Acyclic Graph (DAG) can be a helpful tool for conceptualizing and developing regression models. It helps to visually represent causal relationships among variables and ensures proper adjustment for confounding factors.\nNow we explain this more with an example related to Bone Mineral Density (BMD). For example, we want to model the relationship between Bone Mineral Density (BMD) and Age, considering other potential factors like Sex and Body Mass Index (BMI).\nAs people age, their bone mineral density (BMD) decreases naturally over time. Age also influences physical activity, as older individuals tend to be less active. It affects body weight, or BMI, because aging can lead to changes in weight, which in turn impacts bone density. Physical activity strengthens bones, directly improving BMD. Dietary calcium intake supports bone health and contributes directly to BMD as well. Sex influences both BMD and BMI, with women being more likely to experience a decline in bone density, such as in cases of osteoporosis. Body weight, or BMI, also directly affects BMD, as changes in weight can influence bone strength.\n\n\n\n\n\n graph TD\n    A(\"Age\") --&gt; B(\"BMD\")\n    A --&gt; P(\"Physical Activity\") --&gt; B\n    A --&gt; M(\"BMI\") --&gt; B\n    S(\"Sex\") --&gt; B\n    S --&gt; M --&gt; B\n    D(\"Dietary Calcium Intake\") --&gt; M\n\n\n\n\n\n\nIn this example, the estimand is the specific quantity or effect that you are trying to measure based on the causal relationship outlined in the DAG. In this case, the estimand is the causal effect of age on BMD. For example: the average change in BMD for a one-year increase in age, while accounting for confounders like sex, physical activity, BMI, and dietary calcium intake.\nHere, the estimator is the regression model, a multiple linear regression model that adjusts for confounders (Sex, Physical Activity, BMI, and Dietary Calcium Intake) to isolate the effect of Age on BMD.\nThe estimate is the actual numerical value obtained for the causal effect of age on BMD from the data using the chosen estimator, i.e., the estimate is the numerical value (e.g., -0.005) derived from the regression analysis, representing the change in BMD per year of age.\n\n5.6.1 Confounders, Mediators and Adjustment Variables:\nIdentifying Key Variables\nExposure (Independent Variable): Age (Primary factor influencing BMD)\nOutcome (Dependent Variable): Bone Mineral Density (BMD)\nConfounders (Affect both Age and BMD, creating bias) Sex: Men and women have different bone density patterns and risks of osteoporosis. Dietary Calcium Intake: Affects bone density and may vary across age groups.\nMediator (Lies on the causal pathway from Age to BMD) Body Mass Index (BMI): Age affects BMI, which in turn influences BMD.\nAdjustment Variables (To control confounding and estimate the direct effect of Age on BMD) Sex Dietary Calcium Intake Physical Activity (since it is influenced by Age and also impacts BMD)\nConfounders are variables that influence both the exposure (Age) and the outcome (BMD). Based on the DAG, Sex, Physical Activity, BMI, and Dietary Calcium Intake are potential confounders.\nDecide on Variables to Adjust For, i.e., adjust for Sex, Physical Activity, and Dietary Calcium Intake to control for their effects. Adjust for BMI, as it is a mediator between Age and BMD.",
+    "title": "5  Bayeswatch! Causal Connections",
+    "section": "5.5 Model Development using DAG",
+    "text": "5.5 Model Development using DAG\n\n\nWe have discussed about Directed Acyclic Graph (DAG) in one of our previous lectures. Today we will explain DAG for conceptualising and developing Bayesian regression models. It helps to visually represent causal relationships among variables and ensures proper adjustment for confounding factors.\nNow we explain this more with an example related to Bone Mineral Density (BMD). For example, we want to know, how does body mass index (BMI) impact bone mineral density (BMD)? What role does ‘age’ or ‘sex’ of the patient play in this relationship?\nLet’s focus on the relationship between BMD, BMI, age, and sex. As people age, their BMD naturally decreases over time, and age also influences factors like physical activity, which can impact BMI. Similarly, sex affects both BMI and BMD, with women being more likely to experience a decline in BMD, particularly in conditions like osteoporosis. These factors age and sex may act as confounders, influencing both BMI and BMD.\n\n\n\n\n\n graph LR\n    M(\"BMI\") --&gt; B(\"BMD\")\n    A(\"Age\") --&gt; M\n    S(\"Sex\") --&gt; M\n    A --&gt; B\n    S --&gt; B\n\n\n\n\n\n\nIn this case, the estimand is the specific causal effect of BMI on BMD, while accounting for the influence of age and sex as confounders. The goal is to isolate the effect of BMI on BMD after adjusting for these other variables.\nThe estimator we define here is the Bayesian model, i.e., the multiple linear regression model. This model adjusts for confounders like age and sex, helping us accurately estimate the causal effect of BMI on BMD.\nThe estimate is the actual numerical value derived from the data using the chosen estimator. For example, if the estimate is 0.03, this could represent the change in BMD associated with a one-unit increase in BMI, after accounting for the effects of age and sex.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
@@ -1725,7 +1725,7 @@
     "href": "M03_2.html",
     "title": "6  Bayeswatch! Part - II",
     "section": "",
-    "text": "6.1 Learning Objectives\nNOT READY YET\nBy the end of this week you should be able to:",
+    "text": "6.1 Learnings\nNOT READY YET\nBy the end of this week you should be able to:\n– Understand the Bayesian GLM\n– Understand the difference between Bayesian and classical GLM.\n– Formulate problems and solutions using Bayesian GLM.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayeswatch! Part - II**</span>"
     ]
@@ -1733,19 +1733,19 @@
   {
     "objectID": "M03_1.html#model-diagnostics",
     "href": "M03_1.html#model-diagnostics",
-    "title": "5  Bayeswatch! Part - I",
+    "title": "5  Bayeswatch! Causal Connections",
     "section": "5.8 Model Diagnostics",
     "text": "5.8 Model Diagnostics\nhttps://m-clark.github.io/easy-bayes/shinystan.html\nshinystan for model diag.\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Part - I**</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   },
   {
     "objectID": "M03_2.html#logistic-regression",
     "href": "M03_2.html#logistic-regression",
     "title": "6  Bayeswatch! Part - II",
-    "section": "6.4 Logistic Regression",
-    "text": "6.4 Logistic Regression\n\n\nasdf",
+    "section": "6.3 Logistic Regression",
+    "text": "6.3 Logistic Regression\n\n\nasdf",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayeswatch! Part - II**</span>"
     ]
@@ -1754,8 +1754,8 @@
     "objectID": "M03_2.html#poisson-regression",
     "href": "M03_2.html#poisson-regression",
     "title": "6  Bayeswatch! Part - II",
-    "section": "6.5 Poisson Regression",
-    "text": "6.5 Poisson Regression\n\n\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "section": "6.4 Poisson Regression",
+    "text": "6.4 Poisson Regression\n\n\nVedio\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayeswatch! Part - II**</span>"
     ]
@@ -1765,7 +1765,7 @@
     "href": "M04_1.html",
     "title": "7  Clusterphobia? Part - I",
     "section": "",
-    "text": "7.1 Learning Objectives\nNOT READY YET\nBy the end of this week you should be able to:",
+    "text": "7.1 Learnings\nNOT READY YET\nBy the end of this week you should be able to:\n– Explain clusterd data.\n– Describe hierarchical or multilevel Models.\n– Fit Bayesian linear mixed models.\n– Interpret a real-life problem in Bayesian context.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
     ]
@@ -1775,7 +1775,7 @@
     "href": "M04_2.html",
     "title": "8  Clusterphobia? Part - II",
     "section": "",
-    "text": "8.1 Learning Objectives\nNOT READY YET\nBy the end of this week you should be able to:",
+    "text": "8.1 Learnings\nNOT READY YET\nBy the end of this week you should be able to:\n– Construct multilevel models for binary outcome.\n– Understand the difference between Bayesian and classical methods.\n– Interpret a real-life problem in Bayesian context.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clusterphobia? Part - II**</span>"
     ]
@@ -1785,7 +1785,7 @@
     "href": "M05_1.html",
     "title": "9  Size Matters! Part - I",
     "section": "",
-    "text": "9.1 Learning Objectives\nNOT READY YET\nBy the end of this week you should be able to:",
+    "text": "9.1 Learnings\nNOT READY YET\nBy the end of this week you should be able to:",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
     ]
@@ -1795,7 +1795,7 @@
     "href": "M05_2.html",
     "title": "10  Size Matters! Part - II",
     "section": "",
-    "text": "10.1 Learning Objectives\nNOT READY YET\nBy the end of this week you should be able to:",
+    "text": "10.1 Learnings\nNOT READY YET\nBy the end of this week you should be able to:",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
     ]
@@ -1805,7 +1805,7 @@
     "href": "M06_1.html",
     "title": "11  Wander into the Wonder! Part - I",
     "section": "",
-    "text": "11.1 Learning Objectives\nNOT READY YET\nBy the end of this week you should be able to:",
+    "text": "11.1 Learnings\nNOT READY YET\nBy the end of this week you should be able to:",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
     ]
@@ -1815,7 +1815,7 @@
     "href": "M06_2.html",
     "title": "12  Wander into the Wonder! Part - II",
     "section": "",
-    "text": "12.1 Learning Objectives\nNOT READY YET\nBy the end of this week you should be able to:",
+    "text": "12.1 Learnings\nNOT READY YET\nBy the end of this week you should be able to:",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Wander into the Wonder! Part - II**</span>"
     ]
@@ -1854,8 +1854,8 @@
     "objectID": "M02_2.html#solving-untraceability",
     "href": "M02_2.html#solving-untraceability",
     "title": "4  Chaotics: Generative Models and Tools",
-    "section": "4.4 Solving Untraceability",
-    "text": "4.4 Solving Untraceability\nDifferent types of algorithms have been developed to tackle untraceable solutions. Such as numerical integration, Markov chain Monte Carlo (MCMC), variational inference, Laplace approximation etc. In this couse, we will learn how to use and impliment these algorithms to solve real-life problems. We refer Gelman et al. (2013) Chapter (..) for details on this for those interested to explore more.\n\n4.4.1 MCMC algorithms\n\nIn this course, we will focus on learning Markov chain Monte Carlo (MCMC) algorithms, which is a sampling based approach to approximate the posterior distribution when direct sampling is difficult or computationally impractical.\nA Markov chain is a stochastic process where the next state depends only on the current state, not on the sequence of states that preceded it. This property is called the Markov property. The transition between states is defined by a transition probability matrix or kernel. Monte Carlo methods involve random sampling to estimate numerical quantities, such as integrals, expectations, or probabilities. MCMC combines this with Markov chains to generate samples.\nSome common MCMC algorithms include Metropolis-Hastings (MH) algorithm, Gibbs sampling, Hamiltonian Monte Carlo (HMC) etc. MH is a general MCMC method that generates candidate samples from a proposal distribution. A candidate is accepted or rejected based on an acceptance probability, ensuring the chain converges to the target distribution. Whereas, Gibbs sampling is a special case of the Metropolis-Hastings algorithm. Updates one variable at a time by sampling from its conditional distribution while keeping other variables fixed. The Hamiltonian Monte Carlo (HMC) algorithm uses gradient information from the target distribution to propose new samples, making it more efficient for high-dimensional problems.\nHere’s a summary table comparing the Metropolis-Hastings (MH) algorithm, Gibbs Sampling, and Hamiltonian Monte Carlo (HMC), focusing on when each method is most useful:\n\n\n\n\n\n\n\n\n\n\nMetropolis-Hastings (MH)\nGibbs Sampling\nHamiltonian Monte Carlo (HMC)\n\n\n\n\nApplicability\nGeneral-purpose; works for most distributions, even when structure is unknown.\nRequires easily derived and sampled conditional distributions.\nRequires gradients of the target distribution.\n\n\nFlexibility\nHighly flexible; can handle multimodal or complex distributions.\nLimited to cases where conditional distributions exist.\nBest for smooth, high-dimensional, continuous distributions.\n\n\nEfficiency\nMay require many iterations due to rejection.\nEfficient for models with structured dependencies.\nHighly efficient in high dimensions.\n\n\nParameter Tuning\nRequires tuning of the proposal distribution (e.g., step size).\nNo tuning required.\nRequires tuning of step size and number of leapfrog steps.\n\n\nCorrelated Variables\nCan handle correlated variables with appropriate proposal design.\nMay struggle with high correlation due to sequential updates.\nHandles correlation effectively with gradient-based proposals.\n\n\nModel Type\nSuitable for any distribution, discrete or continuous.\nBest for structured models (e.g., hierarchical Bayesian).\nOnly for continuous, differentiable distributions.\n\n\nComplexity of Implementation\nRelatively simple to implement.\nSimple if conditional distributions are available.\nMore complex due to gradient computations.\n\n\nComputation Cost Per Step\nLow to moderate, depending on the proposal.\nLow per iteration.\nHigh due to gradient and Hamiltonian computations.\n\n\n\n\n\n4.4.2 MCMC convergence diagnostics\n\n\nIf all chains exhibit good mixing and overlap significantly, convergence is likely achieved. For example: A poorly mixed trace might stay in one region for too long or exhibit a trend. Each chain fluctuates randomly, indicating that it explores the target distribution.\nAutocorrelation should decay quickly (close to 0 at larger lags), indicating less dependence between consecutive samples. Slow decay indicates that the chain is not exploring efficiently.\nGelman-Rubin Diagnostic \\(\\hat{R}\\) near 1 indicates convergence. Gelman-Rubin Plot will show how \\(\\hat{R}\\) decreases over iterations. A flat line near 1 confirms that all chains have reached the stationary distribution.\n\n4.4.2.1 MH algorithm\nWe want to sample from a standard normal distribution \\(N(0,1)\\) using the Metropolis-Hastings algorithm, starting from an arbitrary initial point. This allows us to observe how the MCMC chain gradually converges to the target distribution. We write the target density \\(y\\sim N(0,1)\\) as:\n\\[\\begin{align}\np(y) &= \\frac{1}{\\sqrt{2\\pi}}\\exp\\left(-\\frac{y^2}{2}\\right)\n\\end{align}\\]\n\n\nCode\nlibrary(coda)\nmetropolis_hastings &lt;- function(target_density, proposal_sd, n_iter, initial_value) {\n  chain &lt;- numeric(n_iter)\n  chain[1] &lt;- initial_value\n  \n  for (i in 2:n_iter) {\n    proposal &lt;- rnorm(1, mean = chain[i - 1], sd = proposal_sd)\n    acceptance_prob &lt;- min(1, target_density(proposal) / target_density(chain[i - 1]))\n    if (runif(1) &lt; acceptance_prob) {\n      chain[i] &lt;- proposal\n    } else {\n      chain[i] &lt;- chain[i - 1]\n    }\n  }\n  \n  return(chain)\n}\ntarget_density &lt;- function(x) dnorm(x, mean = 0, sd = 1)\n\nset.seed(123)\nn_iter &lt;- 10000\nn_chains &lt;- 3\nchains &lt;- list(\n  chain1 = metropolis_hastings(target_density, proposal_sd = 1, n_iter, initial_value = 10),\n  chain2 = metropolis_hastings(target_density, proposal_sd = 1, n_iter, initial_value = -10),\n  chain3 = metropolis_hastings(target_density, proposal_sd = 1, n_iter, initial_value = 5)\n)\n\nmcmc_chains &lt;- mcmc.list(\n  mcmc(chains$chain1),\n  mcmc(chains$chain2),\n  mcmc(chains$chain3)\n)\n\npar(mfrow = c(1, 3))\nfor (i in 1:n_chains) {\n  plot(mcmc_chains[[i]], type = \"l\", col = \"blue\", \n       main = paste(\"Trace Plot: Chain\", i), \n       xlab = \"Iteration\", ylab = \"Value\")\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\npar(mfrow = c(1, 3))\nfor (i in 1:n_chains) {\n  autocorr.plot(mcmc_chains[[i]], main = paste(\"Autocorrelation: Chain\", i), lag.max = 50)\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ngelman_diag &lt;- gelman.diag(mcmc_chains)\nprint(gelman_diag)\n\n\nPotential scale reduction factors:\n\n     Point est. Upper C.I.\n[1,]          1          1\n\n\nCode\ngelman.plot(mcmc_chains)\n\n\n\n\n\n\n\n\n\n\n\n4.4.2.2 Gibbs sampling\nLet’s use Gibbs Sampling to sample from a bivariate normal distribution where the marginal distributions of each variable are normal, but the two variables are correlated. We’ll then assess the convergence using trace plots, autocorrelation plots, and the Gelman-Rubin diagnostic.\nThe joint density is the bivariate normal distribution: \\[\\begin{align}\np(x,y) &= \\frac{1}{2\\pi\\sqrt{1-\\rho^2}}\\exp\\left(-\\frac{1}{2(1-\\rho^2)}\\left(x^2-2\\rho x y +y^2 \\right) \\right)\n\\end{align}\\] where \\(\\rho\\) is the correlation between \\(x\\) and \\(y\\)\n\n\nCode\nlibrary(coda)\ngibbs_sampling &lt;- function(n_iter, rho, initial_values) {\n  x &lt;- numeric(n_iter)\n  y &lt;- numeric(n_iter)\n  \n  x[1] &lt;- initial_values[1]\n  y[1] &lt;- initial_values[2]\n  \n  for (i in 2:n_iter) {\n    x[i] &lt;- rnorm(1, mean = rho * y[i - 1], sd = sqrt(1 - rho^2))\n    y[i] &lt;- rnorm(1, mean = rho * x[i], sd = sqrt(1 - rho^2))\n  }\n  \n  return(data.frame(x = x, y = y))\n}\n\nset.seed(123)         \nn_iter &lt;- 1000       \nrho &lt;- 0.8           \ninitial_values &lt;- c(0, 0)  \n\nchain1 &lt;- gibbs_sampling(n_iter, rho, c(0, 0))\nchain2 &lt;- gibbs_sampling(n_iter, rho, c(10, 10))\nchain3 &lt;- gibbs_sampling(n_iter, rho, c(-10, -10))\n\nmcmc_chains &lt;- mcmc.list(\n  mcmc(as.matrix(chain1)),\n  mcmc(as.matrix(chain2)),\n  mcmc(as.matrix(chain3))\n)\n\npar(mfrow = c(2, 3))\nfor (i in 1:3) {\n  plot(mcmc_chains[[i]][, \"x\"], type = \"l\", col = \"blue\",\n       main = paste(\"Trace Plot: Chain\", i, \"(x)\"), \n       xlab = \"Iteration\", ylab = \"Value\")\n  plot(mcmc_chains[[i]][, \"y\"], type = \"l\", col = \"red\",\n       main = paste(\"Trace Plot: Chain\", i, \"(y)\"), \n       xlab = \"Iteration\", ylab = \"Value\")\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\npar(mfrow = c(2, 3))\nfor (i in 1:3) {\n  autocorr.plot(mcmc_chains[[i]][, \"x\"], main = paste(\"Autocorrelation: Chain\", i, \"(x)\"))\n  autocorr.plot(mcmc_chains[[i]][, \"y\"], main = paste(\"Autocorrelation: Chain\", i, \"(y)\"))\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ngelman_diag &lt;- gelman.diag(mcmc_chains)\nprint(gelman_diag)\n\n\nPotential scale reduction factors:\n\n  Point est. Upper C.I.\nx          1       1.02\ny          1       1.02\n\nMultivariate psrf\n\n1\n\n\nCode\ngelman.plot(mcmc_chains)\n\n\n\n\n\n\n\n\n\n\n\n4.4.2.3 HMC\nHamiltonian Monte Carlo (HMC) is a powerful MCMC algorithm that uses information about the gradient of the log-probability density to efficiently sample from complex distributions. Below, we provide an example of implementing HMC using R with the rstan package, which includes a highly optimized implementation of HMC.\n\n\n\nCode\nlibrary(rstan)\nlibrary(bayesplot)\n\nset.seed(42)\ntrue_mu &lt;- 5.0\ntrue_sigma &lt;- 2.0\nn_samples &lt;- 100\ny &lt;- rnorm(n_samples, mean = true_mu, sd = true_sigma)\n\nhist(y, breaks = 20, col = \"lightblue\", main = \"Observed Data\", xlab = \"y\")\n\n\n\n\n\n\n\n\n\nCode\nstan_code &lt;- \"\ndata {\n  int&lt;lower=0&gt; N;        // Number of observations\n  vector[N] y;           // Observed data\n}\nparameters {\n  real mu;               // Mean\n  real&lt;lower=0&gt; sigma;   // Standard deviation\n}\nmodel {\n  mu ~ normal(0, 10);    // Prior for mu\n  sigma ~ normal(0, 10); // Prior for sigma\n  y ~ normal(mu, sigma); // Likelihood\n}\n\"\nstan_data &lt;- list(\n  N = length(y),\n  y = y\n)\n\nfit &lt;- stan(\n  model_code = stan_code,\n  data = stan_data,\n  iter = 2000,      \n  warmup = 1000,    \n  chains = 3,       \n  seed = 1234         \n)\n\n\n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).\nChain 1: \nChain 1: Gradient evaluation took 2e-05 seconds\nChain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.2 seconds.\nChain 1: Adjust your expectations accordingly!\nChain 1: \nChain 1: \nChain 1: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 1: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 1: \nChain 1:  Elapsed Time: 0.016 seconds (Warm-up)\nChain 1:                0.015 seconds (Sampling)\nChain 1:                0.031 seconds (Total)\nChain 1: \n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).\nChain 2: \nChain 2: Gradient evaluation took 5e-06 seconds\nChain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.05 seconds.\nChain 2: Adjust your expectations accordingly!\nChain 2: \nChain 2: \nChain 2: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 2: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 2: \nChain 2:  Elapsed Time: 0.029 seconds (Warm-up)\nChain 2:                0.016 seconds (Sampling)\nChain 2:                0.045 seconds (Total)\nChain 2: \n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).\nChain 3: \nChain 3: Gradient evaluation took 5e-06 seconds\nChain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.05 seconds.\nChain 3: Adjust your expectations accordingly!\nChain 3: \nChain 3: \nChain 3: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 3: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 3: \nChain 3:  Elapsed Time: 0.018 seconds (Warm-up)\nChain 3:                0.015 seconds (Sampling)\nChain 3:                0.033 seconds (Total)\nChain 3: \n\n\nCode\nprint(fit, pars = c(\"mu\", \"sigma\"))\n\n\nInference for Stan model: anon_model.\n3 chains, each with iter=2000; warmup=1000; thin=1; \npost-warmup draws per chain=1000, total post-warmup draws=3000.\n\n      mean se_mean   sd 2.5%  25%  50%  75% 97.5% n_eff Rhat\nmu    5.06       0 0.21 4.65 4.92 5.06 5.20  5.49  2598    1\nsigma 2.11       0 0.16 1.83 2.00 2.10 2.21  2.45  2926    1\n\nSamples were drawn using NUTS(diag_e) at Sun Mar 30 22:00:08 2025.\nFor each parameter, n_eff is a crude measure of effective sample size,\nand Rhat is the potential scale reduction factor on split chains (at \nconvergence, Rhat=1).\n\n\nCode\nlibrary(bayesplot)\nmcmc_trace(fit, pars = c(\"mu\", \"sigma\"))\n\n\n\n\n\n\n\n\n\nCode\nmcmc_areas(fit, pars = c(\"mu\", \"sigma\"))\n\n\n\n\n\n\n\n\n\nCode\nmcmc_acf_bar(fit, pars = c(\"mu\", \"sigma\"))\n\n\n\n\n\n\n\n\n\nCode\nlibrary(coda)\nposterior_samples &lt;- as.array(fit)\nmcmc_chains &lt;- mcmc.list(\n  mcmc(as.matrix(posterior_samples[,1,])),\n  mcmc(as.matrix(posterior_samples[,2,])),\n  mcmc(as.matrix(posterior_samples[,3,]))\n)\n\ngelman_diag &lt;- gelman.diag(mcmc_chains)\nprint(gelman_diag)\n\n\nPotential scale reduction factors:\n\n      Point est. Upper C.I.\nmu             1       1.00\nsigma          1       1.01\nlp__           1       1.01\n\nMultivariate psrf\n\n1.01\n\n\nCode\ngelman.plot(mcmc_chains)\n\n\n\n\n\n\n\n\n\nCode\nrhats &lt;- rhat(fit)\nrhats\n\n\n       mu     sigma      lp__ \n0.9995676 0.9999119 1.0003116 \n\n\nCode\nmcmc_rhat(rhats) + yaxis_text(hjust = 1)\n\n\n\n\n\n\n\n\n\nCode\nratios_cp &lt;- neff_ratio(fit)\nprint(ratios_cp)\n\n\n       mu     sigma      lp__ \n0.8658714 0.9753797 0.4927674 \n\n\nCode\nmcmc_neff(ratios_cp, size = 2) + yaxis_text(hjust = 1)\n\n\n\n\n\n\n\n\n\nCode\n# use shinystan\n#library(shinystan)\n#launch_shinystan(fit)",
+    "section": "4.3 Solving Untraceability",
+    "text": "4.3 Solving Untraceability\n\n\nWe can indentify an untraceable solution in Bayesian inference, where the posterior distribution cannot be expressed in a closed-form expression. This phenomenon occurs when the likelihood function and the prior distribution are incompatible, which results in complex integrals within Bayes’ theorem that are analytically intractable.\nThe opposite of untraceable solution is known as the traceable solution, which we have discussed in our previous lectures in the light of exact Bayesian inference. We already know that exact Bayesian inference means computing the posterior analytically, without approximations. And a tractable solution is one that can be computed exactly and efficiently, without requiring numerical approximations or complex sampling methods like Markov Chain Monte Carlo (MCMC). Thus traceable solution can be obtained when the prior distribution and the likelihood function are chosen such that the posterior distribution remains within a recognised family of probability distributions. For example, when a conjugate prior is used, the posterior has a known or a same functional form as the prior, i.e., for a Bernoulli model, that we have already discussed earlier in Lecture 2: \\(\\text{Prior: } \\theta \\sim \\text{Beta}(a,b)\\) and \\(\\text{Posterior: } \\theta|y \\sim \\text{Beta}(a+y,b+n-y)\\).\nUse of non-conjugate priors and often complex likelihood functions, such as those involving hierarchical models, mixture models, or high-dimensional data yields a posterior form of distribution with untraceable solutions, even if we consider conjugate priors for the model parameters.\nFor a non-Gaussian likelihood (i.e., it does not follow a normal distribution), choosing a uniform prior leads to a situation where the resulting posterior distribution cannot be easily determined or expressed in a simple mathematical form and also yields untraceable solution.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
     ]
@@ -1874,8 +1874,8 @@
     "objectID": "M06_1.html#criterion-and-shrinkage-based",
     "href": "M06_1.html#criterion-and-shrinkage-based",
     "title": "11  Wander into the Wonder! Part - I",
-    "section": "11.4 Criterion and Shrinkage Based",
-    "text": "11.4 Criterion and Shrinkage Based\nasdf ref - lambert page 225, sec: 10.5 (AIC, DIC, WAIC, LOO-CV)\nasdf ref - … spike-slab priors (mixture-priors), Bayesian lasso",
+    "section": "11.3 Criterion and Shrinkage Based",
+    "text": "11.3 Criterion and Shrinkage Based\nasdf ref - lambert page 225, sec: 10.5 (AIC, DIC, WAIC, LOO-CV)\nasdf ref - … spike-slab priors (mixture-priors), Bayesian lasso",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
     ]
@@ -1884,8 +1884,8 @@
     "objectID": "M06_1.html#hypothesis-testing-with-bf",
     "href": "M06_1.html#hypothesis-testing-with-bf",
     "title": "11  Wander into the Wonder! Part - I",
-    "section": "11.5 Hypothesis Testing with BF",
-    "text": "11.5 Hypothesis Testing with BF\nref: https://statswithr.github.io/book/hypothesis-testing-with-normal-populations.html",
+    "section": "11.4 Hypothesis Testing with BF",
+    "text": "11.4 Hypothesis Testing with BF\nref: https://statswithr.github.io/book/hypothesis-testing-with-normal-populations.html",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
     ]
@@ -1894,8 +1894,8 @@
     "objectID": "M06_1.html#bayesian-model-averaging",
     "href": "M06_1.html#bayesian-model-averaging",
     "title": "11  Wander into the Wonder! Part - I",
-    "section": "11.6 Bayesian Model Averaging",
-    "text": "11.6 Bayesian Model Averaging\nref: https://statswithr.github.io/book/bayesian-model-choice.html#bayesian-model-averaging\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
+    "section": "11.5 Bayesian Model Averaging",
+    "text": "11.5 Bayesian Model Averaging\nref: https://statswithr.github.io/book/bayesian-model-choice.html#bayesian-model-averaging\n…\n\n\nCode\n1 + 1\n\n\n[1] 2",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
     ]
@@ -2094,8 +2094,8 @@
     "objectID": "M02_2.html#tutorial-exercises",
     "href": "M02_2.html#tutorial-exercises",
     "title": "4  Chaotics: Generative Models and Tools",
-    "section": "4.8 Tutorial Exercises",
-    "text": "4.8 Tutorial Exercises\nSolutions will be provided later after the tutorial.",
+    "section": "4.10 Tutorial Exercises",
+    "text": "4.10 Tutorial Exercises\nSolutions will be provided later after the tutorial.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
     ]
@@ -2104,10 +2104,150 @@
     "objectID": "M02_2.html#preparation-for-week-5",
     "href": "M02_2.html#preparation-for-week-5",
     "title": "4  Chaotics: Generative Models and Tools",
-    "section": "4.9 Preparation for Week 5",
-    "text": "4.9 Preparation for Week 5\nIn week 5 you will be required to .\n\n\n\n\nBernardo, JM, MJ Bayarri, JO Berger, AP Dawid, D Heckerman, AFM Smith, and M West. 2007. “Generative or Discriminative? Getting the Best of Both Worlds.” Bayesian Statistics 8 (3): 3–24.\n\n\nGelman, Andrew, John B Carlin, Hal S Stern, David B Dunson, Aki Vehtari, and Donald B Rubin. 2013. Bayesian Data Analysis (3rd Edition). Chapman; Hall/CRC.",
+    "section": "4.11 Preparation for Week 5",
+    "text": "4.11 Preparation for Week 5\nIn week 5 you will be required to .\n\n\n\n\nBernardo, JM, MJ Bayarri, JO Berger, AP Dawid, D Heckerman, AFM Smith, and M West. 2007. “Generative or Discriminative? Getting the Best of Both Worlds.” Bayesian Statistics 8 (3): 3–24.\n\n\nGelman, Andrew, John B Carlin, Hal S Stern, David B Dunson, Aki Vehtari, and Donald B Rubin. 2013. Bayesian Data Analysis (3rd Edition). Chapman; Hall/CRC.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#algorithms",
+    "href": "M02_2.html#algorithms",
+    "title": "4  Chaotics: Generative Models and Tools",
+    "section": "4.4 Algorithms",
+    "text": "4.4 Algorithms\nDifferent types of sampling algorithms have been developed to tackle untraceable solutions, such as rejection sampling, Markov chain Monte Carlo (MCMC), variational inference, Laplace approximation etc. In this couse, we will learn how to use and impliment the MCMC algorithms to solve real-life problems. We refer Gelman et al. (2013) for details on this for those interested to explore more.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#markov-chain-monte-carlo-mcmc",
+    "href": "M02_2.html#markov-chain-monte-carlo-mcmc",
+    "title": "4  Chaotics: Generative Models and Tools",
+    "section": "4.5 Markov chain Monte Carlo (MCMC)",
+    "text": "4.5 Markov chain Monte Carlo (MCMC)\n\n\n\nIn this course, we will focus on learning Markov chain Monte Carlo (MCMC) algorithm, which is a sampling based approach to obtain the posterior distribution.\nA Markov chain is a stochastic process where the next state depends only on the current state, not on the sequence of states that preceded it. This property is called the Markovian or Markov property. The transition between states is defined by a transition probability matrix or kernel. On the other hand, Monte Carlo methods involve random sampling to estimate numerical quantities, such as integrals or expectations, to approximate the final solution. MCMC combines the Monte Carlo with Markov chains to generate samples.\nBasic concept and generic structure for MCMC can be explained as follows. Say we are interested in parameter \\(\\theta\\), then we state:\n\nSelecte \\(\\theta^{(0)}\\) at an arbitrary point\nAt iteration \\(t\\), sample from a transition distribution \\(\\theta^{(t)}|\\theta^{(t-1)}\\), i.e., to generate a new value \\(\\theta = \\theta^{(t)}\\) given the previous value \\(\\theta = \\theta^{(t-1)}\\).\nRepeat the previous step until a specified maximum number of iterations is reached, or until specified convergence criterion is satisfied.\n\nHence, the MCMC states, there exist a transition distribution that guarantee that\n\\[\np(\\theta\\in \\{\\theta^{(t)},\\theta^{(t+1)},...,\\theta^{(q)} \\}) \\rightarrow p(\\theta|\\text{data}); \\text{   as   } q\\rightarrow \\infty\n\\]\nThe function that determines the probability for selecting the next location, is called the transition distribution.\nNow, we will discuss some popular and common MCMC methods we use in practice to solve real-life applications.\n\nCommon MCMC methods\n\nSome common MCMC algorithms include Metropolis-Hastings (MH) algorithm, Gibbs sampling, Hamiltonian Monte Carlo (HMC) etc. MH is a general MCMC method that generates candidate samples from a proposal distribution. A candidate is accepted or rejected based on an acceptance probability, ensuring the chain converges to the target distribution. Whereas, Gibbs sampling is a special case of the Metropolis-Hastings algorithm. Updates one variable at a time by sampling from its conditional distribution while keeping other variables fixed. The Hamiltonian Monte Carlo (HMC) algorithm uses gradient information from the target distribution to propose new samples, making it more efficient for high-dimensional problems.\n\n\n4.5.1 Metropolis-Hastings (MH) Algorithm\nThe MH algorithm generates a sequence of samples that gradually approximates a target distribution say \\(p(\\theta)\\). It starts with an arbitrary value say \\(\\theta^{(0)}\\), and then uses a proposal distribution \\(q(\\theta^* | \\theta_t)\\) to propse a new value \\(\\theta^*\\). In the next step it accepts or rejects \\(\\theta^*\\) using an acceptance probability:\n\\[\nA = \\min \\left(1, \\frac{p(\\theta^*) q(\\theta_t | \\theta^*)}{p(\\theta_t) q(\\theta^* | \\theta_t)} \\right)\n\\]\nNow, if accepted, the we set \\(\\theta_{t+1} = \\theta^*\\), otherwise keep the current sample, i.e., \\(\\theta_{t+1} = \\theta_t\\). We then iterate this process to generate a sequence of samples, and over time, the samples approximate \\(p(\\theta)\\).\nExample\nSuppose, we want to sample from a standard normal distribution \\(N(0,1)\\) using the Metropolis-Hastings algorithm, starting from an arbitrary initial point. This allows us to observe how the MCMC chain gradually converges to the target distribution. We write the target density \\(\\theta \\sim N(0,1)\\) as:\n\\[\np(\\theta) = \\frac{1}{\\sqrt{2\\pi}}\\exp\\left(-\\frac{\\theta^2}{2}\\right)\n\\]\n\n\nCode\nlibrary(coda)\nmetropolis_hastings &lt;- function(target_density, proposal_sd, n_iter, initial_value) {\n  chain &lt;- numeric(n_iter)\n  chain[1] &lt;- initial_value\n  \n  for (i in 2:n_iter) {\n    proposal &lt;- rnorm(1, mean = chain[i - 1], sd = proposal_sd)\n    acceptance_prob &lt;- min(1, target_density(proposal) / target_density(chain[i - 1]))\n    if (runif(1) &lt; acceptance_prob) {\n      chain[i] &lt;- proposal\n    } else {\n      chain[i] &lt;- chain[i - 1]\n    }\n  }\n  \n  return(chain)\n}\ntarget_density &lt;- function(x) dnorm(x, mean = 0, sd = 1)\n\nset.seed(123)\nn_iter &lt;- 10000\nn_chains &lt;- 3\nchains &lt;- list(\n  chain1 = metropolis_hastings(target_density, proposal_sd = 1, n_iter, initial_value = 10),\n  chain2 = metropolis_hastings(target_density, proposal_sd = 1, n_iter, initial_value = -10),\n  chain3 = metropolis_hastings(target_density, proposal_sd = 1, n_iter, initial_value = 5)\n)\n\nmcmc_chains &lt;- mcmc.list(\n  mcmc(chains$chain1),\n  mcmc(chains$chain2),\n  mcmc(chains$chain3)\n)\n\nsummary(mcmc_chains)\n\n\n\nIterations = 1:10000\nThinning interval = 1 \nNumber of chains = 3 \nSample size per chain = 10000 \n\n1. Empirical mean and standard deviation for each variable,\n   plus standard error of the mean:\n\n          Mean             SD       Naive SE Time-series SE \n     -0.025039       1.066546       0.006158       0.020382 \n\n2. Quantiles for each variable:\n\n    2.5%      25%      50%      75%    97.5% \n-2.05216 -0.70284 -0.01213  0.65225  1.94265 \n\n\nCode\n#par(mfrow = c(1, 3))\n#for (i in 1:n_chains) {\n#  plot(mcmc_chains[[i]], type = \"l\", col = \"blue\", \n#       main = paste(\"Chain\", i), \n#       xlab = \"Iteration\", ylab = \"Value\",\n#       trace = TRUE, density = FALSE)\n#}\n\nlibrary(lattice)\nxyplot(mcmc_chains, col=c(\"blue\", \"red\", \"green\"), lwd=1.5)\n\n\n\n\n\n\n\n\n\nCode\nmcmc_chains_mh &lt;- mcmc_chains\n\n\n\n\n4.5.2 Gibbs Sampling\nThe Gibbs sampling algorithm is a special case of the Metropolis-Hastings (MH) algorithm and is particularly useful when we want to do sampling from high-dimensional joint distributions. Instead of sampling all variables at once, Gibbs sampling updates one variable at a time, conditioning on the others.\nSuppose we have a joint distribution \\(p(\\theta_1, \\theta_2)\\), and the algorithm starts with arbitrary initial values for all variables, i.e., \\(\\theta_1^{(0)}\\) and \\(\\theta_2^{(0)}\\). For each variable then we sample from its conditional distribution, i.e., for \\(\\theta_1\\) we use conditional distribution \\(p(\\theta_1|\\theta_2)\\) and then for \\(\\theta_2\\) we use \\(p(\\theta_2|\\theta_1)\\). This means we sample \\(\\theta_1\\) given all other current values, i.e., in our example this is \\(\\theta_2\\) and then sample \\(\\theta_2\\) given \\(\\theta_1\\). We then repeat the process for many iterations until the samples converge to the target distribution.\nExample\nLet’s use Gibbs Sampling to sample from a bivariate normal distribution where the marginal distributions of each variable are normal, but the two variables are correlated. We’ll then assess the convergence using trace plots, autocorrelation plots, and the Gelman-Rubin diagnostic.\nThe joint density is the bivariate normal distribution:\n\\[\np(x,y) = \\frac{1}{2\\pi\\sqrt{1-\\rho^2}}\\exp\\left(-\\frac{1}{2(1-\\rho^2)}\\left(x^2-2\\rho x y +y^2 \\right) \\right)\n\\]\nwhere \\(\\rho\\) is the correlation between \\(x\\) and \\(y\\).\n\n\nCode\nlibrary(coda)\ngibbs_sampling &lt;- function(n_iter, rho, initial_values) {\n  x &lt;- numeric(n_iter)\n  y &lt;- numeric(n_iter)\n  \n  x[1] &lt;- initial_values[1]\n  y[1] &lt;- initial_values[2]\n  \n  for (i in 2:n_iter) {\n    x[i] &lt;- rnorm(1, mean = rho * y[i - 1], sd = sqrt(1 - rho^2))\n    y[i] &lt;- rnorm(1, mean = rho * x[i], sd = sqrt(1 - rho^2))\n  }\n  \n  return(data.frame(theta_1 = x, theta_2 = y))\n}\n\nset.seed(123)         \nn_iter &lt;- 1000       \nrho &lt;- 0.8           \ninitial_values &lt;- c(0, 0)  \n\nchain1 &lt;- gibbs_sampling(n_iter, rho, c(0, 0))\nchain2 &lt;- gibbs_sampling(n_iter, rho, c(10, 10))\nchain3 &lt;- gibbs_sampling(n_iter, rho, c(-10, -10))\n\nmcmc_chains &lt;- mcmc.list(\n  mcmc(as.matrix(chain1)),\n  mcmc(as.matrix(chain2)),\n  mcmc(as.matrix(chain3))\n)\n\nsummary(mcmc_chains)\n\n\n\nIterations = 1:1000\nThinning interval = 1 \nNumber of chains = 3 \nSample size per chain = 1000 \n\n1. Empirical mean and standard deviation for each variable,\n   plus standard error of the mean:\n\n           Mean    SD Naive SE Time-series SE\ntheta_1 0.01841 1.026  0.01874        0.03854\ntheta_2 0.01097 1.018  0.01858        0.03912\n\n2. Quantiles for each variable:\n\n          2.5%     25%     50%    75% 97.5%\ntheta_1 -1.943 -0.6345 0.02087 0.6801 1.827\ntheta_2 -1.902 -0.6288 0.01558 0.6646 1.902\n\n\nCode\n#par(mfrow = c(2, 3))\n#for (i in 1:3) {\n#  plot(mcmc_chains[[i]][, \"x\"], type = \"l\", col = \"blue\",\n#       main = paste(\"Chain\", i, \"(x)\"), \n#       xlab = \"Iteration\", ylab = \"Value\",\n#       density = FALSE)\n#  plot(mcmc_chains[[i]][, \"y\"], type = \"l\", col = \"red\",\n#       main = paste(\"Chain\", i, \"(y)\"), \n#       xlab = \"Iteration\", ylab = \"Value\",\n#       density = FALSE)\n#}\n\nlibrary(lattice)\nxyplot(mcmc_chains, col=c(\"blue\", \"red\", \"green\"), lwd=1.5)\n\n\n\n\n\n\n\n\n\nCode\nmcmc_chains_gibbs &lt;- mcmc_chains\n\n\n\n\n4.5.3 Hamiltonian Monte Carlo (HMC)\nHamiltonian Monte Carlo (HMC) is a powerful MCMC algorithm that uses information about the gradient of the log-probability density to efficiently sample from complex distributions. HMC is inspired by Hamiltonian mechanics, which describes the motion of objects in a physical system. Here, we use a system in Hamiltonian mechanics and is defined by \\(H(\\theta,p)=L(\\theta)+K(p)\\), where \\(L(\\theta)\\) is the negative log of the target density and \\(K(p)\\) is a kinetic energy, which we usually model using a Gaussian distribution.\nThe sampling steps involves by initialising with a position \\(\\theta_t\\) and sample \\(p_t\\) from a Gaussian distribution. Then simulate Hamiltonian dynamics using gradient of \\(L(\\theta)\\) and hence update the position and momentum iteratively. After the simulation, we propose a new state \\((\\theta^*,p^*)\\) and accept or reject the proposed step using Metropolis criterion:\n\\[\nA = \\min \\left(1, \\frac{\\exp(-H(\\theta^*, p^*))}{\\exp(-H(\\theta_t, p_t))} \\right)\n\\]\nAnd, if accepted, move to \\(\\theta^*\\), and for rejection stay at \\(\\theta_t\\). We then repeat for many iterations to generate samples.\nExample\nBelow, we provide an example of implementing HMC for normal distriution with parameters \\(\\mu\\) and \\(\\sigma^2\\), using R with the rstan package, which includes a highly optimised implementation of HMC.\n\n\n\nCode\nlibrary(rstan)\nlibrary(bayesplot)\n\nset.seed(42)\ntrue_mu &lt;- 5.0\ntrue_sigma &lt;- 2.0\nn_samples &lt;- 100\ny &lt;- rnorm(n_samples, mean = true_mu, sd = true_sigma)\n\nhist(y, breaks = 20, col = \"lightblue\", main = \"Observed Data\", xlab = \"y\")\n\n\n\n\n\n\n\n\n\nCode\nstan_code &lt;- \"\ndata {\n  int&lt;lower=0&gt; N;        // Number of observations\n  vector[N] y;           // Observed data\n}\nparameters {\n  real mu;               // Mean\n  real&lt;lower=0&gt; sigma;   // Standard deviation\n}\nmodel {\n  mu ~ normal(0, 10);    // Prior for mu\n  sigma ~ normal(0, 10); // Prior for sigma\n  y ~ normal(mu, sigma); // Likelihood\n}\n\"\nstan_data &lt;- list(\n  N = length(y),\n  y = y\n)\n\nfit &lt;- stan(\n  model_code = stan_code,\n  data = stan_data,\n  iter = 2000,      \n  warmup = 1000,    \n  chains = 3,       \n  seed = 1234         \n)\n\n\n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).\nChain 1: \nChain 1: Gradient evaluation took 8.7e-05 seconds\nChain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.87 seconds.\nChain 1: Adjust your expectations accordingly!\nChain 1: \nChain 1: \nChain 1: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 1: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 1: \nChain 1:  Elapsed Time: 0.053 seconds (Warm-up)\nChain 1:                0.051 seconds (Sampling)\nChain 1:                0.104 seconds (Total)\nChain 1: \n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).\nChain 2: \nChain 2: Gradient evaluation took 1e-05 seconds\nChain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.\nChain 2: Adjust your expectations accordingly!\nChain 2: \nChain 2: \nChain 2: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 2: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 2: \nChain 2:  Elapsed Time: 0.089 seconds (Warm-up)\nChain 2:                0.047 seconds (Sampling)\nChain 2:                0.136 seconds (Total)\nChain 2: \n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).\nChain 3: \nChain 3: Gradient evaluation took 1.3e-05 seconds\nChain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.\nChain 3: Adjust your expectations accordingly!\nChain 3: \nChain 3: \nChain 3: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 3: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 3: \nChain 3:  Elapsed Time: 0.057 seconds (Warm-up)\nChain 3:                0.046 seconds (Sampling)\nChain 3:                0.103 seconds (Total)\nChain 3: \n\n\nCode\nprint(fit, pars = c(\"mu\", \"sigma\"))\n\n\nInference for Stan model: anon_model.\n3 chains, each with iter=2000; warmup=1000; thin=1; \npost-warmup draws per chain=1000, total post-warmup draws=3000.\n\n      mean se_mean   sd 2.5%  25%  50%  75% 97.5% n_eff Rhat\nmu    5.06       0 0.21 4.65 4.92 5.06 5.20  5.49  2598    1\nsigma 2.11       0 0.16 1.83 2.00 2.10 2.21  2.45  2926    1\n\nSamples were drawn using NUTS(diag_e) at Sat Apr  5 11:53:52 2025.\nFor each parameter, n_eff is a crude measure of effective sample size,\nand Rhat is the potential scale reduction factor on split chains (at \nconvergence, Rhat=1).\n\n\nCode\n#library(bayesplot)\n#mcmc_trace(fit, pars = c(\"mu\", \"sigma\"))\n#mcmc_areas(fit, pars = c(\"mu\", \"sigma\"))\n#mcmc_acf_bar(fit, pars = c(\"mu\", \"sigma\"))\n\nlibrary(coda)\nposterior_samples &lt;- as.array(fit)\nmcmc_chains &lt;- mcmc.list(\n  mcmc(as.matrix(posterior_samples[,1,1:2])),\n  mcmc(as.matrix(posterior_samples[,2,1:2])),\n  mcmc(as.matrix(posterior_samples[,3,1:2]))\n)\n\nlibrary(lattice)\nxyplot(mcmc_chains, col=c(\"blue\", \"red\", \"green\"), lwd=1.5)\n\n\n\n\n\n\n\n\n\nCode\nmcmc_chains_hmc &lt;- mcmc_chains\n\n\n# use shinystan\n#library(shinystan)\n#launch_shinystan(fit)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#mcmc-diagnostics",
+    "href": "M02_2.html#mcmc-diagnostics",
+    "title": "4  Chaotics: Generative Models and Tools",
+    "section": "4.6 MCMC diagnostics",
+    "text": "4.6 MCMC diagnostics\n\n\nWhen we run Markov Chain Monte Carlo (MCMC) methods for Bayesian inference, we need to make sure our samples actually represent the true posterior distribution. MCMC doesn’t guarantee good results on its own, so we rely on MCMC diagnostics to check for issues like lack of convergence, autocorrelation, and poor mixing.\n\n4.6.1 Convergence\nWe first check whether the MCMC chain has actually converged to the posterior distribution. To check this we rely on methods such as: trace plots and Gelman-Rubin Diagnostic using R statistic.\nIf the trace plot looks like a “hairy caterpillar” without trends or long drifts, that’s a good sign. If we see big jumps or slow drifting, we might need a longer burn-in period or better tuning.\nIf we run multiple chains as indicated in the examples above, the we can compare their variance, which is also known as Gelman-Rubin Diagnostic and denote the estimate as \\(\\hat{R}\\). An \\(\\hat{R}\\) near 1 typically indicates convergence, i.e., all chains are settled into the same stationary distribution. It is also important to check the Gelman-Rubin plot, which usually show how \\(\\hat{R}\\) decreases over iterations.\n\n\n4.6.2 Autocorrelation\nWe can also use autocorrelation plots to check how correlated our MCMC samples are with previous ones. Ideally, the correlation should drop off quickly, if it lingers then we may need to adjust our proposal distribution for MH or thinning interval or run the chain for more iterations.\nAnother measurement diagnostic is the effective sample size (ESS). If ESS is low, it means we’re getting fewer independent samples than expected. Increasing the total iterations or improving sampling efficiency (e.g., using Hamiltonian Monte Carlo instead of Metropolis-Hastings) can help to increase the ESS.\n\n\n4.6.3 Mixing & Efficiency\nEven if our chain is converging, we want to make sure it’s exploring the full posterior efficiently. Poor mixing shows up when the chain gets stuck in one region for too long before jumping elsewhere. If we notice this, the we can tweak the sampling algorithm to improve mixing.\nFor Metropolis-Hastings, we aim for an acceptance rate between 20% and 50%. If it’s too low, our proposals might be too aggressive; if it’s too high, they might be too conservative.\nRunning MCMC isn’t just about pressing “go” and hoping for the best—we actively check these diagnostics to ensure our samples are reliable. If we run into problems, we adjust our burn-in period, reparameterize our model, or switch to a more advanced sampler like Hamiltonian Monte Carlo.\n\n\n4.6.4 Code for MH\n\n\nCode\n## MH\n#par(mfrow = c(1, 3))\n#for (i in 1:n_chains) {\n#  autocorr.plot(mcmc_chains_mh[[i]], main = #paste(\"Autocorrelation: Chain\", i), lag.max = 50)\n#}\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\nextract_acf &lt;- function(chain, lag.max = 40) {\n  acf_values &lt;- acf(chain, plot = FALSE, lag.max = lag.max)\n  data.frame(Lag = acf_values$lag, ACF = acf_values$acf)\n}\nacf_data &lt;- bind_rows(\n  extract_acf(mcmc_chains_mh[[1]]) %&gt;% mutate(Chain = \"Chain 1\"),\n  extract_acf(mcmc_chains_mh[[2]]) %&gt;% mutate(Chain = \"Chain 2\"),\n  extract_acf(mcmc_chains_mh[[3]]) %&gt;% mutate(Chain = \"Chain 3\")\n)\nggplot(acf_data, aes(x = Lag, y = ACF, fill = Chain)) +\n  geom_bar(stat = \"identity\", position = \"dodge\") +\n  labs(title = \"Autocorrelation of MCMC Chains - MH\", x = \"Lag\", y = \"Autocorrelation\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nCode\ngelman_diag &lt;- gelman.diag(mcmc_chains_mh)\nprint(gelman_diag)\n\n\nPotential scale reduction factors:\n\n     Point est. Upper C.I.\n[1,]          1          1\n\n\nCode\ngelman.plot(mcmc_chains_mh)\n\n\n\n\n\n\n\n\n\n\n\n4.6.5 Code for Gibbs\n\n\nCode\n## gibbs\n#par(mfrow = c(2, 3))\n#for (i in 1:3) {\n#  autocorr.plot(mcmc_chains_gibbs[[i]][, \"x\"], main = paste(\"Autocorrelation: Chain\", i, \"(x)\"))\n#  autocorr.plot(mcmc_chains_gibbs[[i]][, \"y\"], main = paste(\"Autocorrelation: Chain\", i, \"(y)\"))\n#}\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\nextract_acf &lt;- function(chain, lag.max = 40) {\n  acf_values &lt;- acf(chain, plot = FALSE, lag.max = lag.max)\n  data.frame(Lag = acf_values$lag, ACF = acf_values$acf)\n}\nacf_data &lt;- bind_rows(\n  extract_acf(mcmc_chains_gibbs[[1]][, \"theta_1\"]) %&gt;% mutate(Chain = \"Chain 1 (theta_1)\"),\n  extract_acf(mcmc_chains_gibbs[[1]][, \"theta_2\"]) %&gt;% mutate(Chain = \"Chain 1 (theta_2)\"),\n  extract_acf(mcmc_chains_gibbs[[2]][, \"theta_1\"]) %&gt;% mutate(Chain = \"Chain 2 (theta_1)\"),\n  extract_acf(mcmc_chains_gibbs[[2]][, \"theta_2\"]) %&gt;% mutate(Chain = \"Chain 2 (theta_2)\"),\n  extract_acf(mcmc_chains_gibbs[[3]][, \"theta_1\"]) %&gt;% mutate(Chain = \"Chain 3 (theta_1)\"),\n  extract_acf(mcmc_chains_gibbs[[3]][, \"theta_2\"]) %&gt;% mutate(Chain = \"Chain 3 (theta_2)\")\n)\nggplot(acf_data, aes(x = Lag, y = ACF, fill = Chain)) +\n  geom_bar(stat = \"identity\", position = \"dodge\") +\n  labs(title = \"Autocorrelation of Gibbs Sampling Chains\", x = \"Lag\", y = \"Autocorrelation\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nCode\ngelman_diag &lt;- gelman.diag(mcmc_chains_gibbs)\nprint(gelman_diag)\n\n\nPotential scale reduction factors:\n\n        Point est. Upper C.I.\ntheta_1          1       1.02\ntheta_2          1       1.02\n\nMultivariate psrf\n\n1\n\n\nCode\ngelman.plot(mcmc_chains_gibbs)\n\n\n\n\n\n\n\n\n\n\n\n4.6.6 Code for HMC\n\n\nCode\n## HMC\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\nextract_acf &lt;- function(chain, lag.max = 40) {\n  acf_values &lt;- acf(chain, plot = FALSE, lag.max = lag.max)\n  data.frame(Lag = acf_values$lag, ACF = acf_values$acf)\n}\nacf_data &lt;- bind_rows(\n  extract_acf(mcmc_chains_hmc[[1]][, 1]) %&gt;% mutate(Chain = \"Chain 1 (Param 1)\"),\n  extract_acf(mcmc_chains_hmc[[1]][, 2]) %&gt;% mutate(Chain = \"Chain 1 (Param 2)\"),\n  extract_acf(mcmc_chains_hmc[[2]][, 1]) %&gt;% mutate(Chain = \"Chain 2 (Param 1)\"),\n  extract_acf(mcmc_chains_hmc[[2]][, 2]) %&gt;% mutate(Chain = \"Chain 2 (Param 2)\"),\n  extract_acf(mcmc_chains_hmc[[3]][, 1]) %&gt;% mutate(Chain = \"Chain 3 (Param 1)\"),\n  extract_acf(mcmc_chains_hmc[[3]][, 2]) %&gt;% mutate(Chain = \"Chain 3 (Param 2)\")\n)\nggplot(acf_data, aes(x = Lag, y = ACF, fill = Chain)) +\n  geom_bar(stat = \"identity\", position = \"dodge\") +\n  labs(title = \"Autocorrelation of HMC MCMC Samples\", x = \"Lag\", y = \"Autocorrelation\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nCode\ngelman_diag &lt;- gelman.diag(mcmc_chains_hmc)\nprint(gelman_diag)\n\n\nPotential scale reduction factors:\n\n      Point est. Upper C.I.\nmu             1       1.00\nsigma          1       1.01\n\nMultivariate psrf\n\n1\n\n\nCode\ngelman.plot(mcmc_chains_hmc)\n\n\n\n\n\n\n\n\n\nCode\nrhats &lt;- rhat(fit)\nrhats\n\n\n       mu     sigma      lp__ \n0.9995676 0.9999119 1.0003116 \n\n\nCode\nmcmc_rhat(rhats) + yaxis_text(hjust = 1)\n\n\n\n\n\n\n\n\n\nCode\nratios_cp &lt;- neff_ratio(fit)\nprint(ratios_cp)\n\n\n       mu     sigma      lp__ \n0.8658714 0.9753797 0.4927674 \n\n\nCode\nmcmc_neff(ratios_cp, size = 2) + yaxis_text(hjust = 1)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
+    ]
+  },
+  {
+    "objectID": "M02_2.html#summary-1",
+    "href": "M02_2.html#summary-1",
+    "title": "4  Chaotics: Generative Models and Tools",
+    "section": "4.8 Summary",
+    "text": "4.8 Summary\nToday’s lecture focused on understanding generative models, and how we can use generative models to answer research questions using Bayesian methods. We learn when to use exact inference and MCMC based optimisations, together their types. Finally we illustrate the prior and posterior predictive checks.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>**Chaotics: Generative Models and Tools**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#learnings",
+    "href": "M03_1.html#learnings",
+    "title": "5  Bayeswatch! Causal Connections",
+    "section": "",
+    "text": "Outcomes\nObjectives",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#estimand-estimator-estimate---bayesian-context",
+    "href": "M03_1.html#estimand-estimator-estimate---bayesian-context",
+    "title": "5  Bayeswatch! Causal Connections",
+    "section": "5.4 Estimand, Estimator & Estimate - Bayesian Context",
+    "text": "5.4 Estimand, Estimator & Estimate - Bayesian Context\n\nWhen making causal inferences, we commonly use the terms estimand, estimator, and estimate. The estimand is the quantity of interest—the true value we seek to determine. We define an estimator as the method or procedure that we use to estimate the estimand. Finally, an estimate is the numerical result we obtain from applying a specific estimator to data. Now we will discuss how these terms can be used in Bayesian context.\n\nExample\n\nSuppose, we want to find out the average effectiveness of a vaccine for a respiratory disease among children in Australia. Our estimand is “the true average vaccine effectiveness for this disease among all children in Australia.”\nSince we can’t measure every child, we take a random sample of 10,000 children and record how well the vaccine protects them from the disease. Using this data, we now need to choose an estimator, which is a method to estimate our estimand.\nThe simplest approach is to calculate the average vaccine effectiveness in our sample. In this case, the sample average acts as our estimator, providing an estimate of the true vaccine effectiveness. If our sample average shows 85% effectiveness, then 85% is our estimate based on the sample average estimator.\nNow, in a Bayesian framework, the estimand remains the same, which is the true but unknown average vaccine effectiveness among all children in Australia. However, instead of just using the sample average, our estimator in the Bayesian context is the posterior distribution of vaccine effectiveness. And we already know that this distribution is derived by combining prior knowledge with the likelihood of the observed data using Bayes’ theorem.\nTo summarise this posterior distribution, we can use a specific value, such as the posterior mean or posterior median, as an estimator. The final estimate is the specific value from this distribution. For example, if the posterior mean suggests 85% effectiveness, then 85% is our estimate based on the posterior mean estimator.\n\n5.4.1 Modelling Context\nNow, let us explain this in the context of Bayesian regression problem. Suppose we are interested in understanding how vaccine efficacy for a respiratory-related disease among children in Australia is influenced by certain predictors, such as age, pre-existing health conditions, and socioeconomic status. In this case, our estimand is the set of true regression coefficients that describe the relationship between these predictors and vaccine efficacy.\nA perfect way to determine these coefficients would be to measure vaccine efficacy and collect all relevant predictor data (e.g., age, health conditions, and socioeconomic status) for every child in Australia and then fit a model to the entire population data. However, this is infeasible. Instead, we can estimate the regression coefficients using a sample observation, and we take a random sample of 10,000 children in Australia and collect data on their vaccine efficacy and the relevant predictors. Using this data, we fit a Bayesian model (e.g., a Bayesian linear regression model) to estimate the relationship between the predictors and vaccine efficacy.\nIn the Bayesian framework, we approach this problem by starting with a prior distribution for each regression coefficient, reflecting our prior beliefs about the relationships. For example, based on previous studies, we might believe that younger children have slightly lower vaccine efficacy and use this belief into the prior.\nThe sample data provides the likelihood, representing the probability of observing the data given different values of the regression coefficients. By applying Bayes’ theorem, we combine the prior with the likelihood to produce a posterior distribution for each regression coefficient. The posterior distributions represent our updated beliefs about the coefficients after observing the data.\nFor example, if the posterior mean for the age coefficient is -0.5, it suggests that, on average, each additional year of age is associated with a 0.5% decrease in vaccine efficacy. If the posterior mean for the socioeconomic status coefficient is 2.0, it suggests that higher socioeconomic status is associated with a 2% increase in vaccine efficacy.\nHere, estimand is the true regression coefficients that describe the relationships between the predictors and vaccine efficacy. Estimator is the posterior distributions of the regression coefficients. These distributions summarize the uncertainty about the coefficients. And estimate is the specific value derived from the posterior distributions, such as the posterior mean, median, or mode for each coefficient.\nThis Bayesian approach allows us not only to estimate the coefficients but also to quantify our uncertainty about them, providing a more comprehensive understanding of the predictors’ influence on vaccine efficacy.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_2.html#learnings",
+    "href": "M03_2.html#learnings",
+    "title": "6  Bayeswatch! Part - II",
+    "section": "",
+    "text": "Outcomes\nObjectives",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>**Bayeswatch! Part - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_1.html#learnings",
+    "href": "M04_1.html#learnings",
+    "title": "7  Clusterphobia? Part - I",
+    "section": "",
+    "text": "Outcomes\nObjectives",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>**Clusterphobia? Part - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M04_2.html#learnings",
+    "href": "M04_2.html#learnings",
+    "title": "8  Clusterphobia? Part - II",
+    "section": "",
+    "text": "Outcomes\nObjectives",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>**Clusterphobia? Part - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_1.html#learnings",
+    "href": "M05_1.html#learnings",
+    "title": "9  Size Matters! Part - I",
+    "section": "",
+    "text": "Outcomes\nObjectives",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>**Size Matters! Part - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M05_2.html#learnings",
+    "href": "M05_2.html#learnings",
+    "title": "10  Size Matters! Part - II",
+    "section": "",
+    "text": "Outcomes\nObjectives",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>**Size Matters! Part - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_1.html#learnings",
+    "href": "M06_1.html#learnings",
+    "title": "11  Wander into the Wonder! Part - I",
+    "section": "",
+    "text": "Outcomes\nObjectives",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>**Wander into the Wonder! Part - I**</span>"
+    ]
+  },
+  {
+    "objectID": "M06_2.html#learnings",
+    "href": "M06_2.html#learnings",
+    "title": "12  Wander into the Wonder! Part - II",
+    "section": "",
+    "text": "Outcomes\nObjectives",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>**Wander into the Wonder! Part - II**</span>"
+    ]
+  },
+  {
+    "objectID": "M03_1.html#prior-twites",
+    "href": "M03_1.html#prior-twites",
+    "title": "5  Bayeswatch! Causal Connections",
+    "section": "5.7 Prior twites",
+    "text": "5.7 Prior twites\nSimilarities between IG and students-t. Let’s explain this with Inverse-Gamma distributions with parameters (2,1), i.e., IG(2,1) and Student-t distributions that approximate the IG with parameters (3,0,1), i.e., Student-t(3, 0, 1), where Degrees of Freedom = 3, location = 0 (centered), and Scale = 1. Note that we’ll use the fact that the Inverse-Gamma distribution is the inverse of a Gamma distribution. This means that we can plot the Gamma distributions with appropriate parameters and then invert the axes to simulate the Inverse-Gamma behavior.\n\n\nCode\nlibrary(ggplot2)\nlibrary(gridExtra)\n\n\n\nAttaching package: 'gridExtra'\n\n\nThe following object is masked from 'package:dplyr':\n\n    combine\n\n\nCode\n# Function to plot Inverse-Gamma approximation (using the inverse of Gamma distribution)\nig_density &lt;- function(alpha, beta, x) {\n  return(dgamma(1 / x, shape = alpha, rate = beta) / (x^2))  # Inverse-Gamma as 1/Gamma(x)\n}\n\n# Plot Inverse-Gamma(2,1)\np1 &lt;- ggplot(data.frame(x = seq(0.001, 20, length.out = 1000)), aes(x = x)) +\n  stat_function(fun = function(x) ig_density(2, 1, x), col = \"red\", lwd = 2) +\n  labs(y = \"Density\", x = expression(sigma), \n       title = \"Inverse-Gamma(2, 1)\") +\n  theme_minimal()\n\n# Plot Student-t(3, 0, 1)\np2 &lt;- ggplot(data.frame(x = seq(0.001, 20, length.out = 1000)), aes(x = x)) +\n  stat_function(fun = function(x) dt(x / 1, df = 3) / 1, col = \"blue\", lwd = 2) +\n  labs(y = \"Density\", x = expression(sigma), \n       title = \"Student-t(3, 0, 1)\") +\n  theme_minimal()\n\n# Combine the plots side by side\ngrid.arrange(p1, p2, ncol = 2)\n\n\n\n\n\n\n\n\n\nThus if we\nWhy do we use Cauchy prior? What are the benefits? Is this weakly informative prior?\n\n\nCode\nbmd_model &lt;- brm(\n  formula = BMD ~ BMI + Age + Sex,\n  data = bmd_data,\n  family = gaussian(),\n  prior = c(\n    prior(normal(0, 1), class = \"b\"),       # Priors for slopes\n    prior(normal(0, 1), class = \"Intercept\"),\n    prior(cauchy(0, 1), class = \"sigma\")    # Prior for residual SD\n  ),\n  iter = 2000,\n  chains = 1,\n  cores = 3,\n  seed = 123\n)\n\n\nCompiling Stan program...\n\n\nStart sampling\n\n\n\nSAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).\nChain 1: \nChain 1: Gradient evaluation took 5.2e-05 seconds\nChain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.52 seconds.\nChain 1: Adjust your expectations accordingly!\nChain 1: \nChain 1: \nChain 1: Iteration:    1 / 2000 [  0%]  (Warmup)\nChain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)\nChain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)\nChain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)\nChain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)\nChain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)\nChain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)\nChain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)\nChain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)\nChain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)\nChain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)\nChain 1: Iteration: 2000 / 2000 [100%]  (Sampling)\nChain 1: \nChain 1:  Elapsed Time: 0.244 seconds (Warm-up)\nChain 1:                0.147 seconds (Sampling)\nChain 1:                0.391 seconds (Total)\nChain 1: \n\n\nuse rstan, rstanarm or brms",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>**Bayeswatch! Causal Connections**</span>"
     ]
   }
 ]

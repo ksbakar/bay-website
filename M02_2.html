@@ -297,21 +297,32 @@ window.Quarto = {
   <ul>
   <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">4.1</span> Learnings</a></li>
   <li><a href="#generative-models" id="toc-generative-models" class="nav-link" data-scroll-target="#generative-models"><span class="header-section-number">4.2</span> Generative Models</a></li>
-  <li><a href="#traceable-and-untraceable-solutions" id="toc-traceable-and-untraceable-solutions" class="nav-link" data-scroll-target="#traceable-and-untraceable-solutions"><span class="header-section-number">4.3</span> Traceable and Untraceable Solutions</a></li>
-  <li><a href="#solving-untraceability" id="toc-solving-untraceability" class="nav-link" data-scroll-target="#solving-untraceability"><span class="header-section-number">4.4</span> Solving Untraceability</a>
+  <li><a href="#solving-untraceability" id="toc-solving-untraceability" class="nav-link" data-scroll-target="#solving-untraceability"><span class="header-section-number">4.3</span> Solving Untraceability</a></li>
+  <li><a href="#algorithms" id="toc-algorithms" class="nav-link" data-scroll-target="#algorithms"><span class="header-section-number">4.4</span> Algorithms</a></li>
+  <li><a href="#markov-chain-monte-carlo-mcmc" id="toc-markov-chain-monte-carlo-mcmc" class="nav-link" data-scroll-target="#markov-chain-monte-carlo-mcmc"><span class="header-section-number">4.5</span> Markov chain Monte Carlo (MCMC)</a>
   <ul class="collapse">
-  <li><a href="#mcmc-algorithms" id="toc-mcmc-algorithms" class="nav-link" data-scroll-target="#mcmc-algorithms"><span class="header-section-number">4.4.1</span> MCMC algorithms</a></li>
-  <li><a href="#mcmc-convergence-diagnostics" id="toc-mcmc-convergence-diagnostics" class="nav-link" data-scroll-target="#mcmc-convergence-diagnostics"><span class="header-section-number">4.4.2</span> MCMC convergence diagnostics</a></li>
+  <li><a href="#metropolis-hastings-mh-algorithm" id="toc-metropolis-hastings-mh-algorithm" class="nav-link" data-scroll-target="#metropolis-hastings-mh-algorithm"><span class="header-section-number">4.5.1</span> Metropolis-Hastings (MH) Algorithm</a></li>
+  <li><a href="#gibbs-sampling" id="toc-gibbs-sampling" class="nav-link" data-scroll-target="#gibbs-sampling"><span class="header-section-number">4.5.2</span> Gibbs Sampling</a></li>
+  <li><a href="#hamiltonian-monte-carlo-hmc" id="toc-hamiltonian-monte-carlo-hmc" class="nav-link" data-scroll-target="#hamiltonian-monte-carlo-hmc"><span class="header-section-number">4.5.3</span> Hamiltonian Monte Carlo (HMC)</a></li>
   </ul></li>
-  <li><a href="#prior-and-posterior-predictive-checks" id="toc-prior-and-posterior-predictive-checks" class="nav-link" data-scroll-target="#prior-and-posterior-predictive-checks"><span class="header-section-number">4.5</span> Prior and Posterior Predictive Checks</a>
+  <li><a href="#mcmc-diagnostics" id="toc-mcmc-diagnostics" class="nav-link" data-scroll-target="#mcmc-diagnostics"><span class="header-section-number">4.6</span> MCMC diagnostics</a>
   <ul class="collapse">
-  <li><a href="#prior-predictive-checks" id="toc-prior-predictive-checks" class="nav-link" data-scroll-target="#prior-predictive-checks"><span class="header-section-number">4.5.1</span> Prior Predictive Checks</a></li>
-  <li><a href="#posterior-predictive-checks" id="toc-posterior-predictive-checks" class="nav-link" data-scroll-target="#posterior-predictive-checks"><span class="header-section-number">4.5.2</span> Posterior Predictive Checks</a></li>
+  <li><a href="#convergence" id="toc-convergence" class="nav-link" data-scroll-target="#convergence"><span class="header-section-number">4.6.1</span> Convergence</a></li>
+  <li><a href="#autocorrelation" id="toc-autocorrelation" class="nav-link" data-scroll-target="#autocorrelation"><span class="header-section-number">4.6.2</span> Autocorrelation</a></li>
+  <li><a href="#mixing-efficiency" id="toc-mixing-efficiency" class="nav-link" data-scroll-target="#mixing-efficiency"><span class="header-section-number">4.6.3</span> Mixing &amp; Efficiency</a></li>
+  <li><a href="#code-for-mh" id="toc-code-for-mh" class="nav-link" data-scroll-target="#code-for-mh"><span class="header-section-number">4.6.4</span> Code for MH</a></li>
+  <li><a href="#code-for-gibbs" id="toc-code-for-gibbs" class="nav-link" data-scroll-target="#code-for-gibbs"><span class="header-section-number">4.6.5</span> Code for Gibbs</a></li>
+  <li><a href="#code-for-hmc" id="toc-code-for-hmc" class="nav-link" data-scroll-target="#code-for-hmc"><span class="header-section-number">4.6.6</span> Code for HMC</a></li>
   </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4.6</span> Summary</a></li>
-  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">4.7</span> Live tutorial and discussion</a></li>
-  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">4.8</span> Tutorial Exercises</a></li>
-  <li><a href="#preparation-for-week-5" id="toc-preparation-for-week-5" class="nav-link" data-scroll-target="#preparation-for-week-5"><span class="header-section-number">4.9</span> Preparation for Week 5</a></li>
+  <li><a href="#prior-and-posterior-predictive-checks" id="toc-prior-and-posterior-predictive-checks" class="nav-link" data-scroll-target="#prior-and-posterior-predictive-checks"><span class="header-section-number">4.7</span> Prior and Posterior Predictive Checks</a>
+  <ul class="collapse">
+  <li><a href="#prior-predictive-checks" id="toc-prior-predictive-checks" class="nav-link" data-scroll-target="#prior-predictive-checks"><span class="header-section-number">4.7.1</span> Prior Predictive Checks</a></li>
+  <li><a href="#posterior-predictive-checks" id="toc-posterior-predictive-checks" class="nav-link" data-scroll-target="#posterior-predictive-checks"><span class="header-section-number">4.7.2</span> Posterior Predictive Checks</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4.8</span> Summary</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">4.9</span> Live tutorial and discussion</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">4.10</span> Tutorial Exercises</a></li>
+  <li><a href="#preparation-for-week-5" id="toc-preparation-for-week-5" class="nav-link" data-scroll-target="#preparation-for-week-5"><span class="header-section-number">4.11</span> Preparation for Week 5</a></li>
   </ul>
 </nav>
     </div>
@@ -350,8 +361,8 @@ A generative model in a Bayesian context is one that describes the probabilistic
 <ul>
 <li><strong>Outcomes</strong></li>
 </ul>
-<p>L03:</p>
-<p>L04:</p>
+<p>L03: Explain how these generative models can be used for inference, prediction and model criticism.</p>
+<p>L04: Demonstrate proficiency in using statistical software packages (R) to specify and fit models, assess model fit, detect and remediate non-convergence, and compare models.</p>
 <ul>
 <li><strong>Objectives</strong></li>
 </ul>
@@ -380,31 +391,32 @@ This lecture explores the role of Bayesian tools in statistical modeling, highli
 <iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>A generative model is designed to generate new data points by capturing the intricate probability distributions of existing datasets. By learning these distributions, the model can produce data that reflects the characteristics of original datasets, simulating realistic examples. A generative model can also be used to understand how a set of observed data could have arisen from a set of underlying causes, which we will discuss more later in this course.</p>
-<p>In Bayesian modeling, generative models are particularly useful as they provide a framework for estimating the likelihood of data under different hypotheses. This capability enhances Bayesian inference processes, allowing for more effective prior and posterior distribution updates. The flexibility of generative models in simulating various scenarios can also improve the robustness and accuracy of Bayesian models, ultimately refining the decision-making and predictive capabilities inherent in Bayesian analysis.</p>
+<p>In Bayesian modeling, generative models are particularly useful as they provide a framework for estimating the likelihood of data under different hypotheses. This capability enhances Bayesian inference processes, allowing for more effective prior and posterior distribution updates. The flexibility of generative models in simulating various scenarios can also improve the robustness and accuracy of Bayesian models, and refines the decision-making and predictive capabilities.</p>
 <p>Note that, in this course, we use “generative model” broadly to consider the origins of a particular dataset. However, this term also has a more specific definition, especially as it contrasts with “discriminative models”, for details see <span class="citation" data-cites="bernardo2007generative">Bernardo et al. (<a href="references.html#ref-bernardo2007generative" role="doc-biblioref">2007</a>)</span>.</p>
 <!--
 ref: https://drvalle1.github.io/16_intro_generative_model.html
 -->
-<p>Let’s explain this using the example we discussed earlier related to the vaccine efficacy rate, where we collected data from <span class="math inline">\(n=10\)</span> individuals and the vaccine was effective for 8 individuals. Recall that we also consider a prior probabilty for the effectiveness, which was <span class="math inline">\(0.7\)</span>. Given this information we now recreate the data.</p>
+<p><strong>Example</strong></p>
+<p>Let’s explain this using the example we discussed earlier related to the vaccine efficacy rate. Let use assume that we collect data from <span class="math inline">\(n=100\)</span> individuals and the vaccine was effective for 80 individuals. Let us also assume the prior probabilty for the effectiveness as <span class="math inline">\(0.7\)</span>. Given this information we now recreate the data.</p>
 <ul>
 <li><strong>Data generation:</strong></li>
 </ul>
-<p>In a generative modelling context, we simulate data for these 10 individuals by considering success probability <span class="math inline">\(\theta = 0.8\)</span>.</p>
+<p>In a generative modelling context, we simulate data for these 100 individuals by considering success probability <span class="math inline">\(\theta = 0.8\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>     <span class="co"># Number of individuals</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fl">0.8</span>    <span class="co"># Probability of success</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>size <span class="ot">&lt;-</span> <span class="dv">1</span>  <span class="co"># Number of experiments/replications</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  </span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fl">0.8</span>  </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>size <span class="ot">&lt;-</span> <span class="dv">1</span>  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)  </span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(size, n, theta)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Number of success: "</span>,data,<span class="st">" out of "</span>,n, <span class="st">"individuals"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Number of success:  82  out of  100 individuals"</code></pre>
+<pre><code>[1] "Number of success:  85  out of  100 individuals"</code></pre>
 </div>
 </div>
-<p>We can see that our simulation using one replication yields probability 0.9, whereas, actual data shows <span class="math inline">\(\theta = 0.82\)</span>. Hence, to reflect actual data we need to simulate data for multiple times, i.e., we need to replicate the process, which yields an average value for <span class="math inline">\(\theta = 0.8\)</span> and upper and lower 95% credible interval (0.72,0.88). Note that we used <strong>credible interval</strong> in Bayesian context, unlike in frequentist approach we refer confidence interval.</p>
+<p>We can see that our simulation using one replication yields probability 0.85, whereas, actual data shows <span class="math inline">\(\theta = 0.8\)</span>. Hence, to reflect actual data we need to replicate the data simulation for multiple times, which yields an average value for <span class="math inline">\(\theta \approx 0.8\)</span> and upper and lower 95% credible interval (0.72,0.88).</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -416,37 +428,33 @@ ref: https://drvalle1.github.io/16_intro_generative_model.html
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  </span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(size, n, theta)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">quantile</span>(data, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Successes =</span> data)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Successes)) <span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, n <span class="sc">+</span> <span class="fl">0.5</span>, <span class="at">by =</span> <span class="dv">1</span>),</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"skyblue"</span>,</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">boundary =</span> <span class="sc">-</span><span class="fl">0.5</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span>n,</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Number of successes"</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Histogram of Simulated Binomial Data (n ="</span>, n, <span class="st">", θ ="</span>, theta, <span class="st">")"</span>),</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of successes"</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> ci[<span class="dv">1</span>], <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> ci[<span class="dv">2</span>], <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> ci[<span class="dv">1</span>], <span class="at">y =</span> <span class="fu">max</span>(<span class="fu">table</span>(data)) <span class="sc">*</span> <span class="fl">0.9</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"2.5%: "</span>, ci[<span class="dv">1</span>]), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> ci[<span class="dv">2</span>], <span class="at">y =</span> <span class="fu">max</span>(<span class="fu">table</span>(data)) <span class="sc">*</span> <span class="fl">0.9</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"97.5%: "</span>, ci[<span class="dv">2</span>]), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">quantile</span>(data, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Successes =</span> data)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Successes)) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, n <span class="sc">+</span> <span class="fl">0.5</span>, <span class="at">by =</span> <span class="dv">1</span>),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"skyblue"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">boundary =</span> <span class="sc">-</span><span class="fl">0.5</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="cn">NULL</span>,  </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="cn">NULL</span>     </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Histogram of Simulated Binomial Data (n ="</span>, n, <span class="st">", θ ="</span>, theta, <span class="st">")"</span>),</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Frequency"</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> ci[<span class="dv">1</span>], <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> ci[<span class="dv">2</span>], <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> ci[<span class="dv">1</span>], <span class="at">y =</span> <span class="fu">max</span>(<span class="fu">table</span>(data)) <span class="sc">*</span> <span class="fl">0.9</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"2.5%: "</span>, ci[<span class="dv">1</span>]), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> ci[<span class="dv">2</span>], <span class="at">y =</span> <span class="fu">max</span>(<span class="fu">table</span>(data)) <span class="sc">*</span> <span class="fl">0.9</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"97.5%: "</span>, ci[<span class="dv">2</span>]), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),  </span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()  </span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -456,18 +464,14 @@ ref: https://drvalle1.github.io/16_intro_generative_model.html
 </div>
 </div>
 </section>
-<section id="traceable-and-untraceable-solutions" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="traceable-and-untraceable-solutions"><span class="header-section-number">4.3</span> Traceable and Untraceable Solutions</h2>
-<p>A traceable solution manifests when the posterior distribution can be explicitly determined in a closed-form mathematical expression, facilitating straightforward analysis. This situation arises particularly when the prior distribution and the likelihood function are chosen such that the posterior distribution remains within a recognized family of probability distributions.</p>
-<p>For example, when a conjugate prior is used, the posterior has a known or a same functional form as the prior. This helps to derive posterior parameters easily with simple calculations. This also helps to derive the posterior using exact solutions without relying on numerical or approximation methods. For a Bernoulli model, we have already discussed earlier in Lecture 2, which reflects:</p>
-<p><span class="math display">\[
-\text{Prior: } \theta \sim \text{Beta}(a,b);
-\]</span></p>
-<p><span class="math display">\[
-\text{Posterior: } \theta|y \sim \text{Beta}(a+y,b+n-y)
-\]</span></p>
-<p>An untraceable solution emerges in situations where the posterior distribution cannot be expressed in a closed-form expression. This phenomenon occurs when the likelihood function and the prior distribution are incompatible, resulting in the emergence of complex integrals within Bayes’ theorem that are analytically intractable.</p>
-<p>For example, use of non-conjugate priors. Often complex likelihood functions, such as those involving hierarchical models, mixture models, or high-dimensional data also yields a posterior form of distribution with untraceable solutions, even if we consider conjugate priors for the model parameters. For a non-Gaussian likelihood, use of a uniform prior also yields untraceable solution.</p>
+<section id="solving-untraceability" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="solving-untraceability"><span class="header-section-number">4.3</span> Solving Untraceability</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>We can indentify an untraceable solution in Bayesian inference, where the posterior distribution cannot be expressed in a closed-form expression. This phenomenon occurs when the likelihood function and the prior distribution are incompatible, which results in complex integrals within Bayes’ theorem that are analytically intractable.</p>
+<p>The opposite of untraceable solution is known as the traceable solution, which we have discussed in our previous lectures in the light of exact Bayesian inference. We already know that exact Bayesian inference means computing the posterior analytically, without approximations. And a tractable solution is one that can be computed exactly and efficiently, without requiring numerical approximations or complex sampling methods like Markov Chain Monte Carlo (MCMC). Thus traceable solution can be obtained when the prior distribution and the likelihood function are chosen such that the posterior distribution remains within a recognised family of probability distributions. For example, when a conjugate prior is used, the posterior has a known or a same functional form as the prior, i.e., for a Bernoulli model, that we have already discussed earlier in Lecture 2: <span class="math inline">\(\text{Prior: } \theta \sim \text{Beta}(a,b)\)</span> and <span class="math inline">\(\text{Posterior: } \theta|y \sim \text{Beta}(a+y,b+n-y)\)</span>.</p>
+<p>Use of non-conjugate priors and often complex likelihood functions, such as those involving hierarchical models, mixture models, or high-dimensional data yields a posterior form of distribution with untraceable solutions, even if we consider conjugate priors for the model parameters.</p>
+<p>For a non-Gaussian likelihood (i.e., it does not follow a normal distribution), choosing a uniform prior leads to a situation where the resulting posterior distribution cannot be easily determined or expressed in a simple mathematical form and also yields untraceable solution.</p>
 <!--
 
 Numerical Integration: Directly evaluate the posterior using numerical methods (feasible for low-dimensional problems).
@@ -478,180 +482,140 @@ Variational Inference: Approximate the posterior by a simpler family of distribu
 
 Laplace Approximation: Approximate the posterior with a Gaussian distribution near the mode.
 
+
+
+|         | Traceable Solutions | Untraceable Solutions |
+|---------|---------------------|-----------------------|
+| Posterior | Closed-form expression | Requires approximation or sampling |
+| Prior-Likelihood Relation | Often relies on conjugacy |   No conjugacy needed |
+| Computation | Exact and straightforward   | Computationally intensive |
+| Flexibility   | Limited (conjugate priors only)   | High (any prior-likelihood combination) |
+
+
 -->
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 39%">
-<col style="width: 43%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Traceable Solutions</th>
-<th>Untraceable Solutions</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Posterior</td>
-<td>Closed-form expression</td>
-<td>Requires approximation or sampling</td>
-</tr>
-<tr class="even">
-<td>Prior-Likelihood Relation</td>
-<td>Often relies on conjugacy</td>
-<td>No conjugacy needed</td>
-</tr>
-<tr class="odd">
-<td>Computation</td>
-<td>Exact and straightforward</td>
-<td>Computationally intensive</td>
-</tr>
-<tr class="even">
-<td>Flexibility</td>
-<td>Limited (conjugate priors only)</td>
-<td>High (any prior-likelihood combination)</td>
-</tr>
-</tbody>
-</table>
 </section>
-<section id="solving-untraceability" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="solving-untraceability"><span class="header-section-number">4.4</span> Solving Untraceability</h2>
-<p>Different types of algorithms have been developed to tackle untraceable solutions. Such as numerical integration, Markov chain Monte Carlo (MCMC), variational inference, Laplace approximation etc. In this couse, we will learn how to use and impliment these algorithms to solve real-life problems. We refer <span class="citation" data-cites="gelman2013bayesian">Gelman et al. (<a href="references.html#ref-gelman2013bayesian" role="doc-biblioref">2013</a>)</span> Chapter (..) for details on this for those interested to explore more.</p>
-<section id="mcmc-algorithms" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="mcmc-algorithms"><span class="header-section-number">4.4.1</span> MCMC algorithms</h3>
+<section id="algorithms" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="algorithms"><span class="header-section-number">4.4</span> Algorithms</h2>
+<p>Different types of sampling algorithms have been developed to tackle untraceable solutions, such as rejection sampling, Markov chain Monte Carlo (MCMC), variational inference, Laplace approximation etc. In this couse, we will learn how to use and impliment the MCMC algorithms to solve real-life problems. We refer <span class="citation" data-cites="gelman2013bayesian">Gelman et al. (<a href="references.html#ref-gelman2013bayesian" role="doc-biblioref">2013</a>)</span> for details on this for those interested to explore more.</p>
+</section>
+<section id="markov-chain-monte-carlo-mcmc" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="markov-chain-monte-carlo-mcmc"><span class="header-section-number">4.5</span> Markov chain Monte Carlo (MCMC)</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 <!--
 
 ref: https://www.statlect.com/fundamentals-of-statistics/Markov-Chain-Monte-Carlo
 -->
-<p>In this course, we will focus on learning Markov chain Monte Carlo (MCMC) algorithms, which is a sampling based approach to approximate the posterior distribution when direct sampling is difficult or computationally impractical.</p>
-<p>A Markov chain is a stochastic process where the next state depends only on the current state, not on the sequence of states that preceded it. This property is called the Markov property. The transition between states is defined by a transition probability matrix or kernel. Monte Carlo methods involve random sampling to estimate numerical quantities, such as integrals, expectations, or probabilities. MCMC combines this with Markov chains to generate samples.</p>
+<p>In this course, we will focus on learning Markov chain Monte Carlo (MCMC) algorithm, which is a sampling based approach to obtain the posterior distribution.</p>
+<p>A Markov chain is a stochastic process where the next state depends only on the current state, not on the sequence of states that preceded it. This property is called the Markovian or Markov property. The transition between states is defined by a transition probability matrix or kernel. On the other hand, Monte Carlo methods involve random sampling to estimate numerical quantities, such as integrals or expectations, to approximate the final solution. MCMC combines the Monte Carlo with Markov chains to generate samples.</p>
+<p>Basic concept and generic structure for MCMC can be explained as follows. Say we are interested in parameter <span class="math inline">\(\theta\)</span>, then we state:</p>
+<ul>
+<li>Selecte <span class="math inline">\(\theta^{(0)}\)</span> at an arbitrary point</li>
+<li>At iteration <span class="math inline">\(t\)</span>, sample from a transition distribution <span class="math inline">\(\theta^{(t)}|\theta^{(t-1)}\)</span>, i.e., to generate a new value <span class="math inline">\(\theta = \theta^{(t)}\)</span> given the previous value <span class="math inline">\(\theta = \theta^{(t-1)}\)</span>.</li>
+<li>Repeat the previous step until a specified maximum number of iterations is reached, or until specified convergence criterion is satisfied.</li>
+</ul>
+<p>Hence, the MCMC states, there exist a transition distribution that guarantee that</p>
+<p><span class="math display">\[
+p(\theta\in \{\theta^{(t)},\theta^{(t+1)},...,\theta^{(q)} \}) \rightarrow p(\theta|\text{data}); \text{   as   } q\rightarrow \infty
+\]</span></p>
+<p>The function that determines the probability for selecting the next location, is called the transition distribution.</p>
+<p>Now, we will discuss some popular and common MCMC methods we use in practice to solve real-life applications.</p>
+<ul>
+<li><strong>Common MCMC methods</strong></li>
+</ul>
 <p>Some common MCMC algorithms include Metropolis-Hastings (MH) algorithm, Gibbs sampling, Hamiltonian Monte Carlo (HMC) etc. MH is a general MCMC method that generates candidate samples from a proposal distribution. A candidate is accepted or rejected based on an acceptance probability, ensuring the chain converges to the target distribution. Whereas, Gibbs sampling is a special case of the Metropolis-Hastings algorithm. Updates one variable at a time by sampling from its conditional distribution while keeping other variables fixed. The Hamiltonian Monte Carlo (HMC) algorithm uses gradient information from the target distribution to propose new samples, making it more efficient for high-dimensional problems.</p>
-<p>Here’s a summary table comparing the Metropolis-Hastings (MH) algorithm, Gibbs Sampling, and Hamiltonian Monte Carlo (HMC), focusing on when each method is most useful:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Metropolis-Hastings (MH)</th>
-<th>Gibbs Sampling</th>
-<th>Hamiltonian Monte Carlo (HMC)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Applicability</td>
-<td>General-purpose; works for most distributions, even when structure is unknown.</td>
-<td>Requires easily derived and sampled conditional distributions.</td>
-<td>Requires gradients of the target distribution.</td>
-</tr>
-<tr class="even">
-<td>Flexibility</td>
-<td>Highly flexible; can handle multimodal or complex distributions.</td>
-<td>Limited to cases where conditional distributions exist.</td>
-<td>Best for smooth, high-dimensional, continuous distributions.</td>
-</tr>
-<tr class="odd">
-<td>Efficiency</td>
-<td>May require many iterations due to rejection.</td>
-<td>Efficient for models with structured dependencies.</td>
-<td>Highly efficient in high dimensions.</td>
-</tr>
-<tr class="even">
-<td>Parameter Tuning</td>
-<td>Requires tuning of the proposal distribution (e.g., step size).</td>
-<td>No tuning required.</td>
-<td>Requires tuning of step size and number of leapfrog steps.</td>
-</tr>
-<tr class="odd">
-<td>Correlated Variables</td>
-<td>Can handle correlated variables with appropriate proposal design.</td>
-<td>May struggle with high correlation due to sequential updates.</td>
-<td>Handles correlation effectively with gradient-based proposals.</td>
-</tr>
-<tr class="even">
-<td>Model Type</td>
-<td>Suitable for any distribution, discrete or continuous.</td>
-<td>Best for structured models (e.g., hierarchical Bayesian).</td>
-<td>Only for continuous, differentiable distributions.</td>
-</tr>
-<tr class="odd">
-<td>Complexity of Implementation</td>
-<td>Relatively simple to implement.</td>
-<td>Simple if conditional distributions are available.</td>
-<td>More complex due to gradient computations.</td>
-</tr>
-<tr class="even">
-<td>Computation Cost Per Step</td>
-<td>Low to moderate, depending on the proposal.</td>
-<td>Low per iteration.</td>
-<td>High due to gradient and Hamiltonian computations.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="mcmc-convergence-diagnostics" class="level3" data-number="4.4.2">
-<h3 data-number="4.4.2" class="anchored" data-anchor-id="mcmc-convergence-diagnostics"><span class="header-section-number">4.4.2</span> MCMC convergence diagnostics</h3>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<p>If all chains exhibit good mixing and overlap significantly, convergence is likely achieved. For example: A poorly mixed trace might stay in one region for too long or exhibit a trend. Each chain fluctuates randomly, indicating that it explores the target distribution.</p>
-<p>Autocorrelation should decay quickly (close to 0 at larger lags), indicating less dependence between consecutive samples. Slow decay indicates that the chain is not exploring efficiently.</p>
-<p>Gelman-Rubin Diagnostic <span class="math inline">\(\hat{R}\)</span> near 1 indicates convergence. Gelman-Rubin Plot will show how <span class="math inline">\(\hat{R}\)</span> decreases over iterations. A flat line near 1 confirms that all chains have reached the stationary distribution.</p>
-<section id="mh-algorithm" class="level4" data-number="4.4.2.1">
-<h4 data-number="4.4.2.1" class="anchored" data-anchor-id="mh-algorithm"><span class="header-section-number">4.4.2.1</span> MH algorithm</h4>
-<p>We want to sample from a standard normal distribution <span class="math inline">\(N(0,1)\)</span> using the Metropolis-Hastings algorithm, starting from an arbitrary initial point. This allows us to observe how the MCMC chain gradually converges to the target distribution. We write the target density <span class="math inline">\(y\sim N(0,1)\)</span> as:</p>
-<p><span class="math display">\[\begin{align}
-p(y) &amp;= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{y^2}{2}\right)
-\end{align}\]</span></p>
+<!--
+
+Here’s a summary table comparing the Metropolis-Hastings (MH) algorithm, Gibbs Sampling, and Hamiltonian Monte Carlo (HMC), focusing on when each method is most useful:
+
+| | Metropolis-Hastings (MH) |  Gibbs Sampling  | Hamiltonian Monte Carlo (HMC) |
+|---------|---------|---------|---------|
+Applicability | General-purpose; works for most distributions, even when structure is unknown.  | Requires easily derived and sampled conditional distributions.    | Requires gradients of the target distribution.
+Flexibility | Highly flexible; can handle multimodal or complex distributions.  | Limited to cases where conditional distributions exist.   | Best for smooth, high-dimensional, continuous distributions.
+Efficiency  | Slow mixing, it may require many iterations due to rejection. | Efficient for models with structured dependencies.    | Highly efficient in high dimensions.|
+
+-->
+<section id="metropolis-hastings-mh-algorithm" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="metropolis-hastings-mh-algorithm"><span class="header-section-number">4.5.1</span> Metropolis-Hastings (MH) Algorithm</h3>
+<p>The MH algorithm generates a sequence of samples that gradually approximates a target distribution say <span class="math inline">\(p(\theta)\)</span>. It starts with an arbitrary value say <span class="math inline">\(\theta^{(0)}\)</span>, and then uses a proposal distribution <span class="math inline">\(q(\theta^* | \theta_t)\)</span> to propse a new value <span class="math inline">\(\theta^*\)</span>. In the next step it accepts or rejects <span class="math inline">\(\theta^*\)</span> using an acceptance probability:</p>
+<p><span class="math display">\[
+A = \min \left(1, \frac{p(\theta^*) q(\theta_t | \theta^*)}{p(\theta_t) q(\theta^* | \theta_t)} \right)
+\]</span></p>
+<p>Now, if accepted, the we set <span class="math inline">\(\theta_{t+1} = \theta^*\)</span>, otherwise keep the current sample, i.e., <span class="math inline">\(\theta_{t+1} = \theta_t\)</span>. We then iterate this process to generate a sequence of samples, and over time, the samples approximate <span class="math inline">\(p(\theta)\)</span>.</p>
+<p><strong>Example</strong></p>
+<p>Suppose, we want to sample from a standard normal distribution <span class="math inline">\(N(0,1)\)</span> using the Metropolis-Hastings algorithm, starting from an arbitrary initial point. This allows us to observe how the MCMC chain gradually converges to the target distribution. We write the target density <span class="math inline">\(\theta \sim N(0,1)\)</span> as:</p>
+<p><span class="math display">\[
+p(\theta) = \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{\theta^2}{2}\right)
+\]</span></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>metropolis_hastings <span class="ot">&lt;-</span> <span class="cf">function</span>(target_density, proposal_sd, n_iter, initial_value) {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  chain <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iter)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  chain[<span class="dv">1</span>] <span class="ot">&lt;-</span> initial_value</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>n_iter) {</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    proposal <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> chain[i <span class="sc">-</span> <span class="dv">1</span>], <span class="at">sd =</span> proposal_sd)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    acceptance_prob <span class="ot">&lt;-</span> <span class="fu">min</span>(<span class="dv">1</span>, <span class="fu">target_density</span>(proposal) <span class="sc">/</span> <span class="fu">target_density</span>(chain[i <span class="sc">-</span> <span class="dv">1</span>]))</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> acceptance_prob) {</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      chain[i] <span class="ot">&lt;-</span> proposal</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>      chain[i] <span class="ot">&lt;-</span> chain[i <span class="sc">-</span> <span class="dv">1</span>]</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(chain)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>target_density <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>n_iter <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>n_chains <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>chains <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">chain1 =</span> <span class="fu">metropolis_hastings</span>(target_density, <span class="at">proposal_sd =</span> <span class="dv">1</span>, n_iter, <span class="at">initial_value =</span> <span class="dv">10</span>),</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">chain2 =</span> <span class="fu">metropolis_hastings</span>(target_density, <span class="at">proposal_sd =</span> <span class="dv">1</span>, n_iter, <span class="at">initial_value =</span> <span class="sc">-</span><span class="dv">10</span>),</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">chain3 =</span> <span class="fu">metropolis_hastings</span>(target_density, <span class="at">proposal_sd =</span> <span class="dv">1</span>, n_iter, <span class="at">initial_value =</span> <span class="dv">5</span>)</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>mcmc_chains <span class="ot">&lt;-</span> <span class="fu">mcmc.list</span>(</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(chains<span class="sc">$</span>chain1),</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(chains<span class="sc">$</span>chain2),</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(chains<span class="sc">$</span>chain3)</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_chains) {</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(mcmc_chains[[i]], <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, </span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Trace Plot: Chain"</span>, i), </span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Iteration"</span>, <span class="at">ylab =</span> <span class="st">"Value"</span>)</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>metropolis_hastings <span class="ot">&lt;-</span> <span class="cf">function</span>(target_density, proposal_sd, n_iter, initial_value) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  chain <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iter)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  chain[<span class="dv">1</span>] <span class="ot">&lt;-</span> initial_value</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>n_iter) {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    proposal <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> chain[i <span class="sc">-</span> <span class="dv">1</span>], <span class="at">sd =</span> proposal_sd)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    acceptance_prob <span class="ot">&lt;-</span> <span class="fu">min</span>(<span class="dv">1</span>, <span class="fu">target_density</span>(proposal) <span class="sc">/</span> <span class="fu">target_density</span>(chain[i <span class="sc">-</span> <span class="dv">1</span>]))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> acceptance_prob) {</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      chain[i] <span class="ot">&lt;-</span> proposal</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      chain[i] <span class="ot">&lt;-</span> chain[i <span class="sc">-</span> <span class="dv">1</span>]</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(chain)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>target_density <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>n_iter <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>n_chains <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>chains <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">chain1 =</span> <span class="fu">metropolis_hastings</span>(target_density, <span class="at">proposal_sd =</span> <span class="dv">1</span>, n_iter, <span class="at">initial_value =</span> <span class="dv">10</span>),</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">chain2 =</span> <span class="fu">metropolis_hastings</span>(target_density, <span class="at">proposal_sd =</span> <span class="dv">1</span>, n_iter, <span class="at">initial_value =</span> <span class="sc">-</span><span class="dv">10</span>),</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">chain3 =</span> <span class="fu">metropolis_hastings</span>(target_density, <span class="at">proposal_sd =</span> <span class="dv">1</span>, n_iter, <span class="at">initial_value =</span> <span class="dv">5</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>mcmc_chains <span class="ot">&lt;-</span> <span class="fu">mcmc.list</span>(</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(chains<span class="sc">$</span>chain1),</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(chains<span class="sc">$</span>chain2),</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(chains<span class="sc">$</span>chain3)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mcmc_chains)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Iterations = 1:10000
+Thinning interval = 1 
+Number of chains = 3 
+Sample size per chain = 10000 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+          Mean             SD       Naive SE Time-series SE 
+     -0.025039       1.066546       0.006158       0.020382 
+
+2. Quantiles for each variable:
+
+    2.5%      25%      50%      75%    97.5% 
+-2.05216 -0.70284 -0.01213  0.65225  1.94265 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#par(mfrow = c(1, 3))</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#for (i in 1:n_chains) {</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  plot(mcmc_chains[[i]], type = "l", col = "blue", </span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#       main = paste("Chain", i), </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       xlab = "Iteration", ylab = "Value",</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       trace = TRUE, density = FALSE)</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#}</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lattice)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(mcmc_chains, <span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"green"</span>), <span class="at">lwd=</span><span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -660,121 +624,95 @@ p(y) &amp;= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{y^2}{2}\right)
 </figure>
 </div>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/MH-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/MH-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_chains) {</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autocorr.plot</span>(mcmc_chains[[i]], <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Autocorrelation: Chain"</span>, i), <span class="at">lag.max =</span> <span class="dv">50</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mcmc_chains_mh <span class="ot">&lt;-</span> mcmc_chains</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/MH-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/MH-5.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/MH-6.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gelman_diag <span class="ot">&lt;-</span> <span class="fu">gelman.diag</span>(mcmc_chains)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gelman_diag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Potential scale reduction factors:
-
-     Point est. Upper C.I.
-[1,]          1          1</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.plot</span>(mcmc_chains)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/MH-7.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
 </div>
 </section>
-<section id="gibbs-sampling" class="level4" data-number="4.4.2.2">
-<h4 data-number="4.4.2.2" class="anchored" data-anchor-id="gibbs-sampling"><span class="header-section-number">4.4.2.2</span> Gibbs sampling</h4>
+<section id="gibbs-sampling" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="gibbs-sampling"><span class="header-section-number">4.5.2</span> Gibbs Sampling</h3>
+<p>The Gibbs sampling algorithm is a special case of the Metropolis-Hastings (MH) algorithm and is particularly useful when we want to do sampling from high-dimensional joint distributions. Instead of sampling all variables at once, Gibbs sampling updates one variable at a time, conditioning on the others.</p>
+<p>Suppose we have a joint distribution <span class="math inline">\(p(\theta_1, \theta_2)\)</span>, and the algorithm starts with arbitrary initial values for all variables, i.e., <span class="math inline">\(\theta_1^{(0)}\)</span> and <span class="math inline">\(\theta_2^{(0)}\)</span>. For each variable then we sample from its conditional distribution, i.e., for <span class="math inline">\(\theta_1\)</span> we use conditional distribution <span class="math inline">\(p(\theta_1|\theta_2)\)</span> and then for <span class="math inline">\(\theta_2\)</span> we use <span class="math inline">\(p(\theta_2|\theta_1)\)</span>. This means we sample <span class="math inline">\(\theta_1\)</span> given all other current values, i.e., in our example this is <span class="math inline">\(\theta_2\)</span> and then sample <span class="math inline">\(\theta_2\)</span> given <span class="math inline">\(\theta_1\)</span>. We then repeat the process for many iterations until the samples converge to the target distribution.</p>
+<p><strong>Example</strong></p>
 <p>Let’s use Gibbs Sampling to sample from a bivariate normal distribution where the marginal distributions of each variable are normal, but the two variables are correlated. We’ll then assess the convergence using trace plots, autocorrelation plots, and the Gelman-Rubin diagnostic.</p>
-<p>The joint density is the bivariate normal distribution: <span class="math display">\[\begin{align}
-p(x,y) &amp;= \frac{1}{2\pi\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left(x^2-2\rho x y +y^2 \right) \right)
-\end{align}\]</span> where <span class="math inline">\(\rho\)</span> is the correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></p>
+<p>The joint density is the bivariate normal distribution:</p>
+<p><span class="math display">\[
+p(x,y) = \frac{1}{2\pi\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left(x^2-2\rho x y +y^2 \right) \right)
+\]</span></p>
+<p>where <span class="math inline">\(\rho\)</span> is the correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>gibbs_sampling <span class="ot">&lt;-</span> <span class="cf">function</span>(n_iter, rho, initial_values) {</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iter)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iter)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  x[<span class="dv">1</span>] <span class="ot">&lt;-</span> initial_values[<span class="dv">1</span>]</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  y[<span class="dv">1</span>] <span class="ot">&lt;-</span> initial_values[<span class="dv">2</span>]</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>n_iter) {</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> rho <span class="sc">*</span> y[i <span class="sc">-</span> <span class="dv">1</span>], <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> rho<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    y[i] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> rho <span class="sc">*</span> x[i], <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> rho<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y))</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)         </span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>n_iter <span class="ot">&lt;-</span> <span class="dv">1000</span>       </span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>rho <span class="ot">&lt;-</span> <span class="fl">0.8</span>           </span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>initial_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)  </span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>chain1 <span class="ot">&lt;-</span> <span class="fu">gibbs_sampling</span>(n_iter, rho, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>chain2 <span class="ot">&lt;-</span> <span class="fu">gibbs_sampling</span>(n_iter, rho, <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>chain3 <span class="ot">&lt;-</span> <span class="fu">gibbs_sampling</span>(n_iter, rho, <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">10</span>))</span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>mcmc_chains <span class="ot">&lt;-</span> <span class="fu">mcmc.list</span>(</span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(chain1)),</span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(chain2)),</span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(chain3))</span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(mcmc_chains[[i]][, <span class="st">"x"</span>], <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>,</span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Trace Plot: Chain"</span>, i, <span class="st">"(x)"</span>), </span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Iteration"</span>, <span class="at">ylab =</span> <span class="st">"Value"</span>)</span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(mcmc_chains[[i]][, <span class="st">"y"</span>], <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"red"</span>,</span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Trace Plot: Chain"</span>, i, <span class="st">"(y)"</span>), </span>
-<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Iteration"</span>, <span class="at">ylab =</span> <span class="st">"Value"</span>)</span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gibbs_sampling <span class="ot">&lt;-</span> <span class="cf">function</span>(n_iter, rho, initial_values) {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iter)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iter)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  x[<span class="dv">1</span>] <span class="ot">&lt;-</span> initial_values[<span class="dv">1</span>]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  y[<span class="dv">1</span>] <span class="ot">&lt;-</span> initial_values[<span class="dv">2</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>n_iter) {</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> rho <span class="sc">*</span> y[i <span class="sc">-</span> <span class="dv">1</span>], <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> rho<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    y[i] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> rho <span class="sc">*</span> x[i], <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> rho<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">theta_1 =</span> x, <span class="at">theta_2 =</span> y))</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)         </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>n_iter <span class="ot">&lt;-</span> <span class="dv">1000</span>       </span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>rho <span class="ot">&lt;-</span> <span class="fl">0.8</span>           </span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>initial_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)  </span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>chain1 <span class="ot">&lt;-</span> <span class="fu">gibbs_sampling</span>(n_iter, rho, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>chain2 <span class="ot">&lt;-</span> <span class="fu">gibbs_sampling</span>(n_iter, rho, <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>chain3 <span class="ot">&lt;-</span> <span class="fu">gibbs_sampling</span>(n_iter, rho, <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">10</span>))</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>mcmc_chains <span class="ot">&lt;-</span> <span class="fu">mcmc.list</span>(</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(chain1)),</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(chain2)),</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(chain3))</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mcmc_chains)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Iterations = 1:1000
+Thinning interval = 1 
+Number of chains = 3 
+Sample size per chain = 1000 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+           Mean    SD Naive SE Time-series SE
+theta_1 0.01841 1.026  0.01874        0.03854
+theta_2 0.01097 1.018  0.01858        0.03912
+
+2. Quantiles for each variable:
+
+          2.5%     25%     50%    75% 97.5%
+theta_1 -1.943 -0.6345 0.02087 0.6801 1.827
+theta_2 -1.902 -0.6288 0.01558 0.6646 1.902</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#par(mfrow = c(2, 3))</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#for (i in 1:3) {</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  plot(mcmc_chains[[i]][, "x"], type = "l", col = "blue",</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#       main = paste("Chain", i, "(x)"), </span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       xlab = "Iteration", ylab = "Value",</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       density = FALSE)</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  plot(mcmc_chains[[i]][, "y"], type = "l", col = "red",</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       main = paste("Chain", i, "(y)"), </span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       xlab = "Iteration", ylab = "Value",</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       density = FALSE)</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#}</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lattice)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(mcmc_chains, <span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"green"</span>), <span class="at">lwd=</span><span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -783,123 +721,22 @@ p(x,y) &amp;= \frac{1}{2\pi\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left
 </figure>
 </div>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-5.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-6.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autocorr.plot</span>(mcmc_chains[[i]][, <span class="st">"x"</span>], <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Autocorrelation: Chain"</span>, i, <span class="st">"(x)"</span>))</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autocorr.plot</span>(mcmc_chains[[i]][, <span class="st">"y"</span>], <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Autocorrelation: Chain"</span>, i, <span class="st">"(y)"</span>))</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mcmc_chains_gibbs <span class="ot">&lt;-</span> mcmc_chains</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-7.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-8.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-9.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-10.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-11.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-12.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gelman_diag <span class="ot">&lt;-</span> <span class="fu">gelman.diag</span>(mcmc_chains)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gelman_diag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Potential scale reduction factors:
-
-  Point est. Upper C.I.
-x          1       1.02
-y          1       1.02
-
-Multivariate psrf
-
-1</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.plot</span>(mcmc_chains)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M02_2_files/figure-html/Gibbs-13.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
 </div>
 </section>
-<section id="hmc" class="level4" data-number="4.4.2.3">
-<h4 data-number="4.4.2.3" class="anchored" data-anchor-id="hmc"><span class="header-section-number">4.4.2.3</span> HMC</h4>
-<p>Hamiltonian Monte Carlo (HMC) is a powerful MCMC algorithm that uses information about the gradient of the log-probability density to efficiently sample from complex distributions. Below, we provide an example of implementing HMC using R with the rstan package, which includes a highly optimized implementation of HMC.</p>
+<section id="hamiltonian-monte-carlo-hmc" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="hamiltonian-monte-carlo-hmc"><span class="header-section-number">4.5.3</span> Hamiltonian Monte Carlo (HMC)</h3>
+<p>Hamiltonian Monte Carlo (HMC) is a powerful MCMC algorithm that uses information about the gradient of the log-probability density to efficiently sample from complex distributions. HMC is inspired by Hamiltonian mechanics, which describes the motion of objects in a physical system. Here, we use a system in Hamiltonian mechanics and is defined by <span class="math inline">\(H(\theta,p)=L(\theta)+K(p)\)</span>, where <span class="math inline">\(L(\theta)\)</span> is the negative log of the target density and <span class="math inline">\(K(p)\)</span> is a kinetic energy, which we usually model using a Gaussian distribution.</p>
+<p>The sampling steps involves by initialising with a position <span class="math inline">\(\theta_t\)</span> and sample <span class="math inline">\(p_t\)</span> from a Gaussian distribution. Then simulate Hamiltonian dynamics using gradient of <span class="math inline">\(L(\theta)\)</span> and hence update the position and momentum iteratively. After the simulation, we propose a new state <span class="math inline">\((\theta^*,p^*)\)</span> and accept or reject the proposed step using Metropolis criterion:</p>
+<p><span class="math display">\[
+A = \min \left(1, \frac{\exp(-H(\theta^*, p^*))}{\exp(-H(\theta_t, p_t))} \right)
+\]</span></p>
+<p>And, if accepted, move to <span class="math inline">\(\theta^*\)</span>, and for rejection stay at <span class="math inline">\(\theta_t\)</span>. We then repeat for many iterations to generate samples.</p>
+<p><strong>Example</strong></p>
+<p>Below, we provide an example of implementing HMC for normal distriution with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>, using R with the rstan package, which includes a highly optimised implementation of HMC.</p>
 <!--
 
 ref: https://mc-stan.org/bayesplot/articles/visual-mcmc-diagnostics.html
@@ -908,16 +745,16 @@ ref: https://mc-stan.org/bayesplot/articles/visual-mcmc-diagnostics.html
 <div class="cell" data-ech="true">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstan)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>true_mu <span class="ot">&lt;-</span> <span class="fl">5.0</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>true_sigma <span class="ot">&lt;-</span> <span class="fl">2.0</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>n_samples <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_samples, <span class="at">mean =</span> true_mu, <span class="at">sd =</span> true_sigma)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y, <span class="at">breaks =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">main =</span> <span class="st">"Observed Data"</span>, <span class="at">xlab =</span> <span class="st">"y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstan)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>true_mu <span class="ot">&lt;-</span> <span class="fl">5.0</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>true_sigma <span class="ot">&lt;-</span> <span class="fl">2.0</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>n_samples <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_samples, <span class="at">mean =</span> true_mu, <span class="at">sd =</span> true_sigma)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y, <span class="at">breaks =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">main =</span> <span class="st">"Observed Data"</span>, <span class="at">xlab =</span> <span class="st">"y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -928,41 +765,41 @@ ref: https://mc-stan.org/bayesplot/articles/visual-mcmc-diagnostics.html
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>stan_code <span class="ot">&lt;-</span> <span class="st">"</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="st">data {</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="st">  int&lt;lower=0&gt; N;        // Number of observations</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="st">  vector[N] y;           // Observed data</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="st">parameters {</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="st">  real mu;               // Mean</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="st">  real&lt;lower=0&gt; sigma;   // Standard deviation</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="st">model {</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="st">  mu ~ normal(0, 10);    // Prior for mu</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="st">  sigma ~ normal(0, 10); // Prior for sigma</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="st">  y ~ normal(mu, sigma); // Likelihood</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>stan_data <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">N =</span> <span class="fu">length</span>(y),</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> y</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">stan</span>(</span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_code =</span> stan_code,</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> stan_data,</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,      </span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,    </span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,       </span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1234</span>         </span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>stan_code <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="st">data {</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">  int&lt;lower=0&gt; N;        // Number of observations</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">  vector[N] y;           // Observed data</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">parameters {</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">  real mu;               // Mean</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="st">  real&lt;lower=0&gt; sigma;   // Standard deviation</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="st">model {</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="st">  mu ~ normal(0, 10);    // Prior for mu</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="st">  sigma ~ normal(0, 10); // Prior for sigma</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="st">  y ~ normal(mu, sigma); // Likelihood</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>stan_data <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">N =</span> <span class="fu">length</span>(y),</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> y</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">stan</span>(</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_code =</span> stan_code,</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> stan_data,</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,      </span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,    </span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,       </span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1234</span>         </span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 2e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.2 seconds.
+Chain 1: Gradient evaluation took 8.7e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.87 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -979,15 +816,15 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.016 seconds (Warm-up)
-Chain 1:                0.015 seconds (Sampling)
-Chain 1:                0.031 seconds (Total)
+Chain 1:  Elapsed Time: 0.053 seconds (Warm-up)
+Chain 1:                0.051 seconds (Sampling)
+Chain 1:                0.104 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 5e-06 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.05 seconds.
+Chain 2: Gradient evaluation took 1e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -1004,15 +841,15 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 0.029 seconds (Warm-up)
-Chain 2:                0.016 seconds (Sampling)
-Chain 2:                0.045 seconds (Total)
+Chain 2:  Elapsed Time: 0.089 seconds (Warm-up)
+Chain 2:                0.047 seconds (Sampling)
+Chain 2:                0.136 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 5e-06 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.05 seconds.
+Chain 3: Gradient evaluation took 1.3e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -1029,14 +866,14 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.018 seconds (Warm-up)
-Chain 3:                0.015 seconds (Sampling)
-Chain 3:                0.033 seconds (Total)
+Chain 3:  Elapsed Time: 0.057 seconds (Warm-up)
+Chain 3:                0.046 seconds (Sampling)
+Chain 3:                0.103 seconds (Total)
 Chain 3: </code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"sigma"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"sigma"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Inference for Stan model: anon_model.
@@ -1047,15 +884,28 @@ post-warmup draws per chain=1000, total post-warmup draws=3000.
 mu    5.06       0 0.21 4.65 4.92 5.06 5.20  5.49  2598    1
 sigma 2.11       0 0.16 1.83 2.00 2.10 2.21  2.45  2926    1
 
-Samples were drawn using NUTS(diag_e) at Sun Mar 30 22:00:08 2025.
+Samples were drawn using NUTS(diag_e) at Sat Apr  5 11:53:52 2025.
 For each parameter, n_eff is a crude measure of effective sample size,
 and Rhat is the potential scale reduction factor on split chains (at 
 convergence, Rhat=1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(fit, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"sigma"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(bayesplot)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_trace(fit, pars = c("mu", "sigma"))</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_areas(fit, pars = c("mu", "sigma"))</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_acf_bar(fit, pars = c("mu", "sigma"))</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>posterior_samples <span class="ot">&lt;-</span> <span class="fu">as.array</span>(fit)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>mcmc_chains <span class="ot">&lt;-</span> <span class="fu">mcmc.list</span>(</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(posterior_samples[,<span class="dv">1</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])),</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(posterior_samples[,<span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])),</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(posterior_samples[,<span class="dv">3</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]))</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lattice)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(mcmc_chains, <span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"green"</span>), <span class="at">lwd=</span><span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1066,38 +916,203 @@ convergence, Rhat=1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_areas</span>(fit, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"sigma"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mcmc_chains_hmc <span class="ot">&lt;-</span> mcmc_chains</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use shinystan</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#library(shinystan)</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">#launch_shinystan(fit)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="mcmc-diagnostics" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="mcmc-diagnostics"><span class="header-section-number">4.6</span> MCMC diagnostics</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>When we run Markov Chain Monte Carlo (MCMC) methods for Bayesian inference, we need to make sure our samples actually represent the true posterior distribution. MCMC doesn’t guarantee good results on its own, so we rely on MCMC diagnostics to check for issues like lack of convergence, autocorrelation, and poor mixing.</p>
+<section id="convergence" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="convergence"><span class="header-section-number">4.6.1</span> Convergence</h3>
+<p>We first check whether the MCMC chain has actually converged to the posterior distribution. To check this we rely on methods such as: trace plots and Gelman-Rubin Diagnostic using R statistic.</p>
+<p>If the trace plot looks like a “hairy caterpillar” without trends or long drifts, that’s a good sign. If we see big jumps or slow drifting, we might need a longer burn-in period or better tuning.</p>
+<p>If we run multiple chains as indicated in the examples above, the we can compare their variance, which is also known as Gelman-Rubin Diagnostic and denote the estimate as <span class="math inline">\(\hat{R}\)</span>. An <span class="math inline">\(\hat{R}\)</span> near 1 typically indicates convergence, i.e., all chains are settled into the same stationary distribution. It is also important to check the Gelman-Rubin plot, which usually show how <span class="math inline">\(\hat{R}\)</span> decreases over iterations.</p>
+</section>
+<section id="autocorrelation" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="autocorrelation"><span class="header-section-number">4.6.2</span> Autocorrelation</h3>
+<p>We can also use autocorrelation plots to check how correlated our MCMC samples are with previous ones. Ideally, the correlation should drop off quickly, if it lingers then we may need to adjust our proposal distribution for MH or thinning interval or run the chain for more iterations.</p>
+<p>Another measurement diagnostic is the effective sample size (ESS). If ESS is low, it means we’re getting fewer independent samples than expected. Increasing the total iterations or improving sampling efficiency (e.g., using Hamiltonian Monte Carlo instead of Metropolis-Hastings) can help to increase the ESS.</p>
+</section>
+<section id="mixing-efficiency" class="level3" data-number="4.6.3">
+<h3 data-number="4.6.3" class="anchored" data-anchor-id="mixing-efficiency"><span class="header-section-number">4.6.3</span> Mixing &amp; Efficiency</h3>
+<p>Even if our chain is converging, we want to make sure it’s exploring the full posterior efficiently. Poor mixing shows up when the chain gets stuck in one region for too long before jumping elsewhere. If we notice this, the we can tweak the sampling algorithm to improve mixing.</p>
+<p>For Metropolis-Hastings, we aim for an acceptance rate between 20% and 50%. If it’s too low, our proposals might be too aggressive; if it’s too high, they might be too conservative.</p>
+<p>Running MCMC isn’t just about pressing “go” and hoping for the best—we actively check these diagnostics to ensure our samples are reliable. If we run into problems, we adjust our burn-in period, reparameterize our model, or switch to a more advanced sampler like Hamiltonian Monte Carlo.</p>
+</section>
+<section id="code-for-mh" class="level3" data-number="4.6.4">
+<h3 data-number="4.6.4" class="anchored" data-anchor-id="code-for-mh"><span class="header-section-number">4.6.4</span> Code for MH</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## MH</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">#par(mfrow = c(1, 3))</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#for (i in 1:n_chains) {</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  autocorr.plot(mcmc_chains_mh[[i]], main = #paste("Autocorrelation: Chain", i), lag.max = 50)</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">#}</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>extract_acf <span class="ot">&lt;-</span> <span class="cf">function</span>(chain, <span class="at">lag.max =</span> <span class="dv">40</span>) {</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  acf_values <span class="ot">&lt;-</span> <span class="fu">acf</span>(chain, <span class="at">plot =</span> <span class="cn">FALSE</span>, <span class="at">lag.max =</span> lag.max)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">Lag =</span> acf_values<span class="sc">$</span>lag, <span class="at">ACF =</span> acf_values<span class="sc">$</span>acf)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>acf_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_mh[[<span class="dv">1</span>]]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 1"</span>),</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_mh[[<span class="dv">2</span>]]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 2"</span>),</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_mh[[<span class="dv">3</span>]]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 3"</span>)</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(acf_data, <span class="fu">aes</span>(<span class="at">x =</span> Lag, <span class="at">y =</span> ACF, <span class="at">fill =</span> Chain)) <span class="sc">+</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Autocorrelation of MCMC Chains - MH"</span>, <span class="at">x =</span> <span class="st">"Lag"</span>, <span class="at">y =</span> <span class="st">"Autocorrelation"</span>) <span class="sc">+</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="M02_2_files/figure-html/HMC-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="M02_2_files/figure-html/mh_diag-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_acf_bar</span>(fit, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"sigma"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>gelman_diag <span class="ot">&lt;-</span> <span class="fu">gelman.diag</span>(mcmc_chains_mh)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gelman_diag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Potential scale reduction factors:
+
+     Point est. Upper C.I.
+[1,]          1          1</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.plot</span>(mcmc_chains_mh)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="M02_2_files/figure-html/HMC-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="M02_2_files/figure-html/mh_diag-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="code-for-gibbs" class="level3" data-number="4.6.5">
+<h3 data-number="4.6.5" class="anchored" data-anchor-id="code-for-gibbs"><span class="header-section-number">4.6.5</span> Code for Gibbs</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## gibbs</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#par(mfrow = c(2, 3))</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#for (i in 1:3) {</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  autocorr.plot(mcmc_chains_gibbs[[i]][, "x"], main = paste("Autocorrelation: Chain", i, "(x)"))</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  autocorr.plot(mcmc_chains_gibbs[[i]][, "y"], main = paste("Autocorrelation: Chain", i, "(y)"))</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">#}</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>extract_acf <span class="ot">&lt;-</span> <span class="cf">function</span>(chain, <span class="at">lag.max =</span> <span class="dv">40</span>) {</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  acf_values <span class="ot">&lt;-</span> <span class="fu">acf</span>(chain, <span class="at">plot =</span> <span class="cn">FALSE</span>, <span class="at">lag.max =</span> lag.max)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">Lag =</span> acf_values<span class="sc">$</span>lag, <span class="at">ACF =</span> acf_values<span class="sc">$</span>acf)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>acf_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_gibbs[[<span class="dv">1</span>]][, <span class="st">"theta_1"</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 1 (theta_1)"</span>),</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_gibbs[[<span class="dv">1</span>]][, <span class="st">"theta_2"</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 1 (theta_2)"</span>),</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_gibbs[[<span class="dv">2</span>]][, <span class="st">"theta_1"</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 2 (theta_1)"</span>),</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_gibbs[[<span class="dv">2</span>]][, <span class="st">"theta_2"</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 2 (theta_2)"</span>),</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_gibbs[[<span class="dv">3</span>]][, <span class="st">"theta_1"</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 3 (theta_1)"</span>),</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_gibbs[[<span class="dv">3</span>]][, <span class="st">"theta_2"</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 3 (theta_2)"</span>)</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(acf_data, <span class="fu">aes</span>(<span class="at">x =</span> Lag, <span class="at">y =</span> ACF, <span class="at">fill =</span> Chain)) <span class="sc">+</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Autocorrelation of Gibbs Sampling Chains"</span>, <span class="at">x =</span> <span class="st">"Lag"</span>, <span class="at">y =</span> <span class="st">"Autocorrelation"</span>) <span class="sc">+</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M02_2_files/figure-html/gibbs_diag-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>posterior_samples <span class="ot">&lt;-</span> <span class="fu">as.array</span>(fit)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>mcmc_chains <span class="ot">&lt;-</span> <span class="fu">mcmc.list</span>(</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(posterior_samples[,<span class="dv">1</span>,])),</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(posterior_samples[,<span class="dv">2</span>,])),</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mcmc</span>(<span class="fu">as.matrix</span>(posterior_samples[,<span class="dv">3</span>,]))</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>gelman_diag <span class="ot">&lt;-</span> <span class="fu">gelman.diag</span>(mcmc_chains)</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gelman_diag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>gelman_diag <span class="ot">&lt;-</span> <span class="fu">gelman.diag</span>(mcmc_chains_gibbs)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gelman_diag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Potential scale reduction factors:
+
+        Point est. Upper C.I.
+theta_1          1       1.02
+theta_2          1       1.02
+
+Multivariate psrf
+
+1</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.plot</span>(mcmc_chains_gibbs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M02_2_files/figure-html/gibbs_diag-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="code-for-hmc" class="level3" data-number="4.6.6">
+<h3 data-number="4.6.6" class="anchored" data-anchor-id="code-for-hmc"><span class="header-section-number">4.6.6</span> Code for HMC</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## HMC</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>extract_acf <span class="ot">&lt;-</span> <span class="cf">function</span>(chain, <span class="at">lag.max =</span> <span class="dv">40</span>) {</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  acf_values <span class="ot">&lt;-</span> <span class="fu">acf</span>(chain, <span class="at">plot =</span> <span class="cn">FALSE</span>, <span class="at">lag.max =</span> lag.max)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">Lag =</span> acf_values<span class="sc">$</span>lag, <span class="at">ACF =</span> acf_values<span class="sc">$</span>acf)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>acf_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_hmc[[<span class="dv">1</span>]][, <span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 1 (Param 1)"</span>),</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_hmc[[<span class="dv">1</span>]][, <span class="dv">2</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 1 (Param 2)"</span>),</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_hmc[[<span class="dv">2</span>]][, <span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 2 (Param 1)"</span>),</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_hmc[[<span class="dv">2</span>]][, <span class="dv">2</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 2 (Param 2)"</span>),</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_hmc[[<span class="dv">3</span>]][, <span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 3 (Param 1)"</span>),</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_acf</span>(mcmc_chains_hmc[[<span class="dv">3</span>]][, <span class="dv">2</span>]) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Chain =</span> <span class="st">"Chain 3 (Param 2)"</span>)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(acf_data, <span class="fu">aes</span>(<span class="at">x =</span> Lag, <span class="at">y =</span> ACF, <span class="at">fill =</span> Chain)) <span class="sc">+</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Autocorrelation of HMC MCMC Samples"</span>, <span class="at">x =</span> <span class="st">"Lag"</span>, <span class="at">y =</span> <span class="st">"Autocorrelation"</span>) <span class="sc">+</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M02_2_files/figure-html/hmc_diag-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>gelman_diag <span class="ot">&lt;-</span> <span class="fu">gelman.diag</span>(mcmc_chains_hmc)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gelman_diag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Potential scale reduction factors:
@@ -1105,27 +1120,26 @@ convergence, Rhat=1).</code></pre>
       Point est. Upper C.I.
 mu             1       1.00
 sigma          1       1.01
-lp__           1       1.01
 
 Multivariate psrf
 
-1.01</code></pre>
+1</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.plot</span>(mcmc_chains)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gelman.plot</span>(mcmc_chains_hmc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="M02_2_files/figure-html/HMC-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="M02_2_files/figure-html/hmc_diag-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>rhats <span class="ot">&lt;-</span> <span class="fu">rhat</span>(fit)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>rhats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>rhats <span class="ot">&lt;-</span> <span class="fu">rhat</span>(fit)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>rhats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>       mu     sigma      lp__ 
@@ -1133,19 +1147,19 @@ Multivariate psrf
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_rhat</span>(rhats) <span class="sc">+</span> <span class="fu">yaxis_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_rhat</span>(rhats) <span class="sc">+</span> <span class="fu">yaxis_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="M02_2_files/figure-html/HMC-6.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="M02_2_files/figure-html/hmc_diag-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ratios_cp <span class="ot">&lt;-</span> <span class="fu">neff_ratio</span>(fit)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ratios_cp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ratios_cp <span class="ot">&lt;-</span> <span class="fu">neff_ratio</span>(fit)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ratios_cp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>       mu     sigma      lp__ 
@@ -1153,27 +1167,20 @@ Multivariate psrf
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_neff</span>(ratios_cp, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">yaxis_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_neff</span>(ratios_cp, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">yaxis_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="M02_2_files/figure-html/HMC-7.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="M02_2_files/figure-html/hmc_diag-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use shinystan</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(shinystan)</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">#launch_shinystan(fit)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
 </section>
-</section>
-<section id="prior-and-posterior-predictive-checks" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="prior-and-posterior-predictive-checks"><span class="header-section-number">4.5</span> Prior and Posterior Predictive Checks</h2>
+<section id="prior-and-posterior-predictive-checks" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="prior-and-posterior-predictive-checks"><span class="header-section-number">4.7</span> Prior and Posterior Predictive Checks</h2>
 <iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <!--
@@ -1183,9 +1190,9 @@ https://statswithr.github.io/book/inference-and-decision-making-with-multiple-pa
 https://mc-stan.org/docs/stan-users-guide/posterior-predictive-checks.html
 
 -->
-<section id="prior-predictive-checks" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="prior-predictive-checks"><span class="header-section-number">4.5.1</span> Prior Predictive Checks</h3>
-<p>Prior predictive checks involve simulating data from the model before observing real data to assess whether the chosen prior distribution is reasonable. Then compare this simulated data with the actual observation, if available. This step helps ensure that our prior assumptions align with plausible real-world outcomes.</p>
+<section id="prior-predictive-checks" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="prior-predictive-checks"><span class="header-section-number">4.7.1</span> Prior Predictive Checks</h3>
+<p>Prior predictive checks involve simulating data from the model before observing real data to assess whether the chosen prior distribution is reasonable. Then we compare this simulated data with the actual observation, if available. This step helps to ensure that our prior assumptions align with the real-world outcomes.</p>
 <p>Prior predictive check is important in Bayesian simulations. We can use this to understand the influence of prior on possible outcomes. It can also help us to avoid overly informed prior, which might lead to a strong influence on the posterior distribution. For example, if a prior on disease prevalence suggests 90% probability when we know it’s closer to 5%, then the prior is not reasonable. Thus, for implausible simulated data, we can say that the prior is too vague, too strong, or poorly chosen.</p>
 <ul>
 <li><strong>Steps to perform prior predictive check</strong></li>
@@ -1208,33 +1215,33 @@ https://mc-stan.org/docs/stan-users-guide/posterior-predictive-checks.html
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>prior_predictive_check <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha, beta, <span class="at">n_trials =</span> <span class="dv">10</span>, <span class="at">n_sim =</span> <span class="dv">1000</span>) {</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  theta_samples <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_sim, alpha, beta)</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  bernoulli_samples <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n_sim, <span class="at">size =</span> n_trials, <span class="at">prob =</span> theta_samples)</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Theta =</span> theta_samples, <span class="at">Successes =</span> bernoulli_samples)</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Theta)) <span class="sc">+</span></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Prior Distribution: Beta("</span>, alpha, <span class="st">","</span>, beta, <span class="st">")"</span>),</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="fu">expression</span>(theta), <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>  p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Successes)) <span class="sc">+</span></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"coral"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Simulated Successes (n ="</span>, n_trials, <span class="st">")"</span>),</span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Number of Successes"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>  gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p1,p2,<span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: Uniform Prior (Beta(1,1)) - No strong belief</span></span>
-<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a><span class="co">#prior_predictive_check(alpha = 1, beta = 1)</span></span>
-<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: Informative Prior (Beta(2,2)) - Believes success rate around 50%</span></span>
-<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a><span class="co">#prior_predictive_check(alpha = 2, beta = 2)</span></span>
-<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 3: Strong Prior (Beta(100,5)) - Believes success rate is high</span></span>
-<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a><span class="co">#prior_predictive_check(alpha = 100, beta = 5)</span></span>
-<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 4: Weak Prior (Beta(0.5, 0.5)) - Encourages extreme values (0 or 1)</span></span>
-<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a><span class="co">#prior_predictive_check(alpha = 0.5, beta = 0.5)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>prior_predictive_check <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha, beta, <span class="at">n_trials =</span> <span class="dv">10</span>, <span class="at">n_sim =</span> <span class="dv">1000</span>) {</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  theta_samples <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_sim, alpha, beta)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  bernoulli_samples <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n_sim, <span class="at">size =</span> n_trials, <span class="at">prob =</span> theta_samples)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Theta =</span> theta_samples, <span class="at">Successes =</span> bernoulli_samples)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Theta)) <span class="sc">+</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Prior Distribution: Beta("</span>, alpha, <span class="st">","</span>, beta, <span class="st">")"</span>),</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="fu">expression</span>(theta), <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>  p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Successes)) <span class="sc">+</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"coral"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Simulated Successes (n ="</span>, n_trials, <span class="st">")"</span>),</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Number of Successes"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>  gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p1,p2,<span class="at">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: Uniform Prior (Beta(1,1)) - No strong belief</span></span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a><span class="co">#prior_predictive_check(alpha = 1, beta = 1)</span></span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: Informative Prior (Beta(2,2)) - Believes success rate around 50%</span></span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a><span class="co">#prior_predictive_check(alpha = 2, beta = 2)</span></span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 3: Strong Prior (Beta(100,5)) - Believes success rate is high</span></span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a><span class="co">#prior_predictive_check(alpha = 100, beta = 5)</span></span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 4: Weak Prior (Beta(0.5, 0.5)) - Encourages extreme values (0 or 1)</span></span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a><span class="co">#prior_predictive_check(alpha = 0.5, beta = 0.5)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Let’s now look at two examples in a health and medical context:</p>
@@ -1244,7 +1251,7 @@ https://mc-stan.org/docs/stan-users-guide/posterior-predictive-checks.html
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prior_predictive_check</span>(<span class="at">alpha =</span> <span class="dv">7</span>, <span class="at">beta =</span> <span class="dv">3</span>, <span class="at">n_trials =</span> <span class="dv">10</span>, <span class="at">n_sim =</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prior_predictive_check</span>(<span class="at">alpha =</span> <span class="dv">7</span>, <span class="at">beta =</span> <span class="dv">3</span>, <span class="at">n_trials =</span> <span class="dv">10</span>, <span class="at">n_sim =</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1261,7 +1268,7 @@ https://mc-stan.org/docs/stan-users-guide/posterior-predictive-checks.html
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prior_predictive_check</span>(<span class="at">alpha =</span> <span class="dv">90</span>, <span class="at">beta =</span> <span class="dv">10</span>, <span class="at">n_trials =</span> <span class="dv">10</span>, <span class="at">n_sim =</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prior_predictive_check</span>(<span class="at">alpha =</span> <span class="dv">90</span>, <span class="at">beta =</span> <span class="dv">10</span>, <span class="at">n_trials =</span> <span class="dv">10</span>, <span class="at">n_sim =</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1273,8 +1280,8 @@ https://mc-stan.org/docs/stan-users-guide/posterior-predictive-checks.html
 </div>
 <p>Here, histogram of <span class="math inline">\(\theta\)</span> shows that most values are close to 0.9, and similarly, simulations result show an unrealistic scenario for a new drug with little evidence backing the success rate.</p>
 </section>
-<section id="posterior-predictive-checks" class="level3" data-number="4.5.2">
-<h3 data-number="4.5.2" class="anchored" data-anchor-id="posterior-predictive-checks"><span class="header-section-number">4.5.2</span> Posterior Predictive Checks</h3>
+<section id="posterior-predictive-checks" class="level3" data-number="4.7.2">
+<h3 data-number="4.7.2" class="anchored" data-anchor-id="posterior-predictive-checks"><span class="header-section-number">4.7.2</span> Posterior Predictive Checks</h3>
 <p>A posterior predictive check is a technique used in Bayesian statistics to assess how well a fitted model explains the observed data. It involves generating or simulating new data from the posterior predictive distribution and comparing it to the observed data to check for discrepancies. If the generated data looks similar to the observed data, the model is considered a good fit; if not, the model may be inadequate.</p>
 <p>Use of posterior predictive checks help to detect model misspecification, can provide intuitive, visual validation of the model’s performance.</p>
 <ul>
@@ -1295,30 +1302,31 @@ p(\tilde{y} \mid y) = \int p(\tilde{y} \mid \theta) p(\theta \mid y) \, d\theta
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>posterior_predictive_check <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha, beta, n_trials, successes, <span class="at">n_sim =</span> <span class="dv">1000</span>) {</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  posterior_alpha <span class="ot">&lt;-</span> alpha <span class="sc">+</span> successes</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  posterior_beta <span class="ot">&lt;-</span> beta <span class="sc">+</span> (n_trials <span class="sc">-</span> successes)</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  theta_samples <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_sim, posterior_alpha, posterior_beta)</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  bernoulli_samples <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n_sim, <span class="at">size =</span> n_trials, <span class="at">prob =</span> theta_samples)</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Theta =</span> theta_samples, <span class="at">Successes =</span> bernoulli_samples)</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Theta)) <span class="sc">+</span></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Posterior Distribution: Beta("</span>, posterior_alpha, <span class="st">","</span>, posterior_beta, <span class="st">")"</span>),</span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="fu">expression</span>(theta), <span class="at">y =</span> <span class="st">"Density"</span>) <span class="sc">+</span></span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>  p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Successes)) <span class="sc">+</span></span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"coral"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> successes, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Posterior Predictive Check (n ="</span>, n_trials, <span class="st">")"</span>),</span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Number of Successful Treatments"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>  gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a><span class="co"># n=30 patients, y=18 successful treatments, Beta(1,1) prior</span></span>
-<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a><span class="fu">posterior_predictive_check</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">beta =</span> <span class="dv">1</span>, <span class="at">n_trials =</span> <span class="dv">30</span>, <span class="at">successes =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>posterior_predictive_check <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha, beta, n_trials, successes, <span class="at">n_sim =</span> <span class="dv">1000</span>) {</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  posterior_alpha <span class="ot">&lt;-</span> alpha <span class="sc">+</span> successes</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  posterior_beta <span class="ot">&lt;-</span> beta <span class="sc">+</span> (n_trials <span class="sc">-</span> successes)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  theta_samples <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_sim, posterior_alpha, posterior_beta)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  bernoulli_samples <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n_sim, <span class="at">size =</span> n_trials, <span class="at">prob =</span> theta_samples)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Theta =</span> theta_samples, <span class="at">Successes =</span> bernoulli_samples)</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Theta)) <span class="sc">+</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Posterior Distribution: Beta("</span>, posterior_alpha, <span class="st">","</span>, posterior_beta, <span class="st">")"</span>),</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="fu">expression</span>(theta), <span class="at">y =</span> <span class="st">"Density"</span>) <span class="sc">+</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Successes)) <span class="sc">+</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"coral"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> successes, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Posterior Predictive Check (n ="</span>, n_trials, <span class="st">")"</span>),</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Number of Successful Treatments"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>  gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a><span class="co"># n=30 patients, y=18 successful treatments, Beta(1,1) prior</span></span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a><span class="fu">posterior_predictive_check</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">beta =</span> <span class="dv">1</span>, <span class="at">n_trials =</span> <span class="dv">30</span>, <span class="at">successes =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1339,20 +1347,20 @@ https://m-clark.github.io/easy-bayes/shinystan.html
 -->
 </section>
 </section>
-<section id="summary" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.6</span> Summary</h2>
+<section id="summary" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.8</span> Summary</h2>
 <p>Today’s lecture focused on understanding generative models, and how we can use generative models to answer research questions using Bayesian methods. We learn when to use exact inference and MCMC based optimisations, together their types. Finally we illustrate the prior and posterior predictive checks.</p>
 </section>
-<section id="live-tutorial-and-discussion" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">4.7</span> Live tutorial and discussion</h2>
+<section id="live-tutorial-and-discussion" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">4.9</span> Live tutorial and discussion</h2>
 <p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
 </section>
-<section id="tutorial-exercises" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">4.8</span> Tutorial Exercises</h2>
+<section id="tutorial-exercises" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">4.10</span> Tutorial Exercises</h2>
 <p>Solutions will be provided later after the tutorial.</p>
 </section>
-<section id="preparation-for-week-5" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="preparation-for-week-5"><span class="header-section-number">4.9</span> Preparation for Week 5</h2>
+<section id="preparation-for-week-5" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="preparation-for-week-5"><span class="header-section-number">4.11</span> Preparation for Week 5</h2>
 <p>In week 5 you will be required to .</p>
 
 
