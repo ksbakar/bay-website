@@ -228,13 +228,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Logical Connections</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Tweaks and More</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -638,9 +638,9 @@ Sample size per chain = 10000
 <p>Let’s use Gibbs Sampling to sample from a bivariate normal distribution where the marginal distributions of each variable are normal, but the two variables are correlated. We’ll then assess the convergence using trace plots, autocorrelation plots, and the Gelman-Rubin diagnostic.</p>
 <p>The joint density is the bivariate normal distribution:</p>
 <p><span class="math display">\[
-p(x,y) = \frac{1}{2\pi\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left(x^2-2\rho x y +y^2 \right) \right)
+p(\theta_1,\theta_2) = \frac{1}{2\pi\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left(\theta_1^2-2\rho \theta_1 \theta_2 +\theta_2^2 \right) \right)
 \]</span></p>
-<p>where <span class="math inline">\(\rho\)</span> is the correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p>where <span class="math inline">\(\rho\)</span> is the correlation between <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -657,7 +657,7 @@ p(x,y) = \frac{1}{2\pi\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left(x^2-
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    y[i] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> rho <span class="sc">*</span> x[i], <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> rho<span class="sc">^</span><span class="dv">2</span>))</span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">theta_1 =</span> x, <span class="at">theta_2 =</span> y))</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">theta_2 =</span> x, <span class="at">theta_1 =</span> y))</span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)         </span>
@@ -688,14 +688,14 @@ Sample size per chain = 1000
    plus standard error of the mean:
 
            Mean    SD Naive SE Time-series SE
-theta_1 0.01841 1.026  0.01874        0.03854
-theta_2 0.01097 1.018  0.01858        0.03912
+theta_2 0.01841 1.026  0.01874        0.03854
+theta_1 0.01097 1.018  0.01858        0.03912
 
 2. Quantiles for each variable:
 
           2.5%     25%     50%    75% 97.5%
-theta_1 -1.943 -0.6345 0.02087 0.6801 1.827
-theta_2 -1.902 -0.6288 0.01558 0.6646 1.902</code></pre>
+theta_2 -1.943 -0.6345 0.02087 0.6801 1.827
+theta_1 -1.902 -0.6288 0.01558 0.6646 1.902</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -798,8 +798,8 @@ ref: https://mc-stan.org/bayesplot/articles/visual-mcmc-diagnostics.html
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 8.7e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.87 seconds.
+Chain 1: Gradient evaluation took 1.9e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.19 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -816,15 +816,15 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.053 seconds (Warm-up)
-Chain 1:                0.051 seconds (Sampling)
-Chain 1:                0.104 seconds (Total)
+Chain 1:  Elapsed Time: 0.016 seconds (Warm-up)
+Chain 1:                0.016 seconds (Sampling)
+Chain 1:                0.032 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 1e-05 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
+Chain 2: Gradient evaluation took 4e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.04 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -841,15 +841,15 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 0.089 seconds (Warm-up)
-Chain 2:                0.047 seconds (Sampling)
-Chain 2:                0.136 seconds (Total)
+Chain 2:  Elapsed Time: 0.025 seconds (Warm-up)
+Chain 2:                0.013 seconds (Sampling)
+Chain 2:                0.038 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 1.3e-05 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
+Chain 3: Gradient evaluation took 6e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -866,9 +866,9 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.057 seconds (Warm-up)
-Chain 3:                0.046 seconds (Sampling)
-Chain 3:                0.103 seconds (Total)
+Chain 3:  Elapsed Time: 0.017 seconds (Warm-up)
+Chain 3:                0.014 seconds (Sampling)
+Chain 3:                0.031 seconds (Total)
 Chain 3: </code></pre>
 </div>
 <details class="code-fold">
@@ -884,7 +884,7 @@ post-warmup draws per chain=1000, total post-warmup draws=3000.
 mu    5.06       0 0.21 4.65 4.92 5.06 5.20  5.49  2598    1
 sigma 2.11       0 0.16 1.83 2.00 2.10 2.21  2.45  2926    1
 
-Samples were drawn using NUTS(diag_e) at Sat Apr  5 11:53:52 2025.
+Samples were drawn using NUTS(diag_e) at Sun Apr  6 23:01:12 2025.
 For each parameter, n_eff is a crude measure of effective sample size,
 and Rhat is the potential scale reduction factor on split chains (at 
 convergence, Rhat=1).</code></pre>
@@ -1055,8 +1055,8 @@ convergence, Rhat=1).</code></pre>
 <pre><code>Potential scale reduction factors:
 
         Point est. Upper C.I.
-theta_1          1       1.02
 theta_2          1       1.02
+theta_1          1       1.02
 
 Multivariate psrf
 
@@ -1799,8 +1799,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./M03_1.html" class="pagination-link" aria-label="**Bayeswatch! Part - I**">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - I</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M03_1.html" class="pagination-link" aria-label="**Bayeswatch! Logical Connections**">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Logical Connections</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

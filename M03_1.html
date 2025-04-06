@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Bayeswatch! Causal Connections – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>5&nbsp; Bayeswatch! Logical Connections – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,10 +102,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -118,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M03_1.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Causal Connections</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M03_1.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Logical Connections</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -182,13 +218,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Causal Connections</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Logical Connections</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Twits</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Tweaks and More</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -250,20 +286,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">5.1</span> Learnings</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">5.2</span> Introduction</a></li>
-  <li><a href="#causality-and-bayesian-model" id="toc-causality-and-bayesian-model" class="nav-link" data-scroll-target="#causality-and-bayesian-model"><span class="header-section-number">5.3</span> Causality and Bayesian Model</a></li>
-  <li><a href="#estimand-estimator-estimate---bayesian-context" id="toc-estimand-estimator-estimate---bayesian-context" class="nav-link" data-scroll-target="#estimand-estimator-estimate---bayesian-context"><span class="header-section-number">5.4</span> Estimand, Estimator &amp; Estimate - Bayesian Context</a>
+  <li><a href="#causality-and-bayesian-inference" id="toc-causality-and-bayesian-inference" class="nav-link" data-scroll-target="#causality-and-bayesian-inference"><span class="header-section-number">5.2</span> Causality and Bayesian Inference</a></li>
+  <li><a href="#estimand-estimator-estimate" id="toc-estimand-estimator-estimate" class="nav-link" data-scroll-target="#estimand-estimator-estimate"><span class="header-section-number">5.3</span> Estimand, Estimator &amp; Estimate</a>
   <ul class="collapse">
-  <li><a href="#modelling-context" id="toc-modelling-context" class="nav-link" data-scroll-target="#modelling-context"><span class="header-section-number">5.4.1</span> Modelling Context</a></li>
+  <li><a href="#bayesian-modelling-context" id="toc-bayesian-modelling-context" class="nav-link" data-scroll-target="#bayesian-modelling-context"><span class="header-section-number">5.3.1</span> Bayesian Modelling Context</a></li>
   </ul></li>
-  <li><a href="#model-development-using-dag" id="toc-model-development-using-dag" class="nav-link" data-scroll-target="#model-development-using-dag"><span class="header-section-number">5.5</span> Model Development using DAG</a></li>
-  <li><a href="#comparison-with-classical-approach" id="toc-comparison-with-classical-approach" class="nav-link" data-scroll-target="#comparison-with-classical-approach"><span class="header-section-number">5.6</span> Comparison with Classical Approach</a></li>
-  <li><a href="#prior-twites" id="toc-prior-twites" class="nav-link" data-scroll-target="#prior-twites"><span class="header-section-number">5.7</span> Prior twites</a></li>
-  <li><a href="#model-diagnostics" id="toc-model-diagnostics" class="nav-link" data-scroll-target="#model-diagnostics"><span class="header-section-number">5.8</span> Model Diagnostics</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.9</span> Exercises</a></li>
-  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">5.10</span> Live tutorial and discussion</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5.11</span> Summary</a></li>
-  <li><a href="#preparation-for-week-2" id="toc-preparation-for-week-2" class="nav-link" data-scroll-target="#preparation-for-week-2"><span class="header-section-number">5.12</span> Preparation for Week 2</a></li>
+  <li><a href="#model-development" id="toc-model-development" class="nav-link" data-scroll-target="#model-development"><span class="header-section-number">5.4</span> Model Development</a>
+  <ul class="collapse">
+  <li><a href="#bayesian-dag" id="toc-bayesian-dag" class="nav-link" data-scroll-target="#bayesian-dag"><span class="header-section-number">5.4.1</span> Bayesian DAG</a></li>
+  <li><a href="#r-code-example" id="toc-r-code-example" class="nav-link" data-scroll-target="#r-code-example"><span class="header-section-number">5.4.2</span> R Code Example</a></li>
+  </ul></li>
+  <li><a href="#bayesian-vs.-frequentist-comparisons" id="toc-bayesian-vs.-frequentist-comparisons" class="nav-link" data-scroll-target="#bayesian-vs.-frequentist-comparisons"><span class="header-section-number">5.5</span> Bayesian vs.&nbsp;Frequentist Comparisons</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5.6</span> Summary</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">5.7</span> Live tutorial and discussion</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">5.8</span> Tutorial Exercises</a></li>
+  <li><a href="#preparation-for-week-6" id="toc-preparation-for-week-6" class="nav-link" data-scroll-target="#preparation-for-week-6"><span class="header-section-number">5.9</span> Preparation for Week 6</a></li>
   </ul>
 </nav>
     </div>
@@ -272,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Causal Connections</strong></span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Logical Connections</strong></span></h1>
 </div>
 
 
@@ -303,31 +340,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>– Explain the terms Estimand, Estimator &amp; Estimate</p>
 <p>– Understand the difference between Bayesian and classical Regression.</p>
 <p>– Interpret a real-life problem in Bayesian context.</p>
-</section>
-<section id="introduction" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.2</span> Introduction</h2>
-<p>asdafs</p>
 <!--
 ref: https://statswithr.github.io/book/introduction-to-bayesian-regression.html
 
+Notes:
+
+In this lecture, we shall explore the applications of Bayesian hierarchical models. 
+We will begin by examining the utilisation of Bayesian models within the context of simple linear regression models and subsequently expand these insights to incorporate multiple linear regression. Through this exploration, we will find that employing the non-informative prior results in posterior means, posterior standard deviations, and credible intervals for the coefficients that are consistent with those derived from frequentist ordinary least squares (OLS) linear regression models.
+
+We will start with how to develop a Bayesian model based on causality, or unknown causality with understanding of estimand, estimator and estimate. We wil also explore how DAG can help us to build the model. 
+
 -->
-<p>In this lecture, we shall explore the application of Bayesian inference methodologies using hierarchical models. We will begin by examining the utilisation of Bayesian methods within the context of simple linear regression models and subsequently expand these insights to encompass multiple linear regression. Through this exploration, we will find that employing the non-informative prior results in posterior means, posterior standard deviations, and credible intervals for the coefficients that are consistent with those derived from frequentist ordinary least squares (OLS) linear regression models.</p>
-<p>We will start with how to develop a Bayesian model based on causality, or unknown causality with understanding of estimand, estimator and estimate. We wil also explore how DAG can help us to build the model.</p>
 </section>
-<section id="causality-and-bayesian-model" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="causality-and-bayesian-model"><span class="header-section-number">5.3</span> Causality and Bayesian Model</h2>
+<section id="causality-and-bayesian-inference" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="causality-and-bayesian-inference"><span class="header-section-number">5.2</span> Causality and Bayesian Inference</h2>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <!--
 Causal salad - ref: McElreath page 17, see the BOX
 -->
-<p>When conducting causal inference, we must develop a causal model that is distinct from a Bayesian model, as observational data alone are insufficient. This principle is widely accepted across philosophical perspectives, though interpretations vary significantly.</p>
+<p>A causal inference is a conclusion about a cause-and-effect relationship between two or more things. In simple terms, it’s answering the question: “Did X cause Y?” For example, if a study finds that people who drink more water tend to have better skin, causal inference would be the process of figuring out whether drinking water actually causes better skin—or if that’s just a coincidence, or maybe due to some other factor (like diet or lifestyle). On the other hand, a correlation is when two things tend to happen together. It shows a relationship, but not necessarily a cause-and-effect one.</p>
+<p>Let’s explore with an example: We might think, people who carry lighters are more likely to get lung cancer. This means that there is an association between carrying lighters and lung cancer, but it doesn’t imply that carrying a lighter causes lung cancer. Other factors, like smoking, could be the actual cause.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig_M03_causation.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Concept of correlation and causation</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, when conducting causal inference, we must develop a causal model that is distinct from a Bayesian model, as observational data alone are insufficient. This principle is widely accepted across philosophical perspectives, though interpretations vary significantly.</p>
 <p>The most cautious view holds that causation is fundamentally unprovable. A slightly less conservative stance suggests that we can infer causation only under strict conditions, such as randomisation and experimental control. However, many scientific questions cannot be addressed experimentally due to feasibility constraints or ethical concerns.</p>
 <p>In fields like health and medicine, we often introduce various control variables into a statistical model, observe changes in estimates, and construct a causal narrative. This approach assumes that only omitted variables can distort causal conclusions, yet even included variables can introduce confusion.</p>
 <p>Even if we construct a causal model that appears to make accurate predictions, it may still misrepresent causation. If we rely on such a model to guide interventions, we risk producing unintended or misleading outcomes.</p>
 </section>
-<section id="estimand-estimator-estimate---bayesian-context" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="estimand-estimator-estimate---bayesian-context"><span class="header-section-number">5.4</span> Estimand, Estimator &amp; Estimate - Bayesian Context</h2>
+<section id="estimand-estimator-estimate" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="estimand-estimator-estimate"><span class="header-section-number">5.3</span> Estimand, Estimator &amp; Estimate</h2>
 <!--
 ref: https://bookdown.org/paul/applied-causal-analysis/estimator.html
 
@@ -341,8 +391,8 @@ ref: https://bookdown.org/paul/applied-causal-analysis/estimator.html
 <p>The simplest approach is to calculate the average vaccine effectiveness in our sample. In this case, the sample average acts as our estimator, providing an estimate of the true vaccine effectiveness. If our sample average shows 85% effectiveness, then 85% is our estimate based on the sample average estimator.</p>
 <p>Now, in a Bayesian framework, the estimand remains the same, which is the true but unknown average vaccine effectiveness among all children in Australia. However, instead of just using the sample average, our estimator in the Bayesian context is the posterior distribution of vaccine effectiveness. And we already know that this distribution is derived by combining prior knowledge with the likelihood of the observed data using Bayes’ theorem.</p>
 <p>To summarise this posterior distribution, we can use a specific value, such as the posterior mean or posterior median, as an estimator. The final estimate is the specific value from this distribution. For example, if the posterior mean suggests 85% effectiveness, then 85% is our estimate based on the posterior mean estimator.</p>
-<section id="modelling-context" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="modelling-context"><span class="header-section-number">5.4.1</span> Modelling Context</h3>
+<section id="bayesian-modelling-context" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="bayesian-modelling-context"><span class="header-section-number">5.3.1</span> Bayesian Modelling Context</h3>
 <p>Now, let us explain this in the context of Bayesian regression problem. Suppose we are interested in understanding how vaccine efficacy for a respiratory-related disease among children in Australia is influenced by certain predictors, such as age, pre-existing health conditions, and socioeconomic status. In this case, our estimand is the set of true regression coefficients that describe the relationship between these predictors and vaccine efficacy.</p>
 <p>A perfect way to determine these coefficients would be to measure vaccine efficacy and collect all relevant predictor data (e.g., age, health conditions, and socioeconomic status) for every child in Australia and then fit a model to the entire population data. However, this is infeasible. Instead, we can estimate the regression coefficients using a sample observation, and we take a random sample of 10,000 children in Australia and collect data on their vaccine efficacy and the relevant predictors. Using this data, we fit a Bayesian model (e.g., a Bayesian linear regression model) to estimate the relationship between the predictors and vaccine efficacy.</p>
 <p>In the Bayesian framework, we approach this problem by starting with a prior distribution for each regression coefficient, reflecting our prior beliefs about the relationships. For example, based on previous studies, we might believe that younger children have slightly lower vaccine efficacy and use this belief into the prior.</p>
@@ -352,119 +402,260 @@ ref: https://bookdown.org/paul/applied-causal-analysis/estimator.html
 <p>This Bayesian approach allows us not only to estimate the coefficients but also to quantify our uncertainty about them, providing a more comprehensive understanding of the predictors’ influence on vaccine efficacy.</p>
 </section>
 </section>
-<section id="model-development-using-dag" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="model-development-using-dag"><span class="header-section-number">5.5</span> Model Development using DAG</h2>
+<section id="model-development" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="model-development"><span class="header-section-number">5.4</span> Model Development</h2>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>We have discussed about Directed Acyclic Graph (DAG) in one of our previous lectures. Today we will explain DAG for conceptualising and developing Bayesian regression models. It helps to visually represent causal relationships among variables and ensures proper adjustment for confounding factors.</p>
-<p>Now we explain this more with an example related to Bone Mineral Density (BMD). For example, we want to know, how does body mass index (BMI) impact bone mineral density (BMD)? What role does ‘age’ or ‘sex’ of the patient play in this relationship?</p>
-<p>Let’s focus on the relationship between BMD, BMI, age, and sex. As people age, their BMD naturally decreases over time, and age also influences factors like physical activity, which can impact BMI. Similarly, sex affects both BMI and BMD, with women being more likely to experience a decline in BMD, particularly in conditions like osteoporosis. These factors age and sex may act as confounders, influencing both BMI and BMD.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js"> graph LR
-    M("BMI") --&gt; B("BMD")
-    A("Age") --&gt; M
-    S("Sex") --&gt; M
-    A --&gt; B
-    S --&gt; B
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>In this case, the estimand is the specific causal effect of BMI on BMD, while accounting for the influence of age and sex as confounders. The goal is to isolate the effect of BMI on BMD after adjusting for these other variables.</p>
-<p>The estimator we define here is the Bayesian model, i.e., the multiple linear regression model. This model adjusts for confounders like age and sex, helping us accurately estimate the causal effect of BMI on BMD.</p>
-<p>The estimate is the actual numerical value derived from the data using the chosen estimator. For example, if the estimate is 0.03, this could represent the change in BMD associated with a one-unit increase in BMI, after accounting for the effects of age and sex.</p>
-</section>
-<section id="comparison-with-classical-approach" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="comparison-with-classical-approach"><span class="header-section-number">5.6</span> Comparison with Classical Approach</h2>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<p>asdf</p>
+<p>Now we explain this more with an example related to Bone Mineral Density (BMD). For example, we want to know, how does body mass index (BMI) impact bone mineral density (BMD)?</p>
+<p>Here, we are trying to model the relationship between BMI (independent or exposure variable) and BMD (dependent or outcome or endpoint variable). Thus can draw the DAG as:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grViz</span>(<span class="st">"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st">  digraph LR {</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">    rankdir=LR;  # Set the direction from left to right</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">    M [label = 'BMI']</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">    B [label = 'BMD']</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">    M -&gt; B</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: Rcpp</code></pre>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-9284f48a119f8896c97e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-9284f48a119f8896c97e">{"x":{"diagram":"\n  digraph LR {\n    rankdir=LR;  # Set the direction from left to right\n    M [label = \"BMI\"]\n    B [label = \"BMD\"]\n    M -> B\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading 'brms' package (version 2.22.0). Useful instructions
-can be found by typing help('brms'). A more detailed introduction
-to the package is available through vignette('brms_overview').</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'brms'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:stats':
-
-    ar</code></pre>
-</div>
+<p>In a Bayesian context, we need to define the likelihood of observing the data given certain parameters and then combine that with a prior belief about those parameters.</p>
+<p>Let’s break down the likelihood and priors for the example:</p>
+<p>BMD is modeled as a random variable that follows a normal distribution:</p>
+<p><span class="math display">\[
+\text{BMD} \sim N(\mu, \sigma^2)
+\]</span></p>
+<p>This notation means that for each observed value of BMD, the values are assumed to come from a normal distribution with mean <span class="math inline">\(\mu\)</span>, which is the location of the distribution and variance <span class="math inline">\(\sigma^2\)</span>, which indicates the spread or uncertainty around the mean.</p>
+<p>We can now model the mean of the BMD as a function of the exposure variable, BMI. That is, the mean <span class="math inline">\(\mu\)</span> of BMD is determined by a linear relationship with BMI:</p>
+<p><span class="math display">\[
+\mu = \beta_0 + \beta_1 \cdot \text{BMI}
+\]</span></p>
+<p>where, <span class="math inline">\(\beta_0\)</span> is the intercept term, which is the expected BMD when BMI is zero, and <span class="math inline">\(\beta_1\)</span> is the slope term, which indicates the change in BMD per unit change in BMI.</p>
+<p>So, the likelihood function tells us how probable it is to observe the given BMD data, given specific values for the parameters <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Now, let’s define the prior distributions for the model parameters:</p>
+<p><span class="math display">\[
+\beta_0 \sim N(\mu_0, \sigma_0^2)
+\]</span></p>
+<p>This states that <span class="math inline">\(\beta_0\)</span> follows a normal distribution with mean <span class="math inline">\(\mu_0\)</span> and variance <span class="math inline">\(\sigma_0^2\)</span>. The prior for <span class="math inline">\(\beta_0\)</span> could represent our belief about the intercept term before observing the data. For instance, if we think that <span class="math inline">\(\beta_0\)</span> (the baseline BMD when BMI is 0) should be close to 0, then we would choose <span class="math inline">\(\mu_0 = 0\)</span>, with some reasonable uncertainty <span class="math inline">\(\sigma_0^2\)</span>.</p>
+<p><span class="math display">\[
+\beta_1 \sim N(\mu_1, \sigma_1^2)
+\]</span></p>
+<p>This states that <span class="math inline">\(\beta_1\)</span>, the effect of BMI on BMD, is also normally distributed with a mean of <span class="math inline">\(\mu_1\)</span> and variance <span class="math inline">\(\sigma_1^2\)</span>. In this case, <span class="math inline">\(\mu_1\)</span> reflects our prior belief about the effect of BMI on BMD, and <span class="math inline">\(\sigma_1^2\)</span> reflects the uncertainty about that effect.</p>
+<p><span class="math display">\[
+\sigma^2 \sim \text{IG}(a, b)
+\]</span></p>
+<p>This represents the prior belief about the variance of the error terms (the variability in BMD not explained by BMI). It is modeled using an Inverse Gamma distribution, which is a conjugate prior distribution and denoted as $ (a, b)$, where: <span class="math inline">\(a\)</span> is a shape parameter, and <span class="math inline">\(b\)</span> is a scale parameter.</p>
+<p>The inverse gamma distribution is commonly used for modeling variance parameters because it is from a conjugate family and produces positive values and can model both large and small variances.</p>
+<p>Once we have the likelihood (how the data are distributed given the parameters) and the priors (our initial beliefs about the parameters), we can easily get the posterior distribution and in this case, the posterior distribution for the parameters <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(\sigma^2\)</span>. This is proportional to:</p>
+<p><span class="math display">\[
+p(\beta_0, \beta_1, \sigma^2 | \text{BMD}, \text{BMI}) \propto p(\text{BMD} | \beta_0, \beta_1, \sigma^2) \cdot p(\beta_0) \cdot p(\beta_1) \cdot p(\sigma^2)
+\]</span></p>
+<p>Given the joint posterior distribution, we can write the full conditional distributions for parameters <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\sigma^2\)</span> as:</p>
+<p><span class="math display">\[
+p(\beta_0 \mid \beta_1, \sigma^2, \text{BMD}, \text{BMI}) \propto N(\text{BMD} \mid \beta_0 + \beta_1 \cdot \text{BMI}, \sigma^2) \cdot N(\beta_0 \mid \mu_0, \sigma_0^2)
+\]</span></p>
+<p>This is the product of a likelihood and a normal prior, so the conditional posterior is also normal:</p>
+<p><span class="math display">\[
+\beta_0 \mid \cdot \sim N(\mu_{\beta_0}^*, \sigma_{\beta_0}^{2*})
+\]</span></p>
+<p>Where:</p>
+<p><span class="math display">\[
+\sigma_{\beta_0}^{2*} = \left( \frac{n}{\sigma^2} + \frac{1}{\sigma_0^2} \right)^{-1}; \quad \mu_{\beta_0}^* = \sigma_{\beta_0}^{2*} \left( \frac{1}{\sigma^2} \sum_{i=1}^n (\text{BMD}_i - \beta_1 \text{BMI}_i) + \frac{\mu_0}{\sigma_0^2} \right)
+\]</span></p>
+<p>Now, the conditional distribution for <span class="math inline">\(\beta_1\)</span>:</p>
+<p><span class="math display">\[
+p(\beta_1 \mid \beta_0, \sigma^2, \text{BMD}, \text{BMI}) \propto N(\text{BMD} \mid \beta_0 + \beta_1 \cdot \text{BMI}, \sigma^2) \cdot N(\beta_1 \mid \mu_1, \sigma_1^2)
+\]</span></p>
+<p>Hence, the full conditional is normal:</p>
+<p><span class="math display">\[
+\beta_1 \mid \cdot \sim N(\mu_{\beta_1}^*, \sigma_{\beta_1}^{2*})
+\]</span></p>
+<p>Where:</p>
+<p><span class="math display">\[
+\sigma_{\beta_1}^{2*} = \left( \frac{\sum \text{BMI}_i^2}{\sigma^2} + \frac{1}{\sigma_1^2} \right)^{-1}; \quad \mu_{\beta_1}^* = \sigma_{\beta_1}^{2*} \left( \frac{1}{\sigma^2} \sum \text{BMI}_i (\text{BMD}_i - \beta_0) + \frac{\mu_1}{\sigma_1^2} \right)
+\]</span></p>
+<p>Now, we can write the Conditional distribution for <span class="math inline">\(\sigma^2\)</span> as:</p>
+<p><span class="math display">\[
+p(\sigma^2 \mid \beta_0, \beta_1, \text{BMD}, \text{BMI}) \propto \mathcal{N}(\text{BMD} \mid \beta_0 + \beta_1 \cdot \text{BMI}, \sigma^2) \cdot \text{IG}(a, b)
+\]</span></p>
+<p>Combining the likelihood (Gaussian) and Inverse Gamma prior, the full conditional is also Inverse Gamma:</p>
+<p><span class="math display">\[
+\sigma^2 \mid \cdot \sim \text{IG} \left(a + \frac{n}{2},\ b + \frac{1}{2} \sum_{i=1}^n (\text{BMD}_i - \beta_0 - \beta_1 \text{BMI}_i)^2 \right)
+\]</span></p>
+<section id="bayesian-dag" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="bayesian-dag"><span class="header-section-number">5.4.1</span> Bayesian DAG</h3>
+<p>By using these information in the above example, we write DAG for the Bayesian model as:</p>
+<div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grViz</span>(<span class="st">"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="st">  digraph DAG {</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">    rankdir=LR;  # Set direction from left to right</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">    </span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">    # Nodes (parameters and variables)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">    BMI [label = 'BMI', shape = ellipse, style = filled, fillcolor = lightblue]</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">    BMD [label = 'BMD', shape = ellipse, style = filled, fillcolor = lightcoral]</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_0 [label = 'β₀', shape = box, style = filled, fillcolor = lightgrey]</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_1 [label = 'β₁', shape = box, style = filled, fillcolor = lightgrey]</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">    sigma2 [label = 'σ²', shape = box, style = filled, fillcolor = lightgrey]</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_0 [label = 'Prior for β₀: N(μ₀, σ₀²)', shape = box, style = dashed, fillcolor = lightyellow]</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_1 [label = 'Prior for β₁: N(μ₁, σ₁²)', shape = box, style = dashed, fillcolor = lightyellow]</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_sigma2 [label = 'Prior for σ²: IG(a, b)', shape = box, style = dashed, fillcolor = lightyellow]</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="st">    </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="st">    # Edges (dependencies between nodes)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="st">    BMI -&gt; BMD</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_0 -&gt; BMD</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_1 -&gt; BMD</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="st">    sigma2 -&gt; BMD</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_0 -&gt; beta_0</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_1 -&gt; beta_1</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_sigma2 -&gt; sigma2</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     </code></pre>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-1cc665756a4f8747b47b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1cc665756a4f8747b47b">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;  # Set direction from left to right\n    \n    # Nodes (parameters and variables)\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma2 [label = \"σ²\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma2 [label = \"Prior for σ²: IG(a, b)\", shape = box, style = dashed, fillcolor = lightyellow]\n    \n    # Edges (dependencies between nodes)\n    BMI -> BMD\n    beta_0 -> BMD\n    beta_1 -> BMD\n    sigma2 -> BMD\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_sigma2 -> sigma2\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
+</section>
+<section id="r-code-example" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="r-code-example"><span class="header-section-number">5.4.2</span> R Code Example</h3>
+<p>We consider the following prior distributions for the model parameters. Say, we do not know any previous information at the baseline for BMD ( i.e., intercept). Suppose, we also do not have any knowledge about the effect of BMI on BMD. Hence, we can consider <span class="math inline">\(\beta_0,\beta_1 \sim N(0, 10^2)\)</span>. Furthermore, let us assume the the variance parameter follows inverse-gamma distribution with hyper-parameters <span class="math inline">\(a=2\)</span> and <span class="math inline">\(b=1\)</span>.</p>
+<p>The prior structure we use follows a pattern of weakly informative priors. These help with regularisation by gently pulling parameter estimates toward zero, unless the data provide strong evidence for a large effect. This also helps avoid overestimating effects, a problem sometimes known as the winner’s curse.</p>
+<p>Hence, following this structure, we can draw the prior distributions as follows:</p>
+<div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">200</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sex <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>))</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>bmi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">25</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="dv">1</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>bmd <span class="ot">&lt;-</span> <span class="fl">1.0</span> <span class="sc">+</span> <span class="fl">0.015</span> <span class="sc">*</span> bmi <span class="sc">-</span> <span class="fl">0.005</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fu">ifelse</span>(sex <span class="sc">==</span> <span class="st">"Female"</span>, <span class="sc">-</span><span class="fl">0.01</span>, <span class="dv">0</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.05</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> <span class="fu">round</span>(bmd, <span class="dv">2</span>),</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMI =</span> bmi,</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> age,</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">factor</span>(sex)</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># model</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>bmd_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> BMD <span class="sc">~</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"b"</span>),   <span class="co"># Slope priors</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),   <span class="co"># Intercept prior</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">student_t</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)  <span class="co"># Approximate Inv-Gamma(2,1)</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(invgamma)  </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>x_norm <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">40</span>, <span class="dv">40</span>, <span class="at">length.out =</span> <span class="dv">500</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>normal_density <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x_norm, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>df_beta <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> x_norm,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">density =</span> normal_density</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_beta, <span class="fu">aes</span>(x, density)) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">expression</span>(<span class="st">"Prior for "</span> <span class="sc">~</span> beta[<span class="dv">0</span>]),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(beta[<span class="dv">0</span>]),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_beta, <span class="fu">aes</span>(x, density)) <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">expression</span>(<span class="st">"Prior for "</span> <span class="sc">~</span> beta[<span class="dv">1</span>]),</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(beta[<span class="dv">1</span>]),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>x_sigma2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.001</span>, <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">500</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>sigma2_density <span class="ot">&lt;-</span> <span class="fu">dinvgamma</span>(x_sigma2, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">rate =</span> <span class="dv">1</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>df_sigma2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> x_sigma2,</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">density =</span> sigma2_density</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_sigma2, <span class="fu">aes</span>(x, density)) <span class="sc">+</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">expression</span>(<span class="st">"Prior for "</span> <span class="sc">~</span> sigma<span class="sc">^</span><span class="dv">2</span>),</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(sigma<span class="sc">^</span><span class="dv">2</span>),</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine all three plots</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>(p1 <span class="sc">|</span> p2 <span class="sc">|</span> p3) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">"Prior Distributions"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Compiling Stan program...
-Start sampling</code></pre>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_prior-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
+</div>
+</div>
+<p>Now, we use these prior distributions to obtain the posterior distributions for the model parameters. We use R package “brms” to impliment the Bayesian model.</p>
+<p>Note that not all R packages (such as ‘brms’) have the option to use the Inverse Gamma distribution. We could avoid using Bayesian R packages and write individual Stan code to include this, but at this stage, that is beyond the scope of this course. Writing Stan code requires a strong understanding of mathematical coding, which may not be suitable for the general audience or students taking this course.</p>
+<p>One simple solution is to use a distribution that approximates the Inverse Gamma distribution, and the Student’s t-distribution can be one such option. Let’s explain this with Inverse-Gamma distributions with parameters (2,1), i.e., <span class="math inline">\(\text{IG}(a=2, b=11)\)</span> and Student-t distributions that approximate the Inverse Gamma with parameters <span class="math inline">\((\text{df}=3, \text{location}=0, \text{scale}=1)\)</span>, i.e., <span class="math inline">\(\text{Student-t}(3,0,1)\)</span>, where Degrees of Freedom = 3, location = 0 (centered), and Scale = 1. Hence, we can get the distribution plots as:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ig_density <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha, beta, x) {</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">dgamma</span>(<span class="dv">1</span> <span class="sc">/</span> x, <span class="at">shape =</span> alpha, <span class="at">rate =</span> beta) <span class="sc">/</span> (x<span class="sc">^</span><span class="dv">2</span>))  </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="fl">0.001</span>, <span class="dv">20</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) <span class="fu">ig_density</span>(<span class="dv">2</span>, <span class="dv">1</span>, x), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">x =</span> <span class="fu">expression</span>(sigma), </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Inverse-Gamma(2, 1)"</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="fl">0.001</span>, <span class="dv">20</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) <span class="fu">dt</span>(x <span class="sc">/</span> <span class="dv">1</span>, <span class="at">df =</span> <span class="dv">3</span>) <span class="sc">/</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">x =</span> <span class="fu">expression</span>(sigma), </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Student-t(3, 0, 1)"</span>) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_priors_ig_t-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Hence, we can get the summary of the posterior distributions for the model parameters as:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"bmd_restricted.csv"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>bmi <span class="ot">&lt;-</span> bmd_data<span class="sc">$</span>weight_kg<span class="sc">/</span>(bmd_data<span class="sc">$</span>height_cm<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> bmd_data<span class="sc">$</span>bmd,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMI =</span> bmd_data<span class="sc">$</span>bmi,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># model</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>bmd_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> BMD <span class="sc">~</span> BMI,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"BMI"</span>),   <span class="co"># Slope priors</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),   <span class="co"># Intercept prior</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">student_t</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)  <span class="co"># Approximate Inv-Gamma(2,1)</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 4.9e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.49 seconds.
+Chain 1: Gradient evaluation took 3.4e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.34 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -481,33 +672,31 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.17 seconds (Warm-up)
-Chain 1:                0.131 seconds (Sampling)
-Chain 1:                0.301 seconds (Total)
+Chain 1:  Elapsed Time: 0.046 seconds (Warm-up)
+Chain 1:                0.03 seconds (Sampling)
+Chain 1:                0.076 seconds (Total)
 Chain 1: </code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bmd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bmd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: gaussian 
   Links: mu = identity; sigma = identity 
-Formula: BMD ~ BMI + Age + Sex 
-   Data: bmd_data (Number of observations: 200) 
+Formula: BMD ~ BMI 
+   Data: bmd_data (Number of observations: 169) 
   Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;
          total post-warmup draws = 1000
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept     0.99      0.03     0.93     1.04 1.00     1236      767
-BMI           0.01      0.00     0.01     0.02 1.00     1306      576
-Age          -0.00      0.00    -0.01    -0.00 1.00     1198      787
-SexMale       0.01      0.01     0.00     0.03 1.00      616      518
+Intercept     0.42      0.07     0.28     0.55 1.00     1031      681
+BMI           0.01      0.00     0.01     0.02 1.00     1044      582
 
 Further Distributional Parameters:
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma     0.05      0.00     0.05     0.05 1.00      597      558
+sigma     0.16      0.01     0.14     0.17 1.00      583      640
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -515,365 +704,139 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bmd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_summary(bmd_model)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(bmd_model)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_bayes-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
 </div>
-</div>
-</div>
-<p>Marginal effects in brms show the predicted effect of each predictor on the response, averaging over the effects of other variables. So you’re essentially asking:</p>
-<p>“What does the relationship between BMI and BMD look like, averaged over all values of Age and Sex?”</p>
-<p>It gives you a partial effect plot — a clean way to visualize how each predictor (like BMI, Age, or Sex) influences the outcome (BMD), based on the posterior distribution.</p>
+<p>The Bayesian model output indicates that the estimated intercept is 0.42, representing the expected BMD when BMI is zero—a value that isn’t realistic but is standard when interpreting linear models. The coefficient for BMI is 0.01, suggesting that for every one-unit increase in BMI, BMD increases by approximately 0.01 units on average. The 95% credible interval for this estimate ranges from 0.01 to 0.02, providing strong evidence that the effect of BMI on BMD is positive. The residual standard deviation (noise not explained by BMI) is estimated at 0.16 with a tight credible interval.</p>
+<p>We see that the convergence diagnostics are excellent, with Rhat values equal to 1.00, showing that the MCMC chains have mixed well. Additionally, the Bulk Effective Sample Size (Bulk_ESS) and Tail Effective Sample Size (Tail_ESS) are both comfortably above 500. ESS values should ideally be over 400–500 for each parameter. Lower ESS suggests that the model might need more iterations or better mixing. The results indicate that the posterior estimates are based on a sufficient number of effective samples and can be considered stable and reliable.</p>
+<p>Below we provide the histogram and trace plots related to the posterior distributions of the model parameters. We also provide the autocorrelation plot and posterior predictive check based on the posterior distributions.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add raw data overlay</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">conditional_effects</span>(bmd_model, <span class="at">effects =</span> <span class="st">"BMI"</span>), <span class="at">points =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bmd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_marginal-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="M03_1_files/figure-html/bmd_bayes_plot-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">conditional_effects</span>(bmd_model, <span class="at">effects =</span> <span class="st">"Age"</span>), <span class="at">points =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>post_samples <span class="ot">&lt;-</span> <span class="fu">as.array</span>(bmd_model)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#acf(post_samples[, , "b_Intercept"], main = "Autocorrelation: Intercept")</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(post_samples[, , <span class="st">"b_BMI"</span>], <span class="at">main =</span> <span class="st">"Autocorrelation: BMI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_marginal-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="M03_1_files/figure-html/bmd_bayes_plot-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">conditional_effects</span>(bmd_model, <span class="at">effects =</span> <span class="st">"Sex"</span>), <span class="at">points =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_marginal-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="M03_1_files/figure-html/bmd_bayes_plot-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>For a continuous variable (e.g.&nbsp;BMI or Age): A smooth line showing how BMD changes as BMI increases</p>
-<p>Wider or narrower ribbons depending on how uncertain the model is</p>
-<p>For a categorical variable (e.g.&nbsp;Sex): A point estimate (mean BMD) for each group</p>
-<p>Error bars showing uncertainty</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>This is bayesplot version 1.11.1</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>- Online documentation and vignettes at mc-stan.org/bayesplot</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>- bayesplot theme set to bayesplot::theme_default()</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>   * Does _not_ affect other ggplot2 plots</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>   * See ?bayesplot_theme_set for details on theme setting</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'bayesplot'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:brms':
-
-    rhat</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(bmd_model)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Select relevant parameters</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_areas</span>(</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  posterior,</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#pars = c("b_Intercept", "b_BMI", "b_Age", "b_SexMale"),</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexMale"</span>),</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.95</span>  <span class="co"># 95% credible intervals</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_visualise-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior intervals using intervals plot</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_intervals</span>(</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  posterior,</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_Intercept"</span>, <span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexMale"</span>),</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.95</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: `prob_outer` (0.9) is less than `prob` (0.95)
-... Swapping the values of `prob_outer` and `prob`</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_visualise-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good for diagnosing convergence</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  posterior,</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_Intercept"</span>, <span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexMale"</span>)</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_visualise-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior predictive check</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Using 10 posterior draws for ppc type 'dens_overlay' by default.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_pp_check-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model, <span class="at">type =</span> <span class="st">"hist"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Using 10 posterior draws for ppc type 'hist' by default.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_pp_check-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model, <span class="at">type =</span> <span class="st">"boxplot"</span>, <span class="at">group =</span> <span class="st">"Sex"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Using 10 posterior draws for ppc type 'boxplot' by default.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The following arguments were unrecognized and ignored: group</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_pp_check-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model, <span class="at">type =</span> <span class="st">"scatter_avg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Using all posterior draws for ppc type 'scatter_avg' by default.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_pp_check-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(bmd_model, <span class="at">type =</span> <span class="st">"ecdf_overlay"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Using 10 posterior draws for ppc type 'ecdf_overlay' by default.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_pp_check-5.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>If the posterior predictive plots match the observed data closely, your model fits well.</p>
-<p>If the posterior predictive data looks too wide/narrow or misses patterns, you might need:</p>
-<p>Better predictors</p>
-<p>A different model family</p>
-<p>Transformation of variables</p>
+<p>The trace plots show a well-mixed pattern for the MCMC samples. Similarly, we can see that the autocorrelation is low after a few iterations, i.e., the chains are well-mixed. Finally, the posterior predictive check provides further indication that the distribution match with the replications.</p>
 </section>
-<section id="prior-twites" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="prior-twites"><span class="header-section-number">5.7</span> Prior twites</h2>
-<p>Similarities between IG and students-t. Let’s explain this with Inverse-Gamma distributions with parameters (2,1), i.e., IG(2,1) and Student-t distributions that approximate the IG with parameters (3,0,1), i.e., Student-t(3, 0, 1), where Degrees of Freedom = 3, location = 0 (centered), and Scale = 1. Note that we’ll use the fact that the Inverse-Gamma distribution is the inverse of a Gamma distribution. This means that we can plot the Gamma distributions with appropriate parameters and then invert the axes to simulate the Inverse-Gamma behavior.</p>
+</section>
+<section id="bayesian-vs.-frequentist-comparisons" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="bayesian-vs.-frequentist-comparisons"><span class="header-section-number">5.5</span> Bayesian vs.&nbsp;Frequentist Comparisons</h2>
+<p>Now, let us compare the posterior distributions we obtained from the Bayesian model with the estimates from frequentist linear regression model.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jtools)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lm_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(BMD <span class="sc">~</span> BMI, <span class="at">data =</span> bmd_data)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>jtools<span class="sc">::</span><span class="fu">summ</span>(lm_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'gridExtra'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:dplyr':
-
-    combine</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to plot Inverse-Gamma approximation (using the inverse of Gamma distribution)</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>ig_density <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha, beta, x) {</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">dgamma</span>(<span class="dv">1</span> <span class="sc">/</span> x, <span class="at">shape =</span> alpha, <span class="at">rate =</span> beta) <span class="sc">/</span> (x<span class="sc">^</span><span class="dv">2</span>))  <span class="co"># Inverse-Gamma as 1/Gamma(x)</span></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Inverse-Gamma(2,1)</span></span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="fl">0.001</span>, <span class="dv">20</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) <span class="fu">ig_density</span>(<span class="dv">2</span>, <span class="dv">1</span>, x), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">x =</span> <span class="fu">expression</span>(sigma), </span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Inverse-Gamma(2, 1)"</span>) <span class="sc">+</span></span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Student-t(3, 0, 1)</span></span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="fl">0.001</span>, <span class="dv">20</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) <span class="fu">dt</span>(x <span class="sc">/</span> <span class="dv">1</span>, <span class="at">df =</span> <span class="dv">3</span>) <span class="sc">/</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">x =</span> <span class="fu">expression</span>(sigma), </span>
-<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Student-t(3, 0, 1)"</span>) <span class="sc">+</span></span>
-<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the plots side by side</span></span>
-<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M03_1_files/figure-html/bmd_priors-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Thus if we</p>
-<p>Why do we use Cauchy prior? What are the benefits? Is this weakly informative prior?</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>bmd_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> BMD <span class="sc">~</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"b"</span>),       <span class="co"># Priors for slopes</span></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)    <span class="co"># Prior for residual SD</span></span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Compiling Stan program...</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Start sampling</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
-Chain 1: 
-Chain 1: Gradient evaluation took 5.2e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.52 seconds.
-Chain 1: Adjust your expectations accordingly!
-Chain 1: 
-Chain 1: 
-Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 1: 
-Chain 1:  Elapsed Time: 0.244 seconds (Warm-up)
-Chain 1:                0.147 seconds (Sampling)
-Chain 1:                0.391 seconds (Total)
-Chain 1: </code></pre>
+<pre><code>MODEL INFO:
+Observations: 169
+Dependent Variable: BMD
+Type: OLS linear regression 
+
+MODEL FIT:
+F(1,167) = 27.98, p = 0.00
+R² = 0.14
+Adj. R² = 0.14 
+
+Standard errors:OLS
+-----------------------------------------------
+                    Est.   S.E.   t val.      p
+----------------- ------ ------ -------- ------
+(Intercept)         0.42   0.07     6.11   0.00
+BMI                 0.01   0.00     5.29   0.00
+-----------------------------------------------</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lm_coef <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">summary</span>(lm_model))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>bmi_est <span class="ot">&lt;-</span> lm_coef[<span class="st">"BMI"</span>, <span class="st">"Estimate"</span>]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>bmi_se <span class="ot">&lt;-</span> lm_coef[<span class="st">"BMI"</span>, <span class="st">"Std. Error"</span>]</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>ci_low <span class="ot">&lt;-</span> bmi_est <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> bmi_se</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>ci_high <span class="ot">&lt;-</span> bmi_est <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> bmi_se</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>post <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(bmd_model)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>post_bmi <span class="ot">&lt;-</span> post<span class="sc">$</span>b_BMI</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>bayes_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(post_bmi)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>bayes_ci <span class="ot">&lt;-</span> <span class="fu">quantile</span>(post_bmi, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> post_bmi), <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> bmi_est, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> ci_low, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> ci_high, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> bayes_mean, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> bayes_ci[<span class="dv">1</span>], <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> bayes_ci[<span class="dv">2</span>], <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Bayesian vs Frequentist Estimate of BMI Coefficient"</span>,</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Red: Frequentist (MLE &amp; 95% Confidence Interval), Blue: Bayesian (Posterior Mean &amp; 95% Credible Interval)"</span>,</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Coefficient for BMI"</span>,</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M03_1_files/figure-html/bmd_freq_bay_weakly-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p>use rstan, rstanarm or brms</p>
+</div>
+<p>The graph compares our Bayesian and frequentist estimates of the BMI coefficient. The x-axis shows the BMI coefficient, and the y-axis shows the density. For the Bayesian estimate, we use a blue shaded area, with a solid blue vertical line representing the posterior mean, and the shaded area showing the 95% credible interval. For the frequentist estimate, we use two red dashed vertical lines to mark the maximum likelihood estimate (MLE) and the 95% confidence interval. This comparison helps us see the differences in how we estimate the BMI coefficient and the uncertainty in each method.</p>
+<p>In our next lecture, we will look at how different types of prior distributions affect the posterior in a Bayesian hierarchical model, and how these results differ from those in the frequentist approach.</p>
 </section>
-<section id="model-diagnostics" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="model-diagnostics"><span class="header-section-number">5.8</span> Model Diagnostics</h2>
-<p>https://m-clark.github.io/easy-bayes/shinystan.html</p>
-<p>shinystan for model diag.</p>
+<section id="summary" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.6</span> Summary</h2>
 <p>…</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
 </section>
-<section id="exercises" class="level2" data-number="5.9">
-<h2 data-number="5.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5.9</span> Exercises</h2>
-<p>sdfads</p>
+<section id="live-tutorial-and-discussion" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">5.7</span> Live tutorial and discussion</h2>
+<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
 </section>
-<section id="live-tutorial-and-discussion" class="level2" data-number="5.10">
-<h2 data-number="5.10" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">5.10</span> Live tutorial and discussion</h2>
-<p>asdfa</p>
+<section id="tutorial-exercises" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">5.8</span> Tutorial Exercises</h2>
+<p>Solutions will be provided later after the tutorial.</p>
 </section>
-<section id="summary" class="level2" data-number="5.11">
-<h2 data-number="5.11" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.11</span> Summary</h2>
-<p>asdf</p>
-</section>
-<section id="preparation-for-week-2" class="level2" data-number="5.12">
-<h2 data-number="5.12" class="anchored" data-anchor-id="preparation-for-week-2"><span class="header-section-number">5.12</span> Preparation for Week 2</h2>
-<p>In week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.</p>
+<section id="preparation-for-week-6" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="preparation-for-week-6"><span class="header-section-number">5.9</span> Preparation for Week 6</h2>
+<p>In week 5 you will be required to .</p>
 
 
 </section>
@@ -1303,8 +1266,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./M03_2.html" class="pagination-link" aria-label="**Bayeswatch! Prior Twits**">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Twits</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M03_2.html" class="pagination-link" aria-label="**Bayeswatch! Prior Tweaks and More**">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Tweaks and More</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
