@@ -230,37 +230,37 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Binary Data</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Count Data</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -291,7 +291,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#bayesian-modelling-context" id="toc-bayesian-modelling-context" class="nav-link" data-scroll-target="#bayesian-modelling-context"><span class="header-section-number">5.3.1</span> Bayesian Modelling Context</a></li>
   </ul></li>
-  <li><a href="#model-development" id="toc-model-development" class="nav-link" data-scroll-target="#model-development"><span class="header-section-number">5.4</span> Model Development</a>
+  <li><a href="#model-development---gaussian-context" id="toc-model-development---gaussian-context" class="nav-link" data-scroll-target="#model-development---gaussian-context"><span class="header-section-number">5.4</span> Model Development - Gaussian Context</a>
   <ul class="collapse">
   <li><a href="#bayesian-dag" id="toc-bayesian-dag" class="nav-link" data-scroll-target="#bayesian-dag"><span class="header-section-number">5.4.1</span> Bayesian DAG</a></li>
   <li><a href="#r-code-example" id="toc-r-code-example" class="nav-link" data-scroll-target="#r-code-example"><span class="header-section-number">5.4.2</span> R Code Example</a></li>
@@ -402,12 +402,12 @@ ref: https://bookdown.org/paul/applied-causal-analysis/estimator.html
 <p>This Bayesian approach allows us not only to estimate the coefficients but also to quantify our uncertainty about them, providing a more comprehensive understanding of the predictors’ influence on vaccine efficacy.</p>
 </section>
 </section>
-<section id="model-development" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="model-development"><span class="header-section-number">5.4</span> Model Development</h2>
+<section id="model-development---gaussian-context" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="model-development---gaussian-context"><span class="header-section-number">5.4</span> Model Development - Gaussian Context</h2>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>We have discussed about Directed Acyclic Graph (DAG) in one of our previous lectures. Today we will explain DAG for conceptualising and developing Bayesian regression models. It helps to visually represent causal relationships among variables and ensures proper adjustment for confounding factors.</p>
-<p>Now we explain this more with an example related to Bone Mineral Density (BMD). For example, we want to know, how does body mass index (BMI) impact bone mineral density (BMD)?</p>
+<p>Now we explain this more with an example related to Bone Mineral Density (BMD) measured in <span class="math inline">\(g/cm^2\)</span>. For example, we want to know, how does body mass index (BMI) impact bone mineral density (BMD)?</p>
 <p>Here, we are trying to model the relationship between BMI (independent or exposure variable) and BMD (dependent or outcome or endpoint variable). Thus can draw the DAG as:</p>
 <div class="cell">
 <details class="code-fold">
@@ -423,8 +423,8 @@ ref: https://bookdown.org/paul/applied-causal-analysis/estimator.html
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-9284f48a119f8896c97e" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-9284f48a119f8896c97e">{"x":{"diagram":"\n  digraph LR {\n    rankdir=LR;  # Set the direction from left to right\n    M [label = \"BMI\"]\n    B [label = \"BMD\"]\n    M -> B\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a511c5cca25db136b4e8" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a511c5cca25db136b4e8">{"x":{"diagram":"\n  digraph LR {\n    rankdir=LR;  # Set the direction from left to right\n    M [label = \"BMI\"]\n    B [label = \"BMD\"]\n    M -> B\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>In a Bayesian context, we need to define the likelihood of observing the data given certain parameters and then combine that with a prior belief about those parameters.</p>
@@ -524,8 +524,8 @@ p(\sigma^2 \mid \beta_0, \beta_1, \text{BMD}, \text{BMI}) \propto \mathcal{N}(\t
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-1cc665756a4f8747b47b" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-1cc665756a4f8747b47b">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;  # Set direction from left to right\n    \n    # Nodes (parameters and variables)\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma2 [label = \"σ²\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma2 [label = \"Prior for σ²: IG(a, b)\", shape = box, style = dashed, fillcolor = lightyellow]\n    \n    # Edges (dependencies between nodes)\n    BMI -> BMD\n    beta_0 -> BMD\n    beta_1 -> BMD\n    sigma2 -> BMD\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_sigma2 -> sigma2\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-d6a7ff40ecc410933b26" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-d6a7ff40ecc410933b26">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;  # Set direction from left to right\n    \n    # Nodes (parameters and variables)\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma2 [label = \"σ²\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma2 [label = \"Prior for σ²: IG(a, b)\", shape = box, style = dashed, fillcolor = lightyellow]\n    \n    # Edges (dependencies between nodes)\n    BMI -> BMD\n    beta_0 -> BMD\n    beta_1 -> BMD\n    sigma2 -> BMD\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_sigma2 -> sigma2\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -654,8 +654,8 @@ p(\sigma^2 \mid \beta_0, \beta_1, \text{BMD}, \text{BMI}) \propto \mathcal{N}(\t
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 3.4e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.34 seconds.
+Chain 1: Gradient evaluation took 5.3e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.53 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -672,9 +672,9 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.046 seconds (Warm-up)
-Chain 1:                0.03 seconds (Sampling)
-Chain 1:                0.076 seconds (Total)
+Chain 1:  Elapsed Time: 0.079 seconds (Warm-up)
+Chain 1:                0.05 seconds (Sampling)
+Chain 1:                0.129 seconds (Total)
 Chain 1: </code></pre>
 </div>
 <details class="code-fold">

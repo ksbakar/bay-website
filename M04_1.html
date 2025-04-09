@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Clusterphobia? Part - I – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>7&nbsp; Non-Gaussian Bayeswatch! Looking at Binary Data – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -115,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M04_1.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M04_1.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Binary Data</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -179,49 +218,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Logical Connections</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Tweaks and More</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Binary Data</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Count Data</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -247,14 +286,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">7.1</span> Learnings</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">7.2</span> Introduction</a></li>
-  <li><a href="#clustered-data-multilevel-modles" id="toc-clustered-data-multilevel-modles" class="nav-link" data-scroll-target="#clustered-data-multilevel-modles"><span class="header-section-number">7.3</span> Clustered Data &amp; Multilevel Modles</a></li>
-  <li><a href="#varying-intercept-model" id="toc-varying-intercept-model" class="nav-link" data-scroll-target="#varying-intercept-model"><span class="header-section-number">7.4</span> Varying Intercept Model</a></li>
-  <li><a href="#varying-slope-model" id="toc-varying-slope-model" class="nav-link" data-scroll-target="#varying-slope-model"><span class="header-section-number">7.5</span> Varying Slope Model</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">7.6</span> Exercises</a></li>
-  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">7.7</span> Live tutorial and discussion</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.8</span> Summary</a></li>
-  <li><a href="#preparation-for-week-2" id="toc-preparation-for-week-2" class="nav-link" data-scroll-target="#preparation-for-week-2"><span class="header-section-number">7.9</span> Preparation for Week 2</a></li>
+  <li><a href="#binary-outcome" id="toc-binary-outcome" class="nav-link" data-scroll-target="#binary-outcome"><span class="header-section-number">7.2</span> Binary Outcome</a></li>
+  <li><a href="#bayesian-model-development" id="toc-bayesian-model-development" class="nav-link" data-scroll-target="#bayesian-model-development"><span class="header-section-number">7.3</span> Bayesian Model Development</a></li>
+  <li><a href="#r-code-example" id="toc-r-code-example" class="nav-link" data-scroll-target="#r-code-example"><span class="header-section-number">7.4</span> R Code Example:</a></li>
   </ul>
 </nav>
     </div>
@@ -263,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Binary Data</strong></span></h1>
 </div>
 
 
@@ -290,56 +324,372 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Objectives</strong></p></li>
 </ul>
 <p>By the end of this week you should be able to:</p>
-<p>– Explain clusterd data.</p>
-<p>– Describe hierarchical or multilevel Models.</p>
-<p>– Fit Bayesian linear mixed models.</p>
-<p>– Interpret a real-life problem in Bayesian context.</p>
+<p>– Understand the Bayesian GLM</p>
+<p>– Understand the difference between Bayesian and classical GLM.</p>
+<p>– Formulate problems and solutions using Bayesian GLM.</p>
 </section>
-<section id="introduction" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.2</span> Introduction</h2>
-<p>asdafs</p>
-<p>https://m-clark.github.io/mixed-models-with-R/bayesian.html</p>
-<p>Multilevel structure : https://bookdown.org/marklhc/notes_bookdown/hierarchical-multilevel-models.html</p>
-<p>https://m-clark.github.io/easy-bayes/rstanarm-mixed-model.html</p>
-</section>
-<section id="clustered-data-multilevel-modles" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="clustered-data-multilevel-modles"><span class="header-section-number">7.3</span> Clustered Data &amp; Multilevel Modles</h2>
-<p>asdf</p>
-</section>
-<section id="varying-intercept-model" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="varying-intercept-model"><span class="header-section-number">7.4</span> Varying Intercept Model</h2>
-<p>asdf</p>
-</section>
-<section id="varying-slope-model" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="varying-slope-model"><span class="header-section-number">7.5</span> Varying Slope Model</h2>
-<p>asdf</p>
-<p>Vedio</p>
-<p>…</p>
+<section id="binary-outcome" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="binary-outcome"><span class="header-section-number">7.2</span> Binary Outcome</h2>
+<p>Binary variable seem simple at first—they’re just yes or no, 1 or 0, success or failure. But there’s often more going on behind the scenes, especially when the outcome depends on other factors. For example, how likely is a patient to get better depending on their treatment and medical history?</p>
+<p>To study these kinds of questions, we use regression models for binary data. These models help us understand how different factors affect the chances of a certain outcome. Two common types of models for this are logistic regression and probit regression. In a Bayesian approach, we can not only see how the predictors influence the outcome, but also include what we already believe before seeing the data—and clearly measure how uncertain our results are.</p>
+<p>Let us now explain this more using the bone mineral density (BMD) example. Our research aim is now to understand the effect of BMD on the fracture status of the bone (‘Status’), where we assume no-fracture refers to zero (reference category) and fracture refers to one.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"bmd_restricted.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>bmi <span class="ot">&lt;-</span> bmd_data<span class="sc">$</span>weight_kg<span class="sc">/</span>(bmd_data<span class="sc">$</span>height_cm<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture_status <span class="ot">&lt;-</span> <span class="fu">factor</span>(bmd_data<span class="sc">$</span>fracture)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture_status <span class="ot">&lt;-</span> <span class="fu">relevel</span>(bmd_data<span class="sc">$</span>fracture_status, <span class="at">ref =</span> <span class="st">"no fracture"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Status =</span> bmd_data<span class="sc">$</span>fracture_status,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> bmd_data<span class="sc">$</span>bmd,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMI =</span> bmd_data<span class="sc">$</span>bmi,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> bmd_data<span class="sc">$</span>age,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(bmd_data<span class="sc">$</span>sex)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">:::</span><span class="fu">skim_without_charts</span>(bmd_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">bmd_data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">169</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 19%">
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Status</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">no : 119, fra: 50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sex</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">M: 86, F: 83</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BMD</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.78</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;">0.89</td>
+<td style="text-align: right;">1.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BMI</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">25.20</td>
+<td style="text-align: right;">4.41</td>
+<td style="text-align: right;">15.43</td>
+<td style="text-align: right;">22.15</td>
+<td style="text-align: right;">24.96</td>
+<td style="text-align: right;">27.55</td>
+<td style="text-align: right;">38.54</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">63.63</td>
+<td style="text-align: right;">12.36</td>
+<td style="text-align: right;">35.81</td>
+<td style="text-align: right;">54.42</td>
+<td style="text-align: right;">63.49</td>
+<td style="text-align: right;">72.08</td>
+<td style="text-align: right;">88.75</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="bayesian-model-development" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="bayesian-model-development"><span class="header-section-number">7.3</span> Bayesian Model Development</h2>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Let’s start by explaining the example using a DAG. In our research, we’re trying to understand how Bone Mineral Density (BMD) total (<span class="math inline">\(g/cm^2\)</span>) measure in spine affects whether a bone breaks or not. We group fracture status into two categories: no fracture (0) and fracture (1).</p>
+<p>In this case, BMD total in spine is our main variable of interest, this is the exposure variable, because we want to see how changes in BMD are linked to the risk of fractures. At the same time, we also look at Body Mass Index (BMI), Age, and Sex. These are the confounders, which means they can influence both BMD and the risk of having a fracture. If we don’t take them into account, we might get the wrong idea about how strongly BMD is related to fractures.</p>
+<p>So, we’re using this setup to better understand how all these factors: BMD, BMI, age, and sex, work together and affect whether someone has a bone fracture or not. Each factor follows a certain pattern, and by studying these patterns, we can make better predictions about bone health.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grViz</span>(<span class="st">"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="st">  digraph DAG {</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">    rankdir=LR;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">    # Nodes</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">    BMI [label = 'BMI', shape = ellipse, style = filled, fillcolor = lightblue]</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">    Age [label = 'Age', shape = ellipse, style = filled, fillcolor = lightblue]</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">    Sex [label = 'Sex', shape = ellipse, style = filled, fillcolor = lightblue]</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">    BMD [label = 'BMD', shape = ellipse, style = filled, fillcolor = aquamarine2]</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">    Status [label = 'Status (No Fracture/Fracture)', shape = ellipse, style = filled, fillcolor = lightcoral]</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_0 [label = 'β₀', shape = box, style = filled, fillcolor = lightgrey]</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_1 [label = 'β₁ (BMD)', shape = box, style = filled, fillcolor = lightgrey]</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_2 [label = 'β₂ (BMI)', shape = box, style = filled, fillcolor = lightgrey]</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_3 [label = 'β₃ (Age)', shape = box, style = filled, fillcolor = lightgrey]</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_4 [label = 'β₄ (Sex)', shape = box, style = filled, fillcolor = lightgrey]</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_0 [label = 'Prior for β₀: N(μ₀, σ₀²)', shape = box, style = dashed, fillcolor = lightyellow]</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_1 [label = 'Prior for β₁: N(μ₁, σ₁²)', shape = box, style = dashed, fillcolor = lightyellow]</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_2 [label = 'Prior for β₂: N(μ₂, σ₂²)', shape = box, style = dashed, fillcolor = lightyellow]</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_3 [label = 'Prior for β₃: N(μ₃, σ₃²)', shape = box, style = dashed, fillcolor = lightyellow]</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_4 [label = 'Prior for β₄: N(μ₄, σ₄²)', shape = box, style = dashed, fillcolor = lightyellow]</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="st">    # Edges</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="st">    BMI -&gt; Status</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="st">    Age -&gt; Status</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="st">    Sex -&gt; Status</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="st">    BMD -&gt; Status</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_0 -&gt; Status</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_1 -&gt; Status</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_2 -&gt; Status</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_3 -&gt; Status</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="st">    beta_4 -&gt; Status</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_0 -&gt; beta_0</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_1 -&gt; beta_1</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_2 -&gt; beta_2</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_3 -&gt; beta_3</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="st">    prior_beta_4 -&gt; beta_4</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a70504bb31eb626bb9ec" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a70504bb31eb626bb9ec">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;\n\n    # Nodes\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Age [label = \"Age\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex [label = \"Sex\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Status [label = \"Status (No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂ (BMI)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃ (Age)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_4 [label = \"β₄ (Sex)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂: N(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃: N(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_4 [label = \"Prior for β₄: N(μ₄, σ₄²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges\n    BMI -> Status\n    Age -> Status\n    Sex -> Status\n    BMD -> Status\n\n    beta_0 -> Status\n    beta_1 -> Status\n    beta_2 -> Status\n    beta_3 -> Status\n    beta_4 -> Status\n\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_beta_4 -> beta_4\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Here, we’re modeling how BMD affects the probability of a bone fracture, while adjusting for the confounding effects of BMI, Age, and Sex. Let’s build a Bayesian hierarchical model:</p>
+<p>Let, <span class="math inline">\(\text{Status}_i \in \{0,1\}\)</span>: fracture status for individual <span class="math inline">\(i\)</span>, i.e, 0 = no fracture and 1 = fracture. Using <span class="math inline">\(\text{BMD}_i\)</span>, <span class="math inline">\(\text{BMI}_i\)</span>, <span class="math inline">\(\text{Age}_i\)</span>, and _i$, we write the probability of fracture <span class="math inline">\(P(\text{Status}_i = 1 \mid \cdot)\)</span> as:</p>
+<p>[ P(_i = 1 _i, _i, _i, _i) = ^{-1}(_i) ]</p>
+<p>[ _i = _0 + _1 _i + _2 _i + _3 _i + _4 _i ]</p>
+<p>Now, we define the priors as:</p>
+<p>[ _j (_j, ^2_j) j = 0, 1, 2, 3, 4 ]</p>
+<p>Hence, denoting <span class="math inline">\(\mathbf{y}_i = \text{Status}_i\)</span> and <span class="math inline">\(\bf{x}_i =(\text{BMD}_i, \text{BMI}_i, \text{Age}_i, \text{Sex}_i)'\)</span>, we write the posterior distribution in matrix and vector notations as:</p>
+<p>[ p( , ) p( , ) p() ]</p>
+<p>Where, <span class="math inline">\(\boldsymbol{\beta} = (\beta_0,\beta_1,\beta_2,\beta_3,\beta_4)'\)</span>.</p>
+<p>This model lets us estimate the posterior distribution of the effect of BMD on fractures, while adjusting for BMI, Age, and Sex.</p>
+</section>
+<section id="r-code-example" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="r-code-example"><span class="header-section-number">7.4</span> R Code Example:</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"bmd_drug.csv"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>bmi <span class="ot">&lt;-</span> bmd_data<span class="sc">$</span>weight_kg<span class="sc">/</span>(bmd_data<span class="sc">$</span>height_cm<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture <span class="ot">&lt;-</span> <span class="fu">factor</span>(bmd_data<span class="sc">$</span>fracture)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture <span class="ot">&lt;-</span> <span class="fu">relevel</span>(bmd_data<span class="sc">$</span>fracture, <span class="at">ref =</span> <span class="st">"no fracture"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Status =</span> bmd_data<span class="sc">$</span>fracture,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> bmd_data<span class="sc">$</span>bmdtot_spine,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMI =</span> bmd_data<span class="sc">$</span>bmi,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> bmd_data<span class="sc">$</span>age,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(bmd_data<span class="sc">$</span>sex)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">5</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">5</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>fracture_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD <span class="sc">+</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 8.5e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.85 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.94 seconds (Warm-up)
+Chain 1:                0.581 seconds (Sampling)
+Chain 1:                1.521 seconds (Total)
+Chain 1: </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> Family: bernoulli 
+  Links: mu = logit 
+Formula: Status ~ BMD + BMI + Age + Sex 
+   Data: bmd_data (Number of observations: 1077) 
+  Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 1000
+
+Regression Coefficients:
+          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept    -0.48      1.58    -3.75     2.54 1.00      944      740
+BMD          -2.38      1.02    -4.39    -0.38 1.00      686      546
+BMI          -0.22      0.05    -0.32    -0.13 1.00      944      787
+Age           0.08      0.01     0.05     0.11 1.00      837      738
+SexM         -0.05      0.30    -0.65     0.54 1.00      846      760
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 </div>
-</section>
-<section id="exercises" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">7.6</span> Exercises</h2>
-<p>sdfads</p>
-</section>
-<section id="live-tutorial-and-discussion" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">7.7</span> Live tutorial and discussion</h2>
-<p>asdfa</p>
-</section>
-<section id="summary" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.8</span> Summary</h2>
-<p>asdf</p>
-</section>
-<section id="preparation-for-week-2" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="preparation-for-week-2"><span class="header-section-number">7.9</span> Preparation for Week 2</h2>
-<p>In week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.</p>
+<p>Now get the summary statistics in odds ratios:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_summary &lt;- posterior_summary(fracture_model)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#odds_ratios &lt;- exp(posterior_summary[grep("^b_", rownames(posterior_summary)), ])</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fracture_model)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>posterior_or <span class="ot">&lt;-</span> posterior <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"b_"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), exp))  <span class="co"># Convert to odds ratios</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot using mcmc_areas</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_areas</span>(</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  posterior_or,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">colnames</span>(posterior_or),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.95</span>  <span class="co"># 95% credible interval</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior Distributions of Odds Ratios"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M04_1_files/figure-html/fracture_odds-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -764,13 +1114,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./M03_2.html" class="pagination-link" aria-label="**Bayeswatch! Part - II**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Part - II</strong></span></span>
+      <a href="./M03_2.html" class="pagination-link" aria-label="**Bayeswatch! Prior Tweaks and More**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Tweaks and More</strong></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./M04_2.html" class="pagination-link" aria-label="**Clusterphobia? Part - II**">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M04_2.html" class="pagination-link" aria-label="**Non-Gaussian Bayeswatch! Looking at Count Data**">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Count Data</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

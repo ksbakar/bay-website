@@ -250,37 +250,37 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Binary Data</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Count Data</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -631,8 +631,8 @@ ref: paper: https://doi.org/10.1016/j.jclinepi.2021.08.001
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-f2f6735888c57d119fa5" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-f2f6735888c57d119fa5">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Outcome\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-938c439e102858d9f662" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-938c439e102858d9f662">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Outcome\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>This is a simple graphical model, where <span class="math inline">\(y\)</span> depends on <span class="math inline">\(\theta\)</span>, with <span class="math inline">\(\theta\)</span> being a logical function of hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
@@ -721,8 +721,8 @@ Pr(H_1|y=1) = 1- 0.45 = 0.55
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>dag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-f849386e8776be667083" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-f849386e8776be667083">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ae2eec80cf6ac89b2071" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ae2eec80cf6ac89b2071">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><strong>Summary</strong></p>
@@ -839,8 +839,8 @@ It is invariance to data-order ... ref: kruschke, page 107; sec 5.2.1
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>dag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-dc37a517e981a1929ecf" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-dc37a517e981a1929ecf">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-0112f215447d0b26cc64" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-0112f215447d0b26cc64">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><strong>Invariance to data-order</strong></p>
