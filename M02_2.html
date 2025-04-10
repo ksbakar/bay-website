@@ -798,8 +798,8 @@ ref: https://mc-stan.org/bayesplot/articles/visual-mcmc-diagnostics.html
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 3.6e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.36 seconds.
+Chain 1: Gradient evaluation took 1.8e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.18 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -816,15 +816,15 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.038 seconds (Warm-up)
-Chain 1:                0.033 seconds (Sampling)
-Chain 1:                0.071 seconds (Total)
+Chain 1:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 1:                0.013 seconds (Sampling)
+Chain 1:                0.026 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 2.1e-05 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.21 seconds.
+Chain 2: Gradient evaluation took 3e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.03 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -841,15 +841,15 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 0.049 seconds (Warm-up)
-Chain 2:                0.03 seconds (Sampling)
-Chain 2:                0.079 seconds (Total)
+Chain 2:  Elapsed Time: 0.025 seconds (Warm-up)
+Chain 2:                0.011 seconds (Sampling)
+Chain 2:                0.036 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 8e-06 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
+Chain 3: Gradient evaluation took 4e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.04 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -866,9 +866,9 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.035 seconds (Warm-up)
-Chain 3:                0.029 seconds (Sampling)
-Chain 3:                0.064 seconds (Total)
+Chain 3:  Elapsed Time: 0.015 seconds (Warm-up)
+Chain 3:                0.011 seconds (Sampling)
+Chain 3:                0.026 seconds (Total)
 Chain 3: </code></pre>
 </div>
 <details class="code-fold">
@@ -884,7 +884,7 @@ post-warmup draws per chain=1000, total post-warmup draws=3000.
 mu    5.06       0 0.21 4.65 4.92 5.06 5.20  5.49  2598    1
 sigma 2.11       0 0.16 1.83 2.00 2.10 2.21  2.45  2926    1
 
-Samples were drawn using NUTS(diag_e) at Wed Apr  9 21:40:04 2025.
+Samples were drawn using NUTS(diag_e) at Thu Apr 10 11:34:12 2025.
 For each parameter, n_eff is a crude measure of effective sample size,
 and Rhat is the potential scale reduction factor on split chains (at 
 convergence, Rhat=1).</code></pre>
@@ -931,22 +931,24 @@ convergence, Rhat=1).</code></pre>
 <iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>When we run Markov Chain Monte Carlo (MCMC) methods for Bayesian inference, we need to make sure our samples actually represent the true posterior distribution. MCMC doesn’t guarantee good results on its own, so we rely on MCMC diagnostics to check for issues like lack of convergence, autocorrelation, and poor mixing.</p>
+<p>Note that there are two major schools related to the MCMC diagnostics: one prefere running one chain for longer iterations and another prefers running multiple chains for relatively shorter iterations. We also need to understand “burn-in” and “thinning” of the MCMC samples. A burn-in refers to discard early samples to allow the chain to reach the stationary distribution. Typical burn-in might be 10–50% of the chain. The thining approach is related to reduce autocorrelation. Thinning means keeping only every nth sample from your MCMC chain and discarding the rest. For example, if you thin by 10, you keep sample 10, 20, 30, etc., and discard the rest.</p>
+<p>Now, let’s discuss more on the MCMC diagnostics below:</p>
 <section id="convergence" class="level3" data-number="4.6.1">
 <h3 data-number="4.6.1" class="anchored" data-anchor-id="convergence"><span class="header-section-number">4.6.1</span> Convergence</h3>
-<p>We first check whether the MCMC chain has actually converged to the posterior distribution. To check this we rely on methods such as: trace plots and Gelman-Rubin Diagnostic using R statistic.</p>
-<p>If the trace plot looks like a “hairy caterpillar” without trends or long drifts, that’s a good sign. If we see big jumps or slow drifting, we might need a longer burn-in period or better tuning.</p>
-<p>If we run multiple chains as indicated in the examples above, the we can compare their variance, which is also known as Gelman-Rubin Diagnostic and denote the estimate as <span class="math inline">\(\hat{R}\)</span>. An <span class="math inline">\(\hat{R}\)</span> near 1 typically indicates convergence, i.e., all chains are settled into the same stationary distribution. It is also important to check the Gelman-Rubin plot, which usually show how <span class="math inline">\(\hat{R}\)</span> decreases over iterations.</p>
+<p>We first check whether the MCMC chain has actually converged to the posterior distribution. To check this we rely mainly on visual method: trace plots. If the trace plot looks like a “hairy caterpillar” without trends or long drifts, that’s a good sign. If we see big jumps or slow drifting, we might need a longer burn-in period or better tuning.</p>
+<p>If we run multiple chains as indicated in the examples above, the we can compare their variance, which is also known as Gelman-Rubin Diagnostic and denote the estimate as <span class="math inline">\(\hat{R}\)</span>. An <span class="math inline">\(\hat{R}\)</span> near 1 (or less than 1.1) typically indicates convergence, i.e., all chains are settled into the same stationary distribution. It is also important to check the Gelman-Rubin plot, which usually show how <span class="math inline">\(\hat{R}\)</span> decreases over iterations.</p>
 </section>
 <section id="autocorrelation" class="level3" data-number="4.6.2">
 <h3 data-number="4.6.2" class="anchored" data-anchor-id="autocorrelation"><span class="header-section-number">4.6.2</span> Autocorrelation</h3>
 <p>We can also use autocorrelation plots to check how correlated our MCMC samples are with previous ones. Ideally, the correlation should drop off quickly, if it lingers then we may need to adjust our proposal distribution for MH or thinning interval or run the chain for more iterations.</p>
-<p>Another measurement diagnostic is the effective sample size (ESS). If ESS is low, it means we’re getting fewer independent samples than expected. Increasing the total iterations or improving sampling efficiency (e.g., using Hamiltonian Monte Carlo instead of Metropolis-Hastings) can help to increase the ESS.</p>
+<p>Another measurement diagnostic is the effective sample size (ESS). If ESS is low, it means we’re getting fewer independent samples than expected. Increasing the total iterations or improving sampling efficiency (e.g., using Hamiltonian Monte Carlo instead of Metropolis-Hastings) can help to increase the ESS. Usually, ESS &lt; 100 might not be a good indicator, which might lead the posterior estimates unreliable. ESS &gt; 400 is generally considered good, where you can get reasonably accurate estimates of posterior means, variances, and quantiles (like credible intervals).</p>
 </section>
 <section id="mixing-efficiency" class="level3" data-number="4.6.3">
 <h3 data-number="4.6.3" class="anchored" data-anchor-id="mixing-efficiency"><span class="header-section-number">4.6.3</span> Mixing &amp; Efficiency</h3>
 <p>Even if our chain is converging, we want to make sure it’s exploring the full posterior efficiently. Poor mixing shows up when the chain gets stuck in one region for too long before jumping elsewhere. If we notice this, the we can tweak the sampling algorithm to improve mixing.</p>
 <p>For Metropolis-Hastings, we aim for an acceptance rate between 20% and 50%. If it’s too low, our proposals might be too aggressive; if it’s too high, they might be too conservative.</p>
-<p>Running MCMC isn’t just about pressing “go” and hoping for the best—we actively check these diagnostics to ensure our samples are reliable. If we run into problems, we adjust our burn-in period, reparameterize our model, or switch to a more advanced sampler like Hamiltonian Monte Carlo.</p>
+<p>Running MCMC isn’t just about pressing “go” and hoping for the best—we actively check these diagnostics to ensure our samples are reliable. If we run into problems, we adjust our burn-in period, reparameterise our model, or switch to a more advanced sampler like Hamiltonian Monte Carlo (HMC).</p>
+<p>In this course, we will mainly use HMC algorithm to obtain posterior distributions and estimates from the Bayesian models.</p>
 </section>
 <section id="code-for-mh" class="level3" data-number="4.6.4">
 <h3 data-number="4.6.4" class="anchored" data-anchor-id="code-for-mh"><span class="header-section-number">4.6.4</span> Code for MH</h3>
@@ -1048,8 +1050,9 @@ convergence, Rhat=1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>gelman_diag <span class="ot">&lt;-</span> <span class="fu">gelman.diag</span>(mcmc_chains_gibbs)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gelman_diag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>gelman_diag <span class="ot">&lt;-</span> <span class="fu">gelman.diag</span>(mcmc_chains_gibbs)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gelman_diag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Potential scale reduction factors:

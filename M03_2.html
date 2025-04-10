@@ -376,8 +376,8 @@ window.Quarto = {
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-b4d153c0af724b6cba30" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-b4d153c0af724b6cba30">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;  # Set direction from left to right\n    \n    # Nodes (parameters and variables)\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma2 [label = \"σ²\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma2 [label = \"Prior for σ²: Half-Cauchy(0, τ)\", shape = box, style = dashed, fillcolor = lightyellow]\n    \n    # Edges (dependencies between nodes)\n    BMI -> BMD\n    beta_0 -> BMD\n    beta_1 -> BMD\n    sigma2 -> BMD\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_sigma2 -> sigma2\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-7694d82ace5ca1035568" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-7694d82ace5ca1035568">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;  # Set direction from left to right\n    \n    # Nodes (parameters and variables)\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma2 [label = \"σ²\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma2 [label = \"Prior for σ²: Half-Cauchy(0, τ)\", shape = box, style = dashed, fillcolor = lightyellow]\n    \n    # Edges (dependencies between nodes)\n    BMI -> BMD\n    beta_0 -> BMD\n    beta_1 -> BMD\n    sigma2 -> BMD\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_sigma2 -> sigma2\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <section id="r-code-example" class="level3" data-number="6.2.1">
@@ -472,8 +472,8 @@ window.Quarto = {
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 5.4e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.54 seconds.
+Chain 1: Gradient evaluation took 3.1e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.31 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -490,9 +490,9 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.076 seconds (Warm-up)
-Chain 1:                0.047 seconds (Sampling)
-Chain 1:                0.123 seconds (Total)
+Chain 1:  Elapsed Time: 0.036 seconds (Warm-up)
+Chain 1:                0.02 seconds (Sampling)
+Chain 1:                0.056 seconds (Total)
 Chain 1: </code></pre>
 </div>
 <details class="code-fold">
@@ -570,8 +570,8 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 2.6e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.26 seconds.
+Chain 1: Gradient evaluation took 4.4e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.44 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -589,8 +589,8 @@ Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
 Chain 1:  Elapsed Time: 0.053 seconds (Warm-up)
-Chain 1:                0.029 seconds (Sampling)
-Chain 1:                0.082 seconds (Total)
+Chain 1:                0.031 seconds (Sampling)
+Chain 1:                0.084 seconds (Total)
 Chain 1: </code></pre>
 </div>
 <details class="code-fold">
@@ -830,8 +830,8 @@ BMI                 0.01   0.00     5.29   0.00
 <span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-10868a3d593c6f8ea5bb" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-10868a3d593c6f8ea5bb">{"x":{"diagram":"\n  digraph combined_DAGs {\n    \n    // Global graph layout direction\n    compound=true;\n    newrank=true;\n    ranksep=1.2;\n\n    // First DAG (Top)\n    subgraph cluster_1 {\n      label = \"Original DAG\";\n      rankdir=LR;\n      \n      M1 [label = \"BMI\"]\n      B1 [label = \"BMD\"]\n      A1 [label = \"Age\"]\n      S1 [label = \"Sex\"]\n      \n      M1 -> B1\n      A1 -> M1\n      S1 -> M1\n      A1 -> B1\n      S1 -> B1\n    }\n\n    // Spacer node (invisible)\n    spacer [style=invis, height=0.1]\n\n    // Second DAG (Bottom)\n    subgraph cluster_2 {\n      label = \"Labeled DAG with Roles\";\n      rankdir=LR;\n\n      M2 [label = \"BMI\\n(Exposure)\"]\n      B2 [label = \"BMD\\n(Outcome)\"]\n      A2 [label = \"Age\\n(Confounder)\"]\n      S2 [label = \"Sex\\n(Confounder)\"]\n\n      M2 -> B2\n      A2 -> M2\n      S2 -> M2\n      A2 -> B2\n      S2 -> B2\n    }\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-7d9fcb16ad0f86cec428" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-7d9fcb16ad0f86cec428">{"x":{"diagram":"\n  digraph combined_DAGs {\n    \n    // Global graph layout direction\n    compound=true;\n    newrank=true;\n    ranksep=1.2;\n\n    // First DAG (Top)\n    subgraph cluster_1 {\n      label = \"Original DAG\";\n      rankdir=LR;\n      \n      M1 [label = \"BMI\"]\n      B1 [label = \"BMD\"]\n      A1 [label = \"Age\"]\n      S1 [label = \"Sex\"]\n      \n      M1 -> B1\n      A1 -> M1\n      S1 -> M1\n      A1 -> B1\n      S1 -> B1\n    }\n\n    // Spacer node (invisible)\n    spacer [style=invis, height=0.1]\n\n    // Second DAG (Bottom)\n    subgraph cluster_2 {\n      label = \"Labeled DAG with Roles\";\n      rankdir=LR;\n\n      M2 [label = \"BMI\\n(Exposure)\"]\n      B2 [label = \"BMD\\n(Outcome)\"]\n      A2 [label = \"Age\\n(Confounder)\"]\n      S2 [label = \"Sex\\n(Confounder)\"]\n\n      M2 -> B2\n      A2 -> M2\n      S2 -> M2\n      A2 -> B2\n      S2 -> B2\n    }\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>In this case, the estimand is the specific effect of BMI on BMD, while accounting for the influence of age and sex as confounders. The goal is to isolate the effect of BMI on BMD after adjusting for these other variables.</p>
@@ -898,8 +898,8 @@ BMI                 0.01   0.00     5.29   0.00
 <span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-6b496074e83e715ee4f4" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6b496074e83e715ee4f4">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;  # Set direction from left to right\n    \n    # Nodes (parameters and variables)\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Age [label = \"Age\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex [label = \"Sex\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma2 [label = \"σ²\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂: N(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃: N(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma2 [label = \"Prior for σ²: Half-Cauchy(0, τ)\", shape = box, style = dashed, fillcolor = lightyellow]\n    \n    # Edges (dependencies between nodes)\n    BMI -> BMD\n    Age -> BMD\n    Sex -> BMD\n    beta_0 -> BMD\n    beta_1 -> BMD\n    beta_2 -> BMD\n    beta_3 -> BMD\n    sigma2 -> BMD\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_sigma2 -> sigma2\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ccc06f8449562fd5121e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ccc06f8449562fd5121e">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;  # Set direction from left to right\n    \n    # Nodes (parameters and variables)\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Age [label = \"Age\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex [label = \"Sex\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma2 [label = \"σ²\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂: N(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃: N(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma2 [label = \"Prior for σ²: Half-Cauchy(0, τ)\", shape = box, style = dashed, fillcolor = lightyellow]\n    \n    # Edges (dependencies between nodes)\n    BMI -> BMD\n    Age -> BMD\n    Sex -> BMD\n    beta_0 -> BMD\n    beta_1 -> BMD\n    beta_2 -> BMD\n    beta_3 -> BMD\n    sigma2 -> BMD\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_sigma2 -> sigma2\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -941,8 +941,8 @@ BMI                 0.01   0.00     5.29   0.00
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 7.4e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.74 seconds.
+Chain 1: Gradient evaluation took 4.8e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.48 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -959,9 +959,9 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.137 seconds (Warm-up)
-Chain 1:                0.062 seconds (Sampling)
-Chain 1:                0.199 seconds (Total)
+Chain 1:  Elapsed Time: 0.141 seconds (Warm-up)
+Chain 1:                0.07 seconds (Sampling)
+Chain 1:                0.211 seconds (Total)
 Chain 1: </code></pre>
 </div>
 <details class="code-fold">
@@ -1007,7 +1007,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <th>Estimate</th>
 <th>95% Credible Interval</th>
 <th>Rhat</th>
-<th>Interpretation</th>
+<th>Explanation</th>
 </tr>
 </thead>
 <tbody>
@@ -1180,6 +1180,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 </div>
 <p>From the above plots, we can see that the replications in the posterior predictive plot of BMD match the actual observed BMD.</p>
+<p>**</p>
 </section>
 </section>
 <section id="summary" class="level2" data-number="6.4">
