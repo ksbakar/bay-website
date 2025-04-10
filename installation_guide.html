@@ -219,6 +219,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#have-r-and-rstudio-installed-and-working" id="toc-have-r-and-rstudio-installed-and-working" class="nav-link active" data-scroll-target="#have-r-and-rstudio-installed-and-working">Have R and RStudio installed and working</a></li>
+  <li><a href="#install-compiler" id="toc-install-compiler" class="nav-link" data-scroll-target="#install-compiler">Install Compiler</a></li>
+  <li><a href="#install-rstan-and-brms-packages" id="toc-install-rstan-and-brms-packages" class="nav-link" data-scroll-target="#install-rstan-and-brms-packages">Install ‘rstan’ and ‘brms’ packages</a></li>
   </ul>
 </nav>
     </div>
@@ -249,8 +251,8 @@ ul.task-list li input[type="checkbox"] {
 <p>It is important that everyone has R and RStudio installed and functional before any assignments are due.</p>
 <p><strong>How to install R?</strong></p>
 <p>The latest version of R can be downloaded from the Comprehensive R Archive Network (CRAN): https://cran.r-project.org/</p>
-<p><strong>To install R on a PC</strong> click on “Download R for Windows” and then “install R for the first time”. This will take you to a new window with the latest version of R. Click on “Download R 4.X.X for Windows” and follow the installation instructions. Default settings are OK. Note: At the time of writing, the current version of R was 4.2.2 but you can install whichever is the latest version, even if it differs from the one mentioned in the course notes.</p>
-<p><strong>To install R on a Mac</strong> click on “Download R for (Mac) OS X” and download the R binary under “Latest release”. The file will have an extension of .pkg, for example R-4.X.X.pkg. Click on this link and follow the instructions. Default settings are OK. Note: you can install whichever is the latest version, even if it differs from the one mentioned in these notes.</p>
+<p><strong>To install R on a PC</strong> click on “Download R for Windows” (https://cran.r-project.org/bin/windows/base/) and then “install R for the first time”. This will take you to a new window with the latest version of R. Click on “Download R 4.X.X for Windows” and follow the installation instructions. Default settings are OK. Note: At the time of writing, the current version of R was 4.2.2 but you can install whichever is the latest version, even if it differs from the one mentioned in the course notes.</p>
+<p><strong>To install R on a Mac</strong> click on “Download R for (Mac) OS X” (https://cran.r-project.org/bin/macosx/) and download the R binary under “Latest release”. The file will have an extension of .pkg, for example R-4.X.X.pkg. Click on this link and follow the instructions. Default settings are OK. Note: you can install whichever is the latest version, even if it differs from the one mentioned in these notes.</p>
 <p><strong>Optional</strong> – Check that R has installed correctly (You can skip this step and proceed to installing RStudio. If RStudio is working then you know that base R was successfully installed.) Open R and type 1 + 2 into the command line (the command line is indicated with the “&gt;” symbol). After pressing Enter, you should get the following output:</p>
 <p>[1] 3</p>
 <p><strong>How to install RStudio?</strong></p>
@@ -259,6 +261,47 @@ ul.task-list li input[type="checkbox"] {
 <p>To confirm that RStudio has installed correctly, double click on the RStudio icon your computer to open the program</p>
 <p>If you type 1 + 2 into the Console and hit enter you should get 3 as the output.</p>
 <p>Good work! You have now successfully installed R and RStudio!</p>
+</section>
+<section id="install-compiler" class="level2">
+<h2 class="anchored" data-anchor-id="install-compiler">Install Compiler</h2>
+<p><strong>Install ‘Rtools’ (C++ Compiler) for Windows OS</strong></p>
+<p>Download Rtools from https://cran.r-project.org/bin/windows/Rtools/ based on the R version that you have already installed.</p>
+<p>For further detail on Rtools see: https://github.com/stan-dev/rstan/wiki/Configuring-C—Toolchain-for-Windows</p>
+<p><strong>Install ‘Rtools’ (C++ Compiler) for Mac OS</strong></p>
+<p>Install ‘macrtools’ R package. This installer package was developed by James Joseph Balamuta (see details: https://mac.thecoatlessprofessor.com/macrtools/)</p>
+<p>According to their webpage: “This package is designed to recreate the compiled code toolchain used to compile the official macOS R binary on CRAN by following the steps described on the r-project developer page for macOS tools (https://mac.r-project.org/tools/). The package is able to to setup the compilation toolchain on any Mac that meets the standards required to install the official CRAN R binary on macOS.”</p>
+<p>You can install the development version of macrtools from GitHub using R console or using “Tools” menu.</p>
+<p>First install ‘remotes’ package (if not already installed)</p>
+<blockquote class="blockquote">
+<p>install.packages(“remotes”)</p>
+</blockquote>
+<p>Then install ‘macrtools’ packages:</p>
+<blockquote class="blockquote">
+<p>remotes::install_github(“coatless-mac/macrtools”)</p>
+</blockquote>
+<p>Then using ‘macrtools’ package install rtools as:</p>
+<blockquote class="blockquote">
+<p>macrtools::macos_rtools_install()</p>
+</blockquote>
+<p>This will install: (1) Xcode CLI (2) gfortran, and (3) R Development binaries from the Recipes project.</p>
+<p>For further detail on installation see:</p>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/_fckF0fefXQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</section>
+<section id="install-rstan-and-brms-packages" class="level2">
+<h2 class="anchored" data-anchor-id="install-rstan-and-brms-packages">Install ‘rstan’ and ‘brms’ packages</h2>
+<p><strong>‘rstan’ package</strong></p>
+<p>– After installing Rtools (Windows and/or Mac OS), open RStudio and using R console or using “Tools” menu install ‘rstan’ package.</p>
+<blockquote class="blockquote">
+<p>install.packages(“rstan”)</p>
+</blockquote>
+<p>For detail on ‘rstan’ installation: https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started</p>
+<p><strong>‘brms’ package</strong></p>
+<p>– Then install ‘brms’ package:</p>
+<blockquote class="blockquote">
+<p>install.packages(“brms”)</p>
+</blockquote>
+<p>Great! Now you are ready to use Stan!</p>
 
 
 </section>

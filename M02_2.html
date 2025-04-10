@@ -203,6 +203,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>R and RStudio</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./M01_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Bayesian Dreams: Navigating Evidence</strong></span></span></a>
   </div>
@@ -348,7 +354,7 @@ window.Quarto = {
 </header>
 
 
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/NNe1vKKwws4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <!--
 
@@ -388,20 +394,20 @@ This lecture explores the role of Bayesian tools in statistical modeling, highli
 </section>
 <section id="generative-models" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="generative-models"><span class="header-section-number">4.2</span> Generative Models</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/8enhLaF3rz4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>A generative model is designed to generate new data points by capturing the intricate probability distributions of existing datasets. By learning these distributions, the model can produce data that reflects the characteristics of original datasets, simulating realistic examples. A generative model can also be used to understand how a set of observed data could have arisen from a set of underlying causes, which we will discuss more later in this course.</p>
-<p>In Bayesian modeling, generative models are particularly useful as they provide a framework for estimating the likelihood of data under different hypotheses. This capability enhances Bayesian inference processes, allowing for more effective prior and posterior distribution updates. The flexibility of generative models in simulating various scenarios can also improve the robustness and accuracy of Bayesian models, and refines the decision-making and predictive capabilities.</p>
+<p>In Bayesian modelling, generative models are particularly useful as they provide a framework for estimating the likelihood of data under different hypotheses. This capability enhances Bayesian inference processes, allowing for more effective prior and posterior distribution updates. The flexibility of generative models in simulating various scenarios can also improve the robustness and accuracy of Bayesian models, and refines the decision-making and predictive capabilities.</p>
 <p>Note that, in this course, we use “generative model” broadly to consider the origins of a particular dataset. However, this term also has a more specific definition, especially as it contrasts with “discriminative models”, for details see <span class="citation" data-cites="bernardo2007generative">Bernardo et al. (<a href="references.html#ref-bernardo2007generative" role="doc-biblioref">2007</a>)</span>.</p>
 <!--
 ref: https://drvalle1.github.io/16_intro_generative_model.html
 -->
 <p><strong>Example</strong></p>
-<p>Let’s explain this using the example we discussed earlier related to the vaccine efficacy rate. Let use assume that we collect data from <span class="math inline">\(n=100\)</span> individuals and the vaccine was effective for 80 individuals. Let us also assume the prior probabilty for the effectiveness as <span class="math inline">\(0.7\)</span>. Given this information we now recreate the data.</p>
+<p>Let’s explain this using the example we discussed earlier related to the vaccine efficacy rate. Let use assume that we know the true vaccine effectiveness rate, which is <span class="math inline">\(0.8\)</span>, and given this information we can recreate the data.</p>
 <ul>
 <li><strong>Data generation:</strong></li>
 </ul>
-<p>In a generative modelling context, we simulate data for these 100 individuals by considering success probability <span class="math inline">\(\theta = 0.8\)</span>.</p>
+<p>In a generative modelling context, we simulate data say for 100 individuals by considering success probability <span class="math inline">\(\theta = 0.8\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -416,7 +422,7 @@ ref: https://drvalle1.github.io/16_intro_generative_model.html
 <pre><code>[1] "Number of success:  85  out of  100 individuals"</code></pre>
 </div>
 </div>
-<p>We can see that our simulation using one replication yields probability 0.85, whereas, actual data shows <span class="math inline">\(\theta = 0.8\)</span>. Hence, to reflect actual data we need to replicate the data simulation for multiple times, which yields an average value for <span class="math inline">\(\theta \approx 0.8\)</span> and upper and lower 95% credible interval (0.72,0.88).</p>
+<p>We can see that our simulation using one replication yields probability 0.85, whereas, actual data shows <span class="math inline">\(\theta = 0.8\)</span>. Hence, to reflect actual data we need to replicate the data simulation for multiple times, which yields an average value for <span class="math inline">\(\theta \approx 0.8\)</span> and upper and lower 95% credible interval (0.72,0.88). This is very simple example of how we can generate data when the model parameter is known. We will utilise this concept later in this course to simulate data and use Bayesian models to provide results based on disitions.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -798,8 +804,8 @@ ref: https://mc-stan.org/bayesplot/articles/visual-mcmc-diagnostics.html
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 1.8e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.18 seconds.
+Chain 1: Gradient evaluation took 2.2e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.22 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -816,15 +822,15 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.013 seconds (Warm-up)
-Chain 1:                0.013 seconds (Sampling)
-Chain 1:                0.026 seconds (Total)
+Chain 1:  Elapsed Time: 0.022 seconds (Warm-up)
+Chain 1:                0.019 seconds (Sampling)
+Chain 1:                0.041 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 3e-06 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.03 seconds.
+Chain 2: Gradient evaluation took 5e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.05 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -841,15 +847,15 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 0.025 seconds (Warm-up)
-Chain 2:                0.011 seconds (Sampling)
-Chain 2:                0.036 seconds (Total)
+Chain 2:  Elapsed Time: 0.041 seconds (Warm-up)
+Chain 2:                0.027 seconds (Sampling)
+Chain 2:                0.068 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 4e-06 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.04 seconds.
+Chain 3: Gradient evaluation took 8e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -866,9 +872,9 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.015 seconds (Warm-up)
-Chain 3:                0.011 seconds (Sampling)
-Chain 3:                0.026 seconds (Total)
+Chain 3:  Elapsed Time: 0.027 seconds (Warm-up)
+Chain 3:                0.024 seconds (Sampling)
+Chain 3:                0.051 seconds (Total)
 Chain 3: </code></pre>
 </div>
 <details class="code-fold">
@@ -884,7 +890,7 @@ post-warmup draws per chain=1000, total post-warmup draws=3000.
 mu    5.06       0 0.21 4.65 4.92 5.06 5.20  5.49  2598    1
 sigma 2.11       0 0.16 1.83 2.00 2.10 2.21  2.45  2926    1
 
-Samples were drawn using NUTS(diag_e) at Thu Apr 10 11:34:12 2025.
+Samples were drawn using NUTS(diag_e) at Thu Apr 10 19:42:59 2025.
 For each parameter, n_eff is a crude measure of effective sample size,
 and Rhat is the potential scale reduction factor on split chains (at 
 convergence, Rhat=1).</code></pre>
@@ -1200,13 +1206,13 @@ https://mc-stan.org/docs/stan-users-guide/posterior-predictive-checks.html
 <ul>
 <li><strong>Steps to perform prior predictive check</strong></li>
 </ul>
-<p>Before collecting data, choose a prior for the parameter, say <span class="math inline">\(\theta\)</span>, if we are modeling a Bernoulli process, where assume the prior follows Beta distribution, i.e., <span class="math inline">\(\theta \sim \text{Beta}(\alpha, \beta)\)</span>.</p>
+<p>Before collecting data, choose a prior for the parameter, say <span class="math inline">\(\theta\)</span>, if we are modelling a Bernoulli process, where assume the prior follows Beta distribution, i.e., <span class="math inline">\(\theta \sim \text{Beta}(\alpha, \beta)\)</span>.</p>
 <p>For instance, let’s assume:</p>
 <p><span class="math display">\[
 \theta \sim \text{Beta}(1, 1) \quad \text{(Uniform prior, meaning all values are equally likely).}
 \]</span></p>
 <p>Now, we generate or simulate data from the prior distribution, i.e., first sample <span class="math inline">\(\theta\)</span> from the prior and then generate data <span class="math inline">\(y\)</span> using a defined model.</p>
-<p>For example, if we are modeling the efficacy rate of a certain vaccine in patients with similar profiles, then</p>
+<p>For example, if we are modelling the efficacy rate of a certain vaccine in patients with similar profiles, then</p>
 <ol type="1">
 <li>Sample <span class="math inline">\(\theta^{sim} \sim \text{Beta}(1,1)\)</span>.</li>
 <li>Simulate <span class="math inline">\(y^{sim} \sim \text{Bernoulli}(\theta^{sim})\)</span> for <span class="math inline">\(n\)</span> trials.</li>
