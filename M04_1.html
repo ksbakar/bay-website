@@ -193,6 +193,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>R and RStudio</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./M01_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Bayesian Dreams: Navigating Evidence</strong></span></span></a>
   </div>
@@ -254,13 +260,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters!</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder!</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -557,23 +563,34 @@ window.Quarto = {
 <span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-a70504bb31eb626bb9ec" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-a70504bb31eb626bb9ec">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;\n\n    # Nodes\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Age [label = \"Age\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex [label = \"Sex\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Status [label = \"Status (No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂ (BMI)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃ (Age)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_4 [label = \"β₄ (Sex)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂: N(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃: N(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_4 [label = \"Prior for β₄: N(μ₄, σ₄²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges\n    BMI -> Status\n    Age -> Status\n    Sex -> Status\n    BMD -> Status\n\n    beta_0 -> Status\n    beta_1 -> Status\n    beta_2 -> Status\n    beta_3 -> Status\n    beta_4 -> Status\n\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_beta_4 -> beta_4\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-9e7d8df22fc665d716a1" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-9e7d8df22fc665d716a1">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;\n\n    # Nodes\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Age [label = \"Age\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex [label = \"Sex\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Status [label = \"Status (No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂ (BMI)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃ (Age)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_4 [label = \"β₄ (Sex)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂: N(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃: N(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_4 [label = \"Prior for β₄: N(μ₄, σ₄²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges\n    BMI -> Status\n    Age -> Status\n    Sex -> Status\n    BMD -> Status\n\n    beta_0 -> Status\n    beta_1 -> Status\n    beta_2 -> Status\n    beta_3 -> Status\n    beta_4 -> Status\n\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_beta_4 -> beta_4\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Here, we’re modeling how BMD affects the probability of a bone fracture, while adjusting for the confounding effects of BMI, Age, and Sex. Let’s build a Bayesian hierarchical model:</p>
 <p>Let, <span class="math inline">\(\text{Status}_i \in \{0,1\}\)</span>: fracture status for individual <span class="math inline">\(i\)</span>, i.e, 0 = no fracture and 1 = fracture. Using <span class="math inline">\(\text{BMD}_i\)</span>, <span class="math inline">\(\text{BMI}_i\)</span>, <span class="math inline">\(\text{Age}_i\)</span>, and _i$, we write the probability of fracture <span class="math inline">\(P(\text{Status}_i = 1 \mid \cdot)\)</span> as:</p>
-<p>[ P(_i = 1 _i, _i, _i, _i) = ^{-1}(_i) ]</p>
-<p>[ _i = _0 + _1 _i + _2 _i + _3 _i + _4 _i ]</p>
+<p><span class="math display">\[
+P(\text{Status}_i = 1 \mid \text{BMD}_i, \text{BMI}_i, \text{Age}_i, \text{Sex}_i) = \text{logit}^{-1}(\eta_i)
+\]</span></p>
+<p><span class="math display">\[
+\eta_i = \beta_0 + \beta_1 \cdot \text{BMD}_i + \beta_2 \cdot \text{BMI}_i + \beta_3 \cdot \text{Age}_i + \beta_4 \cdot \text{Sex}_i
+\]</span></p>
 <p>Now, we define the priors as:</p>
-<p>[ _j (_j, ^2_j) j = 0, 1, 2, 3, 4 ]</p>
+<p><span class="math display">\[
+\beta_j \sim \mathcal{N}(\mu_j, \sigma^2_j) \quad \text{for } j = 0, 1, 2, 3, 4
+\]</span></p>
 <p>Hence, denoting <span class="math inline">\(\mathbf{y}_i = \text{Status}_i\)</span> and <span class="math inline">\(\bf{x}_i =(\text{BMD}_i, \text{BMI}_i, \text{Age}_i, \text{Sex}_i)'\)</span>, we write the posterior distribution in matrix and vector notations as:</p>
-<p>[ p( , ) p( , ) p() ]</p>
+<p><span class="math display">\[
+p(\boldsymbol{\beta} \mid \mathbf{y}, \mathbf{x}) \propto p(\mathbf{y} \mid \mathbf{x}, \boldsymbol{\beta}) \cdot p(\boldsymbol{\beta})
+\]</span></p>
 <p>Where, <span class="math inline">\(\boldsymbol{\beta} = (\beta_0,\beta_1,\beta_2,\beta_3,\beta_4)'\)</span>.</p>
 <p>This model lets us estimate the posterior distribution of the effect of BMD on fractures, while adjusting for BMI, Age, and Sex.</p>
 </section>
 <section id="r-code-example" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="r-code-example"><span class="header-section-number">7.4</span> R Code Example:</h2>
+<p>Consideration of a non-informative prior for logistic regression can yiled a wide range or variability for the odds ratio. For example, a <span class="math inline">\(N(0,10^{2})\)</span> will provide a standard deviation in the odds ratio scale as <span class="math inline">\(\exp(100)\)</span>, which is a very large number, and consideration of such large number can cause issues with identifiability and numerical stability, as the link function of the logistic regression can explode with large coefficients.</p>
+<p>Whereas, weakly informative priors balance flexibility and regularisation for the logistic regression scenario. They prevent extreme parameter estimates, improve convergence, and produce more realistic predictions.</p>
+<p>Hence, using a weakly informative prior distribution we obtain the posterior estimates of the model parameters as below. Here, we use <span class="math inline">\(\beta_{(.)} \sim N(0, 4)\)</span> to define the weakly informative prior for the log-odds ratio. Thus, we get in odds ratio scale the prior range for any of the model coeficients (i.e., parameters) with hyper-parameter standard deviation as: <span class="math inline">\(\exp(4)\approx 55\)</span>. Note that, we do not have any variance parameter for this model.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -593,8 +610,8 @@ window.Quarto = {
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">5</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">5</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">4</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">4</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>fracture_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
@@ -613,8 +630,8 @@ window.Quarto = {
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 8.5e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.85 seconds.
+Chain 1: Gradient evaluation took 6.5e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.65 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -631,9 +648,9 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.94 seconds (Warm-up)
-Chain 1:                0.581 seconds (Sampling)
-Chain 1:                1.521 seconds (Total)
+Chain 1:  Elapsed Time: 0.742 seconds (Warm-up)
+Chain 1:                0.455 seconds (Sampling)
+Chain 1:                1.197 seconds (Total)
 Chain 1: </code></pre>
 </div>
 <details class="code-fold">
@@ -650,37 +667,55 @@ Formula: Status ~ BMD + BMI + Age + Sex
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    -0.48      1.58    -3.75     2.54 1.00      944      740
-BMD          -2.38      1.02    -4.39    -0.38 1.00      686      546
-BMI          -0.22      0.05    -0.32    -0.13 1.00      944      787
-Age           0.08      0.01     0.05     0.11 1.00      837      738
-SexM         -0.05      0.30    -0.65     0.54 1.00      846      760
+Intercept    -0.55      1.66    -3.61     2.81 1.00     1291      583
+BMD          -2.30      1.05    -4.35    -0.27 1.01      686      478
+BMI          -0.22      0.05    -0.32    -0.13 1.00      947      653
+Age           0.08      0.01     0.05     0.10 1.00      755      655
+SexM         -0.07      0.32    -0.68     0.53 1.00      852      706
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
 scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fracture_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M04_1_files/figure-html/fracture_model_run-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<p>Now get the summary statistics in odds ratios:</p>
+</div>
+</div>
+<p>Note that by deafult the ‘brm’ model output provides mean estimates for the model parameters. To get the summary statistics in odds ratios, we need to follow the R code below:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_summary &lt;- posterior_summary(fracture_model)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#odds_ratios &lt;- exp(posterior_summary[grep("^b_", rownames(posterior_summary)), ])</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fracture_model)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>posterior_or <span class="ot">&lt;-</span> posterior <span class="sc">%&gt;%</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"b_"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), exp))  <span class="co"># Convert to odds ratios</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot using mcmc_areas</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_areas</span>(</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  posterior_or,</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">colnames</span>(posterior_or),</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.95</span>  <span class="co"># 95% credible interval</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior Distributions of Odds Ratios"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_summary &lt;- posterior_summary(fracture_model)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#odds_ratios &lt;- exp(posterior_summary[grep("^b_", rownames(posterior_summary)), ])</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fracture_model)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>posterior_or <span class="ot">&lt;-</span> posterior <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"b_"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), exp))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># drop intercept from the estimate</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_or &lt;- posterior_or[,-1]</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_areas(</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#  posterior_or,</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#  pars = colnames(posterior_or),</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#  prob = 0.95  # 95% credible interval</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#) +</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  ggplot2::labs(title = "Posterior Distributions of Odds Ratios")</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  posterior_or,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_BMD"</span>,<span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexM"</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior Trace Plots of Odds Ratios"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
