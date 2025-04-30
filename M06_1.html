@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Size Matters! Part - I – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>11&nbsp; Size Matters! – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,7 +122,46 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M06_1.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M06_1.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters!</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -116,6 +209,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Introduction</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>R and RStudio</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,13 +280,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters!</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder!</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -213,15 +312,31 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">11.1</span> Learnings</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">11.2</span> Introduction</a></li>
-  <li><a href="#bayesian-perspective-of-rct" id="toc-bayesian-perspective-of-rct" class="nav-link" data-scroll-target="#bayesian-perspective-of-rct"><span class="header-section-number">11.3</span> Bayesian Perspective of RCT</a></li>
-  <li><a href="#bayesian-decision-rules-for-rct" id="toc-bayesian-decision-rules-for-rct" class="nav-link" data-scroll-target="#bayesian-decision-rules-for-rct"><span class="header-section-number">11.4</span> Bayesian Decision Rules for RCT</a></li>
-  <li><a href="#comparison-with-classical-approach" id="toc-comparison-with-classical-approach" class="nav-link" data-scroll-target="#comparison-with-classical-approach"><span class="header-section-number">11.5</span> Comparison with Classical Approach</a></li>
-  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1"><span class="header-section-number">11.6</span> Introduction</a></li>
-  <li><a href="#adaptivity-in-rct" id="toc-adaptivity-in-rct" class="nav-link" data-scroll-target="#adaptivity-in-rct"><span class="header-section-number">11.7</span> Adaptivity in RCT</a></li>
-  <li><a href="#bayesian-predictive-probability" id="toc-bayesian-predictive-probability" class="nav-link" data-scroll-target="#bayesian-predictive-probability"><span class="header-section-number">11.8</span> Bayesian Predictive Probability:</a></li>
-  <li><a href="#stopping-rules-for-adaptation" id="toc-stopping-rules-for-adaptation" class="nav-link" data-scroll-target="#stopping-rules-for-adaptation"><span class="header-section-number">11.9</span> Stopping Rules for Adaptation</a></li>
-  <li><a href="#prior-influence" id="toc-prior-influence" class="nav-link" data-scroll-target="#prior-influence"><span class="header-section-number">11.10</span> Prior Influence</a></li>
+  <li><a href="#bayesian-sample-size" id="toc-bayesian-sample-size" class="nav-link" data-scroll-target="#bayesian-sample-size"><span class="header-section-number">11.2</span> Bayesian Sample Size</a></li>
+  <li><a href="#rcts-where-size-really-matters" id="toc-rcts-where-size-really-matters" class="nav-link" data-scroll-target="#rcts-where-size-really-matters"><span class="header-section-number">11.3</span> RCTs: Where Size Really Matters</a></li>
+  <li><a href="#bayesian-decision-criteria" id="toc-bayesian-decision-criteria" class="nav-link" data-scroll-target="#bayesian-decision-criteria"><span class="header-section-number">11.4</span> Bayesian Decision Criteria</a></li>
+  <li><a href="#bayesian-power" id="toc-bayesian-power" class="nav-link" data-scroll-target="#bayesian-power"><span class="header-section-number">11.5</span> Bayesian Power</a></li>
+  <li><a href="#example-pediatric-antibiotic-trial" id="toc-example-pediatric-antibiotic-trial" class="nav-link" data-scroll-target="#example-pediatric-antibiotic-trial"><span class="header-section-number">11.6</span> Example: Pediatric Antibiotic Trial</a>
+  <ul class="collapse">
+  <li><a href="#decision-rule" id="toc-decision-rule" class="nav-link" data-scroll-target="#decision-rule"><span class="header-section-number">11.6.1</span> Decision Rule</a></li>
+  <li><a href="#sample-size" id="toc-sample-size" class="nav-link" data-scroll-target="#sample-size"><span class="header-section-number">11.6.2</span> Sample Size</a></li>
+  </ul></li>
+  <li><a href="#frequentist-comparison" id="toc-frequentist-comparison" class="nav-link" data-scroll-target="#frequentist-comparison"><span class="header-section-number">11.7</span> Frequentist Comparison</a></li>
+  <li><a href="#when-they-are-different" id="toc-when-they-are-different" class="nav-link" data-scroll-target="#when-they-are-different"><span class="header-section-number">11.8</span> When they are different?</a>
+  <ul class="collapse">
+  <li><a href="#prior-sensitivity" id="toc-prior-sensitivity" class="nav-link" data-scroll-target="#prior-sensitivity"><span class="header-section-number">11.8.1</span> Prior Sensitivity</a></li>
+  <li><a href="#cutoff-sensitivity" id="toc-cutoff-sensitivity" class="nav-link" data-scroll-target="#cutoff-sensitivity"><span class="header-section-number">11.8.2</span> Cutoff Sensitivity</a></li>
+  </ul></li>
+  <li><a href="#bayesian-type-i-error" id="toc-bayesian-type-i-error" class="nav-link" data-scroll-target="#bayesian-type-i-error"><span class="header-section-number">11.9</span> Bayesian Type-I Error</a></li>
+  <li><a href="#adaptivity-and-bayesian-sample-size" id="toc-adaptivity-and-bayesian-sample-size" class="nav-link" data-scroll-target="#adaptivity-and-bayesian-sample-size"><span class="header-section-number">11.10</span> Adaptivity and Bayesian Sample Size</a>
+  <ul class="collapse">
+  <li><a href="#bayesian-adaptive-design-antibiotic-safety-trial" id="toc-bayesian-adaptive-design-antibiotic-safety-trial" class="nav-link" data-scroll-target="#bayesian-adaptive-design-antibiotic-safety-trial"><span class="header-section-number">11.10.1</span> Bayesian Adaptive Design: Antibiotic Safety Trial</a></li>
+  </ul></li>
+  <li><a href="#why-to-use-bayesian-sample-size" id="toc-why-to-use-bayesian-sample-size" class="nav-link" data-scroll-target="#why-to-use-bayesian-sample-size"><span class="header-section-number">11.11</span> Why to use Bayesian Sample Size</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">11.12</span> Summary</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">11.13</span> Live tutorial and discussion</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">11.14</span> Tutorial Exercises</a></li>
+  <li><a href="#preparation-for-week-12" id="toc-preparation-for-week-12" class="nav-link" data-scroll-target="#preparation-for-week-12"><span class="header-section-number">11.15</span> Preparation for Week 12</a></li>
   </ul>
 </nav>
     </div>
@@ -230,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters!</strong></span></h1>
 </div>
 
 
@@ -248,7 +363,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>NOT READY YET</p>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <section id="learnings" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="learnings"><span class="header-section-number">11.1</span> Learnings</h2>
@@ -257,58 +372,646 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Objectives</strong></p></li>
 </ul>
 <p>By the end of this week you should be able to:</p>
-</section>
-<section id="introduction" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">11.2</span> Introduction</h2>
-<p>asdafs</p>
-<p>ref shinyapp: https://ibl.mdanderson.org/shinyapps/BayesESS/</p>
-<p>ref: power-priors: https://journal.r-project.org/articles/RJ-2023-016/</p>
-</section>
-<section id="bayesian-perspective-of-rct" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="bayesian-perspective-of-rct"><span class="header-section-number">11.3</span> Bayesian Perspective of RCT</h2>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<p>asdf</p>
-</section>
-<section id="bayesian-decision-rules-for-rct" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="bayesian-decision-rules-for-rct"><span class="header-section-number">11.4</span> Bayesian Decision Rules for RCT</h2>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<p>Bayesian Decision Rule: ref: Berry book, sec 2.5.2, page 66</p>
-</section>
-<section id="comparison-with-classical-approach" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="comparison-with-classical-approach"><span class="header-section-number">11.5</span> Comparison with Classical Approach</h2>
-<p>asdf</p>
-<p>Vedio</p>
-</section>
-<section id="introduction-1" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">11.6</span> Introduction</h2>
-<p>asdafs</p>
-</section>
-<section id="adaptivity-in-rct" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="adaptivity-in-rct"><span class="header-section-number">11.7</span> Adaptivity in RCT</h2>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<p>asdf</p>
-</section>
-<section id="bayesian-predictive-probability" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="bayesian-predictive-probability"><span class="header-section-number">11.8</span> Bayesian Predictive Probability:</h2>
-<p>ref: Berry book, sec: 2.5.1 page 64</p>
-</section>
-<section id="stopping-rules-for-adaptation" class="level2" data-number="11.9">
-<h2 data-number="11.9" class="anchored" data-anchor-id="stopping-rules-for-adaptation"><span class="header-section-number">11.9</span> Stopping Rules for Adaptation</h2>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<p>asdf</p>
-</section>
-<section id="prior-influence" class="level2" data-number="11.10">
-<h2 data-number="11.10" class="anchored" data-anchor-id="prior-influence"><span class="header-section-number">11.10</span> Prior Influence</h2>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-<p>asdf</p>
-<p>Vedio</p>
+<!--
 
 
+ref shinyapp: https://ibl.mdanderson.org/shinyapps/BayesESS/
+
+ref: power-priors: https://journal.r-project.org/articles/RJ-2023-016/
+
+Bayesian Decision Rule: ref: Berry book, sec 2.5.2, page 66
+
+Bayesian Predictive Probability: Berry book, sec: 2.5.1 page 64
+
+
+-->
+</section>
+<section id="bayesian-sample-size" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="bayesian-sample-size"><span class="header-section-number">11.2</span> Bayesian Sample Size</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Bayesian sample size selection is a method used in the design of experiments or studies—especially clinical trials—that determines how many subjects or data points are needed, based on Bayesian statistical principles.</p>
+<p>Rather than relying on traditional frequentist criteria (like fixed power and significance levels), Bayesian sample size selection incorporates prior knowledge (in the form of a prior distribution) and focuses on decision-making under uncertainty.</p>
+<p>For example, from frequentist view we can ask: “How many participants do I need to have an 80% chance of detecting a true effect if it exists?” Whereas, in Bayesian thoughts, we ask: “How many participants do I need so that, after seeing the data, I’m likely to have strong enough evidence to make a good decision?”</p>
+<p>In Bayesian sample size determination, we choose a sample size that meets a predefined decision or utility criterion, based on the posterior distribution.</p>
+<p>For example, let’s say we’re testing a new drug and we think there’s a fair chance it might work. To figure out how many people we need in the study, we simulate data using different sample sizes. For each one, we check how likely it is, after seeing the data, that the drug has a positive effect. We then choose the smallest sample size where, in 90% (say) of the simulations, that chance is greater than say 95%.</p>
+<p>The Bayesian sample size seletion is very flexible in decision making and not tied to fixed p-values such as we see in frequentist method. It is also more natural for thinking adaptive ways of doing trials using interim analysis.</p>
+<p>This types of sample size selection, however is computationally intensive (often simulation-based) and often less familiar to regulatory bodies in some fields.</p>
+<p>Let us discuss this with specific terms starting with explaining randomised control trials (RCTs) briefly.</p>
+</section>
+<section id="rcts-where-size-really-matters" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="rcts-where-size-really-matters"><span class="header-section-number">11.3</span> RCTs: Where Size Really Matters</h2>
+<p>An RCT is a type of scientific study we use to find out whether a treatment, intervention, or program actually works. RCTs are considered one of the most reliable ways to prove cause and effect.</p>
+<p>In an RCT, we start by selecting a group of participants, usualy with common baseline characteristics. We then randomly assign them into two or more groups. One group receives the treatment we are testing, while the other group receives either a placebo, which looks like the treatment but has no real effect, or the usual standard treatment. Randomisation helps make sure the groups are similar at the beginning of the study. This way, if there is a difference in outcomes at the end, we can be more confident that it is because of the treatment and not because of other factors.</p>
+<p>Before the study begins, we decide what we want to measure. This is called the outcome. Depending on what we are testing, outcomes can include things like changes in symptoms, blood pressure, infection rates, or even school test scores. Measuring the right outcomes is key to understanding whether the treatment worked.</p>
+<p>From statistical perspective, outcome can be represented using distributions. For example, if outcome is continuous then we can use normal distribution and if it is binary then use bernoulli distribution.</p>
+<p>When we do an RCT, we are setting up a fair and careful design to see if something really works. Sample size determination plays a crucial role here by ensuring that the study has enough statistical power to detect a true effect if one exists. It helps to estimate the minimum number of participants needed to achieve reliable and valid results, while minimising the risk of Type I (false positive) and Type II (false negative) errors.</p>
+<p>A well calculated sample size allows for accurate comparisons between treatment groups, ensuring that the study can confidently evaluate the intervention’s efficacy. It also helps optimise resources by preventing over-recruitment, which can be costly and unnecessary, or under-recruitment, which can lead to inconclusive or biased results.</p>
+<p>In this lecture, we will learn how we can utilise Bayesian methods to calculate sample size for an RCT design. We will also discuss the flexibility of Bayesian methods in conducting adaptive trials. Additionally, we will see that the Bayesian approach provides a more nuanced understanding of uncertainty, potentially leading to more efficient trial designs and better resource allocation, making it an attractive option in situations where prior data or expert opinion is available.</p>
+<p>Before discussing more on this, let us explain the Bayesian decision rules.</p>
+</section>
+<section id="bayesian-decision-criteria" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="bayesian-decision-criteria"><span class="header-section-number">11.4</span> Bayesian Decision Criteria</h2>
+<p><span class="citation" data-cites="berry2010bayesian">Berry et al. (<a href="references.html#ref-berry2010bayesian" role="doc-biblioref">2010</a>)</span></p>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Decision criteria can provide a flexible understanding of the choice of sample size. There are multiple options available to define the decision rules. For example, we can set a decision criterion to aim for a high probability threshold, based on the data that the treatment actually works. Sometimes, we might also try to ensure our decisions are worthwhile by considering factors like cost and benefit.</p>
+<p>There are different Bayesian decision rules, below, we provide a brief discussion of some of the criteria.</p>
+<p><strong>Posterior Probability Decision Rule</strong></p>
+<p>This decision rule is based on the posterior probability that a treatment effect is either greater or less than a specified threshold (e.g., a clinically meaningful effect). In Bayesian terms, the posterior distribution of the treatment effect is updated as data accumulate.</p>
+<p><strong>Bayesian Predictive Probability</strong></p>
+<p>Bayesian predictive probability calculates the probability of achieving a successful outcome (e.g., a significant treatment effect) based on the data already collected and the prior knowledge (prior distribution) about the treatment. This decision rule is similar to the posterior probability decision rule, however instead using posterior probability we use posterior predictive probability to make the decision.</p>
+<p><strong>Credible Intervals for Treatment Effects</strong></p>
+<p>We already know the credible interval of parameter estimated from the posterior distributions, and now we use this credible interval for treatment effects to define the decision rule. Here, we consider a credible interval threshold say 95%, and check this range of values within which the true treatment effect lies with a given probability.</p>
+<p><strong>Utility-Based Decision Rules</strong></p>
+<p>In some cases, the decision to continue or stop a trial is based on a utility function that combines the benefits (e.g., treatment efficacy) and the costs (e.g., patient safety, cost of the trial). Bayesian methods allow for the specification of a utility function that can be used to guide decisions.</p>
+<p>In this course, we will explore and discuss examples using decision criterion based on posterior probability decision rules only. We will also compare the Bayesian approach of the sample size calculations with the approach based on frequentist methods.</p>
+</section>
+<section id="bayesian-power" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="bayesian-power"><span class="header-section-number">11.5</span> Bayesian Power</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>In frequentist statistics, power is the probability of correctly rejecting the null hypothesis when the alternative is true, i.e., detecting an effect if there truly is one.</p>
+<p>But in Bayesian statistics, we think a bit differently. A Bayesian analogue of power is the probability that, under the assumed true effect, our decision rule leads us to the correct conclusion, such as declaring the treatment effective when it actually is.</p>
+<p>Let’s say, we define success as the posterior probability that treatment effect is greater than the threshold (say, 0) is at least 95%. So our decision rule is to declare treatment effective if</p>
+<p><span class="math display">\[
+Pr(\text{effect} &gt; 0 \mid \text{data}) \geq 0.95
+\]</span></p>
+<p>Then, we can simulate many trials assuming the treatment actually works, and compute how often our posterior crosses the 0.95 threshold. This result, how often the rule leads to the right conclusion is our Bayesian power.</p>
+<p>Now, if under the assumed true effect, 80% of simulated trials lead us to declare the treatment effective using our decision rule, then we say the design has 80% power. This is conceptually similar to the frequentist idea, where we aim for 80% power as a common benchmark to ensure a reasonably high chance of detecting a true effect. Note that consideration of 80% power is seen as a good trade-off in many health science. However, it’s not a rule, just a convention, and different fields or high-stakes studies might set higher bars for the power.</p>
+<p>In more advanced Bayesian decision theory, power is just one part of the equation. We can optimise sample size based on expected utility (e.g., benefit of correct decision - cost of study), where power feeds into the expected gain of making the right call. In this course, however, we will only discuss Bayesian power related to the posterior probability decision rule.</p>
+<p>Now, let’s explain this more with an example below, which reflects the power using posterior probability decision rule.</p>
+</section>
+<section id="example-pediatric-antibiotic-trial" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="example-pediatric-antibiotic-trial"><span class="header-section-number">11.6</span> Example: Pediatric Antibiotic Trial</h2>
+<p>Suppose, we aim to evaluate whether a new antibiotic (treatment group) is safer than the current standard of care (control group) for treating bacterial respiratory infections in children under 5 years of age.</p>
+<p>Our target population includes children aged 6 months to 5 years who are diagnosed with bacterial pneumonia.</p>
+<p>The primary endpoint (or the outcome variable) is binary: defined as the absence of drug-related adverse events (e.g., rash, diarrhea, allergic reaction) within 10 days of starting treatment.</p>
+<p>We are interested to conduct 1:1 allocations for the treatment and control groups.</p>
+<p>Suppose, the standard of care has an estimated safety rate of approximately 60%. As the safety data for the new antibiotic in this age group is still limited, we assume equal prior beliefs for both groups. Hence, we can model the safety probabilities using Beta prior distributions as: <span class="math inline">\(\text{Beta}(2, 2)\)</span>.</p>
+<section id="decision-rule" class="level3" data-number="11.6.1">
+<h3 data-number="11.6.1" class="anchored" data-anchor-id="decision-rule"><span class="header-section-number">11.6.1</span> Decision Rule</h3>
+<p>As indicated earlier, we use the Bayesian posterior probability decision rule to test whether the treatment is superior in safety compared to the control. Let us denote <span class="math inline">\(\theta\)</span> be the safety or success rate and we declare the new antibiotic superior if:</p>
+<p><span class="math display">\[
+Pr(\theta_{\text{trt}} - \theta_{\text{crt}} &gt; 0 \mid \text{data}) \geq 0.95
+\]</span></p>
+<p>That is, we require at least 95% posterior probability that the new antibiotic has a higher safety rate than the control group (even if the improvement is small). This approach points out any level of safety improvement, provided we are confident in the result.</p>
+</section>
+<section id="sample-size" class="level3" data-number="11.6.2">
+<h3 data-number="11.6.2" class="anchored" data-anchor-id="sample-size"><span class="header-section-number">11.6.2</span> Sample Size</h3>
+<p>Let’s say we want to plan/design the sample size such that, assuming the expected data for the safety (or success) rates are 75% for treatment (i.e., <span class="math inline">\(\theta_{\text{trt}}=0.75\)</span>) and 60% for control (i.e., <span class="math inline">\(\theta_{\text{crt}}=0.6\)</span>), and the posterior probability that the treatment is better than control (superiority trial), in at least 95% of simulated trials. Changes between treatment and control success rates can be also indicated as 15% point differece, i.e., from 60% to 75%.</p>
+<p>Note that in this example we are assuming equal prior beliefs for both treatment and control groups, which follows a <span class="math inline">\(\text{Beta}(1,1)\)</span> distribution. This prior reflects a non-informative situation, where the safety rates can take any values from 0 to 100%.</p>
+<p>Based on the information, we run simulations to generate data. Then, using simulated data from, say, 50 to 150 samples per group, we calculate the Bayesian power. Next, we identify the minimum sample size per group that achieves 80% power.</p>
+<p>Now, from the simulation we can see the minimum sample size per group for 80% power as:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>simulate_safety_trial <span class="ot">&lt;-</span> <span class="cf">function</span>(n_per_group, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">true_control =</span> <span class="fl">0.60</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">true_treatment =</span> <span class="fl">0.75</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">prior_control =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">prior_treatment =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">prob_cutoff =</span> <span class="fl">0.95</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">threshold =</span> <span class="dv">0</span>) {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  success_c <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n_per_group, true_control)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  success_t <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n_per_group, true_treatment)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  post_c <span class="ot">&lt;-</span> prior_control <span class="sc">+</span> <span class="fu">c</span>(success_c, n_per_group <span class="sc">-</span> success_c)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  post_t <span class="ot">&lt;-</span> prior_treatment <span class="sc">+</span> <span class="fu">c</span>(success_t, n_per_group <span class="sc">-</span> success_t)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  n_samples <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  p_c_post <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_samples, post_c[<span class="dv">1</span>], post_c[<span class="dv">2</span>])</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  p_t_post <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_samples, post_t[<span class="dv">1</span>], post_t[<span class="dv">2</span>])</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  prob_superior <span class="ot">&lt;-</span> <span class="fu">mean</span>((p_t_post <span class="sc">-</span> p_c_post) <span class="sc">&gt;</span> threshold)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(prob_superior <span class="sc">&gt;=</span> prob_cutoff)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>estimate_safety_power <span class="ot">&lt;-</span> <span class="cf">function</span>(n_per_group, <span class="at">n_sim =</span> <span class="dv">20000</span>) {</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="fu">replicate</span>(n_sim, <span class="fu">simulate_safety_trial</span>(n_per_group)))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">150</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0001</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>power_results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">SampleSize =</span> sample_sizes,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">Power =</span> <span class="fu">map_dbl</span>(sample_sizes, estimate_safety_power)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>min_n <span class="ot">&lt;-</span> <span class="fu">round</span>(power_results,<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Power <span class="sc">&gt;=</span> <span class="fl">0.80</span>) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Bayesian: Minimun sample size per group for 80% power: "</span>, min_n<span class="sc">$</span>SampleSize))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Bayesian: Minimun sample size per group for 80% power:  120"</code></pre>
+</div>
+</div>
+<p>Now, let us compare this with frequentist sample size calculation.</p>
+</section>
+</section>
+<section id="frequentist-comparison" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="frequentist-comparison"><span class="header-section-number">11.7</span> Frequentist Comparison</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Here, we want to determine the minimum sample size per group required to detect a treatment effect (from 60% to 75%) with 80% power, using a frequentist approach. Thus, we consider null hypothesis as: no improvement or the treatment is not better than the control, i.e., <span class="math inline">\(H_0: \theta_\text{trt}\leq \theta_\text{crt}\)</span>. The alternative hypothesis we consider as: the treatment is better than the control (i.e., higher success rate), i.e., <span class="math inline">\(H_1: \theta_\text{trt}&gt; \theta_\text{crt}\)</span>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(power_results, <span class="fu">aes</span>(<span class="at">x =</span> SampleSize, <span class="at">y =</span> Power)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#0072B2"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#D55E00"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> min_n<span class="sc">$</span>SampleSize, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Bayesian"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sample Size per Group"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Power"</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># frequentist way</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>true_control <span class="ot">&lt;-</span> <span class="fl">0.60</span>  </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>true_treatment <span class="ot">&lt;-</span> <span class="fl">0.75</span>  </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span>  </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>n_range <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">150</span>, <span class="at">by =</span> <span class="dv">5</span>)  </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>power_values <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(n_range))</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(n_range)) {</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">power.prop.test</span>(<span class="at">n =</span> n_range[i],</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>                            <span class="at">p1 =</span> true_control,</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>                            <span class="at">p2 =</span> true_treatment,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>                            <span class="at">sig.level =</span> alpha,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>                            <span class="at">alternative =</span> <span class="st">"one.sided"</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  power_values[i] <span class="ot">&lt;-</span> result<span class="sc">$</span>power</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">SampleSize =</span> n_range, <span class="at">Power =</span> power_values)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>min_n <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Power <span class="sc">&gt;=</span> <span class="fl">0.80</span>) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Frequentist: Minimun sample size per group for 80% power: "</span>, min_n<span class="sc">$</span>SampleSize))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Frequentist: Minimun sample size per group for 80% power:  120"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> SampleSize, <span class="at">y =</span> Power)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> min_n<span class="sc">$</span>SampleSize, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span>  </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Frequentist"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sample Size per Group"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Power"</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span>  </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p1,p2,<span class="at">ncol=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M06_1_files/figure-html/bayes_trial_pediatric2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The above plots provide power curves for both Bayesian and frequentist methods for sample sizes 50 to 150. We can see both plots show the power increases with the sample size and we can achieve 80% power at sample size 120 for both methods. This reflects under <span class="math inline">\(\text{Beta}(2,2)\)</span> prior we get same results for both Bayesian and frequentist methods.</p>
+</section>
+<section id="when-they-are-different" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="when-they-are-different"><span class="header-section-number">11.8</span> When they are different?</h2>
+<p>Now, we will explore Bayesian sample size calculations by implementing sensitivity analyses. First, we will examine how the sample size changes with variations in the prior distribution. We will also explore sensitivity related to the choice of the cutoff threshold, ranging from 90% to 99%.</p>
+<section id="prior-sensitivity" class="level3" data-number="11.8.1">
+<h3 data-number="11.8.1" class="anchored" data-anchor-id="prior-sensitivity"><span class="header-section-number">11.8.1</span> Prior Sensitivity</h3>
+<p>In real-world situations, we often don’t have much prior knowledge about how well a new treatment will work, so we can’t build a strong prior belief for it. However, for the standard treatment (SOC), there may be existing data or studies that provide useful information. In a Bayesian framework, this existing information about the SOC can help us design the study more efficiently, potentially reducing the number of participants needed.</p>
+<p>Let’s explain this using the Pediatric Antibiotic Trial example. Suppose, we find from a study that the minimum safety (or success) rate for the SOC, i.e., the control group is about 40% (i.e., this is an informative prior). So, we can write this prior using Beta distribution with shape parameters 4 and 6, i.e., <span class="math inline">\(\text{Beta}(4,6)\)</span>.</p>
+<p>Recall that, in the example we considered the true success rate for the SOC is about 60%. This information is an assumption related to the observe data, which is different compared to the prior assumption for the SOC group.</p>
+<p>Now we might want to ask: if we already believe safety is around 40% (prior), why assume it’s 60%? Is there any need to use the 60% safety rate to design the trial?</p>
+<p>The short answer for this question is yes, both the prior (40%) and the assumed “true” rate (60%) can be useful, but for different purposes in trial design. When we design a trial, especially using simulations, we need to ask if the true success rate is 60%, how likely is our trial to detect it? Here, the 60% value is a design assumption — a scenario we’re testing. We might say, if the true SOC rate is actually better than we thought, will our trial design pick that up? And the prior (40% safety) is our starting belief about the SOC success rate before the trial. When we get data, we will update this prior with new evidence to get the posterior distribution.</p>
+<p>We can definitely see a key challenge in interpreting trial results in these types of situations. Here, the same data can lead to vastly different conclusions depending on the prior beliefs brought into the analysis. Therefore, the use of informative priors should be chosen very carefully, ideally motivated by strong prior clinical trial data and agreed upon in consultation with regulatory bodies such as the Therapeutic Goods Administration (TGA), the Food and Drug Administration (FDA), and others.</p>
+<p>To learn and explore more regarding this we refer to JAMA article by <span class="citation" data-cites="quintana2017bayesian">Quintana, Viele, and Lewis (<a href="references.html#ref-quintana2017bayesian" role="doc-biblioref">2017</a>)</span>.</p>
+<p>Now, let us assume that we have strong prior knowledge, and for the above example it is 40%, and hence, we plot the prior density function using <span class="math inline">\(\text{Beta}(4,6)\)</span> and true safety as:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>beta_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> x_vals,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">density =</span> <span class="fu">dbeta</span>(x_vals, <span class="at">shape1 =</span> <span class="dv">4</span>, <span class="at">shape2 =</span> <span class="dv">6</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(beta_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> density)) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.61</span>, <span class="at">y =</span> <span class="fu">max</span>(beta_df<span class="sc">$</span>density)<span class="sc">*</span><span class="fl">0.8</span>, <span class="at">label =</span> <span class="st">"True Safety = 0.6"</span>, </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Beta(4, 6) Prior with True Safety"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(theta),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M06_1_files/figure-html/beta_trial_density_sensitivity-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Considering this informative prior we get the minimum sample size per group for 80% power as:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0001</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>estimate_safety_power_pr <span class="ot">&lt;-</span> <span class="cf">function</span>(n_per_group, <span class="at">n_sim =</span> <span class="dv">20000</span>) {</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="fu">replicate</span>(n_sim, <span class="fu">simulate_safety_trial</span>(n_per_group,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">prior_control =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">prior_treatment =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">150</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>power_results_pr <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">SampleSize =</span> sample_sizes,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Power =</span> <span class="fu">map_dbl</span>(<span class="at">.x =</span> sample_sizes, <span class="at">.f =</span> estimate_safety_power_pr, <span class="at">.progress =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>min_n <span class="ot">&lt;-</span> power_results_pr <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Power <span class="sc">&gt;=</span> <span class="fl">0.80</span>) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Bayesian: Minimun sample size per group for 80% power: "</span>, min_n<span class="sc">$</span>SampleSize))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Bayesian: Minimun sample size per group for 80% power:  100"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(power_results_pr, <span class="fu">aes</span>(<span class="at">x =</span> SampleSize, <span class="at">y =</span> Power)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#0072B2"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#D55E00"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> min_n<span class="sc">$</span>SampleSize, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Bayesian - Beta(4,6) Prior"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sample Size per Group"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Power"</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M06_1_files/figure-html/bayes_trial_pediatric3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="cutoff-sensitivity" class="level3" data-number="11.8.2">
+<h3 data-number="11.8.2" class="anchored" data-anchor-id="cutoff-sensitivity"><span class="header-section-number">11.8.2</span> Cutoff Sensitivity</h3>
+<p>In this section, we conduct a sensitivity analysis to examine how varying posterior probability cutoffs (0.90 vs 0.99) influence the estimated power across a range of sample sizes per group. We use data repeated across multiple simulations to estimate power for each scenario.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>estimate_safety_power_cutoff <span class="ot">&lt;-</span> <span class="cf">function</span>(n_per_group, prob_cutoff, <span class="at">n_sim =</span> <span class="dv">20000</span>) {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="fu">replicate</span>(n_sim, <span class="fu">simulate_safety_trial</span>(n_per_group, <span class="at">prob_cutoff =</span> prob_cutoff)))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">150</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>cutoffs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.90</span>, <span class="fl">0.99</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0001</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>power_results_all <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">SampleSize =</span> sample_sizes,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Cutoff =</span> cutoffs</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Power =</span> <span class="fu">map2_dbl</span>(SampleSize, Cutoff, <span class="sc">~</span><span class="fu">estimate_safety_power_cutoff</span>(.x, .y), <span class="at">.progress =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(power_results_all, <span class="fu">aes</span>(<span class="at">x =</span> SampleSize, <span class="at">y =</span> Power, <span class="at">color =</span> <span class="fu">factor</span>(Cutoff))) <span class="sc">+</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.80</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray40"</span>) <span class="sc">+</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Different Posterior Probability Cutoffs"</span>,</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sample Size per Group"</span>,</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Power"</span>,</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cutoff"</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M06_1_files/figure-html/bayes_trial_pediatric4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot illustrates the relationship between posterior probability cutoffs and the statistical power of a safety trial, as the sample size increases. Specifically, it shows that using a lower cutoff value (e.g., 0.90) results in higher power more quickly compared to a higher cutoff (e.g., 0.99).</p>
+<p>This means that when we set a cutoff of 0.90, we are requiring less evidence from the data to conclude that the treatment is safe. As a result, it’s easier to meet this criterion, and we reach acceptable power levels (e.g., 80%) with fewer participants.</p>
+<p>On the other hand, with a stricter cutoff of 0.99, we are demanding more certainty before declaring safety. This makes it harder to reach the decision threshold, so the power of the test increases more slowly. To achieve the same level of power as with the 0.90 cutoff, we need a larger sample size to accumulate enough evidence.</p>
+<p>In practical terms, this reflects a trade-off between statistical rigor and resource requirements:</p>
+<ul>
+<li><p>A lower cutoff may be more efficient in terms of sample size and cost but might increase the risk of falsely declaring a treatment safe.</p></li>
+<li><p>A higher cutoff increases the level of confidence in the safety conclusion but demands more data, which could be more expensive or time-consuming to collect.</p></li>
+</ul>
+<p>Thus, this sensitivity analysis helps guide decision-making around trial design, balancing efficiency in safety evaluations.</p>
+</section>
+</section>
+<section id="bayesian-type-i-error" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="bayesian-type-i-error"><span class="header-section-number">11.9</span> Bayesian Type-I Error</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Bayesian Type-I error is a concept that mirrors the classical (frequentist) Type-I error. In a frequentist hypothesis test, type-I error refers to the probability of rejecting the null hypothesis when it is actually true. For example, with statistical level of significance <span class="math inline">\(\alpha=0.05\)</span>, we are accepting a 5% chance of falsely declaring a treatment effective when it’s not.</p>
+<p>In Bayesian analysis, we don’t really reject null in the traditional way. Instead, we compute the posterior probability that the treatment is better than control, given the data.</p>
+<p>So in a Bayesian superiority trial, as we have already explain earlier, we might want to declare treatment superior if the posterior probability that treatment is better than control exceeds some threshold (e.g., 95%). Here, Bayesian Type-I Error is the probability that we incorrectly declare superiority, when the treatment is not actually better (e.g., when there’s no difference, or control is better).</p>
+<p>Now, how do we estimate Bayesian Type-I Error (in practice)? We simulate many trials under the null hypothesis, and see how often our Bayesian decision rule declares a false positive.</p>
+<ol type="1">
+<li>Assume null is true: i.e., treatment = control = 60% success.</li>
+<li>Simulate N trials (e.g., 10,000).</li>
+<li>For each trial:
+<ul>
+<li>Compute posterior probability that treatment is better than control.</li>
+<li>If it exceeds your decision threshold (e.g., 95%), declare “superior.”</li>
+</ul></li>
+<li>Count how many of those trials wrongly declare superiority.</li>
+<li>That proportion is our Bayesian Type-I Error rate.</li>
+</ol>
+<p>Now, even in a Bayesian framework, especially in regulated environments (e.g., clinical trials), controlling type-I error is critical for ethical, financial, and regulatory reasons.</p>
+<p>While Bayesian methods don’t inherently control <span class="math inline">\(\alpha\)</span> like frequentist ones do, regulators often require simulations to show that the Type-I error is controlled.</p>
+<p><strong>Example:</strong></p>
+<p>If our decision rule is to declare treatment superior if posterior P(treatment &gt; control) &gt; 0.95; then we might find:</p>
+<ul>
+<li><p>Under the null (treatment = control), this rule gives a false positive 5% of the time, i.e, Type-I error is approximately 0.05</p></li>
+<li><p>If it gives greater than 5% of the time, then Type-I error is too high and we may need to adjust the cutoff, sample size, or prior.</p></li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>simulate_safety_trial <span class="ot">&lt;-</span> <span class="cf">function</span>(n_per_group, </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">true_control =</span> <span class="fl">0.60</span>, </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">true_treatment =</span> <span class="fl">0.60</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">prior_control =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">prior_treatment =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">prob_cutoff =</span> <span class="fl">0.95</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">threshold =</span> <span class="dv">0</span>) {</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  success_c <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n_per_group, true_control)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  success_t <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n_per_group, true_treatment)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  post_c <span class="ot">&lt;-</span> prior_control <span class="sc">+</span> <span class="fu">c</span>(success_c, n_per_group <span class="sc">-</span> success_c)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  post_t <span class="ot">&lt;-</span> prior_treatment <span class="sc">+</span> <span class="fu">c</span>(success_t, n_per_group <span class="sc">-</span> success_t)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  n_samples <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  p_c_post <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_samples, post_c[<span class="dv">1</span>], post_c[<span class="dv">2</span>])</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  p_t_post <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_samples, post_t[<span class="dv">1</span>], post_t[<span class="dv">2</span>])</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  prob_superior <span class="ot">&lt;-</span> <span class="fu">mean</span>((p_t_post <span class="sc">-</span> p_c_post) <span class="sc">&gt;</span> threshold)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(prob_superior <span class="sc">&gt;=</span> prob_cutoff)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>estimate_safety_power <span class="ot">&lt;-</span> <span class="cf">function</span>(n_per_group, prob_cutoff_val, <span class="at">n_sim =</span> <span class="dv">10000</span>) {</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="fu">replicate</span>(n_sim, <span class="fu">simulate_safety_trial</span>(n_per_group, </span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>                                               <span class="at">prob_cutoff =</span> prob_cutoff_val)))</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">150</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>cutoff_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.95</span>) <span class="co">#c(0.95, 0.99)</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>power_results_type1 <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(<span class="at">SampleSize =</span> sample_sizes,</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>                             <span class="at">ProbCutoff =</span> cutoff_values) <span class="sc">%&gt;%</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Type1_Error =</span> <span class="fu">map2_dbl</span>(SampleSize, ProbCutoff, estimate_safety_power, <span class="at">.progress =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(power_results_type1, <span class="fu">aes</span>(<span class="at">x =</span> SampleSize, <span class="at">y =</span> Type1_Error, <span class="at">color =</span> <span class="fu">factor</span>(ProbCutoff))) <span class="sc">+</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.05</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Bayesian Type-I Error"</span>,</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sample Size per Group"</span>,</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Type-I Error Rate"</span>,</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cutoff"</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">0.20</span>) <span class="sc">+</span></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M06_1_files/figure-html/bayes_trial_pediatric_type1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="adaptivity-and-bayesian-sample-size" class="level2" data-number="11.10">
+<h2 data-number="11.10" class="anchored" data-anchor-id="adaptivity-and-bayesian-sample-size"><span class="header-section-number">11.10</span> Adaptivity and Bayesian Sample Size</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>In this course, we will introduce the fundamental conpects of Bayesian adaptive design. For interested readers to learn more, we refer to the book by <span class="citation" data-cites="berry2010bayesian">Berry et al. (<a href="references.html#ref-berry2010bayesian" role="doc-biblioref">2010</a>)</span>.</p>
+<p>Adaptive designs are an increasingly popular approach in clinical trials, offering flexibility to modify trial procedures based on accumulating data without undermining the study’s integrity or validity. One powerful framework for implementing adaptive designs is through Bayesian methods, which provide a natural way to incorporate prior information and update beliefs as new data become available.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-261a5f1a6b4da16a43f3" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-261a5f1a6b4da16a43f3">{"x":{"diagram":"\ndigraph seamless_design {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, color = lightblue]\n  start [label = \"Initiate Data Collection\n(Initial Allocation and Sampling Rules)\"]\n  analyze [label = \"Analyse Available Data\"]\n  decision [label = \"Stopping Rule Met?\", shape = diamond, style = filled, color = green]\n  continue [label = \"Continue Data Collection\n(Revise Allocation and Sampling Rules)\"]\n  stop [label = \"Stop Trial or Go to the Next Phase\"]\n\n  start -> analyze\n  analyze -> decision\n  decision -> continue [label = \"No\"]\n  decision -> stop [label = \"Yes\"]\n  continue -> analyze\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Adaptive trials are designed with flexibility built in from the start. This means we can pre-plan adjustments to key elements like treatment types (dose, frequency, combinations), how patients are assigned to different treatments, which patient groups to include, and even how many participants are needed.</p>
+<p>What makes this approach powerful is its ability to learn as it goes. As data rolls in, the trial can start to focus more on the treatment arms that are showing promise. That allows us to begin with a broader range of options—maybe testing 8 doses instead of just 3—and still use fewer participants overall.</p>
+<p>A well-designed adaptive trial doesn’t just benefit researchers. Patients may get better treatments, regulators get more informative results, and the entire development process becomes more streamlined.</p>
+<p>That said, the flip side is that adaptive designs take more effort to build. They require careful planning and trial simulations to make sure they perform well and stand up to regulatory standards. This means close collaboration—statisticians, clinicians, regulatory teams, operations, supply chain, and more all need to be in sync. When done right, though, the payoff is a trial design that’s not only smarter, but truly better for everyone involved.</p>
+<!--
+
+Unlike traditional fixed designs, Bayesian adaptive trials continuously update inferences about treatment safety or efficacy using Bayes’ theorem, enabling more responsive and efficient decision-making throughout the study.
+
+A key advantage of Bayesian adaptive design is its ability to accumulate data, that reflect current evidence. The posterior probabilities are then used to make decisions, such as:
+
+- Stopping early for success or futility
+- Adjusting randomisation probabilities (e.g., favoring better-performing arms)
+- Re-estimating sample sizes
+- Dropping or adding treatment arms
+
+Such flexibility leads to more efficient use of resources, shorter trial durations, and improved ethical standards by potentially exposing fewer participants to inferior treatments.
+
+Bayesian adaptive designs are particularly well-suited for early-phase trials, rare diseases, or emerging fields where data may be limited but timely decision-making is essential. They also provide a transparent and interpretable framework for stakeholders by quantifying uncertainty and probability in a direct and intuitive way.
+
+
+
+-->
+<!--
+
+### Frequentist vs. Bayesian Adaptive Design
+
+Frequentist adaptive designs focus on controlling Type I error across potential changes, and typically treat adaptations conservatively. Whereas, Bayesian adaptive designs are more fluid and intuitive, allowing for seamless incorporation of prior knowledge and flexible decision rules based on evolving data.
+
+
+| **Aspect** | **Frequentist Adaptive Design** | **Bayesian Adaptive Design** |
+|------------|----------------------------------|-------------------------------|
+| **Decision Criteria** | Uses pre-specified statistical thresholds (e.g., p-values, test statistics) | Uses posterior probabilities (e.g., Pr(efficacy > control) > 0.95) |
+| **Adaptation Mechanism** | Adaptations are allowed but need strict pre-specification and complex error control (e.g., alpha spending) | Adaptations are based on real-time Bayesian updating and often easier to implement statistically |
+| **Interim Analysis** | Typically limited in number and scope due to multiplicity concerns | Easily accommodates multiple or continuous interim looks without requiring multiplicity correction |
+| **Interpretation of Results** | P-values and confidence intervals with long-run error control | Probabilistic statements about treatment effects (e.g., “there is a 95% chance the treatment is effective”) |
+| **Complexity & Transparency** | Often requires extensive simulations to control Type I error across adaptations | Still requires simulation but often more intuitive and transparent in rationale |
+| **Flexibility** | Adaptations must be rigidly pre-defined | More naturally allows flexibility and dynamic decision-making during the trial |
+
+
+
+-->
+<section id="bayesian-adaptive-design-antibiotic-safety-trial" class="level3" data-number="11.10.1">
+<h3 data-number="11.10.1" class="anchored" data-anchor-id="bayesian-adaptive-design-antibiotic-safety-trial"><span class="header-section-number">11.10.1</span> Bayesian Adaptive Design: Antibiotic Safety Trial</h3>
+<p>Let’s expain the adaptivity and realted sample size calculation based on the antibiotic safety trila we discussed earlier, where we want to evaluate if a new antibiotic is safer than the standard treatment for bacterial pneumonia in children aged 6 months to 5 years.</p>
+<p><strong>Design Features</strong></p>
+<ul>
+<li>Randomisation: 1:1 (New Antibiotic vs.&nbsp;Standard of Care)</li>
+<li>Prior Beliefs: Non-informative priors for both arms (e.g., Beta(1,1) for safety rates)</li>
+<li>Control Safety Rate: Estimated at 60%</li>
+<li>Treatment Safety Rate: Estimated at 70% (say, about 10% point difference)</li>
+<li>Planned Sample Size: Let’s assume 200 total (100 per group)</li>
+<li>Interim Analyses: After 50, 100, and 150 participants have been followed</li>
+</ul>
+<p><strong>Decision Rule</strong></p>
+<ul>
+<li>If <span class="math inline">\(Pr(\theta_{trt} &gt; \theta_{crt}) &gt; 0.95\)</span> then consider early success</li>
+<li>If <span class="math inline">\(Pr(\theta_{trt} &lt; \theta_{crt}) &gt; 0.95\)</span> then consider futility (stop for harm)</li>
+<li>Else continue to next interim or if in the final interim then either it is inconclusive or conclude as no added benefit.</li>
+</ul>
+<p><strong>Interim Steps</strong></p>
+<p>At the <strong>first interim</strong>, conducted after enrolling 50 participants (25 in each group), suppose we observed that 17 children in the treatment group (i.e., <span class="math inline">\(\approx\)</span> 70%) and 15 in the control group experienced no adverse events (i.e., 60%). Starting with weakly-informative <span class="math inline">\(\text{Beta}(2,2)\)</span> priors, we updated the posterior distributions based on this data. For the treatment group, this yielded a <span class="math inline">\(\text{Beta}(19, 10)\)</span> distribution, and for the control group, a <span class="math inline">\(\text{Beta}(17, 12)\)</span>. We then calculated the posterior probability that the new antibiotic is safer than the standard treatment—specifically, $ Pr(<em>{} &gt; </em>{})$. According to our decision rules, if this probability exceeds 0.95, we would consider stopping the trial early for efficacy. Conversely, if the probability that the treatment is worse exceeds 0.95, we would stop for futility. Since neither condition was met, we proceeded to the next interim analysis.</p>
+<p>During the <strong>second interim analysis</strong>, conducted after 100 participants had been followed (50 per group), our cumulative data showed that 36 out of 50 participants in the treatment group and 29 out of 50 in the control group had no adverse events. We updated the posterior distributions accordingly: <span class="math inline">\(\text{Beta}(38, 16)\)</span> for the treatment group and <span class="math inline">\(\text{Beta}(31, 23)\)</span> for the control group. Once again, we computed the posterior probability of treatment superiority. If this probability had exceeded our predefined threshold (greater than 0.95), we would have stopped the trial early for success. Since the threshold was not reached, we decided to continue to the final planned interim.</p>
+<p>The <strong>third interim analysis</strong> took place after 150 participants had been enrolled and followed (75 per group). At this point, 57 participants in the treatment arm and 45 in the control arm experienced no adverse events. These data produced updated posterior distributions: <span class="math inline">\(\text{Beta}(59, 20)\)</span> for the treatment and <span class="math inline">\(\text{Beta}(47, 32)\)</span> for the control. We calculated the final posterior probability that the treatment is safer than the control, and we also reported the corresponding credible intervals and full posterior distributions. If the final probability exceeded 0.95, we planned to declare the trial a success and conclude that the new antibiotic is statistically superior in terms of safety. Otherwise, we would interpret the result as either inconclusive or indicative of no added benefit.</p>
+<p>We write R code for this analysis as follows that also provides us the power and decision for each interim steps.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>posterior_prob_superiority <span class="ot">&lt;-</span> <span class="cf">function</span>(success_treat, total_treat, success_control, total_control, <span class="at">alpha_prior =</span> <span class="dv">2</span>, <span class="at">beta_prior =</span> <span class="dv">2</span>, <span class="at">n_sim =</span> <span class="dv">5000</span>) {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  alpha_treat <span class="ot">&lt;-</span> alpha_prior <span class="sc">+</span> success_treat</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  beta_treat  <span class="ot">&lt;-</span> beta_prior <span class="sc">+</span> (total_treat <span class="sc">-</span> success_treat)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  alpha_control <span class="ot">&lt;-</span> alpha_prior <span class="sc">+</span> success_control</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  beta_control  <span class="ot">&lt;-</span> beta_prior <span class="sc">+</span> (total_control <span class="sc">-</span> success_control)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  p_treat_samples <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_sim, alpha_treat, beta_treat)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  p_control_samples <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_sim, alpha_control, beta_control)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  prob_superior <span class="ot">&lt;-</span> <span class="fu">mean</span>(p_treat_samples <span class="sc">&gt;</span> p_control_samples)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">prob_superior =</span> prob_superior,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">treat_posterior =</span> <span class="fu">c</span>(<span class="at">alpha =</span> alpha_treat, <span class="at">beta =</span> beta_treat),</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">control_posterior =</span> <span class="fu">c</span>(<span class="at">alpha =</span> alpha_control, <span class="at">beta =</span> beta_control),</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">samples =</span> <span class="fu">data.frame</span>(<span class="at">p_treat =</span> p_treat_samples, <span class="at">p_control =</span> p_control_samples)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>interims <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">interim1 =</span> <span class="fu">list</span>(<span class="at">treat =</span> <span class="fu">c</span>(<span class="at">success =</span> <span class="dv">17</span>, <span class="at">total =</span> <span class="dv">25</span>), <span class="at">control =</span> <span class="fu">c</span>(<span class="at">success =</span> <span class="dv">15</span>, <span class="at">total =</span> <span class="dv">25</span>)),</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">interim2 =</span> <span class="fu">list</span>(<span class="at">treat =</span> <span class="fu">c</span>(<span class="at">success =</span> <span class="dv">36</span>, <span class="at">total =</span> <span class="dv">50</span>), <span class="at">control =</span> <span class="fu">c</span>(<span class="at">success =</span> <span class="dv">29</span>, <span class="at">total =</span> <span class="dv">50</span>)),</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">interim3 =</span> <span class="fu">list</span>(<span class="at">treat =</span> <span class="fu">c</span>(<span class="at">success =</span> <span class="dv">57</span>, <span class="at">total =</span> <span class="dv">75</span>), <span class="at">control =</span> <span class="fu">c</span>(<span class="at">success =</span> <span class="dv">45</span>, <span class="at">total =</span> <span class="dv">75</span>))</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>efficacy_thresh <span class="ot">&lt;-</span> <span class="fl">0.95</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>futility_thresh <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>final_success_thresh <span class="ot">&lt;-</span> <span class="fl">0.95</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(interims)) {</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> interims[[i]]</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"Interim: "</span>, i,<span class="st">" -- Sample Size: "</span>, data<span class="sc">$</span>treat[<span class="dv">2</span>],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">posterior_prob_superiority</span>(</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">success_treat =</span> data<span class="sc">$</span>treat[<span class="st">"success"</span>],</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_treat =</span> data<span class="sc">$</span>treat[<span class="st">"total"</span>],</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">success_control =</span> data<span class="sc">$</span>control[<span class="st">"success"</span>],</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_control =</span> data<span class="sc">$</span>control[<span class="st">"total"</span>]</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Posterior Pr(treat &gt; control):"</span>, <span class="fu">round</span>(result<span class="sc">$</span>prob_superior, <span class="dv">4</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (result<span class="sc">$</span>prob_superior <span class="sc">&gt;</span> efficacy_thresh) {</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Stop: Evidence for treatment superiority</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (result<span class="sc">$</span>prob_superior <span class="sc">&lt;</span> (<span class="dv">1</span> <span class="sc">-</span> efficacy_thresh)) {</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Stop: Futility (treatment worse)</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Continue to next interim</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Interim:  1  -- Sample Size:  25 
+Posterior Pr(treat &gt; control): 0.7154 
+Continue to next interim
+Interim:  2  -- Sample Size:  50 
+Posterior Pr(treat &gt; control): 0.9304 
+Continue to next interim
+Interim:  3  -- Sample Size:  75 
+Posterior Pr(treat &gt; control): 0.9816 
+Stop: Evidence for treatment superiority</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>final_samples <span class="ot">&lt;-</span> result<span class="sc">$</span>samples</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(final_samples, <span class="fu">aes</span>(<span class="at">x =</span> p_treat <span class="sc">-</span> p_control)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Posterior Distribution of Difference: Pr(Treatment) - Pr(Control)"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Difference in Safety Probabilities"</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M06_1_files/figure-html/adaptive_design-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It is also possible to do Bayesian power analyses for each intrem steps at the desing stage to identify the sample size required based on the decision rule.</p>
+</section>
+</section>
+<section id="why-to-use-bayesian-sample-size" class="level2" data-number="11.11">
+<h2 data-number="11.11" class="anchored" data-anchor-id="why-to-use-bayesian-sample-size"><span class="header-section-number">11.11</span> Why to use Bayesian Sample Size</h2>
+<p>With non-informative priors, Bayesian and frequentist designs often converge on similar results, especially for things like power and sample size. So then, why bother with Bayesian design at all?</p>
+<p>Even when power and sample sizes look similar, Bayesian methods offer several unique advantages that go beyond what frequentist designs provide.</p>
+<p>For example,</p>
+<p><strong>Interpretability of Results</strong></p>
+<p>In frequentist approach, we use p-value, which tells us the probability of observing data as extreme as ours, assuming the null hypothesis is true. Whereas, in Bayesian, we can directly compute the probability that a treatment works, given the data — which is often what clinicians and patients care about. For example, we might find that there is a 92% probability that the treatment improves outcomes.</p>
+<p><strong>Flexible Decision-Making</strong></p>
+<p>Bayesian designs inherently support adaptive trials, where sample sizes can change mid-trial, arms can be dropped early, and interim decisions are based on posterior probabilities. On the other hand, frequentist designs often require pre-specified stopping rules and can’t adapt as naturally to new information during the trial.</p>
+<p><strong>Incorporation of Prior Knowledge</strong></p>
+<p>Even when we start with a non-informative prior, we can incorporate informative priors in future trials to borrow strength from earlier studies, reduce sample size for rare diseases or pediatric populations, and leverage previous data to guide our current study design.</p>
+<p><strong>Better Handling of Uncertainty</strong></p>
+<p>Bayesian models quantify uncertainty more naturally. We obtain a full posterior distribution, rather than just a point estimate and confidence interval. This is especially useful in early-phase trials or small-sample settings, where uncertainty is higher.</p>
+<p><strong>A More Holistic View of Evidence</strong></p>
+<p>Frequentist results are dichotomous, i.e., significant or not? Whereas, Bayesian results provide a more gradual understanding — showing degrees of belief supported by the data.</p>
+</section>
+<section id="summary" class="level2" data-number="11.12">
+<h2 data-number="11.12" class="anchored" data-anchor-id="summary"><span class="header-section-number">11.12</span> Summary</h2>
+<p>…</p>
+</section>
+<section id="live-tutorial-and-discussion" class="level2" data-number="11.13">
+<h2 data-number="11.13" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">11.13</span> Live tutorial and discussion</h2>
+<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
+</section>
+<section id="tutorial-exercises" class="level2" data-number="11.14">
+<h2 data-number="11.14" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">11.14</span> Tutorial Exercises</h2>
+<p>Solutions will be provided later after the tutorial.</p>
+</section>
+<section id="preparation-for-week-12" class="level2" data-number="11.15">
+<h2 data-number="11.15" class="anchored" data-anchor-id="preparation-for-week-12"><span class="header-section-number">11.15</span> Preparation for Week 12</h2>
+<p>In week 12 you will be required to .</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-berry2010bayesian" class="csl-entry" role="listitem">
+Berry, Scott M, Bradley P Carlin, J Jack Lee, and Peter Muller. 2010. <em>Bayesian Adaptive Methods for Clinical Trials</em>. CRC press.
+</div>
+<div id="ref-quintana2017bayesian" class="csl-entry" role="listitem">
+Quintana, Melanie, Kert Viele, and Roger J Lewis. 2017. <span>“Bayesian Analysis: Using Prior Information to Interpret the Results of Clinical Trials.”</span> <em>JAMA</em> 318 (16): 1605–6.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -736,8 +1439,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./M06_2.html" class="pagination-link" aria-label="**Size Matters! Part - II**">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M06_2.html" class="pagination-link" aria-label="**Wander into the Wonder!**">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder!</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

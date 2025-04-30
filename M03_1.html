@@ -359,7 +359,6 @@ window.Quarto = {
 </header>
 
 
-<p>NOT READY YET</p>
 <iframe width="500" height="300" src="https://www.youtube.com/embed/TSO8XgWiQZs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <section id="learnings" class="level2" data-number="5.1">
@@ -446,8 +445,8 @@ ref: https://bookdown.org/paul/applied-causal-analysis/estimator.html
 <p>Here, we are trying to model the relationship between BMI (independent or exposure variable) and BMD (dependent or outcome or endpoint variable). Thus can draw the DAG as:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-bba330a459f814f00b5a" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-bba330a459f814f00b5a">{"x":{"diagram":"\n  digraph LR {\n    rankdir=LR;  # Set the direction from left to right\n    M [label = \"BMI\"]\n    B [label = \"BMD\"]\n    M -> B\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-371be707b94133e83dd1" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-371be707b94133e83dd1">{"x":{"diagram":"\n  digraph LR {\n    rankdir=LR;  # Set the direction from left to right\n    M [label = \"BMI\"]\n    B [label = \"BMD\"]\n    M -> B\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>In a Bayesian context, we need to define the likelihood of observing the data given certain parameters and then combine that with a prior belief about those parameters.</p>
@@ -521,8 +520,8 @@ p(\sigma^2 \mid \beta_0, \beta_1, \text{BMD}, \text{BMI}) \propto N(\text{BMD} \
 <p>By using these information in the above example, we write DAG for the Bayesian model as:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-ca3eb8425350a55cbfbd" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-ca3eb8425350a55cbfbd">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;  # Set direction from left to right\n    \n    # Nodes (parameters and variables)\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma2 [label = \"σ²\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma2 [label = \"Prior for σ²: IG(a, b)\", shape = box, style = dashed, fillcolor = lightyellow]\n    \n    # Edges (dependencies between nodes)\n    BMI -> BMD\n    beta_0 -> BMD\n    beta_1 -> BMD\n    sigma2 -> BMD\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_sigma2 -> sigma2\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-c38492c54348ffe341c5" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-c38492c54348ffe341c5">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;  # Set direction from left to right\n    \n    # Nodes (parameters and variables)\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma2 [label = \"σ²\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma2 [label = \"Prior for σ²: IG(a, b)\", shape = box, style = dashed, fillcolor = lightyellow]\n    \n    # Edges (dependencies between nodes)\n    BMI -> BMD\n    beta_0 -> BMD\n    beta_1 -> BMD\n    sigma2 -> BMD\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_sigma2 -> sigma2\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Now, let’s break down the concepts of estimand, estimator, and estimate using the Bayesian model represented by the DAG. In this example, the estimand is the quantity or parameter that we aim to estimate from the data, i.e., here the estimands are the parameters we want to infer, <span class="math inline">\(\beta_0\)</span> (intercept), <span class="math inline">\(\beta_1\)</span> (slope), and <span class="math inline">\(\sigma^2\)</span> (variance). Now, estimator is the method we are using, i.e., the Bayesian model with MCMC method to get the posterior distributions of the parameters <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(\sigma^2\)</span>. In this Bayesian modelling framework, the estimates are the specific values derived from the posterior distributions of the parameters. For example, the mean or median of the posterior distribution of <span class="math inline">\(\beta_0\)</span> could be an estimate of the intercept. Similarly, the mean or median of the posterior distribution of <span class="math inline">\(\beta_1\)</span> could be an estimate of the slope.</p>
@@ -660,8 +659,8 @@ p(\sigma^2 \mid \beta_0, \beta_1, \text{BMD}, \text{BMI}) \propto N(\text{BMD} \
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 6.1e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.61 seconds.
+Chain 1: Gradient evaluation took 3e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.3 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -678,9 +677,9 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.089 seconds (Warm-up)
-Chain 1:                0.056 seconds (Sampling)
-Chain 1:                0.145 seconds (Total)
+Chain 1:  Elapsed Time: 0.053 seconds (Warm-up)
+Chain 1:                0.034 seconds (Sampling)
+Chain 1:                0.087 seconds (Total)
 Chain 1: </code></pre>
 </div>
 <details class="code-fold">
@@ -765,7 +764,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </section>
 <section id="bayesian-vs.-frequentist-comparisons" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="bayesian-vs.-frequentist-comparisons"><span class="header-section-number">5.5</span> Bayesian vs.&nbsp;Frequentist Comparisons</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/opq8YiD39pI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>Now, let us compare the posterior distributions we obtained from the Bayesian model with the estimates from frequentist linear regression model.</p>
 <div class="cell">
