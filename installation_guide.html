@@ -187,13 +187,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters!</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Size Matters! Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder!</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,8 +218,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#have-r-and-rstudio-installed-and-working" id="toc-have-r-and-rstudio-installed-and-working" class="nav-link active" data-scroll-target="#have-r-and-rstudio-installed-and-working">Have R and RStudio installed and working</a></li>
-  <li><a href="#install-compiler" id="toc-install-compiler" class="nav-link" data-scroll-target="#install-compiler">Install Compiler</a></li>
+  <li><a href="#have-r-and-rstudio-installed-and-working" id="toc-have-r-and-rstudio-installed-and-working" class="nav-link active" data-scroll-target="#have-r-and-rstudio-installed-and-working">Have R and RStudio installed and working</a>
+  <ul class="collapse">
+  <li><a href="#how-to-install-r" id="toc-how-to-install-r" class="nav-link" data-scroll-target="#how-to-install-r">How to install R?</a></li>
+  <li><a href="#how-to-install-rstudio" id="toc-how-to-install-rstudio" class="nav-link" data-scroll-target="#how-to-install-rstudio">How to install RStudio?</a></li>
+  </ul></li>
+  <li><a href="#how-to-install-compiler" id="toc-how-to-install-compiler" class="nav-link" data-scroll-target="#how-to-install-compiler">How to Install Compiler?</a>
+  <ul class="collapse">
+  <li><a href="#install-rtools-c-compiler-for-windows-os" id="toc-install-rtools-c-compiler-for-windows-os" class="nav-link" data-scroll-target="#install-rtools-c-compiler-for-windows-os">Install ‘Rtools’ (C++ Compiler) for Windows OS</a></li>
+  <li><a href="#option-1-install-rtools-for-mac-os" id="toc-option-1-install-rtools-for-mac-os" class="nav-link" data-scroll-target="#option-1-install-rtools-for-mac-os">Option 1: Install ‘Rtools’ for Mac OS</a></li>
+  <li><a href="#option-2-install-compiler-for-mac-os" id="toc-option-2-install-compiler-for-mac-os" class="nav-link" data-scroll-target="#option-2-install-compiler-for-mac-os">Option 2: Install Compiler for Mac OS</a></li>
+  </ul></li>
   <li><a href="#install-rstan-and-brms-packages" id="toc-install-rstan-and-brms-packages" class="nav-link" data-scroll-target="#install-rstan-and-brms-packages">Install ‘rstan’ and ‘brms’ packages</a></li>
   </ul>
 </nav>
@@ -249,26 +258,61 @@ ul.task-list li input[type="checkbox"] {
 <section id="have-r-and-rstudio-installed-and-working" class="level2">
 <h2 class="anchored" data-anchor-id="have-r-and-rstudio-installed-and-working">Have R and RStudio installed and working</h2>
 <p>It is important that everyone has R and RStudio installed and functional before any assignments are due.</p>
-<p><strong>How to install R?</strong></p>
-<p>The latest version of R can be downloaded from the Comprehensive R Archive Network (CRAN): https://cran.r-project.org/</p>
-<p><strong>To install R on a PC</strong> click on “Download R for Windows” (https://cran.r-project.org/bin/windows/base/) and then “install R for the first time”. This will take you to a new window with the latest version of R. Click on “Download R 4.X.X for Windows” and follow the installation instructions. Default settings are OK. Note: At the time of writing, the current version of R was 4.2.2 but you can install whichever is the latest version, even if it differs from the one mentioned in the course notes.</p>
-<p><strong>To install R on a Mac</strong> click on “Download R for (Mac) OS X” (https://cran.r-project.org/bin/macosx/) and download the R binary under “Latest release”. The file will have an extension of .pkg, for example R-4.X.X.pkg. Click on this link and follow the instructions. Default settings are OK. Note: you can install whichever is the latest version, even if it differs from the one mentioned in these notes.</p>
+<section id="how-to-install-r" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-install-r">How to install R?</h3>
+<p>The latest version of R can be downloaded from the Comprehensive R Archive Network (CRAN):</p>
+<blockquote class="blockquote">
+<p>https://cran.r-project.org/</p>
+</blockquote>
+<p><strong>To install R on a PC</strong> click on “Download R for Windows”</p>
+<blockquote class="blockquote">
+<p>https://cran.r-project.org/bin/windows/base/</p>
+</blockquote>
+<p>and then “install R for the first time”. This will take you to a new window with the latest version of R. Click on “Download R 4.X.X for Windows” and follow the installation instructions. Default settings are OK. Note: At the time of writing, the current version of R was 4.2.2 but you can install whichever is the latest version, even if it differs from the one mentioned in the course notes.</p>
+<p><strong>To install R on a Mac</strong> click on “Download R for (Mac) OS X”</p>
+<blockquote class="blockquote">
+<p>https://cran.r-project.org/bin/macosx/</p>
+</blockquote>
+<p>and download the R binary under “Latest release”. The file will have an extension of .pkg, for example R-4.X.X.pkg. Click on this link and follow the instructions. Default settings are OK. Note: you can install whichever is the latest version, even if it differs from the one mentioned in these notes.</p>
 <p><strong>Optional</strong> – Check that R has installed correctly (You can skip this step and proceed to installing RStudio. If RStudio is working then you know that base R was successfully installed.) Open R and type 1 + 2 into the command line (the command line is indicated with the “&gt;” symbol). After pressing Enter, you should get the following output:</p>
 <p>[1] 3</p>
-<p><strong>How to install RStudio?</strong></p>
+</section>
+<section id="how-to-install-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-install-rstudio">How to install RStudio?</h3>
 <p>You don’t need to download RStudio in order to use R, but RStudio provides a more user friendly interface and is commonly used by many R users. We will be using RStudio, so we strongly recommend that you install it too.</p>
-<p>First make sure you have downloaded base R and confirmed that it was successfully installed. After you have downloaded base R, you can download RStudio. RStudio can be downloaded from: https://posit.co/download/rstudio-desktop/#download Scroll down and download the appropriate file for your operating system. Follow the prompts to install.</p>
+<p>First make sure you have downloaded base R and confirmed that it was successfully installed. After you have downloaded base R, you can download RStudio. RStudio can be downloaded from:</p>
+<blockquote class="blockquote">
+<p>https://posit.co/download/rstudio-desktop/#download</p>
+</blockquote>
+<p>Scroll down and download the appropriate file for your operating system. Follow the prompts to install.</p>
 <p>To confirm that RStudio has installed correctly, double click on the RStudio icon your computer to open the program</p>
-<p>If you type 1 + 2 into the Console and hit enter you should get 3 as the output.</p>
+<p>If you type 1 + 2 into the R Console and hit enter you should get 3 as the output.</p>
 <p>Good work! You have now successfully installed R and RStudio!</p>
 </section>
-<section id="install-compiler" class="level2">
-<h2 class="anchored" data-anchor-id="install-compiler">Install Compiler</h2>
-<p><strong>Install ‘Rtools’ (C++ Compiler) for Windows OS</strong></p>
-<p>Download Rtools from https://cran.r-project.org/bin/windows/Rtools/ based on the R version that you have already installed.</p>
-<p>For further detail on Rtools see: https://github.com/stan-dev/rstan/wiki/Configuring-C—Toolchain-for-Windows</p>
-<p><strong>Install ‘Rtools’ (C++ Compiler) for Mac OS</strong></p>
-<p>Install ‘macrtools’ R package. This installer package was developed by James Joseph Balamuta (see details: https://mac.thecoatlessprofessor.com/macrtools/)</p>
+</section>
+<section id="how-to-install-compiler" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-install-compiler">How to Install Compiler?</h2>
+<section id="install-rtools-c-compiler-for-windows-os" class="level3">
+<h3 class="anchored" data-anchor-id="install-rtools-c-compiler-for-windows-os">Install ‘Rtools’ (C++ Compiler) for Windows OS</h3>
+<p>Download Rtools from</p>
+<blockquote class="blockquote">
+<p>https://cran.r-project.org/bin/windows/Rtools/</p>
+</blockquote>
+<p>based on the R version that you have already installed. Usually, for the latest version this should be RTools 4.4, i.e.,</p>
+<blockquote class="blockquote">
+<p>https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html</p>
+</blockquote>
+<p>For further detail on Rtools see:</p>
+<blockquote class="blockquote">
+<p>https://github.com/stan-dev/rstan/wiki/Configuring-C—Toolchain-for-Windows</p>
+</blockquote>
+</section>
+<section id="option-1-install-rtools-for-mac-os" class="level3">
+<h3 class="anchored" data-anchor-id="option-1-install-rtools-for-mac-os">Option 1: Install ‘Rtools’ for Mac OS</h3>
+<p>Install ‘macrtools’ R package. This installer package was developed by James Joseph Balamuta, see details:</p>
+<blockquote class="blockquote">
+<p>https://mac.thecoatlessprofessor.com/macrtools/</p>
+</blockquote>
 <p>According to their webpage: “This package is designed to recreate the compiled code toolchain used to compile the official macOS R binary on CRAN by following the steps described on the r-project developer page for macOS tools (https://mac.r-project.org/tools/). The package is able to to setup the compilation toolchain on any Mac that meets the standards required to install the official CRAN R binary on macOS.”</p>
 <p>You can install the development version of macrtools from GitHub using R console or using “Tools” menu.</p>
 <p>First install ‘remotes’ package (if not already installed)</p>
@@ -288,14 +332,42 @@ ul.task-list li input[type="checkbox"] {
 <iframe width="500" height="300" src="https://www.youtube.com/embed/_fckF0fefXQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 </section>
+<section id="option-2-install-compiler-for-mac-os" class="level3">
+<h3 class="anchored" data-anchor-id="option-2-install-compiler-for-mac-os">Option 2: Install Compiler for Mac OS</h3>
+<p>First, if you have the files ~/.R/Makevars and/or ~/.Renviron, save a copy in a different location (like your desktop) and delete them.</p>
+<p>If you don’t know what these files are or if you have them, go to Finder &gt; Go &gt; Home, which takes you to your home directory, and press SHIFT + CMD + . to show hidden files (i.e.&nbsp;files starting with a full stop .) if you can’t see them already. Now search among the hidden files and if you see a folder named .R/ and/or a file .Renviron, copy them to your desktop and delete the original copies from your home directory.</p>
+<p>To install the Xcode Command Line Tools, run the following in the Terminal (open Finder &gt; Applications &gt; Terminal, type in the following command and press ENTER):</p>
+<blockquote class="blockquote">
+<p>xcode-select –install</p>
+</blockquote>
+<p>macOS will download and install the Xcode CLT (it will take a while, make sure you have a stable internet connection).</p>
+<p>If your Mac has an Intel chip, you need to install gfortran v8.2 (for Mojave) independent of your macOS version. You can download the installer from</p>
+<blockquote class="blockquote">
+<p>https://github.com/fxcoudert/gfortran-for-macOS/releases/tag/8.2</p>
+</blockquote>
+<p>If your Mac has an Apple M1 chip, you will need to install gfortran v11. You can download it from here:</p>
+<blockquote class="blockquote">
+<p>https://github.com/fxcoudert/gfortran-for-macOS/releases/tag/11-arm-alpha2</p>
+</blockquote>
+<p>download the .pkg package listed under Assets at the bottom of the page.</p>
+</section>
+</section>
 <section id="install-rstan-and-brms-packages" class="level2">
 <h2 class="anchored" data-anchor-id="install-rstan-and-brms-packages">Install ‘rstan’ and ‘brms’ packages</h2>
 <p><strong>‘rstan’ package</strong></p>
 <p>– After installing Rtools (Windows and/or Mac OS), open RStudio and using R console or using “Tools” menu install ‘rstan’ package.</p>
 <blockquote class="blockquote">
-<p>install.packages(“rstan”)</p>
+<p>install.packages(“rstan”, dependencies = TRUE)</p>
 </blockquote>
-<p>For detail on ‘rstan’ installation: https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started</p>
+<p>For detail on ‘rstan’ installation:</p>
+<blockquote class="blockquote">
+<p>https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started</p>
+</blockquote>
+<p>Now, verify the installation by running:</p>
+<blockquote class="blockquote">
+<p>example(stan_model, package = “rstan”, run.dontrun = TRUE)</p>
+</blockquote>
+<p>in your R console.</p>
 <p><strong>‘brms’ package</strong></p>
 <p>– Then install ‘brms’ package:</p>
 <blockquote class="blockquote">
