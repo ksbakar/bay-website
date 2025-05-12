@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Non-Gaussian Bayeswatch! Looking at Binary Data – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>7&nbsp; Non-Gaussian – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,7 +85,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./M04_2.html" rel="next">
-<link href="./M03_2.html" rel="prev">
+<link href="./brief_module_04.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -154,7 +174,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M04_1.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Binary Data</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M04_1.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -194,55 +214,85 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>R and RStudio</strong></span></a>
+ <span class="menu-text"><strong>Software Installation Guide</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 1: Bayesian Dreams</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M01_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Bayesian Dreams: Navigating Evidence</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Navigating Evidence</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M01_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Dreams: Inference</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Inference</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 2: Chaotics</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M02_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><strong>Chaotics: Prior and Posterior</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><strong>Prior and Posterior</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M02_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><strong>Chaotics: Generative Models and Tools</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><strong>Generative Models and Tools</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 3: Bayeswatch - Gaussian</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Logical Connections</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Logical Connections</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Tweaks and More</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Prior Tweaks and More</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 4: Bayeswatch - Non Gaussian</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Binary Data</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Count Data</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>More on Non-Gaussian</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 5: Clusterphobia</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,6 +305,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./M05_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 6: Wander into the Wonder!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -292,9 +348,26 @@ window.Quarto = {
    
   <ul>
   <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">7.1</span> Learnings</a></li>
-  <li><a href="#binary-outcome" id="toc-binary-outcome" class="nav-link" data-scroll-target="#binary-outcome"><span class="header-section-number">7.2</span> Binary Outcome</a></li>
-  <li><a href="#bayesian-model-development" id="toc-bayesian-model-development" class="nav-link" data-scroll-target="#bayesian-model-development"><span class="header-section-number">7.3</span> Bayesian Model Development</a></li>
-  <li><a href="#r-code-example" id="toc-r-code-example" class="nav-link" data-scroll-target="#r-code-example"><span class="header-section-number">7.4</span> R Code Example:</a></li>
+  <li><a href="#non-gaussian-bayesian-model" id="toc-non-gaussian-bayesian-model" class="nav-link" data-scroll-target="#non-gaussian-bayesian-model"><span class="header-section-number">7.2</span> Non-Gaussian Bayesian Model</a></li>
+  <li><a href="#understanding-binary-outcomes" id="toc-understanding-binary-outcomes" class="nav-link" data-scroll-target="#understanding-binary-outcomes"><span class="header-section-number">7.3</span> Understanding Binary Outcomes</a>
+  <ul class="collapse">
+  <li><a href="#bone-mineral-density-data" id="toc-bone-mineral-density-data" class="nav-link" data-scroll-target="#bone-mineral-density-data"><span class="header-section-number">7.3.1</span> Bone Mineral Density Data</a></li>
+  </ul></li>
+  <li><a href="#bayesian-model-development" id="toc-bayesian-model-development" class="nav-link" data-scroll-target="#bayesian-model-development"><span class="header-section-number">7.4</span> Bayesian Model Development</a>
+  <ul class="collapse">
+  <li><a href="#dag" id="toc-dag" class="nav-link" data-scroll-target="#dag"><span class="header-section-number">7.4.1</span> DAG</a></li>
+  <li><a href="#bayesian-model" id="toc-bayesian-model" class="nav-link" data-scroll-target="#bayesian-model"><span class="header-section-number">7.4.2</span> Bayesian model</a></li>
+  </ul></li>
+  <li><a href="#prior-distributions" id="toc-prior-distributions" class="nav-link" data-scroll-target="#prior-distributions"><span class="header-section-number">7.5</span> Prior Distributions</a>
+  <ul class="collapse">
+  <li><a href="#normal-distribution-with-small-variance" id="toc-normal-distribution-with-small-variance" class="nav-link" data-scroll-target="#normal-distribution-with-small-variance"><span class="header-section-number">7.5.1</span> Normal Distribution with Small Variance</a></li>
+  <li><a href="#cauchy-distribution" id="toc-cauchy-distribution" class="nav-link" data-scroll-target="#cauchy-distribution"><span class="header-section-number">7.5.2</span> Cauchy Distribution</a></li>
+  </ul></li>
+  <li><a href="#posterior-results" id="toc-posterior-results" class="nav-link" data-scroll-target="#posterior-results"><span class="header-section-number">7.6</span> Posterior Results</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.7</span> Summary</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">7.8</span> Live tutorial and discussion</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">7.9</span> Tutorial Exercises</a></li>
+  <li><a href="#preparation-for-week-8" id="toc-preparation-for-week-8" class="nav-link" data-scroll-target="#preparation-for-week-8"><span class="header-section-number">7.10</span> Preparation for Week 8</a></li>
   </ul>
 </nav>
     </div>
@@ -303,7 +376,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Binary Data</strong></span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian</strong></span></h1>
 </div>
 
 
@@ -338,27 +411,53 @@ window.Quarto = {
 <p>– Understand the difference between Bayesian and classical models.</p>
 <p>– Formulate problems and solutions.</p>
 </section>
-<section id="binary-outcome" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="binary-outcome"><span class="header-section-number">7.2</span> Binary Outcome</h2>
-<p>Binary variable seem simple at first—they’re just yes or no, 1 or 0, success or failure. But there’s often more going on behind the scenes, especially when the outcome depends on other factors. For example, how likely is a patient to get better depending on their treatment and medical history?</p>
-<p>To study these kinds of questions, we use regression models for binary data. These models help us understand how different factors affect the chances of a certain outcome. Two common types of models for this are logistic regression and probit regression. In a Bayesian approach, we can not only see how the predictors influence the outcome, but also include what we already believe before seeing the data—and clearly measure how uncertain our results are.</p>
-<p>Let us now explain this more using the bone mineral density (BMD) example. Our research aim is now to understand the effect of BMD on the fracture status of the bone (‘Status’), where we assume no-fracture refers to zero (reference category) and fracture refers to one.</p>
+<section id="non-gaussian-bayesian-model" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="non-gaussian-bayesian-model"><span class="header-section-number">7.2</span> Non-Gaussian Bayesian Model</h2>
+<p>A non-Gaussian Bayesian model is any Bayesian model where the likelihood, i.e., the model for the observed data is not based on the normal distribution. In many real-world situations, the assumptions of the normal distribution do not hold. The response variable might be binary, a count, a proportion, or restricted to positive values. In such cases, it is more appropriate to use a different distribution that better matches the data.</p>
+<p>Many of these alternative distributions come from what is known as the exponential family of distributions. This family includes a wide range of commonly used distributions such as:</p>
+<ul>
+<li>Bernoulli for binary outcomes<br>
+</li>
+<li>Poisson for count data<br>
+</li>
+<li>Exponential and gamma for positive continuous data<br>
+</li>
+<li>Categorical and multinomial for discrete choices</li>
+</ul>
+<p>These distributions have a shared mathematical form, which makes them convenient for modeling. Specifically, they can be written in a way that separates the data from the parameters in a structured form. This makes them suitable for use in generalised linear models and their Bayesian extensions.</p>
+<p>Non-Gaussian Bayesian models are especially useful because they allow us to model a wider range of data types, incorporate prior knowledge, and fully represent uncertainty. By using distributions from the exponential family, we take advantage of mathematical properties that simplify inference and make modeling more robust.</p>
+<p>In this module, we will explore Bayesian models to tackle binary and count data and in today’s lecture we will learn models with binary outcome.</p>
+</section>
+<section id="understanding-binary-outcomes" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="understanding-binary-outcomes"><span class="header-section-number">7.3</span> Understanding Binary Outcomes</h2>
+<p>Binary variables may seem simple at first, just yes or no, 1 or 0, success or failure. But there’s often more happening behind the scenes, especially when the outcome depends on other factors. For instance, how likely is a patient to recover depending on their treatment and medical history?</p>
+<p>To study questions like this, we use regression models designed for binary outcomes. These models help us explore how different variables influence the likelihood of a particular result. Two common types are logistic regression and probit regression. Logistic regression models the log-odds of success, while probit regression uses the cumulative normal distribution to relate predictors to outcome probabilities.</p>
+<p>When we take a Bayesian approach, we build on this foundation in an important way, as we have already lean that instead of estimating fixed values for model parameters, we treat those parameters as uncertain and describe them using probability distributions. We start with prior distributions that reflect our beliefs or assumptions and then, we update these beliefs in light of the observed data using Bayes theorem, resulting in posterior distributions.</p>
+<p>To make this more concrete, imagine we’re modelling the probability that a patient recovers, where recovery is coded as 1 and no recovery as 0. We might model this probability as a function of whether the patient received a particular treatment. Once we observe data, we update priors to get posterior distributions for the treatment effect. From these, we can calculate probabilities, make predictions, and evaluate the uncertainty in our conclusions.</p>
+<p>Below we provide a more detailed example related to the bone mineral density (BMD) data we discussed in previous lectures. Here, our research aim is now to understand the effect of BMD on the fracture status of the bone (‘Status’), where we assume no-fracture refers to zero (reference category) and fracture refers to one.</p>
+<section id="bone-mineral-density-data" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="bone-mineral-density-data"><span class="header-section-number">7.3.1</span> Bone Mineral Density Data</h3>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Below, we provide a descrptive summary of the variables that we want to use to develop the model. We observe that the dataset, named bmd_data, comprises 169 rows and 5 columns. Among these columns, two are categorical (factors) and three are numerical.</p>
+<p>For the categorical variables, we have ‘Status’ and ‘Sex’. The ‘Status’ variable has no missing values and includes two unique categories: “No” (i.e., no fracture) and “Fra” (i.e., fracture) with counts of 119 and 50, respectively. This indicates that the majority of the observations fall under the no fracture category. Similarly, the Sex variable also has no missing values and includes two categories: “F” (female) and “M” (male), with counts of 86 and 83, respectively. We can also see that the mean BMD is 0.78, with a standard deviation of 0.17, indicating some variability around the mean. The mean BMI is 25.2, with a standard deviation of 4.41, suggesting a moderate variability. Lastly, we ca see that the mean age is 63.6 years, with a standard deviation of 12.4 years, indicating a relatively older population with some age variability. The age ranges from a minimum of 36 to a maximum of 89 years.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"bmd_restricted.csv"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>bmi <span class="ot">&lt;-</span> bmd_data<span class="sc">$</span>weight_kg<span class="sc">/</span>(bmd_data<span class="sc">$</span>height_cm<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture_status <span class="ot">&lt;-</span> <span class="fu">factor</span>(bmd_data<span class="sc">$</span>fracture)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture_status <span class="ot">&lt;-</span> <span class="fu">relevel</span>(bmd_data<span class="sc">$</span>fracture_status, <span class="at">ref =</span> <span class="st">"no fracture"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Status =</span> bmd_data<span class="sc">$</span>fracture_status,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> bmd_data<span class="sc">$</span>bmd,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMI =</span> bmd_data<span class="sc">$</span>bmi,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> bmd_data<span class="sc">$</span>age,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(bmd_data<span class="sc">$</span>sex)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">:::</span><span class="fu">skim_without_charts</span>(bmd_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"bmd_restricted.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>bmi <span class="ot">&lt;-</span> bmd_data<span class="sc">$</span>weight_kg<span class="sc">/</span>(bmd_data<span class="sc">$</span>height_cm<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture_status <span class="ot">&lt;-</span> <span class="fu">factor</span>(bmd_data<span class="sc">$</span>fracture)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture_status <span class="ot">&lt;-</span> <span class="fu">relevel</span>(bmd_data<span class="sc">$</span>fracture_status, <span class="at">ref =</span> <span class="st">"no fracture"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Status =</span> bmd_data<span class="sc">$</span>fracture_status,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> bmd_data<span class="sc">$</span>bmd,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMI =</span> bmd_data<span class="sc">$</span>bmi,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> bmd_data<span class="sc">$</span>age,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(bmd_data<span class="sc">$</span>sex)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">:::</span><span class="fu">skim_without_charts</span>(bmd_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -510,21 +609,26 @@ window.Quarto = {
 </table>
 </div>
 </div>
+<p>Now, based on out research aim, i.e., understanding the effect of BMD on the fracture status of the bone (‘Status’), we can develop the Bayesian model as follows.</p>
 </section>
-<section id="bayesian-model-development" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="bayesian-model-development"><span class="header-section-number">7.3</span> Bayesian Model Development</h2>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+</section>
+<section id="bayesian-model-development" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="bayesian-model-development"><span class="header-section-number">7.4</span> Bayesian Model Development</h2>
+<section id="dag" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="dag"><span class="header-section-number">7.4.1</span> DAG</h3>
 <p>Let’s start by explaining the example using a DAG. In our research, we’re trying to understand how Bone Mineral Density (BMD) total (<span class="math inline">\(g/cm^2\)</span>) measure in spine affects whether a bone breaks or not. We group fracture status into two categories: no fracture (0) and fracture (1).</p>
 <p>In this case, BMD total in spine is our main variable of interest, this is the exposure variable, because we want to see how changes in BMD are linked to the risk of fractures. At the same time, we also look at Body Mass Index (BMI), Age, and Sex. These are the confounders, which means they can influence both BMD and the risk of having a fracture. If we don’t take them into account, we might get the wrong idea about how strongly BMD is related to fractures.</p>
 <p>So, we’re using this setup to better understand how all these factors: BMD, BMI, age, and sex, work together and affect whether someone has a bone fracture or not. Each factor follows a certain pattern, and by studying these patterns, we can make better predictions about bone health.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-2ebb42695795c013aa1b" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-2ebb42695795c013aa1b">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;\n\n    # Nodes\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Age [label = \"Age\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex [label = \"Sex\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Status [label = \"Status (No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂ (BMI)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃ (Age)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_4 [label = \"β₄ (Sex)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂: N(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃: N(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_4 [label = \"Prior for β₄: N(μ₄, σ₄²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges\n    BMI -> Status\n    Age -> Status\n    Sex -> Status\n    BMD -> Status\n\n    beta_0 -> Status\n    beta_1 -> Status\n    beta_2 -> Status\n    beta_3 -> Status\n    beta_4 -> Status\n\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_beta_4 -> beta_4\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-eb0c85d3f6e521c12a05" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-eb0c85d3f6e521c12a05">{"x":{"diagram":"\n  digraph DAG {\n    rankdir=LR;\n\n    # Nodes\n    BMI [label = \"BMI\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Age [label = \"Age\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex [label = \"Sex\", shape = ellipse, style = filled, fillcolor = lightblue]\n    BMD [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Status [label = \"Status (No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂ (BMI)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃ (Age)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_4 [label = \"β₄ (Sex)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    prior_beta_0 [label = \"Prior for β₀: N(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁: N(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂: N(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃: N(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_4 [label = \"Prior for β₄: N(μ₄, σ₄²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges\n    BMI -> Status\n    Age -> Status\n    Sex -> Status\n    BMD -> Status\n\n    beta_0 -> Status\n    beta_1 -> Status\n    beta_2 -> Status\n    beta_3 -> Status\n    beta_4 -> Status\n\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_beta_4 -> beta_4\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Here, we’re modeling how BMD affects the probability of a bone fracture, while adjusting for the confounding effects of BMI, Age, and Sex. Let’s build a Bayesian hierarchical model:</p>
+</section>
+<section id="bayesian-model" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="bayesian-model"><span class="header-section-number">7.4.2</span> Bayesian model</h3>
 <p>Let, <span class="math inline">\(\text{Status}_i \in \{0,1\}\)</span>: fracture status for individual <span class="math inline">\(i\)</span>, i.e, 0 = no fracture and 1 = fracture. Using <span class="math inline">\(\text{BMD}_i\)</span>, <span class="math inline">\(\text{BMI}_i\)</span>, <span class="math inline">\(\text{Age}_i\)</span>, and _i$, we write the probability of fracture <span class="math inline">\(P(\text{Status}_i = 1 \mid \cdot)\)</span> as:</p>
 <p><span class="math display">\[
 P(\text{Status}_i = 1 \mid \text{BMD}_i, \text{BMI}_i, \text{Age}_i, \text{Sex}_i) = \text{logit}^{-1}(\eta_i)
@@ -543,11 +647,57 @@ p(\boldsymbol{\beta} \mid \mathbf{y}, \mathbf{x}) \propto p(\mathbf{y} \mid \mat
 <p>Where, <span class="math inline">\(\boldsymbol{\beta} = (\beta_0,\beta_1,\beta_2,\beta_3,\beta_4)'\)</span>.</p>
 <p>This model lets us estimate the posterior distribution of the effect of BMD on fractures, while adjusting for BMI, Age, and Sex.</p>
 </section>
-<section id="r-code-example" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="r-code-example"><span class="header-section-number">7.4</span> R Code Example:</h2>
-<p>Consideration of a non-informative prior for logistic regression can yiled a wide range or variability for the odds ratio. For example, a <span class="math inline">\(N(0,10^{2})\)</span> will provide a standard deviation in the odds ratio scale as <span class="math inline">\(\exp(100)\)</span>, which is a very large number, and consideration of such large number can cause issues with identifiability and numerical stability, as the link function of the logistic regression can explode with large coefficients.</p>
-<p>Whereas, weakly informative priors balance flexibility and regularisation for the logistic regression scenario. They prevent extreme parameter estimates, improve convergence, and produce more realistic predictions.</p>
-<p>Hence, using a weakly informative prior distribution we obtain the posterior estimates of the model parameters as below. Here, we use <span class="math inline">\(\beta_{(.)} \sim N(0, 4)\)</span> to define the weakly informative prior for the log-odds ratio. Thus, we get in odds ratio scale the prior range for any of the model coeficients (i.e., parameters) with hyper-parameter standard deviation as: <span class="math inline">\(\exp(4)\approx 55\)</span>. Note that, we do not have any variance parameter for this model.</p>
+</section>
+<section id="prior-distributions" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="prior-distributions"><span class="header-section-number">7.5</span> Prior Distributions</h2>
+<p>Consideration of a non-informative prior for logistic regression can yiled a wide range or variability for the odds ratio. For example, a <span class="math inline">\(N(0,10^{2})\)</span> will provide a standard deviation in the odds ratio scale as <span class="math inline">\(\exp(\sqrt{100})\approx 22,000\)</span>, which is a very large number, and consideration of such large number can cause issues with identifiability and numerical stability, as the link function of the logistic regression can explode with large coefficients. Whereas, weakly informative priors balance flexibility and regularisation for the logistic regression scenario. They prevent extreme parameter estimates, improve convergence, and produce more realistic predictions. A paper by Andrew Gelman et al.&nbsp;(<span class="citation" data-cites="gelman2008weakly">Gelman et al. (<a href="#ref-gelman2008weakly" role="doc-biblioref">2008</a>)</span>) addresses some of these key challenges.</p>
+<p>To model fracture status, let us consider weakly informative prior distributions for <span class="math inline">\(\boldsymbol{\beta}\)</span>. Now, defining a weakly informative prior is often tricky in such a situation, as it needs to be robust in nature for explaining the predictors. Several options can be considered, and in this unit, we will discuss some of them.</p>
+<!--
+
+REf: 
+> https://github.com/stan-dev/stan/wiki/prior-choice-recommendations
+
+-->
+<section id="normal-distribution-with-small-variance" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="normal-distribution-with-small-variance"><span class="header-section-number">7.5.1</span> Normal Distribution with Small Variance</h3>
+<p>One of the approaches that we can take is to consider a normal prior distribution for <span class="math inline">\(\beta\)</span> parameter with mean zero and a small variance. Say, <span class="math inline">\(\beta_{(.)} \sim N(0, 3^2)\)</span> to define the weakly informative prior for the log-odds ratio. This will give provide the prior range for the model coeficients (i.e., parameters) with hyper-parameter standard deviation as: <span class="math inline">\(\exp(3)\approx 20\)</span> in odds ratio scale. Note that, unlike Bayesian model we discussed in our previous lection for continuous variable (i.e., Gaussian distribution); we do not have any variance parameter for the logistic model.</p>
+<p>For this Bayesian model with small hyper parametr for the prior variance, we can hence write a simpler DAG (only for visualisation, as we will be using the full model in our analysis) using only one predictor variable BMD as below. Note that we use small variance hyper parameter only for <span class="math inline">\(\beta_1\)</span>, as usually we recommend to use large variance for the intercept term of the model (i.e., <span class="math inline">\(\beta_0 \sim N(0, 10^2)\)</span>), such that we can get a flexible posterior distribution for the intrcept.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-51f70f764feb7dcb73b9" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-51f70f764feb7dcb73b9">{"x":{"diagram":"\n  digraph combined_DAGs {\n\n    // Global layout settings\n    compound = true;\n    ranksep = 1.5;\n    newrank = true;\n    fontsize = 10;\n\n    // First DAG (Left)\n    subgraph cluster_1 {\n      label = \"DAG with only BMD (Normal prior)\";\n      style = dashed;\n      rankdir = TB;\n      BMD2 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status2 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_02 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_12 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n\n      mu0 [label = \"μ₀\", shape = box, style = filled, fillcolor = lightyellow]\n      sig20 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightyellow]\n\n      mu1 [label = \"μ₁\", shape = box, style = filled, fillcolor = lightyellow]\n      sig21 [label = \"σ₁²\", shape = box, style = filled, fillcolor = lightyellow]\n\n      BMD2 -> Status2\n      beta_02 -> Status2\n      beta_12 -> Status2\n      mu0 -> beta_02\n      sig20 -> beta_02\n      mu1 -> beta_12\n      sig21 -> beta_12\n    }\n\n    // Second DAG (Right)\n    subgraph cluster_2 {\n      label = \"DAG with only BMD (Normal prior)\";\n      style = dashed;\n      rankdir = TB;\n\n      BMD1 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status1 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_01 [label = \"β₀ (Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_11 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n\n      prior_beta_01 [label = \"Prior for β₀:\\n N(μ₀=0, σ₀²=10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n      prior_beta_11 [label = \"Prior for β₁:\\n N(μ₁=0, σ₁²=3²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n      BMD1 -> Status1\n      beta_01 -> Status1\n      beta_11 -> Status1\n      prior_beta_01 -> beta_01\n      prior_beta_11 -> beta_11\n    }\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="cauchy-distribution" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="cauchy-distribution"><span class="header-section-number">7.5.2</span> Cauchy Distribution</h3>
+<p>Another suggestion for the weakly informative prior distribution for <span class="math inline">\(\beta\)</span> parameters in logistic regression is the Cauchy prior with mean zero and scale 2.5 (<span class="citation" data-cites="gelman2008weakly">Gelman et al. (<a href="#ref-gelman2008weakly" role="doc-biblioref">2008</a>)</span>). The suggestion is to assign the Cauchy prior to each of the coefficients in the logistic regression except the intercept (i.e., <span class="math inline">\(\beta_0\)</span>) term. Furthermore, it is recommended to standardise continuous predictor variables when using a Cauchy prior—specifically, <span class="math inline">\(\text{Cauchy}(\mu = 0, \tau = 2.5)\)</span>, because this helps ensure that the resulting change in the log-odds (logit scale) remains within a reasonable range, typically less than 5, when the predictor moves from one standard deviation below the mean to one standard deviation above.</p>
+<p>We can draw DAG based on the Cauchy prior for only one predictor variable BMD as follows. Similarly, we can see that for the intercept <span class="math inline">\(\beta_0\)</span> we consider a normal prior distribution with a relatively wider variance.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-5b8349d05e004995d897" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5b8349d05e004995d897">{"x":{"diagram":"\n  digraph combined_DAGs {\n\n    // Global layout settings\n    compound = true;\n    ranksep = 1.5;\n    newrank = true;\n    fontsize = 10;\n\n    // First DAG (Left)\n    subgraph cluster_1 {\n      label = \"DAG with only BMD (Cauchy prior)\";\n      style = dashed;\n      rankdir = TB;\n\n      BMD2 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status2 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_02 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_12 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n\n      mu0 [label = \"μ₀\", shape = box, style = filled, fillcolor = lightyellow]\n      sig20 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightyellow]\n\n      mu [label = \"μ\", shape = box, style = filled, fillcolor = lightyellow]\n      tau [label = \"τ\", shape = box, style = filled, fillcolor = lightyellow]\n\n      BMD2 -> Status2\n      beta_02 -> Status2\n      beta_12 -> Status2\n      mu0 -> beta_02\n      sig20 -> beta_02\n      mu -> beta_12\n      tau -> beta_12\n    }\n\n    // Second DAG (Right)\n    subgraph cluster_2 {\n      label = \"DAG with only BMD (Cauchy prior)\";\n      style = dashed;\n      rankdir = TB;\n\n      BMD1 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status1 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_01 [label = \"β₀ (Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_11 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n\n      prior_beta_01 [label = \"Prior for β₀:\\n N(μ₀=0, σ₀²=10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n      prior_beta_11 [label = \"Prior for β₁:\\n Cauchy(μ=0, τ=2.5)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n      BMD1 -> Status1\n      beta_01 -> Status1\n      beta_11 -> Status1\n      prior_beta_01 -> beta_01\n      prior_beta_11 -> beta_11\n    }\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+</section>
+<section id="posterior-results" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="posterior-results"><span class="header-section-number">7.6</span> Posterior Results</h2>
+<p>We will now obtain the posterior distribution of the model parameters we developed for the fracture and BMD example. Here, we will use both exposure (i.e, BMD) and confounders (e.g., BMI, Age and Sex) to generate model-based results. In this section, we will use normal prior for the <span class="math inline">\(\beta\)</span> parameters, where the weakly informative influence of the prior will be demonstrated using the small-variance example we discussed earlier. Note that we will perform a sensitivity analysis of the prior distributions in our next lecture, where we will compare both normal and Cauchy prior distributions.</p>
+<p>Recall, we want to obtain posterior distribution of the model parameters from the joint posterior distribution:</p>
+<p><span class="math display">\[\begin{align}
+p(\beta_0,\beta_1,\beta_2,\beta_3,\beta_4 \mid y, \text{BMD}, \text{BMI}, \text{Age}, \text{Sex}) &amp;\propto p(y \mid \text{BMD}, \text{BMI}, \text{Age}, \text{Sex},\beta_0,\beta_1,\beta_2,\beta_3,\beta_4) \times \\
+&amp; p(\beta_0) \cdot p(\beta_1) \cdot p(\beta_2) \cdot p(\beta_3) \cdot p(\beta_4)
+\end{align}\]</span></p>
+<p>Assuming weakly informative prior as:</p>
+<ul>
+<li><span class="math inline">\(\beta_1,\beta_2,\beta_3,\beta_4 \sim N(0, 3^2)\)</span></li>
+</ul>
+<p>And for intercept we write:</p>
+<ul>
+<li><span class="math inline">\(\beta_0 \sim N(0, 10^2)\)</span></li>
+</ul>
+<p>We impliment the model using ‘brm’ function from ‘brms’ R package as follows:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -566,69 +716,60 @@ p(\boldsymbol{\beta} \mid \mathbf{y}, \mathbf{x}) \propto p(\mathbf{y} \mid \mat
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(bmd_data<span class="sc">$</span>sex)</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">4</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">4</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>fracture_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD <span class="sc">+</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>priors_normal <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"BMI"</span>), <span class="co"># N(mean, sd)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"Age"</span>), <span class="co"># N(mean, sd)</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"SexM"</span>), <span class="co"># N(mean, sd)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>) <span class="co"># N(mean, sd)</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>fracture_model_normal_prior <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD <span class="sc">+</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors_normal,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
-Chain 1: 
-Chain 1: Gradient evaluation took 6.8e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.68 seconds.
-Chain 1: Adjust your expectations accordingly!
-Chain 1: 
-Chain 1: 
-Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 1: 
-Chain 1:  Elapsed Time: 0.697 seconds (Warm-up)
-Chain 1:                0.425 seconds (Sampling)
-Chain 1:                1.122 seconds (Total)
-Chain 1: </code></pre>
 </div>
+<p>To get the prior distributions and related hyper parameters that we implemented in the model, we can use ‘prior_summary’ function, which gives us the following output:</p>
+<div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(fracture_model_normal_prior, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>b_Age ~ normal(0, 3)
+b_BMI ~ normal(0, 3)
+b_SexM ~ normal(0, 3)
+Intercept ~ normal(0, 10)</code></pre>
+</div>
+</div>
+<p>The posterior summaries and MCMC chain plots for the model parameters can be obtained as follows:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model_normal_prior)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: bernoulli 
   Links: mu = logit 
 Formula: Status ~ BMD + BMI + Age + Sex 
    Data: bmd_data (Number of observations: 1077) 
-  Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;
-         total post-warmup draws = 1000
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    -0.55      1.66    -3.61     2.81 1.00     1291      583
-BMD          -2.30      1.05    -4.35    -0.27 1.01      686      478
-BMI          -0.22      0.05    -0.32    -0.13 1.00      947      653
-Age           0.08      0.01     0.05     0.10 1.00      755      655
-SexM         -0.07      0.32    -0.68     0.53 1.00      852      706
+Intercept    -0.35      1.66    -3.67     2.92 1.00     3310     2161
+BMD          -2.54      1.08    -4.67    -0.36 1.00     2623     2158
+BMI          -0.22      0.05    -0.32    -0.13 1.00     2418     2059
+Age           0.08      0.02     0.05     0.11 1.00     2325     1955
+SexM         -0.04      0.33    -0.69     0.61 1.00     2327     1878
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -636,12 +777,12 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fracture_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fracture_model_normal_prior)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="M04_1_files/figure-html/fracture_model_run-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="M04_1_files/figure-html/fracture_model_run_normal_summary-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -650,40 +791,83 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_summary &lt;- posterior_summary(fracture_model)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#odds_ratios &lt;- exp(posterior_summary[grep("^b_", rownames(posterior_summary)), ])</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fracture_model)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>posterior_or <span class="ot">&lt;-</span> posterior <span class="sc">%&gt;%</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"b_"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), exp))</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># drop intercept from the estimate</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_or &lt;- posterior_or[,-1]</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_areas(</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#  posterior_or,</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#  pars = colnames(posterior_or),</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#  prob = 0.95  # 95% credible interval</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#) +</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  ggplot2::labs(title = "Posterior Distributions of Odds Ratios")</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  posterior_or,</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_BMD"</span>,<span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexM"</span>)</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior Trace Plots of Odds Ratios"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_summary &lt;- posterior_summary(fracture_model_normal_prior)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#odds_ratios &lt;- exp(posterior_summary[grep("^b_", rownames(posterior_summary)), ])</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fracture_model_normal_prior)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>posterior_or <span class="ot">&lt;-</span> posterior <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"b_"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), exp))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># drop intercept from the estimate</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_or &lt;- posterior_or[,-1]</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_areas(</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#  posterior_or,</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#  pars = colnames(posterior_or),</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#  prob = 0.95  # 95% credible interval</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#) +</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  ggplot2::labs(title = "Posterior Distributions of Odds Ratios")</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_trace(</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#  posterior_or,</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">#  pars = c("b_BMD","b_BMI", "b_Age", "b_SexM")</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co">#) +</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co">#  ggplot2::labs(title = "Posterior Trace Plots of Odds Ratios")</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">as.mcmc</span>(posterior_or))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M04_1_files/figure-html/fracture_odds-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Iterations = 1:3000
+Thinning interval = 1 
+Number of chains = 1 
+Sample size per chain = 3000 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+              Mean      SD  Naive SE Time-series SE
+b_Intercept 2.7882 9.07645 0.1657125      0.1970282
+b_BMD       0.1439 0.24118 0.0044032      0.0048167
+b_BMI       0.7999 0.03993 0.0007290      0.0008165
+b_Age       1.0797 0.01623 0.0002964      0.0003326
+b_SexM      1.0125 0.34164 0.0062374      0.0072478
+
+2. Quantiles for each variable:
+
+                2.5%     25%     50%    75%   97.5%
+b_Intercept 0.025475 0.21714 0.71985 2.2099 18.5611
+b_BMD       0.009346 0.03859 0.08012 0.1622  0.6977
+b_BMI       0.723330 0.77282 0.80050 0.8261  0.8776
+b_Age       1.047990 1.06872 1.07969 1.0905  1.1131
+b_SexM      0.499374 0.77209 0.96884 1.1986  1.8329</code></pre>
 </div>
 </div>
-</div>
+<p>explain the results ….</p>
+</section>
+<section id="summary" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.7</span> Summary</h2>
+<p>Today’s lecture focused on understanding priors in Bayesian regression, specifically for variance and the coefficients. We discussed weakly-informative and informative priors for <span class="math inline">\(\beta_1\)</span>, and their implications in modeling. A comparison between Bayesian and frequentist approaches was made, particularly in the context of using an informative prior for <span class="math inline">\(\beta_1\)</span>. Finally, we explored how to further develop the model to better understand exposure and confounders, and how these can be incorporated into a Bayesian regression framework.</p>
+</section>
+<section id="live-tutorial-and-discussion" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">7.8</span> Live tutorial and discussion</h2>
+<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
+</section>
+<section id="tutorial-exercises" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">7.9</span> Tutorial Exercises</h2>
+<p>Solutions will be provided later after the tutorial.</p>
+</section>
+<section id="preparation-for-week-8" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="preparation-for-week-8"><span class="header-section-number">7.10</span> Preparation for Week 8</h2>
+<p>In week 8 you will be required to .</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-gelman2008weakly" class="csl-entry" role="listitem">
+Gelman, Andrew, Aleks Jakulin, Maria Grazia Pittau, and Yu-Sung Su. 2008. <span>“A Weakly Informative Default Prior Distribution for Logistic and Other Regression Models.”</span> <em>The Annals of Applied Statistics</em> 2 (4): 1360–83.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1106,13 +1290,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./M03_2.html" class="pagination-link" aria-label="**Bayeswatch! Prior Tweaks and More**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Bayeswatch! Prior Tweaks and More</strong></span></span>
+      <a href="./brief_module_04.html" class="pagination-link" aria-label="**Module 4: Bayeswatch - Non Gaussian**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><strong>Module 4: Bayeswatch - Non Gaussian</strong></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./M04_2.html" class="pagination-link" aria-label="**Non-Gaussian Bayeswatch! Looking at Count Data**">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian Bayeswatch! Looking at Count Data</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M04_2.html" class="pagination-link" aria-label="**More on Non-Gaussian**">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>More on Non-Gaussian</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

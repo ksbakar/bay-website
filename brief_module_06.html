@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>Module 6: Wander into the Wonder! – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./installation_guide.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./M06_1.html" rel="next">
+<link href="./M05_2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><strong>Introduction</strong></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./brief_module_06.html"><strong>Module 6: Wander into the Wonder!</strong></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -114,14 +114,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Introduction</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Software Installation Guide</strong></span></a>
+ <span class="menu-text"><strong>R and RStudio</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 4: Bayeswatch - Non Gaussian</strong></span></a>
+ <span class="menu-text"><strong>Module 4: Non-Gaussian Bayeswatch</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -216,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./brief_module_06.html" class="sidebar-item-text sidebar-link">
+  <a href="./brief_module_06.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><strong>Module 6: Wander into the Wonder!</strong></span></a>
   </div>
 </li>
@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Introduction</strong></h1>
+<h1 class="title"><strong>Module 6: Wander into the Wonder!</strong></h1>
 </div>
 
 
@@ -274,20 +274,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Bayesian methods offer a unique approach to statistical analysis by incorporating prior knowledge and continuously updating the posterior probability as new evidence becomes available. This dynamic approach is particularly suited to the medical and health sciences, where new data is constantly emerging, and decisions often need to be made in the face of uncertainty.</p>
-<p>The aim of this course is to explain Bayesian statistics and demonstrate its practical applications in medicine and health sciences. We will start with the foundational concepts, gradually building up to more advanced topics, ensuring a comprehensive understanding that is both accessible and relevant to medical professionals, researchers, and students. Each chapter includes real-world examples, case studies, and practical exercises to reinforce the concepts discussed and illustrate their application in clinical and research settings.</p>
-<p>Throughout the course, we will explore the following key areas:</p>
-<ol type="1">
-<li><p><strong>Bayesian Dreams! Navigating Evidence and Inference</strong>: Understanding the basics of Bayesian philosophy and how it differs from traditional frequentist approaches. Learning how to update beliefs in light of new data using Bayes’ theorem. Exploring directed acyclic graph (DAG) in the Bayesian modelling context, with graphical representations of the probabilistic relationships between variables and parameters.</p></li>
-<li><p><strong>Chaotics? Prior Problems, Tools, and Computation</strong>: Exploring the role of prior information and how it influences posterior conclusions. Bayesian context of exact inference and computational techniques for approximating complex posterior distributions such as Markov chain Monte Carlo (MCMC). Generative models with prior and posterior predictive checks.</p></li>
-<li><p><strong>Bayeswatch! Keeping an Eye on Your Gaussian Model</strong>: Understanding causation and correlation and how it can be used in Bayesian context by drawing DAG. Nevigating Bayesian hierarchical models with continuous outcome or endpoint variable. Explore the choice for hyper-parameters of prior distributions for Gaussian model. Explore examples in clinical and health research.</p></li>
-<li><p><strong>Bayeswatch! Keeping an Eye on Your Non-Gaussian Model</strong>: Extending Bayesian models beyond normality assumptions, where outcome or endpoint variable is binary (i.e., generalised linear models under Bayesian hierarchy), and explanation with DAG. Explore key tactics on the choice of prior distributions.</p></li>
-<li><p><strong>Clusterphobia? Let Bayes Handle It!</strong>: Understanding and implementing hierarchical models for complex data structures common in health sciences. Learing the use of latent process modelling in Bayesian hierarchy (i.e., similar to mixed models in frequentist settings) with both normal and non-normal (e.g., binomial and Poisson) distributions.</p></li>
-<li><p><strong>Wander into the Wonder! Bayesian Secrets to the Right Sample</strong>: Bayesian sample size calculations, in particular to aid the sample size selection to design trials. Discussion of adaptations with relevant sample size calculations using Bayesian methods. Bayesian model choice (e.g., Bayes factor, deviance information criterion (DIC), Watanabe-Akaike information criterion (WAIC) and leave-one-out (LOO) cross-validation). Bayesian shrinkage, missing data analysis and measurement errors.</p></li>
-</ol>
-<p>The field of medicine and health sciences is inherently multidisciplinary, and so too is this course. It is crafted to bridge the gap between statistical theory and medical practice, enabeling healthcare professionals to make more informed, data-driven decisions. Whether you are a student eager to learn about Bayesian statistics, or a biostatistician or clinician or a health professional looking to enhance your research skills, or a researcher aiming to apply Bayesian methods to your work, this course provides the tools and knowledge you need to succeed.</p>
-<p>We hope that by the end of this journey, you will not only appreciate the power and flexibility of Bayesian methods but also feel confident in applying these techniques to improve patient outcomes and advance medical research.</p>
-<p>Welcome to the world of Bayesian methods in medicine and health sciences. Let’s begin.</p>
+<p>ASDF</p>
 
 
 
@@ -711,13 +698,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="**Preface**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><strong>Preface</strong></span>
+      <a href="./M05_2.html" class="pagination-link" aria-label="**Clusterphobia? Part - II**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./installation_guide.html" class="pagination-link" aria-label="**Software Installation Guide**">
-        <span class="nav-page-text"><strong>Software Installation Guide</strong></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M06_1.html" class="pagination-link" aria-label="**Size Matters!**">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters!</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
