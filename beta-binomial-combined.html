@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Combined Beta-Binomial Bayesian Explorer</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    label {
+      display: inline-block;
+      width: 220px;
+      margin-top: 10px;
+    }
+    input[type=range] {
+      width: 300px;
+      vertical-align: middle;
+    }
+    span {
+      display: inline-block;
+      width: 50px;
+      text-align: right;
+      margin-left: 10px;
+    }
+    canvas {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Beta-Binomial Bayesian Explorer</h1>
+
+  <div>
+    <label for="alpha">Hyper-parameter (a):</label>
+    <input type="range" id="alpha" min="0.1" max="10" value="2" step="0.1" oninput="update()">
+    <span id="alphaVal">2.0</span><br>
+
+    <label for="beta">Hyper-parameter (b):</label>
+    <input type="range" id="beta" min="0.1" max="10" value="2" step="0.1" oninput="update()">
+    <span id="betaVal">2.0</span><br>
+
+    <label for="n">Number of Trials (n):</label>
+    <input type="range" id="n" min="1" max="50" value="10" step="1" oninput="update()">
+    <span id="nVal">10</span><br>
+
+    <label for="k">Observed Successes (y):</label>
+    <input type="range" id="k" min="0" max="10" value="5" step="1" oninput="update()">
+    <span id="kVal">5</span><br>
+  </div>
+
+  <canvas id="combinedChart" width="900" height="400"></canvas>
+
+  <script>
+    let combinedChart;
+
+    function betaPDF(theta, alpha, beta) {
+      const B = betaFunc(alpha, beta);
+      return Math.pow(theta, alpha - 1) * Math.pow(1 - theta, beta - 1) / B;
+    }
+
+    function betaFunc(a, b) {
+      return Math.exp(logGamma(a) + logGamma(b) - logGamma(a + b));
+    }
+
+    function logGamma(z) {
+      const cof = [
+        76.18009172947146,
+        -86.50532032941677,
+        24.01409824083091,
+        -1.231739572450155,
+        0.001208650973866179,
+        -0.000005395239384953
+      ];
+      let x = z;
+      let y = z;
+      let tmp = x + 5.5;
+      tmp -= (x + 0.5) * Math.log(tmp);
+      let ser = 1.000000000190015;
+      for (let j = 0; j < cof.length; j++) {
+        y += 1;
+        ser += cof[j] / y;
+      }
+      return Math.log(2.5066282746310005 * ser / x) - tmp;
+    }
+
+    function update() {
+      const alpha = parseFloat(document.getElementById("alpha").value);
+      const beta = parseFloat(document.getElementById("beta").value);
+      const n = parseInt(document.getElementById("n").value);
+      const k = parseInt(document.getElementById("k").value);
+
+      document.getElementById("alphaVal").textContent = alpha.toFixed(1);
+      document.getElementById("betaVal").textContent = beta.toFixed(1);
+      document.getElementById("nVal").textContent = n;
+      document.getElementById("kVal").textContent = k;
+
+      document.getElementById("k").max = n;
+
+      const theta = Array.from({length: 101}, (_, i) => i / 100);
+      const prior = theta.map(t => betaPDF(t, alpha, beta));
+      const likelihood = theta.map(t => Math.pow(t, k) * Math.pow(1 - t, n - k));
+      const maxLikelihood = Math.max(...likelihood);
+      const likelihoodScaled = likelihood.map(p => p / maxLikelihood * Math.max(...prior));  // scale to match
+
+      const posterior = theta.map(t => betaPDF(t, alpha + k, beta + n - k));
+
+      drawCombinedChart(theta, prior, likelihoodScaled, posterior, alpha, beta, k, n);
+    }
+
+    function drawCombinedChart(x, prior, likelihood, posterior, alpha, beta, k, n) {
+      const labels = x.map(t => t.toFixed(2));
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: `Prior: Beta(${alpha.toFixed(1)}, ${beta.toFixed(1)})`,
+            data: prior,
+            borderColor: "blue",
+            backgroundColor: "rgba(0, 0, 255, 0.1)",
+            fill: true,
+            pointRadius: 0,
+            tension: 0.3
+          },
+          {
+            label: `Likelihood (scaled): Binomial(${n}, θ)`,
+            data: likelihood,
+            borderColor: "green",
+            backgroundColor: "rgba(0, 255, 0, 0.1)",
+            fill: true,
+            pointRadius: 0,
+            tension: 0.3
+          },
+          {
+            label: `Posterior: Beta(${(alpha + k).toFixed(1)}, ${(beta + n - k).toFixed(1)})`,
+            data: posterior,
+            borderColor: "red",
+            backgroundColor: "rgba(255, 0, 0, 0.1)",
+            fill: true,
+            pointRadius: 0,
+            tension: 0.3
+          }
+        ]
+      };
+
+      const options = {
+        responsive: false,
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "θ"
+            },
+            ticks: { maxTicksLimit: 11 }
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Density (scaled)"
+            },
+            beginAtZero: true
+          }
+        }
+      };
+
+      if (combinedChart) {
+        combinedChart.data = data;
+        combinedChart.options = options;
+        combinedChart.update();
+      } else {
+        const ctx = document.getElementById("combinedChart").getContext("2d");
+        combinedChart = new Chart(ctx, {
+          type: "line",
+          data: data,
+          options: options
+        });
+      }
+    }
+
+    window.onload = update;
+  </script>
+</body>
+</html>
