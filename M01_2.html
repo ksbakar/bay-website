@@ -214,7 +214,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>R and RStudio</strong></span></a>
+ <span class="menu-text"><strong>Software Installation Guide</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -274,7 +274,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 4: Non-Gaussian Bayeswatch</strong></span></a>
+ <span class="menu-text"><strong>Module 4: Bayeswatch - Non Gaussian</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -363,7 +363,6 @@ window.Quarto = {
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.10</span> Summary</a></li>
   <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">2.11</span> Live tutorial and discussion</a></li>
   <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">2.12</span> Tutorial Exercises</a></li>
-  <li><a href="#preparation-for-week-3" id="toc-preparation-for-week-3" class="nav-link" data-scroll-target="#preparation-for-week-3"><span class="header-section-number">2.13</span> Preparation for Week 3</a></li>
   </ul>
 </nav>
     </div>
@@ -454,7 +453,7 @@ p(\theta|D)
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig_M02_dataPara.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Data-Parameter; <span class="citation" data-cites="kruschke2014doing">Kruschke (<a href="references.html#ref-kruschke2014doing" role="doc-biblioref">2014</a>)</span></figcaption>
+<figcaption>Data-Parameter; <span class="citation" data-cites="kruschke2014doing">Kruschke (<a href="#ref-kruschke2014doing" role="doc-biblioref">2014</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -632,8 +631,8 @@ ref: paper: https://doi.org/10.1016/j.jclinepi.2021.08.001
 <p>Using the model with binary observations, we write a DAG as:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-650a0c42d426f8fa41af" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-650a0c42d426f8fa41af">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Variable\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-0509c9687386fcd7d5b7" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-0509c9687386fcd7d5b7">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Variable\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>This is a simple graphical model, where <span class="math inline">\(y\)</span> depends on <span class="math inline">\(\theta\)</span>, with <span class="math inline">\(\theta\)</span> being a logical function of hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
@@ -720,8 +719,8 @@ Pr(H_1|y=1) = 1- 0.45 = 0.55
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>dag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-fad7014def5ed361a493" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-fad7014def5ed361a493">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-f0d91aa28c18e8800da6" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-f0d91aa28c18e8800da6">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Now, we can summarise the results for all four seperate sample sizes using frequentist p-value and Bayesian methods, where</p>
@@ -919,7 +918,7 @@ It is invariance to data-order ... ref: kruschke, page 107; sec 5.2.1
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig_M02_BayesUpdate.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Bayesian Learning, <span class="citation" data-cites="mcelreath2020statistical">McElreath (<a href="references.html#ref-mcelreath2020statistical" role="doc-biblioref">2020</a>)</span></figcaption>
+<figcaption>Bayesian Learning, <span class="citation" data-cites="mcelreath2020statistical">McElreath (<a href="#ref-mcelreath2020statistical" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -962,8 +961,8 @@ It is invariance to data-order ... ref: kruschke, page 107; sec 5.2.1
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>dag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-fb51dfd8613290b2c189" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-fb51dfd8613290b2c189">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a817b739d523ce5d235c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a817b739d523ce5d235c">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><strong>Invariance to data-order</strong></p>
@@ -988,13 +987,9 @@ p(\theta|D_2,D_1) = \frac{p(D_2|\theta)\times p(\theta|D_1)}{\sum_{\theta^*}p(D_
 <section id="tutorial-exercises" class="level2" data-number="2.12">
 <h2 data-number="2.12" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">2.12</span> Tutorial Exercises</h2>
 <p>Solutions will be provided later after the tutorial.</p>
-</section>
-<section id="preparation-for-week-3" class="level2" data-number="2.13">
-<h2 data-number="2.13" class="anchored" data-anchor-id="preparation-for-week-3"><span class="header-section-number">2.13</span> Preparation for Week 3</h2>
-<p>Next week we will start Module 02 of this unit, where our main focus will be to understand different types of prior distributions and how they influence the posteriors.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-kruschke2014doing" class="csl-entry" role="listitem">
 Kruschke, J. 2014. <em>Doing Bayesian Data Analysis: A Tutorial with r, JAGS, and Stan</em>. Academic Press.
 </div>

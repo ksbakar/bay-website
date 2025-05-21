@@ -343,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>https://cran.r-project.org/bin/macosx/</p>
 </blockquote>
-<p>and download the R binary under “Latest release”. The file will have an extension of .pkg, for example R-4.X.X.pkg. Click on this link and follow the instructions. Default settings are OK. Note: you can install whichever is the latest version, even if it differs from the one mentioned in these notes.</p>
+<p>and download the R binary under “Latest release”. The file will have an extension of .pkg, for example <code>R-4.X.X.pkg</code>. Click on this link and follow the instructions. Default settings are OK. Note: you can install whichever is the latest version, even if it differs from the one mentioned in these notes.</p>
 <p><strong>Optional</strong> – Check that R has installed correctly (You can skip this step and proceed to installing RStudio. If RStudio is working then you know that base R was successfully installed.) Open R and type 1 + 2 into the command line (the command line is indicated with the “&gt;” symbol). After pressing Enter, you should get the following output:</p>
 <p>[1] 3</p>
 </section>
@@ -356,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <p>Scroll down and download the appropriate file for your operating system. Follow the prompts to install.</p>
 <p>To confirm that RStudio has installed correctly, double click on the RStudio icon your computer to open the program</p>
-<p>If you type 1 + 2 into the R Console and hit enter you should get 3 as the output.</p>
+<p>If you type <code>1 + 2</code> into the R Console and hit enter you should get 3 as the output.</p>
 <p>Good work! You have now successfully installed R and RStudio!</p>
 </section>
 </section>
@@ -364,11 +364,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="how-to-install-compiler">How to Install Compiler?</h2>
 <section id="install-rtools-c-compiler-for-windows-os" class="level3">
 <h3 class="anchored" data-anchor-id="install-rtools-c-compiler-for-windows-os">Install ‘Rtools’ (C++ Compiler) for Windows OS</h3>
+<p>This is a stand-alone *.exe file that you need to install on your PC or laptop. You do not need to manually link Rtools with R or RStudio, as it will be automatically linked after the *.exe file is installed.</p>
 <p>Download Rtools from</p>
 <blockquote class="blockquote">
 <p>https://cran.r-project.org/bin/windows/Rtools/</p>
 </blockquote>
-<p>based on the R version that you have already installed. Usually, for the latest version this should be RTools 4.4, i.e.,</p>
+<p>based on the R version that you have already installed. Usually, for the latest version this should be <code>RTools 4.4</code>, i.e.,</p>
 <blockquote class="blockquote">
 <p>https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html</p>
 </blockquote>
@@ -413,9 +414,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="option-2-install-compiler-for-mac-os" class="level3">
 <h3 class="anchored" data-anchor-id="option-2-install-compiler-for-mac-os">Option 2: Install Compiler for Mac OS</h3>
-<p>First, if you have the files ~/.R/Makevars and/or ~/.Renviron, save a copy in a different location (like your desktop) and delete them.</p>
-<p>If you don’t know what these files are or if you have them, go to Finder &gt; Go &gt; Home, which takes you to your home directory, and press SHIFT + CMD + . to show hidden files (i.e.&nbsp;files starting with a full stop .) if you can’t see them already. Now search among the hidden files and if you see a folder named .R/ and/or a file .Renviron, copy them to your desktop and delete the original copies from your home directory.</p>
-<p>To install the Xcode Command Line Tools, run the following in the Terminal (open Finder &gt; Applications &gt; Terminal, type in the following command and press ENTER):</p>
+<p>First, if you have the files <code>~/.R/Makevars</code> and/or <code>~/.Renviron</code>, save a copy in a different location (like your desktop) and delete them.</p>
+<p>If you don’t know what these files are or if you have them, go to <code>Finder &gt; Go &gt; Home</code>, which takes you to your home directory, and press SHIFT + CMD + . to show hidden files (i.e.&nbsp;files starting with a full stop .) if you can’t see them already. Now search among the hidden files and if you see a folder named <code>.R/</code> and/or a file <code>.Renviron</code>, copy them to your desktop and delete the original copies from your home directory.</p>
+<p>To install the <code>Xcode</code> Command Line Tools, run the following in the Terminal (open Finder &gt; Applications &gt; Terminal, type in the following command and press ENTER):</p>
 <blockquote class="blockquote">
 <p>xcode-select –install</p>
 </blockquote>
@@ -434,14 +435,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="install-rstan-and-brms-packages" class="level2">
 <h2 class="anchored" data-anchor-id="install-rstan-and-brms-packages">Install ‘rstan’ and ‘brms’ packages</h2>
 <p><strong>‘rstan’ package</strong></p>
-<p>– After installing Rtools (Windows and/or Mac OS), open RStudio and using R console or using “Tools” menu install ‘rstan’ package.</p>
+<p>– After installing Rtools (Windows and/or Mac OS), open RStudio and using R console or using “Tools” menu install <code>rstan</code> package.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rstan"</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>For detail on ‘rstan’ installation:</p>
+<p>For detail on <code>rstan</code> installation:</p>
 <blockquote class="blockquote">
 <p>https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started</p>
 </blockquote>
@@ -454,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>in your R console.</p>
 <p><strong>‘brms’ package</strong></p>
-<p>– Then install ‘brms’ package:</p>
+<p>– Then install <code>brms</code> package:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>

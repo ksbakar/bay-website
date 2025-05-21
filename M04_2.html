@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -102,6 +122,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
+
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -320,15 +354,24 @@ window.Quarto = {
   <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">8.1</span> Learnings</a></li>
   <li><a href="#sensitivity-analysis" id="toc-sensitivity-analysis" class="nav-link" data-scroll-target="#sensitivity-analysis"><span class="header-section-number">8.2</span> Sensitivity Analysis</a>
   <ul class="collapse">
-  <li><a href="#prior-density-plots" id="toc-prior-density-plots" class="nav-link" data-scroll-target="#prior-density-plots"><span class="header-section-number">8.2.1</span> Prior Density Plots</a></li>
-  <li><a href="#posterior-comparison" id="toc-posterior-comparison" class="nav-link" data-scroll-target="#posterior-comparison"><span class="header-section-number">8.2.2</span> Posterior Comparison</a></li>
+  <li><a href="#cauchy-distribution" id="toc-cauchy-distribution" class="nav-link" data-scroll-target="#cauchy-distribution"><span class="header-section-number">8.2.1</span> Cauchy Distribution</a></li>
+  <li><a href="#prior-density-plots" id="toc-prior-density-plots" class="nav-link" data-scroll-target="#prior-density-plots"><span class="header-section-number">8.2.2</span> Prior Density Plots</a></li>
+  <li><a href="#posterior-comparison" id="toc-posterior-comparison" class="nav-link" data-scroll-target="#posterior-comparison"><span class="header-section-number">8.2.3</span> Posterior Comparison</a></li>
   </ul></li>
   <li><a href="#prior-hierarchy" id="toc-prior-hierarchy" class="nav-link" data-scroll-target="#prior-hierarchy"><span class="header-section-number">8.3</span> Prior Hierarchy</a>
   <ul class="collapse">
   <li><a href="#normal-exponential-hierarchy" id="toc-normal-exponential-hierarchy" class="nav-link" data-scroll-target="#normal-exponential-hierarchy"><span class="header-section-number">8.3.1</span> Normal-Exponential Hierarchy</a></li>
   <li><a href="#cauchy-exponential-hierarchy" id="toc-cauchy-exponential-hierarchy" class="nav-link" data-scroll-target="#cauchy-exponential-hierarchy"><span class="header-section-number">8.3.2</span> Cauchy-Exponential Hierarchy</a></li>
   </ul></li>
-  <li><a href="#bayesian-model-with-counts" id="toc-bayesian-model-with-counts" class="nav-link" data-scroll-target="#bayesian-model-with-counts"><span class="header-section-number">8.4</span> Bayesian Model with Counts</a></li>
+  <li><a href="#bayesian-model-for-count-data" id="toc-bayesian-model-for-count-data" class="nav-link" data-scroll-target="#bayesian-model-for-count-data"><span class="header-section-number">8.4</span> Bayesian Model for Count Data</a>
+  <ul class="collapse">
+  <li><a href="#icu-data" id="toc-icu-data" class="nav-link" data-scroll-target="#icu-data"><span class="header-section-number">8.4.1</span> ICU Data</a></li>
+  <li><a href="#model-development" id="toc-model-development" class="nav-link" data-scroll-target="#model-development"><span class="header-section-number">8.4.2</span> Model Development</a></li>
+  <li><a href="#more-on-count-data" id="toc-more-on-count-data" class="nav-link" data-scroll-target="#more-on-count-data"><span class="header-section-number">8.4.3</span> More on Count Data</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">8.5</span> Summary</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">8.6</span> Live tutorial and discussion</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">8.7</span> Tutorial Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -368,7 +411,7 @@ window.Quarto = {
 <li><strong>Objectives</strong></li>
 </ul>
 <p>By the end of this week you should be able to:</p>
-<p>– Perform sensitivity analysis for non-Gaussian Bayesian model</p>
+<p>– Conduct a sensitivity analysis for a non-Gaussian Bayesian model with varying prior distributions.</p>
 <p>– Understand non-Gaussian Bayesian model with count outcome</p>
 <p>– Understand the difference between Bayesian and classical models.</p>
 <p>– Formulate problems and solutions.</p>
@@ -377,11 +420,22 @@ window.Quarto = {
 <h2 data-number="8.2" class="anchored" data-anchor-id="sensitivity-analysis"><span class="header-section-number">8.2</span> Sensitivity Analysis</h2>
 <iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<p>Recall, in our last lecture we demonstrated how to use Bayesian approach to model binary outcome variable, i.e., logistic regression. We also explained how we can define weakly informative prior distribution for the coefficients of the predictor variables in the model.</p>
-<p>Now, in today’s lecture, we will explain and compare the posterior results using normal distribution with small variance and Cauchy prior distribution. We will also explore how sensitive is the results based on the prior distribution assumptions.</p>
-<section id="prior-density-plots" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="prior-density-plots"><span class="header-section-number">8.2.1</span> Prior Density Plots</h3>
-<p>Below, we draw two prior density plots based on the <span class="math inline">\(\text{Cauchy}(0, 2.5)\)</span> and <span class="math inline">\(N(0, 3^2)\)</span> distributions. The Cauchy distribution is represented by the blue curve. We can see, as discussed, one of the key features of the Cauchy distribution is its heavy tails. This means that it allows for more extreme values compared to other distributions like the Normal distribution. In practical terms, this implies that the Cauchy distribution is more flexible and can accommodate larger deviations from the mean. The normal distribution, showed by the red curve, has a mean of 0 and a standard deviation of 3. Unlike the Cauchy distribution, the Normal distribution is more concentrated around the mean. This means that it assumes values of <span class="math inline">\(\beta\)</span> are more likely to be close to the mean, with fewer extreme values. The tails of the Normal distribution are lighter, indicating that it is less likely to produce outliers compared to the Cauchy distribution.</p>
+<p>Recall, in our last lecture we demonstrated how to use Bayesian approach to model binary outcome variable, i.e., logistic regression. We also explained how we can define weakly informative, informative and non-informative prior distributions for the coefficients of the predictor variables in the model. In particular, we used normal distribution for this context.</p>
+<p>Now, in today’s lecture, we will explore couple of more suggestions for the prior distributions focusing on the weakly informative prior, and then we will compare the posterior results. We will also explore how sensitive is the results based on the prior distribution assumptions.</p>
+<section id="cauchy-distribution" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="cauchy-distribution"><span class="header-section-number">8.2.1</span> Cauchy Distribution</h3>
+<p>Another suggestion for the weakly informative prior distribution for <span class="math inline">\(\beta\)</span> parameters in logistic regression is the Cauchy prior with mean zero and scale 2.5 (<span class="citation" data-cites="gelman2008weakly">Gelman et al. (<a href="references.html#ref-gelman2008weakly" role="doc-biblioref">2008</a>)</span>). The suggestion is to assign the Cauchy prior to each of the coefficients in the logistic regression except the intercept (i.e., <span class="math inline">\(\beta_0\)</span>) term. Furthermore, it is recommended to standardise continuous predictor variables when using a Cauchy prior—specifically, <span class="math inline">\(\text{Cauchy}(\mu = 0, \tau = 2.5)\)</span>, because this helps ensure that the resulting change in the log-odds (logit scale) remains within a reasonable range, typically less than 5, when the predictor moves from one standard deviation below the mean to one standard deviation above.</p>
+<p>We can draw DAG based on the Cauchy prior for only one predictor variable BMD as follows. Similarly, we can see that for the intercept <span class="math inline">\(\beta_0\)</span> we consider a normal prior distribution with a relatively wider variance.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-750bc5d6dd200017d33d" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-750bc5d6dd200017d33d">{"x":{"diagram":"\n  digraph combined_DAGs {\n\n    // Global layout settings\n    compound = true;\n    ranksep = 1.5;\n    newrank = true;\n    fontsize = 10;\n\n    // First DAG (Left)\n    subgraph cluster_1 {\n      label = \"DAG with only BMD (Cauchy prior)\";\n      style = dashed;\n      rankdir = TB;\n\n      BMD2 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status2 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_02 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_12 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n\n      mu0 [label = \"μ₀\", shape = box, style = filled, fillcolor = lightyellow]\n      sig20 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightyellow]\n\n      mu [label = \"μ\", shape = box, style = filled, fillcolor = lightyellow]\n      tau [label = \"τ\", shape = box, style = filled, fillcolor = lightyellow]\n\n      BMD2 -> Status2\n      beta_02 -> Status2\n      beta_12 -> Status2\n      mu0 -> beta_02\n      sig20 -> beta_02\n      mu -> beta_12\n      tau -> beta_12\n    }\n\n    // Second DAG (Right)\n    subgraph cluster_2 {\n      label = \"DAG with only BMD (Cauchy prior)\";\n      style = dashed;\n      rankdir = TB;\n\n      BMD1 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status1 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_01 [label = \"β₀ (Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_11 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n\n      prior_beta_01 [label = \"Prior for β₀:\\n N(μ₀=0, σ₀²=10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n      prior_beta_11 [label = \"Prior for β₁:\\n Cauchy(μ=0, τ=2.5)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n      BMD1 -> Status1\n      beta_01 -> Status1\n      beta_11 -> Status1\n      prior_beta_01 -> beta_01\n      prior_beta_11 -> beta_11\n    }\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="prior-density-plots" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="prior-density-plots"><span class="header-section-number">8.2.2</span> Prior Density Plots</h3>
+<p>Below, we draw two weakly informative prior density plots based on the <span class="math inline">\(\text{Cauchy}(0, 2.5)\)</span> and <span class="math inline">\(N(0, 3^2)\)</span> distributions. The Cauchy distribution is represented by the blue curve. We can see, as discussed, one of the key features of the Cauchy distribution is its heavy tails. This means that it allows for more extreme values compared to other distributions like the Normal distribution. In practical terms, this implies that the Cauchy distribution is more flexible and can accommodate larger deviations from the mean. The normal distribution, showed by the red curve, has a mean of 0 and a standard deviation of 3. Unlike the Cauchy distribution, the Normal distribution is more concentrated around the mean. This means that it assumes values of <span class="math inline">\(\beta\)</span> are more likely to be close to the mean, with fewer extreme values. The tails of the Normal distribution are lighter, indicating that it is less likely to produce outliers compared to the Cauchy distribution.</p>
 <p>The choice between these two distributions sometimes can significantly impact the results of a Bayesian analysis. The Cauchy distribution, with its heavy tails, is more robust to outliers and can handle more extreme values. This can be advantageous in situations where you expect the parameter <span class="math inline">\(\beta\)</span> to have a wide range of possible values. Whereas, the normal distribution, with its lighter tails, is more suitable when you have strong prior beliefs that the parameter values will be close to the mean zero.</p>
 <div class="cell">
 <details class="code-fold">
@@ -416,9 +470,9 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="posterior-comparison" class="level3" data-number="8.2.2">
-<h3 data-number="8.2.2" class="anchored" data-anchor-id="posterior-comparison"><span class="header-section-number">8.2.2</span> Posterior Comparison</h3>
-<p>for normal</p>
+<section id="posterior-comparison" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="posterior-comparison"><span class="header-section-number">8.2.3</span> Posterior Comparison</h3>
+<p>We obtain posterior distributions of the model parameters based on both prior options, i.e., <span class="math inline">\(\beta_1\sim N(0, 3^2)\)</span> and <span class="math inline">\(\beta_1\sim \text{Cauchy}(0, 2.5)\)</span>. We run the Bayesian models using following R code:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -432,170 +486,89 @@ window.Quarto = {
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Status =</span> bmd_data<span class="sc">$</span>fracture,</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> bmd_data<span class="sc">$</span>bmdtot_spine,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMI =</span> bmd_data<span class="sc">$</span>bmi,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> bmd_data<span class="sc">$</span>age,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(bmd_data<span class="sc">$</span>sex)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>priors_normal <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"BMI"</span>), <span class="co"># N(mean, sd)</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"Age"</span>), <span class="co"># N(mean, sd)</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"SexM"</span>), <span class="co"># N(mean, sd)</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>) <span class="co"># N(mean, sd)</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>fracture_model_normal_prior <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD <span class="sc">+</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors_normal,</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>priors_normal <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"BMD"</span>), <span class="co"># N(mean, sd)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>) <span class="co"># N(mean, sd)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>fracture_model_normal_prior <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors_normal,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(fracture_model_normal_prior)</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(fracture_model_normal_prior)</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(fracture_model_normal_prior, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
-Chain 1: 
-Chain 1: Gradient evaluation took 8.7e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.87 seconds.
-Chain 1: Adjust your expectations accordingly!
-Chain 1: 
-Chain 1: 
-Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 1: 
-Chain 1:  Elapsed Time: 0.901 seconds (Warm-up)
-Chain 1:                0.589 seconds (Sampling)
-Chain 1:                1.49 seconds (Total)
-Chain 1: </code></pre>
+<pre><code>b_BMD ~ normal(0, 3)
+Intercept ~ normal(0, 10)</code></pre>
 </div>
+</div>
+<p>And for Cauchy prior distribution we get:</p>
+<div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(fracture_model_normal_prior)</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(fracture_model_normal_prior)</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(fracture_model_normal_prior, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"bmd_drug.csv"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>bmi <span class="ot">&lt;-</span> bmd_data<span class="sc">$</span>weight_kg<span class="sc">/</span>(bmd_data<span class="sc">$</span>height_cm<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture <span class="ot">&lt;-</span> <span class="fu">factor</span>(bmd_data<span class="sc">$</span>fracture)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture <span class="ot">&lt;-</span> <span class="fu">relevel</span>(bmd_data<span class="sc">$</span>fracture, <span class="at">ref =</span> <span class="st">"no fracture"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Status =</span> bmd_data<span class="sc">$</span>fracture,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> bmd_data<span class="sc">$</span>bmdtot_spine,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>priors_cauchy <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="fl">2.5</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"BMD"</span>), <span class="co"># N(mean, sd)</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>) <span class="co"># N(mean, sd)</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>fracture_model_cauchy_prior <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors_cauchy,</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(fracture_model_cauchy_prior)</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(fracture_model_cauchy_prior)</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(fracture_model_cauchy_prior, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>b_Age ~ normal(0, 3)
-b_BMI ~ normal(0, 3)
-b_SexM ~ normal(0, 3)
+<pre><code>b_BMD ~ cauchy(0, 2.5)
 Intercept ~ normal(0, 10)</code></pre>
 </div>
 </div>
-<p>for cauchy</p>
+<p>Now we get the posterior summary statistics and MCMC trace plots as follows:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"bmd_drug.csv"</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>bmi <span class="ot">&lt;-</span> bmd_data<span class="sc">$</span>weight_kg<span class="sc">/</span>(bmd_data<span class="sc">$</span>height_cm<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture <span class="ot">&lt;-</span> <span class="fu">factor</span>(bmd_data<span class="sc">$</span>fracture)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>bmd_data<span class="sc">$</span>fracture <span class="ot">&lt;-</span> <span class="fu">relevel</span>(bmd_data<span class="sc">$</span>fracture, <span class="at">ref =</span> <span class="st">"no fracture"</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>bmd_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Status =</span> bmd_data<span class="sc">$</span>fracture,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMD =</span> bmd_data<span class="sc">$</span>bmdtot_spine,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">BMI =</span> bmd_data<span class="sc">$</span>bmi,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> bmd_data<span class="sc">$</span>age,</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(bmd_data<span class="sc">$</span>sex)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>priors_cauchy <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="fl">2.5</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"BMI"</span>), <span class="co"># N(mean, sd)</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="fl">2.5</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"Age"</span>), <span class="co"># N(mean, sd)</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="fl">2.5</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"SexM"</span>), <span class="co"># N(mean, sd)</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>) <span class="co"># N(mean, sd)</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>fracture_model_cauchy_prior <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD <span class="sc">+</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors_cauchy,</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
-Chain 1: 
-Chain 1: Gradient evaluation took 0.000139 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.39 seconds.
-Chain 1: Adjust your expectations accordingly!
-Chain 1: 
-Chain 1: 
-Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 1: 
-Chain 1:  Elapsed Time: 1.214 seconds (Warm-up)
-Chain 1:                0.877 seconds (Sampling)
-Chain 1:                2.091 seconds (Total)
-Chain 1: </code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(fracture_model_cauchy_prior)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(fracture_model_cauchy_prior)</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(fracture_model_cauchy_prior, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>b_Age ~ cauchy(0, 2.5)
-b_BMI ~ cauchy(0, 2.5)
-b_SexM ~ cauchy(0, 2.5)
-Intercept ~ normal(0, 10)</code></pre>
-</div>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare posterior summaries</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model_normal_prior)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model_normal_prior)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: bernoulli 
   Links: mu = logit 
-Formula: Status ~ BMD + BMI + Age + Sex 
+Formula: Status ~ BMD 
    Data: bmd_data (Number of observations: 1077) 
-  Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;
-         total post-warmup draws = 1000
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    -0.35      1.63    -3.45     2.77 1.00     1126      715
-BMD          -2.55      1.07    -4.69    -0.34 1.00      800      663
-BMI          -0.22      0.05    -0.32    -0.13 1.00      805      588
-Age           0.08      0.02     0.05     0.11 1.00      717      531
-SexM         -0.05      0.32    -0.72     0.61 1.00      770      658
+Intercept     0.77      0.79    -0.79     2.33 1.00     1654     1781
+BMD          -4.48      0.96    -6.43    -2.55 1.00     1353     1656
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -603,23 +576,20 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model_cauchy_prior)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model_cauchy_prior)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: bernoulli 
   Links: mu = logit 
-Formula: Status ~ BMD + BMI + Age + Sex 
+Formula: Status ~ BMD 
    Data: bmd_data (Number of observations: 1077) 
-  Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;
-         total post-warmup draws = 1000
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    -0.44      1.65    -3.70     2.52 1.01      952      747
-BMD          -2.48      1.10    -4.76    -0.38 1.00      966      834
-BMI          -0.22      0.05    -0.32    -0.13 1.00      842      793
-Age           0.08      0.02     0.05     0.10 1.01      860      694
-SexM         -0.04      0.32    -0.64     0.56 1.00      945      643
+Intercept     0.88      0.85    -0.79     2.52 1.00     1286     1398
+BMD          -4.61      1.03    -6.66    -2.59 1.00     1150     1207
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -627,24 +597,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine posterior samples for comparison</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>posterior_normal <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fracture_model_normal_prior)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>posterior_cauchy <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fracture_model_cauchy_prior)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot comparisons</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_areas(</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  list(Normal = posterior_normal,</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       Cauchy = posterior_cauchy),</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#  pars = c("b_BMI", "b_Age", "b_SexM", "b_BMD"),</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#  prob = 0.95</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#) + ggtitle("Posterior Distributions: Normal vs. Cauchy Priors")</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Trace plots</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(<span class="fu">as_draws_array</span>(fracture_model_normal_prior), </span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexM"</span>, <span class="st">"b_BMD"</span>)) <span class="sc">+</span> </span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Trace Plots: Normal Priors"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">mcmc_trace</span>(<span class="fu">as_draws_array</span>(fracture_model_normal_prior), </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_BMD"</span>)) <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Trace Plot: Normal Prior"</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">mcmc_trace</span>(<span class="fu">as_draws_array</span>(fracture_model_cauchy_prior), </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_BMD"</span>)) <span class="sc">+</span> </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Trace Plot: Cauchy Prior"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1,p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -655,25 +616,988 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(<span class="fu">as_draws_array</span>(fracture_model_cauchy_prior), </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_BMI"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexM"</span>, <span class="st">"b_BMD"</span>)) <span class="sc">+</span> </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Trace Plots: Cauchy Priors"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(bayesplot)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_normal &lt;- as_draws_df(fracture_model_normal_prior)</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_cauchy &lt;- as_draws_df(fracture_model_cauchy_prior)</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_areas(</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  list(Normal = posterior_normal,</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       Cauchy = posterior_cauchy),</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  pars = c("b_BMI", "b_Age", "b_SexM", "b_BMD"),</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  prob = 0.95</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#) + ggtitle("Posterior Distributions: Normal vs. Cauchy Priors")</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># LOO model comparison</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#loo_normal &lt;- loo(fracture_model_normal_prior)</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#loo_cauchy &lt;- loo(fracture_model_cauchy_prior)</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">#loo_compare(loo_normal, loo_cauchy)</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>fracture_model_normal_prior <span class="sc">%&gt;%</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_regression</span>(<span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Odds Ratio for Fracture Model (Normal Prior)**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="M04_2_files/figure-html/normal_cauchy_comparison-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div id="jfnoihucyo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jfnoihucyo table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jfnoihucyo thead, #jfnoihucyo tbody, #jfnoihucyo tfoot, #jfnoihucyo tr, #jfnoihucyo td, #jfnoihucyo th {
+  border-style: none;
+}
+
+#jfnoihucyo p {
+  margin: 0;
+  padding: 0;
+}
+
+#jfnoihucyo .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jfnoihucyo .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jfnoihucyo .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jfnoihucyo .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jfnoihucyo .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jfnoihucyo .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jfnoihucyo .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jfnoihucyo .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jfnoihucyo .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jfnoihucyo .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jfnoihucyo .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jfnoihucyo .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jfnoihucyo .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jfnoihucyo .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jfnoihucyo .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jfnoihucyo .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jfnoihucyo .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jfnoihucyo .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jfnoihucyo .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jfnoihucyo .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jfnoihucyo .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jfnoihucyo .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jfnoihucyo .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jfnoihucyo .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jfnoihucyo .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jfnoihucyo .gt_left {
+  text-align: left;
+}
+
+#jfnoihucyo .gt_center {
+  text-align: center;
+}
+
+#jfnoihucyo .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jfnoihucyo .gt_font_normal {
+  font-weight: normal;
+}
+
+#jfnoihucyo .gt_font_bold {
+  font-weight: bold;
+}
+
+#jfnoihucyo .gt_font_italic {
+  font-style: italic;
+}
+
+#jfnoihucyo .gt_super {
+  font-size: 65%;
+}
+
+#jfnoihucyo .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jfnoihucyo .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jfnoihucyo .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jfnoihucyo .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jfnoihucyo .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jfnoihucyo .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jfnoihucyo .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jfnoihucyo .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jfnoihucyo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption><strong>Posterior Odds Ratio for Fracture Model (Normal Prior)</strong></caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>exp(Beta)</strong></th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">BMD</td>
+<td class="gt_row gt_center" headers="estimate">0.01</td>
+<td class="gt_row gt_center" headers="conf.low">0.00, 0.08</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="3" class="gt_sourcenote">Abbreviation: CI = Credible Interval</td>
+</tr>
+</tfoot>
+
+</table>
+
 </div>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># LOO model comparison</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#loo_normal &lt;- loo(fracture_model_normal_prior)</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#loo_cauchy &lt;- loo(fracture_model_cauchy_prior)</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#loo_compare(loo_normal, loo_cauchy)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>fracture_model_cauchy_prior <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_regression</span>(<span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Odds Ratio for Fracture Model (Cauchy Prior)**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output-display">
+<div id="ywevqvgjsi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ywevqvgjsi table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ywevqvgjsi thead, #ywevqvgjsi tbody, #ywevqvgjsi tfoot, #ywevqvgjsi tr, #ywevqvgjsi td, #ywevqvgjsi th {
+  border-style: none;
+}
+
+#ywevqvgjsi p {
+  margin: 0;
+  padding: 0;
+}
+
+#ywevqvgjsi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ywevqvgjsi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ywevqvgjsi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ywevqvgjsi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ywevqvgjsi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ywevqvgjsi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ywevqvgjsi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ywevqvgjsi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ywevqvgjsi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ywevqvgjsi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ywevqvgjsi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ywevqvgjsi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ywevqvgjsi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ywevqvgjsi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ywevqvgjsi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ywevqvgjsi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ywevqvgjsi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ywevqvgjsi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ywevqvgjsi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ywevqvgjsi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ywevqvgjsi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ywevqvgjsi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ywevqvgjsi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ywevqvgjsi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ywevqvgjsi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ywevqvgjsi .gt_left {
+  text-align: left;
+}
+
+#ywevqvgjsi .gt_center {
+  text-align: center;
+}
+
+#ywevqvgjsi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ywevqvgjsi .gt_font_normal {
+  font-weight: normal;
+}
+
+#ywevqvgjsi .gt_font_bold {
+  font-weight: bold;
+}
+
+#ywevqvgjsi .gt_font_italic {
+  font-style: italic;
+}
+
+#ywevqvgjsi .gt_super {
+  font-size: 65%;
+}
+
+#ywevqvgjsi .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ywevqvgjsi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ywevqvgjsi .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ywevqvgjsi .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ywevqvgjsi .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ywevqvgjsi .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ywevqvgjsi .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ywevqvgjsi .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ywevqvgjsi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption><strong>Posterior Odds Ratio for Fracture Model (Cauchy Prior)</strong></caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>exp(Beta)</strong></th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">BMD</td>
+<td class="gt_row gt_center" headers="estimate">0.01</td>
+<td class="gt_row gt_center" headers="conf.low">0.00, 0.07</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="3" class="gt_sourcenote">Abbreviation: CI = Credible Interval</td>
+</tr>
+</tfoot>
+
+</table>
+
 </div>
+</div>
+</div>
+<p>We can see that both normal and Cauchy priors are providing similar posterior estimates, where Cauchy prior provides a narrower band for the 95% credible interval reflecting the narrower prior assuamption for the Cauchy distribution.</p>
 </section>
 </section>
 <section id="prior-hierarchy" class="level2" data-number="8.3">
@@ -687,60 +1611,30 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </ol>
 <section id="normal-exponential-hierarchy" class="level3" data-number="8.3.1">
 <h3 data-number="8.3.1" class="anchored" data-anchor-id="normal-exponential-hierarchy"><span class="header-section-number">8.3.1</span> Normal-Exponential Hierarchy</h3>
-<p>In the first setup, i.e., normal-exponential hierarchy, each regression coefficient is assumed to follow a normal distribution, such that <span class="math inline">\(\beta \sim N(0, \sigma^2)\)</span>. Instead of fixing <span class="math inline">\(\sigma\)</span>, we place an exponential hyperprior on it: <span class="math inline">\(\sigma \sim \text{Exp}(\lambda)\)</span>, and we consider the hyper-hyper parameter <span class="math inline">\(\lambda=1\)</span>. This allows the model to learn an appropriate scale from the data, shrinking coefficients more aggressively when <span class="math inline">\(\sigma\)</span> is small and allowing more flexibility when <span class="math inline">\(\sigma\)</span> is large. This structure introduces a level of adaptivity that can help prevent overfitting while still permitting the model to express sufficient complexity when warranted by the data.</p>
+<p>In the first setup, i.e., normal-exponential hierarchy, the regression coefficient (say for the exposure variable BMD) is assumed to follow a normal distribution, such that <span class="math inline">\(\beta_1 \sim N(0, \sigma^2)\)</span>. Instead of fixing <span class="math inline">\(\sigma\)</span>, we place an exponential hyperprior on it: <span class="math inline">\(\sigma \sim \text{Exp}(\lambda)\)</span>, and we consider different values for the hyper-hyper parameter <span class="math inline">\(\lambda\)</span>. For example, considering the hyper-hyper parameter <span class="math inline">\(\lambda=1\)</span> allows the model to learn an appropriate scale from the data, shrinking coefficients more aggressively when <span class="math inline">\(\sigma\)</span> is small and allowing more flexibility when <span class="math inline">\(\sigma\)</span> is large. This structure introduces a level of adaptivity that can help prevent overfitting while still permitting the model to express sufficient complexity when warranted by the data.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>stanvars <span class="ot">&lt;-</span> <span class="fu">stanvar</span>(<span class="at">scode =</span> <span class="st">"real&lt;lower=0&gt; sigma;"</span>, <span class="at">block =</span> <span class="st">"parameters"</span>) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">stanvar</span>(<span class="at">scode =</span> <span class="st">"sigma ~ exponential(1);"</span>, <span class="at">block =</span> <span class="st">"model"</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, sigma), <span class="at">class =</span> <span class="st">"b"</span>),</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>fracture_model_normal_hierarchy <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD <span class="sc">+</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">stanvars =</span> stanvars,</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
-Chain 1: 
-Chain 1: Gradient evaluation took 0.0001 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1 seconds.
-Chain 1: Adjust your expectations accordingly!
-Chain 1: 
-Chain 1: 
-Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 1: 
-Chain 1:  Elapsed Time: 1.347 seconds (Warm-up)
-Chain 1:                0.805 seconds (Sampling)
-Chain 1:                2.152 seconds (Total)
-Chain 1: </code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(fracture_model_normal_hierarchy, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>stanvars <span class="ot">&lt;-</span> <span class="fu">stanvar</span>(<span class="at">scode =</span> <span class="st">"real&lt;lower=0&gt; sigma;"</span>, <span class="at">block =</span> <span class="st">"parameters"</span>) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">stanvar</span>(<span class="at">scode =</span> <span class="st">"sigma ~ exponential(1);"</span>, <span class="at">block =</span> <span class="st">"model"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, sigma), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>fracture_model_normal_hierarchy <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">stanvars =</span> stanvars,</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(fracture_model_normal_hierarchy, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>b ~ normal(0, sigma)
@@ -748,35 +1642,517 @@ Intercept ~ normal(0, 10)</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model_normal_hierarchy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model_normal_hierarchy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: bernoulli 
   Links: mu = logit 
-Formula: Status ~ BMD + BMI + Age + Sex 
+Formula: Status ~ BMD 
    Data: bmd_data (Number of observations: 1077) 
-  Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;
-         total post-warmup draws = 1000
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    -1.92      1.53    -5.00     0.98 1.00      492      566
-BMD          -0.28      0.50    -1.74     0.30 1.00      302      221
-BMI          -0.24      0.04    -0.34    -0.15 1.00      420      444
-Age           0.08      0.01     0.05     0.11 1.00      580      574
-SexM         -0.08      0.20    -0.51     0.28 1.00      620      580
+Intercept     0.57      0.88    -1.15     2.28 1.00     1595     1820
+BMD          -4.22      1.07    -6.36    -2.14 1.00     1431     1691
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
 scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fracture_model_normal_hierarchy <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_regression</span>(<span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Odds Ratio (Normal-Exponential Hierarchy)**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="rdebglbqnk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rdebglbqnk table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rdebglbqnk thead, #rdebglbqnk tbody, #rdebglbqnk tfoot, #rdebglbqnk tr, #rdebglbqnk td, #rdebglbqnk th {
+  border-style: none;
+}
+
+#rdebglbqnk p {
+  margin: 0;
+  padding: 0;
+}
+
+#rdebglbqnk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rdebglbqnk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rdebglbqnk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rdebglbqnk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rdebglbqnk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rdebglbqnk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rdebglbqnk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rdebglbqnk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rdebglbqnk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rdebglbqnk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rdebglbqnk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rdebglbqnk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rdebglbqnk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rdebglbqnk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rdebglbqnk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rdebglbqnk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rdebglbqnk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rdebglbqnk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rdebglbqnk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rdebglbqnk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rdebglbqnk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rdebglbqnk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rdebglbqnk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rdebglbqnk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rdebglbqnk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rdebglbqnk .gt_left {
+  text-align: left;
+}
+
+#rdebglbqnk .gt_center {
+  text-align: center;
+}
+
+#rdebglbqnk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rdebglbqnk .gt_font_normal {
+  font-weight: normal;
+}
+
+#rdebglbqnk .gt_font_bold {
+  font-weight: bold;
+}
+
+#rdebglbqnk .gt_font_italic {
+  font-style: italic;
+}
+
+#rdebglbqnk .gt_super {
+  font-size: 65%;
+}
+
+#rdebglbqnk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rdebglbqnk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rdebglbqnk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rdebglbqnk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rdebglbqnk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rdebglbqnk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rdebglbqnk .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#rdebglbqnk .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#rdebglbqnk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption><strong>Posterior Odds Ratio (Normal-Exponential Hierarchy)</strong></caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>exp(Beta)</strong></th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">BMD</td>
+<td class="gt_row gt_center" headers="estimate">0.01</td>
+<td class="gt_row gt_center" headers="conf.low">0.00, 0.12</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="3" class="gt_sourcenote">Abbreviation: CI = Credible Interval</td>
+</tr>
+</tfoot>
+
+</table>
+
 </div>
-<p>To check the stancode behined this we write:</p>
+</div>
+</div>
+<p>From the posterior summary we can see that the use of normal-exponential hierarchy adds a wider credible interval, i.e., OR=(0.0,0.12) for the model parameter.</p>
+<p>Note that, by default we can’t recall the prior distribution hierarchy from the ‘brms’ output. For interested students, I would suggest to explore the stan code behined this model, which is:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stancode</span>(fracture_model_normal_hierarchy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stancode</span>(fracture_model_normal_hierarchy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>// generated with brms 2.22.0
@@ -830,56 +2206,26 @@ generated quantities {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>stanvars <span class="ot">&lt;-</span> <span class="fu">stanvar</span>(<span class="at">scode =</span> <span class="st">"real&lt;lower=0&gt; tau;"</span>, <span class="at">block =</span> <span class="st">"parameters"</span>) <span class="sc">+</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">stanvar</span>(<span class="at">scode =</span> <span class="st">"tau ~ exponential(1);"</span>, <span class="at">block =</span> <span class="st">"model"</span>)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, tau), <span class="at">class =</span> <span class="st">"b"</span>),</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>fracture_model_cauchy_hierarchy <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD <span class="sc">+</span> BMI <span class="sc">+</span> Age <span class="sc">+</span> Sex,</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">stanvars =</span> stanvars,</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
-Chain 1: 
-Chain 1: Gradient evaluation took 0.000106 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.06 seconds.
-Chain 1: Adjust your expectations accordingly!
-Chain 1: 
-Chain 1: 
-Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 1: 
-Chain 1:  Elapsed Time: 1.576 seconds (Warm-up)
-Chain 1:                1.176 seconds (Sampling)
-Chain 1:                2.752 seconds (Total)
-Chain 1: </code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(fracture_model_cauchy_hierarchy, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>stanvars <span class="ot">&lt;-</span> <span class="fu">stanvar</span>(<span class="at">scode =</span> <span class="st">"real&lt;lower=0&gt; tau;"</span>, <span class="at">block =</span> <span class="st">"parameters"</span>) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">stanvar</span>(<span class="at">scode =</span> <span class="st">"tau ~ exponential(1);"</span>, <span class="at">block =</span> <span class="st">"model"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, tau), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>fracture_model_cauchy_hierarchy <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Status <span class="sc">~</span> BMD,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> bmd_data,</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">stanvars =</span> stanvars,</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(fracture_model_cauchy_hierarchy, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>b ~ cauchy(0, tau)
@@ -887,35 +2233,516 @@ Intercept ~ normal(0, 10)</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model_cauchy_hierarchy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fracture_model_cauchy_hierarchy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: bernoulli 
   Links: mu = logit 
-Formula: Status ~ BMD + BMI + Age + Sex 
+Formula: Status ~ BMD 
    Data: bmd_data (Number of observations: 1077) 
-  Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;
-         total post-warmup draws = 1000
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    -1.52      1.65    -4.44     1.60 1.00      453      598
-BMD          -0.92      1.03    -3.39     0.20 1.00      369      640
-BMI          -0.23      0.05    -0.33    -0.14 1.00      461      498
-Age           0.08      0.01     0.05     0.11 1.00      463      501
-SexM         -0.06      0.21    -0.55     0.34 1.01      643      486
+Intercept     0.82      0.84    -0.85     2.43 1.00     1799     2110
+BMD          -4.54      1.02    -6.50    -2.51 1.00     1653     1941
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
 scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>fracture_model_cauchy_hierarchy <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_regression</span>(<span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Odds Ratio (Cauchy-Exponential Hierarchy)**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="xvvgaqizar" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xvvgaqizar table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#xvvgaqizar thead, #xvvgaqizar tbody, #xvvgaqizar tfoot, #xvvgaqizar tr, #xvvgaqizar td, #xvvgaqizar th {
+  border-style: none;
+}
+
+#xvvgaqizar p {
+  margin: 0;
+  padding: 0;
+}
+
+#xvvgaqizar .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#xvvgaqizar .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xvvgaqizar .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xvvgaqizar .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xvvgaqizar .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xvvgaqizar .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xvvgaqizar .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xvvgaqizar .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xvvgaqizar .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xvvgaqizar .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#xvvgaqizar .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xvvgaqizar .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xvvgaqizar .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xvvgaqizar .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xvvgaqizar .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xvvgaqizar .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xvvgaqizar .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xvvgaqizar .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xvvgaqizar .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xvvgaqizar .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xvvgaqizar .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xvvgaqizar .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xvvgaqizar .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xvvgaqizar .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xvvgaqizar .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xvvgaqizar .gt_left {
+  text-align: left;
+}
+
+#xvvgaqizar .gt_center {
+  text-align: center;
+}
+
+#xvvgaqizar .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xvvgaqizar .gt_font_normal {
+  font-weight: normal;
+}
+
+#xvvgaqizar .gt_font_bold {
+  font-weight: bold;
+}
+
+#xvvgaqizar .gt_font_italic {
+  font-style: italic;
+}
+
+#xvvgaqizar .gt_super {
+  font-size: 65%;
+}
+
+#xvvgaqizar .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#xvvgaqizar .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xvvgaqizar .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xvvgaqizar .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xvvgaqizar .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xvvgaqizar .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xvvgaqizar .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#xvvgaqizar .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xvvgaqizar div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption><strong>Posterior Odds Ratio (Cauchy-Exponential Hierarchy)</strong></caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>exp(Beta)</strong></th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">BMD</td>
+<td class="gt_row gt_center" headers="estimate">0.01</td>
+<td class="gt_row gt_center" headers="conf.low">0.00, 0.08</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="3" class="gt_sourcenote">Abbreviation: CI = Credible Interval</td>
+</tr>
+</tfoot>
+
+</table>
+
 </div>
-<p>To check the stancode behined this we write:</p>
+</div>
+</div>
+<p>As expected, we can see for the Cauchy-exponential hierarchy the 95% credible interval for the OR is estimates as OR=(0.0,0.08). Similarly, to check the stan code behined this we write:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stancode</span>(fracture_model_cauchy_hierarchy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stancode</span>(fracture_model_cauchy_hierarchy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>// generated with brms 2.22.0
@@ -962,89 +2789,212 @@ generated quantities {
 }</code></pre>
 </div>
 </div>
-<p>These two hierarchical strategies offer different trade-offs in terms of regularization and flexibility. The normal-exponential hierarchy tends to be more conservative and is often preferred for more stable, well-behaved datasets, while the Cauchy-exponential hierarchy provides robustness and flexibility in the presence of outliers or sparse, large signals. Comparing these hierarchical approaches in practice can reveal which formulation better suits a given problem, depending on the structure and noisiness of the data.</p>
+<p>These two hierarchical strategies offer different trade-offs in terms of regularisation and flexibility. The normal-exponential hierarchy is more traditional and is often preferred for more stable, well-behaved datasets, while the Cauchy-exponential hierarchy provides robustness and flexibility in the presence of outliers or sparse, large signals. Comparing these hierarchical approaches in practice can reveal which formulation better suits a given problem, depending on the structure and noisiness of the data.</p>
 </section>
 </section>
-<section id="bayesian-model-with-counts" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="bayesian-model-with-counts"><span class="header-section-number">8.4</span> Bayesian Model with Counts</h2>
+<section id="bayesian-model-for-count-data" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="bayesian-model-for-count-data"><span class="header-section-number">8.4</span> Bayesian Model for Count Data</h2>
 <iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
+<section id="icu-data" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="icu-data"><span class="header-section-number">8.4.1</span> ICU Data</h3>
+<p>In this analysis, we aim to model Ndays, which represents the number of days a child under five years old has been admitted to the Intensive Care Unit (ICU). This variable is continuous and reflects both the clinical severity of the patient’s condition and potentially other factors influencing the duration of care. Understanding what contributes to longer or shorter ICU stays can provide insights into patient outcomes and inform clinical decision-making.</p>
+<p>Several key variables can be included as potential predictors in the model. Sex is a categorical variable with two levels: Male and Female. Admission type is another categorical variable, distinguishing between Planned and Not planned (i.e., emergency or unplanned) ICU admissions. Planned admissions typically occur in a controlled setting (such as postoperative care), whereas unplanned admissions may result from sudden health deterioration, potentially indicating more severe conditions. Age is a continuous variable measured in weeks, appropriate for the pediatric population under study (children under 5 years of age). Younger children may have different recovery trajectories and risks compared to older ones within this age bracket, making age an important control variable in the analysis. Finally, PRISM refers to the Pediatric Risk of Mortality score, a widely used clinical measure of illness severity in pediatric ICU patients. The PRISM III score is continuous and has been shown to correlate strongly with mortality risk. Lower scores (0–10) are typically associated with lower mortality rates (e.g., around 10.2%), while higher scores (21–30) correspond to significantly increased mortality risk (e.g., approximately 73.8%), with scores above 30 linked to even greater risk. As such, the PRISM score is expected to be a strong predictor of ICU length of stay, with higher scores likely corresponding to longer and more resource-intensive admissions.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>icu_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"icu_days.csv"</span>)</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>icu_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Ndays =</span> icu_data<span class="sc">$</span>ndays,</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">factor</span>(icu_data<span class="sc">$</span>sex),</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Admission =</span> <span class="fu">factor</span>(icu_data<span class="sc">$</span>admtype),</span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> icu_data<span class="sc">$</span>Age,</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">PRISM =</span> icu_data<span class="sc">$</span>PRISM</span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="co"># model</span></span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>icu_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Ndays <span class="sc">~</span> Sex <span class="sc">+</span> Admission <span class="sc">+</span> Age <span class="sc">+</span> PRISM,</span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> icu_data,</span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">poisson</span>(),</span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>), </span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
-<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">1</span>,</span>
-<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
-<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
-<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>icu_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"icu_days_restricted.csv"</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>icu_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Ndays =</span> icu_data<span class="sc">$</span>ndays,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">factor</span>(icu_data<span class="sc">$</span>sex),</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Admission =</span> <span class="fu">factor</span>(icu_data<span class="sc">$</span>admtype),</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> icu_data<span class="sc">$</span>Age,</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">PRISM =</span> icu_data<span class="sc">$</span>PRISM</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>summary_by_sex <span class="ot">&lt;-</span> icu_data <span class="sc">%&gt;%</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sex) <span class="sc">%&gt;%</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> <span class="fu">mean</span>(Ndays),</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Variance =</span> <span class="fu">var</span>(Ndays),</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Count =</span> <span class="fu">n</span>()</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>summary_by_admission <span class="ot">&lt;-</span> icu_data <span class="sc">%&gt;%</span></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Admission) <span class="sc">%&gt;%</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> <span class="fu">mean</span>(Ndays),</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">Variance =</span> <span class="fu">var</span>(Ndays),</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">Count =</span> <span class="fu">n</span>()</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::kable(summary_by_sex)</span></span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::kable(summary_by_admission)</span></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>summary_by_sex <span class="sc">%&gt;%</span></span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="st">"html"</span>, <span class="at">caption =</span> <span class="st">"ICU Days by Sex"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
-Chain 1: 
-Chain 1: Gradient evaluation took 0.00017 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.7 seconds.
-Chain 1: Adjust your expectations accordingly!
-Chain 1: 
-Chain 1: 
-Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 1: 
-Chain 1:  Elapsed Time: 2.737 seconds (Warm-up)
-Chain 1:                2.419 seconds (Sampling)
-Chain 1:                5.156 seconds (Total)
-Chain 1: </code></pre>
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>ICU Days by Sex</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Sex</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">3.628571</td>
+<td style="text-align: right;">4.004933</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">3.597701</td>
+<td style="text-align: right;">3.155139</td>
+<td style="text-align: right;">174</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(icu_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>summary_by_admission <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="st">"html"</span>, <span class="at">caption =</span> <span class="st">"ICU Days by Admission Type"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>ICU Days by Admission Type</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Admission</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Variance</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Not planned</td>
+<td style="text-align: right;">4.094972</td>
+<td style="text-align: right;">3.726885</td>
+<td style="text-align: right;">179</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Planned</td>
+<td style="text-align: right;">2.970370</td>
+<td style="text-align: right;">2.551354</td>
+<td style="text-align: right;">135</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</section>
+<section id="model-development" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="model-development"><span class="header-section-number">8.4.2</span> Model Development</h3>
+<p>The primary goal of this modelling exercise is to examine how these demographic and clinical factors are associated with ICU stay duration. Given the nature of the count outcome variable (Ndays), statistical models such as Bayesian Poisson regression may be appropriate.</p>
+<p>We write the directed acyclic graph (DAG) as follows, where we use a similar type of weakly informative prior distribution for the model parameters.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-2e28664a37a45f7d2c74" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-2e28664a37a45f7d2c74">{"x":{"diagram":"\n  digraph Poisson_DAG {\n    rankdir=LR;\n\n    // Variable Nodes\n    PRISM     [label = \"PRISM\\n(Exposure)\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Age       [label = \"Age\\n(Confounder)\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex       [label = \"Sex\\n(Confounder)\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Admission [label = \"Admission\\n(Confounder)\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Ndays     [label = \"ICU Days\\n(Outcome)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    // Coefficient Nodes\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_4 [label = \"β₄\", shape = box, style = filled, fillcolor = lightgrey]\n\n    // Prior Nodes\n    prior_beta_0 [label = \"Prior for β₀\\nN(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁\\nN(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂\\nN(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃\\nN(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_4 [label = \"Prior for β₄\\nN(μ₄, σ₄²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    // Edges: Predictors influence outcome\n    PRISM     -> Ndays\n    Age       -> Ndays\n    Sex       -> Ndays\n    Admission -> Ndays\n\n    // Coefficients influence outcome\n    beta_0 -> Ndays\n    beta_1 -> Ndays\n    beta_2 -> Ndays\n    beta_3 -> Ndays\n    beta_4 -> Ndays\n\n    // Priors influence coefficients\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_beta_4 -> beta_4\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Now we write the Bayesian model using mathematical notations. Suppose, <span class="math inline">\(\text{Ndays}_i\)</span> be the ICU stay duration for patient <span class="math inline">\(i\)</span>, and <span class="math inline">\(\lambda_i\)</span> be the expected number of days in the ICU for patient <span class="math inline">\(i\)</span>. The predictor variables in the model are PRISM score, which is the exposure variable for our model. Other predictor variables are, age (in weeks), sex (coded as binary: e.g., 0 = Female, 1 = Male) and admission type (coded as binary: 0 = Planned, 1 = Not Planned)</p>
+<p>Hence, we write:</p>
+<p><span class="math display">\[
+\text{Ndays}_i \sim \text{Poisson}(\lambda_i)
+\]</span></p>
+<p><span class="math display">\[
+\log(\lambda_i) = \beta_0 + \beta_1 \cdot \text{PRISM}_i + \beta_2 \cdot \text{Age}_i + \beta_3 \cdot \text{Sex}_i + \beta_4 \cdot \text{Admission}_i
+\]</span></p>
+<p>Each regression coefficient has a prior distribution, typically Gaussian:</p>
+<p><span class="math display">\[
+\beta_j \sim N(\mu_j, \sigma_j^2) \quad \text{for } j = 0, 1, 2, 3, 4
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\mu_j\)</span> is the prior mean for coefficient <span class="math inline">\(\beta_j\)</span></li>
+<li><span class="math inline">\(\sigma_j^2\)</span> is the prior variance (reflecting uncertainty)</li>
+</ul>
+<p>This formulation assumes log-link, standard for Poisson regression, and independent Gaussian priors for the coefficients.</p>
+<p>Suppose, <span class="math inline">\(Y_i = \text{Ndays}_i\)</span> and using vector and matrix notation,</p>
+<p><span class="math display">\[
+\log(\lambda_i) = \mathbf{x}_i \boldsymbol{\beta}
+\quad \text{where } \mathbf{x}_i = (1, \text{PRISM}_i, \text{Age}_i, \text{Sex}_i, \text{Admission}_i)'
+\]</span></p>
+<p>The likelihood for the data is:</p>
+<p><span class="math display">\[
+p(\mathbf{y} \mid \mathbf{x}, \boldsymbol{\beta}) = \prod_{i=1}^{n} \frac{e^{-\lambda_i} \lambda_i^{y_i}}{y_i!}
+= \prod_{i=1}^{n} \frac{e^{-\exp(\mathbf{x}_i \boldsymbol{\beta})} \left[e^{(\mathbf{x}_i \boldsymbol{\beta})}\right]^{y_i}}{y_i!}
+\]</span></p>
+<p>Assume independent Gaussian priors for each coefficient, then the joint posterior is:</p>
+<p><span class="math display">\[
+p(\boldsymbol{\beta} \mid \mathbf{y},\mathbf{x}) \propto
+\prod_{i=1}^{n} \frac{e^{-\exp(\mathbf{x}_i \boldsymbol{\beta})} \left[e^{(\boldsymbol{x}_i \boldsymbol{\beta})}\right]^{y_i}}{y_i!}
+\cdot
+\prod_{j=0}^{q} \frac{1}{\sqrt{2\pi \sigma_j^2}} e^{\left( -\frac{(\beta_j - \mu_j)^2}{2\sigma_j^2} \right)}
+\]</span></p>
+<p>This posterior distribution does not have a closed-form, so we will use Markov Chain Monte Carlo (MCMC) methods to get the inference.</p>
+<p>Using following R code we can get the posterior results:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>icu_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"icu_days_restricted.csv"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>icu_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Ndays =</span> icu_data<span class="sc">$</span>ndays,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">factor</span>(icu_data<span class="sc">$</span>sex),</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Admission =</span> <span class="fu">factor</span>(icu_data<span class="sc">$</span>admtype),</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> icu_data<span class="sc">$</span>Age,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">PRISM =</span> icu_data<span class="sc">$</span>PRISM</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>icu_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Ndays <span class="sc">~</span> PRISM <span class="sc">+</span> Sex <span class="sc">+</span> Admission <span class="sc">+</span> Age,</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> icu_data,</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">poisson</span>(<span class="at">link =</span> <span class="st">"log"</span>),</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>), </span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>)</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(icu_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: poisson 
   Links: mu = log 
-Formula: Ndays ~ Sex + Admission + Age + PRISM 
-   Data: icu_data (Number of observations: 398) 
-  Draws: 1 chains, each with iter = 2000; warmup = 1000; thin = 1;
-         total post-warmup draws = 1000
+Formula: Ndays ~ PRISM + Sex + Admission + Age 
+   Data: icu_data (Number of observations: 314) 
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
 
 Regression Coefficients:
                  Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept            1.89      0.05     1.79     1.98 1.00      832      704
-SexMale             -0.11      0.04    -0.19    -0.04 1.00      762      489
-AdmissionPlanned    -0.73      0.05    -0.83    -0.63 1.00      507      610
-Age                 -0.00      0.00    -0.00    -0.00 1.00      960      843
-PRISM                0.04      0.00     0.04     0.05 1.00      878      661
+Intercept            1.31      0.07     1.17     1.46 1.00     1614     1890
+PRISM                0.02      0.00     0.01     0.03 1.00     2829     2081
+SexMale             -0.04      0.06    -0.16     0.08 1.00     1768     1814
+AdmissionPlanned    -0.25      0.07    -0.38    -0.12 1.00      884      487
+Age                 -0.00      0.00    -0.00    -0.00 1.00     2885     2056
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -1052,7 +3002,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(icu_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(icu_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1063,16 +3013,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(icu_model)</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>posterior_rr <span class="ot">&lt;-</span> posterior <span class="sc">%&gt;%</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"b_"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), exp))</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  posterior_rr,</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_SexMale"</span>,<span class="st">"b_AdmissionPlanned"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_PRISM"</span>)</span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior Trace Plots of Risk Ratios"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">pp_check</span>(icu_model, <span class="at">type=</span><span class="st">"bars"</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">pp_check</span>(icu_model, <span class="at">ndraws=</span><span class="dv">100</span>, <span class="at">type =</span> <span class="st">"ecdf_overlay"</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1082,8 +3027,658 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 </div>
 </div>
+<p>Now for obtaining the risk ratio (or rate ratio), which is <span class="math inline">\(\exp(\beta)\)</span>, we get the posterior summary:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(bayesplot)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior &lt;- as_draws_df(icu_model)</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#posterior_rr &lt;- posterior %&gt;%</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  dplyr::select(starts_with("b_")) %&gt;%</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  dplyr::mutate(across(everything(), exp))</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">#mcmc_trace(</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  posterior_rr,</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  pars = c("b_SexMale","b_AdmissionPlanned", "b_Age", "b_PRISM")</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co">#) +</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co">#  ggplot2::labs(title = "Posterior Trace Plots of Risk Ratios")</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>icu_model <span class="sc">%&gt;%</span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_regression</span>(<span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Risk Ratio (RR) - Poisson Model**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="myyxkoinbn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#myyxkoinbn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#myyxkoinbn thead, #myyxkoinbn tbody, #myyxkoinbn tfoot, #myyxkoinbn tr, #myyxkoinbn td, #myyxkoinbn th {
+  border-style: none;
+}
+
+#myyxkoinbn p {
+  margin: 0;
+  padding: 0;
+}
+
+#myyxkoinbn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#myyxkoinbn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#myyxkoinbn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#myyxkoinbn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#myyxkoinbn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#myyxkoinbn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#myyxkoinbn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#myyxkoinbn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#myyxkoinbn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#myyxkoinbn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#myyxkoinbn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#myyxkoinbn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#myyxkoinbn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#myyxkoinbn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#myyxkoinbn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#myyxkoinbn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#myyxkoinbn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#myyxkoinbn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#myyxkoinbn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#myyxkoinbn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#myyxkoinbn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#myyxkoinbn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#myyxkoinbn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#myyxkoinbn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#myyxkoinbn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#myyxkoinbn .gt_left {
+  text-align: left;
+}
+
+#myyxkoinbn .gt_center {
+  text-align: center;
+}
+
+#myyxkoinbn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#myyxkoinbn .gt_font_normal {
+  font-weight: normal;
+}
+
+#myyxkoinbn .gt_font_bold {
+  font-weight: bold;
+}
+
+#myyxkoinbn .gt_font_italic {
+  font-style: italic;
+}
+
+#myyxkoinbn .gt_super {
+  font-size: 65%;
+}
+
+#myyxkoinbn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#myyxkoinbn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#myyxkoinbn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#myyxkoinbn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#myyxkoinbn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#myyxkoinbn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#myyxkoinbn .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#myyxkoinbn .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#myyxkoinbn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption><strong>Posterior Risk Ratio (RR) - Poisson Model</strong></caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>exp(Beta)</strong></th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">PRISM</td>
+<td class="gt_row gt_center" headers="estimate">1.02</td>
+<td class="gt_row gt_center" headers="conf.low">1.01, 1.03</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Sex</td>
+<td class="gt_row gt_center" headers="estimate"><br>
+</td>
+<td class="gt_row gt_center" headers="conf.low"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Female</td>
+<td class="gt_row gt_center" headers="estimate">—</td>
+<td class="gt_row gt_center" headers="conf.low">—</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Male</td>
+<td class="gt_row gt_center" headers="estimate">0.96</td>
+<td class="gt_row gt_center" headers="conf.low">0.85, 1.08</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Admission</td>
+<td class="gt_row gt_center" headers="estimate"><br>
+</td>
+<td class="gt_row gt_center" headers="conf.low"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not planned</td>
+<td class="gt_row gt_center" headers="estimate">—</td>
+<td class="gt_row gt_center" headers="conf.low">—</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Planned</td>
+<td class="gt_row gt_center" headers="estimate">0.78</td>
+<td class="gt_row gt_center" headers="conf.low">0.68, 0.89</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Age</td>
+<td class="gt_row gt_center" headers="estimate">1.00</td>
+<td class="gt_row gt_center" headers="conf.low">1.00, 1.00</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="3" class="gt_sourcenote">Abbreviation: CI = Credible Interval</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<p>The model estimates how different patient characteristics influence the expected number of days spent in the ICU. Since it’s a Bayesian Poisson regression, the coefficients are exponentiated to yield risk ratios (RRs), which indicate the multiplicative change in ICU stay duration associated with each predictor. A risk ratio greater than 1 suggests a longer ICU stay, while a value less than 1 indicates a shorter stay.</p>
+<p>The PRISM score, which measures the severity of illness, has a risk ratio of 1.02 with a 95% credible interval of (1.01, 1.03). This means that for each one-point increase in PRISM, the expected ICU stay increases by about 2%, and this effect is statistically credible since the interval does not include 1. Regarding sex, males have a risk ratio of 0.96 compared to females, suggesting a slightly shorter ICU stay, but the credible interval (0.85, 1.08) includes 1, indicating that this difference is not statistically meaningful.</p>
+<p>For admission type, patients with planned admissions have a risk ratio of 0.78 compared to those with unplanned admissions. This implies that planned admissions are associated with a 22% shorter ICU stay, and the credible interval (0.68, 0.89) supports this as a credible finding. Lastly, age has a risk ratio of 1.00 with a very narrow credible interval, suggesting that age has no meaningful effect on ICU stay duration in this model.</p>
+</section>
+<section id="more-on-count-data" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="more-on-count-data"><span class="header-section-number">8.4.3</span> More on Count Data</h3>
+<p>In this unit, we will explain some situations that may occur when modelling count data, such as overdispersion and zero inflation. However, we will not go into detail on modeling overdispersed or underdispersed data, zero-inflated situations, or models with offsets. Instead, we will provide related references for interested readers and students.</p>
+<p><strong>Model for over and under dispersion</strong></p>
+<p>When we model count data using a Bayesian Poisson model, it is important to examine whether the underlying assumptions of the Poisson distribution hold true for our dataset. One of the key assumptions of the Poisson distribution is that the mean and variance are equal. In other words, the expected value <span class="math inline">\(\lambda\)</span> of the distribution should be the same as its variance. This property simplifies modelling and interpretation but may not always reflect the characteristics of real-world count data.</p>
+<p>Before proceeding with model interpretation or inference, we should check whether this assumption is met. If the variance substantially exceeds the mean, we are likely dealing with overdispersion. This situation can arise due to various factors such as unobserved heterogeneity or clustering in the data, etc. On the other hand, underdispersion occurs, where the variance is smaller than the mean, which is less common but can also signal model misspecification or constraints in the data-generating process.</p>
+<p>In a Bayesian framework, we can use techniques like posterior predictive checks to assess whether the Poisson model adequately captures the variability in the data. If we detect signs of overdispersion or underdispersion, it may be necessary to consider alternative models that offer more flexibility. For example, the Negative Binomial model introduces an additional dispersion parameter that allows the variance to exceed the mean, making it a suitable alternative in the presence of overdispersion (<span class="citation" data-cites="mcelreath2020statistical">McElreath (<a href="references.html#ref-mcelreath2020statistical" role="doc-biblioref">2020</a>)</span>). In <code>brm</code> package, we use a negetive-binomial family, i.e., <code>negbinomial(link = 'log')</code> by replacing the <code>poisson</code>.</p>
+<!--
+
+icu_model_negbino <- brm(
+  formula = Ndays ~ PRISM + Sex + Admission + Age,
+  data = icu_data,
+  family = negbinomial(link = "log"), 
+  prior = c(
+    prior(normal(0, 3), class = "b"), 
+    prior(normal(0, 10), class = "Intercept")
+  ),
+  iter = 2000,
+  chains = 3,
+  cores = 3,
+  seed = 123
+)
+library(gtsummary)
+icu_model_negbino %>%
+  tbl_regression(exponentiate = TRUE) %>%
+  bold_labels() %>%
+  modify_caption("**Posterior Risk Ratio (RR) - Negativebinomial Model**")
+library(ggplot2)
+p1 <- pp_check(icu_model_negbino, type="bars")
+p2 <- pp_check(icu_model_negbino, ndraws=100, type = "ecdf_overlay")
+library(gridExtra)
+grid.arrange(p1, p2, ncol = 2)
+
+-->
+<p><strong>Model with Infleated Zeros</strong></p>
+<p>When our count data exhibit more zeros than a standard Poisson or Negative Binomial model would predict, we are facing zero inflation.</p>
+<p>To address this, we can employ zero-inflated models, such as the Zero-Inflated Poisson (ZIP) or Zero-Inflated Negative Binomial (ZINB). In these frameworks, we explicitly model two stages. First, a binary process determines whether an observation is a structural zero. Second, for cases not deemed structural zeros, we model counts, allowing for additional zeros, using a Poisson or Negative Binomial distribution. By separating these processes, we capture both the excess zeros and the underlying count behavior more accurately (<span class="citation" data-cites="mcelreath2020statistical">McElreath (<a href="references.html#ref-mcelreath2020statistical" role="doc-biblioref">2020</a>)</span>).</p>
+<p>Alternatively, we might choose a hurdle model when we believe that the data-generating mechanism for zeros is fundamentally different from that for positive counts (<span class="citation" data-cites="mcelreath2020statistical">McElreath (<a href="references.html#ref-mcelreath2020statistical" role="doc-biblioref">2020</a>)</span>). In a hurdle approach, the first component models the probability of observing zero versus a positive count. Once the hurdle of producing a non-zero value is crossed, a second component models the strictly positive counts using a zero-truncated distribution. This ensures that all zeros arise from the first stage, while the second stage focuses solely on positive outcomes.</p>
+<p>Deciding between zero-inflated and hurdle formulations depends on our substantive understanding of the process. If we think some zeros are truly “structural” and would never result in a non-zero count, a zero-inflated model is preferable. If instead we believe that the transition from zero to positive count represents a distinct event, after which counts follow a different regime, a hurdle model may offer more interpretability.</p>
+<p>In both strategies, we improve model fit and inference by aligning our statistical assumptions with the realities of our data.</p>
+<!--
+
+icu_model_zip <- brm(
+  formula = Ndays ~ PRISM + Sex + Admission + Age,
+  data = icu_data,
+  family = zero_inflated_poisson(),
+  prior = c(
+    prior(normal(0, 3), class = "b"),
+    prior(normal(0, 10), class = "Intercept")
+  ),
+  iter = 2000,
+  chains = 3,
+  cores = 3,
+  seed = 123
+)
+
+icu_model_hurdle <- brm(
+  formula = Ndays ~ PRISM + Sex + Admission + Age,
+  data = icu_data,
+  family = hurdle_poisson(),  # or hurdle_negbinomial()
+  prior = c(
+    prior(normal(0, 3), class = "b"),
+    prior(normal(0, 10), class = "Intercept")
+  ),
+  iter = 2000,
+  chains = 3,
+  cores = 3,
+  seed = 123
+)
+
+-->
+<p><strong>Model with offset</strong></p>
+<p>There are also situations when we might prefer to model ratios instead of raw counts. This approach can be particularly useful when we need to adjust for differences in exposure, population size, or observation periods. For example, if we are analysing the number of hospital admissions across different regions, modeling the admission rate per 1,000 people allows us to account for differences in population size. Using raw counts in such cases could be misleading, as a region with a larger population will naturally have more admissions, even if the underlying risk is the same.</p>
+<p>Modeling ratios or rates allows us to make fair comparisons across groups and can help control for varying levels of opportunity or risk exposure. In statistical terms, this is often done by including an ‘offset’ in the model. For instance, in a Poisson regression, we can include the log of the exposure variable (e.g., population size or person-time) as an offset term. This allows the model to estimate the rate of events per unit of exposure rather than the absolute number of events.</p>
+<!--
+
+brm(
+  formula = count ~ predictors + offset(log_exposure),
+  data = your_data,
+  family = poisson(),
+  ...
+)
+-->
+</section>
+</section>
+<section id="summary" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.5</span> Summary</h2>
+<p>In today’s session, we focused on Bayesian modeling techniques for logistic regression and count data. We began with a sensitivity analysis of prior distributions in logistic regression, comparing the effects of using Cauchy and normal weakly informative priors. This highlighted how prior choice can influence inference, particularly when data are limited or noisy. Next, we examined hierarchical prior structures, exploring normal-exponential and Cauchy-exponential priors, which offer flexible ways to model parameter shrinkage and improve regularisation in complex models. Finally, we introduced Bayesian modelling of count data through Poisson regression, and how these models can be adapted to handle varying data characteristics and how prior specification remains crucial. We have also briefly discussed some count data situations, such as overdispersion, when the Poisson distribution might not be the right approach to model the data</p>
+</section>
+<section id="live-tutorial-and-discussion" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">8.6</span> Live tutorial and discussion</h2>
+<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
+</section>
+<section id="tutorial-exercises" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">8.7</span> Tutorial Exercises</h2>
+<p>Solutions will be provided later after the tutorial.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-gelman2008weakly" class="csl-entry" role="listitem">
+Gelman, Andrew, Aleks Jakulin, Maria Grazia Pittau, and Yu-Sung Su. 2008. <span>“A Weakly Informative Default Prior Distribution for Logistic and Other Regression Models.”</span> <em>The Annals of Applied Statistics</em> 2 (4): 1360–83.
+</div>
+<div id="ref-mcelreath2020statistical" class="csl-entry" role="listitem">
+McElreath, Richard. 2020. <em>Statistical Rethinking: A Bayesian Course with Examples in r and Stan (2nd Edition)</em>. Chapman; Hall/CRC.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
