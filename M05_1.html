@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Clusterphobia? Part - I – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>9&nbsp; Cluster Smart with Bayes – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -115,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M05_1.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M05_1.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Cluster Smart with Bayes</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,13 +194,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>R and RStudio</strong></span></a>
+ <span class="menu-text"><strong>Software Installation Guide</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 1: Bayesian Dreams</strong></span></a>
+ <span class="menu-text"><strong>Module 1: Bayesian Dreams!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -179,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 2: Chaotics</strong></span></a>
+ <span class="menu-text"><strong>Module 2: Chaotics?</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 3: Bayeswatch - Gaussian</strong></span></a>
+ <span class="menu-text"><strong>Module 3: Bayeswatch - Gaussian!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 4: Non-Gaussian Bayeswatch</strong></span></a>
+ <span class="menu-text"><strong>Module 4: Bayeswatch - Non Gaussian!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -233,19 +272,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 5: Clusterphobia</strong></span></a>
+ <span class="menu-text"><strong>Module 5: Clusterphobia?</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Cluster Smart with Bayes</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Goldilocks Bayes Clustering</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -289,15 +328,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">9.1</span> Learnings</a></li>
-  <li><a href="#clustered-data" id="toc-clustered-data" class="nav-link" data-scroll-target="#clustered-data"><span class="header-section-number">9.2</span> Clustered Data</a></li>
-  <li><a href="#bayesian-hierarchical-multilevel-model" id="toc-bayesian-hierarchical-multilevel-model" class="nav-link" data-scroll-target="#bayesian-hierarchical-multilevel-model"><span class="header-section-number">9.3</span> Bayesian Hierarchical (Multilevel) Model</a></li>
-  <li><a href="#clustered-data-multilevel-modles" id="toc-clustered-data-multilevel-modles" class="nav-link" data-scroll-target="#clustered-data-multilevel-modles"><span class="header-section-number">9.4</span> Clustered Data &amp; Multilevel Modles</a></li>
-  <li><a href="#varying-intercept-model" id="toc-varying-intercept-model" class="nav-link" data-scroll-target="#varying-intercept-model"><span class="header-section-number">9.5</span> Varying Intercept Model</a></li>
-  <li><a href="#varying-slope-model" id="toc-varying-slope-model" class="nav-link" data-scroll-target="#varying-slope-model"><span class="header-section-number">9.6</span> Varying Slope Model</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">9.7</span> Exercises</a></li>
-  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">9.8</span> Live tutorial and discussion</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">9.9</span> Summary</a></li>
-  <li><a href="#preparation-for-week-2" id="toc-preparation-for-week-2" class="nav-link" data-scroll-target="#preparation-for-week-2"><span class="header-section-number">9.10</span> Preparation for Week 2</a></li>
+  <li><a href="#clustered-data" id="toc-clustered-data" class="nav-link" data-scroll-target="#clustered-data"><span class="header-section-number">9.2</span> Clustered Data</a>
+  <ul class="collapse">
+  <li><a href="#why-consider-clustering" id="toc-why-consider-clustering" class="nav-link" data-scroll-target="#why-consider-clustering"><span class="header-section-number">9.2.1</span> Why Consider Clustering?</a></li>
+  <li><a href="#c-reactive-protein-data" id="toc-c-reactive-protein-data" class="nav-link" data-scroll-target="#c-reactive-protein-data"><span class="header-section-number">9.2.2</span> C-Reactive Protein Data</a></li>
+  </ul></li>
+  <li><a href="#bayesian-hierarchical-multilevel-model" id="toc-bayesian-hierarchical-multilevel-model" class="nav-link" data-scroll-target="#bayesian-hierarchical-multilevel-model"><span class="header-section-number">9.3</span> Bayesian Hierarchical (Multilevel) Model</a>
+  <ul class="collapse">
+  <li><a href="#complete-pooling" id="toc-complete-pooling" class="nav-link" data-scroll-target="#complete-pooling"><span class="header-section-number">9.3.1</span> Complete Pooling</a></li>
+  <li><a href="#no-pooling" id="toc-no-pooling" class="nav-link" data-scroll-target="#no-pooling"><span class="header-section-number">9.3.2</span> No Pooling</a></li>
+  <li><a href="#partial-pooling" id="toc-partial-pooling" class="nav-link" data-scroll-target="#partial-pooling"><span class="header-section-number">9.3.3</span> Partial Pooling</a></li>
+  <li><a href="#r-stan-brm-example" id="toc-r-stan-brm-example" class="nav-link" data-scroll-target="#r-stan-brm-example"><span class="header-section-number">9.3.4</span> R-Stan (brm) Example</a></li>
+  </ul></li>
+  <li><a href="#partial-pooling-for-c-reactive-protein-data" id="toc-partial-pooling-for-c-reactive-protein-data" class="nav-link" data-scroll-target="#partial-pooling-for-c-reactive-protein-data"><span class="header-section-number">9.4</span> Partial Pooling for C-Reactive Protein Data</a>
+  <ul class="collapse">
+  <li><a href="#model-development" id="toc-model-development" class="nav-link" data-scroll-target="#model-development"><span class="header-section-number">9.4.1</span> Model Development</a></li>
+  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code"><span class="header-section-number">9.4.2</span> R Code</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">9.5</span> Summary</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">9.6</span> Live tutorial and discussion</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">9.7</span> Tutorial Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -306,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Cluster Smart with Bayes</strong></span></h1>
 </div>
 
 
@@ -324,19 +374,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>NOT READY YET</p>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <section id="learnings" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="learnings"><span class="header-section-number">9.1</span> Learnings</h2>
 <ul>
-<li><p><strong>Outcomes</strong></p></li>
-<li><p><strong>Objectives</strong></p></li>
+<li><strong>Outcomes</strong></li>
+</ul>
+<p>– LO2: Demonstrate how to specify and fit simple Bayesian models with appropriate attention to the role of the prior distribution and the data model.</p>
+<p>– LO4: Demonstrate proficiency in using statistical software packages (R) to specify and fit models, assess model fit, detect and remediate non-convergence, and compare models.</p>
+<p>– LO5: Engage in specifying, checking and interpreting Bayesian statistical analyses in practical problems using effective communication with health and medical investigators.</p>
+<ul>
+<li><strong>Objectives</strong></li>
 </ul>
 <p>By the end of this week you should be able to:</p>
-<p>– Explain clusterd data.</p>
-<p>– Describe Bayesian hierarchical (or multilevel) models.</p>
-<p>– Compare with classical models for clustered data</p>
-<p>– Interpret real-life problems in Bayesian context.</p>
+<p>– Learn the difference between clustered and non-clustered data.</p>
+<p>– Implement Bayesian hierarchical (or multilevel) models.</p>
+<p>– Interpret real-life clustered data problems in Bayesian context.</p>
 <!--
 
 https://m-clark.github.io/mixed-models-with-R/bayesian.html
@@ -351,7 +405,9 @@ In this module/lecture, we will discuss about Bayesian latent process models and
 </section>
 <section id="clustered-data" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="clustered-data"><span class="header-section-number">9.2</span> Clustered Data</h2>
-<p>Clustered data refers to observations that are grouped into clusters, where data points within the same cluster tend to be more similar to each other than to those in other clusters. This structure often arises naturally in health and medical research, where measurements are taken on individuals who share a common setting, treatment provider, or geographic location. A common example in healthcare is data collected from multiple patients treated within the same hospital or clinic. Patients within a single hospital may receive similar types of care, be exposed to the same medical practitioner, and follow similar protocols. As a result, their outcomes, such as recovery time or treatment success often are more alike compared to patients from different hospitals. Another example occurs in longitudinal studies, where repeated measurements are taken from the same individual over time. Here, each individual forms a cluster of observations. For instance, a study tracking blood pressure readings in hypertensive patients over several months will generate multiple observations per patient, and these readings are naturally correlated.</p>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Clustered data refers to observations that are grouped into clusters, where data points within the same cluster tend to be more similar to each other than to those in other clusters. This structure often arises naturally in health and medical research, where measurements are taken on individuals who share a common setting, treatment provider, or geographic location. A common example, say in healthcare is data collected from multiple patients treated within the same hospital or clinic. Patients within a single hospital may receive similar types of care, be exposed to the same medical practitioner, and follow similar protocols. As a result, their outcomes, such as recovery time or treatment success often are more alike compared to patients from different hospitals. Another example occurs say in longitudinal studies, where repeated measurements are taken from the same individual over time. Here, each individual forms a cluster of observations. For instance, a study tracking blood pressure readings in hypertensive patients over several months will generate multiple observations per patient, and these readings are naturally correlated.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -363,49 +419,919 @@ In this module/lecture, we will discuss about Bayesian latent process models and
 </div>
 </div>
 <p>In both cases, recognising and correctly handling clustered data ensures more accurate inferences and better decision-making in health and medical research. A Bayesian hierarchical model (also known as Bayesian multilevel model) can handle this types of complexity by introducing levels of variation (hierarchies) and latent processes that influence the observed data.</p>
+<section id="why-consider-clustering" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="why-consider-clustering"><span class="header-section-number">9.2.1</span> Why Consider Clustering?</h3>
+<p>Not accounting for clustering effects in modelling often leads to issues that compromise the validity, reliability, and interpretability of the results. Bayesian hierarchical modelling is actually designed to handle clustering. That said, if clustering is not properly modelled even within a Bayesian framework, similar issues can still occur. Let’s go through some of the problems below:</p>
+<p><strong>Underestimated Posterior Uncertainty</strong>: When clusters are ignored (e.g., no latent effects or hierarchical structure), the model assumes full independence. This leads to overconfident posterior estimates (i.e., narrow credible intervals), similar to underestimated standard errors in frequentist models.</p>
+<p><strong>Biased Posterior Estimates</strong>: Without modeling cluster-level effects, the posterior distribution may be pulled too strongly by certain clusters (e.g., large hospitals or outlier clinics). This skews inferences about population-level parameters.</p>
+<p><strong>Invalid Posterior Inference</strong>: Posterior summaries (means, medians, credible intervals) assume the model structure is correct. If clustering is ignored, the posteriors may not reflect the true data-generating process, leading to misleading decisions or predictions.</p>
+<p><strong>Model Misspecification</strong>: Ignoring clustering violates the conditional independence assumptions built into the likelihood. This leads to a mismatch between model assumptions and data structure, harming model fit and diagnostics.</p>
+<p><strong>Loss of Information Sharing (No Partial Pooling)</strong>: Without hierarchical modeling, there is no borrowing of strength across clusters. Hence, small clusters may have unstable estimates, while large clusters may dominate the inference.</p>
+<p><strong>Poor Generalisability (Out-of-Sample)</strong>: A model without clustering may overfit to the specific sampled clusters, especially when data is sparse or imbalanced across groups. Hence, predictions for new clusters (e.g., new hospitals) are unreliable.</p>
+<!--
+
+
+* **Fix**: Introduce random effects or latent variables to capture between-cluster variability.
+* **Fix**: Use a hierarchical structure (e.g., model group-specific parameters as drawn from a shared prior) to allow **partial pooling**, which balances individual and group information.
+* **Fix**: Model clusters explicitly with **group-level parameters and hyperpriors**.
+* **Fix**: Include **varying intercepts/slopes** for clusters to separate cluster-level variation from individual-level covariate effects.
+* **Fix**: Use hierarchical priors to **"shrink"** extreme estimates toward the population mean, improving generalizability.
+* **Fix**: Check for residual structure, fit models with cluster-specific latent variables, and compare with non-hierarchical alternatives using model comparison metrics like WAIC or LOO.
+* **Fix**: BHM enables **partial pooling**, where group-level estimates are stabilized by information from the overall population.
+
+
+-->
 </section>
-<section id="bayesian-hierarchical-multilevel-model" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="bayesian-hierarchical-multilevel-model"><span class="header-section-number">9.3</span> Bayesian Hierarchical (Multilevel) Model</h2>
-<p>complete pooling, no pooling and partially pooling</p>
-</section>
-<section id="clustered-data-multilevel-modles" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="clustered-data-multilevel-modles"><span class="header-section-number">9.4</span> Clustered Data &amp; Multilevel Modles</h2>
-<p>asdf</p>
-</section>
-<section id="varying-intercept-model" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="varying-intercept-model"><span class="header-section-number">9.5</span> Varying Intercept Model</h2>
-<p>asdf</p>
-</section>
-<section id="varying-slope-model" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="varying-slope-model"><span class="header-section-number">9.6</span> Varying Slope Model</h2>
-<p>asdf</p>
-<p>Vedio</p>
-<p>…</p>
+<section id="c-reactive-protein-data" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="c-reactive-protein-data"><span class="header-section-number">9.2.2</span> C-Reactive Protein Data</h3>
+<p>Before explaining the Bayesian hierarchical (or multilevel) model, let us explain a clustered data on C-reactive protein measured at the intensive care unit (ICU).</p>
+<p>In this example, we examine data collected from patients admitted to the intensive care unit (ICU). Our primary focus is on the measurement of C-reactive protein (CRP) levels (in mg/L), which were recorded daily over the first six days following ICU admission. These repeated measurements allow us to study the progression of inflammation during the early phase of critical illness.</p>
+<p>We interpret CRP levels based on commonly accepted reference ranges. A CRP level of less than 3 mg/L is generally considered normal for most healthy individuals. When CRP levels fall between 3 and 10 mg/L, they may still be within the normal range but can also indicate a mild elevation. This slight increase is sometimes observed in conditions such as chronic low-grade inflammation. When CRP levels rise to 10 mg/L or higher, we consider this indicative of a more significant inflammatory response. Such elevated levels may reflect the presence of infection, acute inflammation, or other underlying medical conditions requiring further investigation.</p>
+<p>Now, each patient in the dataset is identified by a unique ID, which enables us to link multiple CRP measurements to the same individual. In addition to CRP levels, we have several patient-level variables that provide important clinical and demographic context.</p>
+<p>Specifically, we have data on the patient’s age and sex, as well as their sepsis status at admission, categorised as sepsis, severe sepsis, or septic shock. The more severe the systemic inflammatory response in sepsis, the higher and more prolonged the CRP levels tend to be. Septic shock, a severe form of sepsis characterised by dangerously low blood pressure, is often associated with persistently high CRP levels. For our data, we also know whether each patient was given antibiotics within the first hour of ICU admission, which may be an indicator of timely clinical intervention. Finally, we include the patient’s discharge status from the ICU, recorded as either alive or dead.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crp_data_complete.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> crp_data<span class="sc">$</span>ID,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP =</span> crp_data<span class="sc">$</span>crp,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP_log =</span> <span class="fu">log</span>(crp_data<span class="sc">$</span>crp),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Day =</span> crp_data<span class="sc">$</span>day,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Antibiotic =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>antib_1h),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> crp_data<span class="sc">$</span>age,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEX),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sepsis =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEPSIS),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Discharg =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>discharge_r)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">:::</span><span class="fu">skim_without_charts</span>(crp_data[,<span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">crp_data[, -1]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">432</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 10%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Antibiotic</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">No: 234, Yes: 198</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sex</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Mal: 276, Fem: 156</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sepsis</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Sep: 228, Sev: 180, Sep: 24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Discharg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Ali: 354, Dea: 78</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CRP</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">14.40</td>
+<td style="text-align: right;">10.75</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">6.40</td>
+<td style="text-align: right;">11.50</td>
+<td style="text-align: right;">20.20</td>
+<td style="text-align: right;">68.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CRP_log</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.35</td>
+<td style="text-align: right;">0.89</td>
+<td style="text-align: right;">-1.61</td>
+<td style="text-align: right;">1.86</td>
+<td style="text-align: right;">2.44</td>
+<td style="text-align: right;">3.01</td>
+<td style="text-align: right;">4.23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Day</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3.50</td>
+<td style="text-align: right;">1.71</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">3.50</td>
+<td style="text-align: right;">5.00</td>
+<td style="text-align: right;">6.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">63.92</td>
+<td style="text-align: right;">16.79</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">52.75</td>
+<td style="text-align: right;">69.00</td>
+<td style="text-align: right;">78.00</td>
+<td style="text-align: right;">91.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#p1 &lt;- ggplot(crp_data, aes(x = CRP)) +</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  geom_density(fill = "skyblue", alpha = 0.6) +</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  labs(title = "Density of CRP", x = "CRP", y = "Density") +</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  theme_minimal()</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#p2 &lt;- ggplot(crp_data, aes(x = CRP_log)) +</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  geom_density(fill = "salmon", alpha = 0.6) +</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  labs(title = "Density of log(CRP)", x = "log(CRP)", y = "Density") +</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  theme_minimal()</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> crp_data, <span class="fu">aes</span>(<span class="at">x=</span>Day, <span class="at">y=</span>CRP, <span class="at">group=</span>ID)) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>, <span class="at">lwd =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"purple"</span>, <span class="fu">aes</span>(<span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"CRP in sepsis patients in ICU"</span>, <span class="at">x =</span> <span class="st">"Time (days)"</span>,<span class="at">y =</span> <span class="st">"CRP"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> crp_data, <span class="fu">aes</span>(<span class="at">x=</span>Day, <span class="at">y=</span>CRP_log, <span class="at">group=</span>ID)) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>, <span class="at">lwd =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"purple"</span>, <span class="fu">aes</span>(<span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"CRP (log transformation)"</span>, <span class="at">x =</span> <span class="st">"Time (days)"</span>,<span class="at">y =</span> <span class="st">"Log CRP"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_1_files/figure-html/crp_data-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The C-reactive protein (CRP) values on the original scale show a right-skewed distribution. In typical modelling settings, a variable transformation is often used to address this. The most common transformation is the logarithm. The plots above display CRP (left) and log-transformed CRP (right) levels over the first six days in the ICU, with each individual’s trajectory shown, and this type of plot is sometimes referred to as a ‘spaghetti plot’. We’ve also added a line connecting the means at each time point to help visualise the overall trend. However, due to the large number of observations, it is difficult to see any specific patterns.</p>
+</section>
+</section>
+<section id="bayesian-hierarchical-multilevel-model" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="bayesian-hierarchical-multilevel-model"><span class="header-section-number">9.3</span> Bayesian Hierarchical (Multilevel) Model</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<!--
+
+
+https://bayesf22-notebook.classes.andrewheiss.com/bayes-rules/15-chapter.html
+
+
+y <- read.csv(file="crp2.csv")
+#SAPS = simplified acute physiology score
+
+y$antib_1h <- ifelse(y$antib_1h %in%"No", "Yes", "No")
+
+y1 <- pivot_longer(data = y,
+cols = crp1:crp6,
+names_to = "day",
+names_prefix = "crp",
+values_to = "crp",
+values_drop_na = TRUE)
+y1$day <- as.integer(y1$day)
+
+y2 <- pivot_longer(data = na.omit(y),
+cols = crp1:crp6,
+names_to = "day",
+names_prefix = "crp",
+values_to = "crp",
+values_drop_na = TRUE)
+y2$day <- as.integer(y2$day)
+
+y1$SAPS = NULL
+y2$SAPS = NULL
+
+tapply(y1$crp,y1$antib_1h,mean)
+tapply(y2$crp,y2$antib_1h,mean)
+
+#write.csv(y1, file="crp_data.csv",row.names=FALSE)
+#write.csv(y2, file="crp_data_complete.csv",row.names=FALSE)
+
+-->
+<p><strong>Simple Model for Clustering</strong></p>
+<p>Let’s start developing a simple model, where we can address the clustering effect. To create such model, we can introducte dummy variable for the cluster variable. For the CRP data, <code>ID</code> variable is refering the patients and we convert ID variable into a dummay variable and we get ID (or subject) specific regression coefficients.</p>
+<p>These types of models are sometimes referred to as ‘fixed effects’ models in frequentis approach, to distinguish them from ‘random effects’ models, though the terminology is not universally agreed upon. In particular, the terms ‘fixed’ and ‘random’ are used in various contexts and are often applied inconsistently or inappropriately.</p>
+<p>More recently, this type of model in Bayesian context is often described as a ‘no pooling’ model, in contrast to ‘complete pooling’ and ‘partial pooling’ approaches. Now we will discuss these types of pooling approaches starting with ‘complete pooling’ and ‘no pooling’ models.</p>
+<section id="complete-pooling" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="complete-pooling"><span class="header-section-number">9.3.1</span> Complete Pooling</h3>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>In complete pooling, we ignore the clustering structure and fit a single set of parameters for all individuals/clusters. We assume everyone follows the same model. Thus, for a simple intercept only model, we can write:</p>
+<p><span class="math display">\[
+\text{CRP}_{ij} \sim N(\beta_0\cdot1,\sigma^2)
+\]</span></p>
+<p>where, <span class="math inline">\(i\)</span> represents the number of observations for each individual/cluster and <span class="math inline">\(j\)</span> represents the number of indiviluals/clusters, i.e., we can write <span class="math inline">\(i=1,\cdots,n_j\)</span>, <span class="math inline">\(j=1,\cdots,J\)</span>, and total number of observations <span class="math inline">\(n=\sum_{j=1}^J\sum_{i=1}^{n_j} n_{ij}\)</span>. This model is nothing but a simple linear regression without any predictor variable. We can use a prior distribution for the intercept, such that <span class="math inline">\(\beta_0 \sim N(0,\sigma^2_0)\)</span>, and add the weakly informative, non-informative or informative situations towards the variance hyper-parameter <span class="math inline">\(\sigma^2_0\)</span>, as we have discussed in our previous lectures. Hence, we get the posterior distribution of <span class="math inline">\(\beta_0\)</span> from the completely pooled model.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a0cad17562d0e3833250" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a0cad17562d0e3833250">{"x":{"diagram":"\n  digraph complete_pooling_DAG {\n\n    // Layout\n    rankdir = TB;\n    fontsize = 10;\n    node [fontname = Helvetica]\n\n    // Nodes\n    n_obs [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, fontsize = 10, style = dashed]\n\n    CRP [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta0 [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu0 [label = \"μ=0\", shape = box, style = filled, fillcolor = lightcyan]\n    sigma0 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightcyan]\n\n    tau [label = \"τ\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    beta0 -> CRP\n    sigma -> CRP\n\n    mu0 -> beta0\n    sigma0 -> beta0\n\n    tau -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="no-pooling" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="no-pooling"><span class="header-section-number">9.3.2</span> No Pooling</h3>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>In no pooling, we fully account for the clustering structure by estimating separate parameters for each individual or cluster. That is, we do not share any information across individuals or clusters. Each cluster gets its own independent model, and we assume the data for each cluster is generated from its own set of parameters.</p>
+<p>For a simple intercept-only model under no pooling, we write:</p>
+<p><span class="math display">\[
+\text{CRP}_{ij} \sim N(\beta_{0j} \cdot 1, \sigma^2)
+\]</span></p>
+<p>Here, <span class="math inline">\(i = 1,\cdots,n_j\)</span> denotes the observations within each individual or cluster <span class="math inline">\(j = 1,\cdots, J\)</span>, and <span class="math inline">\(\beta_{0j}\)</span> is a unique intercept parameter for each cluster <span class="math inline">\(j\)</span>. This means that we estimate <span class="math inline">\(J\)</span> separate intercepts, one for each group, without any sharing or pooling of information between groups.</p>
+<p>To complete the Bayesian formulation, we specify a prior for each <span class="math inline">\(\beta_{0j}\)</span>, such as:</p>
+<p><span class="math display">\[
+\beta_{0j} \sim N(0, \sigma_{0}^2)
+\]</span></p>
+<p>This prior can be weakly informative, non-informative, or informative, depending on the context and prior knowledge. Since there is no sharing of information across clusters, the posterior distribution of each <span class="math inline">\(\beta_{0j}\)</span> is informed only by the data from the corresponding group <span class="math inline">\(j\)</span> and the prior.</p>
+<p>This model structure is highly flexible but may suffer from overfitting, especially when the number of observations within some clusters is small. Unlike complete pooling, no pooling does not assume a common intercept across all clusters but instead treats each as an entirely separate entity.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-912bcfbfcb6c65613494" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-912bcfbfcb6c65613494">{"x":{"diagram":"\n  digraph no_pooling_DAG {\n\n    // Layout\n    rankdir = TB;\n    fontsize = 10;\n    node [fontname = Helvetica]\n\n    // Nodes\n    n_obs [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, fontsize = 10, style = dashed]\n\n    CRP [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta0j [label = \"β₀ⱼ\\n(Individual Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma0j [label = \"σ₀²=10²\", shape = box, style = filled, fillcolor = lightcyan]\n    mu [label = \"μ₀=0\", shape = box, style = filled, fillcolor = lightcyan]\n\n    sigma [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    tau [label = \"τ\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    beta0j -> CRP\n    sigma -> CRP\n\n    mu -> beta0j\n    sigma0j -> beta0j\n    tau -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="partial-pooling" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="partial-pooling"><span class="header-section-number">9.3.3</span> Partial Pooling</h3>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Now for partial pooling, we strike a balance between complete pooling and no pooling by allowing the parameters for each cluster to vary, while also sharing information across clusters. This is typically done using a model, where individual cluster parameters are assumed to come from a common population-level distribution. As a result, the estimates for each cluster are “shrunk” toward the overall mean, with the degree of shrinkage depending on the amount of data available in each cluster and the variability across clusters.</p>
+<p>For a simple intercept-only model under partial pooling, we write:</p>
+<p><span class="math display">\[
+\text{CRP}_{ij} \sim N((\beta_0 + \beta_{0j}) \cdot 1, \sigma^2)
+\]</span></p>
+<p>Here, <span class="math inline">\(\beta_0\)</span> is a global intercept shared across all clusters, and <span class="math inline">\(\beta_{0j}\)</span> is a group-specific deviation from the global intercept for cluster <span class="math inline">\(j\)</span>, where we assume that <span class="math inline">\(\beta_{0j}\)</span> follows a normal (or Gaussian) distribution, and write <span class="math inline">\(\beta_{0j} \sim N(0, \sigma_{0}^2)\)</span>. Note that, unlike no pooling model, here in the partial pooling model we are treating <span class="math inline">\(\beta_{0j}\)</span> as randomly distributed with mean zero and an unknown group/cluster specific variance <span class="math inline">\(\sigma_0^2\)</span>. Hence, we are interested to learn about the estimate of the group-wise or cluster variability <span class="math inline">\(\sigma_0^2\)</span>.</p>
+<p>Now, as a Bayesian we need define the distributions for the model parameters:</p>
+<p><span class="math display">\[
+\beta_{0} \sim N(0,\sigma^2_{00}); \quad \beta_{0j} \sim N(0, \sigma_{0}^2);
+\]</span></p>
+<p><span class="math display">\[
+\sigma_{0} \sim \text{Half-Cauchy}(0,\tau_0); \quad \sigma \sim \text{Half-Cauchy}(0,\tau);
+\]</span></p>
+<p>The term, <span class="math inline">\(\beta_{0j}\)</span> in this model are providing no pulling and mimicing a random process or effect, whereas, <span class="math inline">\(\beta_0\)</span> is the global intercept. Thus, using the prior distribution hierarchies, we can get the posteriors for <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_{0j}\)</span> accordingly.</p>
+<p>This structure allows the model to pool information across clusters while still allowing each cluster to have its own intercept. The posterior estimates of the cluster effects <span class="math inline">\(\beta_{0j}\)</span> are ‘partially pooled’ toward the global mean <span class="math inline">\(\beta_0\)</span>, with the amount of shrinkage determined by the variance parameter <span class="math inline">\(\sigma_{0j}^2\)</span>: clusters with less data (or higher uncertainty) are pulled more toward the global mean, while clusters with more data retain more individualized estimates.</p>
+<p>Partial pooling provides a compromise: it avoids the rigidity of complete pooling (which assumes all clusters are the same) and the potential overfitting of no pooling (which treats all clusters as completely separate). The result is more stable and interpretable estimates, especially when the number of observations per cluster is highly variable.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-352e69cef977ebe372a6" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-352e69cef977ebe372a6">{"x":{"diagram":"\n  digraph partial_pooling_DAG {\n\n    // Layout\n    rankdir = TB;\n    fontsize = 10;\n    node [fontname = Helvetica]\n\n    // Nodes\n    n_obs [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, fontsize = 10, style = dashed]\n\n    CRP [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta0 [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta0j [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu00 [label = \"μ₀₀ = 0\", shape = box, style = filled, fillcolor = lightcyan]\n    mu0j [label = \"μ₀ = 0\", shape = box, style = filled, fillcolor = seagreen1]\n\n    sigma00 [label = \"σ₀₀²=10²\", shape = box, style = filled, fillcolor = lightcyan]\n    sigma0j [label = \"σ₀²\", shape = box, style = filled, fillcolor = seagreen1]\n    lambda0 [label = \"τ₀\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    sigma [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    lambda [label = \"τ\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Rank positioning\n    { rank = min; n_obs }\n\n    // Arrows\n    beta0 -> CRP\n    beta0j -> CRP\n    sigma -> CRP\n\n    mu00 -> beta0\n    sigma00 -> beta0\n\n    mu0j -> beta0j\n    sigma0j -> beta0j\n    lambda0 -> sigma0j\n    \n    lambda -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="r-stan-brm-example" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="r-stan-brm-example"><span class="header-section-number">9.3.4</span> R-Stan (brm) Example</h3>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Here’s a table summarising the completely pooled, no pooling, and partial pooling models, with the prior distributions and hyper parameters:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 26%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Completely Pooled</strong></th>
+<th><strong>No Pooling</strong></th>
+<th><strong>Partial Pooling</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\text{CRP}_{ij} = \beta_0 + \epsilon_{ij}\)</span></td>
+<td><span class="math inline">\(\text{CRP}_{ij} = \beta_{0j} + \epsilon_{ij}\)</span></td>
+<td><span class="math inline">\(\text{CRP}_{ij} = \beta_0 + \beta_{0j} + \epsilon_{ij}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\epsilon_{ij} \sim N(0,\sigma^2)\)</span></td>
+<td><span class="math inline">\(\epsilon_{ij} \sim N(0, \sigma^2)\)</span></td>
+<td><span class="math inline">\(\epsilon_{ij} \sim N(0,\sigma^2)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sigma \sim \text{Half-Cauchy}(0, \tau = 1)\)</span></td>
+<td><span class="math inline">\(\beta_{0j} \sim N(0, \sigma_0^2 = 10^2)\)</span></td>
+<td><span class="math inline">\(\beta_0 \sim N(0, \sigma_{00}^2 = 10^2)\)</span></td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td><span class="math inline">\(\sigma \sim \text{Half-Cauchy}(0, \tau = 1)\)</span></td>
+<td><span class="math inline">\(\beta_{0j} \sim N(0, \sigma_0^2)\)</span></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td><span class="math inline">\(\sigma_0 \sim \text{Half-Cauchy}(0, \tau_0 = 1)\)</span></td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+<td><span class="math inline">\(\sigma \sim \text{Half-Cauchy}(0, \tau = 1)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Following this we get the posterior summaries as follows:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crp_data_complete.csv"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> crp_data<span class="sc">$</span>ID,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP =</span> crp_data<span class="sc">$</span>crp,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP_log =</span> <span class="fu">log</span>(crp_data<span class="sc">$</span>crp),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Day =</span> crp_data<span class="sc">$</span>day,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Antibiotic =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>antib_1h),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> crp_data<span class="sc">$</span>age,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEX),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sepsis =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEPSIS),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Discharg =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>discharge_r)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>crp_data_subset <span class="ot">&lt;-</span> <span class="fu">subset</span>(crp_data, ID <span class="sc">&lt;</span> <span class="dv">1500</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>complete_pooling_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> CRP_log <span class="sc">~</span> <span class="dv">1</span>,  <span class="co"># Single intercept, no ID-specific effects</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> crp_data_subset,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),   <span class="co"># Prior on the global intercept</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)         <span class="co"># Prior on residual SD</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>, <span class="at">chains =</span> <span class="dv">3</span>, <span class="at">iter =</span> <span class="dv">2000</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Complete Pooling Model Summary:</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="fu">capture.output</span>(<span class="fu">summary</span>(complete_pooling_model)), <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>),</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>Complete Pooling Model Summary:
+  Family: gaussian 
+  Links: mu = identity; sigma = identity 
+Formula: CRP_log ~ 1 
+   Data: crp_data_subset (Number of observations: 90) 
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
+
+Regression Coefficients:
+          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept     2.34      0.10     2.15     2.54 1.00     2157     1761
+
+Further Distributional Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sigma     0.93      0.07     0.80     1.09 1.00     2407     1655
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1). </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>no_pooling_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> CRP_log <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> <span class="fu">factor</span>(ID),  <span class="co"># separate intercept for each ID</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> crp_data_subset,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"b"</span>),   <span class="co"># N(mean, sd) </span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)  <span class="co"># Half-Cauchy prior for sigma</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>, <span class="at">chains =</span> <span class="dv">3</span>, <span class="at">iter =</span> <span class="dv">2000</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"No Pooling Model Summary:</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="fu">capture.output</span>(<span class="fu">summary</span>(no_pooling_model)), <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>No Pooling Model Summary:
+  Family: gaussian 
+  Links: mu = identity; sigma = identity 
+Formula: CRP_log ~ 0 + factor(ID) 
+   Data: crp_data_subset (Number of observations: 90) 
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
+
+Regression Coefficients:
+            Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+factorID122     1.18      0.28     0.64     1.72 1.00     5406     2400
+factorID133     2.47      0.27     1.94     2.99 1.00     6089     2209
+factorID246     2.73      0.26     2.22     3.25 1.00     5301     2225
+factorID506     2.02      0.27     1.48     2.54 1.00     4433     1826
+factorID603     2.75      0.26     2.25     3.25 1.00     6390     2512
+factorID663     1.14      0.27     0.59     1.67 1.00     5540     2265
+factorID756     1.78      0.28     1.23     2.31 1.00     6777     2251
+factorID826     2.50      0.27     1.99     3.03 1.00     5023     2396
+factorID861     3.23      0.26     2.70     3.74 1.00     6108     2447
+factorID878     3.37      0.26     2.86     3.87 1.00     6435     2174
+factorID880     3.44      0.27     2.93     3.97 1.00     5504     2230
+factorID926     2.18      0.26     1.67     2.69 1.00     5613     2180
+factorID951     1.66      0.27     1.13     2.19 1.00     4550     2296
+factorID995     2.01      0.27     1.47     2.54 1.00     4000     2077
+factorID998     2.64      0.27     2.10     3.15 1.00     5374     2180
+
+Further Distributional Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sigma     0.65      0.05     0.55     0.76 1.00     3623     2541
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1). </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>partial_pooling_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> CRP_log <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> ID),  <span class="co"># random intercept for each ID</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> crp_data_subset,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),   <span class="co"># N(mean, sd)</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>),  <span class="co"># Half-Cauchy prior for sigma</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>)  <span class="co"># prior for the variation across IDs</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>, <span class="at">chains =</span> <span class="dv">3</span>, <span class="at">iter =</span> <span class="dv">2000</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Partial Pooling Model Summary:</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="fu">capture.output</span>(<span class="fu">summary</span>(partial_pooling_model)), <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>),</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Partial Pooling Model Summary:
+  Family: gaussian 
+  Links: mu = identity; sigma = identity 
+Formula: CRP_log ~ 1 + (1 | ID) 
+   Data: crp_data_subset (Number of observations: 90) 
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
+
+Multilevel Hyperparameters:
+~ID (Number of levels: 15) 
+              Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)     0.72      0.17     0.46     1.11 1.00      750      967
+
+Regression Coefficients:
+          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept     2.35      0.20     1.93     2.75 1.00      770     1071
+
+Further Distributional Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sigma     0.65      0.05     0.55     0.77 1.00     3038     2203
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1). </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We can see that in the no pooling model, the posterior estimates are provided for each individual ID. In this model, the IDs are treated as completely separate, with each having its own intercept estimated independently from all others. As a result, we obtain distinct estimates for 15 IDs (since we have only considered the first 15 IDs from the CRP dataset for illustration).</p>
+<p>Whereas, the partial pooling model assumes that individual intercepts are drawn from a common distribution. This hierarchical structure allows the model to “borrow strength” from the group, which leads to more stable and regularized estimates—particularly for IDs with limited data.</p>
+<p>We also observe that the posterior mean estimate for the complete pooling model is approximately the same as the group-level mean in the partial pooling model. This is because, in partial pooling, individual estimates are shrunk toward the group mean, which itself closely aligns with the complete pooling estimate that assumes no variation between IDs.</p>
+<p>However, we can see that the credible interval in the complete pooling model is narrower compared to that of the partial pooling model. This occurs because the complete pooling model assumes no between-ID variability, attributing all uncertainty to residual error. Here, the partial pooling model accounts for both residual error and variation across individuals, which increases overall uncertainty in individual-level estimates.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>complete_pooling_draws <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(complete_pooling_model) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(b_Intercept) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">estimate =</span> b_Intercept)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>unique_ids <span class="ot">&lt;-</span> <span class="fu">unique</span>(crp_data_subset<span class="sc">$</span>ID)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>summary_df_complete <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameter =</span> <span class="fu">as.character</span>(unique_ids),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">median =</span> <span class="fu">median</span>(complete_pooling_draws<span class="sc">$</span>estimate),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower =</span> <span class="fu">quantile</span>(complete_pooling_draws<span class="sc">$</span>estimate, <span class="fl">0.025</span>),</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> <span class="fu">quantile</span>(complete_pooling_draws<span class="sc">$</span>estimate, <span class="fl">0.975</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>no_pooling_draws <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(no_pooling_model) <span class="sc">%&gt;%</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"b_factorID"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"parameter"</span>,</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"estimate"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">"No pooling"</span>)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>summary_df_no_pooling <span class="ot">&lt;-</span> no_pooling_draws <span class="sc">%&gt;%</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(parameter) <span class="sc">%&gt;%</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">median</span>(estimate),</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fu">quantile</span>(estimate, <span class="fl">0.025</span>),</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fu">quantile</span>(estimate, <span class="fl">0.975</span>),</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>partial_draws <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(partial_pooling_model) <span class="sc">%&gt;%</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"r_ID"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"parameter"</span>,</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"estimate"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">parameter =</span> <span class="fu">str_remove</span>(parameter, <span class="st">"r_ID</span><span class="sc">\\</span><span class="st">[|,Intercept</span><span class="sc">\\</span><span class="st">]"</span>),</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>         <span class="at">model =</span> <span class="st">"Partial pooling"</span>)</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>summary_df_partial <span class="ot">&lt;-</span> partial_draws <span class="sc">%&gt;%</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(parameter) <span class="sc">%&gt;%</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">median</span>(estimate),</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fu">quantile</span>(estimate, <span class="fl">0.025</span>),</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fu">quantile</span>(estimate, <span class="fl">0.975</span>),</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove "b_factorID" prefix for no pooling model</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>summary_df_no_pooling <span class="ot">&lt;-</span> summary_df_no_pooling <span class="sc">%&gt;%</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">parameter =</span> <span class="fu">str_remove</span>(parameter, <span class="st">"b_factorID"</span>))</span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove any prefix from partial pooling model if needed</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>summary_df_partial <span class="ot">&lt;-</span> summary_df_partial <span class="sc">%&gt;%</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">parameter =</span> <span class="fu">str_remove</span>(parameter, <span class="st">"r_ID</span><span class="sc">\\</span><span class="st">[|,Intercept</span><span class="sc">\\</span><span class="st">]"</span>))</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(summary_df_no_pooling, <span class="fu">aes</span>(<span class="at">x =</span> parameter, <span class="at">y =</span> median)) <span class="sc">+</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.5</span>), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper),</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"steelblue"</span>,</span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"ID: No Pooling"</span>,</span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Posterior Estimate (No Pooling)"</span>,</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"ID"</span>) <span class="sc">+</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(summary_df_partial, <span class="fu">aes</span>(<span class="at">x =</span> parameter, <span class="at">y =</span> median)) <span class="sc">+</span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkorange"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.5</span>), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper),</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"darkorange"</span>,</span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"ID: Partial Pooling"</span>,</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Posterior Estimate (Partial Pooling)"</span>,</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"ID"</span>) <span class="sc">+</span></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(summary_df_complete, <span class="fu">aes</span>(<span class="at">x =</span> parameter, <span class="at">y =</span> median)) <span class="sc">+</span></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.5</span>), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper),</span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"darkgreen"</span>,</span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"ID: Complete Pooling"</span>,</span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Posterior Estimate (Complete Pooling)"</span>,</span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"ID"</span>) <span class="sc">+</span></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p3, p1, p2, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_1_files/figure-html/pooling_example2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>From the plot, we can see the complete pooling model assumes that all groups (IDs) are identical, and therefore estimates a single shared intercept for everyone. The no pooling model takes the opposite approach, treating each group as entirely independent. Whereas, as we have discussed earlier, the partial pooling model offers a middle ground, where it allows for individual differences in intercepts while also sharing information across groups through a hierarchical structure.</p>
+<p><strong>MCMC Diagnostics</strong></p>
+<p>We can perform MCMC diagnostics in a similar way to how we did for Gaussian and non-Gaussian models in our previous lectures. In particular, in the partial pooling model, we might want to focus on the variability of the <span class="math inline">\(\beta_{0j}\)</span> parameter, i.e., <span class="math inline">\(\sigma_0^2\)</span>, which is the group or cluster variability. Additionally, we should also consider the effective sample size values and examine the posterior predictive plots. We will explain more on the MCMC diagnostics in our next lecture.</p>
+<p><strong>Intraclass Correlation Coefficient (ICC)</strong></p>
+<p>For a Gaussian model, such as continuous outcome variable C-reactive protine (CRP), we can compute the Intraclass Correlation Coefficient (ICC). The ICC quantifies the proportion of the total variance that is attributable to grouping (e.g., clusters, schools, individuals). In the context of a random intercept model, it’s:</p>
+<p><span class="math display">\[
+\text{ICC}_{\text{MCMC}} = \frac{\sigma_{0,\text{MCMC}}^2}{\sigma_{0,\text{MCMC}}^2+\sigma_{\text{MCMC}}^2}
+\]</span></p>
+<p>where, the subscript <span class="math inline">\(\text{MCMC}\)</span> refers to the posterior MCMC samples that we obtained from the model for <span class="math inline">\(\sigma_0^2\)</span> and <span class="math inline">\(\sigma^2\)</span> variance parameters.</p>
+<p>Hence, for the simple partial pooling model that we explained in today’s lecture, we get the posterior mean ICC and 95% credible interval of the ICC as:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>vc <span class="ot">&lt;-</span> <span class="fu">VarCorr</span>(partial_pooling_model)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>group_var <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(vc<span class="sc">$</span>ID<span class="sc">$</span>sd[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)])<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>resid_var <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(vc<span class="sc">$</span>residual__<span class="sc">$</span>sd[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)])<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>icc <span class="ot">&lt;-</span> group_var <span class="sc">/</span> (group_var <span class="sc">+</span> resid_var)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(icc) <span class="ot">&lt;-</span> <span class="fu">names</span>(vc<span class="sc">$</span>ID<span class="sc">$</span>sd[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)])</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ICC:</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="fu">capture.output</span>(icc), <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>ICC:
+  Estimate      Q2.5     Q97.5 
+0.5485463 0.4134393 0.6759969  </code></pre>
 </div>
 </div>
 </section>
-<section id="exercises" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="exercises"><span class="header-section-number">9.7</span> Exercises</h2>
-<p>sdfads</p>
 </section>
-<section id="live-tutorial-and-discussion" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">9.8</span> Live tutorial and discussion</h2>
-<p>asdfa</p>
+<section id="partial-pooling-for-c-reactive-protein-data" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="partial-pooling-for-c-reactive-protein-data"><span class="header-section-number">9.4</span> Partial Pooling for C-Reactive Protein Data</h2>
+<section id="model-development" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="model-development"><span class="header-section-number">9.4.1</span> Model Development</h3>
+<p>Now, we will explore the partial pooling model with random intercept and the contribution of fixed effects from a set of covariates <span class="math inline">\(\mathbf{x}_{ij}\)</span>, such as the day since admission, patient age, sex, sepsis category, whether antibiotics were administered early, and ICU discharge status. The equation at this level is:</p>
+<p><span class="math display">\[
+\text{CRP}_{ij} = \beta_0 + \beta_{0j} + \mathbf{x}_{ij}^\top \boldsymbol{\beta} + \epsilon_{ij}
+\]</span></p>
+<p>where <span class="math inline">\(\epsilon_{ij}\)</span> represents normally distributed residual error with standard deviation <span class="math inline">\(\sigma\)</span>.</p>
+<p>As we have discussed earlier, at the second level (between-patient), the random intercept <span class="math inline">\(\beta_{0j}\)</span> for each patient is modelled as coming from a common normal distribution with mean 0 and variance <span class="math inline">\(\sigma_0^2\)</span>.</p>
+<!--
+
+This structure captures the variability in baseline CRP levels across patients. The assumption of partial pooling means that individual patient intercepts are "shrunk" toward the overall average, particularly for patients with fewer observations. This is a key strength of the hierarchical Bayesian approach, as it stabilises estimates in the presence of limited or noisy data.
+
+To complete the Bayesian specification, we place priors on all parameters. The global intercept $\beta_0$ and fixed effect coefficients $\boldsymbol{\beta}=(\beta_1,\cdots,\beta_p)'$ are typically given weakly informative normal priors (e.g., in this case we can use $N(0, 10^2)$). The standard deviation of the random intercepts $\sigma_0$, as well as the residual standard deviation $\sigma$, are given half-Cauchy priors (e.g., $\text{Half-Cauchy}(0, 1)$), reflecting our belief that these quantities are positive and not unreasonably large.
+
+This Bayesian hierarchical model with a random intercept allows us to model individual patient baselines while incorporating fixed effects for clinically relevant variables. By using partial pooling, the model produces more robust and generalizable inferences, especially for patients with sparse data.
+
+-->
+<p>Hence, we write the hierarchical structure of the model as follows:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{CRP}_{ij} &amp;\sim N(\beta_0 + \beta_{0j} + \mathbf{x}_{ij} \boldsymbol{\beta}, \sigma^2) \\
+\beta_{0j} &amp;\sim N(0, \sigma_0^2) \\
+\beta_0 &amp;\sim N(0, 10^2),\quad \boldsymbol{\beta} \sim N(0, 10^2) \\
+\sigma, \sigma_0 &amp;\sim \text{Half-Cauchy}(0, 1)
+\end{aligned}
+\]</span></p>
 </section>
-<section id="summary" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="summary"><span class="header-section-number">9.9</span> Summary</h2>
-<p>asdf</p>
+<section id="r-code" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="r-code"><span class="header-section-number">9.4.2</span> R Code</h3>
+<p>Now, we model log(CRP) as the outcome, with, random intercepts for each patient (ID), and fixed effects for Day, Age, Sex, Sepsis, Antibiotic, and Discharg (see below the <code>R</code> code related to this model).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crp_data_complete.csv"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> crp_data<span class="sc">$</span>ID,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP =</span> crp_data<span class="sc">$</span>crp,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP_log =</span> <span class="fu">log</span>(crp_data<span class="sc">$</span>crp),</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Day =</span> crp_data<span class="sc">$</span>day,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Antibiotic =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>antib_1h),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> crp_data<span class="sc">$</span>age,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEX),</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sepsis =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEPSIS),</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">Discharg =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>discharge_r)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),         <span class="co"># prior for global intercept</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"b"</span>),                 <span class="co"># prior for all fixed effects</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),   <span class="co"># prior for random intercept SD</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)               <span class="co"># prior for residual SD</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>crp_model_random_intercept <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> CRP_log <span class="sc">~</span> Day <span class="sc">+</span> Age <span class="sc">+</span> Sex <span class="sc">+</span> Sepsis <span class="sc">+</span> Antibiotic <span class="sc">+</span> Discharg <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> ID),</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> crp_data,</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>)</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(crp_model_random_intercept, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>b ~ normal(0, 10)
+Intercept ~ normal(0, 10)
+&lt;lower=0&gt; sd ~ cauchy(0, 1)
+&lt;lower=0&gt; sigma ~ cauchy(0, 1)</code></pre>
+</div>
+</div>
+<p>Note that in <code>brm</code> code we used the argument <code>control = list(adapt_delta = 0.95)</code>, which is to adjust the behaviour of the HMC’s No-U-Turn Sampler (NUTS). Here, to adjust the target acceptance probability for proposed steps in the NUTS algorithm by using <code>adapt_delta</code> (with range 0 to 1). The default value for this is 0.8, which is mostly useful and reasonable for Bayesian models that we developed in our previous modules (i.e., Bayesian linear and logistic regressions). However, in hierarchical models, such as with random effects, correlated predictors, and possibly imbalanced or sparse data per group, smaller value of <code>adapt_delta</code> might lead to challenges on posterior accuracy. Hence, it is recommended to increase <code>adapt_delta</code> (e.g., to 0.95 or 0.99) if, we see warnings about divergent transitions, or we are fitting a hierarchical or nonlinear model. This improves accuracy, however at the cost of speed, which is often a worthwhile trade-off.</p>
+<p>Now we get the following posterior summaries from the model:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(crp_model_random_intercept)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> Family: gaussian 
+  Links: mu = identity; sigma = identity 
+Formula: CRP_log ~ Day + Age + Sex + Sepsis + Antibiotic + Discharg + (1 | ID) 
+   Data: crp_data (Number of observations: 432) 
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
+
+Multilevel Hyperparameters:
+~ID (Number of levels: 72) 
+              Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)     0.55      0.06     0.45     0.68 1.00      718     1109
+
+Regression Coefficients:
+                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept              2.97      0.41     2.15     3.77 1.00      652     1169
+Day                   -0.11      0.02    -0.14    -0.08 1.00     3267     2103
+Age                   -0.01      0.00    -0.02     0.00 1.00      669      906
+SexMale               -0.50      0.16    -0.83    -0.19 1.00      526      944
+SepsisSepticShock      0.86      0.32     0.21     1.50 1.01      575      735
+SepsisSevereSepsis     0.27      0.33    -0.37     0.92 1.01      555      766
+AntibioticYes         -0.22      0.14    -0.49     0.08 1.01      570     1074
+DischargDead           0.44      0.19     0.04     0.82 1.00      563      927
+
+Further Distributional Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sigma     0.55      0.02     0.51     0.59 1.00     2216     1893
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>posterior_samples <span class="ot">&lt;-</span> <span class="fu">as.array</span>(crp_model_random_intercept)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(posterior_samples, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_Intercept"</span>, <span class="st">"b_Day"</span>, <span class="st">"b_Age"</span>, <span class="st">"b_SexMale"</span>, <span class="st">"b_SepsisSepticShock"</span>,<span class="st">"b_SepsisSevereSepsis"</span>,<span class="st">"b_AntibioticYes"</span>,<span class="st">"b_DischargDead"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_1_files/figure-html/crp_random_intercept_summary-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(posterior_samples, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"sd_ID__Intercept"</span>, <span class="st">"sigma"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_1_files/figure-html/crp_random_intercept_summary-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(crp_model_random_intercept)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pp_check</span>(crp_model_random_intercept)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_1_files/figure-html/crp_random_intercept_summary-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can plot the random intercepts with 95% credible intervals as follows:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>random_intercepts <span class="ot">&lt;-</span> <span class="fu">ranef</span>(crp_model_random_intercept)<span class="sc">$</span>ID[, , <span class="st">"Intercept"</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"ID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Estimate =</span> Estimate, <span class="at">Q2.5 =</span> Q2<span class="fl">.5</span>, <span class="at">Q97.5 =</span> Q97<span class="fl">.5</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>random_intercepts<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">factor</span>(random_intercepts<span class="sc">$</span>ID, <span class="at">levels =</span> random_intercepts<span class="sc">$</span>ID[<span class="fu">order</span>(random_intercepts<span class="sc">$</span>Estimate)])</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(random_intercepts, <span class="fu">aes</span>(<span class="at">x =</span> ID, <span class="at">y =</span> Estimate)) <span class="sc">+</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Estimated Random Intercepts by Patient"</span>,</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Random Intercept Estimate (log-CRP scale)"</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_1_files/figure-html/crp_random_intercept_plots-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="preparation-for-week-2" class="level2" data-number="9.10">
-<h2 data-number="9.10" class="anchored" data-anchor-id="preparation-for-week-2"><span class="header-section-number">9.10</span> Preparation for Week 2</h2>
-<p>In week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.</p>
+</section>
+<section id="summary" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">9.5</span> Summary</h2>
+<p>In today’s lecture, we explored Bayesian modeling in the context of clustered data. We began by discussing how accounting for the clustering structure is essential to avoid misleading inferences. To handle clustered data effectively, we introduced the Bayesian hierarchical model, which provides a principled way to model variability both within and across clusters. We examined three approaches to pooling information across clusters: complete pooling, where all clusters are assumed to share the same parameters; no pooling, where each cluster is modelled entirely independently; and partial pooling, where clusters share information through a common prior distribution. Partial pooling, as implemented via hierarchical models, allows for shrinkage of estimates toward a global mean, balancing between overfitting and underfitting.</p>
+</section>
+<section id="live-tutorial-and-discussion" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">9.6</span> Live tutorial and discussion</h2>
+<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
+</section>
+<section id="tutorial-exercises" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">9.7</span> Tutorial Exercises</h2>
+<p>Solutions will be provided later after the tutorial.</p>
 
 
 </section>
@@ -830,13 +1756,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./brief_module_05.html" class="pagination-link" aria-label="**Module 5: Clusterphobia**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><strong>Module 5: Clusterphobia</strong></span>
+      <a href="./brief_module_05.html" class="pagination-link" aria-label="**Module 5: Clusterphobia?**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><strong>Module 5: Clusterphobia?</strong></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./M05_2.html" class="pagination-link" aria-label="**Clusterphobia? Part - II**">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./M05_2.html" class="pagination-link" aria-label="**Goldilocks Bayes Clustering**">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Goldilocks Bayes Clustering</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
