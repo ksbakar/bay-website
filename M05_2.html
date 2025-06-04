@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Clusterphobia? Part - II – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>10&nbsp; Goldilocks – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -115,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M05_2.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M05_2.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Goldilocks</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,13 +194,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>R and RStudio</strong></span></a>
+ <span class="menu-text"><strong>Software Installation Guide</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 1: Bayesian Dreams</strong></span></a>
+ <span class="menu-text"><strong>Module 1: Bayesian Dreams!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -179,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 2: Chaotics</strong></span></a>
+ <span class="menu-text"><strong>Module 2: Chaotics?</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 3: Bayeswatch - Gaussian</strong></span></a>
+ <span class="menu-text"><strong>Module 3: Bayeswatch - Gaussian!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 4: Non-Gaussian Bayeswatch</strong></span></a>
+ <span class="menu-text"><strong>Module 4: Bayeswatch - Non Gaussian!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -233,19 +272,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 5: Clusterphobia</strong></span></a>
+ <span class="menu-text"><strong>Module 5: Clusterphobia?</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Cluster Smart with Bayes</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Goldilocks</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -289,13 +328,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">10.1</span> Learnings</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">10.2</span> Introduction</a></li>
-  <li><a href="#conditional-and-marginal-models" id="toc-conditional-and-marginal-models" class="nav-link" data-scroll-target="#conditional-and-marginal-models"><span class="header-section-number">10.3</span> Conditional and Marginal Models</a></li>
-  <li><a href="#comparison-with-classical-approach" id="toc-comparison-with-classical-approach" class="nav-link" data-scroll-target="#comparison-with-classical-approach"><span class="header-section-number">10.4</span> Comparison with Classical Approach</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">10.5</span> Exercises</a></li>
+  <li><a href="#partial-pooling-with-random-slope-intercept" id="toc-partial-pooling-with-random-slope-intercept" class="nav-link" data-scroll-target="#partial-pooling-with-random-slope-intercept"><span class="header-section-number">10.2</span> Partial Pooling with Random Slope &amp; Intercept</a>
+  <ul class="collapse">
+  <li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification"><span class="header-section-number">10.2.1</span> Model Specification</a></li>
+  <li><a href="#prior-distributions" id="toc-prior-distributions" class="nav-link" data-scroll-target="#prior-distributions"><span class="header-section-number">10.2.2</span> Prior Distributions</a></li>
+  <li><a href="#r-stan-brm-example" id="toc-r-stan-brm-example" class="nav-link" data-scroll-target="#r-stan-brm-example"><span class="header-section-number">10.2.3</span> R-Stan (brm) Example</a></li>
+  </ul></li>
+  <li><a href="#partial-pooling-with-only-random-slope" id="toc-partial-pooling-with-only-random-slope" class="nav-link" data-scroll-target="#partial-pooling-with-only-random-slope"><span class="header-section-number">10.3</span> Partial Pooling with Only Random Slope</a>
+  <ul class="collapse">
+  <li><a href="#model-specification-1" id="toc-model-specification-1" class="nav-link" data-scroll-target="#model-specification-1"><span class="header-section-number">10.3.1</span> Model Specification</a></li>
+  <li><a href="#r-stan-brm-example-1" id="toc-r-stan-brm-example-1" class="nav-link" data-scroll-target="#r-stan-brm-example-1"><span class="header-section-number">10.3.2</span> R-Stan (brm) Example</a></li>
+  </ul></li>
+  <li><a href="#partial-pooling-with-binary-outcome" id="toc-partial-pooling-with-binary-outcome" class="nav-link" data-scroll-target="#partial-pooling-with-binary-outcome"><span class="header-section-number">10.4</span> Partial Pooling with Binary Outcome</a>
+  <ul class="collapse">
+  <li><a href="#toe-nail-data" id="toc-toe-nail-data" class="nav-link" data-scroll-target="#toe-nail-data"><span class="header-section-number">10.4.1</span> Toe Nail Data</a></li>
+  <li><a href="#model-development" id="toc-model-development" class="nav-link" data-scroll-target="#model-development"><span class="header-section-number">10.4.2</span> Model Development</a></li>
+  <li><a href="#r-stan-brm-example-2" id="toc-r-stan-brm-example-2" class="nav-link" data-scroll-target="#r-stan-brm-example-2"><span class="header-section-number">10.4.3</span> R-Stan (brm) Example</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">10.5</span> Summary</a></li>
   <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">10.6</span> Live tutorial and discussion</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">10.7</span> Summary</a></li>
-  <li><a href="#preparation-for-week-2" id="toc-preparation-for-week-2" class="nav-link" data-scroll-target="#preparation-for-week-2"><span class="header-section-number">10.8</span> Preparation for Week 2</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises"><span class="header-section-number">10.7</span> Tutorial Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -304,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Goldilocks</strong></span></h1>
 </div>
 
 
@@ -322,60 +374,1119 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>NOT READY YET</p>
-<iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <section id="learnings" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="learnings"><span class="header-section-number">10.1</span> Learnings</h2>
 <ul>
-<li><p><strong>Outcomes</strong></p></li>
-<li><p><strong>Objectives</strong></p></li>
+<li><strong>Outcomes</strong></li>
+</ul>
+<p>– LO2: Demonstrate how to specify and fit simple Bayesian models with appropriate attention to the role of the prior distribution and the data model.</p>
+<p>– LO4: Demonstrate proficiency in using statistical software packages (R) to specify and fit models, assess model fit, detect and remediate non-convergence, and compare models.</p>
+<p>– LO5: Engage in specifying, checking and interpreting Bayesian statistical analyses in practical problems using effective communication with health and medical investigators.</p>
+<ul>
+<li><strong>Objectives</strong></li>
 </ul>
 <p>By the end of this week you should be able to:</p>
-<p>– Construct multilevel models for binary outcome.</p>
+<p>– Gain insight into different versions of the partial pooling model.</p>
+<p>– Construct Bayesian hierarchical models for binary outcome.</p>
 <p>– Understand the difference between Bayesian and classical methods.</p>
-<p>– Interpret a real-life problem in Bayesian context.</p>
+<p>– Interpret real-life clustered data problems in Bayesian context.</p>
 </section>
-<section id="introduction" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">10.2</span> Introduction</h2>
-<p>asdafs</p>
-<p>Marginal effects:</p>
-<p>ref: https://joshuawiley.com/brmsmargins/articles/fixed-effects-marginaleffects.html</p>
-<p>ref: https://cran.r-project.org/web/packages/brmsmargins/vignettes/mixed-effects-marginaleffects.html</p>
+<section id="partial-pooling-with-random-slope-intercept" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="partial-pooling-with-random-slope-intercept"><span class="header-section-number">10.2</span> Partial Pooling with Random Slope &amp; Intercept</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Recall the C-reactive protein (CRP) data, where we are interested in modelling the daily progression of C-reactive protein levels in patients admitted to the intensive care unit during the first six days following admission. Since each patient has multiple CRP measurements over time, and we expect substantial variability between patients in their baseline inflammation levels, we use a Bayesian hierarchical (multilevel) model, such as in our last lecture we used the partial pooling model with a random intercept to account for individual differences while borrowing strength across the patient population.</p>
+<!--
+
+At the first level of the model (within-patient), we assume that each observed CRP measurement for patient $j$ on day $i$, denoted $\text{CRP}_{ij}$, is normally distributed around a patient-specific mean. This mean is composed of a global intercept $\beta_0$, a patient-specific deviation $\beta_{0j}$ (the random intercept), 
+
+-->
+<p>Now, what if we are interested to know different types of heterogeneous effects that may arise from the clustering. For example, we want to allow both varying baseline CRP levels and also its rate of change over time to differe among patients. To address this we can use a another version of partial pooling, where both intercepts and slopes vary by patient.</p>
+<p>In the random intercept and slope model, we allow both (i) the intercept (baseline CRP level on day 0 or 1) and (ii) the slope (how CRP changes across days in the ICU) to vary by patient.</p>
+<p>This accounts for the biological intuition that some patients start with higher or lower CRP levels and the trajectory of inflammation (rise or fall of CRP over time) can differ across individuals. This kind of model captures heterogeneous responses over time while still sharing information across patients through partial pooling.</p>
+<section id="model-specification" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="model-specification"><span class="header-section-number">10.2.1</span> Model Specification</h3>
+<p>In this hierarchical Bayesian model, we aim to describe how C-reactive protein (CRP) levels evolve over time in critically ill patients admitted to the ICU. The model accounts for both population-level effects and patient-specific deviations, allowing us to flexibly capture heterogeneity in inflammation patterns across individuals. The observed CRP level for patient <span class="math inline">\(j\)</span> on day <span class="math inline">\(i\)</span>, denoted <span class="math inline">\(\text{CRP}_{ij}\)</span>, is modelled as normally distributed around a mean <span class="math inline">\(\mu_{ij}\)</span>, with constant residual variance <span class="math inline">\(\sigma^2\)</span>. This forms the first level of the model, reflecting within-patient variation.</p>
+<p>The mean <span class="math inline">\(\mu_{ij}\)</span> represents the expected log-CRP level and is composed of several components. It includes a global intercept <span class="math inline">\(\beta_0\)</span>, a patient-specific random intercept <span class="math inline">\(\beta_{0j}\)</span>, a global slope for time <span class="math inline">\(\beta_1\)</span> (reflecting the average effect of ICU day), and a patient-specific random slope <span class="math inline">\(\beta_{1j}\)</span>, which captures how the rate of CRP change over time varies across patients. The model also includes a set of fixed effects <span class="math inline">\(\boldsymbol{\beta}\)</span> corresponding to patient-level covariates such as age, sex, sepsis category, antibiotic timing, and ICU discharge status. These covariates are encoded in the vector <span class="math inline">\(\mathbf{x}_{ij}\)</span>, and their contribution to the mean is given by the inner product <span class="math inline">\(\mathbf{x}_{ij}\boldsymbol{\beta}\)</span>.</p>
+<p>At the second level of the model, the random intercept <span class="math inline">\(\beta_{0j}\)</span> and random slope <span class="math inline">\(\beta_{1j}\)</span> for each patient are modeled jointly as a bivariate normal distribution centered at zero. This distribution is parameterised by a variance-covariance matrix that includes the variance of the random intercepts <span class="math inline">\(\sigma_0^2\)</span>, the variance of the random slopes <span class="math inline">\(\sigma_1^2\)</span>, and the correlation <span class="math inline">\(\rho\)</span> between them. This structure allows for partial pooling: each patient’s intercept and slope are informed not only by their own data but also by the overall distribution of intercepts and slopes across all patients. The correlation term <span class="math inline">\(\rho\)</span> enables us to capture whether patients with higher baseline CRP levels tend to experience faster or slower changes in inflammation over time.</p>
+<p>We write the hierarchical structure of the random slope and intercept model as follows:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{CRP}_{ij} &amp;\sim N(\beta_0 + \beta_{0j} + (\beta_1 + \beta_{1j}) \cdot \text{Day}_{ij} + \mathbf{x}_{ij} \boldsymbol{\beta}, \sigma^2) \\
+\begin{bmatrix}
+\beta_{0j} \\
+\beta_{1j}
+\end{bmatrix}
+&amp;\sim \text{MVN}\left(
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix},
+\Sigma = \begin{bmatrix}
+\sigma_0^2 &amp; \rho \sigma_0 \sigma_1 \\
+\rho \sigma_0 \sigma_1 &amp; \sigma_1^2
+\end{bmatrix}
+\right)
+\end{aligned}
+\]</span></p>
+<p>where,</p>
+<ul>
+<li><span class="math inline">\(\beta_0\)</span>: global intercept.</li>
+<li><span class="math inline">\(\beta_1\)</span>: global slope for time (Day).</li>
+<li><span class="math inline">\(\beta_{0j}\)</span>, <span class="math inline">\(\beta_{1j}\)</span>: patient-specific random deviations (random effects).</li>
+<li><span class="math inline">\(\boldsymbol{\beta}\)</span>: fixed effects for other covariates (e.g.&nbsp;Age, Sex, Sepsis, Antibiotic and Discharg).</li>
+<li><span class="math inline">\(\sigma\)</span>: residual standard deviation.</li>
+<li>The random effects for intercept and slope are correlated via <span class="math inline">\(\rho\)</span>.</li>
+</ul>
+<p>Here, each patient has their own intercept and slope, but those are not estimated in isolation. Instead, patient-specific estimates are regularised (shrunken) toward the population average. This balances overfitting (too much flexibility) and underfitting (forcing everyone to follow the same trend).</p>
+<p>We can see, a random intercept allows each patient to have a unique baseline CRP on ICU Day 1. Whereas, a random slope allows each patient to have their own CRP trajectory across the six ICU days, e.g., fast responders vs.&nbsp;slow responders vs.&nbsp;worsening patients. Furthermore, the fixed effects (age, sex, antibiotics, etc.) apply consistently across patients and help explain variability beyond time and patient ID.</p>
+<p>One of the key benefits of using random slope over random intercept alone is to captures individual disease dynamics, i.e., in our example the different rates of inflammation. It also provides more accurate modeling of time trends without assuming identical change for all and provides better predictions, especially over time within individuals.</p>
 </section>
-<section id="conditional-and-marginal-models" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="conditional-and-marginal-models"><span class="header-section-number">10.3</span> Conditional and Marginal Models</h2>
-<p>asdf</p>
+<section id="prior-distributions" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="prior-distributions"><span class="header-section-number">10.2.2</span> Prior Distributions</h3>
+<p>Now let us discuss the model and related prior distributions and explain the priors step-by-step: <span class="math inline">\(\beta_0, \beta_1 \sim \mathcal{N}(0, 10^2)\)</span> are mainly the weakly informative priors. The prior <span class="math inline">\(\boldsymbol{\beta} \sim \mathcal{N}(0, 10^2 I)\)</span> is placed on the coefficients of other fixed effects: age, sex, sepsis type, antibiotic timing, and discharge status. Again, it’s weakly informative and assumes we don’t have strong prior knowledge, but that extremely large effect sizes are unlikely.</p>
+<p>Now for the random effects (patient-level intercept and slope), i.e.,</p>
+<p><span class="math display">\[
+\begin{bmatrix} \beta_{0j} \\ \beta_{1j} \end{bmatrix} \sim \text{MVN} \left( \begin{bmatrix} 0 \\ 0 \end{bmatrix}, \Sigma \right)
+\]</span></p>
+<p>This is a bivariate normal distribution, modelling the patient-specific deviations in intercept (<span class="math inline">\(\beta_{0j}\)</span>) and slope (<span class="math inline">\(\beta_{1j}\)</span>) from the global values. It allows each patient to have their own baseline CRP and rate of change over time. The covariance matrix <span class="math inline">\(\Sigma\)</span> is:</p>
+<p><span class="math display">\[
+  \Sigma =
+  \begin{bmatrix}
+  \sigma_0^2 &amp; \rho \sigma_0 \sigma_1 \\
+  \rho \sigma_0 \sigma_1 &amp; \sigma_1^2
+  \end{bmatrix}
+\]</span></p>
+<p>Note that options for <span class="math inline">\(\Sigma\)</span> includes the Inverse-Wishart distribution, which is the conjugate prior for the covariance matrix of a multivariate/bivariate normal model, and priors set not directly on the covariance matrix but on a decomposition of the matrix, in particular, the Cholesky decomposition can be used in this context. Hence, this structure allows us to estimate variability in baseline CRP (<span class="math inline">\(\sigma_0\)</span>), CRP trajectory over time (<span class="math inline">\(\sigma_1\)</span>) and to learn the correlation (<span class="math inline">\(\rho\)</span>) between baseline and change. Now, we use half-Cauchy distribution for <span class="math inline">\(\sigma_0\)</span>, <span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma\)</span>. As we have already discussed in our previous modules that half-Cauchy is commonly used as a weakly informative prior on scale parameters.</p>
+<p>Now, for the correlation (<span class="math inline">\(\rho\)</span>), LKJ (Lewandowski–Kurowicka–Joe) prior is a standard prior in Bayesian hierarchical models. And a shape parameter of 2, gently favors correlations near 0 (i.e., assumes weak prior belief in strong correlation), but still allows the model to estimate a strong correlation if present in the data.</p>
+<p>Hence, we can write these as:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\beta_0, \beta_1, &amp;\sim N(0, 10^2); \\
+\boldsymbol{\beta} &amp;\sim N(0, 10^2 I) \\
+\sigma, \sigma_0, \sigma_1 &amp;\sim \text{Half-Cauchy}(0, 1); \\
+\rho &amp;\sim \text{LKJ}(2)
+\end{aligned}
+\]</span></p>
+<p>Based on the equations we can draw the DAG as:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ef3ffb9124d4f7d2e870" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ef3ffb9124d4f7d2e870">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    n_obs     [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, style = dashed, fontsize = 10]\n    CRP       [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day       [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x         [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0    [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1    [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta      [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Effects\n    beta_0j   [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    beta_1j   [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Random Effects Hyperparameters\n    Sigma     [label = \"Σ\\n(MVN Cov Matrix)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_0   [label = \"σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_1   [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    rho       [label = \"ρ ~ LKJ(2)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma     [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Observed -> Outcome\n    Day -> CRP\n    x   -> CRP\n\n    # Edges: Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Edges: Random Effects -> Outcome\n    beta_0j -> CRP\n    beta_1j -> CRP\n\n    # Edge: Residual SD -> Outcome\n    sigma -> CRP\n\n    # Priors -> Fixed Effects\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n\n    # Priors -> Residual SD\n    prior_sigma -> sigma\n\n    # Hyperparams -> Cov Matrix\n    sigma_0 -> Sigma\n    sigma_1 -> Sigma\n    rho     -> Sigma\n\n    # Cov Matrix -> Random Effects\n    Sigma -> beta_0j\n    Sigma -> beta_1j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
-<section id="comparison-with-classical-approach" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="comparison-with-classical-approach"><span class="header-section-number">10.4</span> Comparison with Classical Approach</h2>
-<p>asdf</p>
-<p>Vedio</p>
-<p>…</p>
+<section id="r-stan-brm-example" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="r-stan-brm-example"><span class="header-section-number">10.2.3</span> R-Stan (brm) Example</h3>
+<p>Now we will explore R code to apply these types of model for our data on C-reactive protein (CRP). We will develop the R code based on the DAG we developed. This model estimates CRP (in log scale) using a mix of demographic and clinical predictors while accounting for individual-level variation over time. It includes both fixed effects (shared across the population) and random effects (individual-specific intercepts and slopes for time, i.e., <code>Day</code>). The outcome is modeled assuming a Gaussian distribution, with an identity link function. A total of 432 observations from 72 individuals were analysed. To represent the partial pooling model with random slop and intercept model, we use <code>(1 + Day | ID)</code> inside the <code>formula</code> argument of <code>brm</code> function.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crp_data_complete.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> crp_data<span class="sc">$</span>ID,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP =</span> crp_data<span class="sc">$</span>crp,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP_log =</span> <span class="fu">log</span>(crp_data<span class="sc">$</span>crp),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Day =</span> crp_data<span class="sc">$</span>day,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Antibiotic =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>antib_1h),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> crp_data<span class="sc">$</span>age,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEX),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sepsis =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEPSIS),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Discharg =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>discharge_r)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">2</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>crp_model_random_slope <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> CRP_log <span class="sc">~</span> Day <span class="sc">+</span> Age <span class="sc">+</span> Sex <span class="sc">+</span> Sepsis <span class="sc">+</span> Antibiotic <span class="sc">+</span> Discharg <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> Day <span class="sc">|</span> ID),</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">#or formula = CRP_log ~ Day + Age + Sex + Sepsis + Antibiotic + Discharg + (Day | ID),  </span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> crp_data,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(crp_model_random_slope, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>b ~ normal(0, 10)
+Intercept ~ normal(0, 10)
+L ~ lkj_corr_cholesky(2)
+&lt;lower=0&gt; sd ~ cauchy(0, 1)
+&lt;lower=0&gt; sigma ~ cauchy(0, 1)</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(crp_model_random_slope)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> Family: gaussian 
+  Links: mu = identity; sigma = identity 
+Formula: CRP_log ~ Day + Age + Sex + Sepsis + Antibiotic + Discharg + (1 + Day | ID) 
+   Data: crp_data (Number of observations: 432) 
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
+
+Multilevel Hyperparameters:
+~ID (Number of levels: 72) 
+                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)          0.61      0.07     0.47     0.78 1.00     1143     1309
+sd(Day)                0.20      0.02     0.16     0.24 1.01      472      971
+cor(Intercept,Day)    -0.59      0.10    -0.76    -0.36 1.01      390      821
+
+Regression Coefficients:
+                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept              3.15      0.38     2.39     3.88 1.00     1246     1783
+Day                   -0.11      0.03    -0.16    -0.06 1.00      925     1419
+Age                   -0.01      0.00    -0.01    -0.00 1.00     1200     1731
+SexMale               -0.56      0.14    -0.82    -0.29 1.00      943     1277
+SepsisSepticShock      0.70      0.29     0.12     1.30 1.00     1132     1619
+SepsisSevereSepsis     0.19      0.30    -0.40     0.79 1.00     1102     1627
+AntibioticYes         -0.17      0.13    -0.42     0.09 1.00      843     1386
+DischargDead           0.29      0.18    -0.05     0.62 1.00     1020     1519
+
+Further Distributional Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sigma     0.41      0.02     0.38     0.44 1.00     2330     2224
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+</div>
+</div>
+<p>In terms of population-level trends, CRP (in log scale) decreases significantly over time, with an average slope of -0.11 (95% credible interval: -0.16 to -0.06), indicating that inflammation, as measured by CRP, tends to reduce as patients progress through their hospital stay. Age has a small but consistent negative association with CRP, suggesting that older patients tend to have slightly lower CRP levels. Male patients also show significantly lower CRP compared to females, with an estimated difference of -0.56 (95% CI: -0.82 to -0.29).</p>
+<p>Among the clinical variables, patients with septic shock have notably higher log-CRP values (estimate: 0.70, 95% CI: 0.12 to 1.30), indicating a stronger inflammatory response in this group. However, those with severe sepsis do not show a clearly distinct CRP level compared to the reference group, as the credible interval includes zero. Antibiotic use is associated with a modest reduction in CRP, but the effect is not statistically conclusive. Similarly, patients who eventually died had somewhat higher CRP values, but the result (estimate: 0.29, 95% CI: -0.05 to 0.62) is uncertain.</p>
+<p>The model includes random intercepts and slopes for each individual, capturing how baseline CRP and its trajectory over time differ from person to person. The estimated standard deviation of the intercepts is 0.61, and for the slopes (Day), it is 0.20, indicating meaningful between-subject variability. Importantly, the correlation between the intercept and the slope is -0.59, suggesting that individuals with higher baseline CRP levels tend to experience faster declines in CRP over time.</p>
+<p>Lastly, the residual standard deviation (<span class="math inline">\(\sigma\)</span>) is estimated at 0.41, reflecting the variability in CRP that remains unexplained after accounting for both fixed and random effects. Model diagnostics (e.g., Rhat ≈ 1 and high effective sample sizes) indicate good convergence and reliable posterior estimation.</p>
+<p>Now we can plot both random intercepts and slops with their 95% credible interaval as follows:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ranef_data <span class="ot">&lt;-</span> <span class="fu">ranef</span>(crp_model_random_slope)<span class="sc">$</span>ID[, , <span class="st">"Intercept"</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"ID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Estimate =</span> Estimate, <span class="at">Q2.5 =</span> Q2<span class="fl">.5</span>, <span class="at">Q97.5 =</span> Q97<span class="fl">.5</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>ranef_data<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">factor</span>(ranef_data<span class="sc">$</span>ID, <span class="at">levels =</span> ranef_data<span class="sc">$</span>ID[<span class="fu">order</span>(ranef_data<span class="sc">$</span>Estimate)])</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ranef_data, <span class="fu">aes</span>(<span class="at">x =</span> ID, <span class="at">y =</span> Estimate)) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Random Intercepts by Patient (with Random Slopes)"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Intercept Estimate (log-CRP scale)"</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_2_files/figure-html/crp_random_slope_intercept_plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>slope_data <span class="ot">&lt;-</span> <span class="fu">ranef</span>(crp_model_random_slope)<span class="sc">$</span>ID[, , <span class="st">"Day"</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"ID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Estimate =</span> Estimate, <span class="at">Q2.5 =</span> Q2<span class="fl">.5</span>, <span class="at">Q97.5 =</span> Q97<span class="fl">.5</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>slope_data<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">factor</span>(slope_data<span class="sc">$</span>ID, <span class="at">levels =</span> slope_data<span class="sc">$</span>ID[<span class="fu">order</span>(slope_data<span class="sc">$</span>Estimate)])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(slope_data, <span class="fu">aes</span>(<span class="at">x =</span> ID, <span class="at">y =</span> Estimate)) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Random Slopes for Day by Patient"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Slope Estimate (log-CRP/day)"</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_2_files/figure-html/crp_random_slope_intercept_plot-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
-<section id="exercises" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">10.5</span> Exercises</h2>
-<p>sdfads</p>
+</section>
+<section id="partial-pooling-with-only-random-slope" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="partial-pooling-with-only-random-slope"><span class="header-section-number">10.3</span> Partial Pooling with Only Random Slope</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Using partial pooling with only a random slope (and a fixed intercept) is a more targeted modeling choice. It means we’re assuming all groups start at the same baseline level, but respond differently to a predictor or covariate. This version of the partial pooling model removes the random intercept <span class="math inline">\(\beta_{0j}\)</span>, leaving only a random slope <span class="math inline">\(\beta_{1j}\)</span> for Day. Since there’s only one random effect, no correlation structure (like <span class="math inline">\(\rho\)</span>) is required. The model assumes each patient has their own trajectory over time (slope), but shares the same intercept.</p>
+<section id="model-specification-1" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="model-specification-1"><span class="header-section-number">10.3.1</span> Model Specification</h3>
+<p>Based on the concept described above, we write the hierarchical model with prior specifications as follows:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{CRP}_{ij} &amp;\sim N(\beta_0 + (\beta_1 + \beta_{1j}) \cdot \text{Day}_{ij} + \mathbf{x}_{ij} \boldsymbol{\beta}, \sigma^2) \\
+\beta_0, \beta_1 &amp;\sim N(0, 10^2) \\
+\boldsymbol{\beta} &amp;\sim N(0, 10^2 I) \\
+\beta_{1j} &amp;\sim N(0, \sigma_1^2) \\
+\sigma_1, \sigma &amp;\sim \text{Half-Cauchy}(0, 1)
+\end{aligned}
+\]</span></p>
+<p>Which can be drawn using the following DAG:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-63f3cb05943fc1715874" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-63f3cb05943fc1715874">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    CRP     [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day     [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x       [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0  [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta    [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Slope\n    beta_1j [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Prior for Random Slope SD\n    sigma_1 [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma   [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Connections: Data\n    Day -> CRP\n    x   -> CRP\n\n    # Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Random Slope -> Outcome\n    beta_1j -> CRP\n\n    # Priors -> Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n    sigma_1      -> beta_1j\n    prior_sigma  -> sigma\n    sigma        -> CRP\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>From this DAG we can say, the outcome variable <span class="math inline">\(\text{CRP}_{ij}\)</span> assumes a normal distribution. The mean structure includes a global intercept (<span class="math inline">\(\beta_0\)</span>) and global slope (<span class="math inline">\(\beta_1\)</span>), both of which have normal priors with large variance (<span class="math inline">\(N(0, 10^2)\)</span>), reflecting weakly informative prior. In addition to these fixed effects, the model includes covariates <span class="math inline">\(\mathbf{x}_{ij}\)</span>, which are associated with a coefficient vector <span class="math inline">\(\boldsymbol{\beta}\)</span>, also assumed to follow a multivariate normal prior with identity covariance scaled by <span class="math inline">\(10^2\)</span>.</p>
+<p>To account for subject-level (or group-level) variation in the effect of time (e.g., “Day”), the model introduces a random slope <span class="math inline">\(\beta_{1j}\)</span>, which allows the slope of “Day” to vary by group <span class="math inline">\(j\)</span>. This random slope is drawn from a normal distribution with standard deviation <span class="math inline">\(\sigma_1\)</span>, which itself follows a Half-Cauchy(0,1) prior to constrain it to positive values and reflect uncertainty about its scale.</p>
+<p>The model also includes a residual standard deviation parameter <span class="math inline">\(\sigma\)</span>, representing unexplained variability in the outcome. Like <span class="math inline">\(\sigma_1\)</span>, this parameter is given a Half-Cauchy(0,1) prior.</p>
+</section>
+<section id="r-stan-brm-example-1" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="r-stan-brm-example-1"><span class="header-section-number">10.3.2</span> R-Stan (brm) Example</h3>
+<p>We use following R code to run the partial pooling model with only random slope, where we consider writing <code>(0 + Day | ID)</code> formula argument using <code>brm</code> function.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crp_data_complete.csv"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>crp_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> crp_data<span class="sc">$</span>ID,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP =</span> crp_data<span class="sc">$</span>crp,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">CRP_log =</span> <span class="fu">log</span>(crp_data<span class="sc">$</span>crp),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Day =</span> crp_data<span class="sc">$</span>day,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Antibiotic =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>antib_1h),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> crp_data<span class="sc">$</span>age,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEX),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sepsis =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>SEPSIS),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Discharg =</span> <span class="fu">as.factor</span>(crp_data<span class="sc">$</span>discharge_r)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),           <span class="co"># for random slope</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)         <span class="co"># residual SD</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>crp_model_random_slope_only <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> CRP_log <span class="sc">~</span> Day <span class="sc">+</span> Age <span class="sc">+</span> Sex <span class="sc">+</span> Sepsis <span class="sc">+</span> Antibiotic <span class="sc">+</span> Discharg <span class="sc">+</span> (<span class="dv">0</span> <span class="sc">+</span> Day <span class="sc">|</span> ID),</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> crp_data,</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>)</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(crp_model_random_slope_only, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>b ~ normal(0, 10)
+Intercept ~ normal(0, 10)
+&lt;lower=0&gt; sd ~ cauchy(0, 1)
+&lt;lower=0&gt; sigma ~ cauchy(0, 1)</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(crp_model_random_slope_only)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> Family: gaussian 
+  Links: mu = identity; sigma = identity 
+Formula: CRP_log ~ Day + Age + Sex + Sepsis + Antibiotic + Discharg + (0 + Day | ID) 
+   Data: crp_data (Number of observations: 432) 
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
+
+Multilevel Hyperparameters:
+~ID (Number of levels: 72) 
+        Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Day)     0.16      0.02     0.13     0.19 1.00      755      966
+
+Regression Coefficients:
+                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept              3.26      0.26     2.74     3.76 1.00     1462     1828
+Day                   -0.11      0.02    -0.15    -0.06 1.00      829     1228
+Age                   -0.01      0.00    -0.01    -0.00 1.00     1708     2293
+SexMale               -0.61      0.10    -0.79    -0.42 1.00     1544     2281
+SepsisSepticShock      0.59      0.20     0.20     0.98 1.00     1093     2138
+SepsisSevereSepsis     0.13      0.21    -0.27     0.54 1.00     1177     1638
+AntibioticYes         -0.14      0.10    -0.33     0.06 1.00     1481     2037
+DischargDead           0.21      0.12    -0.04     0.45 1.00     1389     1786
+
+Further Distributional Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sigma     0.49      0.02     0.46     0.53 1.00     3861     2054
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>slope_data <span class="ot">&lt;-</span> <span class="fu">ranef</span>(crp_model_random_slope_only)<span class="sc">$</span>ID[, , <span class="st">"Day"</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"ID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Estimate =</span> Estimate, </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q2.5 =</span> Q2<span class="fl">.5</span>, </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q97.5 =</span> Q97<span class="fl">.5</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>slope_data<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">factor</span>(slope_data<span class="sc">$</span>ID, <span class="at">levels =</span> slope_data<span class="sc">$</span>ID[<span class="fu">order</span>(slope_data<span class="sc">$</span>Estimate)])</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(slope_data, <span class="fu">aes</span>(<span class="at">x =</span> ID, <span class="at">y =</span> Estimate)) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Random Slopes for Day by Patient"</span>,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Slope Estimate (log-CRP/day)"</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_2_files/figure-html/crp_random_slope_only-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In our model, we estimate two main variance parameters that capture different sources of variability in the CRP measurements. First, the standard deviation of the random slope for Day across individuals is estimated to be about 0.16, with a 95% credible interval ranging from 0.13 to 0.19. This tells us that the effect of time (Day) on CRP levels varies somewhat from person to person. While there is a general trend captured by the global slope, individual trajectories differ around this average, reflecting meaningful heterogeneity in how CRP changes over time for different subjects.</p>
+<p>The residual standard deviation, which represents variability in CRP that is not explained by either the fixed effects or the random slopes, is estimated to be approximately 0.49, with a 95% credible interval between 0.46 and 0.53. This residual variation captures other sources of noise or unexplained fluctuations in CRP measurements. Despite including several predictors and accounting for individual differences in the time effect, there remains substantial unexplained variation in CRP levels.</p>
+<p>Both variance estimates are supported by high effective sample sizes and Rhat values equal to 1, indicating that our sampling and model convergence are reliable. Overall, these parameters highlight the importance of accounting for individual-level differences in the effect of time, as well as recognizing the inherent variability in CRP measurements that cannot be fully explained by our predictors.</p>
+</section>
+</section>
+<section id="partial-pooling-with-binary-outcome" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="partial-pooling-with-binary-outcome"><span class="header-section-number">10.4</span> Partial Pooling with Binary Outcome</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>In this section, we will explain the partial pooling model, when the outcome variable is binary. The hierarchy related to binary outcome variable model is same as we have already discussed earlier in this module. But the main difference is the use of logistic type hierarchical models. Let us now explain more using an example related to a trial related to toe nail infection.</p>
+<section id="toe-nail-data" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="toe-nail-data"><span class="header-section-number">10.4.1</span> Toe Nail Data</h3>
+<p>The toenail dataset originates from a randomised, double-blinded clinical trial investigating treatments for fungal toenail infection. A total of 378 subjects/patients were randomly assigned to one of two oral antifungal therapies: 250 mg/day of terbinafine or 200 mg/day of itraconazole. Patients were assessed at seven scheduled visits: weeks 0, 4, 8, 12, 24, 36, and 48. The primary outcome of interest is onycholysis, a condition characterised by the separation of the nail plate from the nail bed. For descriptive purposes and alignment with the study’s objectives, the visit weeks were converted to months.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"toenail_data.csv"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>treatment <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Itraconozole"</span>, <span class="st">"Terbinafine"</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>outcome <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>outcome, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"None or Mild"</span>, <span class="st">"Moderate or Severe"</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Patient_ID =</span> toe_data<span class="sc">$</span>patient,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Onycholysis =</span> toe_data<span class="sc">$</span>outcome,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Treatment =</span> toe_data<span class="sc">$</span>treatment,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Visit =</span> toe_data<span class="sc">$</span>visit,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Month =</span> toe_data<span class="sc">$</span>month</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>toe_data <span class="sc">%&gt;%</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Treatment, Onycholysis) <span class="sc">%&gt;%</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Count =</span> <span class="fu">n</span>(),</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Avg_Month =</span> <span class="fu">mean</span>(Month, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Treatment) <span class="sc">%&gt;%</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Proportion =</span> Count <span class="sc">/</span> <span class="fu">sum</span>(Count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+# Groups:   Treatment [2]
+  Treatment    Onycholysis        Count Avg_Month Proportion
+  &lt;fct&gt;        &lt;fct&gt;              &lt;int&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1 Itraconozole None or Mild         723      5.30      0.772
+2 Itraconozole Moderate or Severe   214      2.74      0.228
+3 Terbinafine  None or Mild         777      5.28      0.800
+4 Terbinafine  Moderate or Severe   194      2.21      0.200</code></pre>
+</div>
+</div>
+<p>We can summarised the severity of onycholysis (nail separation) by treatment group across all visits. For both itraconozole and terbinafine, the majority of observations fell into the mnne or mild category. In the itraconozole group, about 77% of visits showed none or mild onycholysis, with an average visit time of 5.3 months. The remaining 23% were classified as moderate or severe, and these cases tended to occur earlier, averaging around 2.7 months. Similarly, in the terbinafine group, about 80% of visits were none or mild, with a mean timing of 5.3 months. The moderate or severe cases made up 20%, occurring earlier on average, at around 2.2 months. These summary statistics suggest that more severe symptoms tend to be reported earlier in treatment, while milder outcomes are more common later on. This trend appears consistent across both treatment groups, though terbinafine shows a slightly higher proportion of mild cases.</p>
+<p>Now, we will develop a model that can provide us more insights on the relationships.</p>
+</section>
+<section id="model-development" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="model-development"><span class="header-section-number">10.4.2</span> Model Development</h3>
+<p>We have repeated measurements for each patient over time, which are likely to be correlated within individuals. To appropriately account for this intra-subject correlation, we employ a partial pooling model, especifically, a hierarchical model with random (varying) intercepts across patients. Here, the outcome variable is onycholysis, indicating the severity of nail separation. The exposure variable is the treatment group (itraconozole or terbinafine). We also include Month (time since baseline) as a covariate to capture temporal changes in outcome. The model can be written mathematically as:</p>
+<p><span class="math display">\[
+\text{Onycholysis}_{ij} \sim \text{Bernoulli}(p_{ij})
+\]</span></p>
+<p><span class="math display">\[
+\text{logit}(p_{ij}) = \beta_0 + \beta_{0j} + \beta_1 \cdot \text{Treatment}_{ij} + \beta_2 \cdot \text{Month}_{ij}
+\]</span></p>
+<p><span class="math display">\[
+\beta_{0j} \sim N(0, \sigma_0^2); \quad \sigma_0 \sim \text{Half-Cauchy}(0,1)
+\]</span></p>
+<p>where, <span class="math inline">\(i\)</span> is the repeated measurements (visits), and <span class="math inline">\(j\)</span> indexes patients. Following our learning in previous lecture, the term <span class="math inline">\(\beta_0\)</span> is the global intercept, and <span class="math inline">\(\beta_{0j}\)</span> is the random (or varying) intercept for patient <span class="math inline">\(j\)</span>. The term <span class="math inline">\(\beta_1\)</span> is the treatment effect, and <span class="math inline">\(\sigma_0^2\)</span> captures the between-patient variability. You can see, this model assumes that each patient has their own baseline risk (via <span class="math inline">\(\beta_{0j}\)</span>), while sharing information across the entire population through partial pooling.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-3a47043064264a286f27" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-3a47043064264a286f27">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    node [fontname = Helvetica, fontsize = 10];\n\n    # Observed Variables\n    Treatment [label = \"Treatment[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Month     [label = \"Month[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Onycholysis [label = \"Onycholysis[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    # Model Parameters\n    beta_0  [label = \"β₀\\n(Fixed Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Treatment Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2  [label = \"β₂\\n(Month Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_0j [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    sigma_0 [label = \"σ₀²\\n(Patient Variance)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Priors\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior: β₂ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma_0 [label = \"Prior: σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Data to Outcome\n    Treatment -> Onycholysis\n    Month     -> Onycholysis\n\n    # Edges: Parameters to Outcome\n    beta_0  -> Onycholysis\n    beta_1  -> Onycholysis\n    beta_2  -> Onycholysis\n    beta_0j -> Onycholysis\n\n    # Priors to Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_sigma_0 -> sigma_0\n    sigma_0 -> beta_0j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="r-stan-brm-example-2" class="level3" data-number="10.4.3">
+<h3 data-number="10.4.3" class="anchored" data-anchor-id="r-stan-brm-example-2"><span class="header-section-number">10.4.3</span> R-Stan (brm) Example</h3>
+<p>Based on the model we developed for the toenail data and research aims, we will now impliment the hierarchical model using R code.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"toenail_data.csv"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>treatment <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Itraconozole"</span>, <span class="st">"Terbinafine"</span>))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>outcome <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>outcome, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"None or Mild"</span>, <span class="st">"Moderate or Severe"</span>))</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Patient_ID =</span> toe_data<span class="sc">$</span>patient,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Onycholysis =</span> toe_data<span class="sc">$</span>outcome,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Treatment =</span> toe_data<span class="sc">$</span>treatment,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Visit =</span> toe_data<span class="sc">$</span>visit,</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Month =</span> toe_data<span class="sc">$</span>month</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),  </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"b"</span>),          </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>)           </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>onycholysis_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Onycholysis <span class="sc">~</span> Treatment <span class="sc">+</span> Month <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Patient_ID),</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> toe_data,</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(onycholysis_model, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>b ~ normal(0, 10)
+Intercept ~ normal(0, 10)
+&lt;lower=0&gt; sd ~ cauchy(0, 1)</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(onycholysis_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> Family: bernoulli 
+  Links: mu = logit 
+Formula: Onycholysis ~ Treatment + Month + (1 | Patient_ID) 
+   Data: toe_data (Number of observations: 1908) 
+  Draws: 3 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 3000
+
+Multilevel Hyperparameters:
+~Patient_ID (Number of levels: 294) 
+              Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)     4.09      0.39     3.38     4.94 1.00      820     1428
+
+Regression Coefficients:
+                     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
+Intercept               -1.46      0.44    -2.34    -0.66 1.01      545
+TreatmentTerbinafine    -0.53      0.58    -1.67     0.60 1.01      531
+Month                   -0.46      0.04    -0.53    -0.38 1.00     2807
+                     Tail_ESS
+Intercept                 943
+TreatmentTerbinafine      935
+Month                    2606
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+</div>
+</div>
+<p>As we have discuss in our previous module, brms provides the posterior estimates in log-odds scale. The summary results above indicates the posterior estimates in log-odds. Hence, we can use the following R code to convert it into odds ratio (i.e., <span class="math inline">\(\exp(.)\)</span>).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>onycholysis_model <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_regression</span>(<span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="jujjriiqks" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jujjriiqks table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jujjriiqks thead, #jujjriiqks tbody, #jujjriiqks tfoot, #jujjriiqks tr, #jujjriiqks td, #jujjriiqks th {
+  border-style: none;
+}
+
+#jujjriiqks p {
+  margin: 0;
+  padding: 0;
+}
+
+#jujjriiqks .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jujjriiqks .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jujjriiqks .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jujjriiqks .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jujjriiqks .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jujjriiqks .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jujjriiqks .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jujjriiqks .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jujjriiqks .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jujjriiqks .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jujjriiqks .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jujjriiqks .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jujjriiqks .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jujjriiqks .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jujjriiqks .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jujjriiqks .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jujjriiqks .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jujjriiqks .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jujjriiqks .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jujjriiqks .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jujjriiqks .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jujjriiqks .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jujjriiqks .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jujjriiqks .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jujjriiqks .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jujjriiqks .gt_left {
+  text-align: left;
+}
+
+#jujjriiqks .gt_center {
+  text-align: center;
+}
+
+#jujjriiqks .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jujjriiqks .gt_font_normal {
+  font-weight: normal;
+}
+
+#jujjriiqks .gt_font_bold {
+  font-weight: bold;
+}
+
+#jujjriiqks .gt_font_italic {
+  font-style: italic;
+}
+
+#jujjriiqks .gt_super {
+  font-size: 65%;
+}
+
+#jujjriiqks .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jujjriiqks .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jujjriiqks .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jujjriiqks .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jujjriiqks .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jujjriiqks .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jujjriiqks .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jujjriiqks .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jujjriiqks div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>exp(Beta)</strong></th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Treatment</td>
+<td class="gt_row gt_center" headers="estimate"><br>
+</td>
+<td class="gt_row gt_center" headers="conf.low"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Itraconozole</td>
+<td class="gt_row gt_center" headers="estimate">—</td>
+<td class="gt_row gt_center" headers="conf.low">—</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Terbinafine</td>
+<td class="gt_row gt_center" headers="estimate">0.59</td>
+<td class="gt_row gt_center" headers="conf.low">0.19, 1.82</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Month</td>
+<td class="gt_row gt_center" headers="estimate">0.63</td>
+<td class="gt_row gt_center" headers="conf.low">0.59, 0.68</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="3" class="gt_sourcenote">Abbreviation: CI = Credible Interval</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>intercept_data <span class="ot">&lt;-</span> <span class="fu">ranef</span>(onycholysis_model)<span class="sc">$</span>Patient_ID[, , <span class="st">"Intercept"</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"Patient_ID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Estimate =</span> Estimate,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q2.5 =</span> Q2<span class="fl">.5</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q97.5 =</span> Q97<span class="fl">.5</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>intercept_data<span class="sc">$</span>Patient_ID <span class="ot">&lt;-</span> <span class="fu">factor</span>(intercept_data<span class="sc">$</span>Patient_ID, <span class="at">levels =</span> intercept_data<span class="sc">$</span>Patient_ID[<span class="fu">order</span>(intercept_data<span class="sc">$</span>Estimate)])</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(intercept_data, <span class="fu">aes</span>(<span class="at">x =</span> Patient_ID, <span class="at">y =</span> Estimate)) <span class="sc">+</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Random Intercepts for Patients (Onycholysis Model)"</span>,</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Intercept Estimate (Log-Odds Scale)"</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>intercept_data <span class="ot">&lt;-</span> intercept_data <span class="sc">%&gt;%</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Significant =</span> <span class="fu">ifelse</span>(Q2<span class="fl">.5</span> <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span> Q97<span class="fl">.5</span> <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>))</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(intercept_data, <span class="fu">aes</span>(<span class="at">x =</span> Patient_ID, <span class="at">y =</span> Estimate, <span class="at">color =</span> Significant)) <span class="sc">+</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Patient Random Intercepts (Significance Highlighted)"</span>,</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Intercept Estimate (Log-Odds)"</span>,</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Significant?"</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="co">#library(gridExtra)</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="co">#grid.arrange(p1,p2,col=2)</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> </span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">"Random Effects: CRP and Onycholysis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="M05_2_files/figure-html/toenail_model_oddsratio-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!--
+
+## Hierarchical modelling applied to meta-analysis
+
+ref: gelman sec 5.6, page 124
+
+-->
+</section>
+</section>
+<section id="summary" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">10.5</span> Summary</h2>
+<p>In this lecture, we explored various hierarchical modeling approaches using partial pooling. We began with models that include both random (or varying) intercepts and slopes, followed by models with only random intercepts, illustrating how these structures account for individual-level variation. We then extended the framework to binary outcomes, demonstrating how to implement Bayesian logistic hierarchical (or mixed-effects) models. Throughout, we provided practical examples and R code to help apply these methods to real-world data. These models allow us to make more accurate and generalisable inferences by borrowing strength across groups while accounting for within-group differences.</p>
 </section>
 <section id="live-tutorial-and-discussion" class="level2" data-number="10.6">
 <h2 data-number="10.6" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">10.6</span> Live tutorial and discussion</h2>
-<p>asdfa</p>
+<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
 </section>
-<section id="summary" class="level2" data-number="10.7">
-<h2 data-number="10.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">10.7</span> Summary</h2>
-<p>asdf</p>
-</section>
-<section id="preparation-for-week-2" class="level2" data-number="10.8">
-<h2 data-number="10.8" class="anchored" data-anchor-id="preparation-for-week-2"><span class="header-section-number">10.8</span> Preparation for Week 2</h2>
-<p>In week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.</p>
+<section id="tutorial-exercises" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="tutorial-exercises"><span class="header-section-number">10.7</span> Tutorial Exercises</h2>
+<p>Solutions will be provided later after the tutorial.</p>
 
 
 </section>
@@ -800,8 +1911,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./M05_1.html" class="pagination-link" aria-label="**Clusterphobia? Part - I**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span>
+      <a href="./M05_1.html" class="pagination-link" aria-label="**Cluster Smart with Bayes**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Cluster Smart with Bayes</strong></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
