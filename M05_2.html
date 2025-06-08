@@ -112,6 +112,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
 
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -296,13 +300,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Size Matters!</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 11: <strong>Size Matters!</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder!</strong></span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 12: <strong>Wander into the Wonder!</strong></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -408,13 +412,13 @@ At the first level of the model (within-patient), we assume that each observed C
 <p>This accounts for the biological intuition that some patients start with higher or lower CRP levels and the trajectory of inflammation (rise or fall of CRP over time) can differ across individuals. This kind of model captures heterogeneous responses over time while still sharing information across patients through partial pooling.</p>
 <section id="model-specification" class="level3">
 <h3 class="anchored" data-anchor-id="model-specification">Model Specification</h3>
-<p>In this hierarchical Bayesian model, we aim to describe how C-reactive protein (CRP) levels evolve over time in critically ill patients admitted to the ICU. The model accounts for both population-level effects and patient-specific deviations, allowing us to flexibly capture heterogeneity in inflammation patterns across individuals. The observed CRP level for patient <span class="math inline">\(j\)</span> on day <span class="math inline">\(i\)</span>, denoted <span class="math inline">\(\text{CRP}_{ij}\)</span>, is modelled as normally distributed around a mean <span class="math inline">\(\mu_{ij}\)</span>, with constant residual variance <span class="math inline">\(\sigma^2\)</span>. This forms the first level of the model, reflecting within-patient variation.</p>
+<p>In this hierarchical Bayesian model, we aim to describe how C-reactive protein (CRP) levels (in log scale) evolve over time in critically ill patients admitted to the ICU. The model accounts for both population-level effects and patient-specific deviations, allowing us to flexibly capture heterogeneity in inflammation patterns across individuals. The observed CRP level (in log scale) for patient <span class="math inline">\(j\)</span> on day <span class="math inline">\(i\)</span>, denoted <span class="math inline">\(\text{log(CRP)}_{ij}\)</span>, is modelled as normally distributed around a mean <span class="math inline">\(\mu_{ij}\)</span>, with constant residual variance <span class="math inline">\(\sigma^2\)</span>. This forms the first level of the model, reflecting within-patient variation.</p>
 <p>The mean <span class="math inline">\(\mu_{ij}\)</span> represents the expected log-CRP level and is composed of several components. It includes a global intercept <span class="math inline">\(\beta_0\)</span>, a patient-specific random intercept <span class="math inline">\(\beta_{0j}\)</span>, a global slope for time <span class="math inline">\(\beta_1\)</span> (reflecting the average effect of ICU day), and a patient-specific random slope <span class="math inline">\(\beta_{1j}\)</span>, which captures how the rate of CRP change over time varies across patients. The model also includes a set of fixed effects <span class="math inline">\(\boldsymbol{\beta}\)</span> corresponding to patient-level covariates such as age, sex, sepsis category, antibiotic timing, and ICU discharge status. These covariates are encoded in the vector <span class="math inline">\(\mathbf{x}_{ij}\)</span>, and their contribution to the mean is given by the inner product <span class="math inline">\(\mathbf{x}_{ij}\boldsymbol{\beta}\)</span>.</p>
 <p>At the second level of the model, the random intercept <span class="math inline">\(\beta_{0j}\)</span> and random slope <span class="math inline">\(\beta_{1j}\)</span> for each patient are modeled jointly as a bivariate normal distribution centered at zero. This distribution is parameterised by a variance-covariance matrix that includes the variance of the random intercepts <span class="math inline">\(\sigma_0^2\)</span>, the variance of the random slopes <span class="math inline">\(\sigma_1^2\)</span>, and the correlation <span class="math inline">\(\rho\)</span> between them. This structure allows for partial pooling: each patient’s intercept and slope are informed not only by their own data but also by the overall distribution of intercepts and slopes across all patients. The correlation term <span class="math inline">\(\rho\)</span> enables us to capture whether patients with higher baseline CRP levels tend to experience faster or slower changes in inflammation over time.</p>
 <p>We write the hierarchical structure of the random slope and intercept model as follows:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{CRP}_{ij} &amp;\sim N(\beta_0 + \beta_{0j} + (\beta_1 + \beta_{1j}) \cdot \text{Day}_{ij} + \mathbf{x}_{ij} \boldsymbol{\beta}, \sigma^2) \\
+\text{log(CRP)}_{ij} &amp;\sim N(\beta_0 + \beta_{0j} + (\beta_1 + \beta_{1j}) \cdot \text{Day}_{ij} + \mathbf{x}_{ij} \boldsymbol{\beta}, \sigma^2) \\
 \begin{bmatrix}
 \beta_{0j} \\
 \beta_{1j}
@@ -432,14 +436,7 @@ At the first level of the model (within-patient), we assume that each observed C
 \end{aligned}
 \]</span></p>
 <p>where,</p>
-<ul>
-<li><span class="math inline">\(\beta_0\)</span>: global intercept.</li>
-<li><span class="math inline">\(\beta_1\)</span>: global slope for time (Day).</li>
-<li><span class="math inline">\(\beta_{0j}\)</span>, <span class="math inline">\(\beta_{1j}\)</span>: patient-specific random deviations (random effects).</li>
-<li><span class="math inline">\(\boldsymbol{\beta}\)</span>: fixed effects for other covariates (e.g.&nbsp;Age, Sex, Sepsis, Antibiotic and Discharg).</li>
-<li><span class="math inline">\(\sigma\)</span>: residual standard deviation.</li>
-<li>The random effects for intercept and slope are correlated via <span class="math inline">\(\rho\)</span>.</li>
-</ul>
+<p>– <span class="math inline">\(\beta_0\)</span>: global intercept. – <span class="math inline">\(\beta_1\)</span>: global slope for time (Day). – <span class="math inline">\(\beta_{0j}\)</span>, <span class="math inline">\(\beta_{1j}\)</span>: patient-specific random deviations (random effects). – <span class="math inline">\(\boldsymbol{\beta}\)</span>: fixed effects for other covariates (e.g.&nbsp;Age, Sex, Sepsis, Antibiotic and Discharg). – <span class="math inline">\(\sigma\)</span>: residual standard deviation. – The random effects for intercept and slope are correlated via <span class="math inline">\(\rho\)</span>.</p>
 <p>Here, each patient has their own intercept and slope, but those are not estimated in isolation. Instead, patient-specific estimates are regularised (shrunken) toward the population average. This balances overfitting (too much flexibility) and underfitting (forcing everyone to follow the same trend).</p>
 <p>We can see, a random intercept allows each patient to have a unique baseline CRP on ICU Day 1. Whereas, a random slope allows each patient to have their own CRP trajectory across the six ICU days, e.g., fast responders vs.&nbsp;slow responders vs.&nbsp;worsening patients. Furthermore, the fixed effects (age, sex, antibiotics, etc.) apply consistently across patients and help explain variability beyond time and patient ID.</p>
 <p>One of the key benefits of using random slope over random intercept alone is to captures individual disease dynamics, i.e., in our example the different rates of inflammation. It also provides more accurate modeling of time trends without assuming identical change for all and provides better predictions, especially over time within individuals.</p>
@@ -473,8 +470,8 @@ At the first level of the model (within-patient), we assume that each observed C
 <p>Based on the equations we can draw the DAG as:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-c74eb0b098a7ec159f7d" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-c74eb0b098a7ec159f7d">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    n_obs     [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, style = dashed, fontsize = 10]\n    CRP       [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day       [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x         [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0    [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1    [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta      [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Effects\n    beta_0j   [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    beta_1j   [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Random Effects Hyperparameters\n    Sigma     [label = \"Σ\\n(MVN Cov Matrix)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_0   [label = \"σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_1   [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    rho       [label = \"ρ ~ LKJ(2)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma     [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Observed -> Outcome\n    Day -> CRP\n    x   -> CRP\n\n    # Edges: Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Edges: Random Effects -> Outcome\n    beta_0j -> CRP\n    beta_1j -> CRP\n\n    # Edge: Residual SD -> Outcome\n    sigma -> CRP\n\n    # Priors -> Fixed Effects\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n\n    # Priors -> Residual SD\n    prior_sigma -> sigma\n\n    # Hyperparams -> Cov Matrix\n    sigma_0 -> Sigma\n    sigma_1 -> Sigma\n    rho     -> Sigma\n\n    # Cov Matrix -> Random Effects\n    Sigma -> beta_0j\n    Sigma -> beta_1j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-48f9c54b12663649d20e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-48f9c54b12663649d20e">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    n_obs     [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, style = dashed, fontsize = 10]\n    CRP       [label = \"log(CRP[i,j])\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day       [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x         [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0    [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1    [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta      [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Effects\n    beta_0j   [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    beta_1j   [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Random Effects Hyperparameters\n    Sigma     [label = \"Σ\\n(MVN Cov Matrix)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_0   [label = \"σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_1   [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    rho       [label = \"ρ ~ LKJ(2)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma     [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Observed -> Outcome\n    Day -> CRP\n    x   -> CRP\n\n    # Edges: Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Edges: Random Effects -> Outcome\n    beta_0j -> CRP\n    beta_1j -> CRP\n\n    # Edge: Residual SD -> Outcome\n    sigma -> CRP\n\n    # Priors -> Fixed Effects\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n\n    # Priors -> Residual SD\n    prior_sigma -> sigma\n\n    # Hyperparams -> Cov Matrix\n    sigma_0 -> Sigma\n    sigma_1 -> Sigma\n    rho     -> Sigma\n\n    # Cov Matrix -> Random Effects\n    Sigma -> beta_0j\n    Sigma -> beta_1j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -636,7 +633,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <p>Based on the concept described above, we write the hierarchical model with prior specifications as follows:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{CRP}_{ij} &amp;\sim N(\beta_0 + (\beta_1 + \beta_{1j}) \cdot \text{Day}_{ij} + \mathbf{x}_{ij} \boldsymbol{\beta}, \sigma^2) \\
+\text{log(CRP)}_{ij} &amp;\sim N(\beta_0 + (\beta_1 + \beta_{1j}) \cdot \text{Day}_{ij} + \mathbf{x}_{ij} \boldsymbol{\beta}, \sigma^2) \\
 \beta_0, \beta_1 &amp;\sim N(0, 10^2) \\
 \boldsymbol{\beta} &amp;\sim N(0, 10^2 I) \\
 \beta_{1j} &amp;\sim N(0, \sigma_1^2) \\
@@ -646,11 +643,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <p>Which can be drawn using the following DAG:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-6090eba9142cda4a84ac" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6090eba9142cda4a84ac">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    CRP     [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day     [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x       [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0  [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta    [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Slope\n    beta_1j [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Prior for Random Slope SD\n    sigma_1 [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma   [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Connections: Data\n    Day -> CRP\n    x   -> CRP\n\n    # Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Random Slope -> Outcome\n    beta_1j -> CRP\n\n    # Priors -> Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n    sigma_1      -> beta_1j\n    prior_sigma  -> sigma\n    sigma        -> CRP\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-3e822b3f34b8e352f0ea" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-3e822b3f34b8e352f0ea">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    CRP     [label = \"log(CRP[i,j])\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day     [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x       [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0  [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta    [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Slope\n    beta_1j [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Prior for Random Slope SD\n    sigma_1 [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma   [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Connections: Data\n    Day -> CRP\n    x   -> CRP\n\n    # Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Random Slope -> Outcome\n    beta_1j -> CRP\n\n    # Priors -> Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n    sigma_1      -> beta_1j\n    prior_sigma  -> sigma\n    sigma        -> CRP\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>From this DAG we can say, the outcome variable <span class="math inline">\(\text{CRP}_{ij}\)</span> assumes a normal distribution. The mean structure includes a global intercept (<span class="math inline">\(\beta_0\)</span>) and global slope (<span class="math inline">\(\beta_1\)</span>), both of which have normal priors with large variance (<span class="math inline">\(N(0, 10^2)\)</span>), reflecting weakly informative prior. In addition to these fixed effects, the model includes covariates <span class="math inline">\(\mathbf{x}_{ij}\)</span>, which are associated with a coefficient vector <span class="math inline">\(\boldsymbol{\beta}\)</span>, also assumed to follow a multivariate normal prior with identity covariance scaled by <span class="math inline">\(10^2\)</span>.</p>
+<p>From this DAG we can say, the outcome variable <span class="math inline">\(\text{log(CRP)}_{ij}\)</span> assumes a normal distribution. The mean structure includes a global intercept (<span class="math inline">\(\beta_0\)</span>) and global slope (<span class="math inline">\(\beta_1\)</span>), both of which have normal priors with large variance (<span class="math inline">\(N(0, 10^2)\)</span>), reflecting weakly informative prior. In addition to these fixed effects, the model includes covariates <span class="math inline">\(\mathbf{x}_{ij}\)</span>, which are associated with a coefficient vector <span class="math inline">\(\boldsymbol{\beta}\)</span>, also assumed to follow a multivariate normal prior with identity covariance scaled by <span class="math inline">\(10^2\)</span>.</p>
 <p>To account for subject-level (or group-level) variation in the effect of time (e.g., “Day”), the model introduces a random slope <span class="math inline">\(\beta_{1j}\)</span>, which allows the slope of “Day” to vary by group <span class="math inline">\(j\)</span>. This random slope is drawn from a normal distribution with standard deviation <span class="math inline">\(\sigma_1\)</span>, which itself follows a Half-Cauchy(0,1) prior to constrain it to positive values and reflect uncertainty about its scale.</p>
 <p>The model also includes a residual standard deviation parameter <span class="math inline">\(\sigma\)</span>, representing unexplained variability in the outcome. Like <span class="math inline">\(\sigma_1\)</span>, this parameter is given a Half-Cauchy(0,1) prior.</p>
 </section>
@@ -785,7 +782,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"toenail_data.csv"</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>treatment <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Itraconozole"</span>, <span class="st">"Terbinafine"</span>))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>treatment <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Terbinafine"</span>, <span class="st">"Itraconazole"</span>))</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>outcome <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>outcome, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"None or Mild"</span>, <span class="st">"Moderate or Severe"</span>))</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Patient_ID =</span> toe_data<span class="sc">$</span>patient,</span>
@@ -794,7 +791,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Visit =</span> toe_data<span class="sc">$</span>visit,</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Month =</span> toe_data<span class="sc">$</span>month</span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>toe_data <span class="sc">%&gt;%</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> toe_data <span class="sc">%&gt;%</span></span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Treatment, Onycholysis) <span class="sc">%&gt;%</span></span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Count =</span> <span class="fu">n</span>(),</span>
@@ -802,20 +799,59 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Treatment) <span class="sc">%&gt;%</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Proportion =</span> Count <span class="sc">/</span> <span class="fu">sum</span>(Count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Proportion =</span> Count <span class="sc">/</span> <span class="fu">sum</span>(Count))</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(summary_table, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">caption =</span> <span class="st">"Summary of Toe Data by Treatment and Onycholysis"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 5
-# Groups:   Treatment [2]
-  Treatment    Onycholysis        Count Avg_Month Proportion
-  &lt;fct&gt;        &lt;fct&gt;              &lt;int&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1 Itraconozole None or Mild         723      5.30      0.772
-2 Itraconozole Moderate or Severe   214      2.74      0.228
-3 Terbinafine  None or Mild         777      5.28      0.800
-4 Terbinafine  Moderate or Severe   194      2.21      0.200</code></pre>
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Summary of Toe Data by Treatment and Onycholysis</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Treatment</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Onycholysis</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Avg_Month</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Proportion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Terbinafine</td>
+<td style="text-align: left;">None or Mild</td>
+<td style="text-align: right;">777</td>
+<td style="text-align: right;">5.28</td>
+<td style="text-align: right;">0.80</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Terbinafine</td>
+<td style="text-align: left;">Moderate or Severe</td>
+<td style="text-align: right;">194</td>
+<td style="text-align: right;">2.21</td>
+<td style="text-align: right;">0.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Itraconazole</td>
+<td style="text-align: left;">None or Mild</td>
+<td style="text-align: right;">723</td>
+<td style="text-align: right;">5.30</td>
+<td style="text-align: right;">0.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Itraconazole</td>
+<td style="text-align: left;">Moderate or Severe</td>
+<td style="text-align: right;">214</td>
+<td style="text-align: right;">2.74</td>
+<td style="text-align: right;">0.23</td>
+</tr>
+</tbody>
+</table>
+
+
 </div>
 </div>
-<p>We can summarised the severity of onycholysis (nail separation) by treatment group across all visits. For both itraconozole and terbinafine, the majority of observations fell into the mnne or mild category. In the itraconozole group, about 77% of visits showed none or mild onycholysis, with an average visit time of 5.3 months. The remaining 23% were classified as moderate or severe, and these cases tended to occur earlier, averaging around 2.7 months. Similarly, in the terbinafine group, about 80% of visits were none or mild, with a mean timing of 5.3 months. The moderate or severe cases made up 20%, occurring earlier on average, at around 2.2 months. These summary statistics suggest that more severe symptoms tend to be reported earlier in treatment, while milder outcomes are more common later on. This trend appears consistent across both treatment groups, though terbinafine shows a slightly higher proportion of mild cases.</p>
+<p>We can summarised the severity of onycholysis (nail separation) by treatment group across all visits. For both itraconozole and terbinafine, the majority of observations fell into the mnne or mild category. In the itraconazole group, about 77% of visits showed none or mild onycholysis, with an average visit time of 5.3 months. The remaining 23% were classified as moderate or severe, and these cases tended to occur earlier, averaging around 2.7 months. Similarly, in the terbinafine group, about 80% of visits were none or mild, with a mean timing of 5.3 months. The moderate or severe cases made up 20%, occurring earlier on average, at around 2.2 months. These summary statistics suggest that more severe symptoms tend to be reported earlier in treatment, while milder outcomes are more common later on. This trend appears consistent across both treatment groups, though terbinafine shows a slightly higher proportion of mild cases.</p>
 <p>Now, we will develop a model that can provide us more insights on the relationships.</p>
 </section>
 <section id="model-development" class="level3">
@@ -833,8 +869,8 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <p>where, <span class="math inline">\(i\)</span> is the repeated measurements (visits), and <span class="math inline">\(j\)</span> indexes patients. Following our learning in previous lecture, the term <span class="math inline">\(\beta_0\)</span> is the global intercept, and <span class="math inline">\(\beta_{0j}\)</span> is the random (or varying) intercept for patient <span class="math inline">\(j\)</span>. The term <span class="math inline">\(\beta_1\)</span> is the treatment effect, and <span class="math inline">\(\sigma_0^2\)</span> captures the between-patient variability. You can see, this model assumes that each patient has their own baseline risk (via <span class="math inline">\(\beta_{0j}\)</span>), while sharing information across the entire population through partial pooling.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-e8dc054ea17e627adee6" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-e8dc054ea17e627adee6">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    node [fontname = Helvetica, fontsize = 10];\n\n    # Observed Variables\n    Treatment [label = \"Treatment[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Month     [label = \"Month[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Onycholysis [label = \"Onycholysis[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    # Model Parameters\n    beta_0  [label = \"β₀\\n(Fixed Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Treatment Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2  [label = \"β₂\\n(Month Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_0j [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    sigma_0 [label = \"σ₀²\\n(Patient Variance)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Priors\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior: β₂ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma_0 [label = \"Prior: σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Data to Outcome\n    Treatment -> Onycholysis\n    Month     -> Onycholysis\n\n    # Edges: Parameters to Outcome\n    beta_0  -> Onycholysis\n    beta_1  -> Onycholysis\n    beta_2  -> Onycholysis\n    beta_0j -> Onycholysis\n\n    # Priors to Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_sigma_0 -> sigma_0\n    sigma_0 -> beta_0j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-15fc66d3a67531d3615a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-15fc66d3a67531d3615a">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    node [fontname = Helvetica, fontsize = 10];\n\n    # Observed Variables\n    Treatment [label = \"Treatment[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Month     [label = \"Month[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Onycholysis [label = \"Onycholysis[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    # Model Parameters\n    beta_0  [label = \"β₀\\n(Fixed Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Treatment Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2  [label = \"β₂\\n(Month Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_0j [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    sigma_0 [label = \"σ₀²\\n(Patient Variance)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Priors\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior: β₂ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma_0 [label = \"Prior: σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Data to Outcome\n    Treatment -> Onycholysis\n    Month     -> Onycholysis\n\n    # Edges: Parameters to Outcome\n    beta_0  -> Onycholysis\n    beta_1  -> Onycholysis\n    beta_2  -> Onycholysis\n    beta_0j -> Onycholysis\n\n    # Priors to Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_sigma_0 -> sigma_0\n    sigma_0 -> beta_0j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -844,36 +880,36 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"toenail_data.csv"</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>treatment <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Itraconozole"</span>, <span class="st">"Terbinafine"</span>))</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>outcome <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>outcome, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"None or Mild"</span>, <span class="st">"Moderate or Severe"</span>))</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Patient_ID =</span> toe_data<span class="sc">$</span>patient,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Onycholysis =</span> toe_data<span class="sc">$</span>outcome,</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Treatment =</span> toe_data<span class="sc">$</span>treatment,</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Visit =</span> toe_data<span class="sc">$</span>visit,</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Month =</span> toe_data<span class="sc">$</span>month</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),  </span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"b"</span>),          </span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>)           </span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>onycholysis_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Onycholysis <span class="sc">~</span> Treatment <span class="sc">+</span> Month <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Patient_ID),</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> toe_data,</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>)</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(onycholysis_model, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"toenail_data.csv"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>treatment <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Itraconozole"</span>, <span class="st">"Terbinafine"</span>))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>toe_data<span class="sc">$</span>outcome <span class="ot">&lt;-</span> <span class="fu">factor</span>(toe_data<span class="sc">$</span>outcome, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"None or Mild"</span>, <span class="st">"Moderate or Severe"</span>))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>toe_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Patient_ID =</span> toe_data<span class="sc">$</span>patient,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Onycholysis =</span> toe_data<span class="sc">$</span>outcome,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Treatment =</span> toe_data<span class="sc">$</span>treatment,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Visit =</span> toe_data<span class="sc">$</span>visit,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Month =</span> toe_data<span class="sc">$</span>month</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),  </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"b"</span>),          </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>)           </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>onycholysis_model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> Onycholysis <span class="sc">~</span> Treatment <span class="sc">+</span> Month <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Patient_ID),</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> toe_data,</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">"logit"</span>),</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">3</span>,</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">3</span>,</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">prior_summary</span>(onycholysis_model, <span class="at">all =</span> <span class="cn">FALSE</span>), <span class="at">show_df =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>b ~ normal(0, 10)
@@ -882,7 +918,7 @@ Intercept ~ normal(0, 10)
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(onycholysis_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(onycholysis_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: bernoulli 
@@ -912,33 +948,33 @@ and Tail_ESS are effective sample size measures, and Rhat is the potential
 scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 </div>
-<p>As we have discuss in our previous module, brms provides the posterior estimates in log-odds scale. The summary results above indicates the posterior estimates in log-odds. Hence, we can use the following R code to convert it into odds ratio (i.e., <span class="math inline">\(\exp(.)\)</span>).</p>
+<p>As we have discuss in our previous module, <code>brm</code> output provides the posterior estimates in log-odds scale. The summary results above indicates the posterior estimates in log-odds. Hence, we can use the following R code to convert it into odds ratio (i.e., <span class="math inline">\(\exp(.)\)</span>). The interpretation of the posterior estimates is similar to what we explained for a Bayesian logistic regression using odds ratios.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>onycholysis_model <span class="sc">%&gt;%</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_regression</span>(<span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>onycholysis_model <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_regression</span>(<span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="mwtytqmvsa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mwtytqmvsa table {
+<div id="dssrovgakt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dssrovgakt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mwtytqmvsa thead, #mwtytqmvsa tbody, #mwtytqmvsa tfoot, #mwtytqmvsa tr, #mwtytqmvsa td, #mwtytqmvsa th {
+#dssrovgakt thead, #dssrovgakt tbody, #dssrovgakt tfoot, #dssrovgakt tr, #dssrovgakt td, #dssrovgakt th {
   border-style: none;
 }
 
-#mwtytqmvsa p {
+#dssrovgakt p {
   margin: 0;
   padding: 0;
 }
 
-#mwtytqmvsa .gt_table {
+#dssrovgakt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -964,12 +1000,12 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_caption {
+#dssrovgakt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mwtytqmvsa .gt_title {
+#dssrovgakt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -981,7 +1017,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-width: 0;
 }
 
-#mwtytqmvsa .gt_subtitle {
+#dssrovgakt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -993,7 +1029,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-width: 0;
 }
 
-#mwtytqmvsa .gt_heading {
+#dssrovgakt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1005,13 +1041,13 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_bottom_border {
+#dssrovgakt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_col_headings {
+#dssrovgakt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1026,7 +1062,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_col_heading {
+#dssrovgakt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1046,7 +1082,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#mwtytqmvsa .gt_column_spanner_outer {
+#dssrovgakt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1058,15 +1094,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 4px;
 }
 
-#mwtytqmvsa .gt_column_spanner_outer:first-child {
+#dssrovgakt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mwtytqmvsa .gt_column_spanner_outer:last-child {
+#dssrovgakt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mwtytqmvsa .gt_column_spanner {
+#dssrovgakt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1078,11 +1114,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   width: 100%;
 }
 
-#mwtytqmvsa .gt_spanner_row {
+#dssrovgakt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mwtytqmvsa .gt_group_heading {
+#dssrovgakt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1108,7 +1144,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   text-align: left;
 }
 
-#mwtytqmvsa .gt_empty_group_heading {
+#dssrovgakt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1123,15 +1159,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: middle;
 }
 
-#mwtytqmvsa .gt_from_md > :first-child {
+#dssrovgakt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mwtytqmvsa .gt_from_md > :last-child {
+#dssrovgakt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mwtytqmvsa .gt_row {
+#dssrovgakt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1150,7 +1186,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#mwtytqmvsa .gt_stub {
+#dssrovgakt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1163,7 +1199,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mwtytqmvsa .gt_stub_row_group {
+#dssrovgakt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1177,15 +1213,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: top;
 }
 
-#mwtytqmvsa .gt_row_group_first td {
+#dssrovgakt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mwtytqmvsa .gt_row_group_first th {
+#dssrovgakt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mwtytqmvsa .gt_summary_row {
+#dssrovgakt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1195,16 +1231,16 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mwtytqmvsa .gt_first_summary_row {
+#dssrovgakt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_first_summary_row.thick {
+#dssrovgakt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mwtytqmvsa .gt_last_summary_row {
+#dssrovgakt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1214,7 +1250,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_grand_summary_row {
+#dssrovgakt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1224,7 +1260,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mwtytqmvsa .gt_first_grand_summary_row {
+#dssrovgakt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1234,7 +1270,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_last_grand_summary_row_top {
+#dssrovgakt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1244,11 +1280,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_striped {
+#dssrovgakt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mwtytqmvsa .gt_table_body {
+#dssrovgakt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1257,7 +1293,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_footnotes {
+#dssrovgakt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1271,7 +1307,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_footnote {
+#dssrovgakt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1280,7 +1316,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mwtytqmvsa .gt_sourcenotes {
+#dssrovgakt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1294,7 +1330,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mwtytqmvsa .gt_sourcenote {
+#dssrovgakt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1302,72 +1338,72 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mwtytqmvsa .gt_left {
+#dssrovgakt .gt_left {
   text-align: left;
 }
 
-#mwtytqmvsa .gt_center {
+#dssrovgakt .gt_center {
   text-align: center;
 }
 
-#mwtytqmvsa .gt_right {
+#dssrovgakt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mwtytqmvsa .gt_font_normal {
+#dssrovgakt .gt_font_normal {
   font-weight: normal;
 }
 
-#mwtytqmvsa .gt_font_bold {
+#dssrovgakt .gt_font_bold {
   font-weight: bold;
 }
 
-#mwtytqmvsa .gt_font_italic {
+#dssrovgakt .gt_font_italic {
   font-style: italic;
 }
 
-#mwtytqmvsa .gt_super {
+#dssrovgakt .gt_super {
   font-size: 65%;
 }
 
-#mwtytqmvsa .gt_footnote_marks {
+#dssrovgakt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mwtytqmvsa .gt_asterisk {
+#dssrovgakt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mwtytqmvsa .gt_indent_1 {
+#dssrovgakt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mwtytqmvsa .gt_indent_2 {
+#dssrovgakt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mwtytqmvsa .gt_indent_3 {
+#dssrovgakt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mwtytqmvsa .gt_indent_4 {
+#dssrovgakt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mwtytqmvsa .gt_indent_5 {
+#dssrovgakt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mwtytqmvsa .katex-display {
+#dssrovgakt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mwtytqmvsa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dssrovgakt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1420,44 +1456,44 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>intercept_data <span class="ot">&lt;-</span> <span class="fu">ranef</span>(onycholysis_model)<span class="sc">$</span>Patient_ID[, , <span class="st">"Intercept"</span>] <span class="sc">%&gt;%</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"Patient_ID"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Estimate =</span> Estimate,</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q2.5 =</span> Q2<span class="fl">.5</span>,</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q97.5 =</span> Q97<span class="fl">.5</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>intercept_data<span class="sc">$</span>Patient_ID <span class="ot">&lt;-</span> <span class="fu">factor</span>(intercept_data<span class="sc">$</span>Patient_ID, <span class="at">levels =</span> intercept_data<span class="sc">$</span>Patient_ID[<span class="fu">order</span>(intercept_data<span class="sc">$</span>Estimate)])</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(intercept_data, <span class="fu">aes</span>(<span class="at">x =</span> Patient_ID, <span class="at">y =</span> Estimate)) <span class="sc">+</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Random Intercepts for Patients (Onycholysis Model)"</span>,</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Intercept Estimate (Log-Odds Scale)"</span></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>intercept_data <span class="ot">&lt;-</span> intercept_data <span class="sc">%&gt;%</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Significant =</span> <span class="fu">ifelse</span>(Q2<span class="fl">.5</span> <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span> Q97<span class="fl">.5</span> <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>))</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(intercept_data, <span class="fu">aes</span>(<span class="at">x =</span> Patient_ID, <span class="at">y =</span> Estimate, <span class="at">color =</span> Significant)) <span class="sc">+</span></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Patient Random Intercepts (Significance Highlighted)"</span>,</span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Intercept Estimate (Log-Odds)"</span>,</span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Significant?"</span></span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="co">#library(gridExtra)</span></span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="co">#grid.arrange(p1,p2,col=2)</span></span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> </span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
-<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">"Random Effects: CRP and Onycholysis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>intercept_data <span class="ot">&lt;-</span> <span class="fu">ranef</span>(onycholysis_model)<span class="sc">$</span>Patient_ID[, , <span class="st">"Intercept"</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"Patient_ID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Estimate =</span> Estimate,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q2.5 =</span> Q2<span class="fl">.5</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q97.5 =</span> Q97<span class="fl">.5</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>intercept_data<span class="sc">$</span>Patient_ID <span class="ot">&lt;-</span> <span class="fu">factor</span>(intercept_data<span class="sc">$</span>Patient_ID, <span class="at">levels =</span> intercept_data<span class="sc">$</span>Patient_ID[<span class="fu">order</span>(intercept_data<span class="sc">$</span>Estimate)])</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(intercept_data, <span class="fu">aes</span>(<span class="at">x =</span> Patient_ID, <span class="at">y =</span> Estimate)) <span class="sc">+</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">""</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Estimate (Log-Odds)"</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>intercept_data <span class="ot">&lt;-</span> intercept_data <span class="sc">%&gt;%</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Significant =</span> <span class="fu">ifelse</span>(Q2<span class="fl">.5</span> <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span> Q97<span class="fl">.5</span> <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>))</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(intercept_data, <span class="fu">aes</span>(<span class="at">x =</span> Patient_ID, <span class="at">y =</span> Estimate, <span class="at">color =</span> Significant)) <span class="sc">+</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Q2<span class="fl">.5</span>, <span class="at">ymax =</span> Q97<span class="fl">.5</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Significance Highlighted"</span>,</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Patient ID"</span>,</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Estimate (Log-Odds)"</span>,</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Significant?"</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="co">#library(gridExtra)</span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a><span class="co">#grid.arrange(p1,p2,col=2)</span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> </span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">"Random (Varying) Effects"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>

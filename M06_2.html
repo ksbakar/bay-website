@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Wander into the Wonder! – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<title>Week 12: Wander into the Wonder! – Bayesian Statistical Methods in Medicine &amp; Health</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./references.html" rel="next">
 <link href="./M06_1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -115,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M06_2.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder!</strong></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M06_2.html">Week 12: <strong>Wander into the Wonder!</strong></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,97 +184,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>R and RStudio</strong></span></a>
+ <span class="menu-text"><strong>Software Installation Guide</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 1: Bayesian Dreams</strong></span></a>
+ <span class="menu-text"><strong>Module 1:</strong> Bayesian Dreams!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M01_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Navigating Evidence</strong></span></span></a>
+ <span class="menu-text">Week 1: <strong>Navigating Evidence</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M01_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bayesian Inference</strong></span></span></a>
+ <span class="menu-text">Week 2: <strong>Bayesian Inference</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 2: Chaotics</strong></span></a>
+ <span class="menu-text"><strong>Module 2:</strong> Chaotics?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M02_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><strong>Prior and Posterior</strong></span></span></a>
+ <span class="menu-text">Week 3: <strong>Prior and Posterior</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M02_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><strong>Generative Models and Tools</strong></span></span></a>
+ <span class="menu-text">Week 4: <strong>Generative Models and Tools</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 3: Bayeswatch - Gaussian</strong></span></a>
+ <span class="menu-text"><strong>Module 3:</strong> Bayeswatch - Gaussian!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Logical Connections</strong></span></span></a>
+ <span class="menu-text">Week 5: <strong>Logical Connections</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M03_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Prior Tweaks and More</strong></span></span></a>
+ <span class="menu-text">Week 6: <strong>Prior Tweaks and More</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 4: Non-Gaussian Bayeswatch</strong></span></a>
+ <span class="menu-text"><strong>Module 4:</strong> Bayeswatch - Non Gaussian!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Non-Gaussian</strong></span></span></a>
+ <span class="menu-text">Week 7: <strong>Non-Gaussian</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>More on Non-Gaussian</strong></span></span></a>
+ <span class="menu-text">Week 8: <strong>More on Non-Gaussian</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 5: Clusterphobia</strong></span></a>
+ <span class="menu-text"><strong>Module 5:</strong> Clusterphobia?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - I</strong></span></span></a>
+ <span class="menu-text">Week 9: <strong>Cluster Smart with Bayes</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M05_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Clusterphobia? Part - II</strong></span></span></a>
+ <span class="menu-text">Week 10: <strong>Goldilocks</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -257,19 +286,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters!</strong></span></span></a>
+ <span class="menu-text">Week 11: <strong>Size Matters!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder!</strong></span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Week 12: <strong>Wander into the Wonder!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -288,11 +311,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings"><span class="header-section-number">12.1</span> Learnings</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">12.2</span> Exercises</a></li>
-  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion"><span class="header-section-number">12.3</span> Live tutorial and discussion</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">12.4</span> Summary</a></li>
-  <li><a href="#preparation-for-week-2" id="toc-preparation-for-week-2" class="nav-link" data-scroll-target="#preparation-for-week-2"><span class="header-section-number">12.5</span> Preparation for Week 2</a></li>
+  <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings">Learnings</a></li>
+  <li><a href="#more-priors" id="toc-more-priors" class="nav-link" data-scroll-target="#more-priors">More Priors</a>
+  <ul class="collapse">
+  <li><a href="#regularising-prior-stronger-shrinkage" id="toc-regularising-prior-stronger-shrinkage" class="nav-link" data-scroll-target="#regularising-prior-stronger-shrinkage">Regularising Prior (stronger shrinkage)</a></li>
+  <li><a href="#horseshoe-prior-for-sparse-signals" id="toc-horseshoe-prior-for-sparse-signals" class="nav-link" data-scroll-target="#horseshoe-prior-for-sparse-signals">Horseshoe Prior (for sparse signals)</a></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion">Live tutorial and discussion</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#preparation-for-week-2" id="toc-preparation-for-week-2" class="nav-link" data-scroll-target="#preparation-for-week-2">Preparation for Week 2</a></li>
   </ul>
 </nav>
     </div>
@@ -301,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>Wander into the Wonder!</strong></span></h1>
+<h1 class="title">Week 12: <strong>Wander into the Wonder!</strong></h1>
 </div>
 
 
@@ -321,14 +349,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>NOT READY YET</p>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<section id="learnings" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="learnings"><span class="header-section-number">12.1</span> Learnings</h2>
+<section id="learnings" class="level2">
+<h2 class="anchored" data-anchor-id="learnings">Learnings</h2>
 <ul>
-<li><p><strong>Outcomes</strong></p></li>
-<li><p><strong>Objectives</strong></p></li>
+<li><strong>Outcomes</strong></li>
+</ul>
+<p>– LO4: Demonstrate proficiency in using statistical software packages (R) to specify and fit models, assess model fit, detect and remediate non-convergence, and compare models.</p>
+<p>– LO5: Engage in specifying, checking and interpreting Bayesian statistical analyses in practical problems using effective communication with health and medical investigators.</p>
+<ul>
+<li><strong>Objectives</strong></li>
 </ul>
 <p>By the end of this week you should be able to:</p>
 <p>…</p>
+</section>
+<section id="more-priors" class="level2">
+<h2 class="anchored" data-anchor-id="more-priors">More Priors</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Let’s now explore a few other prior scenarios for <span class="math inline">\(\beta_1\)</span>, and what they imply about your beliefs or assumptions.</p>
+<section id="regularising-prior-stronger-shrinkage" class="level3">
+<h3 class="anchored" data-anchor-id="regularising-prior-stronger-shrinkage">Regularising Prior (stronger shrinkage)</h3>
+<ul>
+<li><strong>Prior</strong>: <span class="math inline">\(\beta_1 \sim \mathcal{N}(0, 1^2)\)</span></li>
+<li><strong>Interpretation</strong>: You assume most effects are small or near zero. Useful in high-dimensional or noisy settings.</li>
+<li><strong>Why use it?</strong>: Helps with model stability, especially with correlated predictors.</li>
+</ul>
+</section>
+<section id="horseshoe-prior-for-sparse-signals" class="level3">
+<h3 class="anchored" data-anchor-id="horseshoe-prior-for-sparse-signals">Horseshoe Prior (for sparse signals)</h3>
+<ul>
+<li>Particularly helpful if you think most predictors have near-zero effect but a few may be strong.</li>
+<li><strong>Prior</strong>: <span class="math inline">\(\beta_1 \sim \text{Horseshoe}(0, \tau)\)</span></li>
+<li><strong>Interpretation</strong>: Shrinks small effects to zero, but allows strong signals to remain.</li>
+<li><strong>Use case</strong>: More common in high-dimensional models, but can still be useful if model includes many covariates.</li>
+</ul>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -339,20 +393,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="exercises" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="exercises"><span class="header-section-number">12.2</span> Exercises</h2>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <p>sdfads</p>
 </section>
-<section id="live-tutorial-and-discussion" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="live-tutorial-and-discussion"><span class="header-section-number">12.3</span> Live tutorial and discussion</h2>
+<section id="live-tutorial-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="live-tutorial-and-discussion">Live tutorial and discussion</h2>
 <p>asdfa</p>
 </section>
-<section id="summary" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">12.4</span> Summary</h2>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>asdf</p>
 </section>
-<section id="preparation-for-week-2" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="preparation-for-week-2"><span class="header-section-number">12.5</span> Preparation for Week 2</h2>
+<section id="preparation-for-week-2" class="level2">
+<h2 class="anchored" data-anchor-id="preparation-for-week-2">Preparation for Week 2</h2>
 <p>In week 2 you will be required to collaboratively complete some exercises. To do this, in week 1 you will be allocated into groups of 3-4 and you are encouraged to meet with your group in week 2 by zoom at a mutually beneficial time. Each group has their own discussion board, which you can use to help organise a meet up time. Interacting, discussing, and working through problems with your peers is an important skill for any biostatistician. This is also nice activity to get to know your peers in this online course.</p>
 
 
@@ -778,13 +833,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./M06_1.html" class="pagination-link" aria-label="**Size Matters!**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Size Matters!</strong></span></span>
+      <a href="./M06_1.html" class="pagination-link" aria-label="Week 11: **Size Matters!**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 11: <strong>Size Matters!</strong></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
