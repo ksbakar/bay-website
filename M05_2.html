@@ -294,25 +294,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 6: Wander into the Wonder!</strong></span></a>
+ <span class="menu-text"><strong>Module 6:</strong> Wander into the Wonder!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 11: <strong>Size Matters!</strong></span></span></a>
+ <span class="menu-text">Week 11: <strong>Size Matters!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 12: <strong>Wander into the Wonder!</strong></span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Week 12: <strong>Wander into the Wonder!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -378,7 +372,7 @@ window.Quarto = {
 
 
 <p>NOT READY YET</p>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/5oM03W87Rfs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <section id="learnings" class="level2">
 <h2 class="anchored" data-anchor-id="learnings">Learnings</h2>
@@ -394,7 +388,6 @@ window.Quarto = {
 <p>By the end of this week you should be able to:</p>
 <p>– Gain insight into different versions of the partial pooling model.</p>
 <p>– Construct Bayesian hierarchical models for binary outcome.</p>
-<p>– Understand the difference between Bayesian and classical methods.</p>
 <p>– Interpret real-life clustered data problems in Bayesian context.</p>
 </section>
 <section id="partial-pooling-with-random-slope-intercept" class="level2">
@@ -470,8 +463,8 @@ At the first level of the model (within-patient), we assume that each observed C
 <p>Based on the equations we can draw the DAG as:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-48f9c54b12663649d20e" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-48f9c54b12663649d20e">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    n_obs     [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, style = dashed, fontsize = 10]\n    CRP       [label = \"log(CRP[i,j])\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day       [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x         [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0    [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1    [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta      [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Effects\n    beta_0j   [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    beta_1j   [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Random Effects Hyperparameters\n    Sigma     [label = \"Σ\\n(MVN Cov Matrix)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_0   [label = \"σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_1   [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    rho       [label = \"ρ ~ LKJ(2)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma     [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Observed -> Outcome\n    Day -> CRP\n    x   -> CRP\n\n    # Edges: Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Edges: Random Effects -> Outcome\n    beta_0j -> CRP\n    beta_1j -> CRP\n\n    # Edge: Residual SD -> Outcome\n    sigma -> CRP\n\n    # Priors -> Fixed Effects\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n\n    # Priors -> Residual SD\n    prior_sigma -> sigma\n\n    # Hyperparams -> Cov Matrix\n    sigma_0 -> Sigma\n    sigma_1 -> Sigma\n    rho     -> Sigma\n\n    # Cov Matrix -> Random Effects\n    Sigma -> beta_0j\n    Sigma -> beta_1j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-695730fbd69ad3e2c4ba" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-695730fbd69ad3e2c4ba">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    n_obs     [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, style = dashed, fontsize = 10]\n    CRP       [label = \"log(CRP[i,j])\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day       [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x         [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0    [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1    [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta      [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Effects\n    beta_0j   [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    beta_1j   [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Random Effects Hyperparameters\n    Sigma     [label = \"Σ\\n(MVN Cov Matrix)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_0   [label = \"σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    sigma_1   [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n    rho       [label = \"ρ ~ LKJ(2)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma     [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Observed -> Outcome\n    Day -> CRP\n    x   -> CRP\n\n    # Edges: Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Edges: Random Effects -> Outcome\n    beta_0j -> CRP\n    beta_1j -> CRP\n\n    # Edge: Residual SD -> Outcome\n    sigma -> CRP\n\n    # Priors -> Fixed Effects\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n\n    # Priors -> Residual SD\n    prior_sigma -> sigma\n\n    # Hyperparams -> Cov Matrix\n    sigma_0 -> Sigma\n    sigma_1 -> Sigma\n    rho     -> Sigma\n\n    # Cov Matrix -> Random Effects\n    Sigma -> beta_0j\n    Sigma -> beta_1j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -643,8 +636,8 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <p>Which can be drawn using the following DAG:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-3e822b3f34b8e352f0ea" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-3e822b3f34b8e352f0ea">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    CRP     [label = \"log(CRP[i,j])\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day     [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x       [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0  [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta    [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Slope\n    beta_1j [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Prior for Random Slope SD\n    sigma_1 [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma   [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Connections: Data\n    Day -> CRP\n    x   -> CRP\n\n    # Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Random Slope -> Outcome\n    beta_1j -> CRP\n\n    # Priors -> Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n    sigma_1      -> beta_1j\n    prior_sigma  -> sigma\n    sigma        -> CRP\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-db97ee661e88c9b4ca6c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-db97ee661e88c9b4ca6c">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    CRP     [label = \"log(CRP[i,j])\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    Day     [label = \"Day[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    x       [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0  [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Global Slope)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta    [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"Prior: β ~ N(0, 10² I)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Slope\n    beta_1j [label = \"β₁ⱼ\\n(Random Slope)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Prior for Random Slope SD\n    sigma_1 [label = \"σ₁ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma   [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"Prior: σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Connections: Data\n    Day -> CRP\n    x   -> CRP\n\n    # Fixed Effects -> Outcome\n    beta_0 -> CRP\n    beta_1 -> CRP\n    beta   -> CRP\n\n    # Random Slope -> Outcome\n    beta_1j -> CRP\n\n    # Priors -> Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta   -> beta\n    sigma_1      -> beta_1j\n    prior_sigma  -> sigma\n    sigma        -> CRP\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>From this DAG we can say, the outcome variable <span class="math inline">\(\text{log(CRP)}_{ij}\)</span> assumes a normal distribution. The mean structure includes a global intercept (<span class="math inline">\(\beta_0\)</span>) and global slope (<span class="math inline">\(\beta_1\)</span>), both of which have normal priors with large variance (<span class="math inline">\(N(0, 10^2)\)</span>), reflecting weakly informative prior. In addition to these fixed effects, the model includes covariates <span class="math inline">\(\mathbf{x}_{ij}\)</span>, which are associated with a coefficient vector <span class="math inline">\(\boldsymbol{\beta}\)</span>, also assumed to follow a multivariate normal prior with identity covariance scaled by <span class="math inline">\(10^2\)</span>.</p>
@@ -869,8 +862,8 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <p>where, <span class="math inline">\(i\)</span> is the repeated measurements (visits), and <span class="math inline">\(j\)</span> indexes patients. Following our learning in previous lecture, the term <span class="math inline">\(\beta_0\)</span> is the global intercept, and <span class="math inline">\(\beta_{0j}\)</span> is the random (or varying) intercept for patient <span class="math inline">\(j\)</span>. The term <span class="math inline">\(\beta_1\)</span> is the treatment effect, and <span class="math inline">\(\sigma_0^2\)</span> captures the between-patient variability. You can see, this model assumes that each patient has their own baseline risk (via <span class="math inline">\(\beta_{0j}\)</span>), while sharing information across the entire population through partial pooling.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-15fc66d3a67531d3615a" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-15fc66d3a67531d3615a">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    node [fontname = Helvetica, fontsize = 10];\n\n    # Observed Variables\n    Treatment [label = \"Treatment[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Month     [label = \"Month[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Onycholysis [label = \"Onycholysis[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    # Model Parameters\n    beta_0  [label = \"β₀\\n(Fixed Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Treatment Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2  [label = \"β₂\\n(Month Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_0j [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    sigma_0 [label = \"σ₀²\\n(Patient Variance)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Priors\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior: β₂ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma_0 [label = \"Prior: σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Data to Outcome\n    Treatment -> Onycholysis\n    Month     -> Onycholysis\n\n    # Edges: Parameters to Outcome\n    beta_0  -> Onycholysis\n    beta_1  -> Onycholysis\n    beta_2  -> Onycholysis\n    beta_0j -> Onycholysis\n\n    # Priors to Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_sigma_0 -> sigma_0\n    sigma_0 -> beta_0j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-237ae5c784b21c671326" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-237ae5c784b21c671326">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    node [fontname = Helvetica, fontsize = 10];\n\n    # Observed Variables\n    Treatment [label = \"Treatment[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Month     [label = \"Month[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Onycholysis [label = \"Onycholysis[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    # Model Parameters\n    beta_0  [label = \"β₀\\n(Fixed Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1  [label = \"β₁\\n(Treatment Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2  [label = \"β₂\\n(Month Effect)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_0j [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n    sigma_0 [label = \"σ₀²\\n(Patient Variance)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Priors\n    prior_beta_0 [label = \"Prior: β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior: β₁ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior: β₂ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_sigma_0 [label = \"Prior: σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Data to Outcome\n    Treatment -> Onycholysis\n    Month     -> Onycholysis\n\n    # Edges: Parameters to Outcome\n    beta_0  -> Onycholysis\n    beta_1  -> Onycholysis\n    beta_2  -> Onycholysis\n    beta_0j -> Onycholysis\n\n    # Priors to Parameters\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_sigma_0 -> sigma_0\n    sigma_0 -> beta_0j\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -958,23 +951,23 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="dssrovgakt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dssrovgakt table {
+<div id="fkspsktixa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fkspsktixa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dssrovgakt thead, #dssrovgakt tbody, #dssrovgakt tfoot, #dssrovgakt tr, #dssrovgakt td, #dssrovgakt th {
+#fkspsktixa thead, #fkspsktixa tbody, #fkspsktixa tfoot, #fkspsktixa tr, #fkspsktixa td, #fkspsktixa th {
   border-style: none;
 }
 
-#dssrovgakt p {
+#fkspsktixa p {
   margin: 0;
   padding: 0;
 }
 
-#dssrovgakt .gt_table {
+#fkspsktixa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1000,12 +993,12 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_caption {
+#fkspsktixa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dssrovgakt .gt_title {
+#fkspsktixa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1017,7 +1010,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-width: 0;
 }
 
-#dssrovgakt .gt_subtitle {
+#fkspsktixa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1029,7 +1022,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-width: 0;
 }
 
-#dssrovgakt .gt_heading {
+#fkspsktixa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1041,13 +1034,13 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_bottom_border {
+#fkspsktixa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_col_headings {
+#fkspsktixa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1062,7 +1055,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_col_heading {
+#fkspsktixa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1082,7 +1075,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#dssrovgakt .gt_column_spanner_outer {
+#fkspsktixa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1094,15 +1087,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 4px;
 }
 
-#dssrovgakt .gt_column_spanner_outer:first-child {
+#fkspsktixa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dssrovgakt .gt_column_spanner_outer:last-child {
+#fkspsktixa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dssrovgakt .gt_column_spanner {
+#fkspsktixa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1114,11 +1107,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   width: 100%;
 }
 
-#dssrovgakt .gt_spanner_row {
+#fkspsktixa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dssrovgakt .gt_group_heading {
+#fkspsktixa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1144,7 +1137,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   text-align: left;
 }
 
-#dssrovgakt .gt_empty_group_heading {
+#fkspsktixa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1159,15 +1152,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: middle;
 }
 
-#dssrovgakt .gt_from_md > :first-child {
+#fkspsktixa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dssrovgakt .gt_from_md > :last-child {
+#fkspsktixa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dssrovgakt .gt_row {
+#fkspsktixa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1186,7 +1179,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#dssrovgakt .gt_stub {
+#fkspsktixa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1199,7 +1192,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dssrovgakt .gt_stub_row_group {
+#fkspsktixa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1213,15 +1206,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: top;
 }
 
-#dssrovgakt .gt_row_group_first td {
+#fkspsktixa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dssrovgakt .gt_row_group_first th {
+#fkspsktixa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dssrovgakt .gt_summary_row {
+#fkspsktixa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1231,16 +1224,16 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dssrovgakt .gt_first_summary_row {
+#fkspsktixa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_first_summary_row.thick {
+#fkspsktixa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dssrovgakt .gt_last_summary_row {
+#fkspsktixa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1250,7 +1243,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_grand_summary_row {
+#fkspsktixa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1260,7 +1253,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dssrovgakt .gt_first_grand_summary_row {
+#fkspsktixa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1270,7 +1263,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_last_grand_summary_row_top {
+#fkspsktixa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1280,11 +1273,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_striped {
+#fkspsktixa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dssrovgakt .gt_table_body {
+#fkspsktixa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1293,7 +1286,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_footnotes {
+#fkspsktixa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1307,7 +1300,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_footnote {
+#fkspsktixa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1316,7 +1309,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dssrovgakt .gt_sourcenotes {
+#fkspsktixa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1330,7 +1323,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dssrovgakt .gt_sourcenote {
+#fkspsktixa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1338,72 +1331,72 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dssrovgakt .gt_left {
+#fkspsktixa .gt_left {
   text-align: left;
 }
 
-#dssrovgakt .gt_center {
+#fkspsktixa .gt_center {
   text-align: center;
 }
 
-#dssrovgakt .gt_right {
+#fkspsktixa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dssrovgakt .gt_font_normal {
+#fkspsktixa .gt_font_normal {
   font-weight: normal;
 }
 
-#dssrovgakt .gt_font_bold {
+#fkspsktixa .gt_font_bold {
   font-weight: bold;
 }
 
-#dssrovgakt .gt_font_italic {
+#fkspsktixa .gt_font_italic {
   font-style: italic;
 }
 
-#dssrovgakt .gt_super {
+#fkspsktixa .gt_super {
   font-size: 65%;
 }
 
-#dssrovgakt .gt_footnote_marks {
+#fkspsktixa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dssrovgakt .gt_asterisk {
+#fkspsktixa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dssrovgakt .gt_indent_1 {
+#fkspsktixa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dssrovgakt .gt_indent_2 {
+#fkspsktixa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dssrovgakt .gt_indent_3 {
+#fkspsktixa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dssrovgakt .gt_indent_4 {
+#fkspsktixa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dssrovgakt .gt_indent_5 {
+#fkspsktixa .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dssrovgakt .katex-display {
+#fkspsktixa .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dssrovgakt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fkspsktixa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1952,8 +1945,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./brief_module_06.html" class="pagination-link" aria-label="**Module 6: Wander into the Wonder!**">
-        <span class="nav-page-text"><strong>Module 6: Wander into the Wonder!</strong></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./brief_module_06.html" class="pagination-link" aria-label="**Module 6:** Wander into the Wonder!">
+        <span class="nav-page-text"><strong>Module 6:</strong> Wander into the Wonder!</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
