@@ -310,7 +310,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 6: Wander into the Wonder!</strong></span></a>
+ <span class="menu-text"><strong>Module 6:</strong> Wander into the Wonder!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -342,25 +342,28 @@ window.Quarto = {
    
   <ul>
   <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings">Learnings</a></li>
-  <li><a href="#bayesian-sample-size" id="toc-bayesian-sample-size" class="nav-link" data-scroll-target="#bayesian-sample-size">Bayesian Sample Size</a></li>
+  <li><a href="#bayesian-sample-size" id="toc-bayesian-sample-size" class="nav-link" data-scroll-target="#bayesian-sample-size">Bayesian Sample Size</a>
+  <ul class="collapse">
   <li><a href="#rcts-where-size-really-matters" id="toc-rcts-where-size-really-matters" class="nav-link" data-scroll-target="#rcts-where-size-really-matters">RCTs: Where Size Really Matters</a></li>
   <li><a href="#bayesian-decision-criteria" id="toc-bayesian-decision-criteria" class="nav-link" data-scroll-target="#bayesian-decision-criteria">Bayesian Decision Criteria</a></li>
-  <li><a href="#bayesian-power" id="toc-bayesian-power" class="nav-link" data-scroll-target="#bayesian-power">Bayesian Power</a>
-  <ul class="collapse">
-  <li><a href="#pediatric-antibiotic-trial" id="toc-pediatric-antibiotic-trial" class="nav-link" data-scroll-target="#pediatric-antibiotic-trial">Pediatric Antibiotic Trial</a></li>
-  <li><a href="#decision-rule" id="toc-decision-rule" class="nav-link" data-scroll-target="#decision-rule">Decision Rule</a></li>
-  <li><a href="#sample-size" id="toc-sample-size" class="nav-link" data-scroll-target="#sample-size">Sample Size</a></li>
+  <li><a href="#bayesian-power" id="toc-bayesian-power" class="nav-link" data-scroll-target="#bayesian-power">Bayesian Power</a></li>
   </ul></li>
+  <li><a href="#pediatric-antibiotic-trial" id="toc-pediatric-antibiotic-trial" class="nav-link" data-scroll-target="#pediatric-antibiotic-trial">Pediatric Antibiotic Trial</a>
+  <ul class="collapse">
+  <li><a href="#decision-rule---antibiotic-trial" id="toc-decision-rule---antibiotic-trial" class="nav-link" data-scroll-target="#decision-rule---antibiotic-trial">Decision Rule - Antibiotic Trial</a></li>
+  <li><a href="#sample-size---antibiotic-trial" id="toc-sample-size---antibiotic-trial" class="nav-link" data-scroll-target="#sample-size---antibiotic-trial">Sample Size - Antibiotic Trial</a></li>
   <li><a href="#frequentist-comparison" id="toc-frequentist-comparison" class="nav-link" data-scroll-target="#frequentist-comparison">Frequentist Comparison</a></li>
+  </ul></li>
   <li><a href="#when-they-are-different" id="toc-when-they-are-different" class="nav-link" data-scroll-target="#when-they-are-different">When they are different?</a>
   <ul class="collapse">
   <li><a href="#prior-sensitivity" id="toc-prior-sensitivity" class="nav-link" data-scroll-target="#prior-sensitivity">Prior Sensitivity</a></li>
   <li><a href="#cutoff-sensitivity" id="toc-cutoff-sensitivity" class="nav-link" data-scroll-target="#cutoff-sensitivity">Cutoff Sensitivity</a></li>
   </ul></li>
-  <li><a href="#bayesian-type-i-error" id="toc-bayesian-type-i-error" class="nav-link" data-scroll-target="#bayesian-type-i-error">Bayesian Type-I Error</a></li>
+  <li><a href="#bayesian-version-of-type-i-error" id="toc-bayesian-version-of-type-i-error" class="nav-link" data-scroll-target="#bayesian-version-of-type-i-error">Bayesian Version of Type-I Error!</a></li>
   <li><a href="#adaptivity-and-bayesian-sample-size" id="toc-adaptivity-and-bayesian-sample-size" class="nav-link" data-scroll-target="#adaptivity-and-bayesian-sample-size">Adaptivity and Bayesian Sample Size</a>
   <ul class="collapse">
   <li><a href="#antibiotic-safety-trial" id="toc-antibiotic-safety-trial" class="nav-link" data-scroll-target="#antibiotic-safety-trial">Antibiotic Safety Trial</a></li>
+  <li><a href="#interim-analyses" id="toc-interim-analyses" class="nav-link" data-scroll-target="#interim-analyses">Interim Analyses</a></li>
   </ul></li>
   <li><a href="#why-to-use-bayesian-sample-size" id="toc-why-to-use-bayesian-sample-size" class="nav-link" data-scroll-target="#why-to-use-bayesian-sample-size">Why to use Bayesian Sample Size</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
@@ -446,9 +449,8 @@ This types of sample size selection, however is computationally intensive (often
 -->
 <p>This type of sample size selection, while more computationally intensive due to its simulation-based nature, offers greater flexibility and is increasingly recognised for its potential in complex study designs. Regulatory agencies, such as the Therapeutic Goods Administration (TGA) in Australia, the Food and Drug Administration (FDA) in the USA, and the European Medicines Agency (EMA) in the EU, have traditionally relied on frequentist approaches, particularly in the context of clinical trials. However, Bayesian methods are steadily gaining acceptance, as they provide a richer framework for incorporating prior knowledge and interpreting results through posterior probabilities. While the design process, including prior specification and simulation-based sample size determination, is still evolving and less standardised, ongoing dialogue and guidance development are helping to bridge this familiarity gap and foster broader adoption in regulatory settings.</p>
 <p>Now, let us discuss this with specific terms starting with explaining randomised control trials (RCTs) briefly.</p>
-</section>
-<section id="rcts-where-size-really-matters" class="level2">
-<h2 class="anchored" data-anchor-id="rcts-where-size-really-matters">RCTs: Where Size Really Matters</h2>
+<section id="rcts-where-size-really-matters" class="level3">
+<h3 class="anchored" data-anchor-id="rcts-where-size-really-matters">RCTs: Where Size Really Matters</h3>
 <p>An RCT is a type of scientific study we use to find out whether a treatment, intervention, or program actually works. RCTs are considered one of the most reliable ways to prove cause and effect.</p>
 <p>In an RCT, we start by selecting a group of participants, usualy with common baseline characteristics. We then randomly assign them into two or more groups. One group receives the treatment we are testing, while the other group receives either a placebo, which looks like the treatment but has no real effect, or the usual standard treatment. Randomisation helps make sure the groups are similar at the beginning of the study. This way, if there is a difference in outcomes at the end, we can be more confident that it is because of the treatment and not because of other factors.</p>
 <p>Before the study begins, we decide what we want to measure. This is called the outcome. Depending on what we are testing, outcomes can include things like changes in symptoms, blood pressure, infection rates, or even school test scores. Measuring the right outcomes is key to understanding whether the treatment worked.</p>
@@ -458,11 +460,9 @@ This types of sample size selection, however is computationally intensive (often
 <p>In this lecture, we will learn how we can utilise Bayesian methods to calculate sample size for an RCT design. We will also briefly discuss the flexibility of Bayesian methods in conducting adaptive trials. Additionally, we will see that the Bayesian approach provides a more nuanced understanding of uncertainty, potentially leading to more efficient trial designs and better resource allocation, making it an attractive option in situations where prior data or expert opinion is available.</p>
 <p>Before discussing more on this, let us first explain the Bayesian decision rules, as they are a key part of determining the appropriate sample size.</p>
 </section>
-<section id="bayesian-decision-criteria" class="level2">
-<h2 class="anchored" data-anchor-id="bayesian-decision-criteria">Bayesian Decision Criteria</h2>
+<section id="bayesian-decision-criteria" class="level3">
+<h3 class="anchored" data-anchor-id="bayesian-decision-criteria">Bayesian Decision Criteria</h3>
 <p><span class="citation" data-cites="berry2010bayesian">Berry et al. (<a href="references.html#ref-berry2010bayesian" role="doc-biblioref">2010</a>)</span></p>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
 <p>Decision criteria can provide a flexible understanding of the choice of sample size. There are multiple options available to define the decision rules. For example, we can set a decision criterion to aim for a high probability threshold, based on the data that the treatment actually works. Sometimes, we might also try to ensure our decisions are worthwhile by considering factors like cost and benefit.</p>
 <p>There are different Bayesian decision rules, below, we provide a brief discussion of some of the criteria.</p>
 <p><strong>Posterior Probability Decision Rule</strong>:</p>
@@ -475,10 +475,8 @@ This types of sample size selection, however is computationally intensive (often
 <p>In some cases, the decision to continue or stop a trial is based on a utility function that combines the benefits (e.g., treatment efficacy) and the costs (e.g., patient safety, cost of the trial), or any other decision functions. Bayesian methods allow for the specification of a utility function that can be used to guide decisions.</p>
 <p>In this course, we will explore and discuss examples using decision criterion based on posterior probability decision rules only. We will also compare the Bayesian approach of the sample size calculations with the approach based on frequentist methods.</p>
 </section>
-<section id="bayesian-power" class="level2">
-<h2 class="anchored" data-anchor-id="bayesian-power">Bayesian Power</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<section id="bayesian-power" class="level3">
+<h3 class="anchored" data-anchor-id="bayesian-power">Bayesian Power</h3>
 <p>In frequentist statistics, power is the probability of correctly rejecting the null hypothesis when the alternative is true, i.e., detecting an effect if there truly is one.</p>
 <p>But in Bayesian statistics, we think a bit differently. A Bayesian analogue of power is the probability that, under the assumed true effect, our decision rule leads us to the correct conclusion, such as declaring the treatment effective when it actually is.</p>
 <p>Let’s say we define success as the posterior probability that the treatment effect is greater than a particular value (e.g., 0) being at least 95%. In this case, if we take that value to be zero, then a successful outcome would indicate a positive treatment effect. So our decision rule is to declare treatment effective if</p>
@@ -489,24 +487,25 @@ Pr(\text{effect} &gt; 0 \mid \text{data}) \geq 0.95
 <p>Now, if under the assumed true effect, 80% of simulated trials lead us to declare the treatment effective using our decision rule, then we say the design has 80% power. This is conceptually similar to the frequentist idea, where we aim for 80% power as a common benchmark to ensure a reasonably high chance of detecting a true effect. Note that consideration of 80% power is seen as a good trade-off in many health science. However, it’s not a rule, just a convention, and different fields or high-stakes studies might set higher bars for the power.</p>
 <p>In more advanced Bayesian decision theory, power is just one part of the equation. We can optimise sample size based on expected utility (e.g., benefit of correct decision, cost of study), where power feeds into the expected gain of making the right call. In this course, however, we will only discuss Bayesian power related to the posterior probability decision rule.</p>
 <p>Now, let’s explain this more with an example below, which reflects the power using posterior probability decision rule.</p>
-<section id="pediatric-antibiotic-trial" class="level3">
-<h3 class="anchored" data-anchor-id="pediatric-antibiotic-trial">Pediatric Antibiotic Trial</h3>
+</section>
+</section>
+<section id="pediatric-antibiotic-trial" class="level2">
+<h2 class="anchored" data-anchor-id="pediatric-antibiotic-trial">Pediatric Antibiotic Trial</h2>
 <p>Suppose, we aim to evaluate whether a new antibiotic (treatment group) is safer than the current standard of care (control group) for treating bacterial respiratory infections in children under 5 years of age.</p>
 <p>Our target population includes children aged 6 months to 5 years who are diagnosed with bacterial pneumonia.</p>
 <p>The primary endpoint (or the outcome variable) is binary: defined as the absence of drug-related adverse events (e.g., rash, diarrhea, allergic reaction) within 10 days of starting treatment.</p>
 <p>We are interested to conduct 1:1 allocations for the treatment and control groups.</p>
 <p>Suppose, the standard of care has an estimated safety rate of approximately 60%. As the safety data for the new antibiotic in this age group is still limited, we assume equal prior beliefs for both groups. Hence, we can model the safety probabilities using Beta prior distributions as: <span class="math inline">\(\text{Beta}(2, 2)\)</span>.</p>
-</section>
-<section id="decision-rule" class="level3">
-<h3 class="anchored" data-anchor-id="decision-rule">Decision Rule</h3>
+<section id="decision-rule---antibiotic-trial" class="level3">
+<h3 class="anchored" data-anchor-id="decision-rule---antibiotic-trial">Decision Rule - Antibiotic Trial</h3>
 <p>As indicated earlier, we use the Bayesian posterior probability decision rule to test whether the treatment is superior in safety compared to the control. Let us denote <span class="math inline">\(\theta\)</span> be the safety or success rate and we declare the new antibiotic superior if:</p>
 <p><span class="math display">\[
 Pr(\theta_{\text{trt}} - \theta_{\text{crt}} &gt; 0 \mid \text{data}) \geq 0.95
 \]</span></p>
 <p>That is, we require at least 95% posterior probability that the new antibiotic has a higher safety rate than the control group (even if the improvement is small). This approach points out any level of safety improvement, provided we are confident in the result.</p>
 </section>
-<section id="sample-size" class="level3">
-<h3 class="anchored" data-anchor-id="sample-size">Sample Size</h3>
+<section id="sample-size---antibiotic-trial" class="level3">
+<h3 class="anchored" data-anchor-id="sample-size---antibiotic-trial">Sample Size - Antibiotic Trial</h3>
 <p>Let’s say we want to plan/design the sample size such that, assuming the expected data for the safety (or success) rates are 75% for treatment (i.e., <span class="math inline">\(\theta_{\text{trt}}=0.75\)</span>) and 60% for control (i.e., <span class="math inline">\(\theta_{\text{crt}}=0.6\)</span>), and the posterior probability that the treatment is better than control (superiority trial), in at least 95% of simulated trials. Changes between treatment and control success rates can be also indicated as 15% point differece, i.e., from 60% to 75%.</p>
 <p>Note that in this example we are assuming equal prior beliefs for both treatment and control groups, which follows a <span class="math inline">\(\text{Beta}(1,1)\)</span> distribution. This prior reflects a non-informative situation, where the safety rates can take any values from 0 to 100%.</p>
 <p>Based on the information, we run simulations to generate data. Then, using simulated data from, say, 50 to 150 samples per group, we calculate the Bayesian power. Next, we identify the minimum sample size per group that achieves 80% power, i.e., 80% of the simulated trials lead us to declare <span class="math inline">\(\theta_{\text{trt}} - \theta_{\text{crt}} &gt; 0\)</span> using our decision rule considered earlier.</p>
@@ -552,11 +551,8 @@ Pr(\theta_{\text{trt}} - \theta_{\text{crt}} &gt; 0 \mid \text{data}) \geq 0.95
 </div>
 <p>Now, let us compare this with frequentist sample size calculation.</p>
 </section>
-</section>
-<section id="frequentist-comparison" class="level2">
-<h2 class="anchored" data-anchor-id="frequentist-comparison">Frequentist Comparison</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<section id="frequentist-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="frequentist-comparison">Frequentist Comparison</h3>
 <p>Here, we want to determine the minimum sample size per group required to detect a treatment effect (from 60% to 75%) with 80% power, using a frequentist approach. Thus, we consider null hypothesis as: no improvement or the treatment is not better than the control, i.e., <span class="math inline">\(H_0: \theta_\text{trt}\leq \theta_\text{crt}\)</span>. The alternative hypothesis we consider as: the treatment is better than the control (i.e., higher success rate), i.e., <span class="math inline">\(H_1: \theta_\text{trt}&gt; \theta_\text{crt}\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
@@ -630,8 +626,11 @@ Pr(\theta_{\text{trt}} - \theta_{\text{crt}} &gt; 0 \mid \text{data}) \geq 0.95
 </div>
 <p>The above plots provide power curves for both Bayesian and frequentist methods for sample sizes 50 to 150. We can see both plots show the power increases with the sample size and we can achieve 80% power at sample size 120 for both methods. This reflects under <span class="math inline">\(\text{Beta}(2,2)\)</span> prior we get same results for both Bayesian and frequentist methods based on the Bayesian decision rule we considered.</p>
 </section>
+</section>
 <section id="when-they-are-different" class="level2">
 <h2 class="anchored" data-anchor-id="when-they-are-different">When they are different?</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 <p>Now, we will explore Bayesian sample size calculations by implementing sensitivity analyses. First, we will examine how the sample size changes with variations in the prior distribution. We will also explore sensitivity related to the choice of the cutoff threshold, ranging from 90% to 99%, which reflects the sensitivity related to the Bayesian decision rule.</p>
 <section id="prior-sensitivity" class="level3">
 <h3 class="anchored" data-anchor-id="prior-sensitivity">Prior Sensitivity</h3>
@@ -772,11 +771,11 @@ Pr(\theta_{\text{trt}} - \theta_{\text{crt}} &gt; 0 \mid \text{data}) \geq 0.95
 <p>Thus, this sensitivity analysis helps guide decision-making around trial design, balancing efficiency in safety evaluations.</p>
 </section>
 </section>
-<section id="bayesian-type-i-error" class="level2">
-<h2 class="anchored" data-anchor-id="bayesian-type-i-error">Bayesian Type-I Error</h2>
+<section id="bayesian-version-of-type-i-error" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-version-of-type-i-error">Bayesian Version of Type-I Error!</h2>
 <iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<p>Bayesian Type-I error is a concept that mirrors the classical (frequentist) Type-I error. In a frequentist hypothesis test, type-I error refers to the probability of rejecting the null hypothesis when it is actually true. For example, with statistical level of significance <span class="math inline">\(\alpha=0.05\)</span>, we are accepting a 5% chance of falsely declaring a treatment effective when it’s not.</p>
+<p>Bayesian version of Type-I error is a concept that mirrors the classical (frequentist) Type-I error. In a frequentist hypothesis test, type-I error refers to the probability of rejecting the null hypothesis when it is actually true. For example, with statistical level of significance <span class="math inline">\(\alpha=0.05\)</span>, we are accepting a 5% chance of falsely declaring a treatment effective when it’s not.</p>
 <p>In Bayesian analysis, we don’t really reject null in the traditional way. Instead, we compute the posterior probability that the treatment is better than control, given the data.</p>
 <p>So, say in a Bayesian superiority trial, as we have already explain earlier, we might want to declare a treatment superior, if the posterior probability that treatment is better than control exceeds some threshold (e.g., 95%). Here, Bayesian Type-I Error is the probability that we incorrectly declare superiority, when the treatment is not actually better (e.g., when there’s no difference, or control is better).</p>
 <p>Now, how do we estimate Bayesian Type-I Error (in practice)? We simulate many trials under the null hypothesis, and see how often our Bayesian decision rule declares a false positive.</p>
@@ -928,10 +927,12 @@ Frequentist adaptive designs focus on controlling Type I error across potential 
 <li>If <span class="math inline">\(Pr(\theta_{trt} &lt; \theta_{crt}) &gt; 0.95\)</span> then consider futility (stop for harm)</li>
 <li>Else continue to next interim or if in the final interim then either it is inconclusive or conclude as no added benefit.</li>
 </ul>
-<p><strong>Interim Steps</strong></p>
-<p>At the <strong>first interim</strong>, conducted after enrolling 50 participants (25 in each group), suppose we observed that 17 children in the treatment group (i.e., <span class="math inline">\(\approx\)</span> 70%) and 15 in the control group experienced no adverse events (i.e., 60%). Starting with weakly-informative <span class="math inline">\(\text{Beta}(2,2)\)</span> priors, we updated the posterior distributions based on this data. For the treatment group, this yielded a <span class="math inline">\(\text{Beta}(19, 10)\)</span> distribution, and for the control group, a <span class="math inline">\(\text{Beta}(17, 12)\)</span>. We then calculated the posterior probability that the new antibiotic is safer than the standard treatment, especifically, $ Pr(<em>{} &gt; </em>{})$. According to our decision rules, if this probability exceeds 0.95, we would consider stopping the trial early for efficacy. Conversely, if the probability that the treatment is worse exceeds 0.95, we would stop for futility. Since neither condition was met, we proceeded to the next interim analysis.</p>
-<p>During the <strong>second interim analysis</strong>, conducted after 100 participants had been followed (50 per group), our cumulative data showed that 36 out of 50 participants in the treatment group and 29 out of 50 in the control group had no adverse events. We updated the posterior distributions accordingly: <span class="math inline">\(\text{Beta}(38, 16)\)</span> for the treatment group and <span class="math inline">\(\text{Beta}(31, 23)\)</span> for the control group. Once again, we computed the posterior probability of treatment superiority. If this probability had exceeded our predefined threshold (greater than 0.95), we would have stopped the trial early for success. Since the threshold was not reached, we decided to continue to the final planned interim.</p>
-<p>The <strong>third interim analysis</strong> took place after 150 participants had been enrolled and followed (75 per group). At this point, 57 participants in the treatment arm and 45 in the control arm experienced no adverse events. These data produced updated posterior distributions: <span class="math inline">\(\text{Beta}(59, 20)\)</span> for the treatment and <span class="math inline">\(\text{Beta}(47, 32)\)</span> for the control. We calculated the final posterior probability that the treatment is safer than the control, and we also reported the corresponding credible intervals and full posterior distributions. If the final probability exceeded 0.95, we planned to declare the trial a success and conclude that the new antibiotic is statistically superior in terms of safety. Otherwise, we would interpret the result as either inconclusive or indicative of no added benefit.</p>
+</section>
+<section id="interim-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="interim-analyses">Interim Analyses</h3>
+<p>At the first interim, conducted after enrolling 50 participants (25 in each group), suppose we observed that 17 children in the treatment group (i.e., <span class="math inline">\(\approx\)</span> 70%) and 15 in the control group experienced no adverse events (i.e., 60%). Starting with weakly-informative <span class="math inline">\(\text{Beta}(2,2)\)</span> priors, we updated the posterior distributions based on this data. For the treatment group, this yielded a <span class="math inline">\(\text{Beta}(19, 10)\)</span> distribution, and for the control group, a <span class="math inline">\(\text{Beta}(17, 12)\)</span>. We then calculated the posterior probability that the new antibiotic is safer than the standard treatment, especifically, <span class="math inline">\(Pr(\theta_{\text{trt}} &gt; \theta_{\text{crt}})\)</span> (which is 0.71, see R code and results below). According to our decision rules, if this probability exceeds 0.95, we would consider stopping the trial early for efficacy. Conversely, if the probability that the treatment is worse exceeds 0.95, we would stop for futility. Since neither condition was met (i.e., this probability is 0.71), we proceeded to the next interim analysis.</p>
+<p>During the second interim analysis, conducted after 100 participants had been followed (50 per group), our cumulative data showed that 36 out of 50 participants in the treatment group and 29 out of 50 in the control group had no adverse events. We updated the posterior distributions accordingly: <span class="math inline">\(\text{Beta}(38, 16)\)</span> for the treatment group and <span class="math inline">\(\text{Beta}(31, 23)\)</span> for the control group. Once again, we computed the posterior probability of treatment superiority (which is as 0.93 in our case, see R code and results below). If this probability had exceeded our predefined threshold (greater than 0.95), we would have stopped the trial early for success. Since the threshold was not reached (i.e., this probability is 0.93), we decided to continue to the final planned interim.</p>
+<p>The <strong>third interim analysis</strong> took place after 150 participants had been enrolled and followed (75 per group). At this point, 57 participants in the treatment arm and 45 in the control arm experienced no adverse events. These data produced updated posterior distributions: <span class="math inline">\(\text{Beta}(59, 20)\)</span> for the treatment and <span class="math inline">\(\text{Beta}(47, 32)\)</span> for the control. We calculated the final posterior probability that the treatment is safer than the control (which is 0.98, see R code and results below). If the final probability exceeded 0.95, we planned to declare the trial a success and conclude that the new antibiotic is statistically superior in terms of safety. Otherwise, we would interpret the result as either inconclusive or indicative of no added benefit.</p>
 <p>We write R code for this analysis as follows that also provides us the power and decision for each interim steps.</p>
 <div class="cell">
 <details class="code-fold">
@@ -1478,8 +1479,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./brief_module_06.html" class="pagination-link" aria-label="**Module 6: Wander into the Wonder!**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><strong>Module 6: Wander into the Wonder!</strong></span>
+      <a href="./brief_module_06.html" class="pagination-link" aria-label="**Module 6:** Wander into the Wonder!">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><strong>Module 6:</strong> Wander into the Wonder!</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
