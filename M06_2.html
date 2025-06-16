@@ -403,7 +403,9 @@ window.Quarto = {
 <li><strong>Objectives</strong></li>
 </ul>
 <p>By the end of this week you should be able to:</p>
-<p>…</p>
+<p>– Understand adaptive sample size calculation using the Bayesian approach.</p>
+<p>– Implement Bayesian model selection methods.</p>
+<p>– Compare different Bayesian models to identify the best-performing one.</p>
 </section>
 <section id="adaptivity" class="level2">
 <h2 class="anchored" data-anchor-id="adaptivity">Adaptivity</h2>
@@ -413,8 +415,8 @@ window.Quarto = {
 <p>Adaptive designs are an increasingly popular approach in clinical trials, offering flexibility to modify trial procedures based on accumulating data without undermining the study’s integrity or validity. One powerful framework for implementing adaptive designs is through Bayesian methods.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-d2c107a4c5cfd2763ee2" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-d2c107a4c5cfd2763ee2">{"x":{"diagram":"\ndigraph seamless_design {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, color = lightblue]\n  start [label = \"Initiate Data Collection\n(Initial Allocation and Sampling Rules)\"]\n  analyze [label = \"Analyse Available Data\"]\n  decision [label = \"Stopping Rule Met?\", shape = diamond, style = filled, color = green]\n  continue [label = \"Continue Data Collection\n(Revise Allocation and Sampling Rules)\"]\n  stop [label = \"Stop Trial or Go to the Next Phase\"]\n\n  start -> analyze\n  analyze -> decision\n  decision -> continue [label = \"No\"]\n  decision -> stop [label = \"Yes\"]\n  continue -> analyze\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-6c51893e3d63dfed1fad" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-6c51893e3d63dfed1fad">{"x":{"diagram":"\ndigraph seamless_design {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, color = lightblue]\n  start [label = \"Initiate Data Collection\n(Initial Allocation and Sampling Rules)\"]\n  analyze [label = \"Analyse Available Data\"]\n  decision [label = \"Stopping Rule Met?\", shape = diamond, style = filled, color = green]\n  continue [label = \"Continue Data Collection\n(Revise Allocation and Sampling Rules)\"]\n  stop [label = \"Stop Trial or Go to the Next Phase\"]\n\n  start -> analyze\n  analyze -> decision\n  decision -> continue [label = \"No\"]\n  decision -> stop [label = \"Yes\"]\n  continue -> analyze\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Adaptive trials are designed with flexibility built in from the start. This means we can pre-plan adjustments to key elements like treatment types (dose, frequency, combinations), how patients are assigned to different treatments, which patient groups to include, and even how many participants are needed.</p>
@@ -537,13 +539,13 @@ Frequentist adaptive designs focus on controlling Type I error across potential 
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Interim:  1  -- Sample Size:  25 
-Posterior Pr(treat &gt; control): 0.7142 
+Posterior Pr(treat &gt; control): 0.7112 
 Continue to next interim
 Interim:  2  -- Sample Size:  50 
-Posterior Pr(treat &gt; control): 0.925 
+Posterior Pr(treat &gt; control): 0.924 
 Continue to next interim
 Interim:  3  -- Sample Size:  75 
-Posterior Pr(treat &gt; control): 0.9812 
+Posterior Pr(treat &gt; control): 0.9794 
 Stop: Evidence for treatment superiority</code></pre>
 </div>
 <details class="code-fold">
@@ -571,8 +573,6 @@ Stop: Evidence for treatment superiority</code></pre>
 </section>
 <section id="bayesian-model-choice" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-model-choice">Bayesian Model Choice</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
 <p>Recall that in one of the previous modules, we focused on evaluating the performance of Bayesian models, especially after running Markov Chain Monte Carlo (MCMC) simulations. Where we used, trace plots, R-hat statistic (also called the Gelman-Rubin diagnostic), effective sample size (ESS), autocorrelation checks and posterior predictive checks.</p>
 <p>In today’s lecture, we move from model evaluation to model selection, deciding which of several Bayesian models best explains your data, given prior knowledge and model structure. This process is called Bayesian model choice. In this unit, we will mainly discussed few of the methods, such as Bayes Factor and model choice using information criteria.</p>
 </section>
@@ -1116,6 +1116,7 @@ After fitting the model, the Bayesian prediction for a new $x^*$ is **not just**
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>In today’s lecture, we covered briefly the key methods in Bayesian adaptive designs and model selection. We began with Bayesian adaptive sample size calculation, highlighting how interim analyses and design modifications based on accumulating data enhance flexibility and efficiency. Next, we introduced Bayesian model choice using Bayes factors to compare models based on evidence. We also discussed information criteria such as DIC, WAIC, and LOO, which help assess model fit and complexity for better predictive performance.</p>
 </section>
 <section id="live-tutorial-and-discussion" class="level2">
 <h2 class="anchored" data-anchor-id="live-tutorial-and-discussion">Live tutorial and discussion</h2>
