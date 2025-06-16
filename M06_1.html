@@ -335,9 +335,9 @@ window.Quarto = {
   <li><a href="#bayesian-sample-size" id="toc-bayesian-sample-size" class="nav-link" data-scroll-target="#bayesian-sample-size">Bayesian Sample Size</a>
   <ul class="collapse">
   <li><a href="#rcts-where-size-really-matters" id="toc-rcts-where-size-really-matters" class="nav-link" data-scroll-target="#rcts-where-size-really-matters">RCTs: Where Size Really Matters</a></li>
+  </ul></li>
   <li><a href="#bayesian-decision-criteria" id="toc-bayesian-decision-criteria" class="nav-link" data-scroll-target="#bayesian-decision-criteria">Bayesian Decision Criteria</a></li>
   <li><a href="#bayesian-power" id="toc-bayesian-power" class="nav-link" data-scroll-target="#bayesian-power">Bayesian Power</a></li>
-  </ul></li>
   <li><a href="#pediatric-antibiotic-trial" id="toc-pediatric-antibiotic-trial" class="nav-link" data-scroll-target="#pediatric-antibiotic-trial">Pediatric Antibiotic Trial</a>
   <ul class="collapse">
   <li><a href="#decision-rule---antibiotic-trial" id="toc-decision-rule---antibiotic-trial" class="nav-link" data-scroll-target="#decision-rule---antibiotic-trial">Decision Rule - Antibiotic Trial</a></li>
@@ -380,7 +380,7 @@ window.Quarto = {
 
 
 <p>NOT READY YET</p>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/QXE9Kt-KTRk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <section id="learnings" class="level2">
 <h2 class="anchored" data-anchor-id="learnings">Learnings</h2>
@@ -412,7 +412,7 @@ Bayesian Predictive Probability: Berry book, sec: 2.5.1 page 64
 </section>
 <section id="bayesian-sample-size" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-sample-size">Bayesian Sample Size</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/PGLW8d1Bdro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>Bayesian sample size selection is a method used in the design of experiments or studies, especially useful in clinical trials that determines how many subjects or data points are needed, based on Bayesian statistical principles.</p>
 <p>Rather than relying on traditional frequentist criteria (like fixed power and significance levels), Bayesian sample size selection incorporates prior knowledge (recall that we have already discussed the key concepts of Bayesian method in our previous modules) and focuses on decision-making under uncertainty.</p>
@@ -445,8 +445,11 @@ This types of sample size selection, however is computationally intensive (often
 <p>In this lecture, we will learn how we can utilise Bayesian methods to calculate sample size for an RCT design. We will also briefly discuss the flexibility of Bayesian methods in conducting adaptive trials. Additionally, we will see that the Bayesian approach provides a more nuanced understanding of uncertainty, potentially leading to more efficient trial designs and better resource allocation, making it an attractive option in situations where prior data or expert opinion is available.</p>
 <p>Before discussing more on this, let us first explain the Bayesian decision rules, as they are a key part of determining the appropriate sample size.</p>
 </section>
-<section id="bayesian-decision-criteria" class="level3">
-<h3 class="anchored" data-anchor-id="bayesian-decision-criteria">Bayesian Decision Criteria</h3>
+</section>
+<section id="bayesian-decision-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-decision-criteria">Bayesian Decision Criteria</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/-sc9yLLn54k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 <p><span class="citation" data-cites="berry2010bayesian">Berry et al. (<a href="references.html#ref-berry2010bayesian" role="doc-biblioref">2010</a>)</span></p>
 <p>Decision criteria can provide a flexible understanding of the choice of sample size. There are multiple options available to define the decision rules. For example, we can set a decision criterion to aim for a high probability threshold, based on the data that the treatment actually works. Sometimes, we might also try to ensure our decisions are worthwhile by considering factors like cost and benefit.</p>
 <p>There are different Bayesian decision rules, below, we provide a brief discussion of some of the criteria.</p>
@@ -460,8 +463,10 @@ This types of sample size selection, however is computationally intensive (often
 <p>In some cases, the decision to continue or stop a trial is based on a utility function that combines the benefits (e.g., treatment efficacy) and the costs (e.g., patient safety, cost of the trial), or any other decision functions. Bayesian methods allow for the specification of a utility function that can be used to guide decisions.</p>
 <p>In this course, we will explore and discuss examples using decision criterion based on posterior probability decision rules only. We will also compare the Bayesian approach of the sample size calculations with the approach based on frequentist methods.</p>
 </section>
-<section id="bayesian-power" class="level3">
-<h3 class="anchored" data-anchor-id="bayesian-power">Bayesian Power</h3>
+<section id="bayesian-power" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-power">Bayesian Power</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 <p>In frequentist statistics, power is the probability of correctly rejecting the null hypothesis when the alternative is true, i.e., detecting an effect if there truly is one.</p>
 <p>But in Bayesian statistics, we think a bit differently. A Bayesian analogue of power is the probability that, under the assumed true effect, our decision rule leads us to the correct conclusion, such as declaring the treatment effective when it actually is.</p>
 <p>Let’s say we define success as the posterior probability that the treatment effect is greater than a particular value (e.g., 0) being at least 95%. In this case, if we take that value to be zero, then a successful outcome would indicate a positive treatment effect. So our decision rule is to declare treatment effective if</p>
@@ -473,9 +478,10 @@ Pr(\text{effect} &gt; 0 \mid \text{data}) \geq 0.95
 <p>In more advanced Bayesian decision theory, power is just one part of the equation. We can optimise sample size based on expected utility (e.g., benefit of correct decision, cost of study), where power feeds into the expected gain of making the right call. In this course, however, we will only discuss Bayesian power related to the posterior probability decision rule.</p>
 <p>Now, let’s explain this more with an example below, which reflects the power using posterior probability decision rule.</p>
 </section>
-</section>
 <section id="pediatric-antibiotic-trial" class="level2">
 <h2 class="anchored" data-anchor-id="pediatric-antibiotic-trial">Pediatric Antibiotic Trial</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 <p>Suppose, we aim to evaluate whether a new antibiotic (treatment group) is safer than the current standard of care (control group) for treating bacterial respiratory infections in children under 5 years of age.</p>
 <p>Our target population includes children aged 6 months to 5 years who are diagnosed with bacterial pneumonia.</p>
 <p>The primary endpoint (or the outcome variable) is binary: defined as the absence of drug-related adverse events (e.g., rash, diarrhea, allergic reaction) within 10 days of starting treatment.</p>
