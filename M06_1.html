@@ -480,13 +480,13 @@ Pr(\text{effect} &gt; 0 \mid \text{data}) \geq 0.95
 </section>
 <section id="paediatric-antibiotic-trial" class="level2">
 <h2 class="anchored" data-anchor-id="paediatric-antibiotic-trial">Paediatric Antibiotic Trial</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/9m7bbDfCgy8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>Suppose, we aim to evaluate whether a new antibiotic (treatment group) is safer than the current standard of care (control group) for treating bacterial respiratory infections in children under 5 years of age.</p>
 <p>Our target population includes children aged 6 months to 5 years who are diagnosed with bacterial pneumonia.</p>
 <p>The primary endpoint (or the outcome variable) is binary: defined as the absence of drug-related adverse events (e.g., rash, diarrhea, allergic reaction) within 10 days of starting treatment.</p>
 <p>We are interested to conduct 1:1 allocations for the treatment and control groups.</p>
-<p>Suppose, the standard of care has an estimated safety rate of approximately 60%. As the safety data for the new antibiotic in this age group is still limited, we assume equal prior beliefs for both groups. Hence, we can model the safety probabilities using Beta prior distributions as: <span class="math inline">\(\text{Beta}(2, 2)\)</span>.</p>
+<p>Suppose, the standard of care has an estimated safety rate of approximately 60%. As the safety data for the new antibiotic in this age group is still limited, we assume equal prior beliefs for both groups. Hence, we can model the safety probabilities using Beta prior distributions as: <span class="math inline">\(\text{Beta}(1, 1)\)</span>.</p>
 <section id="decision-rule---antibiotic-trial" class="level3">
 <h3 class="anchored" data-anchor-id="decision-rule---antibiotic-trial">Decision Rule - Antibiotic Trial</h3>
 <p>As indicated earlier, we use the Bayesian posterior probability decision rule to test whether the treatment is superior in safety compared to the control. Let us denote <span class="math inline">\(\theta\)</span> be the safety or success rate and we declare the new antibiotic superior if:</p>
@@ -615,7 +615,7 @@ Pr(\theta_{\text{trt}} - \theta_{\text{crt}} &gt; 0 \mid \text{data}) \geq 0.95
 </div>
 </div>
 </div>
-<p>The above plots provide power curves for both Bayesian and frequentist methods for sample sizes 50 to 150. We can see both plots show the power increases with the sample size and we can achieve 80% power at sample size 120 for both methods. This reflects under <span class="math inline">\(\text{Beta}(2,2)\)</span> prior we get same results for both Bayesian and frequentist methods based on the Bayesian decision rule we considered.</p>
+<p>The above plots provide power curves for both Bayesian and frequentist methods for sample sizes 50 to 150. We can see both plots show the power increases with the sample size and we can achieve 80% power at sample size 120 for both methods. This reflects under <span class="math inline">\(\text{Beta}(1,1)\)</span> prior we get same results for both Bayesian and frequentist methods based on the Bayesian decision rule we considered.</p>
 </section>
 </section>
 <section id="when-they-are-different" class="level2">
