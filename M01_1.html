@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.2">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 1: Navigating Evidence – Bayesian Statistical Methods in Medicine &amp; Health</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./M01_2.html" rel="next">
+<link href="./brief_module_01.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./M01_1.html">Week 1: <strong>Navigating Evidence</strong></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Bayesian Statistical Methods in Medicine &amp; Health</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Preface</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Introduction</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Software Installation Guide</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 1:</strong> Bayesian Dreams!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M01_1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 1: <strong>Navigating Evidence</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M01_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2: <strong>Bayesian Inference</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 2:</strong> Chaotics?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M02_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3: <strong>Prior and Posterior</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M02_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4: <strong>Generative Models and Tools</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 3:</strong> Bayeswatch - Gaussian!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M03_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5: <strong>Logical Connections</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M03_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6: <strong>Prior Tweaks and More</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 4:</strong> Bayeswatch - Non Gaussian!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M04_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7: <strong>Non-Gaussian</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M04_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8: <strong>More on Non-Gaussian</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 5:</strong> Clusterphobia?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M05_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9: <strong>Cluster Smart with Bayes</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M05_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10: <strong>Goldilocks</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./brief_module_06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Module 6:</strong> Wander into the Wonder!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11: <strong>Size Matters!</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12: <strong>Discover the Perfect Spell!</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learnings" id="toc-learnings" class="nav-link active" data-scroll-target="#learnings">Learnings</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#bayesian-philosophy" id="toc-bayesian-philosophy" class="nav-link" data-scroll-target="#bayesian-philosophy">Bayesian Philosophy</a></li>
+  <li><a href="#the-maze" id="toc-the-maze" class="nav-link" data-scroll-target="#the-maze">The Maze</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#concepts-classical-vs.-bayesian" id="toc-concepts-classical-vs.-bayesian" class="nav-link" data-scroll-target="#concepts-classical-vs.-bayesian">Concepts: Classical vs.&nbsp;Bayesian</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  </ul></li>
+  <li><a href="#dual-factor-probabilities" id="toc-dual-factor-probabilities" class="nav-link" data-scroll-target="#dual-factor-probabilities">Dual-Factor Probabilities</a></li>
+  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes’ Theorem</a>
+  <ul class="collapse">
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#live-tutorial-and-discussion" id="toc-live-tutorial-and-discussion" class="nav-link" data-scroll-target="#live-tutorial-and-discussion">Live tutorial and discussion</a></li>
+  <li><a href="#tutorial-exercises" id="toc-tutorial-exercises" class="nav-link" data-scroll-target="#tutorial-exercises">Tutorial Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 1: <strong>Navigating Evidence</strong></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<iframe width="500" height="300" src="https://www.youtube.com/embed/vScvFc7xVo8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<!--
+asdf
+-->
+<section id="learnings" class="level2">
+<h2 class="anchored" data-anchor-id="learnings">Learnings</h2>
+<ul>
+<li><strong>Outcomes</strong></li>
+</ul>
+<p>– LO1: Explain the difference between Bayesian and frequentist concepts of statistical inference.</p>
+<p>– LO5: Engage in specifying, checking and interpreting Bayesian statistical analyses in practical problems using effective communication with health and medical investigators.</p>
+<ul>
+<li><strong>Objectives</strong></li>
+</ul>
+<p>In today’s lecture we will:</p>
+<p>– Understand Bayesian philosophy.</p>
+<p>– Describe the motivation of doing Bayesian analysis.</p>
+<p>– Understand the difference between Bayesian and classical statistical methods.</p>
+<p>– Interpret a real-life problem in Bayesian context.</p>
+</section>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig_thomasbayes.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Thomas Bayes (The IMS Bulletin, 1988, vol-17(3), pp.276-278)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Thomas Bayes, who is remembered through the term “Bayesian”, passed away in 1761 without having the chance to formally present or publish his groundbreaking findings. Two years after his death, it was Richard Price who, in 1763, introduced Bayes’ extraordinary work to the Royal Statistical Society. Bayes had been developing a probabilistic framework to tackle inverse problems. Later, Richard Price (1723–1791) and Pierre-Simon Laplace (1749–1827) played crucial roles in advancing and applying this transformative idea to practical real-world scenarios.</p>
+<p>To fully understand the Bayesian framework, it is essential to become familiar with several key terms commonly used in Bayesian discussions, such as Bayesian inference, prior, posterior, and Bayesian modelling. Throughout this course, we will gradually explore and learn these fundamental concepts.</p>
+<p>Before that, let’s start understanding the Bayesian philosophy.</p>
+</section>
+<section id="bayesian-philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-philosophy">Bayesian Philosophy</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/BTNkyars9RI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Bayesian philosophy revolves around the concept of “degrees of belief” in scientific reasoning. But what does that actually mean? Simply put, it views probability as a measure of our confidence in an event, which updates as we gather new evidence. Unlike traditional frequentist statistics, which treat probability as an objective, fixed value, Bayesian thinking sees it as a dynamic, subjective measure that evolves with new data and insights.</p>
+<p>Let’s explain a bit more using examples:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig_M01_diabetes.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Bayesian World (Philosophy)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Suppose a medical practitioner is treating a patient who might have a particular illness, like type-2 diabetes. Initially, based on the patient’s age, family history, and some initial symptoms, the medical practitioner might believe there’s a 20% chance the patient has diabetes. This belief is a prior probability.</p>
+<p>Now, the medical practitioner orders a blood test to check the patient’s blood sugar levels. When the results come back, they show elevated sugar levels, which increase the likelihood of diabetes. The medical practitioner updates their belief based on this new evidence, which is called the posterior probability.</p>
+<p>So, Bayesian philosophy evolves starting with an initial belief (prior), and then updating that belief as new data (like test results) comes in. In short, it’s a flexible way of thinking where beliefs are adjusted as information is acquired.</p>
+<!--
+ref: @gelman2013philosophy
+-->
+</section>
+<section id="the-maze" class="level2">
+<h2 class="anchored" data-anchor-id="the-maze">The Maze</h2>
+<!--
+ref: McElreath page 20, sec 2.1
+-->
+<p>Bayesian analysis is a logical framework that helps update our beliefs based on continuous new information. A helpful analogy is navigating a maze with an incomplete map. Each step provides new clues, and with every clue, your understanding of the maze improves. By continuously updating your knowledge with new information, you eventually find the exit. This is how Bayesian analysis works, it continuously updates our understanding as more evidence comes in.</p>
+<p>To see this in practice, let’s consider an example explained below.</p>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>A medical practitioner had seen many cases of pneumonia before, but this one was tricky. A 55-year-old patient, had been admitted with high fever, cough, and shortness of breath. Based on his symptoms and an initial chest X-ray, the practitioner diagnosed him with bacterial pneumonia and started him on a standard antibiotic.</p>
+<p>At this point, their belief was strong that the chosen antibiotic would work, this was their prior probability based on past experience.</p>
+<p><strong>Day 2:</strong></p>
+<p>After 24 hours, the patient wasn’t improving. Thier fever remained high, and their breathing was still labored.</p>
+<p>The practitioner now had new evidence, the treatment wasn’t working as quickly as it should. Applying Bayesian reasoning, they adjusted their belief:</p>
+<ul>
+<li><p>The probability that this was a typical bacterial pneumonia responding to first-line antibiotics decreased.</p></li>
+<li><p>The probability that it was a resistant strain of bacteria or even a different type of infection increased.</p></li>
+</ul>
+<p>They needed more information.</p>
+<p><strong>Day 3:</strong></p>
+<p>The practitioner ordered a sputum culture to check for antibiotic-resistant bacteria. In the meantime, they updated the treatment, switching the patient to a broader-spectrum antibiotic.</p>
+<ul>
+<li><p>If the new antibiotic worked, it would confirm that the initial one was ineffective, meaning resistant bacteria were likely the cause.</p></li>
+<li><p>If the patient still didn’t improve, it could mean this wasn’t bacterial pneumonia at all, it might be a viral infection instead.</p></li>
+</ul>
+<p>Again, their belief about the cause of the patient’s illness shifted based on new evidence.</p>
+<p><strong>Day 4:</strong></p>
+<p>The test results came in: The patient’s infection was caused by a drug-resistant strain of bacteria. This confirmed that the initial choice of antibiotics was ineffective.</p>
+<p>With this new evidence, the practitioner’s belief was now much stronger that the broader-spectrum antibiotic was the right choice.</p>
+<p><strong>The Lesson of Bayesian Thinking</strong></p>
+<p>The medical practitioner didn’t just rely on their initial belief. Instead, they continuously updated their understanding as new evidence emerged, just like someone navigating a maze learns from every wrong turn. This process demonstrates how Bayesian reasoning helps in making data-driven, logical decisions, not just by guessing, but by continuously refining our beliefs with new information, ultimately leading to the best possible decision.</p>
+<!--
+
+This iterative process is what makes Bayesian analysis so powerful. It doesn't discard initial beliefs but continuously refines them in light of new evidences. Whether used in medicine, public health, or epidemiology, Bayesian methods ensure that our conclusions are informed, logical, and adaptable as more information becomes available.
+
+-->
+</section>
+</section>
+<section id="concepts-classical-vs.-bayesian" class="level2">
+<h2 class="anchored" data-anchor-id="concepts-classical-vs.-bayesian">Concepts: Classical vs.&nbsp;Bayesian</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/uhaGzxXjaIo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Throughout this course, we will provide relative comparisons of frequentists and Bayesian statistical methods, using examples. Let us now explain some key conceptual aspects of these two approaches.</p>
+<p><strong>History:</strong></p>
+<!--
+@mcelreath2020statistical
+
+history: - ref: McElreath page 13, see the BOX
+-->
+<p>The origins of Bayesian statistical inference trace back to the late 18th century, predating many modern methodologies. Its use continued into the 19th century, but after World War I, statisticians like Sir Ronald Fisher, who opposed Bayesian concepts, contributed to its decline. Fisher’s 1925 statistical handbook briefly mentioned Bayesian analysis, then known as “inverse probability”, further pushing it to the margins of mainstream statistics. However, in the latter half of the 20th century, Bayesian methods gradually regained acceptance. This resurgence was particularly driven by advancements in computational technology during the 1990s, which greatly expanded their practical applications.</p>
+<p><strong>Data and Parameter:</strong></p>
+<!--
+data or parameter? - ref: McElreath page 35, BOX
+-->
+<p>Data represents known elements, whereas parameters are unknown quantities inferred from data. Within the Bayesian framework, this distinction becomes less clear; a variable may be either observed or unobserved, yet it is governed by the same distribution function. Consequently, an assumption can serve as a “likelihood” or a “prior” depending on the context, without altering the model. This connection between certainty (data) and uncertainty (parameters) facilitates the management of measurement errors and missing data in modeling.</p>
+<p><strong>Reliable Inference:</strong></p>
+<!--
+sample size and reliable inference - ref: McElreath page 31, see the BOX
+-->
+<p>There exists a notion that a specific number of observations is necessary for reliable statistical estimates. For example, at least 30 observations are typically required for a Gaussian distribution. This notion is rooted in traditional statistical inference, where methods are validated for large sample sizes, a concept known as asymptotic behavior.</p>
+<p>Conversely, Bayesian estimates remain valid regardless of sample size. While larger samples are advantageous, Bayesian methods provide meaningful results even with limited data. However, they necessitate a careful selection of the “prior,” which significantly influences the final inference. An improperly chosen prior can skew conclusions. Understanding the world demands thoughtful consideration, without resorting to shortcuts.</p>
+<p><strong>Role of Data:</strong></p>
+<!--
+role of data (likelihood) - ref; McElreath page 34, BOX
+-->
+<p>The distinctions between Bayesian and non-Bayesian methodologies are notable, yet these differences can sometimes overshadow their underlying commonalities. In many Bayesian and non-Bayesian models, the most critical assumptions typically concern the likelihood functions and their connections with the parameters. These assumptions guide the inferences drawn from each dataset. As the sample size grows, the significance of the likelihood increases. This shared emphasis on likelihood clarifies why Bayesian and non-Bayesian inferences frequently yield similar results.</p>
+<p>Furthermore, a common misunderstanding regarding Bayesian data analysis and inference is the belief that they are exclusively defined by Bayes’ theorem. Any inferential method employing probability theory incorporates Bayes’ theorem. Numerous examples labeled as “Bayesian” often lack distinctive attributes and instead rely on observed data frequencies, resembling non-Bayesian methods. The distinctiveness of Bayesian techniques lies in their application of Bayes’ theorem to measure the uncertainty associated with theoretical constructs not directly observable, such as parameters and models. Both methodologies can produce robust inferences, although they are grounded in different principles and entail unique trade-offs.</p>
+<!--
+bayesian data analysis - ref: McElreath page 38, BOX
+-->
+<!--
+
+**Role of Priors:**
+
+Critics of Bayesian inference often highlight the subjective nature of priors. Priors are flexible and capable of representing diverse informational states. Although results can be influenced by adjusting priors, historically, this has not been utilized for deceit, as such manipulations are easily identifiable. The selection of likelihood is generally more standardized than the choice of prior. However, conventional selections can prove suboptimal, introducing hidden biases. Both Bayesian and frequentist models encounter challenges due to their dependence on likelihood functions and standardized models.
+
+
+more - ref: McElreath page 36, BOX
+sampling distributions - ref: McElreath page 63, BOX
+-->
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<p>Imagine a scenario where we have a sample from a clinical trial and want to test whether a drug is effective in treating a disease. We have 50 patients in each group, and the treatment shows that 30 out of 50 recovered, and in the control group, 10 out of 50 recovered. In this scenario, we can easily apply a frequentist proportion test and obtain a p-value of 0.0001. This result allows us to reject the null hypothesis and conclude that the treatment and control groups have significantly different recovery rates.</p>
+<p>Now, we implement the Bayesian approach to this data and observe that the probability that the treatment recovery rate exceeds the placebo recovery rate is very high, approximately 1. In this moderate-sample scenario, both the frequentist and Bayesian approaches lead to similar conclusions (depending on the type of frequentist test, i.e., one-tailed or two-tailed).</p>
+<p>Now, to demonstrate where the Bayesian method is can be more advantageous than the frequentist method, let’s consider a scenario with limited data. The Bayesian approach can make use of prior knowledge, whereas the frequentist method relies purely on the data at hand. In situations with small sample sizes or limited data, the Bayesian method can give more insightful results.</p>
+<p>Consider, instead of 50 patients, we have data from 5, and want to test whether a drug is effective in treating the disease. So, we have only 5 patients, and the treatment shows that 3 out of 5 recovered. In the control group, 1 out of 5 recovered.</p>
+<p>From a frequentist point of view, this scenario is difficult to assess because the data is very sparse. Even if we conduct a hypothesis test assuming the null hypothesis <span class="math inline">\(H_0\)</span> that the treatment and control groups have the same recovery rate, we obtain a p-value of 0.52 (using a proportion test, which you have learned in an introductory statistics course). This high p-value means we fail to reject the null hypothesis, suggesting no significant difference between the treatment and control recovery rates.</p>
+<p>In Bayesian approach, we combine the sparse data with prior knowledge, yielding more stable and informative results, even when using no particular knowledge about any prior belief (i.e., using a non-informative prior, which we will discuss later in this unit).</p>
+<p>Now, based on the posterior samples of the treatment and placebo recovery rates and knowing that no prior information about the recovery rates, we find the probability that the treatment recovery rate is higher than the placebo recovery rate is approximately 0.882.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig_M01_freq_bayes_uniform.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Uniform Prior</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The Bayesian results we have discussed above for the samll sample scenario assumed no historical knowledge or prior information about the effectiveness of either the treatment or control groups (i.e., a non-informative prior). Now, suppose we know from historical data that the control group has a recovery rate of about 70%. Incorporating this prior information into the Bayesian framework, we find that the probability of the treatment recovery rate being greater than the control group’s rate is 0.58. Whereas, for frequentist, there is no way that we can incorporate this information!</p>
+<!--
+
+
+**Small Sample**
+
+Imagine a scenario where we have a small sample size from a clinical trial and we want to test whether a drug is effective in treating a rare disease. We have only 5 patients, and the treatment shows that 3 out of 5 patients recovered. For the control group 1 out of 5 patients recovered. From frequestist point of view, there is no point of comparing this scenario as the main issue here is that the data is very sparse. Even if we test this by assuming $H_0$ that the treatment and control groups are same, then we get the p-value as 0.52 (using a proportion-test, that you have already learnt from introductory statistics course), which means we fail to reject the null hypothesis. Which means, the treatment and control recovery rates are same.  
+
+Whereas, Bayesian approach combines the sparse data with prior knowledge, offering more stable and informed results (even we use a non-informative prior, which we will discuss more later in this course). Hence, the Bayesian approach will provide the posterior distributions for the treatment and placebo recovery rates, where you will get the probability that the treatment recovery rate is higher than the placebo recovery rate as 0.882 based on the posterior samples.  
+
+
+**Moderate Sample**
+
+Suppose, we have another scenario for the same problem related to the effectiveness of a new drug. Now, we have 50 patients, and the treatment shows 30 out of 50 recovered in the treatment group and 10 out of 50 in the control group. In this scenario, we can easily impliment frequentist proportion test and get the p-value as 0.0001, which means we reject the $H_0$ and say that the efficacy rate for the treatment and control groups are not same. 
+
+For this scenario, we can also use the Bayesian approach, and can see that the probability of the treatment recovery rate is higher than the placebo recovery rate is very hight $\approx$ 1. Note that, in this scenario both approaches, i.e., frequentist and Bayesian provides almost same types of comclusions (depending on the type of tests, i.e., one-tail or two-tailed tests). 
+
+
+**Historical Knowledge of Effectiveness**
+
+The Bayesian results we explained above are obtained when we do not have any historical knowledge or prior information about the effectiveness of either the treatment or control groups (i.e., non-informative prior, which we will discuss more in our upcoming lectures). Now, suppose, if we know control group has about 70% recovery rate (from historical knowledge), and hence considering this prior information in Bayesian setting, we get that the probability of treatment recovery rate greater than the control rate is 0.79.
+
+
+
+
+-->
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig_M01_freq_bayes_informed.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Informed Prior</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Bayesian Method incorporates prior knowledge (such as known rates from similar treatments of the diseases), improving estimates even with small sample sizes. Instead of a single p-value, Bayesian analysis gives a full posterior distribution, providing a richer interpretation of the uncertainty in the treatment’s effectiveness. Finally, Bayesian approach is less affected by small sample sizes, as it uses prior distributions and provides more stable estimates.</p>
+<p>We will discuss more on the distributional aspect in our next lecture. Before that we explain the Bayesian theorem using probabilities.</p>
+</section>
+</section>
+<section id="dual-factor-probabilities" class="level2">
+<h2 class="anchored" data-anchor-id="dual-factor-probabilities">Dual-Factor Probabilities</h2>
+<!--
+ref: kruschke, page 101; sec 5.1.2
+-->
+<p><span class="citation" data-cites="kruschke2014doing">Kruschke (<a href="references.html#ref-kruschke2014doing" role="doc-biblioref">2014</a>)</span></p>
+<p>Bayesians do not imagine repetitions of an experiment in order to define and specify a probability. Probability is merely taken as a measure of certainty in a particular belief. This implies that the probability is used as a way to quantify how certain we are about a belief or an event happening. Before diving into Bayes’ theorem, let’s first understand some key concepts in probability distributions, which I assume you have already learned in the PSI unit.</p>
+<p>There are many situations in which we are interested in the conjunction of two outcomes. As a specific example for developing these ideas, consider a situation where the probabilities of various combinations of people’s eye color and hair color. The data come from a particular convenience sample (Snee, 1974), and are not meant to be representative of any larger population.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig_M01_eyecolor.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Dual-Factor (Snee, 1974); <span class="citation" data-cites="kruschke2014doing">Kruschke (<a href="references.html#ref-kruschke2014doing" role="doc-biblioref">2014</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The above Table considers four possible eye colors, listed in its rows, and four possible hair colors, listed across its columns. In each of its main cells, the table indicates the joint probability of particular combinations of eye color and hair color. For example, the top-left cell indicates that the joint probability of brown eyes and black hair is 0.11 (i.e., 11%). Notice that not all combinations of eye color and hair color are equally likely. For example, the joint probability of blue eyes and black hair is only 0.03 (i.e., 3%).</p>
+<p>We may be interested in the probabilities of the eye colors overall, collapsed across hair colors. These probabilities are indicated in the right margin of the table, and they are therefore called marginal probabilities. They are computed simply by summing the joint probabilities in each row, to produce the row sums. For example, the marginal probability of green eyes, irrespective of hair color, is 0.11. The joint values indicated in the table do not all sum exactly to the displayed marginal values because of rounding error from the original data.</p>
+<p>We often want to know the probability of one outcome, given that we know another outcome is true. For example, suppose I sample a person at random from the population. Suppose I tell you that this person has blue eyes. Conditional on that information, what is the probability that the person has blond hair (or any other particular hair color)? It is intuitively clear how to compute the answer: We see from the blue-eye row of the above Table that the total (i.e., marginal) amount of blue-eyed people is 0.36, and that 0.16 of the population has blue eyes and blond hair. Therefore, of the 0.36 with blue eyes, the fraction 0.16/0.36 has blond hair. In other words, of the blue-eyed people, 45% have blond hair.We also note that of the blue-eyed people, 0.03/0.36 = 8% have black hair.</p>
+</section>
+<section id="bayes-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="bayes-theorem">Bayes’ Theorem</h2>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/bg9eBvjyGZU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Let’s now go back to the example related to type-2 diabetes, where, a medical practitioner hypothise based on patient’s background history that the patient has a chance of having diabetes.</p>
+<p>Thus, we have two events:</p>
+<ol type="1">
+<li>The hypothesis that medical practitioner’s guess is correct <span class="math inline">\((G=[+])\)</span>.</li>
+<li>The evidence: Blood test showing elevated sugar levels <span class="math inline">\((E=[+])\)</span>.</li>
+</ol>
+<p>Now, given this experimental evidence of elevated blood sugar, how sure are the medical practitioner that their guess about the diabetes is accurate?</p>
+<p><span class="math display">\[
+Pr(\text{Guess is correct} | \text{Positive evidence}) = \text{ ?}
+\]</span></p>
+<p>Hence, using conditional probability expression we write:</p>
+<p><span class="math display">\[
+Pr(\text{G=[+]}|\text{E=[+]}) = \frac{Pr(\text{G=[+]},\text{E=[+]})}{Pr(E=[+])}
+\]</span></p>
+<p>where, <span class="math inline">\(Pr(\text{G=[+]},\text{E=[+]})\)</span> is the joint probabiity that both <span class="math inline">\((G=[+])\)</span> and <span class="math inline">\((E=[+])\)</span> occur. We can rearrange and write the joint probability as:</p>
+<p><span class="math display">\[
+Pr(\text{G=[+]},\text{E=[+]}) = Pr(\text{G=[+]})\times Pr(\text{E=[+]}|\text{G=[+]})
+\]</span></p>
+<p>Hence, by substituting the joint probability the Bayes theorem states:</p>
+<p><span class="math display">\[
+Pr(\text{G=[+]}|\text{E=[+]}) = \frac{Pr(\text{G=[+]})\times Pr(\text{E=[+]}|\text{G=[+]})}{Pr(E=[+])}
+\]</span></p>
+<p>where, <span class="math inline">\(Pr(E=[+])\)</span> is the marginal probability for the blood test showing high suger levels for all possible hypotheses, here, the possible hypotheses are: <span class="math inline">\(G=[+]\)</span> and <span class="math inline">\(G=[-]\)</span>. Hence, we write <span class="math inline">\(Pr(\text{G=[+]}|\text{E=[+]})\)</span> as:</p>
+<p><span class="math display">\[
+\frac{Pr(\text{G=[+]})\times Pr(\text{E=[+]}|\text{G=[+]})}{Pr(\text{G=[+]})\times Pr(\text{E=[+]}|\text{G=[+]})+Pr(\text{G=[-]})\times Pr(\text{E=[+]}|\text{G=[-]})}
+\]</span></p>
+<p>where, <span class="math inline">\(Pr(\text{G=[+]})\)</span> and <span class="math inline">\(Pr(\text{G=[-]})\)</span> are the probabilities of the medical practitioner’s guess is correct and incorrect respectively, thus we write <span class="math inline">\(Pr(\text{G=[-]}) = 1-Pr(\text{G=[+]})\)</span> or vise versa.</p>
+<p>We clearly see that the degree of belief probability after including the evidence is equal to the probability of guess before incorporating the evidence and probability of the evidence with the medical practitioner’s guess.</p>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example</h3>
+<p>To explain the above example we write, <span class="math inline">\(Pr(\text{G=[+]})=0.2\)</span>, as the medical practitioner guessed that there is a 20% chance the patient has diabetes. The complement, the probability that the patient does not have diabetes, is <span class="math inline">\(Pr(\text{G=[-]})=0.8\)</span>.</p>
+<p>Now, let us define the test’s accuracy:</p>
+<ul>
+<li><p>Sensitivity (True Positive Rate or Hit Rate): <span class="math inline">\(Pr(\text{E=[+]}|\text{G=[+]})=0.85\)</span>, i.e., 85% of diabetics test positive.</p></li>
+<li><p>Specificity (True Negative Rate): <span class="math inline">\(Pr(\text{E=[-]}|\text{G=[-]})=0.90\)</span>, i.e., 90% of non-diabetics test negative.</p></li>
+<li><p>False Positive Rate (False Alarm): <span class="math inline">\(Pr(\text{E=[+]}|\text{G=[-]})=1-Pr(\text{E=[-]}|\text{G=[-]})=1-0.9=0.10\)</span>, i.e., 10% of non-diabetics test positive.</p></li>
+</ul>
+<p>The question is: Given that the test result is positive, how sure is the medical practitioner that the patient truly has diabetes?</p>
+<p>This is expressed as the posterior probability , which we compute using Bayes’ theorem:</p>
+<p><span class="math display">\[
+Pr(\text{G=[+]}|\text{E=[+]}) = \frac{(0.2\times 0.85)}{(0.2\times 0.85) + (0.8\times 0.1)} = 0.68
+\]</span></p>
+<p>After observing a positive blood sugar test, the probability that the patient has diabetes increases from 20% to 68%. This means the medical practitioner is now 68% confident in their updated belief that the patient has diabetes.</p>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>The key concept of this week’s lecture is that Bayesian ways of thinking are inherently more suited to solving real-life problems compared to frequentist/classical approaches, as they allow for the inclusion of prior information in decision-making, providing a clear advantage in calculating inverse probability.</p>
+</section>
+<section id="live-tutorial-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="live-tutorial-and-discussion">Live tutorial and discussion</h2>
+<p>The final learning activity for this week is the live tutorial and discussion. This tutorial is an opportunity for you to to interact with your teachers, ask questions about the course, and learn about biostatistics in practice. You are expected to attend these tutorials when possible for you to do so. For those that cannot attend, the tutorial will be recorded and made available on Canvas. We hope to see you there!</p>
+</section>
+<section id="tutorial-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="tutorial-exercises">Tutorial Exercises</h2>
+<p>Solutions will be provided later after the tutorial.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-kruschke2014doing" class="csl-entry" role="listitem">
+Kruschke, J. 2014. <em>Doing Bayesian Data Analysis: A Tutorial with r, JAGS, and Stan</em>. Academic Press.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./brief_module_01.html" class="pagination-link" aria-label="**Module 1:** Bayesian Dreams!">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><strong>Module 1:</strong> Bayesian Dreams!</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./M01_2.html" class="pagination-link" aria-label="Week 2: **Bayesian Inference**">
+        <span class="nav-page-text">Week 2: <strong>Bayesian Inference</strong></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
