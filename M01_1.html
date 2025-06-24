@@ -302,11 +302,11 @@ window.Quarto = {
   <li><a href="#bayesian-philosophy" id="toc-bayesian-philosophy" class="nav-link" data-scroll-target="#bayesian-philosophy">Bayesian Philosophy</a></li>
   <li><a href="#the-maze" id="toc-the-maze" class="nav-link" data-scroll-target="#the-maze">The Maze</a>
   <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example:</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   </ul></li>
   <li><a href="#concepts-classical-vs.-bayesian" id="toc-concepts-classical-vs.-bayesian" class="nav-link" data-scroll-target="#concepts-classical-vs.-bayesian">Concepts: Classical vs.&nbsp;Bayesian</a>
   <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example:</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
   </ul></li>
   <li><a href="#dual-factor-probabilities" id="toc-dual-factor-probabilities" class="nav-link" data-scroll-target="#dual-factor-probabilities">Dual-Factor Probabilities</a></li>
   <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes’ Theorem</a>
@@ -380,7 +380,7 @@ asdf
 </section>
 <section id="bayesian-philosophy" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-philosophy">Bayesian Philosophy</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/BTNkyars9RI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/uhaGzxXjaIo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>Bayesian philosophy revolves around the concept of “degrees of belief” in scientific reasoning. But what does that actually mean? Simply put, it views probability as a measure of our confidence in an event, which updates as we gather new evidence. Unlike traditional frequentist statistics, which treat probability as an objective, fixed value, Bayesian thinking sees it as a dynamic, subjective measure that evolves with new data and insights.</p>
 <p>Let’s explain a bit more using examples:</p>
@@ -409,7 +409,7 @@ ref: McElreath page 20, sec 2.1
 <p>Bayesian analysis is a logical framework that helps update our beliefs based on continuous new information. A helpful analogy is navigating a maze with an incomplete map. Each step provides new clues, and with every clue, your understanding of the maze improves. By continuously updating your knowledge with new information, you eventually find the exit. This is how Bayesian analysis works, it continuously updates our understanding as more evidence comes in.</p>
 <p>To see this in practice, let’s consider an example explained below.</p>
 <section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example:</h3>
+<h3 class="anchored" data-anchor-id="example">Example</h3>
 <p>A medical practitioner had seen many cases of pneumonia before, but this one was tricky. A 55-year-old patient, had been admitted with high fever, cough, and shortness of breath. Based on his symptoms and an initial chest X-ray, the practitioner diagnosed him with bacterial pneumonia and started him on a standard antibiotic.</p>
 <p>At this point, their belief was strong that the chosen antibiotic would work, this was their prior probability based on past experience.</p>
 <p><strong>Day 2:</strong></p>
@@ -482,11 +482,14 @@ more - ref: McElreath page 36, BOX
 sampling distributions - ref: McElreath page 63, BOX
 -->
 <section id="example-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-1">Example:</h3>
-<p>To demonstrate where the Bayesian method is clearly more advantageous than the Frequentist method, let’s consider a scenario with limited data. The Bayesian approach can make use of prior knowledge, whereas the frequentist method relies purely on the data at hand. In situations with small sample sizes or limited data, the Bayesian method can give more insightful results.</p>
-<p>Imagine a scenario where we have a small sample size from a clinical trial and we want to test whether a drug is effective in treating a rare disease. We have only 5 patients, and the treatment shows that 3 out of 5 patients recovered. For the control group 1 out of 5 patients recovered. The issue here is that the data is very sparse, so relying on a frequentist approach may lead to an unreliable conclusion because of the small sample size. The p-value might not be informative because small sample sizes lead to high variability. Whereas, Bayesian approach combines the sparse data with prior knowledge, offering more stable and informed results (even we use a non-informative prior, which we will discuss more later in this course).</p>
-<p>For frequentist, the proportion test will provide a p-value indicating if the recovery rates are significantly different between the two groups. For this example, we get p-value =0.52. Whereas, the Bayesian approach will provide the posterior distributions for the treatment and placebo recovery rates. Additionally, you will get the probability that the treatment recovery rate is higher than the placebo recovery rate as 0.882 based on the posterior samples.</p>
-<p>Now, if we know control group has about 70% recovery rate, and considering this prior information in Bayesian setting, we get that the orobability of treatment recovery rate greater than the control rate is 0.58.</p>
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<p>Imagine a scenario where we have a sample from a clinical trial and want to test whether a drug is effective in treating a disease. We have 50 patients in each group, and the treatment shows that 30 out of 50 recovered, and in the control group, 10 out of 50 recovered. In this scenario, we can easily apply a frequentist proportion test and obtain a p-value of 0.0001. This result allows us to reject the null hypothesis and conclude that the treatment and control groups have significantly different recovery rates.</p>
+<p>Now, we implement the Bayesian approach to this data and observe that the probability that the treatment recovery rate exceeds the placebo recovery rate is very high, approximately 1. In this moderate-sample scenario, both the frequentist and Bayesian approaches lead to similar conclusions (depending on the type of frequentist test, i.e., one-tailed or two-tailed).</p>
+<p>Now, to demonstrate where the Bayesian method is can be more advantageous than the frequentist method, let’s consider a scenario with limited data. The Bayesian approach can make use of prior knowledge, whereas the frequentist method relies purely on the data at hand. In situations with small sample sizes or limited data, the Bayesian method can give more insightful results.</p>
+<p>Consider, instead of 50 patients, we have data from 5, and want to test whether a drug is effective in treating the disease. So, we have only 5 patients, and the treatment shows that 3 out of 5 recovered. In the control group, 1 out of 5 recovered.</p>
+<p>From a frequentist point of view, this scenario is difficult to assess because the data is very sparse. Even if we conduct a hypothesis test assuming the null hypothesis <span class="math inline">\(H_0\)</span> that the treatment and control groups have the same recovery rate, we obtain a p-value of 0.52 (using a proportion test, which you have learned in an introductory statistics course). This high p-value means we fail to reject the null hypothesis, suggesting no significant difference between the treatment and control recovery rates.</p>
+<p>In Bayesian approach, we combine the sparse data with prior knowledge, yielding more stable and informative results, even when using no particular knowledge about any prior belief (i.e., using a non-informative prior, which we will discuss later in this unit).</p>
+<p>Now, based on the posterior samples of the treatment and placebo recovery rates and knowing that no prior information about the recovery rates, we find the probability that the treatment recovery rate is higher than the placebo recovery rate is approximately 0.882.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -497,6 +500,51 @@ sampling distributions - ref: McElreath page 63, BOX
 </div>
 </div>
 </div>
+<p>The Bayesian results we have discussed above for the samll sample scenario assumed no historical knowledge or prior information about the effectiveness of either the treatment or control groups (i.e., a non-informative prior). Now, suppose we know from historical data that the control group has a recovery rate of about 70%. Incorporating this prior information into the Bayesian framework, we find that the probability of the treatment recovery rate being greater than the control group’s rate is 0.58. Whereas, for frequentist, there is no way that we can incorporate this information!</p>
+<p>–</p>
+<p>Imagine a scenario where we have data from a clinical trial and want to test whether a drug is effective in treating a disease. There are 50 patients in each group. In the treatment group, 30 out of 50 recovered, while in the control group, 10 out of 50 recovered. In this case, we can easily apply a frequentist proportion test and obtain a p-value of 0.0001. This result allows us to reject the null hypothesis and conclude that the treatment and control groups have significantly different recovery rates.</p>
+<p>Now, applying a Bayesian approach to the same data, we observe that the probability that the treatment recovery rate exceeds the placebo recovery rate is very high, approximately 1. In this moderate-sample scenario, both the frequentist and Bayesian approaches lead to similar conclusions (depending on the type of frequentist test, i.e., one-tailed or two-tailed).</p>
+<p>To demonstrate a scenario where the Bayesian method may offer advantages over the frequentist method, let’s consider a case with limited data. The Bayesian approach allows us to incorporate prior knowledge, while the frequentist method relies solely on the observed data. In situations with small sample sizes, the Bayesian method can produce more insightful and stable results.</p>
+<p>Suppose, instead of 50 patients, we only have data from 5. In this case, the treatment group shows that 3 out of 5 patients recovered, and the control group shows that 1 out of 5 recovered.</p>
+<p>From a frequentist perspective, this scenario is difficult to assess due to the limited data. Even if we conduct a hypothesis test under the null hypothesis <span class="math inline">\(H_0\)</span> that the treatment and control groups have the same recovery rate, we obtain a p-value of 0.52 (using a proportion test, as introduced in an introductory statistics course). This high p-value leads us to fail to reject the null hypothesis, suggesting no significant difference between the treatment and control groups.</p>
+<p>Whereas, the Bayesian approach combines the sparse data with prior knowledge, producing more stable and informative results, even when using no specific prior beliefs (i.e., a non-informative prior, which we will discuss later in this unit).</p>
+<p>Based on posterior samples of the treatment and placebo recovery rates, and assuming no prior information about those rates, we find that the probability of the treatment recovery rate being higher than the placebo recovery rate is approximately 0.882.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig_M01_freq_bayes_uniform.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Uniform Prior</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The Bayesian results we discussed above for the small-sample scenario were no historical knowledge or prior beliefs were incorporated. Now, suppose we do have historical data suggesting that the control group typically has a recovery rate of about 70%. Incorporating this prior information into the Bayesian framework, we find that the probability of the treatment recovery rate being greater than the control group’s rate drops to 0.58. Whereas, the frequentist method provides no way to incorporate such prior information.</p>
+<!--
+
+
+**Small Sample**
+
+Imagine a scenario where we have a small sample size from a clinical trial and we want to test whether a drug is effective in treating a rare disease. We have only 5 patients, and the treatment shows that 3 out of 5 patients recovered. For the control group 1 out of 5 patients recovered. From frequestist point of view, there is no point of comparing this scenario as the main issue here is that the data is very sparse. Even if we test this by assuming $H_0$ that the treatment and control groups are same, then we get the p-value as 0.52 (using a proportion-test, that you have already learnt from introductory statistics course), which means we fail to reject the null hypothesis. Which means, the treatment and control recovery rates are same.  
+
+Whereas, Bayesian approach combines the sparse data with prior knowledge, offering more stable and informed results (even we use a non-informative prior, which we will discuss more later in this course). Hence, the Bayesian approach will provide the posterior distributions for the treatment and placebo recovery rates, where you will get the probability that the treatment recovery rate is higher than the placebo recovery rate as 0.882 based on the posterior samples.  
+
+
+**Moderate Sample**
+
+Suppose, we have another scenario for the same problem related to the effectiveness of a new drug. Now, we have 50 patients, and the treatment shows 30 out of 50 recovered in the treatment group and 10 out of 50 in the control group. In this scenario, we can easily impliment frequentist proportion test and get the p-value as 0.0001, which means we reject the $H_0$ and say that the efficacy rate for the treatment and control groups are not same. 
+
+For this scenario, we can also use the Bayesian approach, and can see that the probability of the treatment recovery rate is higher than the placebo recovery rate is very hight $\approx$ 1. Note that, in this scenario both approaches, i.e., frequentist and Bayesian provides almost same types of comclusions (depending on the type of tests, i.e., one-tail or two-tailed tests). 
+
+
+**Historical Knowledge of Effectiveness**
+
+The Bayesian results we explained above are obtained when we do not have any historical knowledge or prior information about the effectiveness of either the treatment or control groups (i.e., non-informative prior, which we will discuss more in our upcoming lectures). Now, suppose, if we know control group has about 70% recovery rate (from historical knowledge), and hence considering this prior information in Bayesian setting, we get that the probability of treatment recovery rate greater than the control rate is 0.79.
+
+
+
+
+-->
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">

@@ -458,10 +458,10 @@ p(\theta|D)
 p(\theta|D) = \frac{p(D|\theta)\times p(\theta)}{p(D)};
 \]</span></p>
 <p>where,</p>
-<p><span class="math display">\[\begin{align}
+<span class="math display">\[\begin{align}
 p(D) &amp;= \sum_{\theta^*} p(D|\theta^*) p(\theta^*); \quad \text{ if discrete}; \\
 p(D) &amp;= \int p(D|\theta^*) p(\theta^*) \text{d}\theta^*; \quad \text{ if continuous};
-\end{align}\]</span></p>
+\end{align}\]</span>
 <p>Here, <span class="math inline">\(p(\theta)\)</span> is the prior information about <span class="math inline">\(\theta\)</span> without observing data; <span class="math inline">\(p(D|\theta)\)</span> is the likelihood, i.e., data could be generated with model parameter <span class="math inline">\(\theta\)</span>; and <span class="math inline">\(p(D)\)</span> is the marginal likelihood obtained from data by averaging across all possible parameters.</p>
 <p>The posterior distribution of <span class="math inline">\(\theta\)</span> is:</p>
 <p><span class="math display">\[
@@ -625,8 +625,8 @@ ref: paper: https://doi.org/10.1016/j.jclinepi.2021.08.001
 <p>Using the model with binary observations, we write a DAG as:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-d61f4975fd3972c31ccd" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-d61f4975fd3972c31ccd">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Variable\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a73b28b424df98b0eb91" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a73b28b424df98b0eb91">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Variable\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>This is a simple graphical model, where <span class="math inline">\(y\)</span> depends on <span class="math inline">\(\theta\)</span>, with <span class="math inline">\(\theta\)</span> being a logical function of hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
@@ -683,8 +683,8 @@ Pr(H_1|y=1) = 1- 0.45 = 0.55
 <p><strong>Posterior Probabilities (Pr(H₀|y=1) and Pr(H₁|y=1))</strong>: The updated belief about the hypotheses after observing the data.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-16b5069a12fc73ed08cc" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-16b5069a12fc73ed08cc">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-90944a80759bfa826132" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-90944a80759bfa826132">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Now, we can summarise the results for all four seperate sample sizes using frequentist p-value and Bayesian methods, where</p>
@@ -697,6 +697,12 @@ Pr(H_1|y=1) = 1- 0.45 = 0.55
 <p>Posterior for <span class="math inline">\(H_1\)</span>: <span class="math inline">\(Pr(20\% \text{ prevalence} \mid n, y)\)</span></p>
 <p>And the results we get:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Data</strong></th>
@@ -893,8 +899,8 @@ It is invariance to data-order ... ref: kruschke, page 107; sec 5.2.1
 <p>As more data points are collected (<strong>n = 3, YES</strong> and <strong>n = 4, YES</strong>), our probability distribution starts forming a clearer peak. This means that we are beginning to refine our estimate of how likely the drug is to cause severe side effects. By <strong>n = 5 (YES)</strong>, the probability distribution has a well-defined peak, indicating that we are gaining confidence in our estimate. However, in <strong>n = 6 (NO)</strong>, the introduction of a new negative observation (no side effects) shifts our belief again. This suggests that the probability of side effects is not as high as previously estimated, and our model adjusts accordingly.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-a4de011b8d8f95a7d9eb" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-a4de011b8d8f95a7d9eb">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-c7e7740246a930914e31" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-c7e7740246a930914e31">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><strong>Invariance to data-order</strong></p>
