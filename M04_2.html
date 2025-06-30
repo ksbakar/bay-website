@@ -420,8 +420,8 @@ window.Quarto = {
 <p>We can draw DAG based on the Cauchy prior for only one predictor variable BMD as follows. Similarly, we can see that for the intercept <span class="math inline">\(\beta_0\)</span> we consider a normal prior distribution with a relatively wider variance.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-c572b32e8dc35824133e" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-c572b32e8dc35824133e">{"x":{"diagram":"\n  digraph combined_DAGs {\n\n    // Global layout settings\n    compound = true;\n    ranksep = 1.5;\n    newrank = true;\n    fontsize = 10;\n\n    // First DAG (Left)\n    subgraph cluster_1 {\n      label = \"DAG with only BMD (Cauchy prior)\";\n      style = dashed;\n      rankdir = TB;\n\n      BMD2 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status2 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_02 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_12 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n\n      mu0 [label = \"μ₀\", shape = box, style = filled, fillcolor = lightyellow]\n      sig20 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightyellow]\n\n      mu [label = \"μ\", shape = box, style = filled, fillcolor = lightyellow]\n      tau [label = \"τ\", shape = box, style = filled, fillcolor = lightyellow]\n\n      BMD2 -> Status2\n      beta_02 -> Status2\n      beta_12 -> Status2\n      mu0 -> beta_02\n      sig20 -> beta_02\n      mu -> beta_12\n      tau -> beta_12\n    }\n\n    // Second DAG (Right)\n    subgraph cluster_2 {\n      label = \"DAG with only BMD (Cauchy prior)\";\n      style = dashed;\n      rankdir = TB;\n\n      BMD1 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status1 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_01 [label = \"β₀ (Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_11 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n\n      prior_beta_01 [label = \"Prior for β₀:\\n N(μ₀=0, σ₀²=10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n      prior_beta_11 [label = \"Prior for β₁:\\n Cauchy(μ=0, τ=2.5)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n      BMD1 -> Status1\n      beta_01 -> Status1\n      beta_11 -> Status1\n      prior_beta_01 -> beta_01\n      prior_beta_11 -> beta_11\n    }\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-cd8a7ccc234a8c363362" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-cd8a7ccc234a8c363362">{"x":{"diagram":"\n  digraph combined_DAGs {\n\n    // Global layout settings\n    compound = true;\n    ranksep = 1.5;\n    newrank = true;\n    fontsize = 10;\n\n    // First DAG (Left)\n    subgraph cluster_1 {\n      label = \"DAG with only BMD (Cauchy prior)\";\n      style = dashed;\n      rankdir = TB;\n\n      BMD2 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status2 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_02 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_12 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n\n      mu0 [label = \"μ₀\", shape = box, style = filled, fillcolor = lightyellow]\n      sig20 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightyellow]\n\n      mu [label = \"μ\", shape = box, style = filled, fillcolor = lightyellow]\n      tau [label = \"τ\", shape = box, style = filled, fillcolor = lightyellow]\n\n      BMD2 -> Status2\n      beta_02 -> Status2\n      beta_12 -> Status2\n      mu0 -> beta_02\n      sig20 -> beta_02\n      mu -> beta_12\n      tau -> beta_12\n    }\n\n    // Second DAG (Right)\n    subgraph cluster_2 {\n      label = \"DAG with only BMD (Cauchy prior)\";\n      style = dashed;\n      rankdir = TB;\n\n      BMD1 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n      Status1 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n      beta_01 [label = \"β₀ (Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n      beta_11 [label = \"β₁ (BMD)\", shape = box, style = filled, fillcolor = lightgrey]\n\n      prior_beta_01 [label = \"Prior for β₀:\\n N(μ₀=0, σ₀²=10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n      prior_beta_11 [label = \"Prior for β₁:\\n Cauchy(μ=0, τ=2.5)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n      BMD1 -> Status1\n      beta_01 -> Status1\n      beta_11 -> Status1\n      prior_beta_01 -> beta_01\n      prior_beta_11 -> beta_11\n    }\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -629,23 +629,23 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Odds Ratio for Fracture Model (Normal Prior)**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="uzzhkadcms" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uzzhkadcms table {
+<div id="aasaruwwnx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aasaruwwnx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uzzhkadcms thead, #uzzhkadcms tbody, #uzzhkadcms tfoot, #uzzhkadcms tr, #uzzhkadcms td, #uzzhkadcms th {
+#aasaruwwnx thead, #aasaruwwnx tbody, #aasaruwwnx tfoot, #aasaruwwnx tr, #aasaruwwnx td, #aasaruwwnx th {
   border-style: none;
 }
 
-#uzzhkadcms p {
+#aasaruwwnx p {
   margin: 0;
   padding: 0;
 }
 
-#uzzhkadcms .gt_table {
+#aasaruwwnx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -671,12 +671,12 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_caption {
+#aasaruwwnx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uzzhkadcms .gt_title {
+#aasaruwwnx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -688,7 +688,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-width: 0;
 }
 
-#uzzhkadcms .gt_subtitle {
+#aasaruwwnx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -700,7 +700,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-width: 0;
 }
 
-#uzzhkadcms .gt_heading {
+#aasaruwwnx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -712,13 +712,13 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_bottom_border {
+#aasaruwwnx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_col_headings {
+#aasaruwwnx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -733,7 +733,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_col_heading {
+#aasaruwwnx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -753,7 +753,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#uzzhkadcms .gt_column_spanner_outer {
+#aasaruwwnx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -765,15 +765,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 4px;
 }
 
-#uzzhkadcms .gt_column_spanner_outer:first-child {
+#aasaruwwnx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uzzhkadcms .gt_column_spanner_outer:last-child {
+#aasaruwwnx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uzzhkadcms .gt_column_spanner {
+#aasaruwwnx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -785,11 +785,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   width: 100%;
 }
 
-#uzzhkadcms .gt_spanner_row {
+#aasaruwwnx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uzzhkadcms .gt_group_heading {
+#aasaruwwnx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -815,7 +815,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   text-align: left;
 }
 
-#uzzhkadcms .gt_empty_group_heading {
+#aasaruwwnx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -830,15 +830,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: middle;
 }
 
-#uzzhkadcms .gt_from_md > :first-child {
+#aasaruwwnx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uzzhkadcms .gt_from_md > :last-child {
+#aasaruwwnx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uzzhkadcms .gt_row {
+#aasaruwwnx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -857,7 +857,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#uzzhkadcms .gt_stub {
+#aasaruwwnx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -870,7 +870,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#uzzhkadcms .gt_stub_row_group {
+#aasaruwwnx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -884,15 +884,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: top;
 }
 
-#uzzhkadcms .gt_row_group_first td {
+#aasaruwwnx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uzzhkadcms .gt_row_group_first th {
+#aasaruwwnx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uzzhkadcms .gt_summary_row {
+#aasaruwwnx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -902,16 +902,16 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#uzzhkadcms .gt_first_summary_row {
+#aasaruwwnx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_first_summary_row.thick {
+#aasaruwwnx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uzzhkadcms .gt_last_summary_row {
+#aasaruwwnx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -921,7 +921,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_grand_summary_row {
+#aasaruwwnx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -931,7 +931,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#uzzhkadcms .gt_first_grand_summary_row {
+#aasaruwwnx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -941,7 +941,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_last_grand_summary_row_top {
+#aasaruwwnx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -951,11 +951,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_striped {
+#aasaruwwnx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uzzhkadcms .gt_table_body {
+#aasaruwwnx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -964,7 +964,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_footnotes {
+#aasaruwwnx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -978,7 +978,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_footnote {
+#aasaruwwnx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -987,7 +987,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#uzzhkadcms .gt_sourcenotes {
+#aasaruwwnx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1001,7 +1001,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#uzzhkadcms .gt_sourcenote {
+#aasaruwwnx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1009,72 +1009,72 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#uzzhkadcms .gt_left {
+#aasaruwwnx .gt_left {
   text-align: left;
 }
 
-#uzzhkadcms .gt_center {
+#aasaruwwnx .gt_center {
   text-align: center;
 }
 
-#uzzhkadcms .gt_right {
+#aasaruwwnx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uzzhkadcms .gt_font_normal {
+#aasaruwwnx .gt_font_normal {
   font-weight: normal;
 }
 
-#uzzhkadcms .gt_font_bold {
+#aasaruwwnx .gt_font_bold {
   font-weight: bold;
 }
 
-#uzzhkadcms .gt_font_italic {
+#aasaruwwnx .gt_font_italic {
   font-style: italic;
 }
 
-#uzzhkadcms .gt_super {
+#aasaruwwnx .gt_super {
   font-size: 65%;
 }
 
-#uzzhkadcms .gt_footnote_marks {
+#aasaruwwnx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uzzhkadcms .gt_asterisk {
+#aasaruwwnx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uzzhkadcms .gt_indent_1 {
+#aasaruwwnx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uzzhkadcms .gt_indent_2 {
+#aasaruwwnx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uzzhkadcms .gt_indent_3 {
+#aasaruwwnx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uzzhkadcms .gt_indent_4 {
+#aasaruwwnx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uzzhkadcms .gt_indent_5 {
+#aasaruwwnx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uzzhkadcms .katex-display {
+#aasaruwwnx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uzzhkadcms div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aasaruwwnx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1113,23 +1113,23 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Odds Ratio for Fracture Model (Cauchy Prior)**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="txkyaxyaig" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#txkyaxyaig table {
+<div id="zfxbxayvbr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zfxbxayvbr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#txkyaxyaig thead, #txkyaxyaig tbody, #txkyaxyaig tfoot, #txkyaxyaig tr, #txkyaxyaig td, #txkyaxyaig th {
+#zfxbxayvbr thead, #zfxbxayvbr tbody, #zfxbxayvbr tfoot, #zfxbxayvbr tr, #zfxbxayvbr td, #zfxbxayvbr th {
   border-style: none;
 }
 
-#txkyaxyaig p {
+#zfxbxayvbr p {
   margin: 0;
   padding: 0;
 }
 
-#txkyaxyaig .gt_table {
+#zfxbxayvbr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1155,12 +1155,12 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_caption {
+#zfxbxayvbr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#txkyaxyaig .gt_title {
+#zfxbxayvbr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1172,7 +1172,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-width: 0;
 }
 
-#txkyaxyaig .gt_subtitle {
+#zfxbxayvbr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1184,7 +1184,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-width: 0;
 }
 
-#txkyaxyaig .gt_heading {
+#zfxbxayvbr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1196,13 +1196,13 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_bottom_border {
+#zfxbxayvbr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_col_headings {
+#zfxbxayvbr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1217,7 +1217,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_col_heading {
+#zfxbxayvbr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1237,7 +1237,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#txkyaxyaig .gt_column_spanner_outer {
+#zfxbxayvbr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1249,15 +1249,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 4px;
 }
 
-#txkyaxyaig .gt_column_spanner_outer:first-child {
+#zfxbxayvbr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#txkyaxyaig .gt_column_spanner_outer:last-child {
+#zfxbxayvbr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#txkyaxyaig .gt_column_spanner {
+#zfxbxayvbr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1269,11 +1269,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   width: 100%;
 }
 
-#txkyaxyaig .gt_spanner_row {
+#zfxbxayvbr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#txkyaxyaig .gt_group_heading {
+#zfxbxayvbr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1299,7 +1299,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   text-align: left;
 }
 
-#txkyaxyaig .gt_empty_group_heading {
+#zfxbxayvbr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1314,15 +1314,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: middle;
 }
 
-#txkyaxyaig .gt_from_md > :first-child {
+#zfxbxayvbr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#txkyaxyaig .gt_from_md > :last-child {
+#zfxbxayvbr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#txkyaxyaig .gt_row {
+#zfxbxayvbr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1341,7 +1341,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#txkyaxyaig .gt_stub {
+#zfxbxayvbr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1354,7 +1354,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#txkyaxyaig .gt_stub_row_group {
+#zfxbxayvbr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1368,15 +1368,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: top;
 }
 
-#txkyaxyaig .gt_row_group_first td {
+#zfxbxayvbr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#txkyaxyaig .gt_row_group_first th {
+#zfxbxayvbr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#txkyaxyaig .gt_summary_row {
+#zfxbxayvbr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1386,16 +1386,16 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#txkyaxyaig .gt_first_summary_row {
+#zfxbxayvbr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_first_summary_row.thick {
+#zfxbxayvbr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#txkyaxyaig .gt_last_summary_row {
+#zfxbxayvbr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1405,7 +1405,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_grand_summary_row {
+#zfxbxayvbr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1415,7 +1415,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#txkyaxyaig .gt_first_grand_summary_row {
+#zfxbxayvbr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1425,7 +1425,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_last_grand_summary_row_top {
+#zfxbxayvbr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1435,11 +1435,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_striped {
+#zfxbxayvbr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#txkyaxyaig .gt_table_body {
+#zfxbxayvbr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1448,7 +1448,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_footnotes {
+#zfxbxayvbr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1462,7 +1462,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_footnote {
+#zfxbxayvbr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1471,7 +1471,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#txkyaxyaig .gt_sourcenotes {
+#zfxbxayvbr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1485,7 +1485,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#txkyaxyaig .gt_sourcenote {
+#zfxbxayvbr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1493,72 +1493,72 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#txkyaxyaig .gt_left {
+#zfxbxayvbr .gt_left {
   text-align: left;
 }
 
-#txkyaxyaig .gt_center {
+#zfxbxayvbr .gt_center {
   text-align: center;
 }
 
-#txkyaxyaig .gt_right {
+#zfxbxayvbr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#txkyaxyaig .gt_font_normal {
+#zfxbxayvbr .gt_font_normal {
   font-weight: normal;
 }
 
-#txkyaxyaig .gt_font_bold {
+#zfxbxayvbr .gt_font_bold {
   font-weight: bold;
 }
 
-#txkyaxyaig .gt_font_italic {
+#zfxbxayvbr .gt_font_italic {
   font-style: italic;
 }
 
-#txkyaxyaig .gt_super {
+#zfxbxayvbr .gt_super {
   font-size: 65%;
 }
 
-#txkyaxyaig .gt_footnote_marks {
+#zfxbxayvbr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#txkyaxyaig .gt_asterisk {
+#zfxbxayvbr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#txkyaxyaig .gt_indent_1 {
+#zfxbxayvbr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#txkyaxyaig .gt_indent_2 {
+#zfxbxayvbr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#txkyaxyaig .gt_indent_3 {
+#zfxbxayvbr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#txkyaxyaig .gt_indent_4 {
+#zfxbxayvbr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#txkyaxyaig .gt_indent_5 {
+#zfxbxayvbr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#txkyaxyaig .katex-display {
+#zfxbxayvbr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#txkyaxyaig div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zfxbxayvbr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1614,8 +1614,8 @@ Smooths posterior | Helps MCMC converge more stably |</div>
 <p>In the first setup, i.e., normal-exponential hierarchy, the regression coefficient (say for the exposure variable BMD) is assumed to follow a normal distribution, such that <span class="math inline">\(\beta_1 \sim N(0, \sigma^2)\)</span>. Instead of fixing <span class="math inline">\(\sigma\)</span>, we place an exponential hyperprior on it: <span class="math inline">\(\sigma \sim \text{Exp}(\lambda)\)</span>, and we consider different values for the hyper-hyper parameter <span class="math inline">\(\lambda\)</span>. For example, considering the hyper-hyper parameter <span class="math inline">\(\lambda=1\)</span> allows the model to learn an appropriate scale from the data, shrinking coefficients more aggressively when <span class="math inline">\(\sigma\)</span> is small and allowing more flexibility when <span class="math inline">\(\sigma\)</span> is large. This structure introduces a level of adaptivity that can help prevent overfitting while still permitting the model to express sufficient complexity when warranted by the data.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-d2bebb863058fa8aede4" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-d2bebb863058fa8aede4">{"x":{"diagram":"\n  digraph combined_DAGs {\n\n    // Global layout settings\n    compound = true;\n    ranksep = 1.5;\n    newrank = true;\n    fontsize = 10;\n    rankdir = TB;\n\n    // Nodes\n    BMD2 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Status2 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta_02 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_12 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu0 [label = \"μ₀\", shape = box, style = filled, fillcolor = lightyellow]\n    sig20 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightyellow]\n\n    mu1 [label = \"μ₁\", shape = box, style = filled, fillcolor = lightyellow]\n    sig21 [label = \"σ₁²\", shape = box, style = filled, fillcolor = lightyellow]\n    lambda1 [label = \"λ\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    BMD2 -> Status2\n    beta_02 -> Status2\n    beta_12 -> Status2\n\n    mu0 -> beta_02\n    sig20 -> beta_02\n\n    mu1 -> beta_12\n    sig21 -> beta_12\n    lambda1 -> sig21\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-1cb4a9a0d8cf3f89e7dc" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1cb4a9a0d8cf3f89e7dc">{"x":{"diagram":"\n  digraph combined_DAGs {\n\n    // Global layout settings\n    compound = true;\n    ranksep = 1.5;\n    newrank = true;\n    fontsize = 10;\n    rankdir = TB;\n\n    // Nodes\n    BMD2 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Status2 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta_02 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_12 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu0 [label = \"μ₀\", shape = box, style = filled, fillcolor = lightyellow]\n    sig20 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightyellow]\n\n    mu1 [label = \"μ₁\", shape = box, style = filled, fillcolor = lightyellow]\n    sig21 [label = \"σ₁²\", shape = box, style = filled, fillcolor = lightyellow]\n    lambda1 [label = \"λ\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    BMD2 -> Status2\n    beta_02 -> Status2\n    beta_12 -> Status2\n\n    mu0 -> beta_02\n    sig20 -> beta_02\n\n    mu1 -> beta_12\n    sig21 -> beta_12\n    lambda1 -> sig21\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -1676,23 +1676,23 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Odds Ratio (Normal-Exponential Hierarchy)**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="dmqqclnwkf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dmqqclnwkf table {
+<div id="iwkqobepoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iwkqobepoz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dmqqclnwkf thead, #dmqqclnwkf tbody, #dmqqclnwkf tfoot, #dmqqclnwkf tr, #dmqqclnwkf td, #dmqqclnwkf th {
+#iwkqobepoz thead, #iwkqobepoz tbody, #iwkqobepoz tfoot, #iwkqobepoz tr, #iwkqobepoz td, #iwkqobepoz th {
   border-style: none;
 }
 
-#dmqqclnwkf p {
+#iwkqobepoz p {
   margin: 0;
   padding: 0;
 }
 
-#dmqqclnwkf .gt_table {
+#iwkqobepoz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1718,12 +1718,12 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_caption {
+#iwkqobepoz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dmqqclnwkf .gt_title {
+#iwkqobepoz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1735,7 +1735,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-width: 0;
 }
 
-#dmqqclnwkf .gt_subtitle {
+#iwkqobepoz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1747,7 +1747,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-width: 0;
 }
 
-#dmqqclnwkf .gt_heading {
+#iwkqobepoz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1759,13 +1759,13 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_bottom_border {
+#iwkqobepoz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_col_headings {
+#iwkqobepoz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1780,7 +1780,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_col_heading {
+#iwkqobepoz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1800,7 +1800,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#dmqqclnwkf .gt_column_spanner_outer {
+#iwkqobepoz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1812,15 +1812,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 4px;
 }
 
-#dmqqclnwkf .gt_column_spanner_outer:first-child {
+#iwkqobepoz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dmqqclnwkf .gt_column_spanner_outer:last-child {
+#iwkqobepoz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dmqqclnwkf .gt_column_spanner {
+#iwkqobepoz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1832,11 +1832,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   width: 100%;
 }
 
-#dmqqclnwkf .gt_spanner_row {
+#iwkqobepoz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dmqqclnwkf .gt_group_heading {
+#iwkqobepoz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1862,7 +1862,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   text-align: left;
 }
 
-#dmqqclnwkf .gt_empty_group_heading {
+#iwkqobepoz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1877,15 +1877,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: middle;
 }
 
-#dmqqclnwkf .gt_from_md > :first-child {
+#iwkqobepoz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dmqqclnwkf .gt_from_md > :last-child {
+#iwkqobepoz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dmqqclnwkf .gt_row {
+#iwkqobepoz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1904,7 +1904,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#dmqqclnwkf .gt_stub {
+#iwkqobepoz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1917,7 +1917,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dmqqclnwkf .gt_stub_row_group {
+#iwkqobepoz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1931,15 +1931,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: top;
 }
 
-#dmqqclnwkf .gt_row_group_first td {
+#iwkqobepoz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dmqqclnwkf .gt_row_group_first th {
+#iwkqobepoz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dmqqclnwkf .gt_summary_row {
+#iwkqobepoz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1949,16 +1949,16 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dmqqclnwkf .gt_first_summary_row {
+#iwkqobepoz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_first_summary_row.thick {
+#iwkqobepoz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dmqqclnwkf .gt_last_summary_row {
+#iwkqobepoz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1968,7 +1968,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_grand_summary_row {
+#iwkqobepoz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1978,7 +1978,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dmqqclnwkf .gt_first_grand_summary_row {
+#iwkqobepoz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1988,7 +1988,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_last_grand_summary_row_top {
+#iwkqobepoz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1998,11 +1998,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_striped {
+#iwkqobepoz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dmqqclnwkf .gt_table_body {
+#iwkqobepoz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2011,7 +2011,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_footnotes {
+#iwkqobepoz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2025,7 +2025,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_footnote {
+#iwkqobepoz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2034,7 +2034,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dmqqclnwkf .gt_sourcenotes {
+#iwkqobepoz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2048,7 +2048,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dmqqclnwkf .gt_sourcenote {
+#iwkqobepoz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2056,72 +2056,72 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#dmqqclnwkf .gt_left {
+#iwkqobepoz .gt_left {
   text-align: left;
 }
 
-#dmqqclnwkf .gt_center {
+#iwkqobepoz .gt_center {
   text-align: center;
 }
 
-#dmqqclnwkf .gt_right {
+#iwkqobepoz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dmqqclnwkf .gt_font_normal {
+#iwkqobepoz .gt_font_normal {
   font-weight: normal;
 }
 
-#dmqqclnwkf .gt_font_bold {
+#iwkqobepoz .gt_font_bold {
   font-weight: bold;
 }
 
-#dmqqclnwkf .gt_font_italic {
+#iwkqobepoz .gt_font_italic {
   font-style: italic;
 }
 
-#dmqqclnwkf .gt_super {
+#iwkqobepoz .gt_super {
   font-size: 65%;
 }
 
-#dmqqclnwkf .gt_footnote_marks {
+#iwkqobepoz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dmqqclnwkf .gt_asterisk {
+#iwkqobepoz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dmqqclnwkf .gt_indent_1 {
+#iwkqobepoz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dmqqclnwkf .gt_indent_2 {
+#iwkqobepoz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dmqqclnwkf .gt_indent_3 {
+#iwkqobepoz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dmqqclnwkf .gt_indent_4 {
+#iwkqobepoz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dmqqclnwkf .gt_indent_5 {
+#iwkqobepoz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dmqqclnwkf .katex-display {
+#iwkqobepoz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dmqqclnwkf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#iwkqobepoz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2211,8 +2211,8 @@ generated quantities {
 <p>In the second hierarchical approach, i.e., Cauchy-exponential hierarchy, we adopt a heavy-tailed Cauchy prior for each coefficient: <span class="math inline">\(\beta \sim \text{Cauchy}(0, \tau)\)</span>. An then to regulate the scale <span class="math inline">\(\tau\)</span>, we again place an exponential hyperprior: <span class="math inline">\(\tau \sim \text{Exp}(\lambda)\)</span>. This configuration allows the model to dynamically adapt the amount of shrinkage, with the heavy tails of the Cauchy helping to preserve large coefficients when needed, while the exponential hyperprior controls global shrinkage.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-1d07baa9cc57b6eb86e1" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-1d07baa9cc57b6eb86e1">{"x":{"diagram":"\n  digraph combined_DAGs {\n\n    // Global layout settings\n    compound = true;\n    ranksep = 1.5;\n    newrank = true;\n    fontsize = 10;\n    rankdir = TB;\n\n    // Nodes\n    BMD2 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Status2 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta_02 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_12 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu0 [label = \"μ₀\", shape = box, style = filled, fillcolor = lightyellow]\n    sig20 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightyellow]\n\n    mu1 [label = \"μ₁\", shape = box, style = filled, fillcolor = lightyellow]\n    tau1 [label = \"τ\", shape = box, style = filled, fillcolor = lightyellow]\n    lambda1 [label = \"λ\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    BMD2 -> Status2\n    beta_02 -> Status2\n    beta_12 -> Status2\n\n    mu0 -> beta_02\n    sig20 -> beta_02\n\n    mu1 -> beta_12\n    tau1 -> beta_12\n    lambda1 -> tau1\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-56bb070b64b18939c165" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-56bb070b64b18939c165">{"x":{"diagram":"\n  digraph combined_DAGs {\n\n    // Global layout settings\n    compound = true;\n    ranksep = 1.5;\n    newrank = true;\n    fontsize = 10;\n    rankdir = TB;\n\n    // Nodes\n    BMD2 [label = \"BMD\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Status2 [label = \"Status\\n(No Fracture/Fracture)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta_02 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_12 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu0 [label = \"μ₀\", shape = box, style = filled, fillcolor = lightyellow]\n    sig20 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightyellow]\n\n    mu1 [label = \"μ₁\", shape = box, style = filled, fillcolor = lightyellow]\n    tau1 [label = \"τ\", shape = box, style = filled, fillcolor = lightyellow]\n    lambda1 [label = \"λ\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    BMD2 -> Status2\n    beta_02 -> Status2\n    beta_12 -> Status2\n\n    mu0 -> beta_02\n    sig20 -> beta_02\n\n    mu1 -> beta_12\n    tau1 -> beta_12\n    lambda1 -> tau1\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -2273,23 +2273,23 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Odds Ratio (Cauchy-Exponential Hierarchy)**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="ezvxkfioel" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ezvxkfioel table {
+<div id="hcptkcwgmn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hcptkcwgmn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ezvxkfioel thead, #ezvxkfioel tbody, #ezvxkfioel tfoot, #ezvxkfioel tr, #ezvxkfioel td, #ezvxkfioel th {
+#hcptkcwgmn thead, #hcptkcwgmn tbody, #hcptkcwgmn tfoot, #hcptkcwgmn tr, #hcptkcwgmn td, #hcptkcwgmn th {
   border-style: none;
 }
 
-#ezvxkfioel p {
+#hcptkcwgmn p {
   margin: 0;
   padding: 0;
 }
 
-#ezvxkfioel .gt_table {
+#hcptkcwgmn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2315,12 +2315,12 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_caption {
+#hcptkcwgmn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ezvxkfioel .gt_title {
+#hcptkcwgmn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2332,7 +2332,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-width: 0;
 }
 
-#ezvxkfioel .gt_subtitle {
+#hcptkcwgmn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2344,7 +2344,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-width: 0;
 }
 
-#ezvxkfioel .gt_heading {
+#hcptkcwgmn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2356,13 +2356,13 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_bottom_border {
+#hcptkcwgmn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_col_headings {
+#hcptkcwgmn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2377,7 +2377,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_col_heading {
+#hcptkcwgmn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2397,7 +2397,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#ezvxkfioel .gt_column_spanner_outer {
+#hcptkcwgmn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2409,15 +2409,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 4px;
 }
 
-#ezvxkfioel .gt_column_spanner_outer:first-child {
+#hcptkcwgmn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ezvxkfioel .gt_column_spanner_outer:last-child {
+#hcptkcwgmn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ezvxkfioel .gt_column_spanner {
+#hcptkcwgmn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2429,11 +2429,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   width: 100%;
 }
 
-#ezvxkfioel .gt_spanner_row {
+#hcptkcwgmn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ezvxkfioel .gt_group_heading {
+#hcptkcwgmn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2459,7 +2459,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   text-align: left;
 }
 
-#ezvxkfioel .gt_empty_group_heading {
+#hcptkcwgmn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2474,15 +2474,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: middle;
 }
 
-#ezvxkfioel .gt_from_md > :first-child {
+#hcptkcwgmn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ezvxkfioel .gt_from_md > :last-child {
+#hcptkcwgmn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ezvxkfioel .gt_row {
+#hcptkcwgmn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2501,7 +2501,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#ezvxkfioel .gt_stub {
+#hcptkcwgmn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2514,7 +2514,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#ezvxkfioel .gt_stub_row_group {
+#hcptkcwgmn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2528,15 +2528,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: top;
 }
 
-#ezvxkfioel .gt_row_group_first td {
+#hcptkcwgmn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ezvxkfioel .gt_row_group_first th {
+#hcptkcwgmn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ezvxkfioel .gt_summary_row {
+#hcptkcwgmn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2546,16 +2546,16 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#ezvxkfioel .gt_first_summary_row {
+#hcptkcwgmn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_first_summary_row.thick {
+#hcptkcwgmn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ezvxkfioel .gt_last_summary_row {
+#hcptkcwgmn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2565,7 +2565,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_grand_summary_row {
+#hcptkcwgmn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2575,7 +2575,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#ezvxkfioel .gt_first_grand_summary_row {
+#hcptkcwgmn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2585,7 +2585,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_last_grand_summary_row_top {
+#hcptkcwgmn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2595,11 +2595,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_striped {
+#hcptkcwgmn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ezvxkfioel .gt_table_body {
+#hcptkcwgmn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2608,7 +2608,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_footnotes {
+#hcptkcwgmn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2622,7 +2622,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_footnote {
+#hcptkcwgmn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2631,7 +2631,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#ezvxkfioel .gt_sourcenotes {
+#hcptkcwgmn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2645,7 +2645,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ezvxkfioel .gt_sourcenote {
+#hcptkcwgmn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2653,72 +2653,72 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#ezvxkfioel .gt_left {
+#hcptkcwgmn .gt_left {
   text-align: left;
 }
 
-#ezvxkfioel .gt_center {
+#hcptkcwgmn .gt_center {
   text-align: center;
 }
 
-#ezvxkfioel .gt_right {
+#hcptkcwgmn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ezvxkfioel .gt_font_normal {
+#hcptkcwgmn .gt_font_normal {
   font-weight: normal;
 }
 
-#ezvxkfioel .gt_font_bold {
+#hcptkcwgmn .gt_font_bold {
   font-weight: bold;
 }
 
-#ezvxkfioel .gt_font_italic {
+#hcptkcwgmn .gt_font_italic {
   font-style: italic;
 }
 
-#ezvxkfioel .gt_super {
+#hcptkcwgmn .gt_super {
   font-size: 65%;
 }
 
-#ezvxkfioel .gt_footnote_marks {
+#hcptkcwgmn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ezvxkfioel .gt_asterisk {
+#hcptkcwgmn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ezvxkfioel .gt_indent_1 {
+#hcptkcwgmn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ezvxkfioel .gt_indent_2 {
+#hcptkcwgmn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ezvxkfioel .gt_indent_3 {
+#hcptkcwgmn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ezvxkfioel .gt_indent_4 {
+#hcptkcwgmn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ezvxkfioel .gt_indent_5 {
+#hcptkcwgmn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ezvxkfioel .katex-display {
+#hcptkcwgmn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ezvxkfioel div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hcptkcwgmn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2924,8 +2924,8 @@ generated quantities {
 <p>We write the directed acyclic graph (DAG) as follows, where we use a similar type of weakly informative prior distribution for the model parameters.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-07f36c3b6e3e1350c79f" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-07f36c3b6e3e1350c79f">{"x":{"diagram":"\n  digraph Poisson_DAG {\n    rankdir=LR;\n\n    // Variable Nodes\n    PRISM     [label = \"PRISM\\n(Exposure)\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Age       [label = \"Age\\n(Confounder)\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex       [label = \"Sex\\n(Confounder)\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Admission [label = \"Admission\\n(Confounder)\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Ndays     [label = \"ICU Days\\n(Outcome)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    // Coefficient Nodes\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_4 [label = \"β₄\", shape = box, style = filled, fillcolor = lightgrey]\n\n    // Prior Nodes\n    prior_beta_0 [label = \"Prior for β₀\\nN(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁\\nN(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂\\nN(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃\\nN(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_4 [label = \"Prior for β₄\\nN(μ₄, σ₄²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    // Edges: Predictors influence outcome\n    PRISM     -> Ndays\n    Age       -> Ndays\n    Sex       -> Ndays\n    Admission -> Ndays\n\n    // Coefficients influence outcome\n    beta_0 -> Ndays\n    beta_1 -> Ndays\n    beta_2 -> Ndays\n    beta_3 -> Ndays\n    beta_4 -> Ndays\n\n    // Priors influence coefficients\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_beta_4 -> beta_4\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-d5db473a66f7548382f6" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-d5db473a66f7548382f6">{"x":{"diagram":"\n  digraph Poisson_DAG {\n    rankdir=LR;\n\n    // Variable Nodes\n    PRISM     [label = \"PRISM\\n(Exposure)\", shape = ellipse, style = filled, fillcolor = aquamarine2]\n    Age       [label = \"Age\\n(Confounder)\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Sex       [label = \"Sex\\n(Confounder)\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Admission [label = \"Admission\\n(Confounder)\", shape = ellipse, style = filled, fillcolor = lightblue]\n    Ndays     [label = \"ICU Days\\n(Outcome)\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    // Coefficient Nodes\n    beta_0 [label = \"β₀\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_1 [label = \"β₁\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_2 [label = \"β₂\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_3 [label = \"β₃\", shape = box, style = filled, fillcolor = lightgrey]\n    beta_4 [label = \"β₄\", shape = box, style = filled, fillcolor = lightgrey]\n\n    // Prior Nodes\n    prior_beta_0 [label = \"Prior for β₀\\nN(μ₀, σ₀²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_1 [label = \"Prior for β₁\\nN(μ₁, σ₁²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_2 [label = \"Prior for β₂\\nN(μ₂, σ₂²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_3 [label = \"Prior for β₃\\nN(μ₃, σ₃²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta_4 [label = \"Prior for β₄\\nN(μ₄, σ₄²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    // Edges: Predictors influence outcome\n    PRISM     -> Ndays\n    Age       -> Ndays\n    Sex       -> Ndays\n    Admission -> Ndays\n\n    // Coefficients influence outcome\n    beta_0 -> Ndays\n    beta_1 -> Ndays\n    beta_2 -> Ndays\n    beta_3 -> Ndays\n    beta_4 -> Ndays\n\n    // Priors influence coefficients\n    prior_beta_0 -> beta_0\n    prior_beta_1 -> beta_1\n    prior_beta_2 -> beta_2\n    prior_beta_3 -> beta_3\n    prior_beta_4 -> beta_4\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Now we write the Bayesian model using mathematical notations. Suppose, <span class="math inline">\(\text{Ndays}_i\)</span> be the ICU stay duration for patient <span class="math inline">\(i\)</span>, and <span class="math inline">\(\lambda_i\)</span> be the expected number of days in the ICU for patient <span class="math inline">\(i\)</span>. The predictor variables in the model are PRISM score, which is the exposure variable for our model. Other predictor variables are, age (in weeks), sex (coded as binary: e.g., 0 = Female, 1 = Male) and admission type (coded as binary: 0 = Planned, 1 = Not Planned)</p>
@@ -3062,23 +3062,23 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Posterior Risk Ratio (RR) - Poisson Model**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="mxmxcpdtof" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mxmxcpdtof table {
+<div id="zqhayuticf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zqhayuticf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mxmxcpdtof thead, #mxmxcpdtof tbody, #mxmxcpdtof tfoot, #mxmxcpdtof tr, #mxmxcpdtof td, #mxmxcpdtof th {
+#zqhayuticf thead, #zqhayuticf tbody, #zqhayuticf tfoot, #zqhayuticf tr, #zqhayuticf td, #zqhayuticf th {
   border-style: none;
 }
 
-#mxmxcpdtof p {
+#zqhayuticf p {
   margin: 0;
   padding: 0;
 }
 
-#mxmxcpdtof .gt_table {
+#zqhayuticf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3104,12 +3104,12 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_caption {
+#zqhayuticf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mxmxcpdtof .gt_title {
+#zqhayuticf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3121,7 +3121,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-width: 0;
 }
 
-#mxmxcpdtof .gt_subtitle {
+#zqhayuticf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3133,7 +3133,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-width: 0;
 }
 
-#mxmxcpdtof .gt_heading {
+#zqhayuticf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3145,13 +3145,13 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_bottom_border {
+#zqhayuticf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_col_headings {
+#zqhayuticf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3166,7 +3166,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_col_heading {
+#zqhayuticf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3186,7 +3186,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#mxmxcpdtof .gt_column_spanner_outer {
+#zqhayuticf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3198,15 +3198,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 4px;
 }
 
-#mxmxcpdtof .gt_column_spanner_outer:first-child {
+#zqhayuticf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mxmxcpdtof .gt_column_spanner_outer:last-child {
+#zqhayuticf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mxmxcpdtof .gt_column_spanner {
+#zqhayuticf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3218,11 +3218,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   width: 100%;
 }
 
-#mxmxcpdtof .gt_spanner_row {
+#zqhayuticf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mxmxcpdtof .gt_group_heading {
+#zqhayuticf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3248,7 +3248,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   text-align: left;
 }
 
-#mxmxcpdtof .gt_empty_group_heading {
+#zqhayuticf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3263,15 +3263,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: middle;
 }
 
-#mxmxcpdtof .gt_from_md > :first-child {
+#zqhayuticf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mxmxcpdtof .gt_from_md > :last-child {
+#zqhayuticf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mxmxcpdtof .gt_row {
+#zqhayuticf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3290,7 +3290,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   overflow-x: hidden;
 }
 
-#mxmxcpdtof .gt_stub {
+#zqhayuticf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3303,7 +3303,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mxmxcpdtof .gt_stub_row_group {
+#zqhayuticf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3317,15 +3317,15 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   vertical-align: top;
 }
 
-#mxmxcpdtof .gt_row_group_first td {
+#zqhayuticf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mxmxcpdtof .gt_row_group_first th {
+#zqhayuticf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mxmxcpdtof .gt_summary_row {
+#zqhayuticf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3335,16 +3335,16 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mxmxcpdtof .gt_first_summary_row {
+#zqhayuticf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_first_summary_row.thick {
+#zqhayuticf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mxmxcpdtof .gt_last_summary_row {
+#zqhayuticf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3354,7 +3354,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_grand_summary_row {
+#zqhayuticf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3364,7 +3364,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mxmxcpdtof .gt_first_grand_summary_row {
+#zqhayuticf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3374,7 +3374,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_last_grand_summary_row_top {
+#zqhayuticf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3384,11 +3384,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_striped {
+#zqhayuticf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mxmxcpdtof .gt_table_body {
+#zqhayuticf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3397,7 +3397,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_footnotes {
+#zqhayuticf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3411,7 +3411,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_footnote {
+#zqhayuticf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3420,7 +3420,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mxmxcpdtof .gt_sourcenotes {
+#zqhayuticf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3434,7 +3434,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mxmxcpdtof .gt_sourcenote {
+#zqhayuticf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3442,72 +3442,72 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
   padding-right: 5px;
 }
 
-#mxmxcpdtof .gt_left {
+#zqhayuticf .gt_left {
   text-align: left;
 }
 
-#mxmxcpdtof .gt_center {
+#zqhayuticf .gt_center {
   text-align: center;
 }
 
-#mxmxcpdtof .gt_right {
+#zqhayuticf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mxmxcpdtof .gt_font_normal {
+#zqhayuticf .gt_font_normal {
   font-weight: normal;
 }
 
-#mxmxcpdtof .gt_font_bold {
+#zqhayuticf .gt_font_bold {
   font-weight: bold;
 }
 
-#mxmxcpdtof .gt_font_italic {
+#zqhayuticf .gt_font_italic {
   font-style: italic;
 }
 
-#mxmxcpdtof .gt_super {
+#zqhayuticf .gt_super {
   font-size: 65%;
 }
 
-#mxmxcpdtof .gt_footnote_marks {
+#zqhayuticf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mxmxcpdtof .gt_asterisk {
+#zqhayuticf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mxmxcpdtof .gt_indent_1 {
+#zqhayuticf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mxmxcpdtof .gt_indent_2 {
+#zqhayuticf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mxmxcpdtof .gt_indent_3 {
+#zqhayuticf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mxmxcpdtof .gt_indent_4 {
+#zqhayuticf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mxmxcpdtof .gt_indent_5 {
+#zqhayuticf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mxmxcpdtof .katex-display {
+#zqhayuticf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mxmxcpdtof div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zqhayuticf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

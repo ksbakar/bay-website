@@ -217,25 +217,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 6: Wander into the Wonder!</strong></span></a>
+ <span class="menu-text"><strong>Module 6:</strong> Wander into the Wonder!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 11: <strong>Size Matters!</strong></span></span></a>
+ <span class="menu-text">Week 11: <strong>Size Matters!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 12: <strong>Wander into the Wonder!</strong></span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Week 12: <strong>Discover the Perfect Spell!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,8 +243,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -274,18 +274,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>In this part, we will be strengthening our understanding of Bayesian analysis by exploring how we represent, summarise, and work with probability distributions. We begin by examining what prior and posterior distributions are and how they function in the Bayesian framework.</p>
 <p>Next, we dig deeper into prior distributions. We will learn to distinguish between informative, non-informative, and weakly informative priors. Informative priors reflect strong existing knowledge or expert opinion. Non-informative priors attempt to contribute as little information as possible, and weakly informative priors strike a balance, offering gentle regularisation without overwhelming the data. By understanding these types, we can make principled choices when defining priors in our models.</p>
 <p>We will learn how to interpret and communicate Bayesian results using posterior summary, i.e., using means, medians, credible intervals, and other descriptive statistics.</p>
 <p>We will also look at exact inference, the process of analytically computing posterior distributions when mathematical forms are tractable. While exact solutions are ideal, they are not always possible, which is why much of Bayesian analysis relies on computational methods.</p>
-<p>We then explore generative models — a fundamental concept in Bayesian thinking where we define a complete data-generating process based on assumptions and parameters. These models help us simulate new data and test whether our assumptions are realistic.</p>
-<p>As we build more complex models, we face the challenge of untraceability, where we can no longer compute posterior distributions analytically. To solve this, we turn to powerful computational methods — in particular, Markov chain Monte Carlo (MCMC) techniques. These methods allow us to approximate posterior distributions through simulation, enabling inference in otherwise intractable models.</p>
+<p>We then explore generative models, a fundamental concept in Bayesian thinking where we define a complete data-generating process based on assumptions and parameters. These models help us simulate new data and test whether our assumptions are realistic.</p>
+<p>As we build more complex models, we face the challenge of untraceability, where we can no longer compute posterior distributions analytically. To solve this, we turn to powerful computational methods, in particular, Markov chain Monte Carlo (MCMC) techniques. These methods allow us to approximate posterior distributions through simulation, enabling inference in otherwise intractable models.</p>
 <p>We will learn about key MCMC algorithms, starting with the Metropolis-Hastings algorithm, which generates samples by proposing changes and accepting them with a probability that ensures proper convergence. We then study Gibbs sampling, a special case that works efficiently when we can sample from conditional distributions directly. Finally, we introduce Hamiltonian Monte Carlo (HMC), an advanced method that uses concepts from physics to sample more efficiently in high-dimensional spaces.</p>
 <p>To ensure the reliability of our results, we also focus on MCMC diagnostics. We’ll learn to assess whether our MCMC algorithms have converged and whether the samples we’ve drawn are sufficient to represent the true posterior. This step is crucial for validating the quality of our inference.</p>
 <p>Lastly, we explore prior and posterior predictive checks. These techniques allow us to test whether our models make reasonable predictions, both before and after observing the data. Predictive checks help us evaluate how well our model fits and whether our assumptions hold in practice.</p>
 <p>By the end of this section, we will have gained practical and theoretical tools to build, refine, and evaluate Bayesian models using both exact and approximate inference. These skills will prepare us to handle a wide range of problems where uncertainty and complexity demand more than just point estimates.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -415,8 +415,8 @@ window.Quarto = {
 <p>Adaptive designs are an increasingly popular approach in clinical trials, offering flexibility to modify trial procedures based on accumulating data without undermining the study’s integrity or validity. One powerful framework for implementing adaptive designs is through Bayesian methods.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-6c51893e3d63dfed1fad" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6c51893e3d63dfed1fad">{"x":{"diagram":"\ndigraph seamless_design {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, color = lightblue]\n  start [label = \"Initiate Data Collection\n(Initial Allocation and Sampling Rules)\"]\n  analyze [label = \"Analyse Available Data\"]\n  decision [label = \"Stopping Rule Met?\", shape = diamond, style = filled, color = green]\n  continue [label = \"Continue Data Collection\n(Revise Allocation and Sampling Rules)\"]\n  stop [label = \"Stop Trial or Go to the Next Phase\"]\n\n  start -> analyze\n  analyze -> decision\n  decision -> continue [label = \"No\"]\n  decision -> stop [label = \"Yes\"]\n  continue -> analyze\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-1eec06ac451cce3e27bb" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1eec06ac451cce3e27bb">{"x":{"diagram":"\ndigraph seamless_design {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, color = lightblue]\n  start [label = \"Initiate Data Collection\n(Initial Allocation and Sampling Rules)\"]\n  analyze [label = \"Analyse Available Data\"]\n  decision [label = \"Stopping Rule Met?\", shape = diamond, style = filled, color = green]\n  continue [label = \"Continue Data Collection\n(Revise Allocation and Sampling Rules)\"]\n  stop [label = \"Stop Trial or Go to the Next Phase\"]\n\n  start -> analyze\n  analyze -> decision\n  decision -> continue [label = \"No\"]\n  decision -> stop [label = \"Yes\"]\n  continue -> analyze\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Adaptive trials are designed with flexibility built in from the start. This means we can pre-plan adjustments to key elements like treatment types (dose, frequency, combinations), how patients are assigned to different treatments, which patient groups to include, and even how many participants are needed.</p>
@@ -539,13 +539,13 @@ Frequentist adaptive designs focus on controlling Type I error across potential 
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Interim:  1  -- Sample Size:  25 
-Posterior Pr(treat &gt; control): 0.7112 
+Posterior Pr(treat &gt; control): 0.7196 
 Continue to next interim
 Interim:  2  -- Sample Size:  50 
-Posterior Pr(treat &gt; control): 0.924 
+Posterior Pr(treat &gt; control): 0.9246 
 Continue to next interim
 Interim:  3  -- Sample Size:  75 
-Posterior Pr(treat &gt; control): 0.9794 
+Posterior Pr(treat &gt; control): 0.985 
 Stop: Evidence for treatment superiority</code></pre>
 </div>
 <details class="code-fold">

@@ -217,25 +217,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./brief_module_06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Module 6: Wander into the Wonder!</strong></span></a>
+ <span class="menu-text"><strong>Module 6:</strong> Wander into the Wonder!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 11: <strong>Size Matters!</strong></span></span></a>
+ <span class="menu-text">Week 11: <strong>Size Matters!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 12: <strong>Wander into the Wonder!</strong></span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Week 12: <strong>Discover the Perfect Spell!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,8 +243,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -274,7 +274,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this module of the course, we explore our understanding of working with clustered data and how Bayesian modelling provides a guided approach for analysing such structures. Clustered, or hierarchical, data arise when observations are grouped—such as patients within hospitals or repeated measurements within individuals. Ignoring this structure can lead to biased estimates and misleading inferences, making it essential to account for clustering in our models.</p>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>In this module of the course, we explore our understanding of working with clustered data and how Bayesian modelling provides a guided approach for analysing such structures. Clustered, or hierarchical, data arise when observations are grouped, such as patients within hospitals or repeated measurements within individuals. Ignoring this structure can lead to biased estimates and misleading inferences, making it essential to account for clustering in our models.</p>
 <p>We begin by exploring why clustering matters and use the example of C-reactive protein (CRP) levels to illustrate the impact of ignoring versus accounting for within-group correlation. This sets the stage for introducing Bayesian hierarchical models, also known as multilevel models, which naturally accommodate clustered structures by allowing parameters to vary across groups.</p>
 <p>To develop an intuitive understanding of these models, we examine three modelling strategies: complete pooling, where all data are assumed to come from a single group; no pooling, where each group is treated entirely separately; and partial pooling, which provides a balance by borrowing strength across groups while still allowing for individual variation. Partial pooling is a core feature of hierarchical modelling and provides more stable and generalisable estimates, especially when group sizes vary or data are sparse.</p>
 <p>Building on this, we explore random (or varying) intercept and random slope models, which allow both the baseline level and the effect of predictors to vary across groups. These models introduce flexibility and nuance, helping us capture complex real-world patterns in clustered data. We also extend the discussion to partial pooling in the context of binary outcomes, where hierarchical logistic regression were used to model group-level variation in probabilities.</p>
@@ -283,6 +285,7 @@ ul.task-list li input[type="checkbox"] {
 <p>By the end of this section, we will have developed both theoretical insight and practical skills for handling clustered data using Bayesian multilevel models. These tools enable us to analyse structured data appropriately, produce more reliable inferences, and make better-informed decisions under uncertainty.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
