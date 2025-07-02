@@ -280,7 +280,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 7: <strong>Non-Gaussian</strong></span></a>
+ <span class="menu-text">Week 7: <strong>Non-Gaussian Models</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -415,8 +415,8 @@ window.Quarto = {
 <p>Adaptive designs are an increasingly popular approach in clinical trials, offering flexibility to modify trial procedures based on accumulating data without undermining the study’s integrity or validity. One powerful framework for implementing adaptive designs is through Bayesian methods.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-2df0c40040717f7dab47" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-2df0c40040717f7dab47">{"x":{"diagram":"\ndigraph seamless_design {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, color = lightblue]\n  start [label = \"Initiate Data Collection\n(Initial Allocation and Sampling Rules)\"]\n  analyze [label = \"Analyse Available Data\"]\n  decision [label = \"Stopping Rule Met?\", shape = diamond, style = filled, color = green]\n  continue [label = \"Continue Data Collection\n(Revise Allocation and Sampling Rules)\"]\n  stop [label = \"Stop Trial or Go to the Next Phase\"]\n\n  start -> analyze\n  analyze -> decision\n  decision -> continue [label = \"No\"]\n  decision -> stop [label = \"Yes\"]\n  continue -> analyze\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-cba839f0a9f6f8d783ee" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-cba839f0a9f6f8d783ee">{"x":{"diagram":"\ndigraph seamless_design {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, color = lightblue]\n  start [label = \"Initiate Data Collection\n(Initial Allocation and Sampling Rules)\"]\n  analyze [label = \"Analyse Available Data\"]\n  decision [label = \"Stopping Rule Met?\", shape = diamond, style = filled, color = green]\n  continue [label = \"Continue Data Collection\n(Revise Allocation and Sampling Rules)\"]\n  stop [label = \"Stop Trial or Go to the Next Phase\"]\n\n  start -> analyze\n  analyze -> decision\n  decision -> continue [label = \"No\"]\n  decision -> stop [label = \"Yes\"]\n  continue -> analyze\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Adaptive trials are designed with flexibility built in from the start. This means we can pre-plan adjustments to key elements like treatment types (dose, frequency, combinations), how patients are assigned to different treatments, which patient groups to include, and even how many participants are needed.</p>
@@ -430,7 +430,7 @@ Unlike traditional fixed designs, Bayesian adaptive trials continuously update i
 A key advantage of Bayesian adaptive design is its ability to accumulate data, that reflect current evidence. The posterior probabilities are then used to make decisions, such as:
 
 - Stopping early for success or futility
-- Adjusting randomisation probabilities (e.g., favoring better-performing arms)
+- Adjusting randomisation probabilities (e.g., favouring better-performing arms)
 - Re-estimating sample sizes
 - Dropping or adding treatment arms
 
@@ -539,13 +539,13 @@ Frequentist adaptive designs focus on controlling Type I error across potential 
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Interim:  1  -- Sample Size:  25 
-Posterior Pr(treat &gt; control): 0.7104 
+Posterior Pr(treat &gt; control): 0.708 
 Continue to next interim
 Interim:  2  -- Sample Size:  50 
-Posterior Pr(treat &gt; control): 0.923 
+Posterior Pr(treat &gt; control): 0.9194 
 Continue to next interim
 Interim:  3  -- Sample Size:  75 
-Posterior Pr(treat &gt; control): 0.9826 
+Posterior Pr(treat &gt; control): 0.9796 
 Stop: Evidence for treatment superiority</code></pre>
 </div>
 <details class="code-fold">
@@ -573,26 +573,26 @@ Stop: Evidence for treatment superiority</code></pre>
 </section>
 <section id="bayesian-model-choice" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-model-choice">Bayesian Model Choice</h2>
+<p><span class="citation" data-cites="gelman2013bayesian">Gelman et al. (<a href="references.html#ref-gelman2013bayesian" role="doc-biblioref">2013</a>)</span> - (Ch7)</p>
 <p>Recall that in one of the previous modules, we focused on evaluating the performance of Bayesian models, especially after running Markov Chain Monte Carlo (MCMC) simulations. Where we used, trace plots, R-hat statistic (also called the Gelman-Rubin diagnostic), effective sample size (ESS), autocorrelation checks and posterior predictive checks.</p>
 <p>In today’s lecture, we move from model evaluation to model selection, deciding which of several Bayesian models best explains your data, given prior knowledge and model structure. This process is called Bayesian model choice. In this unit, we will mainly discussed few of the methods, such as Bayes Factor and model choice using information criteria.</p>
 </section>
 <section id="bayes-factor" class="level2">
 <h2 class="anchored" data-anchor-id="bayes-factor">Bayes Factor</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/ePSU3iamqKY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-<p><span class="citation" data-cites="gelman2013bayesian">Gelman et al. (<a href="references.html#ref-gelman2013bayesian" role="doc-biblioref">2013</a>)</span> page:182</p>
 <section id="probabilistic-view-point" class="level3">
 <h3 class="anchored" data-anchor-id="probabilistic-view-point">Probabilistic View Point</h3>
 <p>The Bayes Factor is a tool used in Bayesian statistics, say to compare two hypotheses. It tells you how much more likely the data is under one hypothesis than another.</p>
 <p>Think of it like a ratio:</p>
 <p><span class="math display">\[
-\text{Bayes Factor (BF)} = \frac{\text{Probability of data if Hypothesis 1 is true}}{\text{Probability of data if Hypothesis 2 is true}}
+\text{Bayes Factor (BF)} = \frac{\text{Probability of data if Hypothesis 1 is true, e.g., }(H_1)}{\text{Probability of data if Hypothesis 2 is true, e.g., }(H_0)}
 \]</span></p>
 <p>We can write it as:</p>
 <p><span class="math display">\[
 \text{BF}_{10} = \frac{Pr(\text{Data} \mid H_1)}{Pr(\text{Data} \mid H_0)}
 \]</span></p>
-<p>where, <span class="math inline">\(H_1\)</span>: Hypothesis one (or alternative hypothesis) e.g., “something is going on” and <span class="math inline">\(H_0\)</span>: Hypothesis two (or null hypothesis ), e.g., “nothing is going on”. Now, if <span class="math inline">\(BF &gt; 1\)</span>, data favors <span class="math inline">\(H_1\)</span> and if <span class="math inline">\(BF &lt; 1\)</span>, data favors <span class="math inline">\(H_0\)</span>.</p>
+<p>where, <span class="math inline">\(H_1\)</span>: Hypothesis one (or say alternative hypothesis) e.g., “something is going on” and <span class="math inline">\(H_0\)</span>: Hypothesis two (or say null hypothesis ), e.g., “nothing is going on”. Now, if <span class="math inline">\(BF &gt; 1\)</span>, data favours <span class="math inline">\(H_1\)</span> and if <span class="math inline">\(BF &lt; 1\)</span>, data favours <span class="math inline">\(H_0\)</span>.</p>
 <p>Let’s go back to the medical practitioner example we have discussed earlier in this unit, where the medical practitioner was trying to determine whether a patient has type-2 diabetes (T2D). Here, now we want to compare two hypotheses:</p>
 <ul>
 <li><span class="math inline">\(H_0\)</span>: The patient does not have type-2 diabetes</li>
@@ -600,7 +600,10 @@ Stop: Evidence for treatment superiority</code></pre>
 </ul>
 <p>The goal is to use the Bayes Factor to compare how likely the observed test result is under each hypothesis.</p>
 <p>Let’s assume, the test returns positive if it detects likely diabetes. But, the test is not perfect, it has known sensitivity and specificity.</p>
-<p>Let us further assume, the sensitivity (true positive rate) is 90%, i.e., <span class="math inline">\(Pr(\text{Positive test} \mid H_1) = 0.9\)</span>. And the specificity (true negative rate) is 80%, i.e., <span class="math inline">\(Pr(\text{Negative test} \mid H_0) = 0.8\)</span>.</p>
+<p>Let us further assume, the sensitivity (true positive rate) is 90%, i.e.,</p>
+<p><span class="math inline">\(Pr(\text{Positive test} \mid H_1) = 0.9\)</span>.</p>
+<p>And the specificity (true negative rate) is 80%, i.e.,</p>
+<p><span class="math inline">\(Pr(\text{Negative test} \mid H_0) = 0.8\)</span>.</p>
 <p>From this, we get:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -611,7 +614,8 @@ Pr(\text{Positive test} \mid H_1) &amp;= 0.9
 <p>Hence, we get the Bayes Factor as:</p>
 <p><span class="math display">\[
 \text{BF}_{10} = \frac{Pr(\text{Positive test} \mid H_1)}{Pr(\text{Positive test} \mid H_0)} = \frac{0.9}{0.2} = 4.5
-\]</span> Here, a Bayes Factor of 4.5 means, the observed positive test result is 4.5 times more likely if the patient has type-2 diabetes than if they do not. This is considered a moderate evidence in favor of <span class="math inline">\(H_1\)</span> (i.e., the patient likely has diabetes).</p>
+\]</span></p>
+<p>Here, a Bayes Factor of 4.5 means, the observed positive test result is 4.5 times more likely if the patient has type-2 diabetes than if they do not. This is considered a moderate evidence in favuor of <span class="math inline">\(H_1\)</span> (i.e., the patient likely has diabetes).</p>
 <p>Now, we could combine this with prior belief (say, based on risk factors) using Bayes’ Theorem to get a posterior probability (please see more in the following section), but the Bayes Factor alone tells us how the data shifts the odds between the two hypotheses.</p>
 <p>A commonly used guideline for interpreting the Bayes Factor (BF) is as follows::</p>
 <table class="caption-top table">
@@ -692,12 +696,12 @@ p(D \mid \mathcal{M}_i) = \int p(D \mid \theta_i, \mathcal{M}_i) p(\theta_i \mid
 \text{BF}_{12} = \frac{p(D \mid \mathcal{M}_1)}{p(D \mid \mathcal{M}_2)}
 \]</span></p>
 <ul>
-<li><span class="math inline">\(\text{BF}_{12} &gt; 1\)</span>: Evidence favors model <span class="math inline">\(\mathcal{M}_1\)</span></li>
-<li><span class="math inline">\(\text{BF}_{12} &lt; 1\)</span>: Evidence favors model <span class="math inline">\(\mathcal{M}_2\)</span></li>
+<li><span class="math inline">\(\text{BF}_{12} &gt; 1\)</span>: Evidence favours model <span class="math inline">\(\mathcal{M}_1\)</span></li>
+<li><span class="math inline">\(\text{BF}_{12} &lt; 1\)</span>: Evidence favours model <span class="math inline">\(\mathcal{M}_2\)</span></li>
 <li><span class="math inline">\(\text{BF}_{12} = 1\)</span>: Both models are equally supported by the data</li>
 </ul>
 <p>This ratio quantifies how much more likely the data is under one model than another, independent of prior beliefs about the models.</p>
-<p>If we include model priors, the posterior odds in favor of <span class="math inline">\(\mathcal{M}_1\)</span> over <span class="math inline">\(\mathcal{M}_2\)</span> become:</p>
+<p>If we include model priors, the posterior odds in favour of <span class="math inline">\(\mathcal{M}_1\)</span> over <span class="math inline">\(\mathcal{M}_2\)</span> become:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{p(\mathcal{M}_1 \mid D)}{p(\mathcal{M}_2 \mid D)} &amp;= \text{BF}_{12} \cdot \frac{p(\mathcal{M}_1)}{p(\mathcal{M}_2)} \\
@@ -1057,7 +1061,7 @@ crp_model1 -1.7       1.8   </code></pre>
 <p>The output presents a comparison between CRP model 1 and model 2 with LOO, and we already know LOO is a robust method for estimating out-of-sample predictive accuracy in Bayesian models. This method evaluates how well a model is expected to predict new data by systematically leaving out each observation and computing the model’s performance.</p>
 <p>For model 1, the estimated expected log predictive density (elpd_loo) is -388.5, with a standard error of 17.9. The effective number of parameters (p_loo) is 63.9, and the LOO Information Criterion (looic), which is simply <code>-2 * elpd_loo</code> is 777.1. All diagnostic values, including Pareto k estimates, are in the safe range (all k &lt; 0.7), which indicates reliable LOO estimates. The Monte Carlo standard error (MCSE) for <code>elpd_loo</code> is just 0.2, suggesting stable estimation.</p>
 <p>For model 2, the elpd_loo is -386.8, with the same standard error of 17.9, a slightly lower p_loo of 61.9, and a looic of 773.6. Like model 1, all diagnostic measures are within acceptable bounds, and the MCSE of elpd_loo is also 0.2, indicating reliable MCMC sampling.</p>
-<p>The <code>loo_compare()</code> output shows that model 2 has a slightly better elpd_loo than model 1, with a difference (elpd_diff) of 1.7 in favor of model 2. However, the standard error of this difference is 1.8, meaning that the difference is not statistically significant, it’s well within the margin of uncertainty. This suggests that, while model 2 is marginally preferred, both models perform nearly identically.</p>
+<p>The <code>loo_compare()</code> output shows that model 2 has a slightly better elpd_loo than model 1, with a difference (elpd_diff) of 1.7 in favour of model 2. However, the standard error of this difference is 1.8, meaning that the difference is not statistically significant, it’s well within the margin of uncertainty. This suggests that, while model 2 is marginally preferred, both models perform nearly identically.</p>
 <!--
 
 ## Bayesian Shrinkage
