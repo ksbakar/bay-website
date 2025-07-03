@@ -280,7 +280,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 7: <strong>Non-Gaussian</strong></span></a>
+ <span class="menu-text">Week 7: <strong>Non-Gaussian Models</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -322,7 +322,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: <strong>Discover the Perfect Spell!</strong></span></a>
+ <span class="menu-text">Week 12: <strong>The Perfect Spell!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -432,6 +432,7 @@ p(D|\theta) \times p(\theta)
 \end{align}
 
 -->
+<p><span class="citation" data-cites="gelman2013bayesian">Gelman et al. (<a href="references.html#ref-gelman2013bayesian" role="doc-biblioref">2013</a>)</span> - (Ch2)</p>
 <p>We have explained Bayes’ rule in our previous lecture, now we will see how Bayes rule can be structured for model development using parameter and data. In a Bayesian model, a parameter is a quantity that we assume is uncertain and assign a probability distribution to it. Unlike in frequentist statistics, where parameters are fixed but unknown, Bayesian statistics treats parameters as random variables with their own probability distributions.</p>
 <p>Let us denote <span class="math inline">\(\theta\)</span> as the parameter and <span class="math inline">\(D\)</span> as data. Hence, we write a model using the data likelihood <span class="math inline">\(p(D|\theta)\)</span>, and prior distribution <span class="math inline">\(p(\theta)\)</span> of the model parameter <span class="math inline">\(\theta\)</span> (note that we have changed the notation from <span class="math inline">\(Pr(.)\)</span> to <span class="math inline">\(p(.)\)</span>, where <span class="math inline">\(Pr(.)\)</span> refers to probability and <span class="math inline">\(p(.)\)</span> refers to probability distribution):</p>
 <p><span class="math display">\[
@@ -543,6 +544,7 @@ p(\theta|y) = \frac{\theta^{y+a-1}(1-\theta)^{n-y+b-1}}{B(y+a,n-y+b)}
 <h2 class="anchored" data-anchor-id="bayesian-odds">Bayesian Odds</h2>
 <iframe width="500" height="300" src="https://www.youtube.com/embed/uwIDw1UguNc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
+<p><span class="citation" data-cites="broemeling2013bayesian">Broemeling (<a href="references.html#ref-broemeling2013bayesian" role="doc-biblioref">2013</a>)</span> - (Ch2)</p>
 <p>We can also think of the Bayesian approach in terms of odds, such as what odds should I assign to an event or hypothesis. The simple definition of odds can be written as:</p>
 <p><span class="math display">\[
 \text{Odds of an event} = \frac{Pr(\text{event})}{1-Pr(\text{event})}
@@ -559,7 +561,10 @@ p(\theta|y) = \frac{\theta^{y+a-1}(1-\theta)^{n-y+b-1}}{B(y+a,n-y+b)}
 <p>and <span class="math inline">\(\frac{Pr(\text{E=[+]}|\text{G=[+]})}{Pr(\text{E=[+]}|\text{G=[-]})}\)</span> is the ratio of evidence under the guess <span class="math inline">\(\text{G}\)</span>.</p>
 <p>This reflects</p>
 <p><span class="math display">\[
-\text{posterior or updated odds} = \text{prior or initial odds}\times \text{relative explanatory power}
+\begin{align}
+\text{posterior (or updated) odds} &amp;= \text{prior (or initial) odds} \\
+&amp;\times \text{relative explanatory power}
+\end{align}
 \]</span></p>
 <p>This explains that evidence (i.e., data/information) always changes the outcome, which could be probability, probability distributions or odds or any other outcome of interest.</p>
 <p><strong>Example</strong></p>
@@ -619,17 +624,17 @@ p(\theta|y) \propto \theta^{y+a-1} (1-\theta)^{n-y+b-1}
 <!--
 ref: paper: https://doi.org/10.1016/j.jclinepi.2021.08.001
 -->
-<p>The directed acyclic graph (DAG) is a graphical representation that illustrates the relationships and dependencies between different variables and parameters in a model. In a DAG, nodes represent variables/parameters, and directed edges indicate dependency relationships, pointing from one node to another. The acyclic nature ensures that there are no closed loops, maintaining a clear directionality of influence from parent nodes to child nodes.</p>
+<p>The directed acyclic graph (DAG) is a graphical representation that illustrates the relationships and dependencies between different variables/parameters in a model. In a DAG, nodes represent variables/parameters, and directed edges indicate dependency relationships, pointing from one node to another. The acyclic nature ensures that there are no closed loops, maintaining a clear directionality of influence from parent nodes to child nodes.</p>
 <p><strong>Bayesian models</strong></p>
 <p>In the context of Bayesian modelling, DAGs are crucial as they visually provides the conditional dependencies between variables and model parameters, which enables a structured and intuitive approach to understand uncertainty and dependencies from the model.</p>
 <p>Using the model with binary observations, we write a DAG as:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-a73b28b424df98b0eb91" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-a73b28b424df98b0eb91">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Variable\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-5e46c710464c93d9b337" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5e46c710464c93d9b337">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Variable\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>This is a simple graphical model, where <span class="math inline">\(y\)</span> depends on <span class="math inline">\(\theta\)</span>, with <span class="math inline">\(\theta\)</span> being a logical function of hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+<p>This is a simple graphical model, where <span class="math inline">\(y\)</span> depends on <span class="math inline">\(\theta\)</span>, with <span class="math inline">\(\theta\)</span> being a function of hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
 </section>
 <section id="more-examples" class="level2">
 <h2 class="anchored" data-anchor-id="more-examples">More Examples</h2>
@@ -676,15 +681,16 @@ Pr(H_1|y=1) = 1- 0.45 = 0.55
 \]</span></p>
 <p>The posterior probabilities of <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span> are close to each other. As a result, with equal priors and a low sample size, it is difficult to make a decision with strong confidence based on the observed data. However, <span class="math inline">\(H_1\)</span> has a higher posterior probability than <span class="math inline">\(H_0\)</span>, so if we had to make a decision at this point, we should choose <span class="math inline">\(H_1\)</span>, meaning the disease prevalence is 20%. Note that this decision contradicts the conclusion reached using the frequentist approach.</p>
 <p>We can write this example using a DAG, where we can represent the relationships between the prior probabilities, likelihoods, and posterior probabilities.</p>
-<p><strong>Hypothesis (H₀ and H₁)</strong>: These represent the two possible prevalence values (10% for H₀, 20% for H₁).</p>
-<p><strong>Data (y)</strong>: The observed data (the number of successes in 5 samples, e.g., the presence of disease).</p>
-<p><strong>Likelihoods (Pr(y=1|H₀) and Pr(y=1|H₁))</strong>: The likelihood of observing the data under each hypothesis.</p>
-<p><strong>Prior Probabilities (Pr(H₀) and Pr(H₁))</strong>: The prior belief about the hypotheses (both have a prior probability of 0.5).</p>
-<p><strong>Posterior Probabilities (Pr(H₀|y=1) and Pr(H₁|y=1))</strong>: The updated belief about the hypotheses after observing the data.</p>
+<p><strong>Hypothesis</strong> (<span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span>)*: These represent the two possible prevalence values (10% for <span class="math inline">\(H_0\)</span>, 20% for <span class="math inline">\(H_1\)</span>).</p>
+<p><strong>Data</strong> (y): The observed data (the number of successes in 5 samples, e.g., the presence of disease).</p>
+<p><strong>Likelihoods</strong> (<span class="math inline">\(Pr(y=1\mid H_0)\)</span> and <span class="math inline">\(Pr(y=1\mid H_1)\)</span>): The likelihood of observing the data under each hypothesis.</p>
+<p><strong>Prior Probabilities</strong> (<span class="math inline">\(Pr(H_0)\)</span> and <span class="math inline">\(Pr(H_1)\)</span>): The prior belief about the hypotheses (both have a prior probability of 0.5).</p>
+<p><strong>Posterior Probabilities</strong> (<span class="math inline">\(Pr(H_0\mid y=1)\)</span> and <span class="math inline">\(Pr(H_1\mid y=1)\)</span>): The updated belief about the hypotheses after observing the data.</p>
+<p>Below, we draw a flow-diagram of the Bayesian way of visualising the problem.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-90944a80759bfa826132" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-90944a80759bfa826132">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ca524c068eaa4c6bf8c8" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ca524c068eaa4c6bf8c8">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Now, we can summarise the results for all four seperate sample sizes using frequentist p-value and Bayesian methods, where</p>
@@ -698,10 +704,10 @@ Pr(H_1|y=1) = 1- 0.45 = 0.55
 <p>And the results we get:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 27%">
-<col style="width: 27%">
-<col style="width: 27%">
+<col style="width: 22%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -780,7 +786,7 @@ mean of x mean of y
     118.5     131.9 </code></pre>
 </div>
 </div>
-<p>We can see that the p-value is extremely small (much less than 0.05), which means we reject the null hypothesis. Si, there is strong evidence that the new drug significantly reduces systolic blood pressure compared to the placebo.</p>
+<p>We can see that the p-value is extremely small (much less than 0.05), which means we reject the null hypothesis. So, there is strong evidence that the new drug significantly reduces systolic blood pressure compared to the placebo.</p>
 <p><strong>Bayesian</strong></p>
 <p>Now, we will use Bayesian approach to estimate the posterior probability distribution of the difference in mean systolic blood pressure between the treatment and SOC groups, and extract a 95% credible interval.</p>
 <p>In most scenarios, we do not have prior information regarding the effectiveness of the new drug. However, sometimes we do have prior knowledge about the effectiveness of the SOC. Let us assume that, from a past study with 15 patients, for the SOC group, after a period of four weeks, the average SBP is around 110 mmHg with a variance of 25. This constitutes our prior knowledge about the control/SOC group.</p>
@@ -835,7 +841,7 @@ mean of x mean of y
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mu_prior_B <span class="ot">&lt;-</span> <span class="dv">110</span>    </span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mu_prior_B <span class="ot">&lt;-</span> <span class="dv">110</span>   </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>var_prior_B <span class="ot">&lt;-</span> <span class="dv">25</span>    </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>n_prior_B <span class="ot">&lt;-</span> <span class="dv">15</span>       </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>n_B <span class="ot">&lt;-</span> <span class="fu">length</span>(group_B)</span>
@@ -899,11 +905,12 @@ It is invariance to data-order ... ref: kruschke, page 107; sec 5.2.1
 <p>As more data points are collected (<strong>n = 3, YES</strong> and <strong>n = 4, YES</strong>), our probability distribution starts forming a clearer peak. This means that we are beginning to refine our estimate of how likely the drug is to cause severe side effects. By <strong>n = 5 (YES)</strong>, the probability distribution has a well-defined peak, indicating that we are gaining confidence in our estimate. However, in <strong>n = 6 (NO)</strong>, the introduction of a new negative observation (no side effects) shifts our belief again. This suggests that the probability of side effects is not as high as previously estimated, and our model adjusts accordingly.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-c7e7740246a930914e31" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-c7e7740246a930914e31">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-9bc155832a72d77c8e8d" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-9bc155832a72d77c8e8d">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><strong>Invariance to data-order</strong></p>
+<p><span class="citation" data-cites="gelman2013bayesian">Gelman et al. (<a href="references.html#ref-gelman2013bayesian" role="doc-biblioref">2013</a>)</span> - (Ch-1,2)</p>
 <p>This Bayesian learning process for <span class="math inline">\(\theta\)</span> is very intuitive, where we can write</p>
 <p><span class="math display">\[\begin{align}
 p(\theta|D_1,D_2) = \frac{p(D_1,D_2|\theta)\times p(\theta)}{\sum_{\theta^*}p(D_1,D_2|\theta^*)\times p(\theta^*)}
@@ -928,6 +935,12 @@ p(\theta|D_2,D_1) = \frac{p(D_2|\theta)\times p(\theta|D_1)}{\sum_{\theta^*}p(D_
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-broemeling2013bayesian" class="csl-entry" role="listitem">
+Broemeling, Lyle D. 2013. <em>Bayesian Methods in Epidemiology</em>. CRC Press.
+</div>
+<div id="ref-gelman2013bayesian" class="csl-entry" role="listitem">
+Gelman, Andrew, John B Carlin, Hal S Stern, David B Dunson, Aki Vehtari, and Donald B Rubin. 2013. <em>Bayesian Data Analysis (3rd Edition)</em>. Chapman; Hall/CRC.
+</div>
 <div id="ref-kruschke2014doing" class="csl-entry" role="listitem">
 Kruschke, J. 2014. <em>Doing Bayesian Data Analysis: A Tutorial with r, JAGS, and Stan</em>. Academic Press.
 </div>

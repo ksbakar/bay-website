@@ -358,7 +358,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#dic" id="toc-dic" class="nav-link" data-scroll-target="#dic">DIC</a></li>
   <li><a href="#waic" id="toc-waic" class="nav-link" data-scroll-target="#waic">WAIC</a></li>
-  <li><a href="#loo" id="toc-loo" class="nav-link" data-scroll-target="#loo">LOO</a></li>
+  <li><a href="#loo-cv" id="toc-loo-cv" class="nav-link" data-scroll-target="#loo-cv">LOO-CV</a></li>
   <li><a href="#example-in-practice-1" id="toc-example-in-practice-1" class="nav-link" data-scroll-target="#example-in-practice-1">Example in Practice</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
@@ -389,7 +389,6 @@ window.Quarto = {
 </header>
 
 
-<p>NOT READY YET</p>
 <iframe width="500" height="300" src="https://www.youtube.com/embed/HoJwu51raBs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <section id="learnings" class="level2">
@@ -415,8 +414,8 @@ window.Quarto = {
 <p>Adaptive designs are an increasingly popular approach in clinical trials, offering flexibility to modify trial procedures based on accumulating data without undermining the study’s integrity or validity. One powerful framework for implementing adaptive designs is through Bayesian methods.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-cba839f0a9f6f8d783ee" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-cba839f0a9f6f8d783ee">{"x":{"diagram":"\ndigraph seamless_design {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, color = lightblue]\n  start [label = \"Initiate Data Collection\n(Initial Allocation and Sampling Rules)\"]\n  analyze [label = \"Analyse Available Data\"]\n  decision [label = \"Stopping Rule Met?\", shape = diamond, style = filled, color = green]\n  continue [label = \"Continue Data Collection\n(Revise Allocation and Sampling Rules)\"]\n  stop [label = \"Stop Trial or Go to the Next Phase\"]\n\n  start -> analyze\n  analyze -> decision\n  decision -> continue [label = \"No\"]\n  decision -> stop [label = \"Yes\"]\n  continue -> analyze\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-4028ce6bf136c85fe25a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4028ce6bf136c85fe25a">{"x":{"diagram":"\ndigraph seamless_design {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, color = lightblue]\n  start [label = \"Initiate Data Collection\n(Initial Allocation and Sampling Rules)\"]\n  analyze [label = \"Analyse Available Data\"]\n  decision [label = \"Stopping Rule Met?\", shape = diamond, style = filled, color = green]\n  continue [label = \"Continue Data Collection\n(Revise Allocation and Sampling Rules)\"]\n  stop [label = \"Stop Trial or Go to the Next Phase\"]\n\n  start -> analyze\n  analyze -> decision\n  decision -> continue [label = \"No\"]\n  decision -> stop [label = \"Yes\"]\n  continue -> analyze\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Adaptive trials are designed with flexibility built in from the start. This means we can pre-plan adjustments to key elements like treatment types (dose, frequency, combinations), how patients are assigned to different treatments, which patient groups to include, and even how many participants are needed.</p>
@@ -539,13 +538,13 @@ Frequentist adaptive designs focus on controlling Type I error across potential 
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Interim:  1  -- Sample Size:  25 
-Posterior Pr(treat &gt; control): 0.708 
+Posterior Pr(treat &gt; control): 0.7116 
 Continue to next interim
 Interim:  2  -- Sample Size:  50 
-Posterior Pr(treat &gt; control): 0.9194 
+Posterior Pr(treat &gt; control): 0.9152 
 Continue to next interim
 Interim:  3  -- Sample Size:  75 
-Posterior Pr(treat &gt; control): 0.9796 
+Posterior Pr(treat &gt; control): 0.9826 
 Stop: Evidence for treatment superiority</code></pre>
 </div>
 <details class="code-fold">
@@ -867,7 +866,7 @@ Iteration: 8</code></pre>
 </section>
 <section id="information-criteria" class="level2">
 <h2 class="anchored" data-anchor-id="information-criteria">Information Criteria</h2>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/cr7Xgg5q7AQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>In Bayesian statistics, information criteria are also used to compare models. Some common information criteria include the Deviance Information Criterion (DIC), the Watanabe–Akaike Information Criterion or also known as the Widely Applicable Information Criterion (WAIC), and Leave-One-Out Cross-Validation (LOO). Below, we provide the details of these criteria.</p>
 <section id="dic" class="level3">
@@ -893,8 +892,8 @@ Iteration: 8</code></pre>
 <p>While WAIC offers many advantages, it is not without limitations. It requires us to retain and process the full array of log-likelihood values from our MCMC samples, which can be computationally demanding for large datasets. Additionally, the reliability of WAIC depends heavily on the convergence and quality of the posterior samples. Poor MCMC mixing or insufficient sampling can result in inaccurate estimates of model performance.</p>
 <p>Still, WAIC is one of the most general-purpose and robust information criteria available for Bayesian model comparison. It provides a principled way to choose among models based on their predictive accuracy, rather than just fit alone, and is especially useful when our models go beyond simple parametric forms.</p>
 </section>
-<section id="loo" class="level3">
-<h3 class="anchored" data-anchor-id="loo">LOO</h3>
+<section id="loo-cv" class="level3">
+<h3 class="anchored" data-anchor-id="loo-cv">LOO-CV</h3>
 <p>When we want to evaluate how well a Bayesian model predicts new data, Leave-One-Out (LOO) Cross-Validation provides one of the most intuitive and accurate approaches. In essence, LOO estimates the model’s predictive performance by systematically leaving out each observation in the dataset, fitting the model to the remaining data, and then measuring how well it predicts the left-out point. This process is repeated for every data point, giving us a robust estimate of out-of-sample predictive accuracy.</p>
 <p>In Bayesian settings, we rarely re-fit the model <span class="math inline">\(n\)</span> times for <span class="math inline">\(n\)</span> observations because it would be too computationally expensive. Instead, we use methods like Pareto-smoothed importance sampling (PSIS-LOO), which approximate LOO using existing MCMC samples. This makes LOO practical while still maintaining high accuracy in most cases.</p>
 <p>The result of LOO is typically expressed as:</p>
@@ -903,8 +902,7 @@ Iteration: 8</code></pre>
 \]</span></p>
 <p>Here, <span class="math inline">\(p(y_i \mid y_{-i})\)</span> is the posterior predictive density for observation <span class="math inline">\(i\)</span>, given all other data points. A lower LOO score indicates better predictive performance. Since LOO directly evaluates generalization to unseen data, it is often considered the gold standard for model comparison in Bayesian analysis.</p>
 <p>LOO has several key strengths. First, it is fully Bayesian and does not rely on point estimates or asymptotic approximations. It is also more robust than DIC and, in some cases, WAIC, particularly when the model is complex or the likelihood is sensitive to small changes in the data. Moreover, LOO provides diagnostic tools that help us detect when certain data points are too influential or when the approximation might be unreliable.</p>
-<p>However, LOO is not without its drawbacks. While PSIS-LOO makes the method computationally feasible, it still relies on the assumption that importance sampling provides a good approximation. If the approximation breaks down, often due to high variance in the importance weights, LOO estimates can become unstable. In such cases, we might need to fall back on exact cross-validation or reconsider the model specification.</p>
-<p>Overall, we find that LOO offers one of the most reliable and interpretable assessments of predictive performance for Bayesian models. It directly measures how well our model generalizes, which is usually the main goal in statistical modeling. When used alongside WAIC or as a standalone metric, LOO helps us make informed decisions about which model is likely to perform best on future data.</p>
+<p>However, LOO is not without its drawbacks. While PSIS-LOO makes the method computationally feasible, it still relies on the assumption that importance sampling provides a good approximation. If the approximation breaks down, often due to high variance in the importance weights, LOO estimates can become unstable. In such cases, we might need to fall back on exact cross-validation or reconsider the model specification. In <code>R</code>, the package <code>loo</code> with function <code>loo</code> impliments the LOO-CV using PSIS, which we will be using in this unit for Bayesian model choice.</p>
 </section>
 <section id="example-in-practice-1" class="level3">
 <h3 class="anchored" data-anchor-id="example-in-practice-1">Example in Practice</h3>
@@ -950,7 +948,7 @@ Estimate 755.808 702.7549 53.05307</code></pre>
 </div>
 <p>The output provides a comparison between two Bayesian hierarchical models, CRP Model 1 and CRP Model 2, using the DIC. As we have already discussed, a lower DIC value indicates a better model, assuming all else is equal.</p>
 <p>Looking at the results, model 1 has a DIC of 757.95, a posterior mean deviance <span class="math inline">\((\bar{D})\)</span> of 703.65, and an effective number of parameters <span class="math inline">\((p_D)\)</span> of 54.30. In comparison, model 2 has a slightly lower DIC of 755.81, a <span class="math inline">\(\bar{D}\)</span> of 702.75, and a <span class="math inline">\(p_D\)</span> of 53.05. These values suggest that model 2 fits the data slightly better (as shown by the lower <span class="math inline">\(\bar{D}\)</span>) and is marginally less complex (as shown by the lower <span class="math inline">\(p_D\)</span>).</p>
-<p>Overall, while the difference in DIC between the two models is relatively small, approximately 2.14 points, the CRP Model 2 performs marginally better in terms of both model fit and simplicity. Although a DIC difference greater than 5 to 10 is typically considered more substantial, the results still suggest that CRP Model 2 is the preferred model in this comparison.</p>
+<p>While the difference in DIC between the two models is relatively small, approximately 2.14 points, the CRP Model 2 performs marginally better in terms of both model fit and simplicity. Although a DIC difference greater than 5 to 10 is typically considered more substantial, the results still suggest that CRP Model 2 is the preferred model in this comparison.</p>
 <p><strong>WAIC</strong></p>
 <p>Now for the same Bayesian hierarchical models, we calculate the WAIC as follows:</p>
 <div class="cell">
@@ -998,14 +996,14 @@ waic         771.5 35.6
 <p>Both models were evaluated using a log-likelihood matrix with 2000 posterior samples across 432 observations. A key diagnostic mentioned in the output is that 34 (7.9%) of the p_waic estimates (pointwise effective number of parameters) are greater than 0.4 for each model.</p>
 <p>This suggests some instability or potential problems with the WAIC approximation for these Bayesian hierarchical models. When a noticeable proportion of p_waic values are this high, it indicates that the model may not be well-behaved in some data regions. As a result, the tool recommends using LOO (Leave-One-Out cross-validation) instead, which is often more robust.</p>
 <p>Now we can also use the function <code>loo_compare()</code>, which gives difference in expected log predictive density (elpd). In this case, as we have use WAIC, hence use of <code>loo_compare()</code> function will provide difference in elpd_waic values. We can see that model 2 has an elpd_diff (of WAIC) of 0.0, while model 1 has an elpd_diff (of WAIC) of -1.4 with a standard error of 1.8. This means CRP model 2 performs slightly better in terms of predictive accuracy, but the difference is not statistically significant, since the difference is small and well within the range of uncertainty. In practical terms, we can say, both models perform similarly, and the choice might come down to factors like interpretability or theoretical justification.</p>
-<p><strong>LOO</strong></p>
+<p><strong>LOO-CV</strong></p>
 <p>Now, we get the results using LOO as:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(loo)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>loo1 <span class="ot">&lt;-</span> <span class="fu">loo</span>(crp_model1, <span class="at">moment_match =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>loo2 <span class="ot">&lt;-</span> <span class="fu">loo</span>(crp_model2, <span class="at">moment_match =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>loo1 <span class="ot">&lt;-</span> <span class="fu">loo</span>(crp_model1, <span class="at">moment_match =</span> <span class="cn">TRUE</span>, <span class="at">save_psis =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>loo2 <span class="ot">&lt;-</span> <span class="fu">loo</span>(crp_model2, <span class="at">moment_match =</span> <span class="cn">TRUE</span>, <span class="at">save_psis =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"CRP Model 1: "</span>); loo1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -1060,7 +1058,8 @@ crp_model1 -1.7       1.8   </code></pre>
 </div>
 <p>The output presents a comparison between CRP model 1 and model 2 with LOO, and we already know LOO is a robust method for estimating out-of-sample predictive accuracy in Bayesian models. This method evaluates how well a model is expected to predict new data by systematically leaving out each observation and computing the model’s performance.</p>
 <p>For model 1, the estimated expected log predictive density (elpd_loo) is -388.5, with a standard error of 17.9. The effective number of parameters (p_loo) is 63.9, and the LOO Information Criterion (looic), which is simply <code>-2 * elpd_loo</code> is 777.1. All diagnostic values, including Pareto k estimates, are in the safe range (all k &lt; 0.7), which indicates reliable LOO estimates. The Monte Carlo standard error (MCSE) for <code>elpd_loo</code> is just 0.2, suggesting stable estimation.</p>
-<p>For model 2, the elpd_loo is -386.8, with the same standard error of 17.9, a slightly lower p_loo of 61.9, and a looic of 773.6. Like model 1, all diagnostic measures are within acceptable bounds, and the MCSE of elpd_loo is also 0.2, indicating reliable MCMC sampling.</p>
+<p>For model 2, the elpd_loo is -386.8, with the same standard error of 17.9, a slightly lower p_loo of 61.9, and a looic of 773.6. Like model 1, all diagnostic measures are within acceptable bounds, and the Monte Carlo standard error (MCSE) of elpd_loo is also 0.2, indicating reliable MCMC sampling.</p>
+<p>The <code>r_eff</code> represents the relative effective sample size, which is the ratio of effective sample size to the total number of MCMC draws. This reflects the efficiency of the MCMC sampling, where 1 is being the ideal case with no autocorrelation.</p>
 <p>The <code>loo_compare()</code> output shows that model 2 has a slightly better elpd_loo than model 1, with a difference (elpd_diff) of 1.7 in favour of model 2. However, the standard error of this difference is 1.8, meaning that the difference is not statistically significant, it’s well within the margin of uncertainty. This suggests that, while model 2 is marginally preferred, both models perform nearly identically.</p>
 <!--
 
