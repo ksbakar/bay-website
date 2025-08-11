@@ -630,8 +630,8 @@ ref: paper: https://doi.org/10.1016/j.jclinepi.2021.08.001
 <p>Using the model with binary observations, we write a DAG as:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-5e46c710464c93d9b337" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-5e46c710464c93d9b337">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Variable\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-f64f32ee4464242d91d1" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-f64f32ee4464242d91d1">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = rectangle, style = filled, color = white]\n  \n  subgraph cluster_0 {\n    label = \"Hyper-parameter\"\n    color = lightblue\n    node [color=lightblue]\n    a [label=\"a\"]\n    b [label=\"b\"]\n  }\n\n  subgraph cluster_1 {\n    label = \"Parameter\"\n    color = lightgray\n    node [color=lightgray]\n    theta [label=\"θ\"]\n  }\n\n  subgraph cluster_2 {\n    label = \"Variable\"\n    color = lightsteelblue\n    node [color=lightsteelblue]\n    y [label=\"y\"]\n  }\n\n  edge[arrowhead=normal]\n\n  a -> theta\n  b -> theta\n  theta -> y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>This is a simple graphical model, where <span class="math inline">\(y\)</span> depends on <span class="math inline">\(\theta\)</span>, with <span class="math inline">\(\theta\)</span> being a function of hyper-parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
@@ -689,8 +689,8 @@ Pr(H_1|y=1) = 1- 0.45 = 0.55
 <p>Below, we draw a flow-diagram of the Bayesian way of visualising the problem.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-ca524c068eaa4c6bf8c8" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-ca524c068eaa4c6bf8c8">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-2f490bc5d12919cd55e5" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-2f490bc5d12919cd55e5">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  H0 [label = \"H₀: 10% prevalence\", width = 1.5]\n  H1 [label = \"H₁: 20% prevalence\", width = 1.5]\n  y [label = \"y: Data (Successes in 5 samples)\", width = 1.5]\n  PrH0 [label = \"Pr(H₀) = 0.5\", width = 1.5]\n  PrH1 [label = \"Pr(H₁) = 0.5\", width = 1.5]\n  LikelihoodH0 [label = \"Pr(y|H₀) ~ 0.33\", width = 1.5]\n  LikelihoodH1 [label = \"Pr(y|H₁) ~ 0.41\", width = 1.5]\n  PosteriorH0 [label = \"Pr(H₀|y=1) ~ 0.45\", width = 1.5]\n  PosteriorH1 [label = \"Pr(H₁|y=1) ~ 0.55\", width = 1.5]\n\n  # Define the edges (relationships)\n  PrH0 -> LikelihoodH0\n  PrH1 -> LikelihoodH1\n  H0 -> LikelihoodH0\n  H1 -> LikelihoodH1\n  LikelihoodH0 -> y\n  LikelihoodH1 -> y\n  y -> PosteriorH0\n  y -> PosteriorH1\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Now, we can summarise the results for all four seperate sample sizes using frequentist p-value and Bayesian methods, where</p>
@@ -789,7 +789,7 @@ mean of x mean of y
 <p>We can see that the p-value is extremely small (much less than 0.05), which means we reject the null hypothesis. So, there is strong evidence that the new drug significantly reduces systolic blood pressure compared to the placebo.</p>
 <p><strong>Bayesian</strong></p>
 <p>Now, we will use Bayesian approach to estimate the posterior probability distribution of the difference in mean systolic blood pressure between the treatment and SOC groups, and extract a 95% credible interval.</p>
-<p>In most scenarios, we do not have prior information regarding the effectiveness of the new drug. However, sometimes we do have prior knowledge about the effectiveness of the SOC. Let us assume that, from a past study with 15 patients, for the SOC group, after a period of four weeks, the average SBP is around 110 mmHg with a variance of 25. This constitutes our prior knowledge about the control/SOC group.</p>
+<p>In most scenarios, we do not have prior information regarding the effectiveness of the new drug. However, sometimes we do have prior knowledge about the effectiveness of the SOC. Let us assume that, from a past study with 15 patients, for the SOC group, after a period of four weeks, the average SBP is around 110 mmHg with a variance of 10. This constitutes our prior knowledge about the control/SOC group.</p>
 <p>Now, using these information we can get the posterior distributions for both groups and then compare their differences. Note that our variable of interest in this example is in continuous scale (SBP measured in mmHg), hence, we will use normal distributions for the SBP.</p>
 <p>Here, we have observe data from 10 individuals for each groups. The posterior mean and variance calculation involves combining prior and observed data for the SOC (control) group, i.e., Group B. Whereas, for the treatment group we do not have any prior knowledge, i.e., the posterior for this group will reflect the observed data. Then we calculate the posterior mean and variance for the difference in means and extract the 95% credible interval for the difference.</p>
 <p>We can write this mathematically as follows:</p>
@@ -804,7 +804,7 @@ mean of x mean of y
 <li><span class="math inline">\(X_A \sim N(\mu_A, \sigma^2_A)\)</span></li>
 <li><span class="math inline">\(X_B \sim N(\mu_B, \sigma^2_B)\)</span></li>
 </ul>
-<p>Now, prior information on Group B, that we get from a previous study, where <span class="math inline">\(\mu_{B,0} = 110\)</span>, and prior variance <span class="math inline">\(\sigma^2_{B,0} = 25\)</span> from sample size <span class="math inline">\(n_{B,0} = 15\)</span>.</p>
+<p>Now, prior information on Group B, that we get from a previous study, where <span class="math inline">\(\mu_{B,0} = 110\)</span>, and prior variance <span class="math inline">\(\sigma^2_{B,0} = 10\)</span> from sample size <span class="math inline">\(n_{B,0} = 15\)</span>.</p>
 <p>For the treatment group (i.e., A), we get the posterior distribution as:</p>
 <p><span class="math display">\[
 \mu_A \mid \text{data} \sim N\left( \bar{x}_A, \frac{s_A^2}{n_A} \right)
@@ -837,12 +837,12 @@ mean of x mean of y
 <p><span class="math display">\[
 \sigma^2_{\delta} = \sigma^2_{A,\text{post}} + \sigma^2_{B,\text{post}} = \frac{s_A^2}{n_A} + \sigma^2_{B,\text{post}}
 \]</span></p>
-<p>Finally, we can calculate the 95% credible interval of <span class="math inline">\(\delta\)</span> from its posterior distribution.</p>
+<p>Finally, we can calculate the 95% credible interval of <span class="math inline">\(\delta\)</span> from its posterior distribution, we can write</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mu_prior_B <span class="ot">&lt;-</span> <span class="dv">110</span>   </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>var_prior_B <span class="ot">&lt;-</span> <span class="dv">25</span>    </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>var_prior_B <span class="ot">&lt;-</span> <span class="dv">10</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>n_prior_B <span class="ot">&lt;-</span> <span class="dv">15</span>       </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>n_B <span class="ot">&lt;-</span> <span class="fu">length</span>(group_B)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>mean_B <span class="ot">&lt;-</span> <span class="fu">mean</span>(group_B)</span>
@@ -850,8 +850,8 @@ mean of x mean of y
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>n_A <span class="ot">&lt;-</span> <span class="fu">length</span>(group_A)</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>mean_A <span class="ot">&lt;-</span> <span class="fu">mean</span>(group_A)</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>var_A <span class="ot">&lt;-</span> <span class="fu">var</span>(group_A)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>mu_post_B <span class="ot">&lt;-</span> (n_B <span class="sc">*</span> mean_B <span class="sc">+</span> n_prior_B <span class="sc">*</span> mu_prior_B) <span class="sc">/</span> (n_B <span class="sc">+</span> n_prior_B)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>var_post_B <span class="ot">&lt;-</span> var_B <span class="sc">/</span> n_B</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>mu_post_B <span class="ot">&lt;-</span> ((n_prior_B<span class="sc">/</span>var_prior_B)<span class="sc">*</span>mu_prior_B <span class="sc">+</span> (n_B<span class="sc">/</span>var_B)<span class="sc">*</span>mean_B)<span class="sc">/</span>((n_prior_B<span class="sc">/</span>var_prior_B)<span class="sc">+</span>(n_B<span class="sc">/</span>var_B))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>var_post_B <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>((n_prior_B<span class="sc">/</span>var_prior_B)<span class="sc">+</span>(n_B<span class="sc">/</span>var_B))</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>mu_post_A <span class="ot">&lt;-</span> mean_A</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>var_post_A <span class="ot">&lt;-</span> var_A <span class="sc">/</span> n_A</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>mean_diff <span class="ot">&lt;-</span> mu_post_A <span class="sc">-</span> mu_post_B</span>
@@ -862,20 +862,21 @@ mean of x mean of y
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Posterior mean difference in SBP:"</span>, <span class="fu">round</span>(mean_diff,<span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Posterior mean difference in SBP: -0.26 </code></pre>
+<pre><code>Posterior mean difference in SBP: -1.39 </code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"95% credible interval for difference in SBP:"</span>, <span class="fu">round</span>(credible_interval,<span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>95% credible interval for difference in SBP: -2.43 1.94 </code></pre>
+<pre><code>95% credible interval for difference in SBP: -3.14 0.39 </code></pre>
 </div>
 </div>
-<p>The results shows, on average, the treatment group has a slightly lower SBP than the SOC group, just 0.26 mmHg lower, which is a very small difference. We can also see the 95% credible interval spans both negative and positive values, including zero, we can’t say with confidence whether the treatment lowers, increases, or has no effect on SBP.</p>
+<p>The results shows, on average, the treatment group has a slightly lower SBP than the SOC group, which is a very small difference. We can also see the 95% credible interval spans both negative and positive values, including zero, we can’t say with confidence whether the treatment lowers, increases, or has no effect on SBP.</p>
 <p>This result from Bayesian analysis again contradicts with the frequentist method due to the consideration of prior information related to the SOC in the analysis.</p>
 <p>We will explore more about how different prior information might influence our results throughout the course.</p>
 <p>Note that in this example, we incorporate prior information as past data and thus update the posterior, which is in line with the Bayesian philosophy. It is also important to note that we might arrive at the same conclusion using a frequentist method, if we consider these historical data from <span class="math inline">\(n_{B,0}\)</span> samples.</p>
+<p>Now, if we assume the prior variability is much higher say <span class="math inline">\(\sigma^2_{B,0} = 25\)</span>, instead of 10, then we get a posterior that matches the frequentist method (please work this out yourself). This explains the sensitive nature of the choice of the prior variability, which we will discuss in the next Module of this course.</p>
 <p>In the following section, we discuss more on this type of Bayesian update accordingly.</p>
 </section>
 </section>
@@ -901,12 +902,12 @@ It is invariance to data-order ... ref: kruschke, page 107; sec 5.2.1
 </div>
 </div>
 <p>This figure illustrates how our understanding of the probability of severe side effects from an antibacterial drug evolves as we collect more data. The x-axis represents the probability of side effects, while the y-axis represents the density of this probability distribution. The solid lines in each plot represent our updated belief based on collected data, whereas the dashed lines represent our prior belief before incorporating the new data. As we observe more cases, our confidence in estimating the probability of side effects changes dynamically.</p>
-<p>In the first plot (<strong>n = 1, YES</strong>), we have only one observation, meaning we have very little information to work with. The probability distribution is relatively simple and does not strongly favor any particular probability value. Since the first observed case showed side effects, the probability of severe side effects starts increasing. In contrast, in the second plot (<strong>n = 2, NO</strong>), the second observation indicates no side effects, which alters our belief and introduces more uncertainty. The probability distribution now has a curved shape, reflecting this new piece of evidence.</p>
+<p>In the first plot (<strong>n = 1, YES</strong>), we have only one observation, meaning we have very little information to work with. The probability distribution is relatively simple and does not strongly favour any particular probability value. Since the first observed case showed side effects, the probability of severe side effects starts increasing. In contrast, in the second plot (<strong>n = 2, NO</strong>), the second observation indicates no side effects, which alters our belief and introduces more uncertainty. The probability distribution now has a curved shape, reflecting this new piece of evidence.</p>
 <p>As more data points are collected (<strong>n = 3, YES</strong> and <strong>n = 4, YES</strong>), our probability distribution starts forming a clearer peak. This means that we are beginning to refine our estimate of how likely the drug is to cause severe side effects. By <strong>n = 5 (YES)</strong>, the probability distribution has a well-defined peak, indicating that we are gaining confidence in our estimate. However, in <strong>n = 6 (NO)</strong>, the introduction of a new negative observation (no side effects) shifts our belief again. This suggests that the probability of side effects is not as high as previously estimated, and our model adjusts accordingly.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-9bc155832a72d77c8e8d" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-9bc155832a72d77c8e8d">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a3089f6fc66d81e4d50e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a3089f6fc66d81e4d50e">{"x":{"diagram":"\ndigraph bayesian_dag {\n  # Define the nodes\n  node [shape = rectangle, fontname = \"Helvetica\", fontsize = 14]\n  \n  # Prior node\n  Prior [label = \"Prior p(θ)\", width = 1.5]\n  \n  # Data observations\n  D1 [label = \"D₁: Observation (YES)\", width = 2]\n  Dots [label = \"...\", width = 0.5]\n  D6 [label = \"D₆: Observation (NO)\", width = 2]\n  \n  # Posterior updates\n  Posterior_D1 [label = \"Posterior p(θ|D₁)\", width = 2]\n  Posterior_D6 [label = \"Posterior p(θ|D₁, ..., D₆)\", width = 2]\n\n  # Define the edges (relationships)\n  Prior -> D1\n  D1 -> Posterior_D1\n  Posterior_D1 -> Dots\n  Dots -> D6\n  D6 -> Posterior_D6\n\n  # Layout: top to bottom style\n  rankdir = TB\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><strong>Invariance to data-order</strong></p>
