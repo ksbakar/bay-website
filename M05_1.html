@@ -260,7 +260,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M04_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 7: <strong>Non-Gaussian</strong></span></a>
+ <span class="menu-text">Week 7: <strong>Non-Gaussian Models</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -302,7 +302,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./M06_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: <strong>Discover the Perfect Spell!</strong></span></a>
+ <span class="menu-text">Week 12: <strong>The Perfect Spell!</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -682,8 +682,8 @@ tapply(y2$crp,y2$antib_1h,mean)
 <p>where, <span class="math inline">\(i\)</span> represents the number of observations for each individual/cluster and <span class="math inline">\(j\)</span> represents the number of indiviluals/clusters, i.e., we can write <span class="math inline">\(i=1,\cdots,n_j\)</span>, <span class="math inline">\(j=1,\cdots,J\)</span>, and total number of observations <span class="math inline">\(n=\sum_{j=1}^J\sum_{i=1}^{n_j} n_{ij}\)</span>. This model is nothing but a simple linear regression without any predictor variable. We can use a prior distribution for the intercept, such that <span class="math inline">\(\beta_0 \sim N(0,\sigma^2_0)\)</span>, and add the weakly informative, non-informative or informative situations towards the variance hyper-parameter <span class="math inline">\(\sigma^2_0\)</span>, as we have discussed in our previous lectures. Hence, we get the posterior distribution of <span class="math inline">\(\beta_0\)</span> from the completely pooled model.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-60474dbd7f7064b7ef87" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-60474dbd7f7064b7ef87">{"x":{"diagram":"\n  digraph complete_pooling_DAG {\n\n    // Layout\n    rankdir = TB;\n    fontsize = 10;\n    node [fontname = Helvetica]\n\n    // Nodes\n    n_obs [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, fontsize = 10, style = dashed]\n\n    CRP [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta0 [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu0 [label = \"μ=0\", shape = box, style = filled, fillcolor = lightcyan]\n    sigma0 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightcyan]\n\n    tau [label = \"τ\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    beta0 -> CRP\n    sigma -> CRP\n\n    mu0 -> beta0\n    sigma0 -> beta0\n\n    tau -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-af6af763c6c896374fd0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-af6af763c6c896374fd0">{"x":{"diagram":"\n  digraph complete_pooling_DAG {\n\n    // Layout\n    rankdir = TB;\n    fontsize = 10;\n    node [fontname = Helvetica]\n\n    // Nodes\n    n_obs [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, fontsize = 10, style = dashed]\n\n    CRP [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta0 [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu0 [label = \"μ=0\", shape = box, style = filled, fillcolor = lightcyan]\n    sigma0 [label = \"σ₀²\", shape = box, style = filled, fillcolor = lightcyan]\n\n    tau [label = \"τ\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    beta0 -> CRP\n    sigma -> CRP\n\n    mu0 -> beta0\n    sigma0 -> beta0\n\n    tau -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -703,8 +703,8 @@ tapply(y2$crp,y2$antib_1h,mean)
 <p>This model structure is highly flexible but may suffer from overfitting, especially when the number of observations within some clusters is small. Unlike complete pooling, no pooling does not assume a common intercept across all clusters but instead treats each as an entirely separate entity.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-6af71678d70622c3ba93" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6af71678d70622c3ba93">{"x":{"diagram":"\n  digraph no_pooling_DAG {\n\n    // Layout\n    rankdir = TB;\n    fontsize = 10;\n    node [fontname = Helvetica]\n\n    // Nodes\n    n_obs [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, fontsize = 10, style = dashed]\n\n    CRP [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta0j [label = \"β₀ⱼ\\n(Individual Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma0j [label = \"σ₀²=10²\", shape = box, style = filled, fillcolor = lightcyan]\n    mu [label = \"μ₀=0\", shape = box, style = filled, fillcolor = lightcyan]\n\n    sigma [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    tau [label = \"τ\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    beta0j -> CRP\n    sigma -> CRP\n\n    mu -> beta0j\n    sigma0j -> beta0j\n    tau -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-4afe91c1acebe965831b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4afe91c1acebe965831b">{"x":{"diagram":"\n  digraph no_pooling_DAG {\n\n    // Layout\n    rankdir = TB;\n    fontsize = 10;\n    node [fontname = Helvetica]\n\n    // Nodes\n    n_obs [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, fontsize = 10, style = dashed]\n\n    CRP [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta0j [label = \"β₀ⱼ\\n(Individual Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    sigma0j [label = \"σ₀²=10²\", shape = box, style = filled, fillcolor = lightcyan]\n    mu [label = \"μ₀=0\", shape = box, style = filled, fillcolor = lightcyan]\n\n    sigma [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    tau [label = \"τ\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Arrows\n    beta0j -> CRP\n    sigma -> CRP\n\n    mu -> beta0j\n    sigma0j -> beta0j\n    tau -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -728,8 +728,8 @@ tapply(y2$crp,y2$antib_1h,mean)
 <p>Partial pooling provides a compromise: it avoids the rigidity of complete pooling (which assumes all clusters are the same) and the potential overfitting of no pooling (which treats all clusters as completely separate). The result is more stable and interpretable estimates, especially when the number of observations per cluster is highly variable.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-49e0c110da54309941ab" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-49e0c110da54309941ab">{"x":{"diagram":"\n  digraph partial_pooling_DAG {\n\n    // Layout\n    rankdir = TB;\n    fontsize = 10;\n    node [fontname = Helvetica]\n\n    // Nodes\n    n_obs [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, fontsize = 10, style = dashed]\n\n    CRP [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta0 [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta0j [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu00 [label = \"μ₀₀ = 0\", shape = box, style = filled, fillcolor = lightcyan]\n    mu0j [label = \"μ₀ = 0\", shape = box, style = filled, fillcolor = seagreen1]\n\n    sigma00 [label = \"σ₀₀²=10²\", shape = box, style = filled, fillcolor = lightcyan]\n    sigma0j [label = \"σ₀²\", shape = box, style = filled, fillcolor = seagreen1]\n    lambda0 [label = \"τ₀\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    sigma [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    lambda [label = \"τ\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Rank positioning\n    { rank = min; n_obs }\n\n    // Arrows\n    beta0 -> CRP\n    beta0j -> CRP\n    sigma -> CRP\n\n    mu00 -> beta0\n    sigma00 -> beta0\n\n    mu0j -> beta0j\n    sigma0j -> beta0j\n    lambda0 -> sigma0j\n    \n    lambda -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-cc59fcf1a9d522fcd861" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-cc59fcf1a9d522fcd861">{"x":{"diagram":"\n  digraph partial_pooling_DAG {\n\n    // Layout\n    rankdir = TB;\n    fontsize = 10;\n    node [fontname = Helvetica]\n\n    // Nodes\n    n_obs [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, fontsize = 10, style = dashed]\n\n    CRP [label = \"CRP[i,j]\", shape = ellipse, style = filled, fillcolor = lightcoral]\n\n    beta0 [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta0j [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    mu00 [label = \"μ₀₀ = 0\", shape = box, style = filled, fillcolor = lightcyan]\n    mu0j [label = \"μ₀ = 0\", shape = box, style = filled, fillcolor = seagreen1]\n\n    sigma00 [label = \"σ₀₀²=10²\", shape = box, style = filled, fillcolor = lightcyan]\n    sigma0j [label = \"σ₀²\", shape = box, style = filled, fillcolor = seagreen1]\n    lambda0 [label = \"τ₀\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    sigma [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    lambda [label = \"τ\\n(Half-Cauchy Scale)\", shape = box, style = filled, fillcolor = lightcyan]\n\n    // Rank positioning\n    { rank = min; n_obs }\n\n    // Arrows\n    beta0 -> CRP\n    beta0j -> CRP\n    sigma -> CRP\n\n    mu00 -> beta0\n    sigma00 -> beta0\n\n    mu0j -> beta0j\n    sigma0j -> beta0j\n    lambda0 -> sigma0j\n    \n    lambda -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -833,11 +833,11 @@ Formula: CRP ~ 1
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    14.57      1.22    12.24    16.94 1.00     2190     1993
+Intercept    14.57      1.20    12.13    16.87 1.00     3021     2177
 
 Further Distributional Parameters:
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma    11.42      0.87     9.87    13.34 1.00     2156     1563
+sigma    11.44      0.88     9.87    13.39 1.00     2132     1941
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -872,25 +872,25 @@ Formula: CRP ~ 0 + factor(ID)
 
 Regression Coefficients:
             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-factorID122     3.66      3.29    -2.90    10.15 1.00     5491     1986
-factorID133    10.80      3.07     4.82    16.70 1.00     5643     2142
-factorID246    14.47      3.21     7.96    20.68 1.00     7192     2272
-factorID506    11.86      3.29     5.66    18.31 1.00     6508     2133
-factorID603    16.85      3.22    10.32    23.42 1.00     5909     2090
-factorID663     3.20      3.11    -2.93     9.15 1.00     7173     2194
-factorID756     6.75      3.22     0.47    12.85 1.00     7169     2077
-factorID826    12.84      3.26     6.43    19.29 1.01     5963     2249
-factorID861    24.17      3.36    17.45    30.51 1.00     6669     2082
-factorID878    26.86      3.29    20.41    33.27 1.00     6106     1972
-factorID880    28.90      3.20    22.54    35.05 1.00     5497     2176
-factorID926     9.99      2.99     4.24    16.03 1.00     7011     2213
-factorID951     5.90      3.11    -0.28    12.03 1.00     5703     2160
-factorID995     6.89      3.17     0.57    13.13 1.00     6868     2163
-factorID998    16.71      3.28    10.28    23.00 1.01     6621     2256
+factorID122     3.71      3.22    -2.62    10.19 1.00     6236     1946
+factorID133    10.79      3.21     4.24    16.94 1.00     6342     2427
+factorID246    14.46      3.08     8.47    20.43 1.00     6708     1943
+factorID506    11.88      3.27     5.41    18.16 1.00     6551     2253
+factorID603    16.90      3.15    10.67    23.19 1.00     7287     2344
+factorID663     3.15      3.06    -2.79     9.29 1.00     5602     2203
+factorID756     6.82      3.21     0.40    12.94 1.00     5529     2243
+factorID826    12.93      3.11     6.92    19.34 1.00     5459     2147
+factorID861    24.14      3.16    17.84    30.28 1.00     5815     2196
+factorID878    26.86      3.13    20.55    32.91 1.00     6457     2273
+factorID880    28.98      3.30    22.41    35.45 1.00     6921     2129
+factorID926    10.01      3.21     3.56    16.19 1.00     5424     1910
+factorID951     5.96      3.11    -0.01    11.89 1.00     6871     2192
+factorID995     6.81      3.07     0.73    12.57 1.00     6763     2250
+factorID998    16.72      3.16    10.27    22.91 1.00     5616     2324
 
 Further Distributional Parameters:
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma     8.12      0.71     6.89     9.67 1.00     3668     2181
+sigma     8.11      0.68     6.92     9.50 1.00     4017     2580
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -928,15 +928,15 @@ Formula: CRP ~ 1 + (1 | ID)
 Multilevel Hyperparameters:
 ~ID (Number of levels: 15) 
               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sd(Intercept)     8.36      1.87     5.41    12.67 1.00      868     1303
+sd(Intercept)     8.31      1.92     5.29    13.00 1.00      726     1012
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    14.27      2.30     9.57    18.74 1.00      748      953
+Intercept    13.87      2.43     8.65    18.65 1.00      653      714
 
 Further Distributional Parameters:
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma     8.02      0.66     6.87     9.39 1.00     2858     2180
+sigma     8.02      0.69     6.82     9.51 1.00     2973     2044
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -948,7 +948,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1). </code></pre>
 </details>
 </div>
 <p>We can see that in the no pooling model, the posterior estimates are provided for each individual ID. In this model, the IDs are treated as completely separate, with each having its own intercept estimated independently from all others. As a result, we obtain distinct estimates for 15 IDs (since we have only considered the first 15 IDs from the CRP dataset for illustration).</p>
-<p>Whereas, the partial pooling model assumes that individual intercepts are drawn from a common distribution. This hierarchical structure allows the model to “borrow strength” from the group, which leads to more stable and regularized estimates—particularly for IDs with limited data.</p>
+<p>Whereas, the partial pooling model assumes that individual intercepts are drawn from a common distribution. This hierarchical structure allows the model to “borrow strength” from the group, which leads to more stable and regularised estimates, particularly for IDs with limited data.</p>
 <p>We also observe that the posterior mean estimate for the complete pooling model is approximately the same as the group-level mean in the partial pooling model. This is because, in partial pooling, individual estimates are shrunk toward the group mean, which itself closely aligns with the complete pooling estimate that assumes no variation between IDs.</p>
 <p>However, we can see that the credible interval in the complete pooling model is narrower compared to that of the partial pooling model. This occurs because the complete pooling model assumes no between-ID variability, attributing all uncertainty to residual error. Here, the partial pooling model accounts for both residual error and variation across individuals, which increases overall uncertainty in individual-level estimates.</p>
 <div class="cell">
@@ -1134,8 +1134,8 @@ This Bayesian hierarchical model with a random intercept allows us to model indi
 <p>We can write the DAG for the model as:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-01b6a23a3c27f22e218c" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-01b6a23a3c27f22e218c">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    n_obs     [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, style = dashed, fontsize = 10]\n    CRP       [label = \"log(CRP[i,j])\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    x         [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0    [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta      [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"β ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Effects\n    beta_0j   [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Priors for Random Effects\n    sigma_0   [label = \"σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma     [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Data to Outcome\n    x   -> CRP\n\n    # Edges: Fixed Effects to Outcome\n    beta_0 -> CRP\n    beta   -> CRP\n\n    # Edges: Random Effects to Outcome\n    beta_0j -> CRP\n\n    # Residual SD to Outcome\n    sigma -> CRP\n\n    # Priors to Fixed Effects\n    prior_beta_0 -> beta_0\n    prior_beta   -> beta\n\n    # Priors to Random Effects\n    sigma_0 -> beta_0j\n\n    # Prior to Residual SD\n    prior_sigma -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-acfe15cb71fa94520d9a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-acfe15cb71fa94520d9a">{"x":{"diagram":"\n  digraph DAG {\n    rankdir = LR;\n    fontsize = 10;\n    node [fontname = Helvetica];\n\n    # Observed Data\n    n_obs     [label = \"i = 1,...,nⱼ\\n j = 1,...,J\", shape = note, style = dashed, fontsize = 10]\n    CRP       [label = \"log(CRP[i,j])\", shape = ellipse, style = filled, fillcolor = lightcoral]\n    x         [label = \"x[i,j]\", shape = ellipse, style = filled, fillcolor = lightblue]\n\n    # Fixed Effects\n    beta_0    [label = \"β₀\\n(Global Intercept)\", shape = box, style = filled, fillcolor = lightgrey]\n    beta      [label = \"β\\n(Covariate Coefs)\", shape = box, style = filled, fillcolor = lightgrey]\n\n    # Priors for Fixed Effects\n    prior_beta_0 [label = \"β₀ ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n    prior_beta   [label = \"β ~ N(0, 10²)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Random Effects\n    beta_0j   [label = \"β₀ⱼ\\n(Random Intercept)\", shape = box, style = filled, fillcolor = lightyellow]\n\n    # Priors for Random Effects\n    sigma_0   [label = \"σ₀ ~ Half-Cauchy(0,1)\", shape = box, style = filled, fillcolor = seagreen1]\n\n    # Residual SD\n    sigma     [label = \"σ\\n(Residual SD)\", shape = box, style = filled, fillcolor = lightgrey]\n    prior_sigma [label = \"σ ~ Half-Cauchy(0,1)\", shape = box, style = dashed, fillcolor = lightyellow]\n\n    # Edges: Data to Outcome\n    x   -> CRP\n\n    # Edges: Fixed Effects to Outcome\n    beta_0 -> CRP\n    beta   -> CRP\n\n    # Edges: Random Effects to Outcome\n    beta_0j -> CRP\n\n    # Residual SD to Outcome\n    sigma -> CRP\n\n    # Priors to Fixed Effects\n    prior_beta_0 -> beta_0\n    prior_beta   -> beta\n\n    # Priors to Random Effects\n    sigma_0 -> beta_0j\n\n    # Prior to Residual SD\n    prior_sigma -> sigma\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
